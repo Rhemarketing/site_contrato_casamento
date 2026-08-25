@@ -1,0 +1,1055 @@
+{
+  "questionario": {
+    "codigo": "PROVA_ADMISSAO_CONTRATO_CASAMENTO",
+    "versao": "8.0",
+    "total_perguntas": 40,
+    "pontuacao_minima": 0,
+    "pontuacao_maxima": 50,
+    "regra_pontuacao": {
+      "perguntas_pontuadas": "06-30",
+      "A": 0,
+      "B": 1,
+      "C": 2
+    }
+  },
+  "perguntas": [
+    {
+      "id": 1,
+      "codigo": "P01",
+      "etapa": "perfil",
+      "area": "situacao_relacionamento",
+      "pontua": false,
+      "pergunta": "Qual é atualmente a situação do relacionamento de vocês?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Somos casados oficialmente e vivemos como casal.",
+          "pontuacao": null
+        },
+        {
+          "letra": "B",
+          "texto": "Vivemos em união estável ou moramos juntos como casal.",
+          "pontuacao": null
+        },
+        {
+          "letra": "C",
+          "texto": "Estamos separados ou morando separados atualmente, mas ainda existe interesse em reconstruir a relação.",
+          "pontuacao": null
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "codigo": "P02",
+      "etapa": "perfil",
+      "area": "tempo_relacionamento",
+      "pontua": false,
+      "pergunta": "Há quanto tempo vocês estão juntos?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Até 5 anos.",
+          "pontuacao": null
+        },
+        {
+          "letra": "B",
+          "texto": "De 6 a 15 anos.",
+          "pontuacao": null
+        },
+        {
+          "letra": "C",
+          "texto": "Mais de 15 anos.",
+          "pontuacao": null
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "codigo": "P03",
+      "etapa": "perfil",
+      "area": "filhos",
+      "pontua": false,
+      "pergunta": "Vocês têm filhos?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Não temos filhos.",
+          "pontuacao": null
+        },
+        {
+          "letra": "B",
+          "texto": "Sim. Temos filhos juntos.",
+          "pontuacao": null
+        },
+        {
+          "letra": "C",
+          "texto": "Sim. Existem também filhos de relacionamentos anteriores.",
+          "pontuacao": null
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "codigo": "P04",
+      "etapa": "perfil",
+      "area": "coabitacao",
+      "pontua": false,
+      "pergunta": "Atualmente vocês moram juntos?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Moramos juntos normalmente.",
+          "pontuacao": null
+        },
+        {
+          "letra": "B",
+          "texto": "Sim, mas passamos alguns períodos separados em razão de trabalho ou outras circunstâncias.",
+          "pontuacao": null
+        },
+        {
+          "letra": "C",
+          "texto": "Não. Atualmente estamos morando separados.",
+          "pontuacao": null
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "codigo": "P05",
+      "etapa": "perfil",
+      "area": "momento_relacionamento",
+      "pontua": false,
+      "pergunta": "Como você definiria o momento atual do seu casamento?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Considero nosso relacionamento bom, embora existam alguns pontos que podem melhorar.",
+          "pontuacao": null
+        },
+        {
+          "letra": "B",
+          "texto": "Existem problemas importantes entre nós que precisam ser trabalhados.",
+          "pontuacao": null
+        },
+        {
+          "letra": "C",
+          "texto": "Considero que estamos vivendo uma crise e precisamos de mudanças significativas.",
+          "pontuacao": null
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "codigo": "P06",
+      "etapa": "diagnostico",
+      "area": "comunicacao",
+      "pontua": true,
+      "pergunta": "Quando você fala sobre algo que realmente importa para você, sente que seu cônjuge procura entender o que você está dizendo antes de responder?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Na maioria das vezes procura entender antes de responder.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Às vezes. Em algumas situações procura entender, mas em outras responde antes de compreender totalmente.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Raramente. Normalmente responde, se defende ou tira conclusões antes de procurar entender.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "codigo": "P07",
+      "etapa": "diagnostico",
+      "area": "comunicacao",
+      "pontua": true,
+      "pergunta": "Você consegue conversar com seu cônjuge sobre aquilo que está incomodando você?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Geralmente consigo falar com liberdade sobre aquilo que sinto e me incomoda.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Em parte. Existem alguns assuntos sobre os quais tenho dificuldade de conversar.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Não. Evito vários assuntos porque acredito que a conversa poderá terminar em discussão, crítica ou incompreensão.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "codigo": "P08",
+      "etapa": "diagnostico",
+      "area": "comunicacao",
+      "pontua": true,
+      "pergunta": "Atualmente vocês ainda conversam sobre sentimentos, sonhos, preocupações, medos e planos pessoais?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Ainda temos conversas profundas e procuramos saber o que o outro está vivendo e sentindo.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Às vezes. Ainda conversamos, mas esse tipo de diálogo diminuiu bastante.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Raramente. Nossas conversas giram principalmente em torno de trabalho, filhos, contas, problemas e responsabilidades.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "codigo": "P09",
+      "etapa": "diagnostico",
+      "area": "conflitos_reconciliacao",
+      "pontua": true,
+      "pergunta": "Quando vocês discordam, normalmente conseguem buscar uma solução juntos?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Mesmo pensando diferente, normalmente procuramos uma solução que considere os dois.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Às vezes. Algumas discussões são resolvidas, mas outras terminam sem solução clara.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Raramente. Muitas discussões se transformam em disputa para determinar quem está certo ou errado.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "codigo": "P10",
+      "etapa": "diagnostico",
+      "area": "conflitos_reconciliacao",
+      "pontua": true,
+      "pergunta": "Vocês voltam a discutir repetidamente pelos mesmos problemas?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Raramente. Quando resolvemos um assunto, normalmente conseguimos seguir em frente.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Às vezes. Existem alguns problemas que acabam aparecendo novamente.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Frequentemente. Existem assuntos pelos quais discutimos há bastante tempo sem chegar a uma solução.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "codigo": "P11",
+      "etapa": "diagnostico",
+      "area": "conflitos_reconciliacao",
+      "pontua": true,
+      "pergunta": "Depois de uma discussão, vocês conseguem reconhecer erros, pedir desculpas e realmente se reconciliar?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Normalmente conseguimos reconhecer nossa participação e buscar uma reconciliação verdadeira.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Às vezes. Em algumas situações conseguimos, mas em outras permanecem ressentimentos ou assuntos mal resolvidos.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Raramente. Muitas discussões terminam porque paramos de falar sobre o assunto, não porque ele foi realmente resolvido.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "codigo": "P12",
+      "etapa": "diagnostico",
+      "area": "afeto_valorizacao",
+      "pontua": true,
+      "pergunta": "Você recebe do seu cônjuge o carinho e as demonstrações de amor de que precisa?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. De maneira geral recebo carinho, atenção e demonstrações suficientes para me sentir amado(a).",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Em parte. Recebo carinho, mas gostaria que acontecesse com maior frequência ou de outras maneiras.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Não. Sinto uma falta importante de carinho, atenção e demonstrações de amor.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "codigo": "P13",
+      "etapa": "diagnostico",
+      "area": "afeto_valorizacao",
+      "pontua": true,
+      "pergunta": "Ainda existem beijos, abraços, toques e demonstrações espontâneas de carinho entre vocês, sem que isso precise estar relacionado ao sexo?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Essas demonstrações fazem parte naturalmente do nosso relacionamento.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Existem, mas acontecem com menos frequência do que eu gostaria.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Raramente. Essas demonstrações diminuíram muito ou praticamente desapareceram.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "codigo": "P14",
+      "etapa": "diagnostico",
+      "area": "afeto_valorizacao",
+      "pontua": true,
+      "pergunta": "Você se sente valorizado(a), reconhecido(a) e admirado(a) pelo seu cônjuge?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Meu cônjuge demonstra reconhecer minhas qualidades, esforços e importância.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Algumas vezes. Sei que existe valorização, mas gostaria que fosse mais demonstrada.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Raramente. Muitas vezes sinto que meus esforços, qualidades ou necessidades passam despercebidos.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "codigo": "P15",
+      "etapa": "diagnostico",
+      "area": "intimidade",
+      "pontua": true,
+      "pergunta": "De maneira geral, como você considera atualmente a vida íntima e sexual do casal?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Satisfatória. De maneira geral estou satisfeito(a) com nossa vida íntima.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Poderia melhorar. Existem aspectos importantes que gostaria que fossem diferentes.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Insatisfatória. Nossa vida íntima está bastante diferente daquilo que eu gostaria de viver no casamento.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "codigo": "P16",
+      "etapa": "diagnostico",
+      "area": "intimidade",
+      "pontua": true,
+      "pergunta": "Considerando frequência, qualidade e conexão entre vocês, como você se sente em relação aos momentos de intimidade sexual?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Satisfeito(a). A frequência e a qualidade geralmente atendem às minhas necessidades.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Parcialmente satisfeito(a). Gostaria que acontecesse com maior frequência, qualidade ou conexão.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Insatisfeito(a). Existe uma diferença importante entre a intimidade que vivemos e aquilo de que sinto necessidade.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "codigo": "P17",
+      "etapa": "diagnostico",
+      "area": "intimidade",
+      "pontua": true,
+      "pergunta": "Você se sente desejado(a) sexualmente pelo seu cônjuge?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Meu cônjuge demonstra desejo por mim de maneira que me faz sentir desejado(a).",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Às vezes. Percebo desejo em alguns momentos, mas gostaria que fosse demonstrado com maior frequência.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Raramente. Tenho sentido pouca demonstração de desejo e isso me incomoda ou me deixa inseguro(a).",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "codigo": "P18",
+      "etapa": "diagnostico",
+      "area": "intimidade",
+      "pontua": true,
+      "pergunta": "Vocês conseguem conversar abertamente sobre desejos, preferências, limites, dificuldades e insatisfações relacionadas à intimidade?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Conseguimos conversar com respeito, liberdade e confiança.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Em parte. Conseguimos falar sobre algumas coisas, mas ainda existem assuntos difíceis.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Não. Existem desejos, limites, dificuldades ou insatisfações sobre os quais praticamente não conseguimos conversar.",
+          "pontuacao": 2,
+          "flag": "CONVERSA_INTIMIDADE_PRIORITARIA"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "codigo": "P19",
+      "etapa": "diagnostico",
+      "area": "confianca_fidelidade_limites",
+      "pontua": true,
+      "pergunta": "Como está atualmente sua confiança em seu cônjuge?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Boa. De maneira geral confio e me sinto seguro(a) no relacionamento.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Existem algumas inseguranças ou situações que provocam dúvidas.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Existe uma dificuldade importante de confiar ou alguma situação abalou significativamente minha confiança.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "codigo": "P20",
+      "etapa": "diagnostico",
+      "area": "confianca_fidelidade_limites",
+      "pontua": true,
+      "pergunta": "Vocês possuem uma compreensão clara e semelhante sobre os limites do relacionamento com outras pessoas e no ambiente digital?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. De maneira geral sabemos e concordamos sobre aquilo que consideramos respeitoso ou inadequado.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Parcialmente. Existem situações sobre as quais pensamos diferente ou nunca conversamos claramente.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Não. Diferenças envolvendo terceiros, mensagens, contatos ou redes sociais já provocaram ou provocam conflitos importantes.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "codigo": "P21",
+      "etapa": "diagnostico",
+      "area": "confianca_fidelidade_limites",
+      "pontua": true,
+      "pergunta": "Existe alguma situação do passado ou do presente que ainda machuca a confiança entre vocês?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Não. Ou, se algo aconteceu, considero que conseguimos tratar e superar verdadeiramente.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Existe alguma situação que ainda provoca insegurança ou desconforto ocasionalmente.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Sim. Existe uma ferida importante relacionada à confiança que continua afetando nosso relacionamento.",
+          "pontuacao": 2,
+          "flag": "FERIDA_CONFIANCA_PRIORITARIA"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "codigo": "P22",
+      "etapa": "diagnostico",
+      "area": "dinheiro_responsabilidades",
+      "pontua": true,
+      "pergunta": "Vocês conseguem conversar sobre dinheiro com transparência e tomar decisões financeiras importantes juntos?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Conhecemos nossa realidade financeira e normalmente conversamos sobre decisões importantes.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Em parte. Existem gastos, decisões ou assuntos financeiros sobre os quais precisamos conversar melhor.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Não. Dinheiro, gastos, dívidas ou falta de transparência são fontes importantes de conflito.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "codigo": "P23",
+      "etapa": "diagnostico",
+      "area": "dinheiro_responsabilidades",
+      "pontua": true,
+      "pergunta": "Você considera justa a divisão das responsabilidades da casa, dos filhos e da família?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Considerando a realidade de cada um, sinto que existe equilíbrio.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Poderia melhorar. Em alguns momentos sinto que um de nós fica mais sobrecarregado.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Não. Existe diferença significativa na divisão das responsabilidades e isso provoca desgaste.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "codigo": "P24",
+      "etapa": "diagnostico",
+      "area": "dinheiro_responsabilidades",
+      "pontua": true,
+      "pergunta": "Você sente que precisa cobrar, lembrar ou pedir repetidamente para que seu cônjuge cumpra determinadas responsabilidades?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Raramente. Normalmente cada um assume suas responsabilidades.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Algumas vezes. Existem determinadas responsabilidades que preciso lembrar ou cobrar.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Frequentemente. Sinto que preciso pedir, lembrar ou cobrar repetidamente e isso tem me desgastado.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "codigo": "P25",
+      "etapa": "diagnostico",
+      "area": "tempo_conexao_futuro",
+      "pontua": true,
+      "pergunta": "Você sente que continua sendo uma prioridade importante na vida do seu cônjuge?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Mesmo com trabalho, filhos e responsabilidades, sinto que nosso relacionamento continua sendo valorizado.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Algumas vezes tenho dúvidas. Outras responsabilidades acabam ocupando espaço demais.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Frequentemente sinto que nosso relacionamento ficou em segundo plano.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "codigo": "P26",
+      "etapa": "diagnostico",
+      "area": "tempo_conexao_futuro",
+      "pontua": true,
+      "pergunta": "Você sente que vocês ainda vivem como casal e não apenas como pessoas responsáveis por casa, contas, trabalho ou filhos?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Apesar das responsabilidades, ainda existe conexão, companheirismo, carinho e vida de casal.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Em parte. Às vezes sinto que a rotina ocupou espaço demais.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Não. Muitas vezes sinto que somos principalmente parceiros de responsabilidades ou pessoas que vivem na mesma casa.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "codigo": "P27",
+      "etapa": "diagnostico",
+      "area": "tempo_conexao_futuro",
+      "pontua": true,
+      "pergunta": "Se o seu relacionamento continuar exatamente como está hoje pelos próximos cinco anos, como você acredita que se sentiria?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Provavelmente estaria satisfeito(a), embora reconheça que sempre podemos melhorar.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Ficaria preocupado(a), porque existem problemas importantes que precisam ser trabalhados.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Eu não gostaria de continuar vivendo nosso relacionamento dessa maneira durante os próximos cinco anos.",
+          "pontuacao": 2,
+          "flag": "INSATISFACAO_FUTURO_PRIORITARIA"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "codigo": "P28",
+      "etapa": "diagnostico",
+      "area": "autopercepcao_disposicao",
+      "pontua": true,
+      "pergunta": "Você reconhece que também existem comportamentos seus que poderiam mudar para melhorar o relacionamento?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Reconheço que também tenho atitudes e comportamentos que posso melhorar.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Em parte. Sei que provavelmente existem coisas que preciso mudar, mas tenho dificuldade de identificar ou aceitar algumas delas.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Atualmente sinto que a maior parte dos problemas está no comportamento do meu cônjuge.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "codigo": "P29",
+      "etapa": "diagnostico",
+      "area": "autopercepcao_disposicao",
+      "pontua": true,
+      "pergunta": "Se seu cônjuge respondesse agora às mesmas perguntas, você acredita que as respostas dele(a) seriam parecidas com as suas?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Acredito que conhecemos relativamente bem aquilo que cada um sente sobre nosso relacionamento.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Não tenho certeza. Algumas respostas poderiam ser diferentes ou me surpreender.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Provavelmente seriam bastante diferentes, porque muitas vezes enxergamos nosso relacionamento de maneiras distintas.",
+          "pontuacao": 2
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "codigo": "P30",
+      "etapa": "diagnostico",
+      "area": "habitos_compulsoes",
+      "pontua": true,
+      "pergunta": "Existe atualmente algum hábito, vício ou comportamento compulsivo que esteja prejudicando o relacionamento?",
+      "descricao": "Podem estar envolvidos, por exemplo, álcool, outras substâncias, apostas, pornografia, compras, jogos, tecnologia ou outros comportamentos repetitivos.",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Não identifico atualmente nenhum comportamento desse tipo causando problema importante em nosso relacionamento.",
+          "pontuacao": 0
+        },
+        {
+          "letra": "B",
+          "texto": "Existe algum comportamento que já causa preocupação ou conflitos ocasionais.",
+          "pontuacao": 1
+        },
+        {
+          "letra": "C",
+          "texto": "Sim. Existe um comportamento recorrente que está prejudicando significativamente nosso relacionamento, nossa família ou nossas finanças.",
+          "pontuacao": 2,
+          "flag": "HABITO_COMPULSIVO_PRIORITARIO"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "codigo": "P31",
+      "etapa": "seguranca",
+      "area": "seguranca_emocional",
+      "pontua": false,
+      "privada": true,
+      "pergunta": "Você já deixou de falar, discordar ou expressar uma necessidade por medo da reação do seu cônjuge?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Não. De maneira geral sinto liberdade para falar e discordar.",
+          "pontuacao": null,
+          "codigo_interno": "SAFETY_0"
+        },
+        {
+          "letra": "B",
+          "texto": "Às vezes. Já evitei determinados assuntos por receio da reação, discussão ou comportamento do meu cônjuge.",
+          "pontuacao": null,
+          "codigo_interno": "SAFETY_ATTENTION"
+        },
+        {
+          "letra": "C",
+          "texto": "Sim. Frequentemente sinto medo, insegurança ou necessidade de medir aquilo que digo por causa da possível reação do meu cônjuge.",
+          "pontuacao": null,
+          "codigo_interno": "SAFETY_ALERT"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "codigo": "P32",
+      "etapa": "seguranca",
+      "area": "violencia_intimidacao",
+      "pontua": false,
+      "privada": true,
+      "pergunta": "Já ocorreu entre vocês agressão física, ameaça, intimidação, destruição de objetos ou comportamento que tenha causado medo?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Não. Nunca ocorreu situação desse tipo.",
+          "pontuacao": null,
+          "codigo_interno": "SAFETY_0"
+        },
+        {
+          "letra": "B",
+          "texto": "Já ocorreu alguma situação que considero preocupante, ainda que tenha sido isolada ou no passado.",
+          "pontuacao": null,
+          "codigo_interno": "SAFETY_ATTENTION"
+        },
+        {
+          "letra": "C",
+          "texto": "Sim. Houve situação grave, repetida ou atual de agressão, ameaça, intimidação ou medo.",
+          "pontuacao": null,
+          "codigo_interno": "SAFETY_ALERT_HIGH"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "codigo": "P33",
+      "etapa": "seguranca",
+      "area": "consentimento",
+      "pontua": false,
+      "privada": true,
+      "pergunta": "Em relação à intimidade sexual, você sente que suas decisões, recusas e limites são respeitados pelo seu cônjuge?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Posso aceitar ou recusar e sinto que meus limites são respeitados.",
+          "pontuacao": null,
+          "codigo_interno": "CONSENT_OK"
+        },
+        {
+          "letra": "B",
+          "texto": "Na maioria das vezes, mas já me senti pressionado(a), culpado(a) ou desconfortável em algumas situações.",
+          "pontuacao": null,
+          "codigo_interno": "CONSENT_ATTENTION"
+        },
+        {
+          "letra": "C",
+          "texto": "Não. Já me senti obrigado(a), coagido(a), intimidado(a) ou desrespeitado(a) sexualmente.",
+          "pontuacao": null,
+          "codigo_interno": "CONSENT_ALERT"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "codigo": "P34",
+      "etapa": "financeiro",
+      "area": "moradia",
+      "pontua": false,
+      "pergunta": "Atualmente, como é a moradia da família?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Moramos em imóvel próprio e quitado.",
+          "pontuacao": null,
+          "codigo_interno": "MORADIA_PROPRIA_QUITADA"
+        },
+        {
+          "letra": "B",
+          "texto": "Moramos em imóvel próprio financiado.",
+          "pontuacao": null,
+          "codigo_interno": "MORADIA_FINANCIADA"
+        },
+        {
+          "letra": "C",
+          "texto": "Moramos de aluguel, imóvel cedido ou em outra situação.",
+          "pontuacao": null,
+          "codigo_interno": "MORADIA_ALUGUEL_OUTRA"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "codigo": "P35",
+      "etapa": "financeiro",
+      "area": "renda_familiar",
+      "pontua": false,
+      "pergunta": "Qual é aproximadamente a renda mensal total da família?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Até R$ 5.000 por mês.",
+          "pontuacao": null,
+          "codigo_interno": "RENDA_ATE_5000"
+        },
+        {
+          "letra": "B",
+          "texto": "De R$ 5.001 a R$ 10.000 por mês.",
+          "pontuacao": null,
+          "codigo_interno": "RENDA_5001_10000"
+        },
+        {
+          "letra": "C",
+          "texto": "Acima de R$ 10.000 por mês.",
+          "pontuacao": null,
+          "codigo_interno": "RENDA_ACIMA_10000"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "codigo": "P36",
+      "etapa": "financeiro",
+      "area": "margem_financeira",
+      "pontua": false,
+      "pergunta": "Depois de pagar as despesas normais do mês, como costuma ficar a situação financeira da família?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Normalmente sobra dinheiro e conseguimos guardar ou investir alguma parte.",
+          "pontuacao": null,
+          "codigo_interno": "MARGEM_POSITIVA"
+        },
+        {
+          "letra": "B",
+          "texto": "Normalmente conseguimos pagar as despesas, mas sobra pouco ou praticamente nada.",
+          "pontuacao": null,
+          "codigo_interno": "MARGEM_APERTADA"
+        },
+        {
+          "letra": "C",
+          "texto": "Com frequência falta dinheiro ou precisamos recorrer a cartão, limite, empréstimos ou outras formas de crédito.",
+          "pontuacao": null,
+          "codigo_interno": "MARGEM_NEGATIVA"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "codigo": "P37",
+      "etapa": "financeiro",
+      "area": "endividamento",
+      "pontua": false,
+      "pergunta": "Atualmente existem dívidas ou compromissos financeiros que preocupam vocês?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Não. Nossas dívidas e compromissos estão controlados.",
+          "pontuacao": null,
+          "codigo_interno": "DIVIDA_CONTROLADA"
+        },
+        {
+          "letra": "B",
+          "texto": "Sim. Existem alguns compromissos que exigem atenção.",
+          "pontuacao": null,
+          "codigo_interno": "DIVIDA_ATENCAO"
+        },
+        {
+          "letra": "C",
+          "texto": "Sim. As dívidas ou dificuldades financeiras estão afetando significativamente nossa vida.",
+          "pontuacao": null,
+          "codigo_interno": "VULNERABILIDADE_FINANCEIRA"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "codigo": "P38",
+      "etapa": "financeiro",
+      "area": "capacidade_investimento",
+      "pontua": false,
+      "pergunta": "Atualmente, qual seria sua capacidade de investir em algo que pudesse ajudar a melhorar seu relacionamento?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Conseguiria realizar um investimento sem comprometer despesas essenciais da família.",
+          "pontuacao": null,
+          "codigo_interno": "CAPACIDADE_INTEGRAL"
+        },
+        {
+          "letra": "B",
+          "texto": "Conseguiria somente se houvesse parcelamento ou uma opção de valor mais acessível.",
+          "pontuacao": null,
+          "codigo_interno": "CAPACIDADE_PARCELADA"
+        },
+        {
+          "letra": "C",
+          "texto": "Atualmente teria dificuldade de assumir qualquer novo compromisso financeiro.",
+          "pontuacao": null,
+          "codigo_interno": "SEM_CAPACIDADE_ATUAL"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "codigo": "P39",
+      "etapa": "motivacao",
+      "area": "desejo_transformacao",
+      "pontua": false,
+      "pergunta": "Você gostaria de construir um relacionamento com mais diálogo, carinho, intimidade, respeito, companheirismo e compreensão entre vocês?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Quero preservar o que temos de bom e melhorar aquilo que for necessário.",
+          "pontuacao": null,
+          "codigo_interno": "MOTIVACAO_ALTA"
+        },
+        {
+          "letra": "B",
+          "texto": "Sim. Acredito que nosso relacionamento poderia ser muito melhor se conseguíssemos trabalhar alguns pontos.",
+          "pontuacao": null,
+          "codigo_interno": "MOTIVACAO_MEDIA"
+        },
+        {
+          "letra": "C",
+          "texto": "Atualmente parece difícil, mas gostaria muito de voltar a acreditar que podemos viver um relacionamento melhor.",
+          "pontuacao": null,
+          "codigo_interno": "MOTIVACAO_COM_BAIXA_ESPERANCA"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "codigo": "P40",
+      "etapa": "motivacao",
+      "area": "prontidao_processo",
+      "pontua": false,
+      "pergunta": "Se vocês pudessem descobrir com clareza onde pensam igual, onde pensam diferente e tivessem uma maneira organizada de conversar e construir acordos, você estaria disposto(a) a participar desse processo?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sim. Gostaria de compreender melhor nosso relacionamento e construir esses acordos.",
+          "pontuacao": null,
+          "codigo_interno": "PRONTIDAO_ALTA"
+        },
+        {
+          "letra": "B",
+          "texto": "Talvez. Tenho interesse, mas gostaria primeiro de entender melhor como o processo funciona.",
+          "pontuacao": null,
+          "codigo_interno": "PRONTIDAO_MEDIA"
+        },
+        {
+          "letra": "C",
+          "texto": "Tenho dúvidas se conseguiremos mudar, mas reconheço que precisamos encontrar uma maneira diferente de lidar com nossos problemas.",
+          "pontuacao": null,
+          "codigo_interno": "PRONTIDAO_BAIXA_OU_CETICA"
+        }
+      ]
+    }
+  ]
+}
