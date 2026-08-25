@@ -1,0 +1,235 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum CoupleStatus {
+  PENDING
+  ACTIVE
+  INACTIVE
+}
+
+enum CoupleMemberRole {
+  CREATOR
+  PARTNER
+}
+
+enum QuestionnaireAttemptStatus {
+  STARTED
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum CoupleInviteStatus {
+  PENDING
+  ACCEPTED
+  EXPIRED
+  CANCELLED
+}
+
+model User {
+  id                String                 @id @default(uuid()) @db.Char(36)
+  email             String                 @unique(map: "uq_users_email") @db.VarChar(191)
+  name              String                 @db.VarChar(191)
+  passwordHash      String?                @map("password_hash") @db.VarChar(255)
+  role              UserRole               @default(USER)
+  createdAt         DateTime               @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt         DateTime               @updatedAt @map("updated_at") @db.DateTime(3)
+  coupleMemberships CoupleMember[]
+  attempts          QuestionnaireAttempt[]
+  createdInvites    CoupleInvite[]         @relation("CoupleInviteCreator")
+
+  @@map("users")
+}
+
+model Couple {
+  id        String                 @id @default(uuid()) @db.Char(36)
+  status    CoupleStatus           @default(PENDING)
+  createdAt DateTime               @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt DateTime               @updatedAt @map("updated_at") @db.DateTime(3)
+  members   CoupleMember[]
+  attempts  QuestionnaireAttempt[]
+  invites   CoupleInvite[]
+
+  @@map("couples")
+}
+
+model CoupleMember {
+  id       String           @id @default(uuid()) @db.Char(36)
+  coupleId String           @map("couple_id") @db.Char(36)
+  userId   String           @map("user_id") @db.Char(36)
+  role     CoupleMemberRole
+  joinedAt DateTime         @default(now()) @map("joined_at") @db.DateTime(3)
+  couple   Couple           @relation(fields: [coupleId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_members_couple")
+  user     User             @relation(fields: [userId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_members_user")
+
+  @@unique([coupleId, userId], map: "uq_couple_members_couple_user")
+  @@index([userId], map: "idx_couple_members_user")
+  @@map("couple_members")
+}
+
+model Questionnaire {
+  id        String                 @id @default(uuid()) @db.Char(36)
+  code      String                 @db.VarChar(100)
+  name      String                 @db.VarChar(191)
+  version   String                 @db.VarChar(20)
+  isActive  Boolean                @default(false) @map("is_active")
+  createdAt DateTime               @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt DateTime               @updatedAt @map("updated_at") @db.DateTime(3)
+  questions Question[]
+  attempts  QuestionnaireAttempt[]
+
+  @@unique([code, version], map: "uq_questionnaires_code_version")
+  @@map("questionnaires")
+}
+
+model Question {
+  id              String           @id @default(uuid()) @db.Char(36)
+  questionnaireId String           @map("questionnaire_id") @db.Char(36)
+  code            String           @db.VarChar(20)
+  order           Int              @map("sort_order")
+  stage           String           @db.VarChar(80)
+  area            String           @db.VarChar(80)
+  text            String           @db.Text
+  description     String?          @db.Text
+  isScored        Boolean          @default(true) @map("is_scored")
+  isPrivate       Boolean          @default(false) @map("is_private")
+  isActive        Boolean          @default(true) @map("is_active")
+  createdAt       DateTime         @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt       DateTime         @updatedAt @map("updated_at") @db.DateTime(3)
+  questionnaire   Questionnaire    @relation(fields: [questionnaireId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_questions_questionnaire")
+  options         QuestionOption[]
+  answers         Answer[]
+  resultFlags     ResultFlag[]
+
+  @@unique([questionnaireId, code], map: "uq_questions_questionnaire_code")
+  @@unique([questionnaireId, order], map: "uq_questions_questionnaire_order")
+  @@map("questions")
+}
+
+model QuestionOption {
+  id           String   @id @default(uuid()) @db.Char(36)
+  questionId   String   @map("question_id") @db.Char(36)
+  letter       String   @db.Char(1)
+  text         String   @db.Text
+  score        Decimal? @db.Decimal(8, 2)
+  internalCode String?  @map("internal_code") @db.VarChar(100)
+  flag         String?  @db.VarChar(100)
+  order        Int      @map("sort_order")
+  createdAt    DateTime @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt    DateTime @updatedAt @map("updated_at") @db.DateTime(3)
+  question     Question @relation(fields: [questionId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_question_options_question")
+  answers      Answer[]
+
+  @@unique([questionId, letter], map: "uq_question_options_question_letter")
+  @@unique([questionId, order], map: "uq_question_options_question_order")
+  @@map("question_options")
+}
+
+model QuestionnaireAttempt {
+  id                   String                     @id @default(uuid()) @db.Char(36)
+  questionnaireId      String                     @map("questionnaire_id") @db.Char(36)
+  userId               String                     @map("user_id") @db.Char(36)
+  coupleId             String?                    @map("couple_id") @db.Char(36)
+  status               QuestionnaireAttemptStatus @default(STARTED)
+  startedAt            DateTime                   @default(now()) @map("started_at") @db.DateTime(3)
+  completedAt          DateTime?                  @map("completed_at") @db.DateTime(3)
+  totalScore           Decimal?                   @map("total_score") @db.Decimal(10, 2)
+  questionnaireVersion String                     @map("questionnaire_version") @db.VarChar(20)
+  createdAt            DateTime                   @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt            DateTime                   @updatedAt @map("updated_at") @db.DateTime(3)
+  questionnaire        Questionnaire              @relation(fields: [questionnaireId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_attempts_questionnaire")
+  user                 User                       @relation(fields: [userId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_attempts_user")
+  couple               Couple?                    @relation(fields: [coupleId], references: [id], onDelete: SetNull, onUpdate: Cascade, map: "fk_attempts_couple")
+  answers              Answer[]
+  areaResults          AreaResult[]
+  resultFlags          ResultFlag[]
+
+  @@index([userId], map: "idx_attempts_user")
+  @@index([coupleId], map: "idx_attempts_couple")
+  @@index([questionnaireId], map: "idx_attempts_questionnaire")
+  @@index([status], map: "idx_attempts_status")
+  @@map("questionnaire_attempts")
+}
+
+model Answer {
+  id         String               @id @default(uuid()) @db.Char(36)
+  attemptId  String               @map("attempt_id") @db.Char(36)
+  questionId String               @map("question_id") @db.Char(36)
+  optionId   String               @map("option_id") @db.Char(36)
+  score      Decimal?             @db.Decimal(8, 2)
+  answeredAt DateTime             @default(now()) @map("answered_at") @db.DateTime(3)
+  createdAt  DateTime             @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt  DateTime             @updatedAt @map("updated_at") @db.DateTime(3)
+  attempt    QuestionnaireAttempt @relation(fields: [attemptId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_answers_attempt")
+  question   Question             @relation(fields: [questionId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_answers_question")
+  option     QuestionOption       @relation(fields: [optionId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_answers_option")
+
+  @@unique([attemptId, questionId], map: "uq_answers_attempt_question")
+  @@index([questionId], map: "idx_answers_question")
+  @@index([optionId], map: "idx_answers_option")
+  @@map("answers")
+}
+
+model AreaResult {
+  id             String               @id @default(uuid()) @db.Char(36)
+  attemptId      String               @map("attempt_id") @db.Char(36)
+  area           String               @db.VarChar(80)
+  score          Decimal              @db.Decimal(10, 2)
+  maxScore       Decimal              @map("max_score") @db.Decimal(10, 2)
+  averageScore   Decimal              @map("average_score") @db.Decimal(8, 2)
+  classification String               @db.VarChar(100)
+  createdAt      DateTime             @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt      DateTime             @updatedAt @map("updated_at") @db.DateTime(3)
+  attempt        QuestionnaireAttempt @relation(fields: [attemptId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_area_results_attempt")
+
+  @@unique([attemptId, area], map: "uq_area_results_attempt_area")
+  @@map("area_results")
+}
+
+model ResultFlag {
+  id         String               @id @default(uuid()) @db.Char(36)
+  attemptId  String               @map("attempt_id") @db.Char(36)
+  questionId String?              @map("question_id") @db.Char(36)
+  code       String               @db.VarChar(100)
+  severity   String               @db.VarChar(50)
+  createdAt  DateTime             @default(now()) @map("created_at") @db.DateTime(3)
+  attempt    QuestionnaireAttempt @relation(fields: [attemptId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_result_flags_attempt")
+  question   Question?            @relation(fields: [questionId], references: [id], onDelete: SetNull, onUpdate: Cascade, map: "fk_result_flags_question")
+
+  @@index([attemptId], map: "idx_result_flags_attempt")
+  @@index([code], map: "idx_result_flags_code")
+  @@index([questionId], map: "idx_result_flags_question")
+  @@map("result_flags")
+}
+
+model CoupleInvite {
+  id              String             @id @default(uuid()) @db.Char(36)
+  coupleId        String             @map("couple_id") @db.Char(36)
+  createdByUserId String             @map("created_by_user_id") @db.Char(36)
+  email           String             @db.VarChar(191)
+  tokenHash       String             @unique(map: "uq_couple_invites_token_hash") @map("token_hash") @db.Char(64)
+  status          CoupleInviteStatus @default(PENDING)
+  expiresAt       DateTime           @map("expires_at") @db.DateTime(3)
+  acceptedAt      DateTime?          @map("accepted_at") @db.DateTime(3)
+  createdAt       DateTime           @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt       DateTime           @updatedAt @map("updated_at") @db.DateTime(3)
+  couple          Couple             @relation(fields: [coupleId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_invites_couple")
+  createdBy       User               @relation("CoupleInviteCreator", fields: [createdByUserId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_invites_creator")
+
+  @@index([email], map: "idx_couple_invites_email")
+  @@index([coupleId], map: "idx_couple_invites_couple")
+  @@index([createdByUserId], map: "idx_couple_invites_creator")
+  @@index([expiresAt], map: "idx_couple_invites_expires_at")
+  @@index([status], map: "idx_couple_invites_status")
+  @@map("couple_invites")
+}
