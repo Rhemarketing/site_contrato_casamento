@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Alert, Badge, Card, PageContainer, ProgressBar } from "@/components/ui";
+import { requireUser } from "@/lib/auth/current-user";
 
 export const metadata: Metadata = { title: "Questionário de admissão" };
 
-export default function QuestionnairePage() {
+export default async function QuestionnairePage() {
+  await requireUser("/admissao/questionario");
   return (
     <PageContainer className="py-10 sm:py-16">
       <div className="mx-auto max-w-3xl">

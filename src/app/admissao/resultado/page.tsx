@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Alert, Badge, Card, PageContainer } from "@/components/ui";
+import { requireUser } from "@/lib/auth/current-user";
 
 export const metadata: Metadata = { title: "Resultado individual" };
 
-export default function AdmissionResultPage() {
+export default async function AdmissionResultPage() {
+  await requireUser("/admissao/resultado");
   return (
     <PageContainer className="py-12 sm:py-16">
       <div className="mx-auto max-w-3xl">
