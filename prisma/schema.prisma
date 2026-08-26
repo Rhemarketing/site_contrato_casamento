@@ -145,6 +145,7 @@ model QuestionnaireAttempt {
   completedAt          DateTime?                  @map("completed_at") @db.DateTime(3)
   totalScore           Decimal?                   @map("total_score") @db.Decimal(10, 2)
   questionnaireVersion String                     @map("questionnaire_version") @db.VarChar(20)
+  openAttemptKey       String?                    @unique(map: "uq_attempts_open_attempt_key") @map("open_attempt_key") @db.VarChar(191)
   createdAt            DateTime                   @default(now()) @map("created_at") @db.DateTime(3)
   updatedAt            DateTime                   @updatedAt @map("updated_at") @db.DateTime(3)
   questionnaire        Questionnaire              @relation(fields: [questionnaireId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_attempts_questionnaire")
@@ -206,6 +207,7 @@ model ResultFlag {
   attempt    QuestionnaireAttempt @relation(fields: [attemptId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_result_flags_attempt")
   question   Question?            @relation(fields: [questionId], references: [id], onDelete: SetNull, onUpdate: Cascade, map: "fk_result_flags_question")
 
+  @@unique([attemptId, code], map: "uq_result_flags_attempt_code")
   @@index([attemptId], map: "idx_result_flags_attempt")
   @@index([code], map: "idx_result_flags_code")
   @@index([questionId], map: "idx_result_flags_question")

@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [react()],
   resolve: { tsconfigPaths: true },
   test: {
+    fileParallelism: false,
     environment: "jsdom",
     env: loadEnv(mode, process.cwd(), ""),
     setupFiles: ["./vitest.setup.ts"],
