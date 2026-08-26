@@ -1,7 +1,8 @@
 export const ADMISSION_PRIVATE_QUESTION_CODES = ["P31", "P32", "P33"] as const;
 export const ADMISSION_SHAREABLE_QUESTION_CODES = [
   ...Array.from({ length: 30 }, (_, index) => `P${String(index + 1).padStart(2, "0")}`),
-  ...Array.from({ length: 7 }, (_, index) => `P${String(index + 34).padStart(2, "0")}`),
+  "P39",
+  "P40",
 ] as const;
 
 export const PRIVATE_ANSWER_POLICY = {

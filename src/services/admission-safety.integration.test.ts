@@ -116,14 +116,15 @@ describe("acesso privado e compartilhável das respostas P31-P33", () => {
     await expect(safetyService.getPrivateSafetyResultForUser(admin.id, owner.attempt.id)).rejects.toMatchObject({ code: "PRIVATE_RESULT_FORBIDDEN" });
   });
 
-  it("DTO compartilhável exclui completamente P31-P33 e códigos internos", async () => {
+  it("DTO aprovado para compartilhamento exclui P31-P38 e códigos internos", async () => {
     const owner = await createCompletedAttempt("shareable", ["C", "C", "C"]);
     const shareable = await safetyService.getShareableAnswersForOwner(owner.user.id, owner.attempt.id);
-    expect(shareable).toHaveLength(37);
+    expect(shareable).toHaveLength(32);
     expect(shareable.map(({ questionCode }) => questionCode)).toContain("P30");
-    expect(shareable.map(({ questionCode }) => questionCode)).toContain("P34");
+    expect(shareable.map(({ questionCode }) => questionCode)).not.toContain("P34");
+    expect(shareable.map(({ questionCode }) => questionCode)).toContain("P39");
     const serialized = JSON.stringify(shareable);
-    expect(serialized).not.toMatch(/P31|P32|P33|SAFETY_|CONSENT_|answerId|optionId|privateAnswersHidden|hasSafetyAlert|safetyDataAvailable/);
+    expect(serialized).not.toMatch(/P31|P32|P33|P34|P35|P36|P37|P38|SAFETY_|CONSENT_|answerId|optionId|privateAnswersHidden|hasSafetyAlert|safetyDataAvailable/);
   });
 
   it("alterar P31-P33 não muda score, áreas, counts ou ResultFlag", async () => {

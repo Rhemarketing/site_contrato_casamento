@@ -50,6 +50,7 @@ describe("política e motor privado de segurança", () => {
     expect(isShareableAdmissionQuestion({ code: "P31", isPrivate: false })).toBe(false);
     expect(isShareableAdmissionQuestion({ code: "P20", isPrivate: true })).toBe(false);
     expect(isShareableAdmissionQuestion({ code: "P20", isPrivate: false })).toBe(true);
+    expect(isShareableAdmissionQuestion({ code: "P34", isPrivate: false })).toBe(false);
     expect(isShareableAdmissionQuestion({ code: "P41", isPrivate: false })).toBe(false);
   });
 });
