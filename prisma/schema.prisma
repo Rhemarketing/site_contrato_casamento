@@ -64,15 +64,17 @@ model Couple {
 }
 
 model CoupleMember {
-  id       String           @id @default(uuid()) @db.Char(36)
-  coupleId String           @map("couple_id") @db.Char(36)
-  userId   String           @map("user_id") @db.Char(36)
-  role     CoupleMemberRole
-  joinedAt DateTime         @default(now()) @map("joined_at") @db.DateTime(3)
-  couple   Couple           @relation(fields: [coupleId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_members_couple")
-  user     User             @relation(fields: [userId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_members_user")
+  id                  String           @id @default(uuid()) @db.Char(36)
+  coupleId            String           @map("couple_id") @db.Char(36)
+  userId              String           @map("user_id") @db.Char(36)
+  role                CoupleMemberRole
+  activeMembershipKey String?          @unique(map: "uq_couple_members_active_membership_key") @map("active_membership_key") @db.VarChar(191)
+  joinedAt            DateTime         @default(now()) @map("joined_at") @db.DateTime(3)
+  couple              Couple           @relation(fields: [coupleId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_members_couple")
+  user                User             @relation(fields: [userId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_members_user")
 
   @@unique([coupleId, userId], map: "uq_couple_members_couple_user")
+  @@unique([coupleId, role], map: "uq_couple_members_couple_role")
   @@index([userId], map: "idx_couple_members_user")
   @@map("couple_members")
 }
@@ -220,6 +222,7 @@ model CoupleInvite {
   createdByUserId String             @map("created_by_user_id") @db.Char(36)
   email           String             @db.VarChar(191)
   tokenHash       String             @unique(map: "uq_couple_invites_token_hash") @map("token_hash") @db.Char(64)
+  activeInviteKey String?            @unique(map: "uq_couple_invites_active_invite_key") @map("active_invite_key") @db.VarChar(191)
   status          CoupleInviteStatus @default(PENDING)
   expiresAt       DateTime           @map("expires_at") @db.DateTime(3)
   acceptedAt      DateTime?          @map("accepted_at") @db.DateTime(3)
