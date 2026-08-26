@@ -2,8 +2,23 @@ import "server-only";
 
 import { createPrismaClient } from "@/lib/create-prisma-client";
 
-const globalForPrisma = globalThis as unknown as { prisma?: ReturnType<typeof createPrismaClient> };
+type AppPrismaClient = ReturnType<typeof createPrismaClient>;
 
-export const db = globalForPrisma.prisma ?? createPrismaClient();
+const globalForPrisma = globalThis as unknown as { prisma?: AppPrismaClient };
+let prisma = globalForPrisma.prisma;
 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = db;
+function getPrismaClient() {
+  if (!prisma) {
+    prisma = createPrismaClient();
+    if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+  }
+  return prisma;
+}
+
+export const db = new Proxy({} as AppPrismaClient, {
+  get(_target, property) {
+    const client = getPrismaClient();
+    const value = Reflect.get(client, property, client);
+    return typeof value === "function" ? value.bind(client) : value;
+  },
+});
