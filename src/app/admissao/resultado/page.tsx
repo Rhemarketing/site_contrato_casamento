@@ -1,19 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Alert, Badge, Card, PageContainer } from "@/components/ui";
+import { PrivateSafetyGuidance } from "@/features/admission/components/private-safety-guidance";
 import { requireUser } from "@/lib/auth/current-user";
 import { db } from "@/lib/db";
 import { AdmissionAttemptError } from "@/services/admission-attempt.errors";
 import { AdmissionResultService } from "@/services/admission-result.service";
+import { AdmissionSafetyService } from "@/services/admission-safety.service";
 import type { AdmissionCalculatedResult } from "@/types/admission-result";
+import type { AdmissionPrivateSafetyResult } from "@/types/admission-safety";
 
 export const metadata: Metadata = { title: "Resultado individual" };
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default async function AdmissionResultPage() {
   const user = await requireUser("/admissao/resultado");
   let result: AdmissionCalculatedResult | null = null;
+  let safetyResult: AdmissionPrivateSafetyResult | null = null;
   try {
     result = await new AdmissionResultService(db).getAdmissionResultForUser(user.id);
+    safetyResult = await new AdmissionSafetyService(db).getPrivateSafetyResultForUser(user.id);
   } catch (error) {
     if (!(error instanceof AdmissionAttemptError) || error.code !== "RESULT_NOT_FOUND") throw error;
   }
@@ -34,6 +41,7 @@ export default async function AdmissionResultPage() {
         ) : (
           <Alert variant="warning" className="mt-8">Nenhum cálculo foi executado ao abrir esta página. Resultados pendentes exigem uma operação interna explícita.</Alert>
         )}
+        {safetyResult ? <PrivateSafetyGuidance result={safetyResult} /> : null}
         <Alert className="mt-6" title="Privacidade preservada">As respostas privadas não fazem parte da pontuação, das áreas ou das flags conjugais.</Alert>
         <Link href="/dashboard" className="mt-8 inline-flex min-h-12 items-center rounded-full bg-brand px-6 font-semibold text-white hover:bg-brand-strong">Ir para o painel</Link>
       </div>
