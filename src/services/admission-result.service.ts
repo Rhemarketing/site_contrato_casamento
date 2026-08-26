@@ -1,12 +1,17 @@
 import type { Prisma, PrismaClient } from "@/generated/prisma/client";
 import { ADMISSION_QUESTIONNAIRE_CODE, ADMISSION_QUESTIONNAIRE_VERSION } from "@/config/admission-questionnaire";
 import {
+  ADMISSION_AREA_CLASSIFICATIONS,
+  ADMISSION_FLAG_SEVERITY,
+  ADMISSION_MAX_SCORE,
   ADMISSION_PRIORITY_FLAGS,
+  ADMISSION_SCORED_QUESTION_CODES,
   ADMISSION_SCORE_AREAS,
 } from "@/features/admission/domain/admission-score-config";
 import {
   AdmissionResultConfigurationError,
   calculateAdmissionResult,
+  classifyAdmissionScore,
 } from "@/features/admission/domain/admission-scoring";
 import type { AdmissionCalculatedResult, AdmissionScoringQuestion } from "@/types/admission-result";
 import { AdmissionAttemptError } from "./admission-attempt.errors";
@@ -164,26 +169,56 @@ export class AdmissionResultService {
       orderBy: { completedAt: "desc" },
       include: {
         areaResults: { orderBy: { area: "asc" } },
-        resultFlags: { orderBy: { code: "asc" } },
+        resultFlags: { orderBy: { code: "asc" }, include: { question: { select: { code: true } } } },
+        answers: {
+          where: { question: { isScored: true } },
+          select: { question: { select: { code: true } }, option: { select: { letter: true } } },
+        },
       },
     });
     if (!attempt || attempt.totalScore === null) throw new AdmissionAttemptError("RESULT_NOT_FOUND");
-
-    const questions = await this.client.$transaction((transaction) => this.loadScoringQuestions(transaction, attempt.questionnaireId, attempt.id));
-    const calculated = calculateAdmissionResult(questions);
-    if (Number(attempt.totalScore) !== calculated.totalScore || attempt.areaResults.length !== 9) {
+    const totalScore = Number(attempt.totalScore);
+    if (!Number.isInteger(totalScore) || totalScore < 0 || totalScore > ADMISSION_MAX_SCORE || attempt.areaResults.length !== 9) {
       throw new AdmissionAttemptError("RESULT_CONFIGURATION_ERROR");
     }
-    const persistedAreas = new Map(attempt.areaResults.map((area) => [area.area, area]));
-    if (calculated.areas.some((area) => {
-      const persisted = persistedAreas.get(area.area);
-      return !persisted || Number(persisted.score) !== area.score || Number(persisted.maxScore) !== area.maxScore ||
-        persisted.averageScore.toFixed(2) !== area.averageScore || persisted.classification !== area.classification;
-    })) throw new AdmissionAttemptError("RESULT_CONFIGURATION_ERROR");
-    if (
-      attempt.resultFlags.length !== calculated.flags.length ||
-      calculated.flags.some((flag) => !attempt.resultFlags.some((persisted) => persisted.code === flag.code && persisted.severity === flag.severity))
-    ) throw new AdmissionAttemptError("RESULT_CONFIGURATION_ERROR");
-    return calculated;
+
+    const areaConfig = new Map(ADMISSION_SCORE_AREAS.map((area) => [area.key, area]));
+    const knownAreaClassifications = new Set(Object.values(ADMISSION_AREA_CLASSIFICATIONS));
+    const areas = attempt.areaResults.map((area) => {
+      const expected = areaConfig.get(area.area as typeof ADMISSION_SCORE_AREAS[number]["key"]);
+      const score = Number(area.score);
+      const maxScore = Number(area.maxScore);
+      const averageScore = area.averageScore.toFixed(2);
+      if (!expected || maxScore !== expected.maxScore || score < 0 || score > maxScore || Number(averageScore) < 0 || Number(averageScore) > 2 ||
+        !knownAreaClassifications.has(area.classification as typeof ADMISSION_AREA_CLASSIFICATIONS[keyof typeof ADMISSION_AREA_CLASSIFICATIONS])) {
+        throw new AdmissionAttemptError("RESULT_CONFIGURATION_ERROR");
+      }
+      return { area: area.area, score, maxScore, averageScore, classification: area.classification as typeof ADMISSION_AREA_CLASSIFICATIONS[keyof typeof ADMISSION_AREA_CLASSIFICATIONS] };
+    }).sort((left, right) => ADMISSION_SCORE_AREAS.findIndex(({ key }) => key === left.area) - ADMISSION_SCORE_AREAS.findIndex(({ key }) => key === right.area));
+    if (new Set(areas.map(({ area }) => area)).size !== 9 || areas.reduce((sum, area) => sum + area.score, 0) !== totalScore) {
+      throw new AdmissionAttemptError("RESULT_CONFIGURATION_ERROR");
+    }
+
+    const scoredCodes = new Set<string>(ADMISSION_SCORED_QUESTION_CODES);
+    const answerCounts = { A: 0, B: 0, C: 0 };
+    if (attempt.answers.length !== 25 || attempt.answers.some(({ question }) => !scoredCodes.has(question.code))) {
+      throw new AdmissionAttemptError("RESULT_CONFIGURATION_ERROR");
+    }
+    for (const answer of attempt.answers) {
+      if (!Object.hasOwn(answerCounts, answer.option.letter)) throw new AdmissionAttemptError("RESULT_CONFIGURATION_ERROR");
+      answerCounts[answer.option.letter as keyof typeof answerCounts] += 1;
+    }
+
+    const expectedFlagByCode = new Map<string, string>(Object.entries(ADMISSION_PRIORITY_FLAGS).map(([questionCode, code]) => [code, questionCode]));
+    const flags = attempt.resultFlags.map((flag) => {
+      const expectedQuestionCode = expectedFlagByCode.get(flag.code);
+      if (!expectedQuestionCode || flag.severity !== ADMISSION_FLAG_SEVERITY || flag.question?.code !== expectedQuestionCode) {
+        throw new AdmissionAttemptError("RESULT_CONFIGURATION_ERROR");
+      }
+      return { code: flag.code, questionId: flag.questionId ?? "", questionCode: expectedQuestionCode, severity: ADMISSION_FLAG_SEVERITY };
+    }).sort((left, right) => Object.values(ADMISSION_PRIORITY_FLAGS).indexOf(left.code as typeof ADMISSION_PRIORITY_FLAGS[keyof typeof ADMISSION_PRIORITY_FLAGS]) - Object.values(ADMISSION_PRIORITY_FLAGS).indexOf(right.code as typeof ADMISSION_PRIORITY_FLAGS[keyof typeof ADMISSION_PRIORITY_FLAGS]));
+    if (new Set(flags.map(({ code }) => code)).size !== flags.length) throw new AdmissionAttemptError("RESULT_CONFIGURATION_ERROR");
+
+    return { totalScore, maxScore: ADMISSION_MAX_SCORE, classification: classifyAdmissionScore(totalScore), answerCounts, areas, flags };
   }
 }
