@@ -5,7 +5,7 @@ import { requireUser } from "@/lib/auth/current-user";
 import { db } from "@/lib/db";
 import { CoupleService } from "@/services/couple.service";
 
-export const metadata: Metadata = { title: "Casal" };
+export const metadata: Metadata = { title: "Seu relacionamento", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 

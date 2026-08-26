@@ -4,15 +4,20 @@ import { PageContainer } from "@/components/ui/page-container";
 import { publicNavigation } from "@/config/navigation";
 import { getCurrentUser } from "@/lib/auth/current-user";
 
+const authenticatedNavigation = [
+  { label: "Dashboard", href: "/dashboard" },
+  { label: "Minha prova", href: "/admissao/questionario" },
+  { label: "Casal", href: "/casal" },
+];
+
 export async function SiteHeader() {
   const user = await getCurrentUser();
   return (
     <header className="border-b border-line bg-surface/95">
-      <PageContainer className="flex min-h-18 items-center justify-between gap-5 py-3">
+      <PageContainer className="flex min-h-18 flex-wrap items-center justify-between gap-x-5 gap-y-2 py-3">
         <Link href="/" className="font-serif text-lg font-bold leading-tight text-brand-strong sm:text-xl">Contrato<br className="sm:hidden" /> de Casamento</Link>
-        <nav aria-label="Navegação principal" className="hidden items-center gap-6 md:flex">
-          {publicNavigation.map((item) => <Link key={item.href} href={item.href} className="text-sm font-medium text-muted transition hover:text-brand">{item.label}</Link>)}
-          {user ? <Link href="/dashboard" className="text-sm font-medium text-muted transition hover:text-brand">Dashboard</Link> : null}
+        <nav aria-label="Navegação principal" className="order-3 flex w-full items-center gap-5 overflow-x-auto py-1 md:order-none md:w-auto md:overflow-visible">
+          {(user ? authenticatedNavigation : publicNavigation).map((item) => <Link key={item.href} href={item.href} className="whitespace-nowrap text-sm font-medium text-muted transition hover:text-brand">{item.label}</Link>)}
           {user?.role === "ADMIN" ? <Link href="/admin" className="text-sm font-medium text-muted transition hover:text-brand">Administração</Link> : null}
         </nav>
         <div className="flex items-center gap-2">

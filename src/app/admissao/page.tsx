@@ -14,10 +14,10 @@ export default function AdmissionPage() {
       <PageContainer className="py-12 sm:py-16">
         <AdmissionOverview />
         <Alert title="Seu espaço continua sendo seu" className="mt-8">
-          Respostas privadas não são exibidas automaticamente ao parceiro. Nesta etapa inicial, o questionário ainda é apenas uma demonstração de interface.
+          São 40 perguntas respondidas individualmente. Respostas privadas não são exibidas automaticamente ao parceiro, mesmo quando as duas contas estiverem conectadas.
         </Alert>
         <div className="mt-8 flex justify-center">
-          <Link href="/admissao/questionario" className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 font-semibold text-white transition hover:bg-brand-strong">Começar apresentação</Link>
+          <Link href="/admissao/questionario" className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 font-semibold text-white transition hover:bg-brand-strong">Começar</Link>
         </div>
       </PageContainer>
     </>

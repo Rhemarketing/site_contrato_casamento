@@ -42,7 +42,11 @@ describe("authentication integration", () => {
   });
 
   it("autentica somente credenciais corretas sem expor passwordHash", async () => {
-    const valid = await authenticateCredentials({ email: email.toUpperCase(), password }, repository);
+    const valid = await authenticateCredentials({
+      email: email.toUpperCase(),
+      password,
+      callbackUrl: "/dashboard",
+    }, repository);
     expect(valid?.id).toBeTruthy();
     expect(valid).not.toHaveProperty("passwordHash");
     await expect(authenticateCredentials({ email, password: "senha-incorreta" }, repository)).resolves.toBeNull();

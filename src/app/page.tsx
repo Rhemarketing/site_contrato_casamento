@@ -36,7 +36,7 @@ export default function HomePage() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 font-semibold text-white transition hover:bg-brand-strong" href="/admissao">
-                Conhecer a Prova de Admissão
+                Fazer minha Prova de Admissão
               </Link>
               <Link className="inline-flex min-h-12 items-center justify-center rounded-full border border-line bg-surface px-6 py-3 font-semibold text-brand transition hover:border-brand" href="/cadastro">
                 Criar uma conta

@@ -11,7 +11,7 @@ import { AdmissionIndividualReportService } from "@/services/admission-individua
 import type { AdmissionIndividualReportState } from "@/types/admission-report";
 
 export const metadata: Metadata = {
-  title: "Resultado individual",
+  title: "Seu resultado",
   robots: { index: false, follow: false },
 };
 export const dynamic = "force-dynamic";

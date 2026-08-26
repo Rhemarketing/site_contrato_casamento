@@ -1,6 +1,7 @@
 import type { NextAuthConfig } from "next-auth";
 import { getAuthSecret } from "@/config/env";
 import { canAccessRoute, getRouteAccess } from "@/lib/auth/route-access";
+import { addTokenIdentityToSession, addUserRoleToToken } from "@/lib/auth/session-callbacks";
 
 export default {
   providers: [],
@@ -8,6 +9,8 @@ export default {
   secret: getAuthSecret(),
   session: { strategy: "jwt" },
   callbacks: {
+    jwt({ token, user }) { return addUserRoleToToken(token, user); },
+    session({ session, token }) { return addTokenIdentityToSession(session, token); },
     authorized({ auth, request }) {
       const pathname = request.nextUrl.pathname;
       const access = getRouteAccess(pathname);

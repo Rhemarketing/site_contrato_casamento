@@ -38,7 +38,11 @@ export async function registerUser(input: unknown, repository: UserRepository) {
 }
 
 export async function authenticateCredentials(input: unknown, repository: UserRepository) {
-  const parsed = loginSchema.safeParse(input);
+  const raw = input as Record<string, unknown>;
+  const parsed = loginSchema.safeParse({
+    email: raw?.email,
+    password: raw?.password,
+  });
   if (!parsed.success) return null;
   const user = await repository.findByEmail(normalizeEmail(parsed.data.email));
   if (!user?.passwordHash || !(await verifyPassword(parsed.data.password, user.passwordHash))) return null;
