@@ -7,7 +7,7 @@ import { PrismaCoupleComparisonRepository } from "@/repositories/prisma/prisma-c
 import { CoupleComparisonService } from "@/services/couple-comparison.service";
 
 export const metadata: Metadata = {
-  title: "Comparação do casal",
+  title: "Comparação das percepções do casal",
   robots: { index: false, follow: false },
 };
 export const dynamic = "force-dynamic";
@@ -24,8 +24,8 @@ export default async function CoupleComparisonPage({
   return (
     <WorkspacePage
       eyebrow="Consentimento mútuo"
-      title="Comparação do casal"
-      description="Um espaço protegido para observar diferenças de percepção somente quando as duas pessoas autorizarem."
+      title="Comparação das percepções do casal"
+      description="Este relatório mostra onde vocês percebem o relacionamento de maneira semelhante e onde existem diferenças que podem merecer conversa."
     >
       <CoupleComparisonOverview state={state} error={error} />
     </WorkspacePage>
