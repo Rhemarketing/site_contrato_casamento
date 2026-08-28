@@ -4,6 +4,9 @@ export const ADMISSION_SHAREABLE_QUESTION_CODES = [
   "P39",
   "P40",
 ] as const;
+export const ADMISSION_COMPARISON_QUESTION_CODES = Object.freeze(
+  Array.from({ length: 25 }, (_, index) => `P${String(index + 6).padStart(2, "0")}`),
+);
 
 export const PRIVATE_ANSWER_POLICY = {
   comparisonEligible: false,
@@ -20,6 +23,11 @@ export function isShareableAdmissionQuestion(question: { code: string; isPrivate
   return question.isPrivate === false &&
     ADMISSION_SHAREABLE_QUESTION_CODES.includes(question.code) &&
     !isPrivateAdmissionQuestion(question);
+}
+
+export function isComparisonEligibleAdmissionQuestion(question: { code: string; isPrivate: boolean }) {
+  return isShareableAdmissionQuestion(question) &&
+    ADMISSION_COMPARISON_QUESTION_CODES.includes(question.code);
 }
 
 export function canViewPrivateAnswer(viewerUserId: string, ownerUserId: string) {

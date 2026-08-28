@@ -1,4 +1,5 @@
 import { cancelCoupleInviteAction, cancelPendingCoupleAction } from "@/app/actions/couple.actions";
+import Link from "next/link";
 import { Alert } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -68,6 +69,12 @@ export function CoupleOverview({ overview, error }: { overview: CoupleOverviewDt
         <div><dt className="text-sm font-semibold">Conectado em</dt><dd className="text-muted">{formatDate(overview.joinedAt)}</dd></div>
       </dl>
       <Alert className="mt-6">O vínculo conecta somente as contas. Nenhuma resposta, nota ou informação privada é compartilhada nesta etapa.</Alert>
+      <Link
+        href="/casal/comparacao"
+        className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-strong"
+      >
+        Acessar comparação
+      </Link>
     </Card>
   );
 }

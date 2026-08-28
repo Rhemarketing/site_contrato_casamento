@@ -1,7 +1,11 @@
 import { describe, expect, it } from "vitest";
 import type { AdmissionSafetyInput } from "@/types/admission-safety";
 import { calculateAdmissionSafety, mapSafetyInternalCode } from "./admission-safety";
-import { canViewPrivateAnswer, isShareableAdmissionQuestion } from "./private-answer-policy";
+import {
+  canViewPrivateAnswer,
+  isComparisonEligibleAdmissionQuestion,
+  isShareableAdmissionQuestion,
+} from "./private-answer-policy";
 
 function input(questionCode: string, internalCode: string): AdmissionSafetyInput {
   return { questionCode, internalCode, isPrivate: true, isScored: false, answerScore: null, optionScore: null };
@@ -52,5 +56,14 @@ describe("política e motor privado de segurança", () => {
     expect(isShareableAdmissionQuestion({ code: "P20", isPrivate: false })).toBe(true);
     expect(isShareableAdmissionQuestion({ code: "P34", isPrivate: false })).toBe(false);
     expect(isShareableAdmissionQuestion({ code: "P41", isPrivate: false })).toBe(false);
+  });
+
+  it("restringe comparação a P06-P30 mesmo entre perguntas compartilháveis", () => {
+    expect(isComparisonEligibleAdmissionQuestion({ code: "P06", isPrivate: false })).toBe(true);
+    expect(isComparisonEligibleAdmissionQuestion({ code: "P30", isPrivate: false })).toBe(true);
+    for (const code of ["P01", "P05", "P31", "P33", "P34", "P39", "P40"]) {
+      expect(isComparisonEligibleAdmissionQuestion({ code, isPrivate: false })).toBe(false);
+    }
+    expect(isComparisonEligibleAdmissionQuestion({ code: "P20", isPrivate: true })).toBe(false);
   });
 });

@@ -74,6 +74,7 @@ export async function resetDemoData(client: PrismaClient) {
       await transaction.questionnaireAttempt.deleteMany({ where: { id: { in: attemptIds } } });
     }
     if (coupleIds.length) {
+      await transaction.coupleComparisonConsent.deleteMany({ where: { coupleId: { in: coupleIds } } });
       await transaction.coupleInvite.deleteMany({ where: { coupleId: { in: coupleIds } } });
       await transaction.coupleMember.deleteMany({ where: { coupleId: { in: coupleIds } } });
       await transaction.couple.deleteMany({ where: { id: { in: coupleIds } } });

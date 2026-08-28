@@ -36,29 +36,37 @@ enum CoupleInviteStatus {
   CANCELLED
 }
 
+enum CoupleComparisonConsentStatus {
+  PENDING
+  CONSENTED
+  REVOKED
+}
+
 model User {
-  id                String                 @id @default(uuid()) @db.Char(36)
-  email             String                 @unique(map: "uq_users_email") @db.VarChar(191)
-  name              String                 @db.VarChar(191)
-  passwordHash      String?                @map("password_hash") @db.VarChar(255)
-  role              UserRole               @default(USER)
-  createdAt         DateTime               @default(now()) @map("created_at") @db.DateTime(3)
-  updatedAt         DateTime               @updatedAt @map("updated_at") @db.DateTime(3)
-  coupleMemberships CoupleMember[]
-  attempts          QuestionnaireAttempt[]
-  createdInvites    CoupleInvite[]         @relation("CoupleInviteCreator")
+  id                 String                    @id @default(uuid()) @db.Char(36)
+  email              String                    @unique(map: "uq_users_email") @db.VarChar(191)
+  name               String                    @db.VarChar(191)
+  passwordHash       String?                   @map("password_hash") @db.VarChar(255)
+  role               UserRole                  @default(USER)
+  createdAt          DateTime                  @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt          DateTime                  @updatedAt @map("updated_at") @db.DateTime(3)
+  coupleMemberships  CoupleMember[]
+  attempts           QuestionnaireAttempt[]
+  createdInvites     CoupleInvite[]            @relation("CoupleInviteCreator")
+  comparisonConsents CoupleComparisonConsent[]
 
   @@map("users")
 }
 
 model Couple {
-  id        String                 @id @default(uuid()) @db.Char(36)
-  status    CoupleStatus           @default(PENDING)
-  createdAt DateTime               @default(now()) @map("created_at") @db.DateTime(3)
-  updatedAt DateTime               @updatedAt @map("updated_at") @db.DateTime(3)
-  members   CoupleMember[]
-  attempts  QuestionnaireAttempt[]
-  invites   CoupleInvite[]
+  id                 String                    @id @default(uuid()) @db.Char(36)
+  status             CoupleStatus              @default(PENDING)
+  createdAt          DateTime                  @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt          DateTime                  @updatedAt @map("updated_at") @db.DateTime(3)
+  members            CoupleMember[]
+  attempts           QuestionnaireAttempt[]
+  invites            CoupleInvite[]
+  comparisonConsents CoupleComparisonConsent[]
 
   @@map("couples")
 }
@@ -237,4 +245,23 @@ model CoupleInvite {
   @@index([expiresAt], map: "idx_couple_invites_expires_at")
   @@index([status], map: "idx_couple_invites_status")
   @@map("couple_invites")
+}
+
+model CoupleComparisonConsent {
+  id                   String                        @id @default(uuid()) @db.Char(36)
+  coupleId             String                        @map("couple_id") @db.Char(36)
+  userId               String                        @map("user_id") @db.Char(36)
+  questionnaireVersion String                        @map("questionnaire_version") @db.VarChar(20)
+  status               CoupleComparisonConsentStatus @default(PENDING)
+  consentedAt          DateTime?                     @map("consented_at") @db.DateTime(3)
+  revokedAt            DateTime?                     @map("revoked_at") @db.DateTime(3)
+  createdAt            DateTime                      @default(now()) @map("created_at") @db.DateTime(3)
+  updatedAt            DateTime                      @updatedAt @map("updated_at") @db.DateTime(3)
+  couple               Couple                        @relation(fields: [coupleId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_comparison_consents_couple")
+  user                 User                          @relation(fields: [userId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_comparison_consents_user")
+
+  @@unique([coupleId, userId, questionnaireVersion], map: "uq_comparison_consents_couple_user_version")
+  @@index([userId], map: "idx_comparison_consents_user")
+  @@index([coupleId, questionnaireVersion, status], map: "idx_comparison_consents_availability")
+  @@map("couple_comparison_consents")
 }

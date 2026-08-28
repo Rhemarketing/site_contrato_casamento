@@ -6,11 +6,15 @@ import { requireUser } from "@/lib/auth/current-user";
 import { db } from "@/lib/db";
 import { COUPLE_ERROR_MESSAGES, CoupleDomainError } from "@/services/couple.errors";
 import { CoupleInviteService } from "@/services/couple-invite.service";
+import { COUPLE_COMPARISON_ERROR_MESSAGES, CoupleComparisonDomainError } from "@/services/couple-comparison.errors";
+import { CoupleComparisonService } from "@/services/couple-comparison.service";
 import { CoupleService } from "@/services/couple.service";
+import { PrismaCoupleComparisonRepository } from "@/repositories/prisma/prisma-couple-comparison.repository";
 import { coupleInviteTokenSchema, createCoupleInviteSchema } from "@/validations/couple";
 
 const coupleService = new CoupleService(db);
 const inviteService = new CoupleInviteService(db);
+const comparisonService = new CoupleComparisonService(new PrismaCoupleComparisonRepository(db));
 const genericError = "Não foi possível concluir a operação. Tente novamente.";
 
 export interface CoupleActionState {
@@ -21,6 +25,38 @@ export interface CoupleActionState {
 
 function actionError(error: unknown) {
   return error instanceof CoupleDomainError ? COUPLE_ERROR_MESSAGES[error.code] : genericError;
+}
+
+function comparisonActionError(error: unknown) {
+  return error instanceof CoupleComparisonDomainError
+    ? COUPLE_COMPARISON_ERROR_MESSAGES[error.code]
+    : genericError;
+}
+
+export async function consentToCoupleComparison() {
+  const user = await requireUser("/casal/comparacao");
+  let errorMessage: string | undefined;
+  try {
+    await comparisonService.consent(user.id);
+    revalidatePath("/casal/comparacao");
+  } catch (error) {
+    errorMessage = comparisonActionError(error);
+  }
+  if (errorMessage) redirect(`/casal/comparacao?error=${encodeURIComponent(errorMessage)}`);
+  redirect("/casal/comparacao");
+}
+
+export async function revokeCoupleComparisonConsent() {
+  const user = await requireUser("/casal/comparacao");
+  let errorMessage: string | undefined;
+  try {
+    await comparisonService.revoke(user.id);
+    revalidatePath("/casal/comparacao");
+  } catch (error) {
+    errorMessage = comparisonActionError(error);
+  }
+  if (errorMessage) redirect(`/casal/comparacao?error=${encodeURIComponent(errorMessage)}`);
+  redirect("/casal/comparacao");
 }
 
 export async function createCoupleInviteAction(
