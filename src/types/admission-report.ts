@@ -1,15 +1,22 @@
 import type { AdmissionPrivateSafetyResult } from "./admission-safety";
+import type {
+  ScorePresentationLevel,
+  ScorePresentationStatus,
+} from "@/features/admission/domain/score-presentation";
 
-export interface AdmissionReportAreaDto {
+export interface AdmissionScorePresentationDto {
+  rating: number;
+  ratingMax: 10;
+  status: ScorePresentationStatus;
+  statusTitle: string;
+  statusDescription: string;
+  level: ScorePresentationLevel;
+}
+
+export interface AdmissionReportAreaDto extends AdmissionScorePresentationDto {
   key: string;
   name: string;
   description: string;
-  score: number;
-  maxScore: number;
-  averageScore: string;
-  classification: "PONTO_FORTE" | "PONTO_DE_ATENCAO" | "AREA_PRIORITARIA";
-  classificationTitle: string;
-  classificationSummary: string;
 }
 
 export interface AdmissionIndividualReportDto {
@@ -17,14 +24,7 @@ export interface AdmissionIndividualReportDto {
     completedAt: string;
     questionnaireVersion: string;
   };
-  general: {
-    totalScore: number;
-    maxScore: 50;
-    classification: string;
-    title: string;
-    summary: string;
-    recommendation: string;
-  };
+  general: AdmissionScorePresentationDto;
   answerCounts: {
     satisfactory: number;
     intermediate: number;
@@ -32,9 +32,9 @@ export interface AdmissionIndividualReportDto {
     total: 25;
   };
   areaGroups: {
-    strengths: AdmissionReportAreaDto[];
-    attention: AdmissionReportAreaDto[];
-    priorities: AdmissionReportAreaDto[];
+    urgent: AdmissionReportAreaDto[];
+    improvement: AdmissionReportAreaDto[];
+    good: AdmissionReportAreaDto[];
   };
   flags: Array<{
     code: string;

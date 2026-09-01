@@ -65,20 +65,21 @@ describe("conteúdo e DTO do relatório individual", () => {
     expect(() => getAreaReportContent("area_desconhecida")).toThrow("REPORT_CONFIGURATION_ERROR");
   });
 
-  it("agrupa 3 pontos fortes, 2 atenções e 4 prioridades sem duplicação", () => {
-    const classifications = ["PONTO_FORTE", "PONTO_FORTE", "PONTO_FORTE", "PONTO_DE_ATENCAO", "PONTO_DE_ATENCAO", "AREA_PRIORITARIA", "AREA_PRIORITARIA", "AREA_PRIORITARIA", "AREA_PRIORITARIA"] as const;
+  it("agrupa as nove áreas pelas três faixas da nota amigável sem duplicação", () => {
+    const ratings = [9.8, 9.7, 9.6, 8, 6, 0, 2.5, 0, 4];
     const areas = AREA_REPORT_ORDER.map((key, index): AdmissionReportAreaDto => ({
-      key, name: key, description: key, score: 1, maxScore: 6,
-      averageScore: ["0.20", "0.30", "0.40", "0.60", "1.00", "2.00", "1.50", "2.00", "1.20"][index],
-      classification: classifications[index], classificationTitle: key, classificationSummary: key,
+      key, name: key, description: key, rating: ratings[index], ratingMax: 10,
+      status: ratings[index] < 5 ? "PRECISA_MUDAR_COM_URGENCIA" : ratings[index] < 8.5 ? "PRECISA_MELHORAR" : "ESTA_BOM",
+      statusTitle: key, statusDescription: key,
+      level: ratings[index] < 5 ? "danger" : ratings[index] < 8.5 ? "warning" : "success",
     }));
     const groups = groupAdmissionReportAreas(areas);
-    expect(groups.strengths).toHaveLength(3);
-    expect(groups.attention).toHaveLength(2);
-    expect(groups.priorities).toHaveLength(4);
-    expect(new Set([...groups.strengths, ...groups.attention, ...groups.priorities].map(({ key }) => key)).size).toBe(9);
-    expect(groups.attention.map(({ averageScore }) => averageScore)).toEqual(["1.00", "0.60"]);
-    expect(groups.priorities.map(({ key }) => key)).toEqual([
+    expect(groups.good).toHaveLength(3);
+    expect(groups.improvement).toHaveLength(2);
+    expect(groups.urgent).toHaveLength(4);
+    expect(new Set([...groups.good, ...groups.improvement, ...groups.urgent].map(({ key }) => key)).size).toBe(9);
+    expect(groups.improvement.map(({ rating }) => rating)).toEqual([6, 8]);
+    expect(groups.urgent.map(({ key }) => key)).toEqual([
       "dinheiro_responsabilidades", "autopercepcao_disposicao", "tempo_conexao_futuro", "habitos_compulsoes",
     ]);
   });
@@ -91,16 +92,17 @@ describe("conteúdo e DTO do relatório individual", () => {
     expect(() => getPriorityFlagContent("FLAG_DESCONHECIDA")).toThrow("REPORT_CONFIGURATION_ERROR");
   });
 
-  it("monta score 0 sem linguagem absoluta", () => {
+  it("converte score interno 0 para nota 10 sem linguagem absoluta", () => {
     const report = build(calculatedResult(0));
-    expect(report.general).toMatchObject({ totalScore: 0, maxScore: 50, title: "Boa base conjugal" });
+    expect(report.general).toMatchObject({ rating: 10, ratingMax: 10, status: "ESTA_BOM", level: "success" });
     expect(JSON.stringify(report)).not.toMatch(/perfeito|totalmente seguro/i);
+    expect(JSON.stringify(report)).not.toMatch(/"totalScore"|"maxScore"|"averageScore"/);
     expect(report.answerCounts).toEqual({ satisfactory: 25, intermediate: 0, relevantDifficulties: 0, total: 25 });
   });
 
-  it("monta score 50 sem linguagem fatalista", () => {
+  it("converte score interno 50 para nota 0 sem linguagem fatalista", () => {
     const report = build(calculatedResult(50));
-    expect(report.general).toMatchObject({ totalScore: 50, maxScore: 50, title: "Desgaste conjugal muito elevado" });
+    expect(report.general).toMatchObject({ rating: 0, ratingMax: 10, status: "PRECISA_MUDAR_COM_URGENCIA", level: "danger" });
     expect(JSON.stringify(report)).not.toMatch(/casamento acabou|condenado|fracassando/i);
     expect(report.answerCounts).toEqual({ satisfactory: 0, intermediate: 0, relevantDifficulties: 25, total: 25 });
   });

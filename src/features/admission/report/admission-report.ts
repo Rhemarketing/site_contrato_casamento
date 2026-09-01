@@ -1,4 +1,9 @@
 import { ADMISSION_MAX_SCORE } from "@/features/admission/domain/admission-score-config";
+import {
+  convertProblemScoreToRating,
+  getScorePresentation,
+  SCORE_PRESENTATION_MAX,
+} from "@/features/admission/domain/score-presentation";
 import type { AdmissionCalculatedResult } from "@/types/admission-result";
 import type { AdmissionIndividualReportDto, AdmissionReportAreaDto } from "@/types/admission-report";
 import type { AdmissionPrivateSafetyResult } from "@/types/admission-safety";
@@ -28,13 +33,26 @@ export function groupAdmissionReportAreas(areas: AdmissionReportAreaDto[]) {
   if (areas.length !== 9 || new Set(areas.map(({ key }) => key)).size !== 9) throw new AdmissionReportConfigurationError();
   if (areas.some(({ key }) => !AREA_REPORT_ORDER.includes(key as typeof AREA_REPORT_ORDER[number]))) throw new AdmissionReportConfigurationError();
   const byOfficialOrder = (left: AdmissionReportAreaDto, right: AdmissionReportAreaDto) => areaOrder(left.key) - areaOrder(right.key);
-  const byAverageDescending = (left: AdmissionReportAreaDto, right: AdmissionReportAreaDto) =>
-    Number(right.averageScore) - Number(left.averageScore) || byOfficialOrder(left, right);
+  const byRatingAscending = (left: AdmissionReportAreaDto, right: AdmissionReportAreaDto) =>
+    left.rating - right.rating || byOfficialOrder(left, right);
   return {
-    strengths: areas.filter(({ classification }) => classification === "PONTO_FORTE").sort(byOfficialOrder),
-    attention: areas.filter(({ classification }) => classification === "PONTO_DE_ATENCAO").sort(byAverageDescending),
-    priorities: areas.filter(({ classification }) => classification === "AREA_PRIORITARIA").sort(byAverageDescending),
+    urgent: areas.filter(({ status }) => status === "PRECISA_MUDAR_COM_URGENCIA").sort(byRatingAscending),
+    improvement: areas.filter(({ status }) => status === "PRECISA_MELHORAR").sort(byRatingAscending),
+    good: areas.filter(({ status }) => status === "ESTA_BOM").sort(byOfficialOrder),
   };
+}
+
+function scorePresentation(score: number, maxScore: number, scope: "area" | "general" = "area") {
+  const rating = convertProblemScoreToRating(score, maxScore);
+  const presentation = getScorePresentation(rating);
+  return {
+    rating,
+    ratingMax: SCORE_PRESENTATION_MAX,
+    status: presentation.status,
+    statusTitle: presentation.title,
+    statusDescription: scope === "general" ? presentation.generalDescription : presentation.description,
+    level: presentation.level,
+  } as const;
 }
 
 export function buildAdmissionIndividualReportDto(input: BuildReportInput): AdmissionIndividualReportDto {
@@ -42,20 +60,15 @@ export function buildAdmissionIndividualReportDto(input: BuildReportInput): Admi
   if (!Number.isInteger(result.totalScore) || result.totalScore < 0 || result.totalScore > ADMISSION_MAX_SCORE || result.maxScore !== ADMISSION_MAX_SCORE) {
     throw new AdmissionReportConfigurationError();
   }
-  const generalContent = getGeneralReportContent(result.classification);
+  getGeneralReportContent(result.classification);
   const areas = result.areas.map((area): AdmissionReportAreaDto => {
     const content = getAreaReportContent(area.area);
-    const classificationContent = getAreaClassificationContent(area.classification);
+    getAreaClassificationContent(area.classification);
     return {
       key: area.area,
       name: content.name,
       description: content.description,
-      score: area.score,
-      maxScore: area.maxScore,
-      averageScore: area.averageScore,
-      classification: area.classification,
-      classificationTitle: classificationContent.title,
-      classificationSummary: classificationContent.summary,
+      ...scorePresentation(area.score, area.maxScore),
     };
   });
   const totalAnswers = result.answerCounts.A + result.answerCounts.B + result.answerCounts.C;
@@ -65,14 +78,7 @@ export function buildAdmissionIndividualReportDto(input: BuildReportInput): Admi
   }
   return {
     attempt: { completedAt: input.completedAt.toISOString(), questionnaireVersion: input.questionnaireVersion },
-    general: {
-      totalScore: result.totalScore,
-      maxScore: ADMISSION_MAX_SCORE,
-      classification: result.classification,
-      title: generalContent.title,
-      summary: generalContent.summary,
-      recommendation: generalContent.recommendation,
-    },
+    general: scorePresentation(result.totalScore, ADMISSION_MAX_SCORE, "general"),
     answerCounts: {
       satisfactory: result.answerCounts.A,
       intermediate: result.answerCounts.B,

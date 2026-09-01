@@ -11,26 +11,26 @@ const area: AdmissionReportAreaDto = {
   key: "comunicacao",
   name: "Comunicação",
   description: "Como vocês conversam.",
-  score: 2,
-  maxScore: 6,
-  averageScore: "0.67",
-  classification: "PONTO_DE_ATENCAO",
-  classificationTitle: "Ponto de atenção",
-  classificationSummary: "Esta área merece atenção.",
+  rating: 6.7,
+  ratingMax: 10,
+  status: "PRECISA_MELHORAR",
+  statusTitle: "PRECISA MELHORAR",
+  statusDescription: "Existem pontos positivos, mas também dificuldades que merecem atenção, conversa e ajustes.",
+  level: "warning",
 };
 
 const report: AdmissionIndividualReportDto = {
   attempt: { completedAt: "2026-08-26T23:30:00.000Z", questionnaireVersion: "8.0" },
   general: {
-    totalScore: 27,
-    maxScore: 50,
-    classification: "SINAIS_SIGNIFICATIVOS_DE_DESGASTE",
-    title: "Sinais significativos de desgaste",
-    summary: "Diferentes áreas apresentam sinais relevantes.",
-    recommendation: "Identifique prioridades.",
+    rating: 4.6,
+    ratingMax: 10,
+    status: "PRECISA_MUDAR_COM_URGENCIA",
+    statusTitle: "PRECISA MUDAR COM URGÊNCIA",
+    statusDescription: "Há sinais importantes de dificuldade no relacionamento.",
+    level: "danger",
   },
   answerCounts: { satisfactory: 9, intermediate: 10, relevantDifficulties: 6, total: 25 },
-  areaGroups: { strengths: [], attention: [area], priorities: [] },
+  areaGroups: { urgent: [], improvement: [area], good: [] },
   flags: [{ code: "CONVERSA_INTIMIDADE_PRIORITARIA", title: "Conversa sobre intimidade merece atenção", description: "Tema conjugal específico.", recommendation: null }],
   safety: {
     overallLevel: "ATTENTION",
@@ -47,20 +47,22 @@ describe("componentes do relatório individual", () => {
     expect(formatAdmissionCompletionDate("2026-08-26T23:30:00.000Z")).toBe("26 de agosto de 2026");
   });
 
-  it("mostra score absoluto e explica a direção da escala", () => {
+  it("mostra a nota geral de 0 a 10 e explica a direção da escala", () => {
     render(<GeneralScoreCard general={report.general} />);
-    expect(screen.getByText("27")).toBeInTheDocument();
-    expect(screen.getByText(/de 50/)).toBeInTheDocument();
-    expect(screen.getByText(/pontuações mais altas indicam maior/i)).toBeInTheDocument();
-    expect(document.body.textContent).not.toContain("54%");
+    expect(screen.getByText("4,6")).toBeInTheDocument();
+    expect(screen.getByText(/\/ 10/)).toBeInTheDocument();
+    expect(screen.getByText(/quanto maior a nota, melhor/i)).toBeInTheDocument();
+    expect(screen.getByText("PRECISA MUDAR COM URGÊNCIA")).toBeInTheDocument();
+    expect(document.body.textContent).not.toMatch(/27 de 50|pontuações mais altas indicam maior/i);
   });
 
-  it("fornece barra de área acessível sem percentual textual", () => {
+  it("fornece nota e barra de área acessíveis na escala de 0 a 10", () => {
     render(<AreaResultCard area={area} />);
-    const progress = screen.getByRole("progressbar", { name: /Comunicação: média 0,67 de 2/i });
-    expect(progress).toHaveAttribute("aria-valuenow", "0.67");
-    expect(screen.getByText("2 de 6")).toBeInTheDocument();
-    expect(document.body.textContent).not.toContain("33.5%");
+    const progress = screen.getByRole("progressbar", { name: /Comunicação: nota 6,7 de 10/i });
+    expect(progress).toHaveAttribute("aria-valuenow", "6.7");
+    expect(screen.getByText("6,7")).toBeInTheDocument();
+    expect(screen.getByText("PRECISA MELHORAR")).toBeInTheDocument();
+    expect(document.body.textContent).not.toMatch(/2 de 6|média .* de 2/i);
   });
 
   it("apresenta counts com contexto sem revelar A/B/C", () => {
@@ -74,10 +76,10 @@ describe("componentes do relatório individual", () => {
   it("renderiza relatório completo com seções conjugais e Safety separadas", () => {
     render(<IndividualAdmissionReport report={report} />);
     expect(screen.getByRole("heading", { name: "Resultado da sua Prova de Admissão" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Pontos fortes" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Pontos que merecem atenção" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Áreas prioritárias" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Temas prioritários específicos" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Precisa mudar com urgência" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Precisa melhorar" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Está bom" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Temas específicos sinalizados" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Uma orientação privada para você" })).toBeInTheDocument();
     expect(screen.getByText(/não serão compartilhadas automaticamente/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Voltar ao dashboard" })).toHaveAttribute("href", "/dashboard");

@@ -1,40 +1,35 @@
-import { Badge, Card } from "@/components/ui";
+import { Card } from "@/components/ui";
+import { formatScoreRating } from "@/features/admission/domain/score-presentation";
+import { cn } from "@/lib/cn";
 import type { AdmissionReportAreaDto } from "@/types/admission-report";
-
-const badgeStyles = {
-  PONTO_FORTE: "bg-sky-100 text-sky-950",
-  PONTO_DE_ATENCAO: "bg-amber-100 text-amber-950",
-  AREA_PRIORITARIA: "bg-violet-100 text-violet-950",
-} as const;
+import { ScoreStatusBadge, scoreLevelStyles } from "./score-status-badge";
 
 export function AreaResultCard({ area }: { area: AdmissionReportAreaDto }) {
-  const average = Number(area.averageScore);
-  const barWidth = Math.min(100, Math.max(0, average / 2 * 100));
-  const accessibleAverage = average.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const formattedRating = formatScoreRating(area.rating);
+  const barWidth = Math.min(100, Math.max(0, area.rating / area.ratingMax * 100));
   return (
     <Card className="flex h-full flex-col p-5 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <h3 className="text-xl font-semibold leading-snug text-brand-strong">{area.name}</h3>
-        <Badge className={badgeStyles[area.classification]}>{area.classificationTitle}</Badge>
+        <ScoreStatusBadge level={area.level} title={area.statusTitle} />
       </div>
       <p className="mt-3 text-sm text-muted">{area.description}</p>
       <div className="mt-5">
         <div className="flex items-end justify-between gap-3 text-sm">
-          <span className="font-semibold text-brand-strong">{area.score} de {area.maxScore}</span>
-          <span className="text-muted">Média {accessibleAverage} de 2</span>
+          <span className="font-serif text-3xl font-semibold text-brand-strong">{formattedRating} <span className="text-lg text-muted">/ {area.ratingMax}</span></span>
         </div>
         <div
           className="mt-2 h-2.5 overflow-hidden rounded-full bg-line"
           role="progressbar"
-          aria-label={`${area.name}: média ${accessibleAverage} de 2, classificada como ${area.classificationTitle.toLowerCase()}.`}
+          aria-label={`${area.name}: nota ${formattedRating} de ${area.ratingMax}, classificada como ${area.statusTitle.toLowerCase()}.`}
           aria-valuemin={0}
-          aria-valuemax={2}
-          aria-valuenow={average}
+          aria-valuemax={area.ratingMax}
+          aria-valuenow={area.rating}
         >
-          <div className="h-full rounded-full bg-brand/70" style={{ width: `${barWidth}%` }} />
+          <div className={cn("h-full rounded-full", scoreLevelStyles[area.level].bar)} style={{ width: `${barWidth}%` }} />
         </div>
       </div>
-      <p className="mt-4 text-sm text-muted">{area.classificationSummary}</p>
+      <p className="mt-4 text-sm text-muted">{area.statusDescription}</p>
     </Card>
   );
 }

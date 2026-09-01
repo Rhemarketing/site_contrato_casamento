@@ -2,9 +2,9 @@ import type { AdmissionIndividualReportDto, AdmissionReportAreaDto } from "@/typ
 import { AreaResultCard } from "./area-result-card";
 
 const groups: Array<{ key: keyof AdmissionIndividualReportDto["areaGroups"]; title: string; description: string }> = [
-  { key: "strengths", title: "Pontos fortes", description: "Aspectos percebidos de forma relativamente positiva neste momento." },
-  { key: "attention", title: "Pontos que merecem atenção", description: "Temas com sinais intermediários de diferença, insatisfação ou dificuldade." },
-  { key: "priorities", title: "Áreas prioritárias", description: "Temas que concentram maior necessidade de atenção nas próximas conversas e decisões." },
+  { key: "urgent", title: "Precisa mudar com urgência", description: "Áreas com notas entre 0,0 e 4,9." },
+  { key: "improvement", title: "Precisa melhorar", description: "Áreas com notas entre 5,0 e 8,4." },
+  { key: "good", title: "Está bom", description: "Áreas com notas entre 8,5 e 10,0." },
 ];
 
 function AreaGroup({ title, description, areas }: { title: string; description: string; areas: AdmissionReportAreaDto[] }) {

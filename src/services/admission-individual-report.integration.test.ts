@@ -96,13 +96,13 @@ describe("serviço agregador do relatório individual", () => {
     expect(await prisma.resultFlag.count({ where: { attemptId: attempt.id } })).toBe(0);
   });
 
-  it("monta relatório completo com score, nove áreas, counts, flags, Safety, data e versão", async () => {
+  it("monta relatório completo com nota amigável, nove áreas, counts, flags, Safety, data e versão", async () => {
     const owner = await createCompletedAttempt("ready", "C", "C");
     const state = await reportService.getForUser(owner.user.id, owner.attempt.id);
     expect(state.kind).toBe("READY");
     if (state.kind !== "READY") return;
-    const areas = [...state.report.areaGroups.strengths, ...state.report.areaGroups.attention, ...state.report.areaGroups.priorities];
-    expect(state.report.general).toMatchObject({ totalScore: 50, maxScore: 50, title: "Desgaste conjugal muito elevado" });
+    const areas = [...state.report.areaGroups.urgent, ...state.report.areaGroups.improvement, ...state.report.areaGroups.good];
+    expect(state.report.general).toMatchObject({ rating: 0, ratingMax: 10, status: "PRECISA_MUDAR_COM_URGENCIA" });
     expect(areas).toHaveLength(9);
     expect(state.report.answerCounts).toEqual({ satisfactory: 0, intermediate: 0, relevantDifficulties: 25, total: 25 });
     expect(state.report.flags).toHaveLength(4);
@@ -110,15 +110,15 @@ describe("serviço agregador do relatório individual", () => {
     expect(state.report.attempt.questionnaireVersion).toBe("8.0");
     expect(new Date(state.report.attempt.completedAt).toString()).not.toBe("Invalid Date");
     const serialized = JSON.stringify(state.report);
-    expect(serialized).not.toMatch(/passwordHash|QuestionOption|internalCode|optionId|answerId|SAFETY_|CONSENT_/);
+    expect(serialized).not.toMatch(/passwordHash|QuestionOption|internalCode|optionId|answerId|SAFETY_|CONSENT_|totalScore|maxScore|averageScore/);
   });
 
-  it("omite bloco Safety para NONE e mantém score 0", async () => {
+  it("omite bloco Safety para NONE e apresenta score interno 0 como nota 10", async () => {
     const owner = await createCompletedAttempt("none", "A", "A");
     const state = await reportService.getForUser(owner.user.id, owner.attempt.id);
     expect(state.kind).toBe("READY");
     if (state.kind === "READY") {
-      expect(state.report.general).toMatchObject({ totalScore: 0, title: "Boa base conjugal" });
+      expect(state.report.general).toMatchObject({ rating: 10, status: "ESTA_BOM" });
       expect(state.report.safety).toBeNull();
     }
   });
