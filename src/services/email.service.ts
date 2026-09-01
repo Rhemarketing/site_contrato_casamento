@@ -24,17 +24,18 @@ export class EmailDeliveryError extends Error {
 
 export class SmtpEmailTransport implements EmailTransport {
   async send(message: EmailMessage) {
-    const config = getSmtpConfig();
-    const client = new SMTPClient({
-      host: config.host,
-      port: config.port,
-      user: config.user,
-      password: config.password,
-      ssl: config.port === 465,
-      tls: config.port !== 465,
-      timeout: 15_000,
-    });
+    let client: SMTPClient | undefined;
     try {
+      const config = getSmtpConfig();
+      client = new SMTPClient({
+        host: config.host,
+        port: config.port,
+        user: config.user,
+        password: config.password,
+        ssl: config.port === 465,
+        tls: config.port !== 465,
+        timeout: 15_000,
+      });
       await client.sendAsync({
         from: config.from,
         to: message.to,
@@ -45,7 +46,7 @@ export class SmtpEmailTransport implements EmailTransport {
     } catch {
       throw new EmailDeliveryError();
     } finally {
-      client.smtp.close();
+      client?.smtp.close();
     }
   }
 }

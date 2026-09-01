@@ -50,16 +50,11 @@ DATABASE_URL=<Internal Connection URL do MariaDB>
 AUTH_SECRET=<segredo aleatório com pelo menos 32 caracteres>
 APP_URL=https://casamento.seudominio.com
 AUTH_URL=https://casamento.seudominio.com
-SMTP_HOST=<host do provedor SMTP>
-SMTP_PORT=<porta SMTP, normalmente 465 ou 587>
-SMTP_USER=<usuário SMTP>
-SMTP_PASSWORD=<senha ou token SMTP>
-SMTP_FROM=Contrato de Casamento <nao-responda@seudominio.com>
 ```
 
 Gere `AUTH_SECRET` fora do repositório, por exemplo com `openssl rand -base64 32`. Não registre o resultado em issue, commit ou log.
 
-Cadastre `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD` e `SMTP_FROM` exclusivamente em **Environment** da App. Não use build arguments, não crie arquivo `.env` dentro da imagem e não publique credenciais SMTP no Git. A porta 465 usa conexão TLS imediata; as demais portas usam STARTTLS. O remetente configurado em `SMTP_FROM` deve estar autorizado no provedor.
+O SMTP é opcional durante esta fase. Sem ele, a aplicação inicia normalmente, mas recuperação de senha e envio de convites por e-mail retornam falha controlada. Quando esses recursos forem habilitados, cadastre juntos `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD` e `SMTP_FROM` exclusivamente em **Environment** da App. Não use build arguments, não crie arquivo `.env` dentro da imagem e não publique credenciais SMTP no Git. A porta 465 usa conexão TLS imediata; as demais portas usam STARTTLS. O remetente configurado em `SMTP_FROM` deve estar autorizado no provedor.
 
 `AUTH_URL` torna o host canônico conhecido pelo Auth.js e já habilita a confiança de host prevista pela versão instalada. Não configure `AUTH_TRUST_HOST` no primeiro deploy. Use `AUTH_TRUST_HOST=true` somente se os logs mostrarem `UntrustedHost`, depois de confirmar que o proxy do EasyPanel controla corretamente `Host` e `X-Forwarded-*`.
 
@@ -126,8 +121,8 @@ Teste usando dados de produção controlados, sem respostas privadas reais duran
 - resultado individual;
 - área do casal;
 - criação, abertura e aceite de convite;
-- recebimento do e-mail de convite sem respostas ou resultados;
-- solicitação e conclusão de recuperação de senha;
+- recebimento do e-mail de convite sem respostas ou resultados, quando SMTP estiver configurado;
+- solicitação e conclusão de recuperação de senha, quando SMTP estiver configurado;
 - link de convite começando pelo domínio HTTPS público;
 - cookies de autenticação marcados como `Secure`;
 - `/api/health` retornando 200.
