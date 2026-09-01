@@ -6,7 +6,7 @@ export const SCORE_PRESENTATION = {
     title: "PRECISA MUDAR COM URGÊNCIA",
     level: "danger",
     description:
-      "Há sinais importantes de dificuldade nesta área. Ela deve estar entre as prioridades das próximas conversas e mudanças do casal.",
+      "",
     generalDescription:
       "Há sinais importantes de dificuldade no relacionamento. Eles devem estar entre as prioridades das próximas conversas e mudanças do casal.",
   },
@@ -15,7 +15,7 @@ export const SCORE_PRESENTATION = {
     title: "PRECISA MELHORAR",
     level: "warning",
     description:
-      "Existem pontos positivos, mas também dificuldades que merecem atenção, conversa e ajustes.",
+      "",
     generalDescription:
       "Existem pontos positivos no relacionamento, mas também dificuldades que merecem atenção, conversa e ajustes.",
   },
@@ -24,7 +24,7 @@ export const SCORE_PRESENTATION = {
     title: "ESTÁ BOM",
     level: "success",
     description:
-      "Suas respostas mostram uma percepção bastante positiva desta área no momento.",
+      "",
     generalDescription:
       "Suas respostas mostram uma percepção bastante positiva do relacionamento no momento.",
   },
