@@ -14,6 +14,11 @@ require_environment_variable DATABASE_URL
 require_environment_variable AUTH_SECRET
 require_environment_variable APP_URL
 require_environment_variable AUTH_URL
+require_environment_variable SMTP_HOST
+require_environment_variable SMTP_PORT
+require_environment_variable SMTP_USER
+require_environment_variable SMTP_PASSWORD
+require_environment_variable SMTP_FROM
 
 if [ "${#AUTH_SECRET}" -lt 32 ]; then
   echo "AUTH_SECRET deve possuir ao menos 32 caracteres." >&2

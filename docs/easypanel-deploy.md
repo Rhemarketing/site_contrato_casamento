@@ -50,9 +50,16 @@ DATABASE_URL=<Internal Connection URL do MariaDB>
 AUTH_SECRET=<segredo aleatório com pelo menos 32 caracteres>
 APP_URL=https://casamento.seudominio.com
 AUTH_URL=https://casamento.seudominio.com
+SMTP_HOST=<host do provedor SMTP>
+SMTP_PORT=<porta SMTP, normalmente 465 ou 587>
+SMTP_USER=<usuário SMTP>
+SMTP_PASSWORD=<senha ou token SMTP>
+SMTP_FROM=Contrato de Casamento <nao-responda@seudominio.com>
 ```
 
 Gere `AUTH_SECRET` fora do repositório, por exemplo com `openssl rand -base64 32`. Não registre o resultado em issue, commit ou log.
+
+Cadastre `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD` e `SMTP_FROM` exclusivamente em **Environment** da App. Não use build arguments, não crie arquivo `.env` dentro da imagem e não publique credenciais SMTP no Git. A porta 465 usa conexão TLS imediata; as demais portas usam STARTTLS. O remetente configurado em `SMTP_FROM` deve estar autorizado no provedor.
 
 `AUTH_URL` torna o host canônico conhecido pelo Auth.js e já habilita a confiança de host prevista pela versão instalada. Não configure `AUTH_TRUST_HOST` no primeiro deploy. Use `AUTH_TRUST_HOST=true` somente se os logs mostrarem `UntrustedHost`, depois de confirmar que o proxy do EasyPanel controla corretamente `Host` e `X-Forwarded-*`.
 
@@ -119,11 +126,15 @@ Teste usando dados de produção controlados, sem respostas privadas reais duran
 - resultado individual;
 - área do casal;
 - criação, abertura e aceite de convite;
+- recebimento do e-mail de convite sem respostas ou resultados;
+- solicitação e conclusão de recuperação de senha;
 - link de convite começando pelo domínio HTTPS público;
 - cookies de autenticação marcados como `Secure`;
 - `/api/health` retornando 200.
 
 Nunca registre tokens de convite, senhas ou respostas P31–P33 durante esses testes.
+
+As sessões usam JWT. Alterar a senha atualiza as próximas autenticações, mas não revoga automaticamente JWTs que já tenham sido emitidos. Não altere a estratégia de sessão durante um deploy desta etapa.
 
 ## 10. Backups
 
@@ -170,6 +181,13 @@ Mantenha uma réplica enquanto migrations forem executadas no entrypoint. Antes 
 
 - Corrija `APP_URL` para o domínio HTTPS, redeploye e gere um novo convite.
 - Links já emitidos não devem ser reconstruídos a partir de logs.
+
+### E-mail não é enviado
+
+- Confirme os cinco nomes `SMTP_*` no Environment, sem imprimir seus valores em logs ou tickets.
+- Verifique se a porta está liberada pela VPS e se o remetente de `SMTP_FROM` foi autorizado.
+- Para porta 465, o transporte usa TLS imediato; para as demais, usa STARTTLS.
+- Uma falha de envio não duplica convites. O link criado continua disponível para cópia, e um novo envio exige regeneração explícita.
 
 ### Container unhealthy
 

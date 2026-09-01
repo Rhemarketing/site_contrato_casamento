@@ -14,6 +14,8 @@ Aplicação web para apoiar conversas conscientes sobre expectativas e decisões
 3. Gere o Prisma Client com `npm run prisma:generate`.
 4. Inicie com `npm run dev`.
 
+Para testar e-mails, configure também `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD` e `SMTP_FROM`. Credenciais reais devem permanecer somente no ambiente local ignorado pelo Git ou no Environment do EasyPanel.
+
 O Prisma utiliza `provider = "mysql"`, o conector correto para MariaDB. Alterações futuras de estrutura devem ser registradas por migrations.
 
 ## Banco de dados e migrations

@@ -29,9 +29,16 @@ export function CoupleInviteForm({ defaultEmail, regenerate = false }: { default
         <SubmitButton idle={regenerate ? "Gerar novo link" : "Criar convite"} pending={regenerate ? "Gerando novo link…" : "Criando convite…"} />
       </form>
       {state.invite ? (
-        <Alert title="Convite criado" variant="success">
+        <Alert
+          title={state.invite.emailStatus === "SENT" ? "Convite criado e enviado" : "Convite criado; envio não concluído"}
+          variant={state.invite.emailStatus === "SENT" ? "success" : "error"}
+        >
           <div className="space-y-3">
-            <p>Este link é individual e expira em 7 dias.</p>
+            <p>
+              {state.invite.emailStatus === "SENT"
+                ? "Enviamos o convite por e-mail. O link é individual e expira em 7 dias."
+                : "Não foi possível enviar o e-mail. O convite não foi duplicado: copie o link abaixo ou gere um novo explicitamente."}
+            </p>
             <p className="break-all rounded-lg bg-white/70 p-3 font-mono text-xs">{state.invite.inviteUrl}</p>
             <CopyInviteLink inviteUrl={state.invite.inviteUrl} />
           </div>

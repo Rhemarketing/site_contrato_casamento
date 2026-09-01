@@ -67,6 +67,7 @@ export async function resetDemoData(client: PrismaClient) {
   const attempts = await client.questionnaireAttempt.findMany({ where: { userId: { in: userIds } }, select: { id: true } });
   const attemptIds = attempts.map(({ id }) => id);
   await client.$transaction(async (transaction) => {
+    await transaction.passwordResetToken.deleteMany({ where: { userId: { in: userIds } } });
     if (attemptIds.length) {
       await transaction.answer.deleteMany({ where: { attemptId: { in: attemptIds } } });
       await transaction.areaResult.deleteMany({ where: { attemptId: { in: attemptIds } } });

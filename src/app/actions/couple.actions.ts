@@ -6,6 +6,8 @@ import { requireUser } from "@/lib/auth/current-user";
 import { db } from "@/lib/db";
 import { COUPLE_ERROR_MESSAGES, CoupleDomainError } from "@/services/couple.errors";
 import { CoupleInviteService } from "@/services/couple-invite.service";
+import { CoupleInviteDeliveryService } from "@/services/couple-invite-delivery.service";
+import { createEmailService } from "@/services/email.service";
 import { COUPLE_COMPARISON_ERROR_MESSAGES, CoupleComparisonDomainError } from "@/services/couple-comparison.errors";
 import { CoupleComparisonService } from "@/services/couple-comparison.service";
 import { CoupleService } from "@/services/couple.service";
@@ -14,13 +16,14 @@ import { coupleInviteTokenSchema, createCoupleInviteSchema } from "@/validations
 
 const coupleService = new CoupleService(db);
 const inviteService = new CoupleInviteService(db);
+const inviteDeliveryService = new CoupleInviteDeliveryService(inviteService, createEmailService());
 const comparisonService = new CoupleComparisonService(new PrismaCoupleComparisonRepository(db));
 const genericError = "Não foi possível concluir a operação. Tente novamente.";
 
 export interface CoupleActionState {
   message?: string;
   fieldErrors?: { email?: string[] };
-  invite?: { inviteUrl: string; expiresAt: string };
+  invite?: { inviteUrl: string; expiresAt: string; emailStatus: "SENT" | "FAILED" };
 }
 
 function actionError(error: unknown) {
@@ -68,7 +71,10 @@ export async function createCoupleInviteAction(
   const parsed = createCoupleInviteSchema.safeParse({ email: formData.get("email") });
   if (!parsed.success) return { fieldErrors: parsed.error.flatten().fieldErrors };
   try {
-    const invite = await inviteService.createInvite({ id: user.id, email: user.email }, parsed.data.email);
+    const invite = await inviteDeliveryService.createAndSend(
+      { id: user.id, name: user.name ?? "Seu cônjuge", email: user.email },
+      parsed.data.email,
+    );
     revalidatePath("/casal");
     return { invite };
   } catch (error) {
