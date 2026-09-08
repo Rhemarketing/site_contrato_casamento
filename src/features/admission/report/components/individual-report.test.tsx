@@ -57,12 +57,23 @@ describe("componentes do relatório individual", () => {
   });
 
   it("fornece nota e barra de área acessíveis na escala de 0 a 10", () => {
-    render(<AreaResultCard area={area} />);
+    const { container } = render(<AreaResultCard area={area} />);
     const progress = screen.getByRole("progressbar", { name: /Comunicação: nota 6,7 de 10/i });
     expect(progress).toHaveAttribute("aria-valuenow", "6.7");
+    expect(progress.firstElementChild).toHaveClass("report-progress");
+    expect(container.firstElementChild).toHaveClass("report-reveal", "border-amber-200/90");
     expect(screen.getByText("6,7")).toBeInTheDocument();
     expect(screen.getByText("PRECISA MELHORAR")).toBeInTheDocument();
     expect(document.body.textContent).not.toMatch(/2 de 6|média .* de 2/i);
+  });
+
+  it.each([
+    ["danger", "border-rose-200/90"],
+    ["warning", "border-amber-200/90"],
+    ["success", "border-emerald-200/90"],
+  ] as const)("aplica a paleta pastel correspondente ao nível %s", (level, expectedClass) => {
+    const { container } = render(<AreaResultCard area={{ ...area, level }} />);
+    expect(container.firstElementChild).toHaveClass(expectedClass);
   });
 
   it("apresenta counts com contexto sem revelar A/B/C", () => {
@@ -75,7 +86,7 @@ describe("componentes do relatório individual", () => {
 
   it("renderiza relatório completo com seções conjugais e Safety separadas", () => {
     render(<IndividualAdmissionReport report={report} />);
-    expect(screen.getByRole("heading", { name: "Resultado da sua Prova de Admissão" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Resultado da sua Avaliação Básica:" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Precisa mudar com urgência" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Precisa melhorar" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Está bom" })).toBeInTheDocument();
