@@ -8,6 +8,7 @@ const authenticatedNavigation = [
   { label: "Dashboard", href: "/dashboard" },
   { label: "Minha prova", href: "/admissao/questionario" },
   { label: "Casal", href: "/casal" },
+  { label: "Meu contrato", href: "/contrato" },
 ];
 
 export async function SiteHeader() {

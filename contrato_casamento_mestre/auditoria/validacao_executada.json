@@ -1,0 +1,1685 @@
+{
+  "package_integrity_ok": true,
+  "errors": [],
+  "production_ready": false,
+  "blocker_count": 409,
+  "blocker_counts_by_reason": {
+    "UNRESOLVED_JOINT_TRIGGER": 6,
+    "VOLUNTARY_EMERGENCY_REGISTRY_DESIGN_REQUIRED": 6,
+    "PRIVATE_TO_JOINT_RESUMPTION_NOT_COMPILED": 5,
+    "PLAN_INTENSITY_PARAMETERS_UNDEFINED": 5,
+    "MISSING_APPLICABILITY_PREDICATE": 184,
+    "NOT_RELEASED": 200,
+    "MISSING_NOS_TRIGGER": 1,
+    "PENDING_TRANSLATION_AND_TEXTS": 1,
+    "PENDING_OPERATIONAL_SUPPORT_PATH": 1
+  },
+  "coverage": {
+    "questions_total": 200,
+    "questions_with_all_abc": 200,
+    "questions_without_complete_abc": 0,
+    "options_total": 600,
+    "options_text_found": 600,
+    "pair_rows": 1200,
+    "pair_actions_missing": 0,
+    "pair_text_candidates": 635,
+    "protocols": 14,
+    "source_patches": 72,
+    "joint_module_records": 130,
+    "fixed_source_fragments": 205,
+    "source_pages": 444,
+    "active_questions": 0,
+    "production_ready": false,
+    "supplemental_sources": 13,
+    "newly_recovered": 40,
+    "questions_with_explicit_prompt": 200,
+    "questions_with_prompt_pending": 0,
+    "canonical_5_available": true,
+    "prompts_reconciled_from_original_pdf": 32,
+    "pair_actions_defined": 1200,
+    "pair_exact_texts_missing": 0,
+    "admission_pending": false,
+    "pair_actions_newly_structured": 906,
+    "gambling_policy_pending": false,
+    "pair_exact_texts_authored": 487,
+    "authored_text_questions": 182
+  },
+  "blockers": [
+    {
+      "id": "PAIR-Q130-AA",
+      "reason": "UNRESOLVED_JOINT_TRIGGER"
+    },
+    {
+      "id": "PAIR-Q130-AA",
+      "reason": "VOLUNTARY_EMERGENCY_REGISTRY_DESIGN_REQUIRED"
+    },
+    {
+      "id": "PAIR-Q130-AB",
+      "reason": "UNRESOLVED_JOINT_TRIGGER"
+    },
+    {
+      "id": "PAIR-Q130-AB",
+      "reason": "VOLUNTARY_EMERGENCY_REGISTRY_DESIGN_REQUIRED"
+    },
+    {
+      "id": "PAIR-Q130-AC",
+      "reason": "UNRESOLVED_JOINT_TRIGGER"
+    },
+    {
+      "id": "PAIR-Q130-AC",
+      "reason": "VOLUNTARY_EMERGENCY_REGISTRY_DESIGN_REQUIRED"
+    },
+    {
+      "id": "PAIR-Q130-BB",
+      "reason": "UNRESOLVED_JOINT_TRIGGER"
+    },
+    {
+      "id": "PAIR-Q130-BB",
+      "reason": "VOLUNTARY_EMERGENCY_REGISTRY_DESIGN_REQUIRED"
+    },
+    {
+      "id": "PAIR-Q130-BC",
+      "reason": "UNRESOLVED_JOINT_TRIGGER"
+    },
+    {
+      "id": "PAIR-Q130-BC",
+      "reason": "VOLUNTARY_EMERGENCY_REGISTRY_DESIGN_REQUIRED"
+    },
+    {
+      "id": "PAIR-Q130-CC",
+      "reason": "UNRESOLVED_JOINT_TRIGGER"
+    },
+    {
+      "id": "PAIR-Q130-CC",
+      "reason": "VOLUNTARY_EMERGENCY_REGISTRY_DESIGN_REQUIRED"
+    },
+    {
+      "id": "PAIR-Q151-AB",
+      "reason": "PRIVATE_TO_JOINT_RESUMPTION_NOT_COMPILED"
+    },
+    {
+      "id": "PAIR-Q151-AC",
+      "reason": "PRIVATE_TO_JOINT_RESUMPTION_NOT_COMPILED"
+    },
+    {
+      "id": "PAIR-Q151-BB",
+      "reason": "PRIVATE_TO_JOINT_RESUMPTION_NOT_COMPILED"
+    },
+    {
+      "id": "PAIR-Q151-BC",
+      "reason": "PRIVATE_TO_JOINT_RESUMPTION_NOT_COMPILED"
+    },
+    {
+      "id": "PAIR-Q151-CC",
+      "reason": "PRIVATE_TO_JOINT_RESUMPTION_NOT_COMPILED"
+    },
+    {
+      "id": "PAIR-Q200-AB",
+      "reason": "PLAN_INTENSITY_PARAMETERS_UNDEFINED"
+    },
+    {
+      "id": "PAIR-Q200-AC",
+      "reason": "PLAN_INTENSITY_PARAMETERS_UNDEFINED"
+    },
+    {
+      "id": "PAIR-Q200-BB",
+      "reason": "PLAN_INTENSITY_PARAMETERS_UNDEFINED"
+    },
+    {
+      "id": "PAIR-Q200-BC",
+      "reason": "PLAN_INTENSITY_PARAMETERS_UNDEFINED"
+    },
+    {
+      "id": "PAIR-Q200-CC",
+      "reason": "PLAN_INTENSITY_PARAMETERS_UNDEFINED"
+    },
+    {
+      "id": "Q001",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q001",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q002",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q002",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q003",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q003",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q004",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q004",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q005",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q005",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q006",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q006",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q007",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q007",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q008",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q008",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q009",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q009",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q010",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q010",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q011",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q011",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q012",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q012",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q013",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q013",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q014",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q014",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q015",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q015",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q016",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q016",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q017",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q017",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q018",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q018",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q019",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q019",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q020",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q020",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q021",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q021",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q022",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q022",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q023",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q023",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q024",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q024",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q025",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q025",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q026",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q026",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q027",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q027",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q028",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q028",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q029",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q029",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q030",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q030",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q031",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q031",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q032",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q032",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q033",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q033",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q034",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q034",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q035",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q035",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q036",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q036",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q037",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q037",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q038",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q038",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q039",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q039",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q040",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q040",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q041",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q041",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q042",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q042",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q043",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q043",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q044",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q044",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q045",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q045",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q046",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q046",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q047",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q047",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q048",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q048",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q049",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q049",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q050",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q050",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q051",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q051",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q052",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q052",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q053",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q053",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q054",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q054",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q055",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q055",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q056",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q056",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q057",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q057",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q058",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q058",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q059",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q059",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q060",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q060",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q061",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q061",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q062",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q062",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q063",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q063",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q064",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q064",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q065",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q065",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q066",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q066",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q067",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q067",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q068",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q068",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q069",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q070",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q070",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q071",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q071",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q072",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q072",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q073",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q073",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q074",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q074",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q075",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q075",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q076",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q076",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q077",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q078",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q078",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q079",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q079",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q080",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q080",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q081",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q081",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q082",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q082",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q083",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q083",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q084",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q084",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q085",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q085",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q086",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q086",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q087",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q087",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q088",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q088",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q089",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q089",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q090",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q090",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q091",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q091",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q092",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q092",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q093",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q093",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q094",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q094",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q095",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q095",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q096",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q096",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q097",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q097",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q098",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q099",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q099",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q100",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q100",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q101",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q101",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q102",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q102",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q103",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q103",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q104",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q104",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q105",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q105",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q106",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q106",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q107",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q107",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q108",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q108",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q109",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q109",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q110",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q111",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q111",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q112",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q112",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q113",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q113",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q114",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q114",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q115",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q115",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q116",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q116",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q117",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q117",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q118",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q119",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q119",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q120",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q120",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q121",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q121",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q122",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q122",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q123",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q123",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q124",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q124",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q125",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q125",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q126",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q126",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q127",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q127",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q128",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q128",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q129",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q129",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q130",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q130",
+      "reason": "MISSING_NOS_TRIGGER"
+    },
+    {
+      "id": "Q130",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q131",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q131",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q132",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q132",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q133",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q133",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q134",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q134",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q135",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q135",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q136",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q136",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q137",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q137",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q138",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q138",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q139",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q139",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q140",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q140",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q141",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q141",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q142",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q142",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q143",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q143",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q144",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q144",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q145",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q145",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q146",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q146",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q147",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q147",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q148",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q148",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q149",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q149",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q150",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q150",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q151",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q151",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q152",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q153",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q153",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q154",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q154",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q155",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q155",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q156",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q156",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q157",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q157",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q158",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q158",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q159",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q159",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q160",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q160",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q161",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q162",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q163",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q164",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q165",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q166",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q167",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q168",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q169",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q170",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q171",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q171",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q172",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q172",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q173",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q173",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q174",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q174",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q175",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q175",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q176",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q176",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q177",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q177",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q178",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q178",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q179",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q179",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q180",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q180",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q181",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q181",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q182",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q182",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q183",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q183",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q184",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q184",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q185",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q185",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q186",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q186",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q187",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q187",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q188",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q188",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q189",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q189",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q190",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q190",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q191",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q191",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q192",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q192",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q193",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q193",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q194",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q194",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q195",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q195",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q196",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q196",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q197",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q197",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q198",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q198",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q199",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q199",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "Q200",
+      "reason": "MISSING_APPLICABILITY_PREDICATE"
+    },
+    {
+      "id": "Q200",
+      "reason": "NOT_RELEASED"
+    },
+    {
+      "id": "BIBLE",
+      "reason": "PENDING_TRANSLATION_AND_TEXTS"
+    },
+    {
+      "id": "PRIVATE_REVIEW",
+      "reason": "PENDING_OPERATIONAL_SUPPORT_PATH"
+    }
+  ]
+}

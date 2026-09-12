@@ -1,6 +1,6 @@
 import type { UserRole } from "@/generated/prisma/client";
 
-const authenticatedPrefixes = ["/dashboard", "/admissao/questionario", "/admissao/resultado", "/casal"];
+const authenticatedPrefixes = ["/dashboard", "/admissao/questionario", "/admissao/resultado", "/casal", "/contrato"];
 export type RouteAccess = "public" | "authenticated" | "admin";
 
 export function getRouteAccess(pathname: string): RouteAccess {

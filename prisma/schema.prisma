@@ -55,6 +55,7 @@ model User {
   createdInvites      CoupleInvite[]            @relation("CoupleInviteCreator")
   comparisonConsents  CoupleComparisonConsent[]
   passwordResetTokens PasswordResetToken[]
+  contractSessions    ContractSession[]
 
   @@map("users")
 }
@@ -68,19 +69,21 @@ model Couple {
   attempts           QuestionnaireAttempt[]
   invites            CoupleInvite[]
   comparisonConsents CoupleComparisonConsent[]
+  contractWorkspaces ContractWorkspace[]
 
   @@map("couples")
 }
 
 model CoupleMember {
-  id                  String           @id @default(uuid()) @db.Char(36)
-  coupleId            String           @map("couple_id") @db.Char(36)
-  userId              String           @map("user_id") @db.Char(36)
+  id                  String            @id @default(uuid()) @db.Char(36)
+  coupleId            String            @map("couple_id") @db.Char(36)
+  userId              String            @map("user_id") @db.Char(36)
   role                CoupleMemberRole
-  activeMembershipKey String?          @unique(map: "uq_couple_members_active_membership_key") @map("active_membership_key") @db.VarChar(191)
-  joinedAt            DateTime         @default(now()) @map("joined_at") @db.DateTime(3)
-  couple              Couple           @relation(fields: [coupleId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_members_couple")
-  user                User             @relation(fields: [userId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_members_user")
+  activeMembershipKey String?           @unique(map: "uq_couple_members_active_membership_key") @map("active_membership_key") @db.VarChar(191)
+  joinedAt            DateTime          @default(now()) @map("joined_at") @db.DateTime(3)
+  couple              Couple            @relation(fields: [coupleId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_members_couple")
+  user                User              @relation(fields: [userId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "fk_couple_members_user")
+  contractSessions    ContractSession[]
 
   @@unique([coupleId, userId], map: "uq_couple_members_couple_user")
   @@unique([coupleId, role], map: "uq_couple_members_couple_role")
@@ -279,4 +282,99 @@ model PasswordResetToken {
   @@index([userId, usedAt], map: "idx_password_reset_tokens_user_used")
   @@index([expiresAt], map: "idx_password_reset_tokens_expires_at")
   @@map("password_reset_tokens")
+}
+
+// Separate aggregate: admission questionnaires and their scoring are untouched.
+model ContractEdition {
+  id          String              @id @default(uuid()) @db.Char(36)
+  version     String              @unique @db.VarChar(30)
+  contentHash String              @db.Char(64)
+  snapshot    Json
+  createdAt   DateTime            @default(now()) @db.DateTime(3)
+  workspaces  ContractWorkspace[]
+
+  @@map("contract_editions")
+}
+
+model ContractWorkspace {
+  id          String               @id @default(uuid()) @db.Char(36)
+  coupleId    String               @db.Char(36)
+  editionId   String               @db.Char(36)
+  revision    Int                  @default(0)
+  createdAt   DateTime             @default(now()) @db.DateTime(3)
+  couple      Couple               @relation(fields: [coupleId], references: [id], onDelete: Restrict)
+  edition     ContractEdition      @relation(fields: [editionId], references: [id], onDelete: Restrict)
+  sessions    ContractSession[]
+  decisions   ContractDecision[]
+  evaluations ContractEvaluation[]
+  documents   ContractDocument[]
+
+  @@unique([coupleId, editionId])
+  @@map("contract_workspaces")
+}
+
+model ContractSession {
+  id          String            @id @default(uuid()) @db.Char(36)
+  workspaceId String            @db.Char(36)
+  userId      String            @db.Char(36)
+  memberId    String            @db.Char(36)
+  revision    Int               @default(0)
+  status      String            @default("IN_PROGRESS") @db.VarChar(20)
+  payload     String            @db.LongText
+  consentedAt DateTime?         @db.DateTime(3)
+  submittedAt DateTime?         @db.DateTime(3)
+  createdAt   DateTime          @default(now()) @db.DateTime(3)
+  updatedAt   DateTime          @updatedAt @db.DateTime(3)
+  workspace   ContractWorkspace @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  user        User              @relation(fields: [userId], references: [id], onDelete: Restrict)
+  member      CoupleMember      @relation(fields: [memberId], references: [id], onDelete: Restrict)
+
+  @@unique([workspaceId, userId])
+  @@index([memberId])
+  @@map("contract_sessions")
+}
+
+model ContractEvaluation {
+  id            String            @id @default(uuid()) @db.Char(36)
+  workspaceId   String            @db.Char(36)
+  basisHash     String            @db.Char(64)
+  engineVersion String            @db.VarChar(30)
+  payload       String            @db.LongText
+  createdAt     DateTime          @default(now()) @db.DateTime(3)
+  workspace     ContractWorkspace @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+
+  @@unique([workspaceId, basisHash])
+  @@map("contract_evaluations")
+}
+
+model ContractDecision {
+  id            String            @id @default(uuid()) @db.Char(36)
+  workspaceId   String            @db.Char(36)
+  moduleId      String            @db.VarChar(50)
+  revision      Int
+  activeKey     String?           @unique @db.VarChar(191)
+  basisHash     String            @db.Char(64)
+  contentHash   String            @db.Char(64)
+  payload       String            @db.LongText
+  status        String            @default("PROPOSED") @db.VarChar(30)
+  confirmations Json
+  createdAt     DateTime          @default(now()) @db.DateTime(3)
+  workspace     ContractWorkspace @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+
+  @@unique([workspaceId, moduleId, revision])
+  @@map("contract_decisions")
+}
+
+model ContractDocument {
+  id          String            @id @default(uuid()) @db.Char(36)
+  workspaceId String            @db.Char(36)
+  basisHash   String            @db.Char(64)
+  contentHash String            @db.Char(64)
+  payload     String            @db.LongText
+  status      String            @default("DRAFT") @db.VarChar(30)
+  createdAt   DateTime          @default(now()) @db.DateTime(3)
+  workspace   ContractWorkspace @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+
+  @@unique([workspaceId, basisHash])
+  @@map("contract_documents")
 }

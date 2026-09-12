@@ -2,6 +2,8 @@
 
 Aplicação web para apoiar conversas conscientes sobre expectativas e decisões na vida a dois.
 
+A integração do arquivo-mestre 1.4.0 está documentada em [docs/contract-master-implementation.md](docs/contract-master-implementation.md). As novas etapas estão em `/contrato`, com revisão editorial em `/admin/contrato`. A produção continua bloqueada pelas pendências do pacote; a admissão foi preservada.
+
 ## Requisitos
 
 - Node.js compatível com Next.js 16

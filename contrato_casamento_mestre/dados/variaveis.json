@@ -1,0 +1,1320 @@
+[
+  {
+    "token": "Nome",
+    "question_ids": [
+      "Q001",
+      "Q002",
+      "Q003",
+      "Q004",
+      "Q005",
+      "Q006",
+      "Q007",
+      "Q008",
+      "Q009",
+      "Q010",
+      "Q011",
+      "Q012",
+      "Q013",
+      "Q014",
+      "Q015",
+      "Q016",
+      "Q017",
+      "Q018",
+      "Q019",
+      "Q020",
+      "Q021",
+      "Q022",
+      "Q023",
+      "Q024",
+      "Q025",
+      "Q026",
+      "Q027",
+      "Q028",
+      "Q029",
+      "Q030",
+      "Q031",
+      "Q032",
+      "Q033",
+      "Q034",
+      "Q035",
+      "Q036",
+      "Q037",
+      "Q038",
+      "Q039",
+      "Q040",
+      "Q041",
+      "Q042",
+      "Q043",
+      "Q044",
+      "Q045",
+      "Q046",
+      "Q047",
+      "Q048",
+      "Q049",
+      "Q050",
+      "Q051",
+      "Q052",
+      "Q053",
+      "Q054",
+      "Q055",
+      "Q056",
+      "Q057",
+      "Q058",
+      "Q059",
+      "Q060",
+      "Q061",
+      "Q062",
+      "Q063",
+      "Q064",
+      "Q065",
+      "Q066",
+      "Q067",
+      "Q068",
+      "Q069",
+      "Q070",
+      "Q071",
+      "Q072",
+      "Q073",
+      "Q074",
+      "Q075",
+      "Q076",
+      "Q077",
+      "Q078",
+      "Q079",
+      "Q080",
+      "Q081",
+      "Q082",
+      "Q083",
+      "Q084",
+      "Q085",
+      "Q086",
+      "Q087",
+      "Q088",
+      "Q089",
+      "Q090",
+      "Q091",
+      "Q092",
+      "Q093",
+      "Q094",
+      "Q095",
+      "Q096",
+      "Q097",
+      "Q098",
+      "Q099",
+      "Q100",
+      "Q111",
+      "Q112",
+      "Q113",
+      "Q114",
+      "Q115",
+      "Q116",
+      "Q117",
+      "Q118",
+      "Q119",
+      "Q120",
+      "Q121",
+      "Q122",
+      "Q123",
+      "Q124",
+      "Q125",
+      "Q126",
+      "Q127",
+      "Q128",
+      "Q129",
+      "Q130",
+      "Q131",
+      "Q132",
+      "Q133",
+      "Q134",
+      "Q135",
+      "Q136",
+      "Q137",
+      "Q138",
+      "Q139",
+      "Q140",
+      "Q141",
+      "Q142",
+      "Q143",
+      "Q144",
+      "Q145",
+      "Q146",
+      "Q147",
+      "Q148",
+      "Q149",
+      "Q150",
+      "Q151",
+      "Q152",
+      "Q153",
+      "Q154",
+      "Q155",
+      "Q156",
+      "Q157",
+      "Q158",
+      "Q159",
+      "Q160",
+      "Q161",
+      "Q162",
+      "Q163",
+      "Q164",
+      "Q165",
+      "Q166",
+      "Q167",
+      "Q168",
+      "Q169",
+      "Q170",
+      "Q171",
+      "Q172",
+      "Q173",
+      "Q174",
+      "Q175",
+      "Q176",
+      "Q177",
+      "Q178",
+      "Q179",
+      "Q180",
+      "Q181",
+      "Q182",
+      "Q183",
+      "Q184",
+      "Q185",
+      "Q186",
+      "Q187",
+      "Q188",
+      "Q189",
+      "Q190",
+      "Q191",
+      "Q192",
+      "Q193",
+      "Q194",
+      "Q195",
+      "Q196",
+      "Q197",
+      "Q198",
+      "Q199",
+      "Q200"
+    ],
+    "type": "string",
+    "binding_description": "Respondente da alternativa individual; não o cônjuge automaticamente.",
+    "status": "BINDING_DEFINED"
+  },
+  {
+    "token": "Nome 002-C",
+    "question_ids": [
+      "Q020"
+    ],
+    "type": "string",
+    "binding_description": "Pessoa explicitamente vinculada à resposta C da Q002 neste cruzamento.",
+    "status": "BINDING_DEFINED"
+  },
+  {
+    "token": "Nome 020-C",
+    "question_ids": [
+      "Q020"
+    ],
+    "type": "string",
+    "binding_description": "Pessoa explicitamente vinculada à resposta C da Q020 neste cruzamento.",
+    "status": "BINDING_DEFINED"
+  },
+  {
+    "token": "Nome 1",
+    "question_ids": [
+      "Q001",
+      "Q002",
+      "Q003",
+      "Q004",
+      "Q005",
+      "Q006",
+      "Q008",
+      "Q009",
+      "Q010",
+      "Q011",
+      "Q014",
+      "Q015",
+      "Q016",
+      "Q017",
+      "Q018",
+      "Q020",
+      "Q021",
+      "Q023",
+      "Q024",
+      "Q027",
+      "Q028",
+      "Q029",
+      "Q030",
+      "Q031",
+      "Q032",
+      "Q033",
+      "Q034",
+      "Q035",
+      "Q036",
+      "Q037",
+      "Q038",
+      "Q039",
+      "Q040",
+      "Q041",
+      "Q044",
+      "Q045",
+      "Q046",
+      "Q047",
+      "Q048",
+      "Q049",
+      "Q050",
+      "Q052",
+      "Q053",
+      "Q054",
+      "Q055",
+      "Q057",
+      "Q058",
+      "Q059",
+      "Q060",
+      "Q061",
+      "Q062",
+      "Q063",
+      "Q066",
+      "Q068",
+      "Q069",
+      "Q070",
+      "Q071",
+      "Q073",
+      "Q075",
+      "Q076",
+      "Q078",
+      "Q080",
+      "Q081",
+      "Q082",
+      "Q083",
+      "Q084",
+      "Q085",
+      "Q086",
+      "Q087",
+      "Q088",
+      "Q089",
+      "Q090",
+      "Q091",
+      "Q092",
+      "Q093",
+      "Q094",
+      "Q095",
+      "Q096",
+      "Q097",
+      "Q098",
+      "Q099",
+      "Q100",
+      "Q101",
+      "Q102",
+      "Q103",
+      "Q104",
+      "Q105",
+      "Q106",
+      "Q107",
+      "Q108",
+      "Q109",
+      "Q110",
+      "Q112",
+      "Q113",
+      "Q114",
+      "Q116",
+      "Q117",
+      "Q118",
+      "Q120",
+      "Q121",
+      "Q122",
+      "Q124",
+      "Q126",
+      "Q129",
+      "Q130",
+      "Q131",
+      "Q135",
+      "Q139",
+      "Q140",
+      "Q141",
+      "Q143",
+      "Q144",
+      "Q145",
+      "Q146",
+      "Q148",
+      "Q149",
+      "Q150",
+      "Q151",
+      "Q154",
+      "Q163",
+      "Q164",
+      "Q165",
+      "Q166",
+      "Q167",
+      "Q168",
+      "Q170",
+      "Q174",
+      "Q185",
+      "Q200"
+    ],
+    "type": "string",
+    "binding_description": "Nome de uso do membro com posição estável 1 no casal.",
+    "status": "BINDING_DEFINED"
+  },
+  {
+    "token": "Nome 2",
+    "question_ids": [
+      "Q001",
+      "Q002",
+      "Q003",
+      "Q004",
+      "Q005",
+      "Q006",
+      "Q008",
+      "Q009",
+      "Q010",
+      "Q011",
+      "Q014",
+      "Q015",
+      "Q016",
+      "Q017",
+      "Q018",
+      "Q020",
+      "Q021",
+      "Q023",
+      "Q024",
+      "Q027",
+      "Q028",
+      "Q029",
+      "Q030",
+      "Q031",
+      "Q032",
+      "Q033",
+      "Q034",
+      "Q035",
+      "Q036",
+      "Q037",
+      "Q038",
+      "Q039",
+      "Q040",
+      "Q041",
+      "Q044",
+      "Q045",
+      "Q046",
+      "Q047",
+      "Q048",
+      "Q049",
+      "Q050",
+      "Q052",
+      "Q053",
+      "Q054",
+      "Q055",
+      "Q057",
+      "Q058",
+      "Q059",
+      "Q060",
+      "Q061",
+      "Q062",
+      "Q063",
+      "Q066",
+      "Q068",
+      "Q069",
+      "Q070",
+      "Q071",
+      "Q073",
+      "Q075",
+      "Q076",
+      "Q078",
+      "Q080",
+      "Q081",
+      "Q082",
+      "Q083",
+      "Q084",
+      "Q085",
+      "Q086",
+      "Q087",
+      "Q088",
+      "Q089",
+      "Q090",
+      "Q091",
+      "Q092",
+      "Q093",
+      "Q094",
+      "Q095",
+      "Q096",
+      "Q097",
+      "Q098",
+      "Q099",
+      "Q100",
+      "Q101",
+      "Q102",
+      "Q103",
+      "Q104",
+      "Q105",
+      "Q106",
+      "Q107",
+      "Q108",
+      "Q109",
+      "Q110",
+      "Q112",
+      "Q113",
+      "Q114",
+      "Q116",
+      "Q117",
+      "Q118",
+      "Q120",
+      "Q121",
+      "Q122",
+      "Q124",
+      "Q126",
+      "Q129",
+      "Q130",
+      "Q131",
+      "Q135",
+      "Q139",
+      "Q140",
+      "Q141",
+      "Q143",
+      "Q144",
+      "Q145",
+      "Q146",
+      "Q148",
+      "Q149",
+      "Q150",
+      "Q151",
+      "Q154",
+      "Q163",
+      "Q164",
+      "Q165",
+      "Q166",
+      "Q167",
+      "Q168",
+      "Q170",
+      "Q174",
+      "Q185",
+      "Q200"
+    ],
+    "type": "string",
+    "binding_description": "Nome de uso do membro com posição estável 2 no casal.",
+    "status": "BINDING_DEFINED"
+  },
+  {
+    "token": "Nome A",
+    "question_ids": [
+      "Q001",
+      "Q002",
+      "Q003",
+      "Q005",
+      "Q007",
+      "Q008",
+      "Q015",
+      "Q020",
+      "Q021",
+      "Q024",
+      "Q029",
+      "Q030",
+      "Q032",
+      "Q033",
+      "Q034",
+      "Q035",
+      "Q036",
+      "Q037",
+      "Q038",
+      "Q039",
+      "Q040",
+      "Q042",
+      "Q043",
+      "Q044",
+      "Q045",
+      "Q046",
+      "Q047",
+      "Q048",
+      "Q049",
+      "Q050",
+      "Q051",
+      "Q056",
+      "Q057",
+      "Q058",
+      "Q059",
+      "Q060",
+      "Q061",
+      "Q063",
+      "Q064",
+      "Q065",
+      "Q066",
+      "Q070",
+      "Q071",
+      "Q072",
+      "Q073",
+      "Q074",
+      "Q075",
+      "Q076",
+      "Q077",
+      "Q078",
+      "Q079",
+      "Q080",
+      "Q082",
+      "Q083",
+      "Q084",
+      "Q086",
+      "Q087",
+      "Q088",
+      "Q089",
+      "Q091",
+      "Q092",
+      "Q093",
+      "Q095",
+      "Q096",
+      "Q097",
+      "Q098",
+      "Q099",
+      "Q115",
+      "Q121",
+      "Q124",
+      "Q125",
+      "Q128",
+      "Q132",
+      "Q133",
+      "Q134",
+      "Q135",
+      "Q136",
+      "Q137",
+      "Q138",
+      "Q139",
+      "Q141",
+      "Q142",
+      "Q144",
+      "Q145",
+      "Q146",
+      "Q148",
+      "Q149",
+      "Q171",
+      "Q173",
+      "Q175"
+    ],
+    "type": "string",
+    "binding_description": "Respondente A na combinação específica, independentemente de gênero.",
+    "status": "BINDING_DEFINED"
+  },
+  {
+    "token": "Nome B",
+    "question_ids": [
+      "Q001",
+      "Q003",
+      "Q020",
+      "Q024",
+      "Q029",
+      "Q030",
+      "Q032",
+      "Q033",
+      "Q034",
+      "Q035",
+      "Q036",
+      "Q038",
+      "Q039",
+      "Q040",
+      "Q042",
+      "Q043",
+      "Q044",
+      "Q045",
+      "Q046",
+      "Q047",
+      "Q048",
+      "Q049",
+      "Q050",
+      "Q051",
+      "Q052",
+      "Q056",
+      "Q057",
+      "Q058",
+      "Q059",
+      "Q060",
+      "Q061",
+      "Q063",
+      "Q064",
+      "Q065",
+      "Q070",
+      "Q072",
+      "Q079",
+      "Q080",
+      "Q082",
+      "Q083",
+      "Q087",
+      "Q088",
+      "Q089",
+      "Q091",
+      "Q099",
+      "Q121",
+      "Q122",
+      "Q125",
+      "Q141",
+      "Q142",
+      "Q146",
+      "Q171"
+    ],
+    "type": "string",
+    "binding_description": "Respondente B na combinação específica, independentemente de gênero.",
+    "status": "BINDING_DEFINED"
+  },
+  {
+    "token": "Nome C",
+    "question_ids": [
+      "Q002",
+      "Q005",
+      "Q007",
+      "Q008",
+      "Q015",
+      "Q020",
+      "Q021",
+      "Q024",
+      "Q029",
+      "Q030",
+      "Q032",
+      "Q033",
+      "Q034",
+      "Q035",
+      "Q036",
+      "Q037",
+      "Q038",
+      "Q039",
+      "Q040",
+      "Q042",
+      "Q043",
+      "Q044",
+      "Q045",
+      "Q046",
+      "Q047",
+      "Q048",
+      "Q049",
+      "Q050",
+      "Q051",
+      "Q052",
+      "Q056",
+      "Q057",
+      "Q058",
+      "Q059",
+      "Q060",
+      "Q061",
+      "Q063",
+      "Q064",
+      "Q065",
+      "Q066",
+      "Q070",
+      "Q071",
+      "Q072",
+      "Q073",
+      "Q074",
+      "Q075",
+      "Q076",
+      "Q077",
+      "Q078",
+      "Q080",
+      "Q082",
+      "Q083",
+      "Q084",
+      "Q086",
+      "Q087",
+      "Q088",
+      "Q089",
+      "Q091",
+      "Q092",
+      "Q093",
+      "Q095",
+      "Q096",
+      "Q097",
+      "Q098",
+      "Q099",
+      "Q115",
+      "Q121",
+      "Q122",
+      "Q124",
+      "Q125",
+      "Q128",
+      "Q132",
+      "Q133",
+      "Q134",
+      "Q135",
+      "Q136",
+      "Q137",
+      "Q138",
+      "Q139",
+      "Q141",
+      "Q142",
+      "Q144",
+      "Q145",
+      "Q146",
+      "Q148",
+      "Q149",
+      "Q171",
+      "Q173",
+      "Q175"
+    ],
+    "type": "string",
+    "binding_description": "Respondente C na combinação específica, independentemente de gênero.",
+    "status": "BINDING_DEFINED"
+  },
+  {
+    "token": "Nome X",
+    "question_ids": [
+      "Q004"
+    ],
+    "type": "string",
+    "binding_description": "Pessoa de origem de um cruzamento direcional.",
+    "status": "BINDING_DEFINED"
+  },
+  {
+    "token": "Nome Y",
+    "question_ids": [
+      "Q004"
+    ],
+    "type": "string",
+    "binding_description": "Outro membro no cruzamento direcional.",
+    "status": "BINDING_DEFINED"
+  },
+  {
+    "token": "Outro",
+    "question_ids": [
+      "Q038"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "Responsável",
+    "question_ids": [
+      "Q038"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "apoio",
+    "question_ids": [
+      "Q129"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "apoio definido",
+    "question_ids": [
+      "Q129"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "categorias 1",
+    "question_ids": [
+      "Q041"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "categorias 2",
+    "question_ids": [
+      "Q041"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "condições definidas",
+    "question_ids": [
+      "Q144",
+      "Q174"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "condições selecionadas",
+    "question_ids": [
+      "Q049",
+      "Q050"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "data",
+    "question_ids": [
+      "Q129",
+      "Q144",
+      "Q146",
+      "Q148",
+      "Q149",
+      "Q150",
+      "Q168"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "data de revisão",
+    "question_ids": [
+      "Q050",
+      "Q100",
+      "Q129"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "forma",
+    "question_ids": [
+      "Q004"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "forma_X",
+    "question_ids": [
+      "Q004"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "forma_Y",
+    "question_ids": [
+      "Q004"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "frequência escolhida",
+    "question_ids": [
+      "Q055",
+      "Q092",
+      "Q112",
+      "Q113",
+      "Q114"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "limite escolhido",
+    "question_ids": [
+      "Q035",
+      "Q036",
+      "Q040"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "limites selecionados",
+    "question_ids": [
+      "Q028",
+      "Q032",
+      "Q060"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "motivo",
+    "question_ids": [
+      "Q027",
+      "Q149"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "oportunidade",
+    "question_ids": [
+      "Q049"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "percentual",
+    "question_ids": [
+      "Q116",
+      "Q135"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "percentual escolhido",
+    "question_ids": [
+      "Q037"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "pessoa",
+    "question_ids": [
+      "Q027",
+      "Q032"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "pessoa/situação",
+    "question_ids": [
+      "Q028"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "projeto",
+    "question_ids": [
+      "Q050",
+      "Q148",
+      "Q149"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "valor",
+    "question_ids": [
+      "Q116",
+      "Q135",
+      "Q148",
+      "Q154",
+      "Q167"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "áreas 1",
+    "question_ids": [
+      "Q038"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "áreas 2",
+    "question_ids": [
+      "Q038"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "projeto escolhido",
+    "question_ids": [
+      "Q143"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "local",
+    "question_ids": [
+      "Q144"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "valor/percentual",
+    "question_ids": [
+      "Q148"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "condição objetiva",
+    "question_ids": [
+      "Q149"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "prioridade",
+    "question_ids": [
+      "Q150"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "metas",
+    "question_ids": [
+      "Q150"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "regra definida",
+    "question_ids": [
+      "Q151",
+      "Q154",
+      "Q170"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "períodos definidos",
+    "question_ids": [
+      "Q163"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "filho",
+    "question_ids": [
+      "Q164",
+      "Q166",
+      "Q167",
+      "Q168"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "horário",
+    "question_ids": [
+      "Q164"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "exceções",
+    "question_ids": [
+      "Q164"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "divisão registrada",
+    "question_ids": [
+      "Q165"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "tarefas",
+    "question_ids": [
+      "Q166"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "dados definidos",
+    "question_ids": [
+      "Q166"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "periodicidade",
+    "question_ids": [
+      "Q167"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "modelo definido",
+    "question_ids": [
+      "Q167"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "atividade",
+    "question_ids": [
+      "Q168"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "REQUIRES_TYPED_BINDING"
+  },
+  {
+    "token": "condição de Nome 1",
+    "question_ids": [
+      "Q054"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "condição de Nome 2",
+    "question_ids": [
+      "Q054"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "áreas selecionadas",
+    "question_ids": [
+      "Q057"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "regras escolhidas",
+    "question_ids": [
+      "Q085"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "familiares autorizados",
+    "question_ids": [
+      "Q093"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "condições escolhidas",
+    "question_ids": [
+      "Q093"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "outros responsáveis/profissionais",
+    "question_ids": [
+      "Q096"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "responsabilidades definidas",
+    "question_ids": [
+      "Q096"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "familiar",
+    "question_ids": [
+      "Q096",
+      "Q100"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "apoio financeiro/logístico/pontual",
+    "question_ids": [
+      "Q096"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "data final ou revisão",
+    "question_ids": [
+      "Q100"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "prazo escolhido",
+    "question_ids": [
+      "Q100"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "regras definidas",
+    "question_ids": [
+      "Q100"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "data inicial",
+    "question_ids": [
+      "Q100"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  },
+  {
+    "token": "alternativas definidas",
+    "question_ids": [
+      "Q100"
+    ],
+    "type": null,
+    "binding_description": null,
+    "status": "SOURCE_TOKEN_REQUIRES_BINDING"
+  }
+]

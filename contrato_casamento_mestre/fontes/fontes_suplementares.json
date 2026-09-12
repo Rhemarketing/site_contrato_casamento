@@ -1,0 +1,106 @@
+[
+  {
+    "source_id": "MSG101120",
+    "filename": "trecho_usuario_101_120.md",
+    "package_path": "fontes/atualizacao_1_1_0/mensagem_Q101_Q120.md",
+    "sha256": "62df0049d424c3f9b56ae2367eba630c32557d27e7f212142111ce6e70582266",
+    "origin": "CURRENT_USER_MESSAGE_NORMALIZED",
+    "version_in_source": "1.0"
+  },
+  {
+    "source_id": "MD02",
+    "filename": "Markdown (2).md colado",
+    "package_path": "fontes/atualizacao_1_1_0/trecho_Q141_Q150.md",
+    "sha256": "b529e93c775b13c19df4b04c859f6b03e74e35b9c29f4581915cef908cdda864",
+    "origin": "CURRENT_USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "1.0"
+  },
+  {
+    "source_id": "MD03",
+    "filename": "Markdown (3).md colado",
+    "package_path": "fontes/atualizacao_1_1_0/correcoes_6_0_fornecidas.md",
+    "sha256": "04fa83515869e3be591d8f0c8c352b0c317b30fa802cc6d1df11f914ece4e5a0",
+    "origin": "CURRENT_USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "6.0"
+  },
+  {
+    "source_id": "MD04",
+    "filename": "Markdown (4).md colado",
+    "package_path": "fontes/atualizacao_1_1_0/trecho_Q151_Q170.md",
+    "sha256": "91351dca4667cde83164f2d4d222ecc0b36744cd6df1d95cbcbe17a76a7203b8",
+    "origin": "CURRENT_USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "1.0"
+  },
+  {
+    "source_id": "MD05",
+    "filename": "Markdown (5).md colado",
+    "package_path": "fontes/atualizacao_1_1_0/trecho_Q186_Q200.md",
+    "sha256": "caa05eb3dee2ad2e0d23d67ad76936c57df443673ea63a6d1395d170c3abc900",
+    "origin": "CURRENT_USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "1.0"
+  },
+  {
+    "source_id": "SUP12-01",
+    "filename": "Markdown(1).md colado",
+    "package_path": "fontes/atualizacao_1_2_0/Q051_Q055.md",
+    "sha256": "0be196ed73bc3e953d42adb8cf1c723402e72b7d9cdd7e9f6f2ef36c7c5d34f7",
+    "origin": "USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "1.0"
+  },
+  {
+    "source_id": "SUP12-02",
+    "filename": "Markdown (2)(1).md colado",
+    "package_path": "fontes/atualizacao_1_2_0/Q056_Q060.md",
+    "sha256": "2fe30e27d6a707aea7f6e93b5ecf0a8892ad37837f3fb71561704c261c44def4",
+    "origin": "USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "1.0"
+  },
+  {
+    "source_id": "SUP12-03",
+    "filename": "Markdown (3)(1).md colado",
+    "package_path": "fontes/atualizacao_1_2_0/Q061_Q070.md",
+    "sha256": "3dfa9b1d8831040f5df1bdcab8706c72e0403d348e24c6b2ee056febea8da87b",
+    "origin": "USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "1.0"
+  },
+  {
+    "source_id": "SUP12-04",
+    "filename": "Markdown (4)(1).md colado",
+    "package_path": "fontes/atualizacao_1_2_0/Q071_Q080.md",
+    "sha256": "6abcf0a1d563cc8b8e907c7d657d4a2602f67a203ff8d76018c3a728e125dd5c",
+    "origin": "USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "1.0"
+  },
+  {
+    "source_id": "SUP12-05",
+    "filename": "Markdown (5)(1).md colado",
+    "package_path": "fontes/atualizacao_1_2_0/Q081_Q090.md",
+    "sha256": "90cb4c35e9e85b4d08bccba5909a93057ab348dc1c564afe742a967ba3bc206d",
+    "origin": "USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "1.0"
+  },
+  {
+    "source_id": "SUP12-06",
+    "filename": "Markdown (6).md colado",
+    "package_path": "fontes/atualizacao_1_2_0/Q091_Q100.md",
+    "sha256": "808b9c86368adc4737fcd55694f15cbc5824138e67d221367de96f6c2f6297ff",
+    "origin": "USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "1.0"
+  },
+  {
+    "source_id": "SUP12-07",
+    "filename": "Markdown (7).md colado",
+    "package_path": "fontes/atualizacao_1_2_0/auditoria_001_100.md",
+    "sha256": "7587224e740cfa0e18b4e0d5a4f236e883f8ddc35f8903d35b89e8f6c837140f",
+    "origin": "USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "AUDIT_BEFORE_5.0"
+  },
+  {
+    "source_id": "SUP12-08",
+    "filename": "Markdown (8).md colado",
+    "package_path": "fontes/atualizacao_1_2_0/correcoes_canonicas_5_0.md",
+    "sha256": "4c251cddd71c5965b6b8075238de202e12b4aec4b9234d1843eb679ed970d0ff",
+    "origin": "USER_ATTACHMENT_UNCHANGED",
+    "version_in_source": "5.0"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "questionnaire_kind": "ADMISSION",
+  "expected_question_count": 40,
+  "source": "USER_MESSAGE_CURRENT_CONVERSATION",
+  "purpose": "Apresentar a satisfação percebida com o relacionamento e convidar para comprar o questionário principal.",
+  "question_bank": null,
+  "scoring_method": null,
+  "result_copy": null,
+  "cta_copy": null,
+  "price": null,
+  "currency": null,
+  "payment_provider": null,
+  "access_duration": null,
+  "is_active": false,
+  "status": "IMPLEMENTED_ON_SITE_USER_CONFIRMED",
+  "implementation_status": "EXISTS_IN_SITE",
+  "confirmation_source": {
+    "source_id": "USER_CONFIRMATION_ADMISSION",
+    "quote": "A prova de admissão juntamente com a página e lógica do resultado já foi adicionada no site, pode descartar essa pendencia."
+  },
+  "pending_in_this_master": false,
+  "implementation_verified_by_this_task": false,
+  "local_content_status": "NOT_IMPORTED_FROM_SITE",
+  "integration_note": "Preservar prova, página e lógica já implementadas; este pacote não recria nem substitui essa parte do site."
+}

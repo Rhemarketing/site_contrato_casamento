@@ -1,0 +1,21 @@
+{
+  "policy_id": "Q154_TOTAL_PROHIBITION",
+  "question_id": "Q154",
+  "policy": "TOTAL_PROHIBITION",
+  "source_ref": {
+    "source_id": "USER_Q154_TOTAL_PROHIBITION",
+    "decision": "opção 1",
+    "context": "Proibição integral de apostas envolvendo dinheiro, mesmo pequenas quantias; sem R$10 por aposta, recaída ou dificuldade de controle.",
+    "origin": "EXPLICIT_USER_DECISION"
+  },
+  "contract_template": "{Nome 1} e {Nome 2} comprometem-se a não participar de apostas, bets, cassino, jogos de azar, loterias ou atividades semelhantes envolvendo dinheiro, mesmo em pequenas quantias, tanto com recursos pessoais quanto com recursos familiares.",
+  "scope": "ALL_MONEY_WAGERS_PERSONAL_AND_FAMILY_RESOURCES",
+  "nos_trigger_type": "NEVER",
+  "contribution_rule": "NONE",
+  "applies_independently_of_answers": true,
+  "private_C_preserved": true,
+  "P10_for_problematic_gambling": true,
+  "safety_overrides": true,
+  "wording_provenance": "EDITORIAL_IMPLEMENTATION_OF_USER_DECISION",
+  "production_release": false
+}

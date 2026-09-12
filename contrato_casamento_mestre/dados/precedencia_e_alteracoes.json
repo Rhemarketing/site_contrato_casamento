@@ -1,0 +1,194 @@
+[
+  {
+    "id": "OV001",
+    "questions": [
+      "Q002"
+    ],
+    "change": "asset_operation_threshold",
+    "value": {
+      "other_operations_min_rlf_ratio": "0.50",
+      "essential_assets_always_relevant": true
+    },
+    "source": "CANON50-03",
+    "status": "CANONICAL_5_SOURCE_RECOVERED",
+    "supersedes": "10% da RLF na versão 4.1",
+    "patch_id": "PATCH50-03-Q002"
+  },
+  {
+    "id": "OV002",
+    "questions": [
+      "Q109"
+    ],
+    "change": "replace_option_A",
+    "patch_id": "PATCH60-Q109"
+  },
+  {
+    "id": "OV003",
+    "questions": [
+      "Q111",
+      "Q142",
+      "Q153",
+      "Q179",
+      "Q187"
+    ],
+    "change": "full_replacement",
+    "applied_to": "perguntas.json prompt_text/options/effect_source_text",
+    "status": "APPLIED_TO_SOURCE_CONTENT"
+  },
+  {
+    "id": "OV004",
+    "questions": [
+      "Q126"
+    ],
+    "change": "B_C_private_and_generic_shared_rule_only",
+    "patch_id": "PATCH60-Q126"
+  },
+  {
+    "id": "OV005",
+    "questions": [
+      "Q128"
+    ],
+    "change": "replace_urgency_paragraph",
+    "patch_id": "PATCH60-Q128"
+  },
+  {
+    "id": "OV006",
+    "questions": [
+      "Q130"
+    ],
+    "change": "emergency_registry_voluntary_minimized_removable",
+    "patch_id": "PATCH60-Q130",
+    "conflict": "Obrigatório na base; dados passam a ser voluntários na correção. Interface/aceite final requer definição."
+  },
+  {
+    "id": "OV007",
+    "questions": [
+      "Q131"
+    ],
+    "change": "disable_separate_leisure_frequency_reuse_Q011",
+    "patch_id": "PATCH60-Q131",
+    "status": "JOINT_MODULE_DISABLED"
+  },
+  {
+    "id": "OV008",
+    "questions": [
+      "Q146"
+    ],
+    "change": "AC_triggers_P09_no_immediate_joint_decision",
+    "patch_id": "PATCH60-Q146"
+  },
+  {
+    "id": "OV009",
+    "questions": [
+      "Q148"
+    ],
+    "change": "protect_reserve_floor",
+    "patch_id": "PATCH60-Q148"
+  },
+  {
+    "id": "OV010",
+    "questions": [
+      "Q153",
+      "Q160"
+    ],
+    "change": "substances_privacy_and_voluntary_self_restrictions",
+    "patch_ids": [
+      "PATCH70-Q153",
+      "PATCH70-Q160"
+    ]
+  },
+  {
+    "id": "OV011",
+    "questions": [
+      "Q169",
+      "Q170"
+    ],
+    "change": "professional_health_decisions_and_child_data_minimization",
+    "patch_ids": [
+      "PATCH70-Q169",
+      "PATCH70-Q170"
+    ]
+  },
+  {
+    "id": "OV012",
+    "questions": [
+      "Q174",
+      "Q175"
+    ],
+    "change": "shared_home_rules_do_not_control_friendships_no_surveillance",
+    "patch_ids": [
+      "PATCH70-Q174",
+      "PATCH70-Q175"
+    ]
+  },
+  {
+    "id": "OV013",
+    "questions": [
+      "Q178"
+    ],
+    "change": "external_support_after_three_failed_structured_cycles",
+    "patch_id": "PATCH70-Q178"
+  },
+  {
+    "id": "OV014",
+    "questions": [
+      "Q196",
+      "Q197",
+      "Q198",
+      "Q200"
+    ],
+    "change": "PRIVATE_INTERNAL_no_contract",
+    "status": "ROUTING_APPLIED"
+  },
+  {
+    "id": "OV015",
+    "questions": [
+      "Q154"
+    ],
+    "change": "total_prohibition_user_approved",
+    "patch_id": "PATCH70-Q154",
+    "status": "RESOLVED_BY_USER",
+    "source_ref": {
+      "source_id": "USER_Q154_TOTAL_PROHIBITION",
+      "decision": "opção 1",
+      "context": "Proibição integral de apostas envolvendo dinheiro, mesmo pequenas quantias; sem R$10 por aposta, recaída ou dificuldade de controle.",
+      "origin": "EXPLICIT_USER_DECISION"
+    }
+  },
+  {
+    "id": "OV016",
+    "questions": [
+      "Q112",
+      "Q113",
+      "Q116",
+      "Q119",
+      "Q143"
+    ],
+    "change": "partial_corrections_applied_to_newly_recovered_bases",
+    "patch_ids": [
+      "PATCH60-Q112",
+      "PATCH60-Q113",
+      "PATCH60-Q116",
+      "PATCH60-Q119",
+      "PATCH60-Q143"
+    ],
+    "status": "APPLIED_IN_1_1_0"
+  },
+  {
+    "id": "OV017",
+    "questions": [
+      "Q051",
+      "Q055",
+      "Q056",
+      "Q060",
+      "Q079",
+      "Q080",
+      "Q081",
+      "Q092",
+      "Q100"
+    ],
+    "change": "CANONICAL_5_RECOVERED_AND_APPLIED_WITH_LATER_AUDIT",
+    "source_collection": "dados/correcoes_canonicas_5_0.json",
+    "status": "APPLIED_CONTENT_AND_SOURCE_PARAMETERS_NOT_PRODUCTION_RELEASE"
+  }
+]

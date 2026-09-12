@@ -1,0 +1,413 @@
+[
+  {
+    "field_id": "PREGNANCY_POSSIBLE",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q069"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q011_no_frequency_defined",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q011"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q027_ex_contact_present",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q027"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q027_relevant_disagreement",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q027"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q028_concrete_situation",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q028"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q028_legitimate_boundary_needed",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q028"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q032_concrete_friendship_conflict",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q032"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q049_concrete_professional_opportunity",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q049"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q050_concrete_personal_project",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q050"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q092_recurring_frequency_conflict",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q092"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q092_relevant_expectation_difference",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q092"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q096_concrete_care_need",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q096"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q096_relevant_reorganization_needed",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q096"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q100_concrete_housing_request",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q100"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q118_concrete_spiritual_education_need",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q118"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q124_recurring_meal_conflict",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q124"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q129_concrete_prolonged_limitation",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q129"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q134_concrete_relevant_trip",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q134"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q135_joint_budget_requested",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q135"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q139_joint_celebration_agreement_requested",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q139"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q144_concrete_move_opportunity",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q144"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q145_rlf_increased_at_least_20_percent",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q145"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q146_both_agree_to_joint_decision",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q146"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q146_sufficient_consensus",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q146"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q148_concrete_risky_project",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q148"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q149_concrete_postponed_project",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q149"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q151_no_active_problematic_pattern",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q151"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q164_child_schedule_definition_needed",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q164"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q165_school_responsibility_imbalance",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q165"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q168_concrete_child_activity",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q168"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "Q174_recurring_home_visits_conflict",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "COND-Q174"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "frequency_reconnection_due",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "EV-P03",
+      "EV-P07"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "joint_trust_repair_safe",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "EV-P05"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "objective_financial_crisis_trigger_met",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "EV-P08"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "previously_corrected_behavior_hits_original_trigger",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "EV-P12"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "problematic_habit_or_loss_of_control_flag",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "EV-P10"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "relevant_issue_requires_formal_conversation",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "EV-P01"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "significant_trust_break_known_and_needs_treatment",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "EV-P05"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "three_same_issue_conversations_in_90_days_without_sufficient_improvement",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "EV-P11"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "two_avoidable_consecutive_cancellations_not_rescheduled",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "EV-P06"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  },
+  {
+    "field_id": "two_consecutive_refusals_reconnection_due",
+    "type": "nullable_boolean",
+    "meaning_sources": [
+      "EV-P02"
+    ],
+    "null_means": "UNKNOWN_NOT_FALSE",
+    "set_by": "VERIFIED_CONTEXT_OR_EVENT_EVALUATOR",
+    "do_not_infer_from_partner_answer": true
+  }
+]

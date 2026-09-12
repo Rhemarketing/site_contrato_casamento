@@ -1,0 +1,380 @@
+{
+  "package_version": "1.4.0",
+  "algorithm": "SHA-256",
+  "excluded_from_hashes": [
+    "MANIFESTO.json",
+    "auditoria/validacao_executada.json"
+  ],
+  "files": [
+    {
+      "path": "00_LEIA-ME.md",
+      "sha256": "3982fa77bb906012469d036eaf1180fa605f0e1da69017f4b44926817f7d152e",
+      "bytes": 2394
+    },
+    {
+      "path": "01_ESPECIFICACAO_TECNICA.md",
+      "sha256": "96ad58b8fc717150018258904ef6abb6583d10170bd4b80a536657413d4d87ce",
+      "bytes": 43318
+    },
+    {
+      "path": "02_CATALOGO_DE_PERGUNTAS.md",
+      "sha256": "2d639b32a28b611daa7d8ec09f7b056fbdd60e9dd5ae0594f2cded1874b507cd",
+      "bytes": 951675
+    },
+    {
+      "path": "03_HISTORICO_DE_ATUALIZACOES.md",
+      "sha256": "0d45d481f1b8f4f3ca4221f91441b4a09439167a8ec7827c96ff5ce70385fbc1",
+      "bytes": 2387
+    },
+    {
+      "path": "04_MATRIZ_DE_COMBINACOES.md",
+      "sha256": "c832209dc726fea93cf32789e3daed1b75b54758e71e3fc05d9fc76d54b4ce2a",
+      "bytes": 158979
+    },
+    {
+      "path": "05_TEXTOS_CONJUNTOS.md",
+      "sha256": "e3b5a53760bf379559ac9108876fbb2c024daaced85501565efb0da07c302a17",
+      "bytes": 156780
+    },
+    {
+      "path": "auditoria/PENDENCIAS.md",
+      "sha256": "58874c278a7b271846f7a114ea448510c2a92fca76b6412524f2693d5c616639",
+      "bytes": 3852
+    },
+    {
+      "path": "auditoria/atualizacao_1_1_0.json",
+      "sha256": "cb9b7e36a68167558b016a9de561def73827fb56583f6d02a47e33f10a31f749",
+      "bytes": 2075
+    },
+    {
+      "path": "auditoria/atualizacao_1_2_0.json",
+      "sha256": "65c530c3955a5942a46c0f474c03bca97731e46518fa9eee322928255687cfa9",
+      "bytes": 1893
+    },
+    {
+      "path": "auditoria/cobertura.json",
+      "sha256": "2c1bd5cfb1a02624733ce2f47c266e15fb0324860953ee95aea321346df0fb0c",
+      "bytes": 873
+    },
+    {
+      "path": "auditoria/combinacoes_1_3_0.json",
+      "sha256": "6114a2928838e795a463fee130b4fb7c1f1d3e1164a47b4ccbfacdebc2c7a227",
+      "bytes": 1302
+    },
+    {
+      "path": "auditoria/decisao_apostas_1_3_1.json",
+      "sha256": "0060b19861312f63c169ccc432aff22ab3734e554fbeaa00493eec963d56b11d",
+      "bytes": 907
+    },
+    {
+      "path": "auditoria/decisao_textos_conjuntos_1_4_0.json",
+      "sha256": "1028b73e0017fb3fba7cf5397d164558c5701a5ba48529164040f9076348fede",
+      "bytes": 15859
+    },
+    {
+      "path": "auditoria/decisoes_combinacoes_1_3_0.json",
+      "sha256": "d52747dacc0d1e9bc1d5dd6c425a0ee500cb200e22354f2d636b3a0d1874bc9a",
+      "bytes": 281718
+    },
+    {
+      "path": "auditoria/pendencias.json",
+      "sha256": "b518ff19bda33dab3f71b387dbb7df3b6482b353c61749e164842b80d09854c9",
+      "bytes": 21124
+    },
+    {
+      "path": "auditoria/perguntas_faltantes.txt",
+      "sha256": "71d62627506ec642785dd89c6adc4f40a6b2a0e4bcaf5d78db6f233f6cbf94b0",
+      "bytes": 87
+    },
+    {
+      "path": "auditoria/status_001_200.txt",
+      "sha256": "724b92d801c1402b5e36921075647e81e2053f6cce7069f0002d37bbd4de123c",
+      "bytes": 1600
+    },
+    {
+      "path": "auditoria/textos_conjuntos_pendentes.md",
+      "sha256": "0b202c4d52b3635938ddc7c0ff0bf63c6dbbf73b2a7d5de50baa71600fb29132",
+      "bytes": 536
+    },
+    {
+      "path": "auditoria/validacao_textos_conjuntos_1_4_0.json",
+      "sha256": "dc33087acaabe89e427ceded8604655d5faffebd14b0b761992dc0fd716baea2",
+      "bytes": 446
+    },
+    {
+      "path": "dados/admissao_e_compra.json",
+      "sha256": "aee402492a89e6d95335a6df2ad323bd6bc561a6ed1954a303390553b4676380",
+      "bytes": 1045
+    },
+    {
+      "path": "dados/arquivo_mestre.json",
+      "sha256": "06f81be419348593a794e17e1899f9149594de2ba3f88f50ff98cebd7dc88dad",
+      "bytes": 9703802
+    },
+    {
+      "path": "dados/clausulas.json",
+      "sha256": "18d4b3ee185caec6a55c5dc894cdee9741f0ba180dbecb7b96cd1ac0358f4db7",
+      "bytes": 3449
+    },
+    {
+      "path": "dados/componentes_saida.json",
+      "sha256": "450082874c300de9a711d02f636d2fb9f6b49032cb9bd1f73a1155e67ed943c2",
+      "bytes": 1673929
+    },
+    {
+      "path": "dados/condicoes_fluxo.json",
+      "sha256": "bedc80d7a4110f609377646d4593c6da093ccd9c672100d457dde1a47f020f52",
+      "bytes": 124465
+    },
+    {
+      "path": "dados/contextos_combinacoes.json",
+      "sha256": "cc5cc202493ebe78b5d4cdc79b916aeac9cff08c02e51a2a0ad6e59ec28f635a",
+      "bytes": 11549
+    },
+    {
+      "path": "dados/correcoes_canonicas_5_0.json",
+      "sha256": "c2e605b9340a145a5cbac3030dbb3918a62f838a0d5373122f025ff1e5143370",
+      "bytes": 32963
+    },
+    {
+      "path": "dados/correcoes_fonte.json",
+      "sha256": "a3590789f5389a4bb5df9403cd01f26272bbac34d2372b223fafb934bf4c275d",
+      "bytes": 72363
+    },
+    {
+      "path": "dados/cruzamentos.json",
+      "sha256": "dd12176334cb58f872cf4ff965a34c5d6cc877b660920c9ce4145413c7a13519",
+      "bytes": 42778
+    },
+    {
+      "path": "dados/eventos_protocolos.json",
+      "sha256": "5de74c8e47f63c87f33896571bf5f9cdc4bc0df05bebe084d4b32b0477cd7635",
+      "bytes": 6306
+    },
+    {
+      "path": "dados/matriz_combinacoes.json",
+      "sha256": "f2bc1773fc5f3715e9dbbafb134a60e78cd6ee825b9ef38f2a2e0be6e844d401",
+      "bytes": 2509547
+    },
+    {
+      "path": "dados/nos_decidimos.json",
+      "sha256": "6c62d1b99577c10e036e8de756956ba425111054c99434ccc16ef0f4b6b2a151",
+      "bytes": 160361
+    },
+    {
+      "path": "dados/perfis_combinacoes.json",
+      "sha256": "80e895e5186527d8073e48e725206877cfde0fd392280fbf908e5eee2c6bdceb",
+      "bytes": 277169
+    },
+    {
+      "path": "dados/perguntas.json",
+      "sha256": "e742ebcb0f38c00c5b3602af00c066bfb4c3ee577eb72a1c56e2c9863226d190",
+      "bytes": 2206170
+    },
+    {
+      "path": "dados/politica_apostas.json",
+      "sha256": "d1ee6d06ccbb11a6ac5690fa670485bbb302eeb7110aae4c159f03d50580f2a6",
+      "bytes": 1026
+    },
+    {
+      "path": "dados/precedencia_e_alteracoes.json",
+      "sha256": "a7cf228d2cccf1d6dfbbde54a8129edfef8d48f0bd9983d59ebf249823ae44b7",
+      "bytes": 4137
+    },
+    {
+      "path": "dados/protocolos.json",
+      "sha256": "4958a2156b38895a46ce437f0966322f48a4cd67f13e1cdcd7325b11eb98284c",
+      "bytes": 27554
+    },
+    {
+      "path": "dados/regras_fixas.json",
+      "sha256": "e8d802488d3805006100bf04dfdd3ab75c28aa4d9400aa84de1443bb984cc222",
+      "bytes": 137756
+    },
+    {
+      "path": "dados/regras_globais.json",
+      "sha256": "25ed5776f0eeb7b5adba00158d0373a0b0c0b15bdfd9c2f47de797206c241775",
+      "bytes": 12636
+    },
+    {
+      "path": "dados/subperguntas_privadas.json",
+      "sha256": "85d885954a5023bcd9bd7be95c8dac679f502466308893b4969f24f8bb70745a",
+      "bytes": 4024
+    },
+    {
+      "path": "dados/textos_conjuntos.json",
+      "sha256": "1562b958fb243d8f0e28b6736f8a678b7171e504b0cbe700e1289f8c9fbf8271",
+      "bytes": 1478432
+    },
+    {
+      "path": "dados/variaveis.json",
+      "sha256": "7c6932616e8e718e1f4eed6db71f9383655305319732057d40ee639ac748869e",
+      "bytes": 22193
+    },
+    {
+      "path": "fontes/Q154_antes_decisao_1_3_1.json",
+      "sha256": "91fc88696c83358f150bda3798c12e63dbf7e8027c830c96fb380de074de0dbe",
+      "bytes": 28441
+    },
+    {
+      "path": "fontes/atualizacao_1_1_0/correcoes_6_0_fornecidas.md",
+      "sha256": "04fa83515869e3be591d8f0c8c352b0c317b30fa802cc6d1df11f914ece4e5a0",
+      "bytes": 16216
+    },
+    {
+      "path": "fontes/atualizacao_1_1_0/mensagem_Q101_Q120.md",
+      "sha256": "62df0049d424c3f9b56ae2367eba630c32557d27e7f212142111ce6e70582266",
+      "bytes": 37794
+    },
+    {
+      "path": "fontes/atualizacao_1_1_0/trecho_Q141_Q150.md",
+      "sha256": "b529e93c775b13c19df4b04c859f6b03e74e35b9c29f4581915cef908cdda864",
+      "bytes": 27713
+    },
+    {
+      "path": "fontes/atualizacao_1_1_0/trecho_Q151_Q170.md",
+      "sha256": "91351dca4667cde83164f2d4d222ecc0b36744cd6df1d95cbcbe17a76a7203b8",
+      "bytes": 37904
+    },
+    {
+      "path": "fontes/atualizacao_1_1_0/trecho_Q186_Q200.md",
+      "sha256": "caa05eb3dee2ad2e0d23d67ad76936c57df443673ea63a6d1395d170c3abc900",
+      "bytes": 26698
+    },
+    {
+      "path": "fontes/atualizacao_1_2_0/Q051_Q055.md",
+      "sha256": "0be196ed73bc3e953d42adb8cf1c723402e72b7d9cdd7e9f6f2ef36c7c5d34f7",
+      "bytes": 23223
+    },
+    {
+      "path": "fontes/atualizacao_1_2_0/Q056_Q060.md",
+      "sha256": "2fe30e27d6a707aea7f6e93b5ecf0a8892ad37837f3fb71561704c261c44def4",
+      "bytes": 25100
+    },
+    {
+      "path": "fontes/atualizacao_1_2_0/Q061_Q070.md",
+      "sha256": "3dfa9b1d8831040f5df1bdcab8706c72e0403d348e24c6b2ee056febea8da87b",
+      "bytes": 26434
+    },
+    {
+      "path": "fontes/atualizacao_1_2_0/Q071_Q080.md",
+      "sha256": "6abcf0a1d563cc8b8e907c7d657d4a2602f67a203ff8d76018c3a728e125dd5c",
+      "bytes": 25049
+    },
+    {
+      "path": "fontes/atualizacao_1_2_0/Q081_Q090.md",
+      "sha256": "90cb4c35e9e85b4d08bccba5909a93057ab348dc1c564afe742a967ba3bc206d",
+      "bytes": 29847
+    },
+    {
+      "path": "fontes/atualizacao_1_2_0/Q091_Q100.md",
+      "sha256": "808b9c86368adc4737fcd55694f15cbc5824138e67d221367de96f6c2f6297ff",
+      "bytes": 29852
+    },
+    {
+      "path": "fontes/atualizacao_1_2_0/auditoria_001_100.md",
+      "sha256": "7587224e740cfa0e18b4e0d5a4f236e883f8ddc35f8903d35b89e8f6c837140f",
+      "bytes": 45470
+    },
+    {
+      "path": "fontes/atualizacao_1_2_0/correcoes_canonicas_5_0.md",
+      "sha256": "4c251cddd71c5965b6b8075238de202e12b4aec4b9234d1843eb679ed970d0ff",
+      "bytes": 24758
+    },
+    {
+      "path": "fontes/auditoria_original.json",
+      "sha256": "36d2b15c9197c1594a8580465d044b8163a210ac495d5e8c3853b97015c67bff",
+      "bytes": 55747
+    },
+    {
+      "path": "fontes/conversa_original.pdf",
+      "sha256": "3a0f47c5fda25e17b5e33dcf396f570e5c886773e6de6b63881b3eab477bc35a",
+      "bytes": 4255128
+    },
+    {
+      "path": "fontes/enunciados_reconciliados_1_2_0.json",
+      "sha256": "3b730837c1d98d285a7b1aa57f67e4ad6d070546f7a09ed5b1a81f67e4df6baf",
+      "bytes": 16527
+    },
+    {
+      "path": "fontes/fontes_suplementares.json",
+      "sha256": "29c1366ec202ea826044c5e3734d956d2ded9afc141a5497206a64e03948121f",
+      "bytes": 3981
+    },
+    {
+      "path": "fontes/historico_incorporacao_1_1_0.json",
+      "sha256": "40e492f239db2b0ff45a0286cce3ac1ebf6a98255c484abfde961ae584716ea2",
+      "bytes": 578382
+    },
+    {
+      "path": "fontes/historico_incorporacao_1_2_0.json",
+      "sha256": "7f20d7c52678e54fea5b7d71392f338b61e17dc91d78b159b3d5cd4812277a08",
+      "bytes": 649288
+    },
+    {
+      "path": "fontes/matriz_anterior_1_2_0.json",
+      "sha256": "dd5c6473cceeb04942d6ece52b15fb1f90233818d7084be9d86667c6a2749d7e",
+      "bytes": 666737
+    },
+    {
+      "path": "fontes/ocorrencias_perguntas.json",
+      "sha256": "d46bc2167193d061b7c68bafb08282c3b519fdf0bd6f5a712ddec9c709354cc3",
+      "bytes": 470652
+    },
+    {
+      "path": "fontes/textos_conjuntos_antes_1_4_0.json",
+      "sha256": "64e13c228227b844d10ab910fa0eaf40d4983ffc16b62c09d11d27c83b481e39",
+      "bytes": 1337204
+    },
+    {
+      "path": "fontes/transcricao_com_paginas.txt",
+      "sha256": "27a81821e93119db0094cac0751af494e53628f81fb9ab024e4ff0b65288f527",
+      "bytes": 560256
+    },
+    {
+      "path": "programacao/modelo_referencia.sql",
+      "sha256": "70cbab24ec0d50ddbc105f448d3def91a04ff29fae54e8bbcf52012a0b9fac24",
+      "bytes": 12590
+    },
+    {
+      "path": "programacao/planejar_combinacao.py",
+      "sha256": "14f46ce23112546dbf6399bfd82acd2d008d8aa6212369a0da91483f296609f3",
+      "bytes": 6584
+    },
+    {
+      "path": "programacao/referencia.py",
+      "sha256": "72bde0119a4ddc7273273557068818047442ae2fc4bc4e67315aa0511bebe776",
+      "bytes": 2664
+    },
+    {
+      "path": "programacao/test_atualizacao.py",
+      "sha256": "1df73684fd852df0de76b3dd06a881bed5f4824e19dcdd99057c8c3f3146e4f1",
+      "bytes": 4232
+    },
+    {
+      "path": "programacao/test_cobertura_200.py",
+      "sha256": "17b311f1426115eae2d5bd70cc425ecd123ea3c158ff2386adf24f60d9d29ae2",
+      "bytes": 4021
+    },
+    {
+      "path": "programacao/test_planejamento_combinacoes.py",
+      "sha256": "04e3190736f2dea1e40b6d3540ee4d799ed0dd62c93343bd92730834792bca0b",
+      "bytes": 4145
+    },
+    {
+      "path": "programacao/test_referencia.py",
+      "sha256": "cc4995575009eb3fb7365a98b8bbeed1c3e7b184dfc20d97fa72dedddc20a6ad",
+      "bytes": 4002
+    },
+    {
+      "path": "programacao/test_textos_conjuntos.py",
+      "sha256": "ea446e5b6128fa6b9595a268dd439955a57bae50e7b79b265606489623074cae",
+      "bytes": 7669
+    },
+    {
+      "path": "programacao/validar_pacote.py",
+      "sha256": "ec08078b3d3504154355b2ac420fc9ba7cbed549199e69217db350a226d5eb75",
+      "bytes": 9241
+    }
+  ]
+}

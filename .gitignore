@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/.codex-tmp/
+__pycache__/
 
 # next.js
 /.next/

@@ -1,0 +1,284 @@
+[
+  {
+    "protocol_id": "P01",
+    "title": "Conversa, Escuta e Correção",
+    "parameters": {
+      "initial_deadline_hours": 24,
+      "initial_speaking_minutes": 5,
+      "retry_deadline_hours": 72,
+      "sequence": [
+        "escutar",
+        "repetir o que compreendeu",
+        "apresentar percepção",
+        "definir medida concreta"
+      ]
+    },
+    "source_text": "9. PROTOCOLO GERAL DE CONVERSA,\nESCUTA E CORREÇÃO\n§ 1º O assunto deverá começar a ser tratado no mesmo dia ou, no máximo, em até 24 horas.\n\n§ 2º Quem apresentar a reclamação, necessidade ou problema terá até 5 minutos iniciais\npara falar sem interrupção, salvo esclarecimento indispensável.\n\n§ 3º Depois de ouvir, o outro deverá explicar com suas próprias palavras aquilo que\ncompreendeu.\n\n§ 4º Somente depois apresentará sua explicação, percepção ou discordância.\n\n§ 5º Se também possuir outra reclamação, deverá apresentá-la separadamente, evitando\nutilizar uma acusação de volta para impedir o tratamento da primeira questão.\n\n§ 6º Se a primeira conversa não produzir solução suficiente, o assunto deverá ser retomado em\naté 72 horas.\n\n§ 7º Na retomada deverá ser estabelecida pelo menos uma medida concreta de correção,\nmelhoria, acompanhamento ou revisão.\n\n§ 8º Discordar do cônjuge não gera contribuição financeira.\n\n§ 9º A recusa injustificada em participar do protocolo gera a Contribuição Simbólica de\nCompromisso de R$ 10,00.\n\n§ 10. A contribuição não extingue a obrigação de conversar, corrigir ou cumprir aquilo que\npermaneça pendente.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 212,
+      "page_end": 213,
+      "line_start": 9091,
+      "line_end": 9123
+    },
+    "status": "PARTIAL_OPERATIONAL_DETAILS_DEFINED",
+    "is_active": false
+  },
+  {
+    "protocol_id": "P02",
+    "title": "Reconexão após Duas Recusas",
+    "parameters": {
+      "consecutive_refusals": 2,
+      "conversation_deadline_hours": 24,
+      "physical_contact_required": false
+    },
+    "source_text": "14. DUAS RECUSAS CONSECUTIVAS —\nCONVERSA DE RECONEXÃO\nQuando houver 2 recusas consecutivas de uma forma de aproximação afetiva ou íntima que\nnormalmente faça parte da relação do casal — beijo, abraço, carinho, contato físico ou relação\nsexual — deverá existir uma Conversa de Reconexão.\n\nA recusa:\n\nnão gera R$ 10,00.\n\nA conversa deverá ocorrer no mesmo dia da segunda ocorrência ou em até 24 horas.\n\nPoderá investigar:\n\n   ●   dor;\n   ●   saúde;\n   ●   cansaço;\n   ●   estresse;\n   ●   falta de desejo;\n   ●   mágoa;\n   ●   ressentimento;\n   ●   conflito;\n   ●   sobrecarga;\n   ●   medicamento;\n   ●   desconforto emocional;\n   ●   dificuldade relacional;\n   ●   outro fator relevante.\n\nNenhum contato físico ou sexual será obrigatório após a conversa.\n\nSomente a recusa injustificada em participar da conversa poderá gerar R$ 10,00.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 215,
+      "page_end": 215,
+      "line_start": 9197,
+      "line_end": 9229
+    },
+    "status": "REVIEW_WITH_MISSING_V5",
+    "is_active": false
+  },
+  {
+    "protocol_id": "P03",
+    "title": "Frequência Íntima por Ciclos",
+    "parameters": {
+      "cycles_below_goal": 2,
+      "conversation_deadline_hours": 72,
+      "cycle_matches_chosen_frequency": true,
+      "without_numeric_goal": {
+        "no_sex_days": 30,
+        "one_partner_reports_dissatisfaction": true
+      },
+      "sexual_debt": false,
+      "sex_required": false
+    },
+    "source_text": "# 12. NOVA REGRA DE GATILHO POR CICLOS\n\nSubstitui a regra universal anterior de 2 semanas.\n\n### Se a meta for semanal ou maior\n\nFicar abaixo da frequência consensual durante **2 semanas consecutivas** → Conversa de Reconexão em até 3 dias.\n\n### Se a meta for quinzenal\n\nNão atingir a meta durante **2 ciclos consecutivos de 15 dias** → conversa em até 3 dias.\n\n### Se a meta for mensal\n\nNão atingir a meta durante **2 ciclos mensais consecutivos** → conversa em até 3 dias.\n\n### Outra frequência\n\nUtilizar **2 ciclos completos consecutivos da frequência definida**.\n\n### Sem meta numérica\n\nSe houver **30 dias sem relação sexual e pelo menos um dos cônjuges manifestar insatisfação**, realizar Conversa de Reconexão em até 3 dias.\n\nContinuam proibidos:\n\n-  dívida sexual; \n-  reposição obrigatória; \n-  acúmulo; \n-  compensação; \n-  R$ 10 pela falta de sexo. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 227,
+      "line_end": 261
+    },
+    "status": "SOURCE_PARAMETERS_CAPTURED_REQUIRES_IMPLEMENTATION",
+    "is_active": false,
+    "historical_source_text": null
+  },
+  {
+    "protocol_id": "P04",
+    "title": "Momento Programado de Reconexão",
+    "parameters": {
+      "frequency_choices": [
+        "WEEKLY",
+        "FORTNIGHTLY",
+        "MONTHLY"
+      ],
+      "physical_contact_required": false,
+      "sex_required": false
+    },
+    "source_text": "# 13. PERGUNTA 055 — SUBSTITUÍDA DEFINITIVAMENTE\n\n# MOMENTO PROGRAMADO DE INTIMIDADE E RECONEXÃO\n\n**Mesmo quando rotina, trabalho ou cansaço diminuírem a espontaneidade, qual frequência você considera adequada para o casal reservar intencionalmente um momento privado de aproximação, carinho e reconexão íntima?**\n\n**A)** Pelo menos uma vez por semana.\n\n**B)** Pelo menos uma vez a cada 15 dias.\n\n**C)** Pelo menos uma vez por mês.\n\n### Efeitos\n\n**A:**\n\n**“{Nome} considera importante preservar semanalmente um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n**B:**\n\n**“{Nome} considera importante preservar pelo menos a cada 15 dias um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n**C:**\n\n**“{Nome} considera importante preservar pelo menos mensalmente um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n## NÓS DECIDIMOS — obrigatório\n\nA) semanal;\n\nB) quinzenal;\n\nC) mensal.\n\n### Texto contratual\n\n**“{Nome 1} e {Nome 2} comprometem-se a reservar {frequência escolhida} um momento privado destinado à aproximação, ao carinho e à reconexão íntima, com a finalidade de fortalecer seu vínculo afetivo e favorecer a intimidade sexual do casal.”**\n\n**“Nesse período poderão existir conversa íntima, abraço, beijo, carinho, massagem, toque afetivo ou outras formas voluntárias de aproximação capazes de reduzir o distanciamento e favorecer o desejo. Havendo vontade e consentimento mútuos, o momento poderá naturalmente evoluir para relação sexual.”**\n\n**“A ausência de desejo sexual antes do início do momento não determina seu cancelamento automático quando ambos estiverem confortáveis em preservar alguma forma de proximidade. O desejo poderá surgir progressivamente durante a conexão. Entretanto, qualquer contato físico poderá ser recusado ou interrompido a qualquer momento.”**\n\nEssa passa a ser **a Q055 oficial**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 261,
+      "line_end": 307
+    },
+    "status": "SOURCE_PARAMETERS_CAPTURED_REQUIRES_IMPLEMENTATION",
+    "is_active": false,
+    "historical_source_text": null
+  },
+  {
+    "protocol_id": "P05",
+    "title": "Reconstrução da Confiança",
+    "parameters": {
+      "review_days": 30,
+      "steps": [
+        "interrupção",
+        "identificação",
+        "informação necessária",
+        "proteção contra repetição",
+        "reconstrução",
+        "revisão",
+        "apoio externo"
+      ],
+      "reconciliation_required_in_risk": false
+    },
+    "source_text": "# 4. PERGUNTA 018 — PROTOCOLO DE RECONSTRUÇÃO DA CONFIANÇA\n\nFica criado definitivamente.\n\n### Gatilhos\n\nAplicável quando houver, entre outras situações:\n\n-  infidelidade; \n-  mentira grave; \n-  ocultação financeira relevante; \n-  vínculo afetivo ou sexual paralelo; \n-  violação grave de acordo; \n-  outra quebra significativa da confiança. \n\n### Etapas obrigatórias\n\n**1. Interrupção:** comportamento ainda existente deverá ser interrompido.\n\n**2. Identificação:** deverá ficar claro qual comportamento produziu a quebra.\n\n**3. Informação necessária:** deverão ser comunicadas as informações necessárias à compreensão da situação e de suas consequências, sem exigir detalhes desnecessários destinados apenas a produzir sofrimento.\n\n**4. Proteção contra repetição:** deverão ser definidas medidas concretas para reduzir risco de nova ocorrência.\n\n**5. Reconstrução:** deverão ser identificados comportamentos capazes de contribuir gradualmente para recuperar segurança e confiança.\n\n**6. Revisão:** realizar revisão em **30 dias**.\n\n**7. Apoio externo:** se continuar existindo sofrimento significativo, repetição ou incapacidade de tratamento pelo próprio casal, considerar acompanhamento profissional, pastoral ou outro apoio adequado.\n\n### Texto estrutural\n\n**“{Nome 1} e {Nome 2} reconhecem que perdão e reconstrução da confiança não são necessariamente acontecimentos simultâneos. Uma pessoa poderá decidir perdoar e ainda necessitar de tempo, consistência e mudança concreta antes de recuperar plenamente sua confiança.”**\n\nEm situação de violência ou risco, este protocolo **não obriga reconciliação ou permanência conjunta**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 81,
+      "line_end": 120
+    },
+    "status": "SOURCE_PARAMETERS_CAPTURED_REQUIRES_IMPLEMENTATION",
+    "is_active": false,
+    "historical_source_text": null
+  },
+  {
+    "protocol_id": "P06",
+    "title": "Reequilíbrio de Tempo/Prioridades",
+    "parameters": {
+      "reschedule_within_days": 7,
+      "consecutive_cancelled_unrescheduled_moments": 2,
+      "avoidable_professional_commitments_only": true,
+      "conversation_deadline_hours": 72
+    },
+    "source_text": "# 8. PERGUNTA 048 — TRABALHO CANCELANDO TEMPO DO CASAL\n\nExcluir o gatilho de:\n\n> 2 cancelamentos em 14 dias.\n\n### Nova regra\n\n**“Quando trabalho ou compromisso profissional cancelar um Momento de Qualidade previamente combinado, o casal procurará remarcar esse momento em até 7 dias, sempre que possível antes do próximo momento regularmente previsto.”**\n\n### Gatilho de reequilíbrio\n\n**“Se dois Momentos de Qualidade consecutivos previamente acordados forem cancelados por compromissos profissionais evitáveis e não forem adequadamente remarcados, {Nome 1} e {Nome 2} realizarão uma Conversa de Reequilíbrio em até 72 horas após o segundo cancelamento.”**\n\nEssa regra funciona para frequência semanal, quinzenal ou mensal.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 147,
+      "line_end": 165
+    },
+    "status": "SOURCE_PARAMETERS_CAPTURED_REQUIRES_IMPLEMENTATION",
+    "is_active": false,
+    "historical_source_text": "TRABALHO E TEMPO\nPARA O CASAMENTO\n\nA) procuro estabelecer limites.\nB) existem períodos de maior demanda e depois reorganizo.\nC) frequentemente o trabalho ocupa o espaço da família.\n\nA\n\n{Nome} reconhece a importância de estabelecer limites entre trabalho e vida familiar e\ncompromete-se a preservar momentos de convivência, descanso e conexão com seu\ncônjuge e sua família.\n\nB\n\n{Nome} reconhece que determinados períodos profissionais podem exigir dedicação\nextraordinária e compromete-se, quando forem previsíveis, a comunicar\nantecipadamente ao cônjuge sua duração aproximada e seus impactos, reorganizando\ndepois os momentos prejudicados.\n\nC\n\n{Nome} reconhece sua dificuldade de estabelecer limites entre trabalho e vida familiar e\ncompromete-se a proteger os momentos de convivência definidos pelo casal, evitando\nque demandas profissionais evitáveis ocupem continuamente o espaço do casamento.\n\nParágrafo fixo\n\n{Nome 1} e {Nome 2} reconhecem que trabalho, carreira, ministério ou empreendimento\nsão partes importantes da vida, mas não deverão justificar ausência conjugal contínua\nsem diálogo, planejamento ou tentativa concreta de equilíbrio.\n\nIntegração com 011\n\nOs períodos definidos na Pergunta 011 tornam-se períodos protegidos contra compromissos\nprofissionais evitáveis.\n\nGatilho\n\nSe, dentro de 14 dias, o trabalho provocar cancelamento de 2 ou mais momentos\npreviamente combinados, haverá Conversa de Reequilíbrio em até 72 horas após a segunda\nocorrência.\n\nA+C\n\n{Nome A} demonstra maior preocupação em estabelecer limites, enquanto {Nome C}\nreconhece maior dificuldade. {Nome C} compromete-se a respeitar os momentos\n\nprotegidos, enquanto {Nome A} compromete-se a reconhecer períodos profissionais\nrealmente excepcionais sem interpretá-los automaticamente como falta de prioridade\nafetiva.\n\nB+C\n\n{Nome B} reconhece períodos temporários de maior demanda, enquanto {Nome C}\nidentifica dificuldade mais frequente em estabelecer limites. Ambos comprometem-se a\ndistinguir sobrecarga temporária de ausência habitual e reorganizar a rotina quando\nnecessário.\n\nC+C\n\n{Nome 1} e {Nome 2} reconhecem que ambos podem permitir que o trabalho ocupe\nexcessivamente o espaço do casamento e comprometem-se a proteger os momentos de\nconexão e revisar a rotina diante de repetidos cancelamentos.\n\nBase bíblica\n\nEclesiastes 3:1.\nEclesiastes 4:9-10.\nColossenses 3:23.\nFilipenses 2:4."
+  },
+  {
+    "protocol_id": "P07",
+    "title": "Retomada da Intimidade",
+    "parameters": {
+      "trigger_protocol_id": "P03",
+      "independent_30_day_trigger": false,
+      "review_days": 30,
+      "steps_source": "SUP12-04/Q080"
+    },
+    "source_text": "# 20. PERGUNTA 080 — RETOMADA\n\nFica eliminado o gatilho próprio de “30 dias”.\n\nA Q080 passa a utilizar exclusivamente:\n\n`GATILHO_RECONEXAO_POR_FREQUENCIA`\n\ndefinido na Q051.\n\nQuando ativado, pode ser executado o Protocolo de Retomada da Q080.\n\nAssim não teremos dois relógios diferentes fiscalizando a mesma situação.\n\n---\n\nEtapas da fonte-base:\n1.  realizar conversa sobre o afastamento em até 72 horas após o gatilho ser identificado; \n2.  identificar possíveis causas; \n3.  definir pelo menos uma medida de reconexão; \n4.  utilizar o Momento Programado de Intimidade da Pergunta 055; \n5.  revisar a situação em 30 dias.",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 437,
+      "line_end": 453
+    },
+    "status": "SOURCE_PARAMETERS_CAPTURED_REQUIRES_IMPLEMENTATION",
+    "is_active": false
+  },
+  {
+    "protocol_id": "P08",
+    "title": "Crise Financeira",
+    "parameters": {
+      "conversation_deadline_hours": 72,
+      "review_days": 30
+    },
+    "source_text": "CRISE FINANCEIRA\nA) prefiro reduzir rapidamente gastos.\nB) prefiro primeiro avaliar duração e dimensão.\nC) tenho dificuldade de reduzir meu padrão de vida.\n\nA\n\n{Nome} reconhece sua tendência de reagir rapidamente a crises financeiras e\ncompromete-se a buscar redução organizada das despesas, evitando decisões\nprecipitadas que produzam prejuízo desnecessário.\n\nB\n\n{Nome} prefere compreender a dimensão da dificuldade antes de mudanças maiores e\ncompromete-se a participar de análise objetiva da renda, reservas e despesas antes de\ndecidir os ajustes.\n\nC\n\n{Nome} reconhece que pode ter dificuldade de reduzir gastos ou padrão de vida diante\nde queda de renda e compromete-se a participar dos ajustes necessários quando o\norçamento demonstrar que as despesas atuais deixaram de ser sustentáveis.\n\nGatilho de emergência\n\nPelo menos uma destas situações:\n\n    ● desemprego de um dos dois;\n    ● redução igual ou superior a 20% da RLF;\n    ● incapacidade de pagar despesa essencial ou compromisso relevante;\n    ● despesa extraordinária que obrigue uso de crédito, nova dívida ou parcela relevante da\n       reserva;\n    ● incapacidade temporária para trabalho com redução efetiva da renda.\n\nProtocolo financeiro\n\nConversa em até 72 horas.\n\nLevantar:\n\n   ●   renda disponível;\n   ●   saldos;\n   ●   reservas;\n   ●   despesas essenciais;\n   ●   dívidas;\n   ●   despesas reduzíveis.\n\nPrioridade:\n\nmoradia, alimentação, saúde, filhos e demais necessidades essenciais.\n\nRevisão a cada 30 dias enquanto durar a crise.\n\nA+C\n\n{Nome A} possui maior tendência de reduzir rapidamente as despesas, enquanto {Nome\nC} reconhece maior dificuldade em alterar padrão de consumo. {Nome A}\ncompromete-se a propor ajustes proporcionais à realidade, enquanto {Nome C}\ncompromete-se a colaborar quando o orçamento demonstrar que o padrão anterior\ndeixou de ser sustentável.\n\nB+C\n\n{Nome B} prefere avaliar a dimensão da crise, enquanto {Nome C} possui maior\ndificuldade em reduzir gastos. Ambos comprometem-se a utilizar informações concretas\nsobre renda, reservas e despesas para definir os ajustes necessários.\n\nBase bíblica\n\nProvérbios 21:5.\nLucas 14:28.\nFilipenses 4:12-13.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 277,
+      "page_end": 278,
+      "line_start": 11834,
+      "line_end": 11910
+    },
+    "status": "SOURCE_Q043_REQUIRES_CONSOLIDATION",
+    "is_active": false
+  },
+  {
+    "protocol_id": "P09",
+    "title": "Divergência Reprodutiva",
+    "parameters": {
+      "trigger_pair": "AC",
+      "joint_decision_immediate": false,
+      "deadline_to_concede": null,
+      "contribution_allowed": false
+    },
+    "source_text": "Q146 — NOVO PROTOCOLO DE\nDIVERGÊNCIA REPRODUTIVA\nQuando as respostas forem:\n\nA × C\n\nregistrar:\n\nDIVERGENCIA_REPRODUTIVA_RELEVANTE = SIM\n\nNão abrir NÓS DECIDIMOS imediatamente.\n\nProcedimento\n\n1. Nenhuma tentativa deliberada de concepção enquanto não existir consenso.\n\n2. Cada pessoa poderá explicar:\n\n    ●   seu desejo;\n    ●   seus motivos;\n    ●   expectativas;\n    ●   preocupações;\n    ●   medos;\n    ●   impactos esperados.\n\n3. Nenhum dos dois receberá prazo para “ceder”.\n\n4. Não haverá contribuição de R$ 10 pela ausência de consenso.\n\n5. Não haverá voto, desempate ou decisão por maioria.\n\n6. Se ambos considerarem útil, poderão buscar acompanhamento adequado.\n\n7. O tema somente será novamente submetido a decisão conjunta quando ambos concordarem\nem retomá-lo ou quando surgir mudança significativa de circunstância.**\n\nTexto estrutural\n\n“Ter ou não ter filho é decisão de impacto profundo e não poderá ser imposta através de\npressão emocional, sexual, espiritual, financeira ou sabotagem contraceptiva.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 355,
+      "page_end": 356,
+      "line_start": 15184,
+      "line_end": 15228
+    },
+    "status": "SOURCE_CORRECTION_COMPLETE",
+    "is_active": false
+  },
+  {
+    "protocol_id": "P10",
+    "title": "Proteção e Recuperação de Hábitos",
+    "parameters": {
+      "review_within_days": 30,
+      "self_restrictions_voluntary": true,
+      "partner_seizure_authorized": false,
+      "contribution_allowed": false
+    },
+    "source_text": "2. Q160 — PROTOCOLO DE PROTEÇÃO E\nRECUPERAÇÃO\nCORREÇÃO DE SEGURANÇA\nA pergunta permanece.\n\nO protocolo fica substituído por:\n\nPROTOCOLO DE PROTEÇÃO E RECUPERAÇÃO — P10\n\nGatilho:\n\n   ●   uso problemático de substância;\n   ●   jogo problemático;\n   ●   perda de controle;\n   ●   compulsão ou hábito repetido com prejuízo significativo.\n\nEtapas\n\n1. Identificar o comportamento.\n\n2. Identificar as consequências objetivas existentes.\n\n3. Interromper situações de risco imediato.\n\n4. Definir pelo menos uma primeira medida concreta de proteção.\n\n5. A própria pessoa poderá voluntariamente utilizar mecanismos que dificultem o acesso\nao comportamento problemático, como:\n\n   ●   bloqueios voluntários;\n   ●   limites;\n   ●   autoexclusão;\n   ●   exclusão de aplicativos;\n   ●   bloqueios de sites;\n   ●   limites voluntários de gastos;\n   ●   outras medidas adequadas.\n\n6. Proteções financeiras conjuntas poderão ser adotadas somente por consentimento\nválido dos dois ou orientação profissional/jurídica adequada.\n\nProibição expressa\n\nEste protocolo não concede ao cônjuge autorização automática para apreender ou\ncontrolar:\n\n   ●   dinheiro;\n   ●   cartão;\n   ●   documentos;\n   ●   telefone;\n   ●   computador;\n   ●   contas;\n   ●   senhas;\n   ●   chaves;\n   ●   localização;\n   ●   outros recursos pessoais.\n\n7. Considerar apoio profissional, pastoral ou especializado adequado.\n\n8. Definir revisão em até 30 dias ou prazo menor quando existir indicação adequada.\n\n9. Depois de repetidas tentativas frustradas, nova promessa genérica não será\nconsiderada plano de correção suficiente.\n\nRegra de segurança\n\nViolência, coerção ou risco → P13 SEGURANÇA prevalece.\n\nContribuição\n\nPara Q151–Q160:\n\nCONTRIBUTION_RULE = NONE\n\nNão haverá R$ 10 por:\n\n   ●   consumo;\n   ●   recaída;\n   ●   dependência;\n   ●   compulsão;\n   ●   tentativa frustrada de mudança.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 425,
+      "page_end": 426,
+      "line_start": 18165,
+      "line_end": 18249
+    },
+    "status": "SOURCE_CORRECTION_COMPLETE",
+    "is_active": false
+  },
+  {
+    "protocol_id": "P11",
+    "title": "Impasse",
+    "parameters": {},
+    "source_text": "PROBLEMA\nIMPORTANTE QUE PERMANECE SEM\nSOLUÇÃO\nPergunta\n\nQuando existe um problema importante que vocês já conversaram diversas vezes sem\nconseguir resolver, qual comportamento mais representa você?\n\nA) Procuro identificar o que ainda não funcionou e mudar a estratégia de solução.\n\nB) Continuo repetindo conversas semelhantes esperando que, em algum momento,\nconsigamos resolver.\n\nC) Depois de várias tentativas frustradas, tendo a desistir do assunto, mesmo que ele continue\ncausando sofrimento ou conflito.\n\nA\n\n{Nome} compromete-se a modificar estratégia quando repetidas conversas não\nestiverem produzindo avanço, evitando apenas repetir indefinidamente a mesma\ndiscussão.\n\nB\n\n{Nome} reconhece tendência de repetir conversas semelhantes e compromete-se a\navaliar, após tentativas frustradas, se é necessário mudar abordagem, definir medida\nconcreta ou buscar auxílio adequado.\n\nC\n\n{Nome} reconhece que pode desistir de discutir problema ainda relevante e\ncompromete-se a diferenciar aceitação verdadeira de resignação silenciosa que continua\nproduzindo sofrimento.\n\n\nPROTOCOLO DE IMPASSE\nGatilho:\n\n3 conversas estruturadas sobre o mesmo problema em até 90 dias sem melhora\nsuficiente.\n\nEtapas:\n\n    1. identificar exatamente o problema ainda existente;\n    2. registrar o que já foi tentado;\n    3. identificar por que as medidas anteriores falharam;\n    4. definir abordagem diferente;\n    5. definir uma ação concreta para cada pessoa quando aplicável;\n    6. estabelecer data de revisão;\n    7. considerar ajuda externa adequada.\n\nCampo\n\nPROBLEMA_EM_IMPASSE\n\nMEDIDAS_JA_TENTADAS\n\nNOVA_ABORDAGEM\n\nDATA_REVISAO\n\nNÓS DECIDIMOS\n\nNão necessariamente.\n\nFundamentação bíblica\n\nProvérbios 15:22.\nTiago 1:5.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 373,
+      "page_end": 374,
+      "line_start": 15923,
+      "line_end": 15996
+    },
+    "status": "SOURCE_Q180_REQUIRES_CONSOLIDATION",
+    "is_active": false
+  },
+  {
+    "protocol_id": "P12",
+    "title": "Reavaliação de Regressão",
+    "parameters": {
+      "reopen_original_protocol": true,
+      "new_penalty": false
+    },
+    "source_text": "O QUE FAZER\nQUANDO O CASAL PERCEBE\nREGRESSÃO\nPergunta\n\nQuando uma melhora que vocês haviam conquistado começa a desaparecer e um\nproblema antigo volta a se repetir, qual postura mais representa você?\n\nA) Procuro reconhecer rapidamente a regressão e retomar as medidas que haviam funcionado.\n\nB) Demoro algum tempo para admitir que o problema realmente voltou.\n\nC) Posso pensar que “não adianta mais tentar” quando um comportamento reaparece depois\nde período de melhora.\n\nA\n\n{Nome} compromete-se a tratar regressões como sinal de necessidade de revisão, sem\nconcluir automaticamente que todo progresso anterior foi inútil.\n\nB\n\n{Nome} reconhece que pode demorar para admitir retorno de problema já tratado e\ncompromete-se a considerar fatos concretos quando o mesmo padrão reaparecer.\n\nC\n\n{Nome} reconhece tendência de perder esperança diante de recaídas e compromete-se a\ndiferenciar uma regressão pontual de ausência completa de possibilidade de mudança.\n\n\nPROTOCOLO DE REAVALIAÇÃO\nQuando comportamento anteriormente corrigido voltar a atingir o gatilho específico da\npergunta original, não criar nova penalidade.\n\nO sistema deverá:\n\n    1. reabrir o protocolo original;\n    2. revisar o que havia funcionado;\n    3. identificar o que mudou;\n    4. definir nova medida;\n    5. registrar nova data de revisão.\n\nRegra\n\nSe houver padrão repetido de recaídas com consequências graves, considerar apoio\nadequado.\n\nCruzamentos\n\n184 × 016.\n184 × 018.\n184 × 180.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 378,
+      "page_end": 380,
+      "line_start": 16155,
+      "line_end": 16212
+    },
+    "status": "SOURCE_Q184_REQUIRES_CONSOLIDATION",
+    "is_active": false
+  },
+  {
+    "protocol_id": "P13",
+    "title": "Segurança",
+    "parameters": {
+      "critical_status": "PRIVATE_REVIEW_REQUIRED",
+      "shared_output": false,
+      "automatic_joint_therapy": false,
+      "contribution_allowed": false
+    },
+    "source_text": "20. ALERTA DE SEGURANÇA MUDA O\nFLUXO\nQuando:\n\nALERTA_SEGURANCA_CRITICO = SIM\n\no sistema deverá poder registrar:\n\nCONTRACT_GENERATION_STATUS = PRIVATE_REVIEW_REQUIRED\n\nE deverá bloquear automaticamente:\n\n   ●   revelação da resposta;\n   ●   NÓS DECIDIMOS sobre o assunto;\n   ●   R$ 10;\n   ●   confronto automático;\n   ●   cláusula que revele a informação;\n   ●   pressuposição de que terapia conjunta é indicada;\n   ●   notificações que revelem a natureza do alerta ao cônjuge.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 440,
+      "page_end": 440,
+      "line_start": 18803,
+      "line_end": 18826
+    },
+    "status": "FLOW_GUARDS_DEFINED_PRIVATE_SUPPORT_PATH_PENDING",
+    "is_active": false
+  },
+  {
+    "protocol_id": "P14",
+    "title": "Calendário Unificado de Revisões",
+    "parameters": {
+      "combine_periodic_reviews": true,
+      "delay_urgent_triggers": false
+    },
+    "source_text": "23. CALENDÁRIO UNIFICADO\nRevisões periódicas coincidentes poderão acontecer em um único encontro.\n\nNão poderão esperar calendário:\n\n   ●   violência;\n   ●   segurança;\n   ●   coerção;\n   ●   urgência médica;\n   ●   crise financeira grave;\n   ●   quebra grave de confiança;\n   ●   prazo específico de 24h/72h.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 442,
+      "page_end": 442,
+      "line_start": 18877,
+      "line_end": 18893
+    },
+    "status": "SOURCE_RULE_DEFINED",
+    "is_active": false
+  }
+]

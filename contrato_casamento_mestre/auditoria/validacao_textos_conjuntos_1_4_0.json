@@ -1,0 +1,14 @@
+{
+  "package_version": "1.4.0",
+  "unit_tests_passed": 37,
+  "unit_tests_failed": 0,
+  "authored_texts": 487,
+  "unique_authored_texts": 487,
+  "texts_missing": 0,
+  "source_pair_inventory_matches": true,
+  "private_and_safety_routes_preserved": true,
+  "joint_decision_steps_preserved": true,
+  "gambling_policy_preserved": true,
+  "test_command": "python3 -m unittest discover -s programacao -p 'test_*.py'",
+  "production_activation": false
+}

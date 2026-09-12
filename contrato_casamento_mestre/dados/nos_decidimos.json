@@ -1,0 +1,3549 @@
+[
+  {
+    "joint_module_id": "ND-Q007-01",
+    "question_id": "Q007",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não nesta pergunta. Frequência concreta será definida no futuro bloco de lazer.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 226,
+      "page_end": 227,
+      "line_start": 9668,
+      "line_end": 9713
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q011-01",
+    "question_id": "Q011",
+    "label": "NÓS DECIDIMOS — gatilho",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": {
+      "all": [
+        {
+          "any_answer_in": [
+            "B",
+            "C"
+          ]
+        },
+        {
+          "missing_joint_value": "quality_time_frequency"
+        }
+      ]
+    },
+    "source_text": "Se qualquer um marcar B ou C e ainda não existir frequência definida.\n\nQual será a frequência mínima de um momento exclusivo de vocês?\n\nA) pelo menos uma vez por semana.\nB) pelo menos uma vez a cada 15 dias.\nC) pelo menos uma vez por mês.\n\nTexto A\n“{Nome 1} e {Nome 2} comprometem-se a reservar pelo menos um momento exclusivo\npor semana para conversa, convivência, lazer, carinho e fortalecimento da conexão.”\n\nTexto B\n“{Nome 1} e {Nome 2} comprometem-se a reservar pelo menos um momento exclusivo a\ncada 15 dias para conversa, convivência, lazer, carinho e fortalecimento da conexão.”\n\nTexto C\n“{Nome 1} e {Nome 2} comprometem-se a reservar pelo menos um momento exclusivo\npor mês para conversa, convivência, lazer, carinho e fortalecimento da conexão.”\n\nA frequência será reutilizada pela Pergunta 048.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 230,
+      "page_end": 232,
+      "line_start": 9852,
+      "line_end": 9920
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "pelo menos uma vez por semana.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "pelo menos uma vez a cada 15 dias.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "pelo menos uma vez por mês.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q011",
+    "trigger_predicate": {
+      "op": "all",
+      "items": [
+        {
+          "op": "any_answer",
+          "codes": [
+            "B",
+            "C"
+          ]
+        },
+        {
+          "op": "fact",
+          "name": "Q011_no_frequency_defined"
+        }
+      ]
+    }
+  },
+  {
+    "joint_module_id": "ND-Q027-01",
+    "question_id": "Q027",
+    "label": "NÓS DECIDIMOS — gatilho",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": {
+      "all": [
+        {
+          "context_true": "ex_contact_exists"
+        },
+        {
+          "context_true": "relevant_divergence"
+        }
+      ]
+    },
+    "source_text": "Ex realmente presente + divergência relevante.\n\nQual regra será adotada para este contato?\n\nA) somente por necessidade objetiva.\nB) contato social/profissional permitido com transparência e sem encontros ocultos.\nC) amizade permitida com regras integrais de fidelidade e transparência.\n\nTexto A\n“Em relação a {pessoa}, {Nome 1} e {Nome 2} acordam que o contato será mantido\nsomente quando houver necessidade objetiva relacionada a {motivo}, evitando\ncomunicação que ultrapasse essa finalidade.”\n\nTexto B\n“Em relação a {pessoa}, {Nome 1} e {Nome 2} acordam que poderá existir contato social,\nprofissional ou necessário, desde que não haja encontros particulares ocultos, flerte,\nintimidade inadequada ou ocultação de interações relevantes.”\n\nTexto C\n“Em relação a {pessoa}, {Nome 1} e {Nome 2} acordam que poderá existir amizade ou\nconvivência social, permanecendo incompatíveis com o acordo o flerte, a intimidade\nemocional secreta, o envolvimento sexual ou a ocultação deliberada.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 249,
+      "page_end": 251,
+      "line_start": 10648,
+      "line_end": 10716
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "somente por necessidade objetiva.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "contato social/profissional permitido com transparência e sem encontros ocultos.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "amizade permitida com regras integrais de fidelidade e transparência.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q027",
+    "trigger_predicate": {
+      "op": "all",
+      "items": [
+        {
+          "op": "fact",
+          "name": "Q027_ex_contact_present"
+        },
+        {
+          "op": "fact",
+          "name": "Q027_relevant_disagreement"
+        }
+      ]
+    }
+  },
+  {
+    "joint_module_id": "ND-Q028-01",
+    "question_id": "Q028",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": {
+      "all": [
+        {
+          "context_true": "specific_contact_event"
+        },
+        {
+          "context_true": "boundary_decision_needed"
+        }
+      ]
+    },
+    "source_text": "Situação concreta + necessidade de limite.\n\nA) manter e revisar em 30 dias.\nB) manter com limites selecionados.\nC) reduzir voluntariamente contato não necessário por 30 dias.\n\nTexto A\n“Em relação a {pessoa/situação}, {Nome 1} e {Nome 2} decidiram manter a convivência\natual, aumentar a comunicação e revisar conjuntamente a situação após 30 dias.”\n\nAlternativa B — limites estruturados\n\nPoderão selecionar:\n\n   ●   não realizar encontros deliberadamente ocultos;\n   ●   comunicar encontros individuais relevantes;\n   ●   não manter flerte;\n   ●   não manter conversa sexualizada;\n   ●   não esconder interações relevantes;\n   ●   limitar comunicação ao contexto identificado;\n   ●   evitar determinado contexto ou horário acordado;\n   ●   outro limite escrito e aprovado pelos dois.\n\nTexto B\n“Em relação a {pessoa/situação}, {Nome 1} e {Nome 2} decidiram manter o contato\nobservando os seguintes limites: {limites selecionados}. Esses limites foram escolhidos\nconjuntamente e não autorizam vigilância, perseguição ou controle coercitivo.”\n\nTexto C\n“Em relação a {pessoa/situação}, {Nome 1} e {Nome 2} decidiram reduzir voluntariamente\nos contatos não necessários durante 30 dias, após os quais avaliarão conjuntamente os\nefeitos da medida sobre confiança e segurança.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 251,
+      "page_end": 252,
+      "line_start": 10716,
+      "line_end": 10794
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "manter e revisar em 30 dias.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "manter com limites selecionados.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "reduzir voluntariamente contato não necessário por 30 dias.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q028",
+    "trigger_predicate": {
+      "op": "all",
+      "items": [
+        {
+          "op": "fact",
+          "name": "Q028_concrete_situation"
+        },
+        {
+          "op": "fact",
+          "name": "Q028_legitimate_boundary_needed"
+        }
+      ]
+    }
+  },
+  {
+    "joint_module_id": "ND-Q029-01",
+    "question_id": "Q029",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 252,
+      "page_end": 254,
+      "line_start": 10794,
+      "line_end": 10855
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q031-01",
+    "question_id": "Q031",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "Qual regra geral?\n\nA) conteúdos comuns sem consulta, salvo íntimos/sensíveis.\nB) quando o outro aparecer diretamente, consulta prévia.\nC) toda publicação que identifique claramente o casal ou vida privada exige consulta.\n\nTexto A\n“{Nome 1} e {Nome 2} autorizam publicações comuns da convivência sem consulta\nprévia, desde que não exponham intimidade, conflitos, informação sensível ou limite\nanteriormente comunicado.”\n\nTexto B\n“{Nome 1} e {Nome 2} acordam que, sempre que uma publicação apresentar diretamente\na imagem, fala ou situação pessoal do outro, haverá consulta prévia, ressalvados\nconteúdos previamente autorizados.”\n\nTexto C\n“{Nome 1} e {Nome 2} acordam que publicações que identifiquem claramente o casal ou\nrevelem aspectos de sua vida privada deverão ser previamente comunicadas e\nautorizadas.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 255,
+      "page_end": 257,
+      "line_start": 10913,
+      "line_end": 10989
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "conteúdos comuns sem consulta, salvo íntimos/sensíveis.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "quando o outro aparecer diretamente, consulta prévia.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "toda publicação que identifique claramente o casal ou vida privada exige consulta.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q031",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q032-01",
+    "question_id": "Q032",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": {
+      "context_true": "specific_friendship_causing_relevant_conflict"
+    },
+    "source_text": "Amizade concreta causando conflito relevante.\n\nA) manter como está + transparência + revisão em 30 dias.\nB) manter com limites.\nC) reduzir contatos não necessários por 30 dias.\n\nAlternativa B — limites\n\n    ● evitar encontros particulares ocultos;\n\n   ●   comunicar encontros individuais relevantes;\n   ●   não manter flerte/sexualização;\n   ●   não ocultar interações relevantes;\n   ●   não compartilhar intimidade conjugal de modo a criar vínculo paralelo;\n   ●   limitar contato a contexto determinado;\n   ●   outro limite aprovado.\n\nTexto B\n“Em relação à amizade com {pessoa}, {Nome 1} e {Nome 2} decidiram manter a relação\nobservando os seguintes limites: {limites selecionados}, reconhecendo que esses\nlimites não autorizam isolamento social, vigilância ou controle coercitivo.”\n\nTexto A\n“Em relação à amizade com {pessoa}, {Nome 1} e {Nome 2} decidiram manter a\nconvivência atual, aumentando transparência e realizando nova avaliação após 30 dias.”\n\nTexto C\n“Em relação à amizade com {pessoa}, {Nome 1} e {Nome 2} decidiram reduzir\nvoluntariamente os contatos não necessários durante 30 dias e revisar conjuntamente a\nmedida ao final desse período.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 257,
+      "page_end": 259,
+      "line_start": 10989,
+      "line_end": 11081
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "manter como está + transparência + revisão em 30 dias.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "manter com limites.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "reduzir contatos não necessários por 30 dias.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q032",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q032_concrete_friendship_conflict"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q035-01",
+    "question_id": "Q035",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "A partir de qual valor total nova dívida exige aprovação dos dois?\n\nA) acima de 5% da RLF.\nB) acima de 10% da RLF.\nC) outro percentual ou valor.\n\nTextos\n\nA: “Nova obrigação cujo valor total ultrapasse 5% da RLF deverá ser previamente conversada\ne aprovada por {Nome 1} e {Nome 2}.”\n\nB: “Nova obrigação cujo valor total ultrapasse 10% da RLF deverá ser previamente conversada\ne aprovada por {Nome 1} e {Nome 2}.”\n\nC: “Nova obrigação cujo valor total ultrapasse {limite escolhido} deverá ser previamente\nconversada e aprovada por {Nome 1} e {Nome 2}.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 263,
+      "page_end": 264,
+      "line_start": 11228,
+      "line_end": 11307
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "acima de 5% da RLF.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "acima de 10% da RLF.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "outro percentual ou valor.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q035",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q036-01",
+    "question_id": "Q036",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "Limite mensal acumulado sem consulta:\n\nA) até 2% da RLF por cônjuge.\nB) até 5% da RLF.\nC) outro.\n\nTextos\n\nA: “{Nome 1} e {Nome 2} poderão utilizar individualmente até 2% da RLF por mês em\ngastos pessoais não essenciais sem consulta prévia, desde que as obrigações comuns\nestejam em dia.”\n\nB: “{Nome 1} e {Nome 2} poderão utilizar individualmente até 5% da RLF por mês em\ngastos pessoais não essenciais sem consulta prévia, desde que as obrigações comuns\nestejam em dia.”\n\nC: “{Nome 1} e {Nome 2} poderão utilizar individualmente até {limite escolhido} por mês\nem gastos pessoais não essenciais sem consulta prévia, desde que as obrigações\ncomuns estejam em dia.”\n\nRegra antifracionamento\n\nCompras relacionadas à mesma finalidade dentro de 30 dias serão somadas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 264,
+      "page_end": 266,
+      "line_start": 11307,
+      "line_end": 11385
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "até 2% da RLF por cônjuge.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "até 5% da RLF.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "outro.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q036",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q037-01",
+    "question_id": "Q037",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "Qual parcela da RLF vocês desejam buscar mensalmente?\n\nA) 5%.\nB) 10%.\nC) outro percentual.\n\nTextos\n\nA: “Sempre que a situação financeira permitir e depois de atendidas as despesas\nessenciais, {Nome 1} e {Nome 2} buscarão destinar aproximadamente 5% da RLF à\nformação de reserva ou objetivos comuns.”\n\nB: “Sempre que a situação financeira permitir e depois de atendidas as despesas\nessenciais, {Nome 1} e {Nome 2} buscarão destinar aproximadamente 10% da RLF à\nformação de reserva ou objetivos comuns.”\n\nC: “Sempre que a situação financeira permitir e depois de atendidas as despesas\nessenciais, {Nome 1} e {Nome 2} buscarão destinar aproximadamente {percentual\nescolhido}% da RLF à formação de reserva ou objetivos comuns.”\n\nNão atingir a meta por incapacidade financeira não gera contribuição.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 266,
+      "page_end": 267,
+      "line_start": 11385,
+      "line_end": 11447
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "5%.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "10%.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "outro percentual.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q037",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q038-01",
+    "question_id": "Q038",
+    "label": "NÓS DECIDIMOS — obrigatório para todos",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "Como administrarão?\n\nA) conjuntamente.\nB) um responsável principal.\nC) dividindo por áreas.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram acompanhar e administrar conjuntamente as finanças\nfamiliares, compartilhando informações sobre receitas, despesas, dívidas, reservas e\ncompromissos relevantes.”\n\nTexto B\nRegistrar RESPONSÁVEL_FINANCEIRO.\n\n“{Responsável} ficará responsável pela organização prática das contas e pagamentos da\nfamília, mantendo {Outro} informado sobre receitas, despesas, dívidas, saldos e\ncompromissos relevantes. Essa função não confere poder exclusivo para decisões\nfinanceiras que afetem os dois.”\n\nTexto C\nRegistrar áreas.\n\n“{Nome 1} e {Nome 2} decidiram dividir a administração financeira por áreas. {Nome 1}\nficará responsável por {áreas 1}, enquanto {Nome 2} ficará responsável por {áreas 2}.\nAmbos continuarão obrigados a compartilhar informações relevantes.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 267,
+      "page_end": 270,
+      "line_start": 11447,
+      "line_end": 11532
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "conjuntamente.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "um responsável principal.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "dividindo por áreas.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q038",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q040-01",
+    "question_id": "Q040",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "Limite mensal acumulado sem consulta:\n\nA) 1% da RLF.\nB) 3%.\nC) outro.\n\nTextos\n\nA: “{Nome 1} e {Nome 2} poderão, individualmente, destinar voluntariamente a terceiros\naté 1% da RLF por mês sem consulta prévia, desde que isso não prejudique obrigações\nessenciais.”\n\nB: “{Nome 1} e {Nome 2} poderão, individualmente, destinar voluntariamente a terceiros\naté 3% da RLF por mês sem consulta prévia, desde que isso não prejudique obrigações\nessenciais.”\n\nC: “{Nome 1} e {Nome 2} poderão, individualmente, destinar voluntariamente a terceiros\naté {limite escolhido} por mês sem consulta prévia.”\n\nTodas as ajudas mensais serão somadas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 271,
+      "page_end": 273,
+      "line_start": 11601,
+      "line_end": 11680
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "1% da RLF.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "3%.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "outro.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q040",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q041-01",
+    "question_id": "Q041",
+    "label": "NÓS DECIDIMOS 1 — modelo",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "A) conjunto.\nB) misto.\nC) separado com contribuição comum.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram adotar modelo financeiro predominantemente conjunto,\nconsiderando receitas, despesas, reservas e objetivos familiares dentro de planejamento\ncomum, preservado o espaço pessoal acordado.”\n\nTexto B\n“{Nome 1} e {Nome 2} decidiram adotar modelo financeiro misto, mantendo recursos\ndestinados às despesas e objetivos comuns e também parcela de autonomia financeira\nindividual.”\n\nTexto C\n“{Nome 1} e {Nome 2} decidiram manter suas rendas predominantemente separadas,\ncontribuindo ambos para despesas, responsabilidades e objetivos familiares segundo o\ncritério definido abaixo.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 273,
+      "page_end": 275,
+      "line_start": 11680,
+      "line_end": 11777
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "conjunto.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "misto.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "separado com contribuição comum.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q041",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q041-02",
+    "question_id": "Q041",
+    "label": "NÓS DECIDIMOS 2 — contribuição comum",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "A) metade para cada um.\nB) proporcionalmente à renda líquida individual.\nC) divisão por categorias.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram contribuir em partes iguais para as despesas comuns,\nobservadas revisões quando houver alteração relevante de renda.”\n\nTexto B\n“{Nome 1} e {Nome 2} decidiram contribuir para as despesas comuns proporcionalmente\nàs respectivas rendas líquidas, sem que maior contribuição produza maior poder de\ndecisão.”\n\nTexto C\n“{Nome 1} ficará responsável pelas categorias {categorias 1}, enquanto {Nome 2} ficará\nresponsável por {categorias 2}. A divisão será revista quando houver alteração relevante\nde renda ou das despesas.”\n\nCategorias:\n\n   ●   moradia;\n   ●   alimentação;\n   ●   energia/água;\n   ●   internet;\n   ●   transporte;\n   ●   filhos;\n   ●   saúde;\n   ●   seguros;\n   ●   lazer familiar;\n   ●   dívidas comuns;\n   ●   outras.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 273,
+      "page_end": 275,
+      "line_start": 11680,
+      "line_end": 11777
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "metade para cada um.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "proporcionalmente à renda líquida individual.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "divisão por categorias.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q041",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q044-01",
+    "question_id": "Q044",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "A) responsáveis fixos.\nB) alternância.\nC) modelo misto.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram organizar as principais tarefas domésticas através de\nresponsáveis fixos. Cada um acompanhará e executará aquilo que assumir sem\ndepender de cobranças repetidas.”\n\nTexto B\n“{Nome 1} e {Nome 2} decidiram alternar as principais tarefas conforme escala\npreviamente combinada.”\n\nTexto C\n“{Nome 1} e {Nome 2} decidiram adotar modelo misto, mantendo determinadas tarefas\nfixas e alternando outras.”\n\nSubmódulo\nTAREFA / RESPONSÁVEL / FREQUÊNCIA OU PRAZO",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 278,
+      "page_end": 280,
+      "line_start": 11910,
+      "line_end": 12000
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "responsáveis fixos.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "alternância.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "modelo misto.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q044",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q046-01",
+    "question_id": "Q046",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "A) divisão por áreas.\nB) alternância.\nC) misto.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram dividir as responsabilidades parentais por áreas\nespecíficas, mantendo responsáveis principais identificados para cada uma.”\n\nTexto B\n“{Nome 1} e {Nome 2} decidiram alternar determinadas responsabilidades relacionadas\naos filhos conforme rotina ou escala previamente definida.”\n\nTexto C\n“{Nome 1} e {Nome 2} decidiram utilizar modelo misto, mantendo algumas\nresponsabilidades fixas e alternando outras conforme necessidade e disponibilidade.”\n\nSubmódulo\nÁREA / RESPONSÁVEL PRINCIPAL / RESPONSÁVEL DE APOIO",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 282,
+      "page_end": 284,
+      "line_start": 12055,
+      "line_end": 12142
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "divisão por áreas.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "alternância.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "misto.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q046",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q047-01",
+    "question_id": "Q047",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não nesta pergunta.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 284,
+      "page_end": 285,
+      "line_start": 12142,
+      "line_end": 12208
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q049-01",
+    "question_id": "Q049",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": {
+      "context_true": "concrete_career_opportunity"
+    },
+    "source_text": "A) aceitar.\nB) aceitar com condições.\nC) não aceitar neste momento.\n\nTexto A\n“Após analisar os impactos profissionais e familiares de {oportunidade}, {Nome 1} e\n{Nome 2} decidiram conjuntamente por sua aceitação nas condições apresentadas.”\n\nTexto B\n“Após analisar {oportunidade}, {Nome 1} e {Nome 2} decidiram aceitá-la condicionada às\nseguintes adaptações: {condições selecionadas}.”\n\nCampos estruturados:\n●   remuneração mínima;\n   ●   horário máximo;\n   ●   número de viagens;\n   ●   cidade;\n   ●   prazo experimental;\n   ●   investimento máximo;\n   ●   data de início;\n   ●   duração prevista;\n   ●   responsabilidades parentais;\n   ●   responsabilidades domésticas;\n   ●   outros.\n\nTexto C\n“Após analisar {oportunidade}, {Nome 1} e {Nome 2} decidiram não adotá-la neste\nmomento, reconhecendo que a decisão poderá ser revista caso as condições familiares\nou profissionais se modifiquem.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 287,
+      "page_end": 289,
+      "line_start": 12283,
+      "line_end": 12386
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "aceitar.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "aceitar com condições.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "não aceitar neste momento.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q049",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q049_concrete_professional_opportunity"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q050-01",
+    "question_id": "Q050",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": {
+      "context_true": "concrete_development_project"
+    },
+    "source_text": "A) apoiar e iniciar.\nB) apoiar mediante condições.\nC) adiar até data definida.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram apoiar o projeto {projeto}, reconhecendo os\ninvestimentos de tempo, recursos e adaptações familiares necessários para sua\nrealização.”\n\nTexto B\n“{Nome 1} e {Nome 2} decidiram apoiar o projeto {projeto}, condicionado às seguintes\nmedidas: {condições selecionadas}. Essas condições destinam-se a equilibrar o\ndesenvolvimento pretendido com as responsabilidades familiares.”\n\nCampos:\n●   investimento máximo;\n   ●   carga horária;\n   ●   duração;\n   ●   responsabilidades redistribuídas;\n   ●   data de início;\n   ●   impacto sobre filhos;\n   ●   outras condições.\n\nTexto C\n“{Nome 1} e {Nome 2} decidiram adiar temporariamente o projeto {projeto} até {data de\nrevisão}, quando voltarão a analisar sua viabilidade diante da situação financeira,\nfamiliar e profissional existente.”\n\nNenhum adiamento poderá ficar sem data concreta de revisão.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 289,
+      "page_end": 292,
+      "line_start": 12386,
+      "line_end": 12506
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "apoiar e iniciar.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "apoiar mediante condições.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "adiar até data definida.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q050",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q050_concrete_personal_project"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q061-01",
+    "question_id": "Q061",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 295,
+      "page_end": 298,
+      "line_start": 12645,
+      "line_end": 12734
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q062-01",
+    "question_id": "Q062",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.\n\nContribuição\nInterromper ou recusar contato devido a dor ou desconforto nunca gera R$ 10,00.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 298,
+      "page_end": 299,
+      "line_start": 12734,
+      "line_end": 12810
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q063-01",
+    "question_id": "Q063",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.\n\nA frequência dos momentos protegidos é tratada pela Pergunta 055 revisada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 299,
+      "page_end": 301,
+      "line_start": 12810,
+      "line_end": 12883
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q064-01",
+    "question_id": "Q064",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 301,
+      "page_end": 302,
+      "line_start": 12883,
+      "line_end": 12948
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q065-01",
+    "question_id": "Q065",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não em nível genérico.\n\nPrática específica somente poderá integrar o contrato se os dois a escolherem\nvoluntariamente em submódulo próprio futuro.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 302,
+      "page_end": 304,
+      "line_start": 12948,
+      "line_end": 13014
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q066-01",
+    "question_id": "Q066",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 304,
+      "page_end": 306,
+      "line_start": 13014,
+      "line_end": 13087
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q067-01",
+    "question_id": "Q067",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não nesta pergunta.\n\nSe houver conteúdo sexual explícito associado, aplica-se também a Pergunta 060.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 306,
+      "page_end": 307,
+      "line_start": 13087,
+      "line_end": 13163
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q068-01",
+    "question_id": "Q068",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 307,
+      "page_end": 309,
+      "line_start": 13163,
+      "line_end": 13229
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q069-01",
+    "question_id": "Q069",
+    "label": "NÓS DECIDIMOS — quando aplicável",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": {
+      "all": [
+        {
+          "applicable_question": "Q069"
+        },
+        {
+          "no_reproductive_coercion": true
+        }
+      ]
+    },
+    "source_text": "Qual é a posição atual do casal em relação à possibilidade de gravidez?\n\nA) Desejamos buscar uma gravidez neste período.\n\nB) Não desejamos buscar uma gravidez neste momento e pretendemos adotar estratégia\ncontraceptiva escolhida de forma responsável.\n\nC) Ainda não chegamos a uma decisão e precisamos revisar esse assunto antes de assumir\numa tentativa deliberada de gravidez.\n\nTexto A\n“{Nome 1} e {Nome 2} registram que, neste momento, desejam buscar uma gravidez e\ncomprometem-se a manter diálogo sobre suas condições familiares e cuidados\nnecessários.”\n\nTexto B\n“{Nome 1} e {Nome 2} registram que, neste momento, não desejam buscar uma gravidez\ne comprometem-se a conversar e definir de maneira responsável a estratégia\ncontraceptiva compatível com sua realidade e com a autonomia corporal de cada um.”\n\nTexto C\n“{Nome 1} e {Nome 2} reconhecem que ainda não possuem decisão conjunta sobre\nbuscar uma gravidez. Comprometem-se a revisar essa questão antes de iniciar\ndeliberadamente uma tentativa de concepção.”\n\nRegra importante\n\nNenhuma escolha do casal autoriza coerção reprodutiva ou decisão sobre o corpo do outro\nsem seu consentimento.\n\nAplicabilidade\nQuando gravidez não for biologicamente possível ou não for relevante à situação do casal,\nmarcar NÃO APLICÁVEL.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 309,
+      "page_end": 311,
+      "line_start": 13229,
+      "line_end": 13325
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Desejamos buscar uma gravidez neste período.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "Não desejamos buscar uma gravidez neste momento e pretendemos adotar estratégia contraceptiva escolhida de forma responsável.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "Ainda não chegamos a uma decisão e precisamos revisar esse assunto antes de assumir uma tentativa deliberada de gravidez.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q069",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "PREGNANCY_POSSIBLE"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q070-01",
+    "question_id": "Q070",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.\n\nContribuição\nNão desejar intimidade depois de conflito não gera R$ 10,00.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 311,
+      "page_end": 313,
+      "line_start": 13325,
+      "line_end": 13415
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q121-01",
+    "question_id": "Q121",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 314,
+      "page_end": 316,
+      "line_start": 13443,
+      "line_end": 13509
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q122-01",
+    "question_id": "Q122",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 316,
+      "page_end": 317,
+      "line_start": 13509,
+      "line_end": 13573
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q123-01",
+    "question_id": "Q123",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 317,
+      "page_end": 318,
+      "line_start": 13573,
+      "line_end": 13627
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q124-01",
+    "question_id": "Q124",
+    "label": "NÓS DECIDIMOS — quando houver conflito recorrente",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": {
+      "context_true": "recurring_meal_organization_conflict"
+    },
+    "source_text": "Qual modelo geral vocês desejam utilizar para organização das refeições principais da\ncasa?\n\nA) Planejamento semanal.\n\nB) Planejamento de parte da semana, mantendo dias flexíveis.\n\nC) Organização mais livre, mas com orçamento e responsabilidades previamente definidos.\n\nTexto A\n“{Nome 1} e {Nome 2} escolheram realizar planejamento semanal das principais\nrefeições da casa, dividindo compras e preparação conforme responsabilidades\nacordadas.”\n\nTexto B\n“{Nome 1} e {Nome 2} escolheram planejar parte das refeições da semana e manter os\ndemais dias flexíveis, preservando orçamento e necessidades da família.”\n\nTexto C\n“{Nome 1} e {Nome 2} preferem maior flexibilidade na alimentação cotidiana,\ncomprometendo-se a respeitar orçamento, necessidades dos filhos ou dependentes e\nresponsabilidades de compra e preparo.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 318,
+      "page_end": 320,
+      "line_start": 13627,
+      "line_end": 13707
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Planejamento semanal.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "Planejamento de parte da semana, mantendo dias flexíveis.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "Organização mais livre, mas com orçamento e responsabilidades previamente definidos.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q124",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q124_recurring_meal_conflict"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q126-01",
+    "question_id": "Q126",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 322,
+      "page_end": 323,
+      "line_start": 13769,
+      "line_end": 13828
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q129-01",
+    "question_id": "Q129",
+    "label": "NÓS DECIDIMOS — quando surgir situação concreta",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": {
+      "context_true": "concrete_prolonged_health_limitation"
+    },
+    "source_text": "Qual modelo de organização será utilizado durante esta limitação?\n\nA) Redistribuição principalmente interna entre os dois.\n\nB) Redistribuição interna + apoio de familiares/rede de confiança.\n\nC) Redistribuição interna + apoio profissional ou outro recurso externo.\n\nTexto A\n“Durante a limitação de saúde de {Nome}, {Nome 1} e {Nome 2} redistribuirão\ntemporariamente suas responsabilidades conforme a capacidade atual de cada um,\nrealizando revisão em {data de revisão}.”\n\nTexto B\n“Durante a limitação de saúde de {Nome}, {Nome 1} e {Nome 2} utilizarão redistribuição\ninterna e o seguinte apoio externo: {apoio definido}, realizando revisão em {data}.”\n\nTexto C\n“Durante a limitação de saúde de {Nome}, {Nome 1} e {Nome 2} organizarão\nredistribuição de tarefas e o seguinte apoio profissional ou externo: {apoio}, realizando\nrevisão em {data}.”\n\nCampo obrigatório\n\nDATA_REVISÃO",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 326,
+      "page_end": 327,
+      "line_start": 13943,
+      "line_end": 14019
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Redistribuição principalmente interna entre os dois.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "Redistribuição interna + apoio de familiares/rede de confiança.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "Redistribuição interna + apoio profissional ou outro recurso externo.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q129",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q129_concrete_prolonged_limitation"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q130-01",
+    "question_id": "Q130",
+    "label": "NÓS DECIDIMOS — OBRIGATÓRIO",
+    "nos_trigger_type": null,
+    "trigger_predicate_proposal": null,
+    "source_text": "Criar o Registro Familiar de Emergência, contendo quando aplicável:\n\n    ●   contatos de emergência;\n    ●   plano/seguro de saúde;\n    ●   alergias importantes;\n    ●   medicamentos de uso contínuo que precisem ser conhecidos em emergência;\n    ●   médico ou serviço de referência, quando pertinente;\n    ●   contato de familiar relevante;\n\n   ● outras informações que a própria pessoa autorizar compartilhar.\n\nTexto automático\n\n“{Nome 1} e {Nome 2} comprometem-se a manter um Registro Familiar de Emergência\ncom as informações essenciais que voluntariamente decidiram compartilhar para\nsituações em que seja necessário prestar auxílio rápido.”\n\nRegra de privacidade\n\nO registro não representa acesso irrestrito a todos os dados médicos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 327,
+      "page_end": 329,
+      "line_start": 14019,
+      "line_end": 14085
+    },
+    "option_candidates": [],
+    "status": "BLOCKED_VOLUNTARY_REGISTRY_POLICY",
+    "is_active": false,
+    "condition_id": "COND-Q130",
+    "trigger_predicate": null
+  },
+  {
+    "joint_module_id": "ND-Q131-01",
+    "question_id": "Q131",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Qual frequência mínima de um Momento de Lazer do Casal vocês desejam buscar?\n\nA) Pelo menos 1 vez por semana.\n\nB) Pelo menos 1 vez a cada 15 dias.\n\nC) Pelo menos 1 vez por mês.\n\nSaídas\n\nA:\n“{Nome 1} e {Nome 2} buscarão realizar pelo menos um Momento de Lazer do Casal por\nsemana.”\n\nB:\n“{Nome 1} e {Nome 2} buscarão realizar pelo menos um Momento de Lazer do Casal a\ncada 15 dias.”\n\nC:\n“{Nome 1} e {Nome 2} buscarão realizar pelo menos um Momento de Lazer do Casal por\nmês.”\n\nRegra\nLazer pode ser gratuito ou pago.\n\nNão é necessário transformar lazer em consumo.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 329,
+      "page_end": 331,
+      "line_start": 14085,
+      "line_end": 14158
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Pelo menos 1 vez por semana.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "Pelo menos 1 vez a cada 15 dias.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "Pelo menos 1 vez por mês.",
+        "contract_template": null
+      }
+    ],
+    "status": "DISABLED_NO_OWN_JOINT_DECISION",
+    "is_active": false,
+    "condition_id": "COND-Q131",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": false
+    }
+  },
+  {
+    "joint_module_id": "ND-Q132-01",
+    "question_id": "Q132",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 331,
+      "page_end": 332,
+      "line_start": 14158,
+      "line_end": 14208
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q133-01",
+    "question_id": "Q133",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.\n\nA escolha de atividades ocorrerá no planejamento de lazer.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 332,
+      "page_end": 333,
+      "line_start": 14208,
+      "line_end": 14257
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q134-01",
+    "question_id": "Q134",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": {
+      "context_true": "concrete_relevant_trip"
+    },
+    "source_text": "Não genericamente.\n\nCada viagem relevante poderá abrir decisão concreta.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 333,
+      "page_end": 334,
+      "line_start": 14257,
+      "line_end": 14313
+    },
+    "option_candidates": [],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q134",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q134_concrete_relevant_trip"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q135-01",
+    "question_id": "Q135",
+    "label": "NÓS DECIDIMOS — quando desejarem orçamento",
+    "nos_trigger_type": "OPTIONAL",
+    "trigger_predicate_proposal": null,
+    "source_text": "específico\nComo vocês preferem financiar lazer regular do casal?\n\nA) Percentual mensal da RLF.\n\nB) Valor mensal fixo.\n\nC) Utilizar exclusivamente valores definidos caso a caso e/ou o Cofrinho de Reconexão.\n\nCampos\nPERCENTUAL_LAZER ou VALOR_LAZER\n\nTexto A\n“{Nome 1} e {Nome 2} poderão destinar até {percentual}% da RLF mensal ao lazer e\nexperiências compartilhadas, respeitadas as demais obrigações financeiras.”\n\nTexto B\n“{Nome 1} e {Nome 2} poderão destinar até {valor} mensal ao lazer e experiências\ncompartilhadas, sujeito à revisão financeira.”\n\nTexto C\n“{Nome 1} e {Nome 2} decidiram avaliar gastos de lazer caso a caso e poderão utilizar\ntambém recursos disponíveis no Cofrinho de Reconexão.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 334,
+      "page_end": 336,
+      "line_start": 14313,
+      "line_end": 14391
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Percentual mensal da RLF.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "Valor mensal fixo.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "Utilizar exclusivamente valores definidos caso a caso e/ou o Cofrinho de Reconexão.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q135",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q135_joint_budget_requested"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q136-01",
+    "question_id": "Q136",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 336,
+      "page_end": 337,
+      "line_start": 14391,
+      "line_end": 14434
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q139-01",
+    "question_id": "Q139",
+    "label": "NÓS DECIDIMOS — opcional",
+    "nos_trigger_type": "OPTIONAL",
+    "trigger_predicate_proposal": null,
+    "source_text": "Qual nível de celebração vocês desejam como mínimo para aniversário de casamento?\n\nA) Reservar um momento especial juntos todos os anos.\n\nB) Fazer ao menos uma lembrança, refeição ou experiência simples juntos.\n\nC) Definir livremente a cada ano, mas conversar antes da data.\n\nSaídas completas\n\nA:\n “{Nome 1} e {Nome 2} comprometem-se a reservar anualmente um momento especial\njuntos para marcar seu aniversário de casamento.”\n\nB:\n“{Nome 1} e {Nome 2} comprometem-se a reconhecer anualmente seu aniversário de\ncasamento através de ao menos uma refeição, lembrança ou experiência compartilhada.”\n\nC:\n“{Nome 1} e {Nome 2} decidirão a cada ano como desejam marcar seu aniversário de\ncasamento, realizando essa conversa antes da data.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 340,
+      "page_end": 342,
+      "line_start": 14540,
+      "line_end": 14611
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Reservar um momento especial juntos todos os anos.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "Fazer ao menos uma lembrança, refeição ou experiência simples juntos.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "Definir livremente a cada ano, mas conversar antes da data.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q139",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q139_joint_celebration_agreement_requested"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q140-01",
+    "question_id": "Q140",
+    "label": "NÓS DECIDIMOS — OBRIGATÓRIO",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "Qual objetivo vocês desejam registrar para experiências especiais do casal?\n\nA) Buscar 1 experiência especial por ano.\n\nB) Buscar 1 experiência especial a cada 2 anos.\n\nC) Não estabelecer frequência fixa, mas revisar a possibilidade pelo menos uma vez por ano.\n\nTexto A\n“{Nome 1} e {Nome 2} buscarão, quando sua realidade financeira, profissional e familiar\npermitir, realizar pelo menos uma experiência especial por ano destinada a descanso,\nlazer e fortalecimento da conexão do casal.”\n\nTexto B\n“{Nome 1} e {Nome 2} buscarão, quando houver condições, realizar aproximadamente\numa experiência especial a cada 2 anos destinada a descanso, lazer e fortalecimento da\nconexão do casal.”\n\nTexto C\n“{Nome 1} e {Nome 2} não estabelecerão frequência obrigatória para viagens ou\nexperiências maiores, mas revisarão pelo menos uma vez por ano se existe\noportunidade financeira e familiar para realizar uma experiência especial juntos.”\n\nPARÁGRAFO FIXO\nA impossibilidade financeira, condição de saúde, responsabilidade com\nfilhos/dependentes ou outra circunstância legítima não será considerada\ndescumprimento. O objetivo desta cláusula é evitar que experiências do casal sejam\nindefinidamente abandonadas apenas pela força da rotina.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 342,
+      "page_end": 344,
+      "line_start": 14611,
+      "line_end": 14732
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Buscar 1 experiência especial por ano.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "Buscar 1 experiência especial a cada 2 anos.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "Não estabelecer frequência fixa, mas revisar a possibilidade pelo menos uma vez por ano.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q140",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q171-01",
+    "question_id": "Q171",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 359,
+      "page_end": 361,
+      "line_start": 15372,
+      "line_end": 15437
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q172-01",
+    "question_id": "Q172",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 361,
+      "page_end": 362,
+      "line_start": 15437,
+      "line_end": 15494
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q173-01",
+    "question_id": "Q173",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 362,
+      "page_end": 364,
+      "line_start": 15494,
+      "line_end": 15549
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q174-01",
+    "question_id": "Q174",
+    "label": "NÓS DECIDIMOS — quando houver conflito recorrente",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": {
+      "context_true": "recurring_visits_conflict"
+    },
+    "source_text": "Qual regra geral vocês desejam utilizar para receber amigos?\n\nA) Combinar previamente toda visita planejada.\n\nB) Visitas espontâneas são possíveis dentro de horários e condições definidos.\n\nC) Cada um poderá convidar espontaneamente pessoas previamente reconhecidas pelos dois,\nobservando limites de horário e privacidade.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram combinar previamente visitas sociais planejadas à\nresidência compartilhada.”\n\nTexto B\n\n\nCampos:\nHORARIOS_VISITAS_SOCIAIS\nCONDICOES\n\n“{Nome 1} e {Nome 2} admitem visitas sociais espontâneas dentro das seguintes\ncondições: {condições definidas}.”\n\nTexto C\nCampo:\n\nPESSOAS_OU_GRUPOS_PREVIAMENTE_ACEITOS\n\n“{Nome 1} e {Nome 2} admitem convites espontâneos às pessoas ou grupos previamente\nconsiderados adequados pelos dois, respeitando horários, privacidade e\nresponsabilidades da residência.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 364,
+      "page_end": 366,
+      "line_start": 15549,
+      "line_end": 15632
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Combinar previamente toda visita planejada.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "Visitas espontâneas são possíveis dentro de horários e condições definidos.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "Cada um poderá convidar espontaneamente pessoas previamente reconhecidas pelos dois, observando limites de horário e privacidade.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q174",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q174_recurring_home_visits_conflict"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q175-01",
+    "question_id": "Q175",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não genericamente.\n\nSituações específicas que gerem insegurança utilizam Q028/Q032.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 366,
+      "page_end": 367,
+      "line_start": 15632,
+      "line_end": 15706
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q176-01",
+    "question_id": "Q176",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 367,
+      "page_end": 369,
+      "line_start": 15706,
+      "line_end": 15753
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q178-01",
+    "question_id": "Q178",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não se escolhe antecipadamente o profissional.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 370,
+      "page_end": 371,
+      "line_start": 15812,
+      "line_end": 15871
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q180-01",
+    "question_id": "Q180",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não necessariamente.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 373,
+      "page_end": 374,
+      "line_start": 15923,
+      "line_end": 15996
+    },
+    "option_candidates": [],
+    "status": "DISABLED_NO_OWN_JOINT_DECISION",
+    "is_active": false,
+    "condition_id": "COND-Q180",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": false
+    }
+  },
+  {
+    "joint_module_id": "ND-Q183-01",
+    "question_id": "Q183",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "Não.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 377,
+      "page_end": 378,
+      "line_start": 16097,
+      "line_end": 16155
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q185-01",
+    "question_id": "Q185",
+    "label": "NÓS DECIDIMOS — OBRIGATÓRIO",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "Pergunta conjunta\n\nCom que frequência vocês realizarão a Revisão Geral do Contrato de Casamento?\n\nA) Uma vez por ano.\n\nB) A cada 2 anos.\n\nC) A cada 3 anos, além de revisões extraordinárias quando houver mudança relevante.\n\nTexto A\n“{Nome 1} e {Nome 2} comprometem-se a realizar uma Revisão Geral deste Contrato de\nCasamento uma vez por ano.”\n\nTexto B\n“{Nome 1} e {Nome 2} comprometem-se a realizar uma Revisão Geral deste Contrato de\nCasamento a cada 2 anos.”\n\nTexto C\n“{Nome 1} e {Nome 2} comprometem-se a realizar uma Revisão Geral deste Contrato de\nCasamento a cada 3 anos, sem impedir revisão extraordinária diante de mudança\nrelevante.”\n\nGATILHOS DE REVISÃO EXTRAORDINÁRIA\nIndependentemente da frequência escolhida, deverão ser avaliadas alterações quando ocorrer:\n\n   ●   nascimento ou chegada de filho/dependente;\n   ●   mudança de cidade, estado ou país;\n   ●   alteração significativa de renda;\n   ●   desemprego prolongado;\n   ●   doença ou limitação relevante;\n   ●   grande mudança profissional;\n   ●   mudança relevante na composição familiar;\n   ●   necessidade prolongada de cuidar de familiar;\n   ●   mudança importante de rotina;\n   ●   reconciliação depois de crise grave;\n   ●   cláusula que se revele impraticável;\n   ●   decisão conjunta de modificar prioridade relevante.\n\nROTEIRO DA REVISÃO GERAL\n\n   1. Quais cláusulas continuam funcionando bem?\n\n   2. Quais ficaram inadequadas à realidade atual?\n   3. Algum compromisso está excessivamente vago?\n   4. Algum prazo precisa mudar?\n   5. Alguma frequência precisa ser revista?\n   6. Alguma cláusula vem sendo descumprida repetidamente?\n   7. Existe algum novo assunto importante não contemplado?\n   8. Quais acordos devem permanecer exatamente como estão?\n   9. Quais deverão ser modificados?\n   10.Qual é a próxima data de revisão?\n\nREGRA DE ALTERAÇÃO\n\nUma cláusula conjunta não poderá ser alterada unilateralmente.\n\nO sistema deverá registrar:\n\nVERSAO_CONTRATO\n\nDATA_REVISAO\n\nCLAUSULA_ANTERIOR\n\nCLAUSULA_NOVA\n\nMOTIVO_ALTERACAO\n\nACEITE_NOME_1\n\nACEITE_NOME_2\n\nREGRA DE PRESERVAÇÃO\n\nAlterar uma cláusula não apagará o histórico. A versão anterior permanecerá registrada\npara permitir rastreabilidade da evolução dos acordos do casal.\n\nCALENDÁRIO UNIFICADO\n\nA Revisão Geral poderá coincidir com a Revisão do Projeto de Vida da Q150 quando as datas\ncoincidirem.\n\nNão há necessidade de duas reuniões distintas.\n\nContribuição\nDiscordância sobre alteração não gera R$ 10.\n\nEnquanto não houver consenso:\n\n      permanece válida a cláusula anterior, exceto quando ela se tornar ilegal,\n      insegura, impossível de cumprir ou incompatível com regra superior de\n      consentimento e segurança do Método.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 380,
+      "page_end": 384,
+      "line_start": 16212,
+      "line_end": 16392
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Uma vez por ano.",
+        "contract_template": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "A cada 2 anos.",
+        "contract_template": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "A cada 3 anos, além de revisões extraordinárias quando houver mudança relevante.",
+        "contract_template": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q185",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q187-01",
+    "question_id": "Q187",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NEVER",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 431,
+      "page_end": 433,
+      "line_start": 18446,
+      "line_end": 18513
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q101-01",
+    "question_id": "Q101",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 11,
+      "line_end": 48
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q102-01",
+    "question_id": "Q102",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 48,
+      "line_end": 82
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q103-01",
+    "question_id": "Q103",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\nR$ 10\nNunca.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 82,
+      "line_end": 119
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q104-01",
+    "question_id": "Q104",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 119,
+      "line_end": 156
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q105-01",
+    "question_id": "Q105",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 156,
+      "line_end": 187
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q112-01",
+    "question_id": "Q112",
+    "label": "NÓS DECIDIMOS — OBRIGATÓRIO",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — OBRIGATÓRIO\nCom que frequência vocês desejam reservar um momento breve para oração conjunta?\n\nA) Diariamente.\n\nB) Pelo menos 3 vezes por semana.\n\nC) Pelo menos 1 vez por semana.\n\nSaída A\n“{Nome 1} e {Nome 2} escolheram reservar diariamente um breve momento de oração conjunta, respeitando situações excepcionais que impossibilitem sua realização.”\n\nSaída B\n“{Nome 1} e {Nome 2} escolheram reservar pelo menos 3 momentos semanais de oração conjunta.”\n\nSaída C\n“{Nome 1} e {Nome 2} escolheram reservar pelo menos 1 momento semanal de oração conjunta.”\n\nRegra\nFalhar isoladamente na oração programada não gera R$ 10.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 380,
+      "line_end": 424
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Diariamente.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} escolheram reservar diariamente um breve momento de oração conjunta, respeitando situações excepcionais que impossibilitem sua realização.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Pelo menos 3 vezes por semana.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} escolheram reservar pelo menos 3 momentos semanais de oração conjunta.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Outra frequência consensualmente escolhida.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} escolheram reservar aproximadamente {frequência escolhida}\npara oração conjunta, respeitando situações em que um dos dois não esteja em\ncondições de participar naquele momento.”",
+        "superseded_text_candidate": "Pelo menos 1 vez por semana.",
+        "source_ref": {
+          "source_id": "PDF01",
+          "page_start": 348,
+          "page_end": 349,
+          "line_start": 14905,
+          "line_end": 14925
+        }
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "required_fields": [
+      "FREQUENCIA_ORACAO"
+    ],
+    "applied_patch_ids": [
+      "PATCH60-Q112"
+    ],
+    "condition_id": "COND-Q112",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q113-01",
+    "question_id": "Q113",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nA) Pelo menos 3 vezes por semana.\n\nB) Pelo menos 1 vez por semana.\n\nC) Pelo menos 2 vezes por mês.\n\nTexto A\n“{Nome 1} e {Nome 2} escolheram compartilhar leitura bíblica, devocional ou reflexão cristã pelo menos 3 vezes por semana.”\n\nTexto B\n“{Nome 1} e {Nome 2} escolheram compartilhar leitura bíblica, devocional ou reflexão cristã pelo menos 1 vez por semana.”\n\nTexto C\n“{Nome 1} e {Nome 2} escolheram compartilhar leitura bíblica, devocional ou reflexão cristã pelo menos 2 vezes por mês.”",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 424,
+      "line_end": 463
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Pelo menos 3 vezes por semana.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} escolheram compartilhar leitura bíblica, devocional ou reflexão cristã pelo menos 3 vezes por semana.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Pelo menos 1 vez por semana.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} escolheram compartilhar leitura bíblica, devocional ou reflexão cristã pelo menos 1 vez por semana.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Outra frequência consensualmente escolhida.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} escolheram compartilhar leitura bíblica, devocional ou reflexão\ncristã aproximadamente {frequência escolhida}.”",
+        "superseded_text_candidate": "Pelo menos 2 vezes por mês.",
+        "source_ref": {
+          "source_id": "PDF01",
+          "page_start": 349,
+          "page_end": 349,
+          "line_start": 14925,
+          "line_end": 14944
+        }
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "required_fields": [
+      "FREQUENCIA_DEVOCIONAL"
+    ],
+    "applied_patch_ids": [
+      "PATCH60-Q113"
+    ],
+    "condition_id": "COND-Q113",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q114-01",
+    "question_id": "Q114",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nQual frequência mínima de participação conjunta vocês desejam buscar quando circunstâncias permitirem?\n\nA) Semanalmente.\n\nB) Pelo menos 2 vezes por mês.\n\nC) Outra frequência definida pelo casal.\n\nC — campo\nFREQUENCIA_COMUNIDADE_CRISTA\n\nTexto C\n“{Nome 1} e {Nome 2} escolheram buscar participação conjunta em comunidade cristã aproximadamente {frequência escolhida}, respeitando impedimentos legítimos.”\n\nRegra\nDoença, trabalho inevitável, cuidado de filhos/dependentes, viagem e outras circunstâncias legítimas não constituem descumprimento moral automático.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 463,
+      "line_end": 504
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Semanalmente.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "Pelo menos 2 vezes por mês.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "Outra frequência definida pelo casal.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} escolheram buscar participação conjunta em comunidade cristã aproximadamente {frequência escolhida}, respeitando impedimentos legítimos.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q114",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q115-01",
+    "question_id": "Q115",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão para definir quem possui a “fé correta”. Questões práticas concretas podem possuir decisão conjunta própria.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 504,
+      "line_end": 533
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q116-01",
+    "question_id": "Q116",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nComo vocês desejam organizar contribuições religiosas regulares?\n\nA) Percentual previamente definido da renda.\n\nB) Valor mensal previamente definido.\n\nC) Decisão caso a caso dentro dos limites financeiros gerais.\n\nA — campos\nPERCENTUAL_CONTRIBUICAO_RELIGIOSA\n\nTexto\n“{Nome 1} e {Nome 2} decidiram destinar até {percentual}% da RLF às contribuições religiosas regulares, sujeito à revisão quando houver mudança financeira significativa.”\n\nB — campo\nVALOR_MENSAL_CONTRIBUICAO_RELIGIOSA\n\n“{Nome 1} e {Nome 2} decidiram prever até {valor} por mês para contribuições religiosas regulares, sujeito à revisão conforme sua realidade financeira.”\n\nC\n“{Nome 1} e {Nome 2} decidiram avaliar contribuições religiosas caso a caso, observando os mesmos limites de transparência, orçamento e decisão conjunta aplicáveis às demais doações relevantes.”\n\nRegra fixa\nNenhum dos cônjuges poderá utilizar culpa espiritual para obrigar o outro a entregar recurso cuja disposição conjunta é exigida pelas regras financeiras do casamento.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 533,
+      "line_end": 585
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Percentual previamente definido da renda.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram planejar aproximadamente {percentual}% da RLF para\ncontribuições religiosas regulares, sujeito à revisão sempre que houver alteração\nfinanceira relevante.”",
+        "source_ref": {
+          "source_id": "PDF01",
+          "page_start": 349,
+          "page_end": 350,
+          "line_start": 14944,
+          "line_end": 14964
+        }
+      },
+      {
+        "code": "B",
+        "text_candidate": "Valor mensal previamente definido.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "Decisão caso a caso dentro dos limites financeiros gerais.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "required_fields": [
+      "PERCENTUAL_PLANEJADO",
+      "VALOR_MENSAL_CONTRIBUICAO_RELIGIOSA"
+    ],
+    "applied_patch_ids": [
+      "PATCH60-Q116"
+    ],
+    "condition_id": "COND-Q116",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q117-01",
+    "question_id": "Q117",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão nesta pergunta.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 585,
+      "line_end": 620
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q118-01",
+    "question_id": "Q118",
+    "label": "NÓS DECIDIMOS — quando houver necessidade concreta",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — quando houver necessidade concreta\nQual modelo geral de formação espiritual vocês desejam adotar?\n\nA) Prática ativa em casa + participação regular na comunidade cristã.\n\nB) Participação regular na comunidade + conversas e práticas em casa conforme idade.\n\nC) Plano específico definido pelo casal.\n\nTexto A\n“{Nome 1} e {Nome 2} escolheram participar ativamente da formação cristã de seus filhos tanto no ambiente familiar quanto em comunidade cristã, adequando práticas à idade e maturidade.”\n\nTexto B\n“{Nome 1} e {Nome 2} escolheram manter participação comunitária e desenvolver em casa conversas, oração e ensino cristão compatíveis com a idade e realidade dos filhos.”\n\nC — campos\nPLANO_FORMACAO_ESPIRITUAL_FILHOS",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 620,
+      "line_end": 664
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Prática ativa em casa + participação regular na comunidade cristã.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} escolheram participar ativamente da formação cristã de seus filhos tanto no ambiente familiar quanto em comunidade cristã, adequando práticas à idade e maturidade.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Participação regular na comunidade + conversas e práticas em casa conforme idade.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} escolheram manter participação comunitária e desenvolver em casa conversas, oração e ensino cristão compatíveis com a idade e realidade dos filhos.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Plano específico definido pelo casal.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q118",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q118_concrete_spiritual_education_need"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q119-01",
+    "question_id": "Q119",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 664,
+      "line_end": 700
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q120-01",
+    "question_id": "Q120",
+    "label": "NÓS DECIDIMOS — OBRIGATÓRIO",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — OBRIGATÓRIO\nCom que frequência vocês desejam realizar uma breve Revisão Espiritual do Casal?\n\nA) Mensalmente.\n\nB) A cada 3 meses.\n\nC) A cada 6 meses.\n\nTexto A\n“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez por mês uma breve Revisão Espiritual do Casal.”\n\nTexto B\n“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez a cada 3 meses uma breve Revisão Espiritual do Casal.”\n\nTexto C\n“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez a cada 6 meses uma breve Revisão Espiritual do Casal.”\n\nROTEIRO FIXO DA REVISÃO\n1. Existe algo pelo qual queremos agradecer a Deus juntos?\n2. Existe alguma necessidade importante pela qual desejamos orar?\n3. Nossa fé tem produzido mais amor, responsabilidade e unidade na vida prática?\n4. Existe alguma área espiritual em que estamos nos afastando ou entrando em conflito?\n5. Qual atitude concreta queremos praticar até a próxima revisão?\n\nRegra\nA revisão não poderá ser utilizada como interrogatório espiritual ou instrumento para medir quem é “mais crente”. Recusa isolada por motivo legítimo não gera contribuição. Recusa injustificada e repetida em participar de revisão formalmente assumida poderá utilizar PROTOCOLO_GERAL, sem transformar a espiritualidade em multa.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 700,
+      "line_end": 751
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Mensalmente.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez por mês uma breve Revisão Espiritual do Casal.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "A cada 3 meses.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez a cada 3 meses uma breve Revisão Espiritual do Casal.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "A cada 6 meses.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez a cada 6 meses uma breve Revisão Espiritual do Casal.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q120",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q141-01",
+    "question_id": "Q141",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão nesta pergunta.\n\nA construção concreta ocorrerá nas próximas questões.",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 9,
+      "line_end": 61
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q143-01",
+    "question_id": "Q143",
+    "label": "NÓS DECIDIMOS — OBRIGATÓRIO",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — OBRIGATÓRIO\n\n\nPergunta conjunta\nQual será a prioridade principal do casal para os próximos 3 anos?\n\nA) Estabilidade financeira e patrimonial.\n\nB) Qualidade de vida, família e relacionamento.\n\nC) Crescimento e realização de projeto relevante.\n\nTexto A\n“{Nome 1} e {Nome 2} escolheram como prioridade principal para os próximos 3 anos fortalecer sua estabilidade financeira e patrimonial, procurando alinhar gastos, reservas, dívidas e objetivos de aquisição a essa direção.”\n\nTexto B\n“{Nome 1} e {Nome 2} escolheram como prioridade principal para os próximos 3 anos fortalecer qualidade de vida, família, relacionamento e experiências compartilhadas, preservando responsabilidade financeira.”\n\nTexto C\n“{Nome 1} e {Nome 2} escolheram como prioridade principal para os próximos 3 anos desenvolver o seguinte projeto ou área de crescimento: {projeto escolhido}, comprometendo-se a avaliar periodicamente seu impacto financeiro, familiar e conjugal.”\n\nCampo\nPRIORIDADE_3_ANOS\n\nRegra\nEscolher uma prioridade não significa abandonar as demais áreas.",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 109,
+      "line_end": 175
+    },
+    "option_candidates": [],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q143",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q144-01",
+    "question_id": "Q144",
+    "label": "NÓS DECIDIMOS — somente diante de oportunidade concreta",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": {
+      "context_true": "concrete_geographic_move"
+    },
+    "source_text": "NÓS DECIDIMOS — somente diante de oportunidade concreta\nQual decisão vocês desejam tomar sobre a mudança para {local}?\n\nA) Aceitar a mudança.\n\nB) Aceitar apenas se determinadas condições forem satisfeitas.\n\nC) Não realizar a mudança neste momento.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram realizar a mudança para {local}, com previsão de {data}, após analisar seus impactos familiares, financeiros, profissionais e logísticos.”\n\nTexto B\nCampos:\n\n-  renda mínima; \n-  moradia; \n-  escola/filhos; \n-  trabalho do outro cônjuge; \n-  duração ou período de teste; \n-  apoio familiar; \n-  custo máximo; \n-  outras condições. \n\n“{Nome 1} e {Nome 2} concordam em realizar a mudança para {local} somente se forem atendidas as seguintes condições: {condições definidas}.”\n\nTexto C\n“{Nome 1} e {Nome 2} decidiram não realizar neste momento a mudança proposta para {local}, podendo revisar a decisão caso circunstâncias relevantes se modifiquem.”",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 175,
+      "line_end": 252
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Aceitar a mudança.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram realizar a mudança para {local}, com previsão de {data}, após analisar seus impactos familiares, financeiros, profissionais e logísticos.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Aceitar apenas se determinadas condições forem satisfeitas.",
+        "contract_template": null,
+        "contract_template_candidate": "Campos:\n\n-  renda mínima; \n-  moradia; \n-  escola/filhos; \n-  trabalho do outro cônjuge; \n-  duração ou período de teste; \n-  apoio familiar; \n-  custo máximo; \n-  outras condições. \n\n“{Nome 1} e {Nome 2} concordam em realizar a mudança para {local} somente se forem atendidas as seguintes condições: {condições definidas}.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Não realizar a mudança neste momento.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram não realizar neste momento a mudança proposta para {local}, podendo revisar a decisão caso circunstâncias relevantes se modifiquem.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q144",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q144_concrete_move_opportunity"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q145-01",
+    "question_id": "Q145",
+    "label": "NÓS DECIDIMOS — quando a RLF aumentar 20% ou mais",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — quando a RLF aumentar 20% ou mais\n\n\nPergunta\nComo vocês desejam distribuir preferencialmente o aumento líquido de renda?\n\nA) Maior parcela para qualidade de vida atual.\n\nB) Aproximadamente equilibrado entre presente e futuro.\n\nC) Maior parcela para reservas, patrimônio e metas futuras.\n\nSaídas\nA:\n\n“{Nome 1} e {Nome 2} decidiram direcionar maior parcela do aumento disponível de renda para melhoria consciente da qualidade de vida, preservando as metas financeiras já assumidas.”\n\nB:\n\n“{Nome 1} e {Nome 2} decidiram equilibrar o aumento disponível de renda entre qualidade de vida atual e construção de reservas, patrimônio e metas futuras.”\n\nC:\n\n“{Nome 1} e {Nome 2} decidiram direcionar maior parcela do aumento disponível de renda para reservas, patrimônio e objetivos futuros, preservando também espaço razoável para qualidade de vida.”",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 252,
+      "line_end": 320
+    },
+    "option_candidates": [],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q145",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q145_rlf_increased_at_least_20_percent"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q146-01",
+    "question_id": "Q146",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": {
+      "all": [
+        {
+          "context_true": "consensus_sufficient"
+        },
+        {
+          "safety_cleared": true
+        }
+      ],
+      "AC_initial": "BLOCKED_BY_P09"
+    },
+    "source_text": "NÓS DECIDIMOS\nSomente quando existir consenso suficiente para uma decisão.\n\nA) Desejamos planejar tentativa de gravidez/expansão familiar.\n\nB) Desejamos adiar e revisar em data definida.\n\nC) Decidimos não buscar ampliação da família neste momento.\n\nTexto A\n“{Nome 1} e {Nome 2} registram decisão conjunta de planejar a possibilidade de ampliar sua família, observando condições de saúde e planejamento responsável.”\n\nTexto B\nCampo:\n\nDATA_REVISÃO_PROJETO_FILHOS\n\n“{Nome 1} e {Nome 2} decidiram adiar a decisão sobre ampliar a família e revisarão conjuntamente esse projeto em {data}.”\n\nTexto C\n“{Nome 1} e {Nome 2} decidiram não buscar ampliação da família neste momento, permanecendo eventual mudança futura sujeita a nova decisão conjunta.”\n\nSegurança\nAplica-se integralmente a regra de não coerção reprodutiva da Q069.",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 320,
+      "line_end": 400
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Desejamos planejar tentativa de gravidez/expansão familiar.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} registram decisão conjunta de planejar a possibilidade de ampliar sua família, observando condições de saúde e planejamento responsável.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Desejamos adiar e revisar em data definida.",
+        "contract_template": null,
+        "contract_template_candidate": "Campo:\n\nDATA_REVISÃO_PROJETO_FILHOS\n\n“{Nome 1} e {Nome 2} decidiram adiar a decisão sobre ampliar a família e revisarão conjuntamente esse projeto em {data}.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Decidimos não buscar ampliação da família neste momento.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram não buscar ampliação da família neste momento, permanecendo eventual mudança futura sujeita a nova decisão conjunta.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "applied_patch_ids": [
+      "PATCH60-Q146"
+    ],
+    "condition_id": "COND-Q146",
+    "trigger_predicate": {
+      "op": "all",
+      "items": [
+        {
+          "op": "fact",
+          "name": "Q146_sufficient_consensus"
+        },
+        {
+          "op": "fact",
+          "name": "Q146_both_agree_to_joint_decision"
+        }
+      ]
+    }
+  },
+  {
+    "joint_module_id": "ND-Q147-01",
+    "question_id": "Q147",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão ainda.\n\nObjetivos concretos poderão ser registrados na Revisão do Projeto de Vida.",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 400,
+      "line_end": 450
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q148-01",
+    "question_id": "Q148",
+    "label": "NÓS DECIDIMOS — diante de projeto concreto",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — diante de projeto concreto\nA) Aprovar dentro do limite acordado.\n\nB) Aprovar apenas em formato experimental ou exposição reduzida.\n\nC) Não assumir o risco neste momento.\n\nA — campos\n-  investimento máximo; \n-  prazo; \n-  perda máxima admitida; \n-  origem dos recursos; \n-  data de revisão.\n\nTexto\n“{Nome 1} e {Nome 2} decidiram participar do projeto {projeto}, limitando sua exposição financeira a {valor}, com perda máxima previamente admitida de {valor/percentual} e revisão em {data}.”\n\nB\n“{Nome 1} e {Nome 2} decidiram testar o projeto {projeto} em escala reduzida, com investimento máximo de {valor} até {data}, antes de avaliar eventual expansão.”\n\nC\n“{Nome 1} e {Nome 2} decidiram não comprometer recursos familiares com o projeto {projeto} neste momento.”",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 450,
+      "line_end": 524
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Aprovar dentro do limite acordado.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "Aprovar apenas em formato experimental ou exposição reduzida.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "Não assumir o risco neste momento.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q148",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q148_concrete_risky_project"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q149-01",
+    "question_id": "Q149",
+    "label": "NÓS DECIDIMOS — para projeto concreto adiado",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — para projeto concreto adiado\nCampos obrigatórios:\n\nPROJETO_ADIADO\n\nMOTIVO_DO_ADIAMENTO\n\nDATA_OU_CONDIÇÃO_DE_REVISÃO\n\nTexto\n“{Nome 1} e {Nome 2} decidiram adiar temporariamente o projeto {projeto} em razão de {motivo}. O assunto será obrigatoriamente revisto em {data} ou quando ocorrer {condição objetiva}, sem garantia automática de aprovação futura.”",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 524,
+      "line_end": 584
+    },
+    "option_candidates": [],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q149",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q149_concrete_postponed_project"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q150-01",
+    "question_id": "Q150",
+    "label": "NÓS DECIDIMOS — OBRIGATÓRIO",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — OBRIGATÓRIO\n\n\nPergunta conjunta\nCom que frequência vocês realizarão a Revisão do Projeto de Vida do Casal?\n\nA) Uma vez por ano.\n\nB) A cada 2 anos.\n\nC) Uma vez por ano em formato simplificado e uma revisão completa a cada 3 anos.\n\nTexto A\n“{Nome 1} e {Nome 2} comprometem-se a realizar uma vez por ano uma Revisão do Projeto de Vida do Casal.”\n\nTexto B\n“{Nome 1} e {Nome 2} comprometem-se a realizar uma Revisão Completa do Projeto de Vida a cada 2 anos, sem impedir conversas intermediárias sempre que ocorrer mudança relevante.”\n\nTexto C\n“{Nome 1} e {Nome 2} realizarão anualmente uma revisão simplificada de seus objetivos e, a cada 3 anos, uma Revisão Completa do Projeto de Vida.”\n\n---\n\nROTEIRO FIXO DA REVISÃO DO PROJETO DE VIDA\nA revisão deverá abordar pelo menos:\n\n1. Relacionamento: como queremos que nosso casamento esteja no próximo período?\n\n2. Família: existem decisões importantes relacionadas a filhos ou familiares?\n\n3. Moradia: queremos continuar onde estamos?\n\n4. Trabalho e carreira: existe mudança profissional planejada?\n\n5. Finanças: nossas reservas, dívidas, patrimônio e prioridades continuam adequados?\n\n6. Saúde: existe algum cuidado ou adaptação importante?\n\n7. Fé: quais objetivos espirituais queremos preservar ou desenvolver?\n\n8. Lazer e experiências: há alguma experiência ou viagem que queremos realizar?\n\n9. Sonhos individuais: existe projeto de um dos dois que precisa de apoio, revisão ou decisão?\n\n10. Objetivo do casal: qual será nossa maior prioridade até a próxima revisão?\n\nResultado obrigatório\nA cada revisão, registrar:\n\nPRIORIDADE_PRINCIPAL\n\nATÉ_3_METAS_SECUNDÁRIAS\n\nRESPONSÁVEIS\n\nPRAZOS\n\nDATA_PRÓXIMA_REVISÃO\n\nTexto automático\n“Após sua Revisão do Projeto de Vida, {Nome 1} e {Nome 2} definiram como prioridade principal {prioridade}, acompanhada das seguintes metas: {metas}. Cada objetivo será acompanhado conforme responsáveis e prazos registrados, com nova revisão em {data}.”\n\nRegra\nA revisão não transforma todo sonho em obrigação imutável. Mudanças relevantes de saúde, renda, filhos, trabalho ou outras circunstâncias poderão justificar alteração das metas.\n\nContribuição\nDiscordar sobre objetivos não gera R$ 10.\n\nRecusa injustificada em participar da revisão formalmente assumida poderá utilizar PROTOCOLO_GERAL.",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 584,
+      "line_end": 696
+    },
+    "option_candidates": [],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q150",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q151-01",
+    "question_id": "Q151",
+    "label": "NÓS DECIDIMOS — somente quando não existir padrão grave ativo",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": {
+      "context_false": "active_problematic_alcohol_pattern"
+    },
+    "source_text": "NÓS DECIDIMOS — somente quando não existir padrão grave ativo\nQual regra vocês desejam adotar para o consumo de bebidas alcoólicas na vida do casal?\n\nA) Não consumir.\n\nB) Consumo ocasional e moderado, sem episódios deliberados de embriaguez.\n\nC) Definir outro limite claro e consensual.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram não consumir bebidas alcoólicas como regra de sua vida familiar.”\n\nTexto B\n“{Nome 1} e {Nome 2} decidiram admitir consumo ocasional de bebida alcoólica, comprometendo-se a evitar intoxicação e situações em que o consumo prejudique segurança, responsabilidades ou convivência.”\n\nTexto C\nCampo:\n\nREGRA_ALCOOL\n\n“{Nome 1} e {Nome 2} estabeleceram a seguinte regra para bebida alcoólica: {regra definida}, preservando segurança, responsabilidades e cuidado familiar.”",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 21,
+      "line_end": 91
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Não consumir.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram não consumir bebidas alcoólicas como regra de sua vida familiar.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Consumo ocasional e moderado, sem episódios deliberados de embriaguez.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram admitir consumo ocasional de bebida alcoólica, comprometendo-se a evitar intoxicação e situações em que o consumo prejudique segurança, responsabilidades ou convivência.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Definir outro limite claro e consensual.",
+        "contract_template": null,
+        "contract_template_candidate": "Campo:\n\nREGRA_ALCOOL\n\n“{Nome 1} e {Nome 2} estabeleceram a seguinte regra para bebida alcoólica: {regra definida}, preservando segurança, responsabilidades e cuidado familiar.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q151",
+    "trigger_predicate": {
+      "op": "all",
+      "items": [
+        {
+          "op": "not",
+          "item": {
+            "op": "any_answer",
+            "codes": [
+              "C"
+            ]
+          }
+        },
+        {
+          "op": "fact",
+          "name": "Q151_no_active_problematic_pattern"
+        }
+      ]
+    }
+  },
+  {
+    "joint_module_id": "ND-Q152-01",
+    "question_id": "Q152",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\n---",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 91,
+      "line_end": 137
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q154-01",
+    "question_id": "Q154",
+    "label": "NÓS DECIDIMOS — somente na ausência de padrão problemático ativo",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — somente na ausência de padrão problemático ativo\nA) Não utilizar dinheiro familiar em apostas.\n\nB) Permitir apenas dentro de valor mensal específico de lazer individual.\n\nC) Definir regra mais restritiva específica.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram não destinar recursos familiares a apostas ou jogos de azar.”\n\nTexto B\nCampo:\n\nLIMITE_MENSAL_APOSTAS\n\n“{Nome 1} e {Nome 2} decidiram que eventual participação em apostas ficará limitada a {valor} por mês, exclusivamente dentro de recursos pessoais de lazer disponíveis e sem possibilidade de crédito, dívida ou utilização de dinheiro destinado às obrigações familiares.”\n\nTexto C\n“{Nome 1} e {Nome 2} estabeleceram a seguinte regra mais restritiva para apostas: {regra definida}.”",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 183,
+      "line_end": 260
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_TOTAL_PROHIBITION",
+    "is_active": false,
+    "superseded_by": "Q154_TOTAL_PROHIBITION"
+  },
+  {
+    "joint_module_id": "ND-Q155-01",
+    "question_id": "Q155",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\n---",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 260,
+      "line_end": 302
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q156-01",
+    "question_id": "Q156",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 302,
+      "line_end": 342
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q157-01",
+    "question_id": "Q157",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\n---",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 342,
+      "line_end": 380
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q158-01",
+    "question_id": "Q158",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\n---",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 380,
+      "line_end": 424
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q159-01",
+    "question_id": "Q159",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\n---",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 424,
+      "line_end": 468
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q161-01",
+    "question_id": "Q161",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão genericamente.\n\nAs regras específicas serão tratadas nas perguntas seguintes.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 534,
+      "line_end": 576
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q162-01",
+    "question_id": "Q162",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão se negocia autorização para violência.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 576,
+      "line_end": 620
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q163-01",
+    "question_id": "Q163",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\n\n\nPergunta\nQual modelo geral vocês desejam utilizar?\n\nA) Limite diário de tempo + horários sem tela.\n\nB) Horários sem tela obrigatórios e quantidade flexível conforme dia/idade.\n\nC) Plano individual por filho conforme idade e necessidade.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram estabelecer para os filhos limites diários de tela e períodos obrigatoriamente livres de dispositivos, conforme idade e rotina.”\n\nCampos:\n\nTEMPO_TELA_POR_FILHO\n\nHORARIOS_SEM_TELA\n\nTexto B\n“{Nome 1} e {Nome 2} decidiram preservar períodos sem telas — especialmente {períodos definidos} — permitindo maior flexibilidade no tempo total conforme idade, estudo e rotina.”\n\nTexto C\nSubmódulo:\n\nFILHO / IDADE / REGRA_TELA / HORARIOS / CONTEUDOS\n\nRegra\nA regra deve ser revisada quando idade ou necessidade mudar significativamente.\n\n---",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 620,
+      "line_end": 682
+    },
+    "option_candidates": [],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q163",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q164-01",
+    "question_id": "Q164",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nPara cada filho quando necessário:\n\nHORARIO_REFERENCIA_DORMIR\n\nHORARIO_REFERENCIA_ACORDAR\n\nEXCECOES_FIM_DE_SEMANA\n\nTexto\n“Para {filho}, {Nome 1} e {Nome 2} definiram como referência de rotina: dormir aproximadamente às {horário} e acordar aproximadamente às {horário}, admitindo as seguintes exceções: {exceções}.”\n\nRegra\nHorários são referência de rotina, não instrumento de punição.\n\n---",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 682,
+      "line_end": 726
+    },
+    "option_candidates": [],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q164",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q164_child_schedule_definition_needed"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q165-01",
+    "question_id": "Q165",
+    "label": "NÓS DECIDIMOS — quando houver desequilíbrio",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — quando houver desequilíbrio\nRegistrar:\n\nRESPONSAVEL_ESCOLA\n\nRESPONSAVEL_TAREFAS\n\nRESPONSAVEL_REUNIOES\n\nRESPONSAVEL_COMUNICACAO\n\nTexto\n“{Nome 1} e {Nome 2} dividiram o acompanhamento escolar da seguinte forma: {divisão registrada}, permanecendo decisões relevantes compartilhadas pelos responsáveis parentais.”",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 726,
+      "line_end": 772
+    },
+    "option_candidates": [],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q165",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q165_school_responsibility_imbalance"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q166-01",
+    "question_id": "Q166",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nSubmódulo por filho:\n\nFILHO / TAREFA / FREQUENCIA / SUPERVISAO\n\nTexto\n“{Nome 1} e {Nome 2} definiram para {filho} as seguintes responsabilidades compatíveis com sua idade e capacidade: {tarefas}, com a seguinte frequência e supervisão: {dados definidos}.”\n\nRegra\nTarefa doméstica não deverá substituir educação, descanso adequado ou responsabilidades parentais dos adultos.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 772,
+      "line_end": 818
+    },
+    "option_candidates": [],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q166",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q167-01",
+    "question_id": "Q167",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\n\n\nPergunta\nQual modelo vocês desejam utilizar quando a idade permitir?\n\nA) Mesada regular com valor definido.\n\nB) Valores ocasionais + ensino de orçamento e poupança.\n\nC) Outro modelo definido pelo casal.\n\nA\nCampos:\n\nVALOR_MESADA\n\nPERIODICIDADE\n\n“{Nome 1} e {Nome 2} decidiram utilizar mesada de {valor}, com periodicidade {periodicidade}, como instrumento de educação financeira de {filho}.”\n\nB\n“{Nome 1} e {Nome 2} decidiram não estabelecer necessariamente mesada fixa, utilizando valores ocasionais e situações práticas para ensinar planejamento, poupança e responsabilidade.”\n\nC\n“{Nome 1} e {Nome 2} escolheram o seguinte modelo de educação financeira para {filho}: {modelo definido}.”\n\nRegra\nNecessidades básicas dos filhos não deverão ser condicionadas à conquista de mesada.\n\n---",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 818,
+      "line_end": 878
+    },
+    "option_candidates": [],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q167",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q168-01",
+    "question_id": "Q168",
+    "label": "NÓS DECIDIMOS — para atividade concreta",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — para atividade concreta\nA) Iniciar.\n\nB) Iniciar em período experimental com data de revisão.\n\nC) Não iniciar neste momento.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram matricular {filho} em {atividade}, considerando interesse, rotina e orçamento familiar.”\n\nTexto B\nCampos:\n\nDATA_INICIO\n\nDATA_REVISAO\n\n“{Nome 1} e {Nome 2} decidiram iniciar {atividade} para {filho} em período experimental a partir de {data}, realizando revisão em {data} sobre interesse, sobrecarga, rotina e custo.”\n\nTexto C\n“{Nome 1} e {Nome 2} decidiram não iniciar {atividade} neste momento, podendo revisar a possibilidade posteriormente.”\n\n---",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 878,
+      "line_end": 930
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Iniciar.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram matricular {filho} em {atividade}, considerando interesse, rotina e orçamento familiar.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Iniciar em período experimental com data de revisão.",
+        "contract_template": null,
+        "contract_template_candidate": "Campos:\n\nDATA_INICIO\n\nDATA_REVISAO\n\n“{Nome 1} e {Nome 2} decidiram iniciar {atividade} para {filho} em período experimental a partir de {data}, realizando revisão em {data} sobre interesse, sobrecarga, rotina e custo.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Não iniciar neste momento.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram não iniciar {atividade} neste momento, podendo revisar a possibilidade posteriormente.”\n\n---"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q168",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q168_concrete_child_activity"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q169-01",
+    "question_id": "Q169",
+    "label": "NÓS DECIDIMOS — organização",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — organização\nCampos:\n\nRESPONSAVEL_AGENDAMENTOS\n\nRESPONSAVEL_DOCUMENTOS\n\nRESPONSAVEL_MEDICAMENTOS\n\nRESPONSAVEL_ACOMPANHAMENTO\n\nRegra\nResponsável operacional não recebe autoridade exclusiva para decisões relevantes quando ambos possuem responsabilidade parental.\n\n---",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 930,
+      "line_end": 976
+    },
+    "option_candidates": [],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q169",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q170-01",
+    "question_id": "Q170",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nQual regra geral vocês desejam utilizar?\n\nA) Exposição mínima; consultar antes de qualquer publicação relevante.\n\nB) Publicações comuns permitidas; consultar apenas conteúdo sensível ou que identifique fortemente rotina/localização.\n\nC) Definir regra personalizada.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram adotar exposição digital mínima dos filhos e consultar um ao outro antes de publicações relevantes que identifiquem claramente a criança ou sua rotina.”\n\nTexto B\n“{Nome 1} e {Nome 2} admitem publicações familiares comuns, comprometendo-se a consultar previamente em conteúdos sensíveis, íntimos, constrangedores ou capazes de revelar excessivamente rotina e localização.”\n\nTexto C\nCampo:\n\nREGRA_EXPOSICAO_FILHOS\n\n“{Nome 1} e {Nome 2} estabeleceram a seguinte regra de exposição digital dos filhos: {regra definida}.”\n\nRegra de maturidade\nÀ medida que a criança adquirir capacidade de compreensão, sua própria opinião e privacidade deverão receber consideração crescente.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 976,
+      "line_end": 1048
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Exposição mínima; consultar antes de qualquer publicação relevante.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram adotar exposição digital mínima dos filhos e consultar um ao outro antes de publicações relevantes que identifiquem claramente a criança ou sua rotina.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Publicações comuns permitidas; consultar apenas conteúdo sensível ou que identifique fortemente rotina/localização.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} admitem publicações familiares comuns, comprometendo-se a consultar previamente em conteúdos sensíveis, íntimos, constrangedores ou capazes de revelar excessivamente rotina e localização.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Definir regra personalizada.",
+        "contract_template": null,
+        "contract_template_candidate": "Campo:\n\nREGRA_EXPOSICAO_FILHOS\n\n“{Nome 1} e {Nome 2} estabeleceram a seguinte regra de exposição digital dos filhos: {regra definida}.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q170",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q186-01",
+    "question_id": "Q186",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 11,
+      "line_end": 55
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q190-01",
+    "question_id": "Q190",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\n---",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 176,
+      "line_end": 220
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q194-01",
+    "question_id": "Q194",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\n---",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 338,
+      "line_end": 388
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q199-01",
+    "question_id": "Q199",
+    "label": "NÓS DECIDIMOS",
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\n---",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 536,
+      "line_end": 570
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q052-12",
+    "question_id": "Q052",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "SUP12-01",
+      "line_start": 155,
+      "line_end": 241
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q053-12",
+    "question_id": "Q053",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\nO respeito ao consentimento não é objeto de negociação.",
+    "source_ref": {
+      "source_id": "SUP12-01",
+      "line_start": 241,
+      "line_end": 362
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q054-12",
+    "question_id": "Q054",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "SUP12-01",
+      "line_start": 362,
+      "line_end": 454
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q055-12",
+    "question_id": "Q055",
+    "label": "NÓS DECIDIMOS — obrigatório",
+    "prompt_candidate": "",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — obrigatório\nA) semanal;\n\nB) quinzenal;\n\nC) mensal.\n\nTexto contratual\n“{Nome 1} e {Nome 2} comprometem-se a reservar {frequência escolhida} um momento privado destinado à aproximação, ao carinho e à reconexão íntima, com a finalidade de fortalecer seu vínculo afetivo e favorecer a intimidade sexual do casal.”\n\n“Nesse período poderão existir conversa íntima, abraço, beijo, carinho, massagem, toque afetivo ou outras formas voluntárias de aproximação capazes de reduzir o distanciamento e favorecer o desejo. Havendo vontade e consentimento mútuos, o momento poderá naturalmente evoluir para relação sexual.”\n\n“A ausência de desejo sexual antes do início do momento não determina seu cancelamento automático quando ambos estiverem confortáveis em preservar alguma forma de proximidade. O desejo poderá surgir progressivamente durante a conexão. Entretanto, qualquer contato físico poderá ser recusado ou interrompido a qualquer momento.”\n\nEssa passa a ser a Q055 oficial.",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 261,
+      "line_end": 307
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "semanal;",
+        "contract_template": null,
+        "contract_template_candidate": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "quinzenal;",
+        "contract_template": null,
+        "contract_template_candidate": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "mensal.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "consolidated_template_candidate": "“{Nome 1} e {Nome 2} comprometem-se a reservar {frequência escolhida} um momento privado destinado à aproximação, ao carinho e à reconexão íntima, com a finalidade de fortalecer seu vínculo afetivo e favorecer a intimidade sexual do casal.”\n\n“Nesse período poderão existir conversa íntima, abraço, beijo, carinho, massagem, toque afetivo ou outras formas voluntárias de aproximação capazes de reduzir o distanciamento e favorecer o desejo. Havendo vontade e consentimento mútuos, o momento poderá naturalmente evoluir para relação sexual.”\n\n“A ausência de desejo sexual antes do início do momento não determina seu cancelamento automático quando ambos estiverem confortáveis em preservar alguma forma de proximidade. O desejo poderá surgir progressivamente durante a conexão. Entretanto, qualquer contato físico poderá ser recusado ou interrompido a qualquer momento.”",
+    "required_fields": [
+      "FREQUENCIA_RECONEXAO"
+    ],
+    "condition_id": "COND-Q055",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q057-12",
+    "question_id": "Q057",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão é necessário escolher quem está “certo” sobre o nível de satisfação.\n\nO submódulo serve para transformar a insatisfação em prioridades concretas.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 100,
+      "line_end": 216
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q058-12",
+    "question_id": "Q058",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\nPreferências específicas poderão posteriormente possuir perguntas próprias quando houver necessidade de decisão concreta.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 216,
+      "line_end": 310
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q059-12",
+    "question_id": "Q059",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\nA frequência é definida na 051 e o momento programado de reconexão será tratado pela 055 revisada.\n\nGatilhos\nContinuam valendo:\n\n-  2 recusas consecutivas → Conversa de Reconexão em até 24 horas; \n-  frequência sexual consensual não alcançada por 2 semanas consecutivas → conversa em até 3 dias.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 310,
+      "line_end": 422
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q071-12",
+    "question_id": "Q071",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\nA frequência será definida pela Pergunta 055 revisada.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 9,
+      "line_end": 75
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q074-12",
+    "question_id": "Q074",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão nesta pergunta.\n\nNenhuma fantasia ou prática específica será automaticamente inserida no contrato.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 192,
+      "line_end": 252
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q075-12",
+    "question_id": "Q075",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 252,
+      "line_end": 304
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q077-12",
+    "question_id": "Q077",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 364,
+      "line_end": 422
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q081-12",
+    "question_id": "Q081",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\nA exclusividade sexual assumida não será colocada em votação dentro deste modelo de contrato.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 9,
+      "line_end": 96
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q082-12",
+    "question_id": "Q082",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 96,
+      "line_end": 162
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q083-12",
+    "question_id": "Q083",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 162,
+      "line_end": 236
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q084-12",
+    "question_id": "Q084",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão neste momento.\n\nA frequência de chamadas/mensagens poderá ser tratada futuramente no bloco de rotina e viagens se houver necessidade concreta.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 236,
+      "line_end": 292
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q085-12",
+    "question_id": "Q085",
+    "label": "NÓS DECIDIMOS — GATILHO",
+    "prompt_candidate": "Qual regra vocês desejam adotar para registros íntimos?",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — GATILHO\nQuando qualquer pessoa escolher B ou C.\n\nPergunta conjunta\nQual regra vocês desejam adotar para registros íntimos?\n\nA) Não produzir registros íntimos.\n\nB) Permitir somente quando houver consentimento específico no momento, sem compartilhamento com terceiros.\n\nC) Permitir consensualmente e definir também regras de armazenamento e exclusão.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram não produzir fotografias, vídeos ou gravações íntimas um do outro.”\n\nTexto B\n“{Nome 1} e {Nome 2} decidiram que registros íntimos somente poderão ser produzidos quando ambos consentirem especificamente naquela ocasião, permanecendo proibido seu compartilhamento com terceiros sem autorização expressa.”\n\nAlternativa C — SUBMÓDULO\nRegistrar:\n\n- FORMA_DE_ARMAZENAMENTO; \n- PRAZO_DE_MANUTENÇÃO, se houver; \n- REGRA_DE_EXCLUSÃO.\n\nTexto C\n“{Nome 1} e {Nome 2} decidiram permitir registros íntimos somente mediante consentimento específico, observando as seguintes regras de armazenamento e exclusão: {regras escolhidas}. Nenhum conteúdo poderá ser compartilhado com terceiros sem consentimento expresso da pessoa retratada.”",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 292,
+      "line_end": 376
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Não produzir registros íntimos.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram não produzir fotografias, vídeos ou gravações íntimas um do outro.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Permitir somente quando houver consentimento específico no momento, sem compartilhamento com terceiros.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram que registros íntimos somente poderão ser produzidos quando ambos consentirem especificamente naquela ocasião, permanecendo proibido seu compartilhamento com terceiros sem autorização expressa.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Permitir consensualmente e definir também regras de armazenamento e exclusão.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram permitir registros íntimos somente mediante consentimento específico, observando as seguintes regras de armazenamento e exclusão: {regras escolhidas}. Nenhum conteúdo poderá ser compartilhado com terceiros sem consentimento expresso da pessoa retratada.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "storage_policy": {
+      "accept_intimate_media_uploads": false,
+      "store_agreements_only": true,
+      "specific_consent_required_each_occasion": true,
+      "revocable": true
+    },
+    "condition_id": "COND-Q085",
+    "trigger_predicate": {
+      "op": "any_answer",
+      "codes": [
+        "B",
+        "C"
+      ]
+    }
+  },
+  {
+    "joint_module_id": "ND-Q086-12",
+    "question_id": "Q086",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\nQuestões clínicas serão conduzidas com orientação profissional, não por votação do casal.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 376,
+      "line_end": 432
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q087-12",
+    "question_id": "Q087",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 432,
+      "line_end": 492
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q088-12",
+    "question_id": "Q088",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 492,
+      "line_end": 556
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q089-12",
+    "question_id": "Q089",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 556,
+      "line_end": 620
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q090-12",
+    "question_id": "Q090",
+    "label": "NÓS DECIDIMOS — OBRIGATÓRIO",
+    "prompt_candidate": "Com que frequência vocês desejam realizar uma breve Revisão da Intimidade do Casal?",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — OBRIGATÓRIO\n\n\nPergunta conjunta\nCom que frequência vocês desejam realizar uma breve Revisão da Intimidade do Casal?\n\nA) Uma vez por mês.\n\nB) Uma vez a cada 3 meses.\n\nC) Uma vez a cada 6 meses.\n\nTexto A\n“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez por mês uma breve Revisão da Intimidade do Casal, destinada a conversar sobre carinho, conexão, frequência, satisfação, necessidades e eventuais dificuldades.”\n\nTexto B\n“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez a cada 3 meses uma Revisão da Intimidade do Casal, destinada a conversar sobre carinho, conexão, frequência, satisfação, necessidades e eventuais dificuldades.”\n\nTexto C\n“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez a cada 6 meses uma Revisão da Intimidade do Casal, destinada a conversar sobre carinho, conexão, frequência, satisfação, necessidades e eventuais dificuldades.”\n\nROTEIRO FIXO DA REVISÃO\nA conversa deverá conter cinco perguntas simples:\n\n1. O que está funcionando bem entre nós nesta área? \n2. Existe algo de que você sente falta? \n3. Existe algo que está causando desconforto ou afastamento? \n4. Qual atitude minha poderia contribuir para melhorar nossa conexão? \n5. Precisamos modificar algum acordo ou procurar ajuda adequada para alguma dificuldade?\n\nPARÁGRAFO FIXO\nA Revisão da Intimidade não será utilizada para cobrar desempenho, exigir relação sexual ou comparar os cônjuges. Sua finalidade será permitir comunicação preventiva e atualização dos acordos de cuidado e conexão.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 620,
+      "line_end": 712
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Uma vez por mês.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez por mês uma breve Revisão da Intimidade do Casal, destinada a conversar sobre carinho, conexão, frequência, satisfação, necessidades e eventuais dificuldades.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Uma vez a cada 3 meses.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez a cada 3 meses uma Revisão da Intimidade do Casal, destinada a conversar sobre carinho, conexão, frequência, satisfação, necessidades e eventuais dificuldades.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Uma vez a cada 6 meses.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} comprometem-se a realizar aproximadamente uma vez a cada 6 meses uma Revisão da Intimidade do Casal, destinada a conversar sobre carinho, conexão, frequência, satisfação, necessidades e eventuais dificuldades.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q090",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q092-12",
+    "question_id": "Q092",
+    "label": "NÓS DECIDIMOS — GATILHO",
+    "prompt_candidate": "Qual frequência mínima de convivência planejada com cada família vocês desejam buscar, quando distância e circunstâncias permitirem?",
+    "nos_trigger_type": "CONDITION_ONLY",
+    "trigger_predicate_proposal": null,
+    "source_text": "# 24. PERGUNTA 092 — CONVIVÊNCIA COM AS FAMÍLIAS\n\nO NÓS DECIDIMOS deverá ser executado **separadamente para cada família**.\n\n### Família de `{Nome 1}`\n\nA) semanal.\n\nB) quinzenal.\n\nC) mensal/outra.\n\n### Família de `{Nome 2}`\n\nA) semanal.\n\nB) quinzenal.\n\nC) mensal/outra.\n\nIsso permite, por exemplo, uma família próxima geograficamente e outra distante.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 511,
+      "line_end": 535
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "semanal.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      },
+      {
+        "code": "B",
+        "text_candidate": "quinzenal.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      },
+      {
+        "code": "C",
+        "text_candidate": "mensal/outra.",
+        "contract_template": null,
+        "contract_template_candidate": null
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "repeat_scope": "EACH_PARTNER_FAMILY",
+    "family_member_ids": [
+      "MEMBER_1",
+      "MEMBER_2"
+    ],
+    "applied_patch_ids": [
+      "PATCH50-24-Q092"
+    ],
+    "condition_id": "COND-Q092",
+    "trigger_predicate": {
+      "op": "any",
+      "items": [
+        {
+          "op": "fact",
+          "name": "Q092_relevant_expectation_difference"
+        },
+        {
+          "op": "fact",
+          "name": "Q092_recurring_frequency_conflict"
+        }
+      ]
+    }
+  },
+  {
+    "joint_module_id": "ND-Q093-12",
+    "question_id": "Q093",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": "Qual regra vocês desejam para visitas familiares à residência?",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nQual regra vocês desejam para visitas familiares à residência?\n\nA) Sempre combinar previamente, salvo urgência.\n\nB) Familiares próximos podem realizar visitas espontâneas em horários previamente considerados adequados.\n\nC) Definir familiares específicos que poderão visitar sem aviso.\n\nTexto A\n“Familiares de {Nome 1} e {Nome 2} deverão, como regra, combinar previamente visitas à residência do casal, salvo situações de urgência.”\n\nTexto B\n“{Nome 1} e {Nome 2} concordam que familiares próximos poderão realizar visitas espontâneas dentro dos seguintes horários ou condições previamente aceitos: {condições escolhidas}.”\n\nTexto C\nRegistrar FAMILIARES_AUTORIZADOS.\n\n“{Nome 1} e {Nome 2} concordam que {familiares autorizados} poderão realizar visitas sem aviso prévio dentro dos limites de horário e privacidade definidos pelo casal. Os demais deverão combinar previamente.”",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 142,
+      "line_end": 208
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Sempre combinar previamente, salvo urgência.",
+        "contract_template": null,
+        "contract_template_candidate": "“Familiares de {Nome 1} e {Nome 2} deverão, como regra, combinar previamente visitas à residência do casal, salvo situações de urgência.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Familiares próximos podem realizar visitas espontâneas em horários previamente considerados adequados.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} concordam que familiares próximos poderão realizar visitas espontâneas dentro dos seguintes horários ou condições previamente aceitos: {condições escolhidas}.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Definir familiares específicos que poderão visitar sem aviso.",
+        "contract_template": null,
+        "contract_template_candidate": "Registrar FAMILIARES_AUTORIZADOS.\n\n“{Nome 1} e {Nome 2} concordam que {familiares autorizados} poderão realizar visitas sem aviso prévio dentro dos limites de horário e privacidade definidos pelo casal. Os demais deverão combinar previamente.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q093",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q094-12",
+    "question_id": "Q094",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": "Qual modelo geral vocês desejam utilizar para datas familiares importantes?",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\n\n\nPergunta\nQual modelo geral vocês desejam utilizar para datas familiares importantes?\n\nA) Alternar entre as famílias a cada ano.\n\nB) Dividir as datas entre as duas famílias no mesmo ano.\n\nC) Definir calendário próprio, inclusive reservando algumas datas exclusivamente para o casal ou sua família nuclear.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram alternar entre as famílias de origem determinadas datas comemorativas relevantes, procurando equilibrar a convivência ao longo dos anos.”\n\nTexto B\n“{Nome 1} e {Nome 2} decidiram dividir entre as famílias de origem as principais datas comemorativas de cada ano, conforme calendário previamente combinado.”\n\nTexto C\n“{Nome 1} e {Nome 2} decidiram construir calendário próprio para datas comemorativas, podendo reservar determinadas celebrações exclusivamente para o casal ou para sua família nuclear e distribuir as demais conforme acordo específico.”\n\nCampo estruturado\nCALENDÁRIO_DE_DATAS_FAMILIARES",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 208,
+      "line_end": 274
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Alternar entre as famílias a cada ano.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram alternar entre as famílias de origem determinadas datas comemorativas relevantes, procurando equilibrar a convivência ao longo dos anos.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Dividir as datas entre as duas famílias no mesmo ano.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram dividir entre as famílias de origem as principais datas comemorativas de cada ano, conforme calendário previamente combinado.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Definir calendário próprio, inclusive reservando algumas datas exclusivamente para o casal ou sua família nuclear.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram construir calendário próprio para datas comemorativas, podendo reservar determinadas celebrações exclusivamente para o casal ou para sua família nuclear e distribuir as demais conforme acordo específico.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q094",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  },
+  {
+    "joint_module_id": "ND-Q095-12",
+    "question_id": "Q095",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão há novo limite aqui para evitar duplicação com 040.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 274,
+      "line_end": 326
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q096-12",
+    "question_id": "Q096",
+    "label": "NÓS DECIDIMOS — GATILHO",
+    "prompt_candidate": "Qual modelo de participação vocês adotarão nesta situação?",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — GATILHO\nQuando surgir necessidade concreta que exija reorganização relevante.\n\nPergunta conjunta\nQual modelo de participação vocês adotarão nesta situação?\n\nA) Participação direta e frequente do casal.\n\nB) Apoio dividido com outros familiares/profissionais.\n\nC) Apoio principalmente financeiro, logístico ou pontual, sem assumir cuidado cotidiano.\n\nTexto A\n“Em relação ao cuidado de {familiar}, {Nome 1} e {Nome 2} decidiram participar diretamente das seguintes responsabilidades: {responsabilidades definidas}, revisando a organização caso o impacto sobre trabalho, saúde, filhos ou finanças se torne excessivo.”\n\nTexto B\n“Em relação ao cuidado de {familiar}, {Nome 1} e {Nome 2} decidiram compartilhar responsabilidades com {outros responsáveis/profissionais}, ficando o casal responsável por {responsabilidades definidas}.”\n\nTexto C\n“Em relação ao cuidado de {familiar}, {Nome 1} e {Nome 2} decidiram contribuir principalmente por meio de {apoio financeiro/logístico/pontual}, não assumindo neste momento responsabilidade cotidiana integral.”",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 326,
+      "line_end": 394
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Participação direta e frequente do casal.",
+        "contract_template": null,
+        "contract_template_candidate": "“Em relação ao cuidado de {familiar}, {Nome 1} e {Nome 2} decidiram participar diretamente das seguintes responsabilidades: {responsabilidades definidas}, revisando a organização caso o impacto sobre trabalho, saúde, filhos ou finanças se torne excessivo.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Apoio dividido com outros familiares/profissionais.",
+        "contract_template": null,
+        "contract_template_candidate": "“Em relação ao cuidado de {familiar}, {Nome 1} e {Nome 2} decidiram compartilhar responsabilidades com {outros responsáveis/profissionais}, ficando o casal responsável por {responsabilidades definidas}.”"
+      },
+      {
+        "code": "C",
+        "text_candidate": "Apoio principalmente financeiro, logístico ou pontual, sem assumir cuidado cotidiano.",
+        "contract_template": null,
+        "contract_template_candidate": "“Em relação ao cuidado de {familiar}, {Nome 1} e {Nome 2} decidiram contribuir principalmente por meio de {apoio financeiro/logístico/pontual}, não assumindo neste momento responsabilidade cotidiana integral.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q096",
+    "trigger_predicate": {
+      "op": "all",
+      "items": [
+        {
+          "op": "fact",
+          "name": "Q096_concrete_care_need"
+        },
+        {
+          "op": "fact",
+          "name": "Q096_relevant_reorganization_needed"
+        }
+      ]
+    }
+  },
+  {
+    "joint_module_id": "ND-Q098-12",
+    "question_id": "Q098",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão nesta pergunta.\n\nRegras específicas sobre educação permanecem nos respectivos módulos parentais.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 444,
+      "line_end": 504
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q099-12",
+    "question_id": "Q099",
+    "label": "NÓS DECIDIMOS",
+    "prompt_candidate": null,
+    "nos_trigger_type": "NEVER",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS\nNão.\n\nSe a divergência for sobre frequência, utilizar 092.\n\nSe for sobre dinheiro, utilizar 095/040.\n\nSe for sobre datas, utilizar 094.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 504,
+      "line_end": 560
+    },
+    "option_candidates": [],
+    "status": "DISABLED_BY_SOURCE",
+    "is_active": false
+  },
+  {
+    "joint_module_id": "ND-Q100-12",
+    "question_id": "Q100",
+    "label": "NÓS DECIDIMOS — GATILHO",
+    "prompt_candidate": "Qual solução vocês desejam adotar para {familiar}?",
+    "nos_trigger_type": "CONCRETE_EVENT_ONLY",
+    "trigger_predicate_proposal": null,
+    "source_text": "NÓS DECIDIMOS — GATILHO\nSomente diante de situação concreta.\n\nPergunta conjunta\nQual solução vocês desejam adotar para {familiar}?\n\nA) Morar temporariamente na residência do casal por prazo definido.\n\nB) Permanecer por período experimental curto e revisar.\n\nC) Não morar na residência; buscar outra forma de apoio.\n\nTexto A\nRegistrar DATA_INÍCIO e DATA_REVISÃO/FINAL.\n\n“{Nome 1} e {Nome 2} decidiram acolher temporariamente {familiar} em sua residência de {data inicial} até {data final ou revisão}, observando as seguintes responsabilidades e regras de convivência: {regras definidas}.”\n\nTexto B\n“{Nome 1} e {Nome 2} decidiram permitir que {familiar} permaneça na residência em período experimental de {prazo escolhido}. Ao final, revisarão privacidade, despesas, rotina, tarefas e impacto familiar antes de decidir pela continuidade.”\n\nTexto C\n“{Nome 1} e {Nome 2} decidiram que {familiar} não passará a residir na casa do casal neste momento. Comprometem-se a avaliar outras formas possíveis de apoio, como {alternativas definidas}.”",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 560,
+      "line_end": 668
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Morar temporariamente na residência do casal por prazo definido.",
+        "contract_template": null,
+        "contract_template_candidate": "Registrar DATA_INÍCIO e DATA_REVISÃO/FINAL.\n\n“{Nome 1} e {Nome 2} decidiram acolher temporariamente {familiar} em sua residência de {data inicial} até {data final ou revisão}, observando as seguintes responsabilidades e regras de convivência: {regras definidas}.”"
+      },
+      {
+        "code": "B",
+        "text_candidate": "Permitir permanência temporária com data concreta de revisão.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram permitir que {familiar} permaneça temporariamente em sua residência a partir de {data inicial}, realizando obrigatoriamente uma revisão da convivência em {data de revisão}. Nessa data avaliarão privacidade, despesas, rotina, tarefas, impacto sobre filhos ou dependentes e eventual continuidade da permanência.”",
+        "source_ref": {
+          "source_id": "SUP12-08",
+          "line_start": 567,
+          "line_end": 589
+        }
+      },
+      {
+        "code": "C",
+        "text_candidate": "Não morar na residência; buscar outra forma de apoio.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram que {familiar} não passará a residir na casa do casal neste momento. Comprometem-se a avaliar outras formas possíveis de apoio, como {alternativas definidas}.”"
+      }
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "required_fields": [
+      "DATA_INÍCIO",
+      "DATA_REVISÃO"
+    ],
+    "applied_patch_ids": [
+      "PATCH50-28-Q100"
+    ],
+    "condition_id": "COND-Q100",
+    "trigger_predicate": {
+      "op": "fact",
+      "name": "Q100_concrete_housing_request"
+    }
+  },
+  {
+    "joint_module_id": "ND-Q051-50",
+    "question_id": "Q051",
+    "label": "NÓS DECIDIMOS — obrigatório",
+    "prompt_candidate": "Qual frequência sexual vocês desejam buscar consensualmente neste período do casamento?",
+    "nos_trigger_type": "ALWAYS",
+    "trigger_predicate_proposal": null,
+    "source_text": "# 11. Q051 — NÓS DECIDIMOS\n\nPermanece obrigatório.\n\n**Qual frequência sexual vocês desejam buscar consensualmente neste período do casamento?**\n\n**A)** Em média, pelo menos 1 vez por semana.\n\n**B)** Em média, pelo menos 2 vezes por semana.\n\n**C)** Outra frequência consensualmente definida ou nenhuma meta numérica.\n\nOs textos de consentimento permanecem.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 211,
+      "line_end": 227
+    },
+    "option_candidates": [
+      {
+        "code": "A",
+        "text_candidate": "Em média, pelo menos 1 vez por semana.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} escolheram buscar, de forma consensual, uma média mínima de 1 momento de intimidade sexual por semana. Essa frequência representa uma meta de conexão do casal e não cria dívida sexual, obrigação automática ou dispensa do consentimento em cada ocasião.”",
+        "effect_source_ref": {
+          "source_id": "SUP12-01",
+          "line_start": 3,
+          "line_end": 155
+        }
+      },
+      {
+        "code": "B",
+        "text_candidate": "Em média, pelo menos 2 vezes por semana.",
+        "contract_template": null,
+        "contract_template_candidate": "“{Nome 1} e {Nome 2} escolheram buscar, de forma consensual, uma média mínima de 2 momentos de intimidade sexual por semana. Essa frequência representa uma meta de conexão do casal e não cria dívida sexual, obrigação automática ou dispensa do consentimento em cada ocasião.”",
+        "effect_source_ref": {
+          "source_id": "SUP12-01",
+          "line_start": 3,
+          "line_end": 155
+        }
+      },
+      {
+        "code": "C",
+        "text_candidate": "Outra frequência consensualmente definida ou nenhuma meta numérica.",
+        "contract_template": null,
+        "contract_template_candidate": "Se o casal escolher outra frequência:\n\n“{Nome 1} e {Nome 2} escolheram buscar consensualmente a seguinte frequência de intimidade sexual: {frequência escolhida}. Essa frequência representa uma meta de conexão, permanecendo cada encontro sujeito à vontade e ao consentimento dos dois.”\n\nSe escolherem não estabelecer frequência:\n\n“{Nome 1} e {Nome 2} decidiram não estabelecer uma frequência numérica para sua intimidade sexual. Comprometem-se, entretanto, a conversar sobre afastamento ou insatisfação quando qualquer dos dois perceber redução relevante de conexão sexual, permanecendo também aplicável o gatilho das 2 recusas consecutivas previsto neste contrato.”",
+        "effect_source_ref": {
+          "source_id": "SUP12-01",
+          "line_start": 3,
+          "line_end": 155
+        }
+      }
+    ],
+    "required_fields": [
+      "FREQUENCIA_SEXUAL",
+      "SEM_META_NUMERICA"
+    ],
+    "status": "REQUIRES_STRUCTURED_CONSOLIDATION",
+    "is_active": false,
+    "condition_id": "COND-Q051",
+    "trigger_predicate": {
+      "op": "literal",
+      "value": true
+    }
+  }
+]

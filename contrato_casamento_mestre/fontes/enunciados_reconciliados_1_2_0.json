@@ -1,0 +1,514 @@
+[
+  {
+    "question_id": "Q017",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando fica profundamente magoado(a) ou irritado(a), qual situação mais representa seu comportamento?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 155,
+        "page_end": 156,
+        "line_start": 6640,
+        "line_end": 6684
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q018",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando seu cônjuge reconhece que errou e pede desculpas sinceramente, o que normalmente você precisa?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 156,
+        "page_end": 157,
+        "line_start": 6684,
+        "line_end": 6739
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q019",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando acontece problema entre vocês, qual comportamento mais representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 157,
+        "page_end": 158,
+        "line_start": 6739,
+        "line_end": 6787
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q020",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Nas decisões importantes, como você sente que sua opinião é tratada?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 158,
+        "page_end": 159,
+        "line_start": 6787,
+        "line_end": 6848
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q021",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando seu cônjuge diz que alguma atitude sua o machucou, mesmo sem intenção de feri-lo, qual costuma ser sua reação?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 159,
+        "page_end": 160,
+        "line_start": 6848,
+        "line_end": 6891
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q022",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Em relação a brincadeiras, apelidos, piadas ou comentários feitos pelo seu cônjuge, qual alternativa melhor representa sua experiência?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 160,
+        "page_end": 161,
+        "line_start": 6891,
+        "line_end": 6931
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q023",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando precisa falar sobre assunto delicado ou desconfortável no casamento, qual alternativa mais representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 161,
+        "page_end": 163,
+        "line_start": 6931,
+        "line_end": 7010
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q024",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando acontece situação importante que você sabe que seu cônjuge provavelmente não gostaria de ouvir, o que costuma fazer?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 163,
+        "page_end": 165,
+        "line_start": 7010,
+        "line_end": 7088
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q025",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando assume compromisso ou promete fazer algo, o que normalmente acontece?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 165,
+        "page_end": 166,
+        "line_start": 7088,
+        "line_end": 7132
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q026",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando percebe que outra pessoa demonstra interesse afetivo ou sexual por você, qual comportamento mais se aproxima do seu?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 166,
+        "page_end": 168,
+        "line_start": 7132,
+        "line_end": 7197
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q027",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando existe contato com pessoa com quem você já teve relacionamento amoroso, sexual ou forte interesse, qual postura representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 168,
+        "page_end": 169,
+        "line_start": 7197,
+        "line_end": 7253
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q028",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando sente ciúme ou insegurança em relação a alguém próximo do seu cônjuge, o que costuma fazer?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 169,
+        "page_end": 171,
+        "line_start": 7253,
+        "line_end": 7335
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q029",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Em relação ao seu celular pessoal, qual situação mais representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 171,
+        "page_end": 173,
+        "line_start": 7335,
+        "line_end": 7407
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q030",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando conversa por mensagens ou redes sociais com alguém que poderia despertar interesse afetivo ou sexual, qual situação mais se aproxima do seu comportamento?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 173,
+        "page_end": 174,
+        "line_start": 7407,
+        "line_end": 7453
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q031",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando pensa em publicar informações, fotos ou acontecimentos relacionados ao casamento, qual alternativa representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 174,
+        "page_end": 175,
+        "line_start": 7453,
+        "line_end": 7507
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q032",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando possui amizade próxima com alguém que poderia despertar interesse afetivo ou sexual, qual postura mais representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 175,
+        "page_end": 177,
+        "line_start": 7507,
+        "line_end": 7582
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q034",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Em relação à sua renda, contas, dívidas e compromissos financeiros, qual alternativa representa sua postura?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 178,
+        "page_end": 179,
+        "line_start": 7649,
+        "line_end": 7700
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q035",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando pensa em assumir dívida, empréstimo, financiamento ou parcelamento, qual postura mais representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 179,
+        "page_end": 181,
+        "line_start": 7700,
+        "line_end": 7768
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q036",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando deseja comprar algo pessoal que não seja necessidade essencial, qual postura representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 181,
+        "page_end": 182,
+        "line_start": 7768,
+        "line_end": 7831
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q037",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando sobra dinheiro depois das despesas principais, qual é sua tendência?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 182,
+        "page_end": 183,
+        "line_start": 7831,
+        "line_end": 7866
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q038",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Em relação ao controle do dinheiro familiar, qual situação melhor representa sua preferência?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 183,
+        "page_end": 185,
+        "line_start": 7866,
+        "line_end": 7937
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q039",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quanto você acompanha receitas, despesas e contas da família?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 185,
+        "page_end": 186,
+        "line_start": 7937,
+        "line_end": 7978
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q040",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando familiar, amigo ou terceiro pede ajuda financeira, qual postura representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 186,
+        "page_end": 188,
+        "line_start": 7978,
+        "line_end": 8048
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q041",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Qual modelo financeiro você considera mais adequado?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 188,
+        "page_end": 190,
+        "line_start": 8048,
+        "line_end": 8128
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q042",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando um dos cônjuges ganha significativamente mais, qual pensamento mais representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 190,
+        "page_end": 191,
+        "line_start": 8128,
+        "line_end": 8181
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q043",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Diante de queda importante da renda, desemprego ou emergência financeira, qual reação representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 191,
+        "page_end": 192,
+        "line_start": 8181,
+        "line_end": 8246
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q044",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Em relação às tarefas da casa, qual postura representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 192,
+        "page_end": 194,
+        "line_start": 8246,
+        "line_end": 8311
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q045",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Em relação a lembrar compromissos, compras, consultas, contas, escola, documentos e outras necessidades, qual situação representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 194,
+        "page_end": 195,
+        "line_start": 8311,
+        "line_end": 8348
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q047",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando vocês discordam sobre regra, limite ou consequência relacionada aos filhos, qual comportamento representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 196,
+        "page_end": 198,
+        "line_start": 8423,
+        "line_end": 8486
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q048",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Em relação ao trabalho, carreira ou atividade profissional, qual alternativa representa seu equilíbrio com casamento e família?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 198,
+        "page_end": 199,
+        "line_start": 8486,
+        "line_end": 8558
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q049",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando surge oportunidade profissional capaz de alterar significativamente a rotina familiar, qual postura representa você?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 199,
+        "page_end": 201,
+        "line_start": 8558,
+        "line_end": 8633
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  },
+  {
+    "question_id": "Q050",
+    "prior_prompt_text": null,
+    "promoted_source": {
+      "text": "Quando seu cônjuge deseja estudar, fazer curso, iniciar projeto, mudar de área ou crescer profissionalmente, qual alternativa representa sua reação?",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 201,
+        "page_end": 204,
+        "line_start": 8633,
+        "line_end": 8738
+      },
+      "status": "REVIEW_WITH_LATEST_OPTIONS"
+    },
+    "decision": "SOURCE_PROMPT_CHECKED_AGAINST_CURRENT_ABC_NO_SEMANTIC_CONFLICT"
+  }
+]

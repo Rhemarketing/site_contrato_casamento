@@ -1,0 +1,72 @@
+[
+  {
+    "private_module_id": "PF-Q119-01",
+    "question_id": "Q119",
+    "trigger": {
+      "answer_in": [
+        "B",
+        "C"
+      ]
+    },
+    "prompt_text": "Quando essa utilização inadequada de argumentos espirituais acontece, qual situação\nmais representa sua experiência?",
+    "options": [
+      {
+        "code": "A",
+        "text": "Reconheço que principalmente eu faço ou já fiz isso."
+      },
+      {
+        "code": "B",
+        "text": "Percebo que principalmente meu cônjuge faz ou já fez isso comigo."
+      },
+      {
+        "code": "C",
+        "text": "Esse comportamento já aconteceu dos dois lados."
+      }
+    ],
+    "source_text": "Q119 — coerção espiritual\nPassa a possuir subpergunta obrigatória quando a resposta principal for B ou C.\n\nPergunta privada\n\nQuando essa utilização inadequada de argumentos espirituais acontece, qual situação\nmais representa sua experiência?\n\nA) Reconheço que principalmente eu faço ou já fiz isso.\n\nB) Percebo que principalmente meu cônjuge faz ou já fez isso comigo.\n\nC) Esse comportamento já aconteceu dos dois lados.\n\nA\n\nMODO_DE_SAIDA = DIAGNOSTICO_PRIVADO\n\n“{Nome} reconhece que já utilizou argumentos espirituais de maneira capaz de\npressionar ou reduzir a voz do cônjuge e compromete-se a interromper esse\ncomportamento, substituindo imposição por diálogo e responsabilidade pessoal.”\n\nB\n\nMODO_DE_SAIDA = DIAGNOSTICO_PRIVADO\n\nSe existir medo, submissão, ameaça ou controle:\n\nALERTA_COERCAO_ESPIRITUAL = SIM\n\ne, conforme gravidade:\n\nALERTA_SEGURANCA = SIM\n\nC\n\nNão presumir automaticamente responsabilidade equivalente.\n\nO sistema cruzará as duas respostas individuais antes de decidir a saída compartilhada.\n\n\n\n\n3. Saúde — Q121 a Q130",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 350,
+      "page_end": 351,
+      "line_start": 14964,
+      "line_end": 15008
+    },
+    "privacy_class": "PRIVATE",
+    "output_target": "INTERNAL",
+    "rule_note": "C não presume responsabilidade equivalente; sinais de medo/controle obedecem P13. Saídas da subpergunta não são decisões conjuntas.",
+    "is_active": false
+  },
+  {
+    "private_module_id": "PF-Q081-01",
+    "question_id": "Q081",
+    "trigger": {
+      "answer_in": [
+        "C"
+      ]
+    },
+    "prompt_text": "A situação indicada corresponde principalmente a qual destas situações?",
+    "options": [
+      {
+        "code": "A",
+        "text": "Reconheço um risco ou possibilidade, mas não ocorreu quebra física de fidelidade."
+      },
+      {
+        "code": "B",
+        "text": "Houve uma situação física no passado, meu cônjuge já tem conhecimento e o assunto já foi ou está sendo tratado."
+      },
+      {
+        "code": "C",
+        "text": "Houve uma situação física relevante que ainda não foi adequadamente tratada entre nós."
+      }
+    ],
+    "source_text": "# 21. PERGUNTA 081 — SUBPERGUNTA OBRIGATÓRIA PARA RESPOSTA C\n\nQuando houver resposta C:\n\n### Pergunta privada\n\n**A situação indicada corresponde principalmente a qual destas situações?**\n\n**A)** Reconheço um risco ou possibilidade, mas não ocorreu quebra física de fidelidade.\n\n**B)** Houve uma situação física no passado, meu cônjuge já tem conhecimento e o assunto já foi ou está sendo tratado.\n\n**C)** Houve uma situação física relevante que ainda não foi adequadamente tratada entre nós.\n\n### A\n\n`RISCO_FIDELIDADE = SIM`\n\n### B\n\n`QUEBRA_FIDELIDADE_CONHECIDA = SIM`\n\nAplicar Protocolo de Reconstrução da Confiança quando ainda necessário.\n\n### C\n\n`QUEBRA_FIDELIDADE_NAO_TRATADA = SIM`\n\n`MODO_DE_SAÍDA = DIAGNÓSTICO_PRIVADO`\n\nO sistema **não imprimirá automaticamente uma confissão no contrato compartilhado**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 453,
+      "line_end": 487
+    },
+    "privacy_class": "PRIVATE",
+    "output_target": "INTERNAL",
+    "is_active": false
+  }
+]

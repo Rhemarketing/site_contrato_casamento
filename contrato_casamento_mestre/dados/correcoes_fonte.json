@@ -1,0 +1,920 @@
+[
+  {
+    "patch_id": "PATCH60-Q101",
+    "question_id": "Q101",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 345,
+      "page_end": 346,
+      "line_start": 14758,
+      "line_end": 14782
+    },
+    "raw_text": "Q101–Q110 — regra agregada\n\nUma resposta A isolada não poderá produzir uma declaração conjunta do tipo “ambos não\npraticam...”.\n\nCriar:\n\nSEGURANCA_TODAS_A = SIM/NÃO\n\nA cláusula compartilhada positiva de segurança somente poderá ser gerada quando a\ncombinação das respostas dos dois permitir essa conclusão.\n\nSe houver B/C:\n\n    ● preservar privacidade;\n    ● não revelar automaticamente quem respondeu;\n\n   ● não abrir NÓS DECIDIMOS;\n   ● não aplicar R$ 10;\n   ● segurança prevalece sobre reconciliação ou confronto.",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q102",
+    "question_id": "Q102",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 346,
+      "page_end": 346,
+      "line_start": 14782,
+      "line_end": 14800
+    },
+    "raw_text": "Q102 — definição de ameaça intimidatória\n\nPassa a valer:\n\n“Para fins deste Método, ameaça intimidatória é a comunicação deliberada de uma\nconsequência prejudicial utilizada para provocar medo e obter obediência, silêncio,\nsubmissão ou desistência de um limite legítimo.”\n\nNão será considerada automaticamente ameaça abusiva:\n\n   ●   comunicar possibilidade real de separação;\n   ●   estabelecer limite legítimo;\n   ●   informar possível consequência jurídica;\n   ●   dizer que determinada situação poderá tornar a convivência inviável.",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q103",
+    "question_id": "Q103",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 346,
+      "page_end": 346,
+      "line_start": 14800,
+      "line_end": 14817
+    },
+    "raw_text": "Q103 — estrangulamento\n\nQualquer relato de:\n\n   ● estrangulamento;\n   ● sufocamento intencional;\n   ● compressão deliberada do pescoço;\n\ngera automaticamente:\n\nALERTA_SEGURANCA_CRITICO = SIM\n\nMesmo se houver apenas um episódio relatado.",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q106",
+    "question_id": "Q106",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 346,
+      "page_end": 346,
+      "line_start": 14817,
+      "line_end": 14825
+    },
+    "raw_text": "Q106 — vigilância digital\n\nAdicionar:\n\n“Consentimento para compartilhamento de senha, dispositivo ou localização poderá ser\nretirado posteriormente. Autorização concedida no passado não constitui consentimento\npermanente para vigilância.”",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q107",
+    "question_id": "Q107",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 347,
+      "page_end": 347,
+      "line_start": 14825,
+      "line_end": 14844
+    },
+    "raw_text": "Q107 — isolamento\n\nAdicionar:\n\n“Solicitar limite em relação a uma pessoa específica não será considerado\nautomaticamente isolamento quando existir motivo concreto relacionado a segurança,\nfidelidade, assédio, ameaça ou comportamento objetivamente prejudicial.”\n\nIsolamento coercitivo será caracterizado principalmente por tentativa injustificada de:\n\n   ●   destruir rede de apoio;\n   ●   impedir relações legítimas;\n   ●   controlar vínculos;\n   ●   produzir dependência;\n   ●   afastar sistematicamente a pessoa de familiares ou amigos confiáveis.",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q109",
+    "question_id": "Q109",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 347,
+      "page_end": 347,
+      "line_start": 14844,
+      "line_end": 14852
+    },
+    "raw_text": "Q109 — alternativa A corrigida\n\nA) Posso trabalhar, estudar, utilizar meus documentos e me deslocar livremente, respeitando\nos compromissos familiares legitimamente assumidos por nós.",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q110",
+    "question_id": "Q110",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 347,
+      "page_end": 348,
+      "line_start": 14852,
+      "line_end": 14868
+    },
+    "raw_text": "Q110 — proteção de filhos\n\nAdicionar:\n\n“Não será considerada ameaça abusiva a comunicação de medida legítima destinada à\nproteção de criança ou dependente, inclusive procura por autoridade competente ou\ndiscussão responsável sobre guarda, convivência e segurança.”\n\nO alerta será aplicado quando filho/dependente for utilizado deliberadamente para:\n\n   ●   provocar medo;\n   ●   obter submissão;\n   ●   punir;\n   ●   controlar.\n\n2. Fé e espiritualidade — Q111 a Q120",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q111",
+    "question_id": "Q111",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 348,
+      "page_end": 348,
+      "line_start": 14868,
+      "line_end": 14905
+    },
+    "raw_text": "Q111 — substituída\nNova pergunta\n\nPensando principalmente nos últimos 90 dias, quanto a fé cristã esteve presente de\nforma prática na vida e nas decisões do seu casamento?\n\nA) Esteve presente com frequência em decisões, conversas, valores e práticas do casal.\n\nB) A fé é importante para mim, mas sua presença prática na rotina conjunta aconteceu de\nmaneira irregular.\n\nC) Minha fé tem sido vivida principalmente de forma individual, com pouca participação na\nrotina conjunta do casal.\n\nA\n\n{Nome} reconhece que a fé cristã possui presença prática em sua vida conjugal e\ncompromete-se a continuar expressando-a principalmente através de amor,\nresponsabilidade, fidelidade, verdade e serviço.\n\nB\n\n{Nome} reconhece que a fé é importante, mas possui presença irregular na rotina\nconjunta, e manifesta disposição para construir práticas espirituais compatíveis com a\nrealidade dos dois.\n\nC\n\n{Nome} reconhece que atualmente vive sua espiritualidade principalmente de forma\nindividual e compromete-se a respeitar a construção espiritual conjunta que o casal\nvoluntariamente estabelecer.\n\nEssa passa a ser a Q111 oficial.",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q112",
+    "question_id": "Q112",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 348,
+      "page_end": 349,
+      "line_start": 14905,
+      "line_end": 14925
+    },
+    "raw_text": "Q112 — oração\nNÓS DECIDIMOS corrigido:\n\nA) Diariamente.\nB) Pelo menos 3 vezes por semana.\nC) Outra frequência consensualmente escolhida.\n\nCampo:\n\nFREQUENCIA_ORACAO\n\nTexto C:\n\n“{Nome 1} e {Nome 2} escolheram reservar aproximadamente {frequência escolhida}\npara oração conjunta, respeitando situações em que um dos dois não esteja em\ncondições de participar naquele momento.”",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q113",
+    "question_id": "Q113",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 349,
+      "page_end": 349,
+      "line_start": 14925,
+      "line_end": 14944
+    },
+    "raw_text": "Q113 — Palavra/devocional\nNÓS DECIDIMOS:\n\nA) Pelo menos 3 vezes por semana.\nB) Pelo menos 1 vez por semana.\nC) Outra frequência consensualmente escolhida.\n\nCampo:\n\nFREQUENCIA_DEVOCIONAL\n\nTexto C:\n\n“{Nome 1} e {Nome 2} escolheram compartilhar leitura bíblica, devocional ou reflexão\ncristã aproximadamente {frequência escolhida}.”",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q116",
+    "question_id": "Q116",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 349,
+      "page_end": 350,
+      "line_start": 14944,
+      "line_end": 14964
+    },
+    "raw_text": "Q116 — dízimos/ofertas\nAlternativa percentual passa a usar:\n\nPERCENTUAL_PLANEJADO\n\nTexto:\n\n“{Nome 1} e {Nome 2} decidiram planejar aproximadamente {percentual}% da RLF para\ncontribuições religiosas regulares, sujeito à revisão sempre que houver alteração\nfinanceira relevante.”\n\nNova regra:\n\n“Contribuição religiosa voluntariamente planejada não deverá justificar inadimplência\ndeliberada de alimentação, moradia, saúde, necessidades dos filhos/dependentes ou\nobrigações financeiras já assumidas.”",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q119",
+    "question_id": "Q119",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 350,
+      "page_end": 351,
+      "line_start": 14964,
+      "line_end": 15008
+    },
+    "raw_text": "Q119 — coerção espiritual\nPassa a possuir subpergunta obrigatória quando a resposta principal for B ou C.\n\nPergunta privada\n\nQuando essa utilização inadequada de argumentos espirituais acontece, qual situação\nmais representa sua experiência?\n\nA) Reconheço que principalmente eu faço ou já fiz isso.\n\nB) Percebo que principalmente meu cônjuge faz ou já fez isso comigo.\n\nC) Esse comportamento já aconteceu dos dois lados.\n\nA\n\nMODO_DE_SAIDA = DIAGNOSTICO_PRIVADO\n\n“{Nome} reconhece que já utilizou argumentos espirituais de maneira capaz de\npressionar ou reduzir a voz do cônjuge e compromete-se a interromper esse\ncomportamento, substituindo imposição por diálogo e responsabilidade pessoal.”\n\nB\n\nMODO_DE_SAIDA = DIAGNOSTICO_PRIVADO\n\nSe existir medo, submissão, ameaça ou controle:\n\nALERTA_COERCAO_ESPIRITUAL = SIM\n\ne, conforme gravidade:\n\nALERTA_SEGURANCA = SIM\n\nC\n\nNão presumir automaticamente responsabilidade equivalente.\n\nO sistema cruzará as duas respostas individuais antes de decidir a saída compartilhada.\n\n\n\n\n3. Saúde — Q121 a Q130",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q126",
+    "question_id": "Q126",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 351,
+      "page_end": 351,
+      "line_start": 15008,
+      "line_end": 15028
+    },
+    "raw_text": "Q126 — saúde emocional\nRespostas B/C não serão automaticamente transformadas em confissão nominal no\ncontrato.\n\nUsar:\n\nMODO_DE_SAIDA = DIAGNOSTICO_PRIVADO\n\nO contrato poderá receber apenas a regra geral:\n\n“{Nome 1} e {Nome 2} reconhecem que dificuldades emocionais persistentes merecem\ncuidado responsável e que buscar ajuda adequada não deverá ser motivo de\nhumilhação, desprezo ou acusação.”\n\nSe houver risco relacionado à integridade da pessoa ou de terceiros, prevalece o fluxo\nespecífico de segurança.",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q128",
+    "question_id": "Q128",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 351,
+      "page_end": 352,
+      "line_start": 15028,
+      "line_end": 15046
+    },
+    "raw_text": "Q128 — urgência de saúde\nSubstituir “urgência real” por:\n\n“situação percebida como urgente ou que, conforme orientação profissional disponível,\nnão deva aguardar a decisão financeira ordinária.”\n\nTexto corrigido:\n\n“Em situação percebida como urgente ou que, conforme orientação profissional\ndisponível, não deva aguardar a decisão financeira ordinária, o cuidado necessário\n\npoderá ser buscado antes da consulta financeira habitual. O ocorrido e seu impacto\ndeverão ser comunicados ao cônjuge no mesmo dia ou em até 24 horas quando a\nsituação impedir conversa anterior.”",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q130",
+    "question_id": "Q130",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 352,
+      "page_end": 352,
+      "line_start": 15046,
+      "line_end": 15070
+    },
+    "raw_text": "Q130 — Registro Familiar de Emergência\nAdicionar campos:\n\nCOMPARTILHAMENTO_VOLUNTARIO = SIM\n\nDATA_ATUALIZACAO\n\nRegra de minimização\n\n“Somente informações necessárias para auxílio em eventual emergência deverão ser\narmazenadas. O sistema não deverá coletar informações clínicas adicionais apenas\nporque tecnicamente possui capacidade para armazená-las.”\n\nRegra de controle\n\n“Cada pessoa poderá atualizar ou remover informações de saúde voluntariamente\nfornecidas para o Registro Familiar de Emergência, ressalvadas informações já\nnecessárias em situação emergencial em andamento.”\n\n\n\n\n4. Lazer — Q131 a Q140",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q131",
+    "question_id": "Q131",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 352,
+      "page_end": 353,
+      "line_start": 15070,
+      "line_end": 15102
+    },
+    "raw_text": "Q131 — correção importante\nA pergunta diagnóstica permanece:\n\nA) Temos momentos de lazer juntos com frequência que considero satisfatória.\n\nB) Temos algum lazer, mas gostaria que acontecesse mais vezes.\n\nC) Raramente fazemos algo juntos apenas por prazer, descanso ou diversão.\n\nPorém fica eliminado o NÓS DECIDIMOS obrigatório com frequência\nsemanal/quinzenal/mensal.\n\nNova regra\n\n“Quando qualquer dos cônjuges identificar insuficiência de lazer compartilhado, {Nome\n1} e {Nome 2} procurarão utilizar parte dos Momentos de Qualidade já definidos na\nPergunta 011 para descanso, diversão, passeio ou outra experiência agradável escolhida\npelos dois.”\n\nAssim:\n\n      Q011 define quanto tempo de qualidade o casal terá.\n\nQ131 ajuda a definir como parte desse tempo poderá ser utilizada.\n\nNão criamos dois calendários concorrentes.\n\n\n\n\n5. Projeto de vida — Q141 a Q150",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q142",
+    "question_id": "Q142",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 353,
+      "page_end": 354,
+      "line_start": 15102,
+      "line_end": 15152
+    },
+    "raw_text": "Q142 — SUBSTITUÍDA DEFINITIVAMENTE\nNova pergunta\n\nQuando seus projetos pessoais entram em contato com as necessidades da família,\ncomo você normalmente procura equilibrar as duas coisas?\n\nA) Procuro continuar desenvolvendo meus objetivos pessoais, conversando previamente sobre\nimpactos importantes para a família.\n\nB) Consigo adiar alguns projetos quando a fase familiar exige, desde que exista possibilidade\nde revisão futura.\n\nC) Frequentemente coloco meus próprios objetivos em segundo plano e deixo de retomá-los,\nmesmo quando poderia voltar a conversar sobre eles.\n\nA\n\n{Nome} reconhece a importância de preservar seus objetivos pessoais sem tomar\nunilateralmente decisões que produzam impacto relevante sobre a família.\n\nB\n\n{Nome} reconhece que alguns objetivos poderão precisar de adiamento temporário e\ncompromete-se a estabelecer revisão quando um projeto importante for postergado.\n\nC\n\n{Nome} reconhece tendência de deixar seus próprios projetos indefinidamente em\nsegundo plano e compromete-se a comunicar sonhos e necessidades pessoais antes\nque renúncias silenciosas se transformem em frustração ou ressentimento.\n\nA+C\n\n“{Nome A} possui maior iniciativa para preservar seus projetos pessoais, enquanto\n{Nome C} tende a deixá-los em segundo plano. Ambos comprometem-se a construir\nespaço legítimo para os objetivos dos dois, sem permitir que os sonhos de apenas uma\npessoa dominem continuamente o projeto familiar.”\n\nB+C\n\n“{Nome B} aceita adiamentos quando necessários, enquanto {Nome C} apresenta maior\ntendência a abandonar seus próprios projetos. Ambos comprometem-se a diferenciar\nadiamento temporário de renúncia indefinida e a revisar objetivos importantes quando as\ncircunstâncias familiares se modificarem.”\n\nEssa substitui integralmente a Q142 anterior.",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q143",
+    "question_id": "Q143",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 354,
+      "page_end": 355,
+      "line_start": 15152,
+      "line_end": 15184
+    },
+    "raw_text": "Q143 — prioridade de 3 anos\nAlternativa C passa a ser:\n\nC) Desenvolver um projeto específico importante para nossa próxima fase de vida.\n\nCampo:\n\nPROJETO_PRIORITARIO\n\nExemplos internos:\n\n    ● profissional;\n    ● empresarial;\n    ● ministerial;\n\n    ●   educacional;\n    ●   saúde;\n    ●   mudança;\n    ●   construção;\n    ●   projeto familiar;\n    ●   outro.\n\nTexto C\n\n“{Nome} demonstra preferência por priorizar nos próximos anos o desenvolvimento de\num projeto específico importante para sua próxima fase de vida, reconhecendo que sua\nexecução deverá ser compatibilizada com responsabilidades, recursos e demais\nobjetivos do casal.”",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q146",
+    "question_id": "Q146",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 355,
+      "page_end": 356,
+      "line_start": 15184,
+      "line_end": 15228
+    },
+    "raw_text": "Q146 — NOVO PROTOCOLO DE\nDIVERGÊNCIA REPRODUTIVA\nQuando as respostas forem:\n\nA × C\n\nregistrar:\n\nDIVERGENCIA_REPRODUTIVA_RELEVANTE = SIM\n\nNão abrir NÓS DECIDIMOS imediatamente.\n\nProcedimento\n\n1. Nenhuma tentativa deliberada de concepção enquanto não existir consenso.\n\n2. Cada pessoa poderá explicar:\n\n    ●   seu desejo;\n    ●   seus motivos;\n    ●   expectativas;\n    ●   preocupações;\n    ●   medos;\n    ●   impactos esperados.\n\n3. Nenhum dos dois receberá prazo para “ceder”.\n\n4. Não haverá contribuição de R$ 10 pela ausência de consenso.\n\n5. Não haverá voto, desempate ou decisão por maioria.\n\n6. Se ambos considerarem útil, poderão buscar acompanhamento adequado.\n\n7. O tema somente será novamente submetido a decisão conjunta quando ambos concordarem\nem retomá-lo ou quando surgir mudança significativa de circunstância.**\n\nTexto estrutural\n\n“Ter ou não ter filho é decisão de impacto profundo e não poderá ser imposta através de\npressão emocional, sexual, espiritual, financeira ou sabotagem contraceptiva.”",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH60-Q148",
+    "question_id": "Q148",
+    "version": "6.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 356,
+      "page_end": 356,
+      "line_start": 15228,
+      "line_end": 15238
+    },
+    "raw_text": "Q148 — proteção das reservas\nAdicionar:\n\n“A aprovação conjunta de projeto de risco não autoriza automaticamente utilizar reserva\nfamiliar em valor capaz de reduzi-la abaixo do piso de segurança definido pelo casal.\nQualquer exceção exigirá decisão financeira específica, consciente dos impactos.”\n\nCruzamentos obrigatórios:\n\nQ148 × Q037 × Q043",
+    "supplemental_source_id": "MD03"
+  },
+  {
+    "patch_id": "PATCH70-Q153",
+    "question_id": "Q153",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 423,
+      "page_end": 424,
+      "line_start": 18112,
+      "line_end": 18164
+    },
+    "raw_text": "1. Q153 — SUBSTÂNCIAS E\nMEDICAMENTOS\nREDAÇÃO CORRIGIDA\nPergunta\n\nNos últimos 90 dias, houve uso intencional de substância psicoativa proibida pela\nlegislação aplicável ao local em que ocorreu o uso, ou utilização de medicamento sujeito\na controle de forma diferente daquela prescrita ou orientada para tratamento?\n\nA) Não.\n\nB) Houve episódio isolado ou pouco frequente.\n\nC) Houve uso repetido, ocultado, difícil de controlar ou com impacto sobre saúde, finanças,\ntrabalho, convivência ou responsabilidades.\n\nA\n\n{Nome} informa não ter identificado esse comportamento no período analisado e\ncompromete-se a preservar escolhas compatíveis com saúde, segurança e\nresponsabilidades familiares.\n\nB\n\nPRIVACY_CLASS = PRIVATE\nOUTPUT_TARGET = PRIVATE_PLAN\n\n{Nome} reconhece a ocorrência de uso de substância proibida pela legislação aplicável\nou utilização não terapêutica de medicamento controlado e compromete-se a não\nminimizar seus possíveis riscos físicos, emocionais, legais ou familiares.\n\nC\n\nPRIVACY_CLASS = PRIVATE\n\nOUTPUT_TARGET = PRIVATE_PLAN\n\nALERTA_USO_PROBLEMATICO_SUBSTANCIA = SIM\n\n{Nome} reconhece uso repetido, ocultação, dificuldade de controle ou consequências\nrelevantes e deverá tratar essa situação através de medidas concretas de proteção e\napoio adequado.\n\nRegra fixa\n\nO Método não criará uma quantidade “permitida” de substância ilegal nem autorizará\nuso não médico de medicamento controlado como solução para comportamento\nproblemático."
+  },
+  {
+    "patch_id": "PATCH70-Q160",
+    "question_id": "Q160",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 424,
+      "page_end": 426,
+      "line_start": 18164,
+      "line_end": 18245
+    },
+    "raw_text": "2. Q160 — PROTOCOLO DE PROTEÇÃO E\nRECUPERAÇÃO\nCORREÇÃO DE SEGURANÇA\nA pergunta permanece.\n\nO protocolo fica substituído por:\n\nPROTOCOLO DE PROTEÇÃO E RECUPERAÇÃO — P10\n\nGatilho:\n\n   ●   uso problemático de substância;\n   ●   jogo problemático;\n   ●   perda de controle;\n   ●   compulsão ou hábito repetido com prejuízo significativo.\n\nEtapas\n\n1. Identificar o comportamento.\n\n2. Identificar as consequências objetivas existentes.\n\n3. Interromper situações de risco imediato.\n\n4. Definir pelo menos uma primeira medida concreta de proteção.\n\n5. A própria pessoa poderá voluntariamente utilizar mecanismos que dificultem o acesso\nao comportamento problemático, como:\n\n   ●   bloqueios voluntários;\n   ●   limites;\n   ●   autoexclusão;\n   ●   exclusão de aplicativos;\n   ●   bloqueios de sites;\n   ●   limites voluntários de gastos;\n   ●   outras medidas adequadas.\n\n6. Proteções financeiras conjuntas poderão ser adotadas somente por consentimento\nválido dos dois ou orientação profissional/jurídica adequada.\n\nProibição expressa\n\nEste protocolo não concede ao cônjuge autorização automática para apreender ou\ncontrolar:\n\n   ●   dinheiro;\n   ●   cartão;\n   ●   documentos;\n   ●   telefone;\n   ●   computador;\n   ●   contas;\n   ●   senhas;\n   ●   chaves;\n   ●   localização;\n   ●   outros recursos pessoais.\n\n7. Considerar apoio profissional, pastoral ou especializado adequado.\n\n8. Definir revisão em até 30 dias ou prazo menor quando existir indicação adequada.\n\n9. Depois de repetidas tentativas frustradas, nova promessa genérica não será\nconsiderada plano de correção suficiente.\n\nRegra de segurança\n\nViolência, coerção ou risco → P13 SEGURANÇA prevalece.\n\nContribuição\n\nPara Q151–Q160:\n\nCONTRIBUTION_RULE = NONE\n\nNão haverá R$ 10 por:\n\n   ●   consumo;\n   ●   recaída;\n   ●   dependência;\n   ●   compulsão;\n   ●   tentativa frustrada de mudança."
+  },
+  {
+    "patch_id": "PATCH70-Q169",
+    "question_id": "Q169",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 426,
+      "page_end": 427,
+      "line_start": 18245,
+      "line_end": 18269
+    },
+    "raw_text": "3. Q169 — SAÚDE DOS FILHOS\n\nNOVO PARÁGRAFO FIXO\nAdicionar:\n\n        “O Método C.O.N.T.R.A.T.O. organiza comunicação, acompanhamento e\n        divisão de responsabilidades entre os responsáveis parentais, mas não\n        determina diagnóstico, medicamento, procedimento ou tratamento de saúde.\n        Decisões clínicas deverão considerar avaliação e orientação do profissional\n        habilitado adequado à situação.”\n\nO sistema poderá organizar:\n\n   ●    agendamento;\n   ●    documentos;\n   ●    acompanhamento;\n   ●    comunicação;\n   ●    execução das providências acordadas.\n\nMas não deverá produzir recomendação médica própria."
+  },
+  {
+    "patch_id": "PATCH70-Q170",
+    "question_id": "Q170",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 427,
+      "page_end": 428,
+      "line_start": 18269,
+      "line_end": 18302
+    },
+    "raw_text": "4. Q170 — DADOS DOS FILHOS\nREGRA DE MINIMIZAÇÃO\nPara este módulo, utilizar preferencialmente:\n\nchild_id\n\nnome_de_uso\n\nfaixa_etaria\n\ne somente outros dados estritamente necessários.\n\nNão coletar automaticamente\n\n   ●    CPF;\n   ●    RG;\n   ●    documentos;\n   ●    endereço escolar;\n   ●    localização rotineira;\n\n   ● prontuário;\n   ● informações íntimas;\n   ● outros identificadores sem necessidade objetiva.\n\nParágrafo sistêmico\n\n“Informações de crianças e adolescentes serão limitadas ao necessário para a execução\ndas funcionalidades do Método, evitando coleta de dados que não sejam necessários às\ndecisões e acordos parentais.”"
+  },
+  {
+    "patch_id": "PATCH70-Q174",
+    "question_id": "Q174",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 428,
+      "page_end": 428,
+      "line_start": 18302,
+      "line_end": 18324
+    },
+    "raw_text": "5. Q174 — AMIGOS NA RESIDÊNCIA\nREGRA CORRIGIDA\nAdicionar:\n\n      “As regras desta pergunta regulam exclusivamente o uso da residência\n      compartilhada. Elas não concedem a um cônjuge autoridade geral para\n      escolher, eliminar ou proibir amizades legítimas do outro. Situações\n      específicas envolvendo assédio, ameaça, fidelidade, segurança ou\n      comportamento objetivamente prejudicial serão tratadas pelas respectivas\n      regras do Método.”\n\nCruzamentos obrigatórios:\n\nQ174 × Q107\n\nQ174 × Q032\n\nQ174 × Q093"
+  },
+  {
+    "patch_id": "PATCH70-Q175",
+    "question_id": "Q175",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 428,
+      "page_end": 429,
+      "line_start": 18324,
+      "line_end": 18347
+    },
+    "raw_text": "6. Q175 — EVENTOS SOCIAIS SEM O\nCÔNJUGE\nTRANSPARÊNCIA SEM VIGILÂNCIA\n\nAdicionar:\n\n      “Transparência sobre evento social poderá envolver contexto, horário\n      aproximado, alteração relevante de planos e compromissos previamente\n      assumidos. Essa transparência não cria direito automático a localização em\n      tempo real, envio de fotografias comprobatórias, fornecimento de senhas,\n      inspeção de dispositivo ou vigilância digital.”\n\nCruzamento obrigatório:\n\nQ175 × Q106\n\nAutonomia não elimina fidelidade.\n\nTransparência não autoriza vigilância."
+  },
+  {
+    "patch_id": "PATCH70-Q178",
+    "question_id": "Q178",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 429,
+      "page_end": 430,
+      "line_start": 18347,
+      "line_end": 18399
+    },
+    "raw_text": "7. Q178 — AJUDA EXTERNA\nGATILHO OBJETIVADO\nA expressão:\n\n      “sem melhora suficiente”\n\ndeixa de ser aberta.\n\nToda correção estruturada deverá possuir:\n\nRESULTADO_ESPERADO\n\nACAO_CORRETIVA\n\nDATA_REVISAO\n\nRESULTADO_ATINGIDO\n\nValores:\n\nSIM\n\nPARCIAL\n\nNAO\n\nGatilho da Q178\n\nRegistrar:\n\nRECOMENDAR_APOIO_EXTERNO = SIM\n\nquando ocorrer uma destas situações:\n\nA) Três ciclos estruturados sobre o mesmo problema forem encerrados com:\n\nRESULTADO_ATINGIDO = NAO\n\nou\n\nB) O comportamento continuar atingindo seu gatilho objetivo apesar de três intervenções\nestruturadas.\n\nObservação\n\nPARCIAL não será automaticamente contado como fracasso completo.\n\nO sistema poderá manter acompanhamento e revisar a ação antes de contar novo ciclo."
+  },
+  {
+    "patch_id": "PATCH70-Q179",
+    "question_id": "Q179",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 430,
+      "page_end": 431,
+      "line_start": 18399,
+      "line_end": 18446
+    },
+    "raw_text": "8. Q179 — SUBSTITUÍDA\nDEFINITIVAMENTE\nUSO DA SEPARAÇÃO DURANTE CONFLITOS\nPergunta\n\nQuando você está muito frustrado(a) durante uma discussão, como costuma lidar com a\npossibilidade de separação?\n\nA) Evito falar em separação apenas para assustar ou pressionar; se algum dia considerar isso\nseriamente, pretendo comunicar de forma clara.\n\nB) Já falei em terminar, ir embora ou separar-me em momentos de raiva, mesmo sem ter uma\ndecisão realmente formada.\n\nC) Já utilizei repetidamente a possibilidade de separação principalmente para fazer meu\ncônjuge ceder, obedecer ou interromper a discussão.\n\nA\n\n{Nome} compromete-se a não utilizar separação como ameaça destinada apenas a\nprovocar medo ou obter vantagem durante conflitos.\n\nB\n\n{Nome} reconhece que já verbalizou término ou separação durante momentos de forte\nemoção sem possuir decisão formada e compromete-se a não anunciar decisão tão\ngrave apenas como reação à discussão.\n\nC\n\nPRIVACY_CLASS = PRIVATE\n\nOUTPUT_TARGET = PRIVATE_PLAN\n\n{Nome} reconhece utilização repetida da possibilidade de separação como instrumento\nde pressão e compromete-se a interromper esse comportamento.\n\nRegra fixa\n\nComunicar de forma séria que a continuidade do casamento está sendo realmente\nquestionada não será classificado automaticamente como ameaça abusiva.\n\nO problema é utilizar separação principalmente para provocar medo ou obediência."
+  },
+  {
+    "patch_id": "PATCH70-Q187",
+    "question_id": "Q187",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 431,
+      "page_end": 433,
+      "line_start": 18446,
+      "line_end": 18513
+    },
+    "raw_text": "9. Q187 — SUBSTITUÍDA\nDEFINITIVAMENTE\n\nAPOIO DIANTE DE LUTO OU PERDA\nA antiga Q187 sobre intenção × impacto é eliminada por redundância com a Q021.\n\n\nNova Pergunta 187\n\nQuando seu cônjuge atravessa uma perda ou sofrimento importante, qual\ncomportamento mais representa você?\n\nExemplos:\n\n    ●    morte de pessoa próxima;\n    ●    perda gestacional;\n    ●    doença grave de alguém importante;\n    ●    perda profissional significativa;\n    ●    outra experiência profundamente dolorosa.\n\nA) Procuro ouvir, perguntar como posso ajudar e permanecer presente sem exigir recuperação\nrápida.\n\nB) Quero ajudar, mas algumas vezes tento oferecer soluções ou animar a pessoa antes de\ncompreender como ela prefere ser apoiada.\n\nC) Tenho dificuldade diante do sofrimento do outro e posso me afastar ou evitar o assunto\nporque não sei o que dizer ou fazer.\n\nA\n\n{Nome} compromete-se a oferecer presença e apoio durante períodos de luto ou perda,\nrespeitando que pessoas diferentes possuem ritmos e formas diferentes de atravessar\nsofrimento.\n\nB\n\n{Nome} reconhece tendência de tentar solucionar ou acelerar a recuperação e\ncompromete-se a perguntar primeiro qual tipo de apoio poderá ser mais útil naquele\nmomento.\n\nC\n\n{Nome} reconhece dificuldade para permanecer próximo diante do sofrimento e\ncompromete-se a não transformar insegurança sobre o que dizer em afastamento\ncompleto, podendo oferecer presença, ajuda prática ou perguntar diretamente como\napoiar.\n\nParágrafo fixo\n\n         “Não haverá prazo contratual para deixar de sentir luto. O compromisso\n         assumido é de cuidado, presença e comunicação, e não de exigir\n         recuperação emocional dentro de determinada data.”\n\nNÓS DECIDIMOS\n\nNEVER\n\nCruzamentos\n\nQ187 × Q125\n\nQ187 × Q126"
+  },
+  {
+    "patch_id": "PATCH70-Q196",
+    "question_id": "Q196",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 433,
+      "page_end": 433,
+      "line_start": 18513,
+      "line_end": 18544
+    },
+    "raw_text": "10. Q196 — ESTADO DO CASAMENTO\nALTERAÇÃO DE DESTINO\nA pergunta e suas alternativas permanecem.\n\nMas:\n\nPRIVACY_CLASS = PRIVATE\n\nOUTPUT_TARGET = INTERNAL\n\nCLAUSE_DESTINATION = NONE\n\nUso permitido\n\n   ●    priorização;\n   ●    configuração do plano;\n   ●    intensidade do acompanhamento;\n   ●    recomendação de revisão;\n   ●    cruzamento interno.\n\nUso proibido\n\nNão imprimir no contrato:\n\n        “{Nome} considera o casamento ruim.”\n\nou equivalentes."
+  },
+  {
+    "patch_id": "PATCH70-Q197",
+    "question_id": "Q197",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 433,
+      "page_end": 434,
+      "line_start": 18544,
+      "line_end": 18564
+    },
+    "raw_text": "11. Q197 — PERCEPÇÃO DE ESFORÇO\nALTERAÇÃO DE DESTINO\nA pergunta permanece.\n\nConfiguração:\n\nPRIVACY_CLASS = PRIVATE\n\nOUTPUT_TARGET = INTERNAL\n\nCLAUSE_DESTINATION = NONE\n\nO sistema poderá registrar diferença de percepção:\n\nPERCEPTION_GAP_EFFORT = SIM\n\nmas não imprimir:\n\n      “Maria acha que João não se esforça”."
+  },
+  {
+    "patch_id": "PATCH70-Q198",
+    "question_id": "Q198",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 434,
+      "page_end": 435,
+      "line_start": 18564,
+      "line_end": 18589
+    },
+    "raw_text": "12. Q198 — DISPOSIÇÃO PERCEBIDA DO\nCÔNJUGE\nALTERAÇÃO DE DESTINO\nA pergunta permanece.\n\nConfiguração:\n\nPRIVACY_CLASS = PRIVATE\n\nOUTPUT_TARGET = INTERNAL\n\nCLAUSE_DESTINATION = NONE\n\nEla poderá influenciar:\n\n   ●   recomendação de apoio;\n   ●   nível de impasse;\n   ●   quantidade inicial de metas;\n   ●   necessidade de revisão.\n\nNunca poderá ser usada como “prova” de que o outro não quer mudar."
+  },
+  {
+    "patch_id": "PATCH70-Q200",
+    "question_id": "Q200",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 435,
+      "page_end": 436,
+      "line_start": 18589,
+      "line_end": 18629
+    },
+    "raw_text": "13. Q200 — DISPOSIÇÃO FINAL\nALTERAÇÃO DE FUNÇÃO\nA pergunta permanece exatamente com A/B/C.\n\nPassa a ser exclusivamente:\n\nPRIVACY_CLASS = PRIVATE\n\nOUTPUT_TARGET = INTERNAL\n\nCLAUSE_DESTINATION = NONE\n\nFUNCTION = PLAN_CONFIGURATION\n\nA+A\n\nPlano inicial poderá chegar a:\n\n   ● até 3 prioridades principais;\n   ● até 3 ações secundárias.\n\nA+B/B+B\n\nPlano inicial moderado.\n\nQualquer C\n\nATTENTION_PLAN_INTENSITY = SIM\n\nCriar plano mais leve.\n\nNão imprimir:\n\n      “{Nome} possui baixa disposição para o casamento”.\n\nA Q200 é calibradora, não acusatória."
+  },
+  {
+    "patch_id": "PATCH70-Q154",
+    "question_id": "Q154",
+    "version": "7.0",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 436,
+      "page_end": 436,
+      "line_start": 18629,
+      "line_end": 18653
+    },
+    "raw_text": "14. Q154 — STATUS\nEsta é a única questão que não fica fechada doutrinariamente pelo Pacote 7.0.\n\nO banco deverá registrar:\n\nEDITORIAL_DECISION_REQUIRED = YES\n\nA programação não poderá decidir se o Método:\n\nA) tolerará aposta recreativa legal limitada;\n\nou\n\nB) adotará proibição integral de apostas.\n\nAté decisão final:\n\nNOS_DECIDIMOS_Q154 = DISABLED\n\nIsso impede que o programador tome uma decisão doutrinária no lugar do Método."
+  },
+  {
+    "patch_id": "PATCH50-03-Q002",
+    "question_id": "Q002",
+    "version": "5.0",
+    "raw_text": "# 3. PERGUNTA 002 — DECISÕES RELEVANTES\n\nCorrigir a definição de decisão patrimonial relevante.\n\nSerão sempre consideradas decisões relevantes, independentemente do valor:\n\n-  compra ou venda de imóvel; \n-  compra ou venda de veículo de uso familiar; \n-  participação societária; \n-  oferecimento de patrimônio familiar em garantia; \n-  alienação de ativo essencial da família. \n\nPara outras operações patrimoniais:\n\n> **valor total igual ou superior a 50% da Renda Líquida Familiar mensal — RLF — será considerado relevante e exigirá conversa prévia do casal, salvo limite específico posteriormente acordado.**\n\nA regra anterior de 10% da RLF fica excluída.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 61,
+      "line_end": 81
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-04-Q018",
+    "question_id": "Q018",
+    "version": "5.0",
+    "raw_text": "# 4. PERGUNTA 018 — PROTOCOLO DE RECONSTRUÇÃO DA CONFIANÇA\n\nFica criado definitivamente.\n\n### Gatilhos\n\nAplicável quando houver, entre outras situações:\n\n-  infidelidade; \n-  mentira grave; \n-  ocultação financeira relevante; \n-  vínculo afetivo ou sexual paralelo; \n-  violação grave de acordo; \n-  outra quebra significativa da confiança. \n\n### Etapas obrigatórias\n\n**1. Interrupção:** comportamento ainda existente deverá ser interrompido.\n\n**2. Identificação:** deverá ficar claro qual comportamento produziu a quebra.\n\n**3. Informação necessária:** deverão ser comunicadas as informações necessárias à compreensão da situação e de suas consequências, sem exigir detalhes desnecessários destinados apenas a produzir sofrimento.\n\n**4. Proteção contra repetição:** deverão ser definidas medidas concretas para reduzir risco de nova ocorrência.\n\n**5. Reconstrução:** deverão ser identificados comportamentos capazes de contribuir gradualmente para recuperar segurança e confiança.\n\n**6. Revisão:** realizar revisão em **30 dias**.\n\n**7. Apoio externo:** se continuar existindo sofrimento significativo, repetição ou incapacidade de tratamento pelo próprio casal, considerar acompanhamento profissional, pastoral ou outro apoio adequado.\n\n### Texto estrutural\n\n**“{Nome 1} e {Nome 2} reconhecem que perdão e reconstrução da confiança não são necessariamente acontecimentos simultâneos. Uma pessoa poderá decidir perdoar e ainda necessitar de tempo, consistência e mudança concreta antes de recuperar plenamente sua confiança.”**\n\nEm situação de violência ou risco, este protocolo **não obriga reconciliação ou permanência conjunta**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 81,
+      "line_end": 120
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-05-Q037",
+    "question_id": "Q037",
+    "version": "5.0",
+    "raw_text": "# 5. PERGUNTA 037 — RESERVAS FINANCEIRAS\n\nA expressão passa a ser:\n\n> **“Depois de atendidas as despesas essenciais, obrigações contratuais, parcelas vencíveis e demais compromissos financeiros obrigatórios...”**\n\nSó depois disso se aplica a meta consensual de reserva.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 120,
+      "line_end": 130
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-06-Q041",
+    "question_id": "Q041",
+    "version": "5.0",
+    "raw_text": "# 6. PERGUNTA 041 — MUDANÇA DE RENDA\n\nAdicionar:\n\n**“Quando a renda líquida individual de qualquer dos cônjuges aumentar ou diminuir em 20% ou mais em relação ao valor considerado na última divisão financeira, o modelo de contribuição deverá ser revisto na próxima Revisão Financeira mensal.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 130,
+      "line_end": 138
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-07-Q043",
+    "question_id": "Q043",
+    "version": "5.0",
+    "raw_text": "# 7. PERGUNTA 043 — CRISE FINANCEIRA\n\nAdicionar aos gatilhos objetivos:\n\n-  necessidade de utilizar, em uma única situação, **25% ou mais da reserva financeira disponível**; ou \n-  situação que reduza a reserva disponível para menos do equivalente a **1 mês das despesas essenciais da família**. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 138,
+      "line_end": 147
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-08-Q048",
+    "question_id": "Q048",
+    "version": "5.0",
+    "raw_text": "# 8. PERGUNTA 048 — TRABALHO CANCELANDO TEMPO DO CASAL\n\nExcluir o gatilho de:\n\n> 2 cancelamentos em 14 dias.\n\n### Nova regra\n\n**“Quando trabalho ou compromisso profissional cancelar um Momento de Qualidade previamente combinado, o casal procurará remarcar esse momento em até 7 dias, sempre que possível antes do próximo momento regularmente previsto.”**\n\n### Gatilho de reequilíbrio\n\n**“Se dois Momentos de Qualidade consecutivos previamente acordados forem cancelados por compromissos profissionais evitáveis e não forem adequadamente remarcados, {Nome 1} e {Nome 2} realizarão uma Conversa de Reequilíbrio em até 72 horas após o segundo cancelamento.”**\n\nEssa regra funciona para frequência semanal, quinzenal ou mensal.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 147,
+      "line_end": 165
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-09-Q050",
+    "question_id": "Q050",
+    "version": "5.0",
+    "raw_text": "# 9. PERGUNTA 050 — APOIO A PROJETOS DO CÔNJUGE\n\nSubstituir a ideia de reciprocidade por:\n\n**“O apoio recebido anteriormente não cria dívida pessoal nem obrigação automática de aprovar projetos futuros. Entretanto, {Nome 1} e {Nome 2} comprometem-se a reconhecer os esforços e sacrifícios que um realizou pelo desenvolvimento do outro e a considerar essa história de cooperação ao avaliar novos projetos, procurando preservar reciprocidade e justiça ao longo do casamento.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 165,
+      "line_end": 173
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-10-Q051",
+    "question_id": "Q051",
+    "version": "5.0",
+    "raw_text": "# 10. PERGUNTA 051 — FREQUÊNCIA SEXUAL\n\n## Pergunta corrigida\n\n**Pensando principalmente nos últimos 90 dias, como a frequência atual da intimidade sexual se compara à frequência que você considera adequada para você?**\n\n**A)** A frequência atual está próxima daquela que considero adequada.\n\n**B)** Gostaria que a intimidade sexual acontecesse com maior frequência.\n\n**C)** Gostaria que a intimidade sexual acontecesse com menor frequência.\n\n### A — Efeito\n\n**“{Nome} considera que a frequência sexual atualmente vivida está próxima daquela que lhe parece adequada e compromete-se a continuar comunicando eventuais mudanças de necessidade ao longo do casamento.”**\n\n### B — Efeito\n\n**“{Nome} reconhece que gostaria de viver intimidade sexual com maior frequência e compromete-se a comunicar essa necessidade respeitosamente, sem transformar desejo em cobrança, ameaça, culpa ou obrigação sexual.”**\n\n### C — Efeito\n\n**“{Nome} reconhece que gostaria de viver intimidade sexual com menor frequência e compromete-se a comunicar com clareza os fatores relacionados a essa necessidade, sem simplesmente desaparecer da vida íntima ou esperar que seu cônjuge compreenda a mudança sem diálogo.”**\n\n### A + B\n\n**“{Nome A} percebe a frequência atual como adequada, enquanto {Nome B} gostaria de maior frequência. Ambos reconhecem que a satisfação de uma pessoa não elimina a necessidade manifestada pela outra e comprometem-se a buscar uma frequência possível para os dois, preservando consentimento.”**\n\n### A + C\n\n**“{Nome A} percebe a frequência atual como adequada, enquanto {Nome C} gostaria de menor frequência. Ambos comprometem-se a conversar sobre desejo, rotina, saúde e demais fatores envolvidos, sem transformar a preferência de nenhum deles em obrigação para o outro.”**\n\n### B + C\n\n**“{Nome B} deseja maior frequência sexual, enquanto {Nome C} deseja menor frequência. Essa diferença será considerada divergência relevante de expectativa íntima. Ambos comprometem-se a tratar o assunto sem pressão, investigando as necessidades e fatores envolvidos e buscando uma frequência consensual possível para o casal.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 173,
+      "line_end": 211
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-11-Q051",
+    "question_id": "Q051",
+    "version": "5.0",
+    "raw_text": "# 11. Q051 — NÓS DECIDIMOS\n\nPermanece obrigatório.\n\n**Qual frequência sexual vocês desejam buscar consensualmente neste período do casamento?**\n\n**A)** Em média, pelo menos 1 vez por semana.\n\n**B)** Em média, pelo menos 2 vezes por semana.\n\n**C)** Outra frequência consensualmente definida ou nenhuma meta numérica.\n\nOs textos de consentimento permanecem.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 211,
+      "line_end": 227
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-12-Q051",
+    "question_id": "Q051",
+    "version": "5.0",
+    "raw_text": "# 12. NOVA REGRA DE GATILHO POR CICLOS\n\nSubstitui a regra universal anterior de 2 semanas.\n\n### Se a meta for semanal ou maior\n\nFicar abaixo da frequência consensual durante **2 semanas consecutivas** → Conversa de Reconexão em até 3 dias.\n\n### Se a meta for quinzenal\n\nNão atingir a meta durante **2 ciclos consecutivos de 15 dias** → conversa em até 3 dias.\n\n### Se a meta for mensal\n\nNão atingir a meta durante **2 ciclos mensais consecutivos** → conversa em até 3 dias.\n\n### Outra frequência\n\nUtilizar **2 ciclos completos consecutivos da frequência definida**.\n\n### Sem meta numérica\n\nSe houver **30 dias sem relação sexual e pelo menos um dos cônjuges manifestar insatisfação**, realizar Conversa de Reconexão em até 3 dias.\n\nContinuam proibidos:\n\n-  dívida sexual; \n-  reposição obrigatória; \n-  acúmulo; \n-  compensação; \n-  R$ 10 pela falta de sexo. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 227,
+      "line_end": 261
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-12-Q053",
+    "question_id": "Q053",
+    "version": "5.0",
+    "raw_text": "# 12. NOVA REGRA DE GATILHO POR CICLOS\n\nSubstitui a regra universal anterior de 2 semanas.\n\n### Se a meta for semanal ou maior\n\nFicar abaixo da frequência consensual durante **2 semanas consecutivas** → Conversa de Reconexão em até 3 dias.\n\n### Se a meta for quinzenal\n\nNão atingir a meta durante **2 ciclos consecutivos de 15 dias** → conversa em até 3 dias.\n\n### Se a meta for mensal\n\nNão atingir a meta durante **2 ciclos mensais consecutivos** → conversa em até 3 dias.\n\n### Outra frequência\n\nUtilizar **2 ciclos completos consecutivos da frequência definida**.\n\n### Sem meta numérica\n\nSe houver **30 dias sem relação sexual e pelo menos um dos cônjuges manifestar insatisfação**, realizar Conversa de Reconexão em até 3 dias.\n\nContinuam proibidos:\n\n-  dívida sexual; \n-  reposição obrigatória; \n-  acúmulo; \n-  compensação; \n-  R$ 10 pela falta de sexo. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 227,
+      "line_end": 261
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-12-Q059",
+    "question_id": "Q059",
+    "version": "5.0",
+    "raw_text": "# 12. NOVA REGRA DE GATILHO POR CICLOS\n\nSubstitui a regra universal anterior de 2 semanas.\n\n### Se a meta for semanal ou maior\n\nFicar abaixo da frequência consensual durante **2 semanas consecutivas** → Conversa de Reconexão em até 3 dias.\n\n### Se a meta for quinzenal\n\nNão atingir a meta durante **2 ciclos consecutivos de 15 dias** → conversa em até 3 dias.\n\n### Se a meta for mensal\n\nNão atingir a meta durante **2 ciclos mensais consecutivos** → conversa em até 3 dias.\n\n### Outra frequência\n\nUtilizar **2 ciclos completos consecutivos da frequência definida**.\n\n### Sem meta numérica\n\nSe houver **30 dias sem relação sexual e pelo menos um dos cônjuges manifestar insatisfação**, realizar Conversa de Reconexão em até 3 dias.\n\nContinuam proibidos:\n\n-  dívida sexual; \n-  reposição obrigatória; \n-  acúmulo; \n-  compensação; \n-  R$ 10 pela falta de sexo. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 227,
+      "line_end": 261
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-12-Q080",
+    "question_id": "Q080",
+    "version": "5.0",
+    "raw_text": "# 12. NOVA REGRA DE GATILHO POR CICLOS\n\nSubstitui a regra universal anterior de 2 semanas.\n\n### Se a meta for semanal ou maior\n\nFicar abaixo da frequência consensual durante **2 semanas consecutivas** → Conversa de Reconexão em até 3 dias.\n\n### Se a meta for quinzenal\n\nNão atingir a meta durante **2 ciclos consecutivos de 15 dias** → conversa em até 3 dias.\n\n### Se a meta for mensal\n\nNão atingir a meta durante **2 ciclos mensais consecutivos** → conversa em até 3 dias.\n\n### Outra frequência\n\nUtilizar **2 ciclos completos consecutivos da frequência definida**.\n\n### Sem meta numérica\n\nSe houver **30 dias sem relação sexual e pelo menos um dos cônjuges manifestar insatisfação**, realizar Conversa de Reconexão em até 3 dias.\n\nContinuam proibidos:\n\n-  dívida sexual; \n-  reposição obrigatória; \n-  acúmulo; \n-  compensação; \n-  R$ 10 pela falta de sexo. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 227,
+      "line_end": 261
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-13-Q055",
+    "question_id": "Q055",
+    "version": "5.0",
+    "raw_text": "# 13. PERGUNTA 055 — SUBSTITUÍDA DEFINITIVAMENTE\n\n# MOMENTO PROGRAMADO DE INTIMIDADE E RECONEXÃO\n\n**Mesmo quando rotina, trabalho ou cansaço diminuírem a espontaneidade, qual frequência você considera adequada para o casal reservar intencionalmente um momento privado de aproximação, carinho e reconexão íntima?**\n\n**A)** Pelo menos uma vez por semana.\n\n**B)** Pelo menos uma vez a cada 15 dias.\n\n**C)** Pelo menos uma vez por mês.\n\n### Efeitos\n\n**A:**\n\n**“{Nome} considera importante preservar semanalmente um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n**B:**\n\n**“{Nome} considera importante preservar pelo menos a cada 15 dias um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n**C:**\n\n**“{Nome} considera importante preservar pelo menos mensalmente um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n## NÓS DECIDIMOS — obrigatório\n\nA) semanal;\n\nB) quinzenal;\n\nC) mensal.\n\n### Texto contratual\n\n**“{Nome 1} e {Nome 2} comprometem-se a reservar {frequência escolhida} um momento privado destinado à aproximação, ao carinho e à reconexão íntima, com a finalidade de fortalecer seu vínculo afetivo e favorecer a intimidade sexual do casal.”**\n\n**“Nesse período poderão existir conversa íntima, abraço, beijo, carinho, massagem, toque afetivo ou outras formas voluntárias de aproximação capazes de reduzir o distanciamento e favorecer o desejo. Havendo vontade e consentimento mútuos, o momento poderá naturalmente evoluir para relação sexual.”**\n\n**“A ausência de desejo sexual antes do início do momento não determina seu cancelamento automático quando ambos estiverem confortáveis em preservar alguma forma de proximidade. O desejo poderá surgir progressivamente durante a conexão. Entretanto, qualquer contato físico poderá ser recusado ou interrompido a qualquer momento.”**\n\nEssa passa a ser **a Q055 oficial**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 261,
+      "line_end": 307
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-14-Q056",
+    "question_id": "Q056",
+    "version": "5.0",
+    "raw_text": "# 14. PERGUNTA 056 — CARINHO FÍSICO NÃO SEXUAL\n\nAlternativas substituídas:\n\n**A)** Beijo, abraço e carinho físico não sexual fazem parte regularmente da nossa rotina.\n\n**B)** Essas demonstrações existem, mas acontecem de maneira irregular.\n\n**C)** Atualmente existe pouco carinho físico fora dos momentos de intimidade sexual.\n\n### A\n\n**“{Nome} reconhece que o carinho físico não sexual faz parte regularmente da convivência e compromete-se a preservar essas manifestações sem exigir que evoluam para relação sexual.”**\n\n### B\n\n**“{Nome} reconhece que beijo, abraço e carinho existem, mas de maneira irregular, e compromete-se a participar de maior presença espontânea e voluntária dessas demonstrações no cotidiano.”**\n\n### C\n\n**“{Nome} reconhece que atualmente existe pouco carinho físico fora dos momentos sexuais e compromete-se, respeitando a vontade dos dois, a participar da reconstrução de maior proximidade afetiva na rotina.”**\n\n### A + C\n\n**“{Nome A} percebe carinho físico frequente, enquanto {Nome C} percebe pouco carinho fora dos momentos sexuais. Essa diferença de percepção deverá ser considerada, e ambos buscarão tornar mais visíveis as manifestações cotidianas de afeto.”**\n\n### B + C\n\n**“{Nome B} percebe carinho irregular, enquanto {Nome C} percebe pouca proximidade física. Ambos comprometem-se a cultivar maior presença de manifestações voluntárias de afeto no cotidiano.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 307,
+      "line_end": 339
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-15-Q060",
+    "question_id": "Q060",
+    "version": "5.0",
+    "raw_text": "# 15. PERGUNTA 060 — PORNOGRAFIA\n\nRetira-se definitivamente o antigo **NÓS DECIDIMOS permissivo**.\n\n### Regra fixa do Método\n\n**“{Nome 1} e {Nome 2} comprometem-se a não utilizar intencionalmente pornografia ou conteúdo sexual explícito envolvendo terceiros com finalidade de excitação sexual, reconhecendo essa prática como incompatível com os princípios de exclusividade, fidelidade e proteção da intimidade assumidos neste contrato.”**\n\nNão entra nessa definição conteúdo clínico, médico ou educacional quando não utilizado com finalidade de excitação.\n\n### Para B ou C\n\n`MODO_DE_SAÍDA = DIAGNÓSTICO_PRIVADO` quando houver informação ainda não conhecida pelo cônjuge.\n\n### Plano de correção\n\n**“{Nome} reconhece a necessidade de interromper o consumo intencional desse conteúdo e observar seus efeitos sobre desejo, intimidade, expectativas, tempo, finanças e confiança.”**\n\nSe houver nova ocorrência após o compromisso:\n\n-  identificar o contexto; \n-  aplicar conversa de correção em até 72 horas, quando o assunto já for compartilhado e for seguro fazê-lo; \n-  se houver dificuldade persistente de controle ou tentativas repetidas sem sucesso, recomendar apoio profissional/pastoral apropriado. \n\nO R$ 10 **não é multa por pornografia**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 339,
+      "line_end": 367
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-16-Q062",
+    "question_id": "Q062",
+    "version": "5.0",
+    "raw_text": "# 16. PERGUNTA 062 — DOR E DESCONFORTO\n\nAdicionar regra absoluta:\n\n**“Quando {Nome} comunicar desejo de diminuir, modificar ou interromper determinada prática íntima, esse pedido deverá ser respeitado.”**\n\nSe não for respeitado:\n\n`ALERTA_SEGURANÇA_SEXUAL = SIM`\n\nIsso prevalece independentemente da alternativa marcada.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 367,
+      "line_end": 381
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-17-Q069",
+    "question_id": "Q069",
+    "version": "5.0",
+    "raw_text": "# 17. PERGUNTA 069 — PLANEJAMENTO REPRODUTIVO\n\nAplicabilidade será interna.\n\nAdicionar:\n\n**“Nenhum dos cônjuges poderá retirar, sabotar, alterar ou manipular deliberadamente método contraceptivo previamente acordado sem conhecimento do outro, nem utilizar ameaça, fraude ou pressão para impor gravidez ou prevenção.”**\n\nHavendo indício:\n\n`ALERTA_COERÇÃO_REPRODUTIVA = SIM`\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 381,
+      "line_end": 395
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-18-Q077",
+    "question_id": "Q077",
+    "version": "5.0",
+    "raw_text": "# 18. PERGUNTA 077\n\nGravidez/pós-parto:\n\n`APLICAVEL = SIM/NÃO`\n\nNunca aparecerá quarta alternativa.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 395,
+      "line_end": 405
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-19-Q079",
+    "question_id": "Q079",
+    "version": "5.0",
+    "raw_text": "# 19. PERGUNTA 079 — SUBSTITUÍDA\n\n# MELHOR PERÍODO PARA A INTIMIDADE\n\n**Quando pensa em momentos de aproximação e intimidade, qual período normalmente funciona melhor para você?**\n\n**A)** À noite, principalmente próximo ao horário de dormir.\n\n**B)** Pela manhã, à tarde ou em outro período em que geralmente estou mais descansado(a).\n\n**C)** Não tenho período preferencial; depende do dia e da rotina.\n\n### A\n\n**“{Nome} percebe maior disponibilidade para aproximação e intimidade no período noturno e compromete-se a comunicar quando esse período estiver sendo continuamente ocupado por atividades evitáveis.”**\n\n### B\n\n**“{Nome} percebe maior disponibilidade para intimidade em períodos diferentes do final da noite e compromete-se a comunicar essa preferência, evitando que o casal dependa exclusivamente de momentos em que já esteja excessivamente cansado(a).”**\n\n### C\n\n**“{Nome} não identifica período fixo como especialmente favorável e considera mais importante observar as condições de cada dia e proteger os momentos previamente combinados.”**\n\n### A + B\n\n**“{Nome A} costuma possuir maior disponibilidade à noite, enquanto {Nome B} identifica maior disponibilidade em outro período. Ambos comprometem-se a considerar essa diferença ao organizar os Momentos Programados de Intimidade e Reconexão.”**\n\nSem NÓS DECIDIMOS.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 405,
+      "line_end": 437
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-20-Q080",
+    "question_id": "Q080",
+    "version": "5.0",
+    "raw_text": "# 20. PERGUNTA 080 — RETOMADA\n\nFica eliminado o gatilho próprio de “30 dias”.\n\nA Q080 passa a utilizar exclusivamente:\n\n`GATILHO_RECONEXAO_POR_FREQUENCIA`\n\ndefinido na Q051.\n\nQuando ativado, pode ser executado o Protocolo de Retomada da Q080.\n\nAssim não teremos dois relógios diferentes fiscalizando a mesma situação.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 437,
+      "line_end": 453
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-21-Q081",
+    "question_id": "Q081",
+    "version": "5.0",
+    "raw_text": "# 21. PERGUNTA 081 — SUBPERGUNTA OBRIGATÓRIA PARA RESPOSTA C\n\nQuando houver resposta C:\n\n### Pergunta privada\n\n**A situação indicada corresponde principalmente a qual destas situações?**\n\n**A)** Reconheço um risco ou possibilidade, mas não ocorreu quebra física de fidelidade.\n\n**B)** Houve uma situação física no passado, meu cônjuge já tem conhecimento e o assunto já foi ou está sendo tratado.\n\n**C)** Houve uma situação física relevante que ainda não foi adequadamente tratada entre nós.\n\n### A\n\n`RISCO_FIDELIDADE = SIM`\n\n### B\n\n`QUEBRA_FIDELIDADE_CONHECIDA = SIM`\n\nAplicar Protocolo de Reconstrução da Confiança quando ainda necessário.\n\n### C\n\n`QUEBRA_FIDELIDADE_NAO_TRATADA = SIM`\n\n`MODO_DE_SAÍDA = DIAGNÓSTICO_PRIVADO`\n\nO sistema **não imprimirá automaticamente uma confissão no contrato compartilhado**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 453,
+      "line_end": 487
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-22-Q085",
+    "question_id": "Q085",
+    "version": "5.0",
+    "raw_text": "# 22. PERGUNTA 085 — REGISTROS ÍNTIMOS\n\nAdicionar:\n\n**“O consentimento para produzir ou armazenar determinado registro íntimo poderá ser posteriormente revogado pela pessoa retratada, que poderá solicitar sua exclusão dos meios sob controle do outro cônjuge.”**\n\nE:\n\n**“Fotografia, vídeo, gravação ou outro conteúdo íntimo jamais poderá ser utilizado para ameaça, chantagem, vingança, humilhação ou exposição.”**\n\nSe ocorrer:\n\n`ALERTA_SEGURANÇA_E_PRIVACIDADE = SIM`\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 487,
+      "line_end": 503
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-23-Q090",
+    "question_id": "Q090",
+    "version": "5.0",
+    "raw_text": "# 23. PERGUNTA 090 — REVISÃO DA INTIMIDADE\n\nAdicionar:\n\n**“A Revisão Periódica da Intimidade não substitui conversas ou protocolos acionados por problema atual. {Nome 1} e {Nome 2} não deverão esperar a próxima revisão mensal, trimestral ou semestral quando já existir insatisfação relevante, quebra de confiança ou outro gatilho de reconexão.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 503,
+      "line_end": 511
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-24-Q092",
+    "question_id": "Q092",
+    "version": "5.0",
+    "raw_text": "# 24. PERGUNTA 092 — CONVIVÊNCIA COM AS FAMÍLIAS\n\nO NÓS DECIDIMOS deverá ser executado **separadamente para cada família**.\n\n### Família de `{Nome 1}`\n\nA) semanal.\n\nB) quinzenal.\n\nC) mensal/outra.\n\n### Família de `{Nome 2}`\n\nA) semanal.\n\nB) quinzenal.\n\nC) mensal/outra.\n\nIsso permite, por exemplo, uma família próxima geograficamente e outra distante.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 511,
+      "line_end": 535
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-25-Q091",
+    "question_id": "Q091",
+    "version": "5.0",
+    "raw_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-25-Q092",
+    "question_id": "Q092",
+    "version": "5.0",
+    "raw_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-25-Q093",
+    "question_id": "Q093",
+    "version": "5.0",
+    "raw_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-25-Q094",
+    "question_id": "Q094",
+    "version": "5.0",
+    "raw_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-25-Q095",
+    "question_id": "Q095",
+    "version": "5.0",
+    "raw_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-25-Q096",
+    "question_id": "Q096",
+    "version": "5.0",
+    "raw_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-25-Q097",
+    "question_id": "Q097",
+    "version": "5.0",
+    "raw_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-25-Q098",
+    "question_id": "Q098",
+    "version": "5.0",
+    "raw_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-25-Q099",
+    "question_id": "Q099",
+    "version": "5.0",
+    "raw_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-25-Q100",
+    "question_id": "Q100",
+    "version": "5.0",
+    "raw_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-26-Q097",
+    "question_id": "Q097",
+    "version": "5.0",
+    "raw_text": "# 26. PERGUNTA 097 — DESRESPEITO DE FAMILIAR\n\nSubstituir o prazo aberto.\n\n### Nova regra\n\n**Se for possível e seguro estabelecer limite no momento do ocorrido:** intervenção imediata.\n\n**Se não for adequado ou seguro fazê-lo naquele instante:** o cônjuge conversa com seu parceiro **no mesmo dia** e, quando a solução adequada for diálogo com o familiar, aborda o familiar responsável **em até 72 horas**.\n\nSe houver risco ou violência, prevalece afastamento e fluxo de segurança.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 543,
+      "line_end": 557
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-27-Q098",
+    "question_id": "Q098",
+    "version": "5.0",
+    "raw_text": "# 27. PERGUNTA 098\n\nResponsabilidade parental será verificada internamente:\n\n`Q098_APLICAVEL = SIM/NÃO`\n\nSem quarta resposta.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 557,
+      "line_end": 567
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  },
+  {
+    "patch_id": "PATCH50-28-Q100",
+    "question_id": "Q100",
+    "version": "5.0",
+    "raw_text": "# 28. PERGUNTA 100 — MORADIA TEMPORÁRIA DE FAMILIAR\n\nEliminar:\n\n> “período experimental curto”.\n\n### Nova alternativa B\n\n**B) Permitir permanência temporária com data concreta de revisão.**\n\nCampos obrigatórios:\n\n`DATA_INÍCIO`\n\n`DATA_REVISÃO`\n\n### Texto exato\n\n**“{Nome 1} e {Nome 2} decidiram permitir que {familiar} permaneça temporariamente em sua residência a partir de {data inicial}, realizando obrigatoriamente uma revisão da convivência em {data de revisão}. Nessa data avaliarão privacidade, despesas, rotina, tarefas, impacto sobre filhos ou dependentes e eventual continuidade da permanência.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 567,
+      "line_end": 589
+    },
+    "status": "CAPTURED_AND_PARTIALLY_COMPILED"
+  }
+]

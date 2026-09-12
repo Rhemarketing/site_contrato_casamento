@@ -18,6 +18,7 @@
     "demo:seed": "tsx scripts/seed-demo.ts",
     "demo:reset": "tsx scripts/reset-demo.ts",
     "db:seed": "prisma db seed",
+    "contract:compile": "tsx scripts/compile-contract-master.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev",
     "prisma:migrate:deploy": "prisma migrate deploy"

@@ -1,0 +1,260 @@
+[
+  {
+    "event_rule_id": "EV-P01",
+    "question_ids": [
+      "Q001",
+      "Q003",
+      "Q013",
+      "Q014",
+      "Q023"
+    ],
+    "protocol_id": "P01",
+    "predicate": {
+      "op": "fact",
+      "name": "relevant_issue_requires_formal_conversation"
+    },
+    "description": "Problema relevante ou reclamação requer conversa formal; prazo e exclusões do P01.",
+    "source_refs": [
+      {
+        "source_id": "PDF01",
+        "package_path": "fontes/transcricao_com_paginas.txt",
+        "exact_anchor": "PROTOCOLO GERAL DE CONVERSA,",
+        "source_version": "7.0_OR_FINAL_AUDIT"
+      }
+    ],
+    "unknown_result": "NO_AUTOMATIC_TRIGGER_PENDING_CONTEXT",
+    "is_active": false
+  },
+  {
+    "event_rule_id": "EV-P02",
+    "question_ids": [
+      "Q051",
+      "Q053",
+      "Q059",
+      "Q083"
+    ],
+    "protocol_id": "P02",
+    "predicate": {
+      "op": "fact",
+      "name": "two_consecutive_refusals_reconnection_due"
+    },
+    "description": "Duas recusas consecutivas no contexto definido; conversa, nunca obrigação sexual.",
+    "source_refs": [
+      {
+        "source_id": "SUP12-08",
+        "rule_id": "CANON50-31"
+      }
+    ],
+    "unknown_result": "NO_AUTOMATIC_TRIGGER_PENDING_CONTEXT",
+    "is_active": false
+  },
+  {
+    "event_rule_id": "EV-P03",
+    "question_ids": [
+      "Q051",
+      "Q053",
+      "Q059",
+      "Q080"
+    ],
+    "protocol_id": "P03",
+    "predicate": {
+      "op": "fact",
+      "name": "frequency_reconnection_due"
+    },
+    "description": "Dois ciclos da frequência definida; sem meta, 30 dias sem sexo e insatisfação de pelo menos um; respeitar impedimentos.",
+    "source_refs": [
+      {
+        "source_id": "SUP12-08",
+        "rule_id": "CANON50-12"
+      }
+    ],
+    "unknown_result": "NO_AUTOMATIC_TRIGGER_PENDING_CONTEXT",
+    "is_active": false
+  },
+  {
+    "event_rule_id": "EV-P05",
+    "question_ids": [
+      "Q018",
+      "Q024",
+      "Q030",
+      "Q033",
+      "Q060",
+      "Q081",
+      "Q158",
+      "Q181",
+      "Q189"
+    ],
+    "protocol_id": "P05",
+    "predicate": {
+      "op": "all",
+      "items": [
+        {
+          "op": "fact",
+          "name": "significant_trust_break_known_and_needs_treatment"
+        },
+        {
+          "op": "fact",
+          "name": "joint_trust_repair_safe"
+        }
+      ]
+    },
+    "description": "Quebra significativa conhecida e ainda a tratar; não revelar fato secreto nem forçar reconciliação.",
+    "source_refs": [
+      {
+        "source_id": "SUP12-08",
+        "rule_id": "CANON50-04"
+      }
+    ],
+    "unknown_result": "NO_AUTOMATIC_TRIGGER_PENDING_CONTEXT",
+    "is_active": false
+  },
+  {
+    "event_rule_id": "EV-P06",
+    "question_ids": [
+      "Q048",
+      "Q117",
+      "Q137",
+      "Q156"
+    ],
+    "protocol_id": "P06",
+    "predicate": {
+      "op": "fact",
+      "name": "two_avoidable_consecutive_cancellations_not_rescheduled"
+    },
+    "description": "Dois momentos consecutivos cancelados por compromissos evitáveis e não remarcados; conversar em 72h.",
+    "source_refs": [
+      {
+        "source_id": "SUP12-08",
+        "rule_id": "CANON50-08"
+      }
+    ],
+    "unknown_result": "NO_AUTOMATIC_TRIGGER_PENDING_CONTEXT",
+    "is_active": false
+  },
+  {
+    "event_rule_id": "EV-P07",
+    "question_ids": [
+      "Q080"
+    ],
+    "protocol_id": "P07",
+    "predicate": {
+      "op": "fact",
+      "name": "frequency_reconnection_due"
+    },
+    "description": "Mesmo relógio de Q051/P03, sem gatilho independente.",
+    "source_refs": [
+      {
+        "source_id": "SUP12-08",
+        "rule_id": "CANON50-20"
+      }
+    ],
+    "unknown_result": "NO_AUTOMATIC_TRIGGER_PENDING_CONTEXT",
+    "is_active": false
+  },
+  {
+    "event_rule_id": "EV-P08",
+    "question_ids": [
+      "Q043"
+    ],
+    "protocol_id": "P08",
+    "predicate": {
+      "op": "fact",
+      "name": "objective_financial_crisis_trigger_met"
+    },
+    "description": "Gatilhos objetivos Q043, incluindo reserva 25% e piso de um mês.",
+    "source_refs": [
+      {
+        "source_id": "PDF01",
+        "page_start": 277,
+        "page_end": 278,
+        "line_start": 11834,
+        "line_end": 11910
+      },
+      {
+        "source_id": "SUP12-08",
+        "rule_id": "CANON50-07"
+      }
+    ],
+    "unknown_result": "NO_AUTOMATIC_TRIGGER_PENDING_CONTEXT",
+    "is_active": false
+  },
+  {
+    "event_rule_id": "EV-P10",
+    "question_ids": [
+      "Q151",
+      "Q152",
+      "Q153",
+      "Q154",
+      "Q155",
+      "Q156",
+      "Q157",
+      "Q158",
+      "Q159",
+      "Q160"
+    ],
+    "protocol_id": "P10",
+    "predicate": {
+      "op": "fact",
+      "name": "problematic_habit_or_loss_of_control_flag"
+    },
+    "description": "Uso problemático, jogo problemático, perda de controle ou prejuízo significativo; proteções voluntárias.",
+    "source_refs": [
+      {
+        "source_id": "PDF01",
+        "page_start": 424,
+        "page_end": 426,
+        "line_start": 18164,
+        "line_end": 18245
+      }
+    ],
+    "unknown_result": "NO_AUTOMATIC_TRIGGER_PENDING_CONTEXT",
+    "is_active": false
+  },
+  {
+    "event_rule_id": "EV-P11",
+    "question_ids": [
+      "Q180",
+      "Q190"
+    ],
+    "protocol_id": "P11",
+    "predicate": {
+      "op": "fact",
+      "name": "three_same_issue_conversations_in_90_days_without_sufficient_improvement"
+    },
+    "description": "Três conversas estruturadas em 90 dias sem melhora suficiente; critério ainda requer definição.",
+    "source_refs": [
+      {
+        "source_id": "PDF01",
+        "page_start": 373,
+        "page_end": 374,
+        "line_start": 15923,
+        "line_end": 15996
+      }
+    ],
+    "unknown_result": "NO_AUTOMATIC_TRIGGER_PENDING_CONTEXT",
+    "is_active": false
+  },
+  {
+    "event_rule_id": "EV-P12",
+    "question_ids": [
+      "Q184"
+    ],
+    "protocol_id": "P12",
+    "predicate": {
+      "op": "fact",
+      "name": "previously_corrected_behavior_hits_original_trigger"
+    },
+    "description": "Reabrir protocolo da pergunta original; nenhuma penalidade nova.",
+    "source_refs": [
+      {
+        "source_id": "PDF01",
+        "page_start": 378,
+        "page_end": 380,
+        "line_start": 16155,
+        "line_end": 16212
+      }
+    ],
+    "unknown_result": "NO_AUTOMATIC_TRIGGER_PENDING_CONTEXT",
+    "is_active": false
+  }
+]

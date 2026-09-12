@@ -1,0 +1,391 @@
+{
+  "precedence": [
+    "critical_safety",
+    "child_or_dependent_risk",
+    "health_urgency",
+    "coercion_violence_severe_trust_break",
+    "essential_finances",
+    "persistent_relationship_problems",
+    "development",
+    "preferences"
+  ],
+  "priority_source": {
+    "source_id": "PDF01",
+    "page_start": 420,
+    "page_end": 420,
+    "line_start": 17973,
+    "line_end": 17997
+  },
+  "privacy_classes": [
+    "COMMON",
+    "PRIVATE",
+    "SAFETY_PRIVATE"
+  ],
+  "output_targets": [
+    "CONTRACT",
+    "JOINT_PLAN",
+    "PRIVATE_PLAN",
+    "INTERNAL",
+    "NONE"
+  ],
+  "pair_keys": [
+    "AA",
+    "AB",
+    "AC",
+    "BB",
+    "BC",
+    "CC"
+  ],
+  "pair_actions": [
+    "MERGE_EXACT_TEXT",
+    "KEEP_INDIVIDUAL_OUTPUTS",
+    "USE_COMPATIBILITY_TEXT",
+    "OPEN_NOS_DECIDIMOS",
+    "PRIVATE_DIAGNOSTIC",
+    "SAFETY_FLOW",
+    "TRIGGER_PROTOCOL",
+    "NO_ADDITIONAL_OUTPUT"
+  ],
+  "nos_trigger_types": [
+    "ALWAYS",
+    "DIVERGENCE_ONLY",
+    "CONCRETE_EVENT_ONLY",
+    "OPTIONAL",
+    "CONDITION_ONLY",
+    "NEVER"
+  ],
+  "source_precedence": [
+    "V7_CORRECTIONS",
+    "FINAL_AUDIT_WHEN_NOT_SUPERSEDED",
+    "V6_CORRECTIONS",
+    "V5_CANONICAL_CORRECTIONS_SUPPLIED",
+    "V1_BASES_SUBORDINATE_TO_V5_V6_V7",
+    "V4_1_AND_AVAILABLE_QUESTION_BLOCKS"
+  ],
+  "automatic_fallback_action": null,
+  "unknown_rules_behavior": "BLOCK_RELEASE_NOT_SILENT_DEFAULT",
+  "equivalent_pairs_preserve_person_bindings": true,
+  "no_unvalidated_global_score": true,
+  "contribution": {
+    "currency": "BRL",
+    "amount_decimal": "10.00",
+    "rule_enum": [
+      "NONE",
+      "GENERAL_PROCESS_REFUSAL"
+    ],
+    "beneficiary": "COUPLE_RECONNECTION_FUND",
+    "automatic_payment_integration": false,
+    "excluded_reasons": [
+      "sex",
+      "sexual_refusal",
+      "low_desire",
+      "sexual_frequency_not_met",
+      "health",
+      "emotional_suffering",
+      "safety",
+      "violence",
+      "dependency",
+      "compulsion",
+      "relapse",
+      "pregnancy",
+      "children_disagreement",
+      "spiritual_disagreement",
+      "legitimate_no_consensus",
+      "legitimate_impediment",
+      "unemployment",
+      "lack_of_money"
+    ],
+    "refusal_evaluation_requires": [
+      "aware_of_process",
+      "reasonable_communication_conditions",
+      "explicit_or_deliberate_refusal",
+      "expired_valid_deadline",
+      "no_legitimate_impediment",
+      "no_exclusion_reason",
+      "no_safety_block"
+    ],
+    "source_refs": [
+      {
+        "source_id": "PDF01",
+        "page_start": 439,
+        "page_end": 440,
+        "line_start": 18773,
+        "line_end": 18803
+      },
+      {
+        "source_id": "PDF01",
+        "page_start": 213,
+        "page_end": 213,
+        "line_start": 9123,
+        "line_end": 9144
+      }
+    ],
+    "implementation_note": "Registro simbólico não autoriza débito automático. Fatos de intenção/impedimento não podem ser inferidos apenas por timeout."
+  },
+  "safety": {
+    "critical_generation_status": "PRIVATE_REVIEW_REQUIRED",
+    "blocks": [
+      "shared_response_disclosure",
+      "joint_decision_on_sensitive_topic",
+      "contribution",
+      "automatic_confrontation",
+      "revealing_contract_clause",
+      "revealing_notification",
+      "automatic_joint_therapy_assumption"
+    ],
+    "private_review_resolution": "PENDING_PRODUCT_DEFINITION",
+    "partner_public_status": "Must not disclose that a private safety flag exists; neutral projection required.",
+    "source_option_severities": {
+      "Q101": {
+        "B": "BASE",
+        "C": "ALTO",
+        "source_ref": {
+          "source_id": "MSG101120",
+          "line_start": 11,
+          "line_end": 48
+        }
+      },
+      "Q102": {
+        "B": "BASE",
+        "C": "ALTO",
+        "source_ref": {
+          "source_id": "MSG101120",
+          "line_start": 48,
+          "line_end": 82
+        }
+      },
+      "Q103": {
+        "B": "ALTO",
+        "C": "CRITICO",
+        "source_ref": {
+          "source_id": "MSG101120",
+          "line_start": 82,
+          "line_end": 119
+        }
+      },
+      "Q104": {
+        "B": "BASE",
+        "C": "CRITICO",
+        "source_ref": {
+          "source_id": "MSG101120",
+          "line_start": 119,
+          "line_end": 156
+        }
+      },
+      "Q105": {
+        "B": "ALTO",
+        "C": "CRITICO",
+        "source_ref": {
+          "source_id": "MSG101120",
+          "line_start": 156,
+          "line_end": 187
+        }
+      },
+      "Q106": {
+        "B": "BASE",
+        "C": "ALTO",
+        "source_ref": {
+          "source_id": "MSG101120",
+          "line_start": 187,
+          "line_end": 218
+        }
+      },
+      "Q107": {
+        "B": "BASE",
+        "C": "ALTO",
+        "source_ref": {
+          "source_id": "MSG101120",
+          "line_start": 218,
+          "line_end": 246
+        }
+      },
+      "Q108": {
+        "B": "BASE",
+        "C": "ALTO",
+        "source_ref": {
+          "source_id": "MSG101120",
+          "line_start": 246,
+          "line_end": 277
+        }
+      },
+      "Q109": {
+        "B": "BASE",
+        "C": "ALTO",
+        "source_ref": {
+          "source_id": "MSG101120",
+          "line_start": 277,
+          "line_end": 308
+        }
+      },
+      "Q110": {
+        "B": "BASE",
+        "C": "CRITICO",
+        "source_ref": {
+          "source_id": "MSG101120",
+          "line_start": 308,
+          "line_end": 342
+        }
+      }
+    },
+    "two_distinct_B_rule": {
+      "threshold": 2,
+      "distinct_question_ids": true,
+      "range": [
+        "Q101",
+        "Q110"
+      ],
+      "severity": "ALTO",
+      "aggregation_scope": null,
+      "status": "SOURCE_RULE_CAPTURED_SCOPE_REQUIRES_DEFINITION",
+      "source_id": "MSG101120"
+    },
+    "Q103_override": {
+      "any_report_of": [
+        "estrangulamento",
+        "sufocamento intencional",
+        "compressão deliberada do pescoço"
+      ],
+      "severity": "CRITICO",
+      "even_single_episode": true,
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 346,
+        "page_end": 346,
+        "line_start": 14800,
+        "line_end": 14817
+      }
+    },
+    "all_A_clause": {
+      "template_candidate": "{Nome 1} e {Nome 2} reconhecem que casamento saudável pressupõe liberdade para falar, discordar e estabelecer limites sem violência, ameaça, coerção, perseguição, isolamento, controle abusivo ou utilização dos filhos como instrumento de pressão. Nenhuma diferença conjugal autoriza essas condutas.",
+      "both_respondents_required": true,
+      "single_A_sufficient": false,
+      "not_applicable_handling": "PENDING_EXPLICIT_AGGREGATION_RULE",
+      "source_id": "MSG101120",
+      "is_active": false
+    }
+  },
+  "plan_configuration": {
+    "AA_Q200": {
+      "primary_max": 3,
+      "secondary_max": 3
+    },
+    "AB_OR_BB_Q200": "MODERATE_UNQUANTIFIED_IN_SOURCE",
+    "ANY_C_Q200": "LIGHT_UNQUANTIFIED_IN_SOURCE"
+  },
+  "default_reference_period_days": 90,
+  "repeat_behavior": {
+    "default_occurrences": 3,
+    "window_days": 30,
+    "lower_frequency_events": "3 consecutive occurrences; applicability must be explicit",
+    "specific_trigger_wins": true
+  },
+  "rlf": {
+    "definition": "Soma das rendas líquidas mensais recorrentes disponíveis para a família.",
+    "currency_field_required": true,
+    "zero_rlf_percentages": "UNDEFINED_DO_NOT_DIVIDE_BY_ZERO",
+    "significant_change_threshold": null
+  },
+  "copyright_scripture": {
+    "full_text_required_in_final_contract_per_v41": true,
+    "translation_id": null,
+    "commercial_usage_permission": null,
+    "store_references_separately": true
+  },
+  "retention_policy": null,
+  "access_period_after_purchase": null,
+  "refund_rules": null,
+  "admission_scoring_formula": null,
+  "spiritual_non_coercion": {
+    "source_id": "MSG101120",
+    "text": "A fé cristã será utilizada neste contrato como fundamento de amor, verdade, fidelidade, responsabilidade, perdão, serviço e respeito. Nenhum dos cônjuges poderá utilizar Bíblia, oração, igreja, pastor, líder, cargo ministerial, profecia, revelação ou argumento espiritual para justificar violência, ameaça, coerção sexual, controle financeiro abusivo, isolamento, humilhação ou eliminação da liberdade legítima de consciência e expressão do outro."
+  },
+  "canonical_5_available": true,
+  "unified_consent": {
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 611,
+      "line_end": 619
+    },
+    "source_text": "# 30. REGRA UNIFICADA DE CONSENTIMENTO\n\nPassa a reger **todo o Método**, não somente o bloco sexual:\n\n**“Beijo, abraço, carinho, massagem, toque físico ou relação sexual dependerão da vontade das pessoas envolvidas em cada ocasião. Consentimento anterior não constitui consentimento permanente. Frequência, programação, casamento, reconciliação, presente, contribuição financeira ou outro compromisso contratual não substituem consentimento.”**\n\n---",
+    "previous_consent_is_permanent": false,
+    "scheduled_contact_required": false
+  },
+  "origin_family_safety": {
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "source_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "ordinary_contact_rules_may_be_suspended": true
+  },
+  "financial_canonical_5": {
+    "always_relevant": [
+      "real_estate",
+      "family_vehicle",
+      "corporate_equity",
+      "family_asset_guarantee",
+      "essential_family_asset_disposal"
+    ],
+    "other_asset_operations_rlf_ratio": "0.50",
+    "individual_income_change_review_ratio": "0.20",
+    "individual_income_change_reference": "last_financial_division",
+    "review_timing": "next_monthly_financial_review",
+    "crisis_single_reserve_use_ratio": "0.25",
+    "crisis_remaining_reserve_below_essential_expense_months": 1,
+    "source_rule_ids": [
+      "CANON50-03",
+      "CANON50-06",
+      "CANON50-07"
+    ]
+  },
+  "admission_scoring_formula_status": "IMPLEMENTED_ON_SITE_USER_CONFIRMED_NOT_IMPORTED",
+  "pair_compilation": {
+    "version": "1.4.0",
+    "actions_registered_offline": true,
+    "runtime_inference_allowed": false,
+    "missing_exact_text_behavior": "BLOCK_COMPONENT_NOT_GENERATE_TEXT",
+    "private_pair_details_shared": false,
+    "user_confirmed_admission_complete": true,
+    "pair_exact_texts_missing": 0,
+    "editorial_completion_source": {
+      "source_id": "USER_DELEGATED_487_TEXTS",
+      "origin": "EXPLICIT_USER_DELEGATION",
+      "instruction": "Decida os 487 por mim",
+      "scope": "Redação definitiva dos 487 textos conjuntos antes ausentes; preservar as regras já estabelecidas.",
+      "package_path": "auditoria/decisao_textos_conjuntos_1_4_0.json"
+    },
+    "homogeneous_pair_text_status": "FINAL_BY_USER_DELEGATION"
+  },
+  "gambling": {
+    "policy_id": "Q154_TOTAL_PROHIBITION",
+    "question_id": "Q154",
+    "policy": "TOTAL_PROHIBITION",
+    "source_ref": {
+      "source_id": "USER_Q154_TOTAL_PROHIBITION",
+      "decision": "opção 1",
+      "context": "Proibição integral de apostas envolvendo dinheiro, mesmo pequenas quantias; sem R$10 por aposta, recaída ou dificuldade de controle.",
+      "origin": "EXPLICIT_USER_DECISION"
+    },
+    "contract_template": "{Nome 1} e {Nome 2} comprometem-se a não participar de apostas, bets, cassino, jogos de azar, loterias ou atividades semelhantes envolvendo dinheiro, mesmo em pequenas quantias, tanto com recursos pessoais quanto com recursos familiares.",
+    "scope": "ALL_MONEY_WAGERS_PERSONAL_AND_FAMILY_RESOURCES",
+    "nos_trigger_type": "NEVER",
+    "contribution_rule": "NONE",
+    "applies_independently_of_answers": true,
+    "private_C_preserved": true,
+    "P10_for_problematic_gambling": true,
+    "safety_overrides": true,
+    "wording_provenance": "EDITORIAL_IMPLEMENTATION_OF_USER_DECISION",
+    "production_release": false
+  },
+  "editorial_texts": {
+    "version": "1.4.0",
+    "collection": "dados/textos_conjuntos.json",
+    "count": 487,
+    "status": "FINAL_BY_USER_DELEGATION",
+    "runtime_generation_allowed": false,
+    "equal_answers_are_not_automatic_joint_agreement": true,
+    "requires_new_requester_editorial_decision": false,
+    "production_activation_is_separate": true
+  }
+}

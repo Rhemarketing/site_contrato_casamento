@@ -1,0 +1,26 @@
+{
+  "package_version": "1.3.1",
+  "total_pairs": 1200,
+  "defined_actions": 1200,
+  "missing_actions": 0,
+  "newly_defined_actions": 3,
+  "remaining_action_ids": [],
+  "pair_exact_texts_missing": 487,
+  "action_counts": {
+    "MERGE_EXACT_TEXT": 426,
+    "USE_COMPATIBILITY_TEXT": 108,
+    "KEEP_INDIVIDUAL_OUTPUTS": 287,
+    "PRIVATE_DIAGNOSTIC": 147,
+    "OPEN_NOS_DECIDIMOS": 168,
+    "NO_ADDITIONAL_OUTPUT": 10,
+    "SAFETY_FLOW": 53,
+    "TRIGGER_PROTOCOL": 1
+  },
+  "decision_source": {
+    "source_id": "USER_Q154_TOTAL_PROHIBITION",
+    "decision": "opção 1",
+    "context": "Proibição integral de apostas envolvendo dinheiro, mesmo pequenas quantias; sem R$10 por aposta, recaída ou dificuldade de controle.",
+    "origin": "EXPLICIT_USER_DECISION"
+  },
+  "note": "Todas as ações estão registradas. Os 487 textos conjuntos e demais dependências de implementação permanecem pendentes."
+}

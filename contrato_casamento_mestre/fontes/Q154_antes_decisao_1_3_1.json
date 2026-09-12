@@ -1,0 +1,693 @@
+{
+  "question": {
+    "question_id": "Q154",
+    "display_order": 154,
+    "package_version": "1.3.0",
+    "method_target_version": "7.0",
+    "title": "APOSTAS E JOGOS ENVOLVENDO DINHEIRO",
+    "source_content_status": "QUESTION_AND_ABC_FOUND",
+    "production_status": "BLOCKED_PENDING_CONSOLIDATION",
+    "is_active": false,
+    "prompt_text": "Pensando nos últimos 90 dias, qual alternativa melhor representa sua participação em apostas, bets, cassino, jogos de azar, loterias ou atividades semelhantes envolvendo dinheiro?",
+    "prompt_status": "EXPLICIT_TEXT",
+    "base_source_ref": {
+      "source_id": "MD04",
+      "line_start": 183,
+      "line_end": 260
+    },
+    "base_source_text": "# PERGUNTA 154 — APOSTAS E JOGOS ENVOLVENDO DINHEIRO\n\n### Pergunta\n\n**Pensando nos últimos 90 dias, qual alternativa melhor representa sua participação em apostas, bets, cassino, jogos de azar, loterias ou atividades semelhantes envolvendo dinheiro?**\n\n**A)** Não participei ou participei raramente com valores pequenos e sem impacto financeiro relevante.\n\n**B)** Apostei algumas vezes e já gastei mais tempo ou dinheiro do que inicialmente planejava.\n\n**C)** Houve frequência elevada, perdas relevantes, tentativa de recuperar prejuízos apostando novamente, dinheiro escondido, dívida ou conflito conjugal relacionado às apostas.\n\n### A\n\n**{Nome} não identifica atualmente impacto relevante de apostas sobre sua vida familiar e compromete-se a preservar limites financeiros compatíveis com as responsabilidades do casal.**\n\n### B\n\n**{Nome} reconhece que apostas já ultrapassaram em alguma ocasião aquilo que havia planejado e compromete-se a estabelecer limites objetivos antes de qualquer nova participação.**\n\n### C\n\n`DIAGNOSTICO_PRIVADO`\n\n`ALERTA_JOGO_PROBLEMATICO = SIM`\n\n**{Nome} reconhece sinais de comportamento de aposta capaz de prejudicar finanças, confiança ou responsabilidades familiares e compromete-se a não utilizar novas apostas como estratégia para recuperar perdas anteriores.**\n\n### PARÁGRAFO FIXO\n\nNunca será permitido financiar aposta por:\n\n-  empréstimo; \n-  cheque especial; \n-  cartão sem capacidade de pagamento; \n-  dinheiro destinado a despesas essenciais; \n-  reserva protegida; \n-  ocultação de dívida. \n\n## NÓS DECIDIMOS — somente na ausência de padrão problemático ativo\n\n**A)** Não utilizar dinheiro familiar em apostas.\n\n**B)** Permitir apenas dentro de valor mensal específico de lazer individual.\n\n**C)** Definir regra mais restritiva específica.\n\n### Texto A\n\n**“{Nome 1} e {Nome 2} decidiram não destinar recursos familiares a apostas ou jogos de azar.”**\n\n### Texto B\n\nCampo:\n\n`LIMITE_MENSAL_APOSTAS`\n\n**“{Nome 1} e {Nome 2} decidiram que eventual participação em apostas ficará limitada a {valor} por mês, exclusivamente dentro de recursos pessoais de lazer disponíveis e sem possibilidade de crédito, dívida ou utilização de dinheiro destinado às obrigações familiares.”**\n\n### Texto C\n\n**“{Nome 1} e {Nome 2} estabeleceram a seguinte regra mais restritiva para apostas: {regra definida}.”**\n\n### Cruzamentos\n\n154 × 034–043.\n\n### Fundamentação bíblica\n\n1 Timóteo 6:10.\n\nProvérbios 13:11.\n\n1 Coríntios 6:12.\n\n---",
+    "earlier_question_source_refs": [],
+    "patch_ids": [
+      "PATCH70-Q154"
+    ],
+    "audit": {
+      "status_in_source": "APROVADA_COM_REGRA",
+      "note": "Estrutura funciona, mas há decisão doutrinária sobre admitir aposta recreativa.",
+      "source_ref": {
+        "source_id": "PDF01",
+        "page_start": 394,
+        "page_end": 394,
+        "line_start": 16878,
+        "line_end": 16880
+      }
+    },
+    "applicability_rule": null,
+    "reference_period": {
+      "default_days": 90,
+      "source_override_text": null
+    },
+    "clause_destination": null,
+    "clause_destination_status": "PENDING_EXPLICIT_MAPPING",
+    "nos_trigger_type": "NEVER",
+    "protocol_ids": [],
+    "contribution_rule": "NONE",
+    "options": [
+      {
+        "code": "A",
+        "text": "Não participei ou participei raramente com valores pequenos e sem impacto financeiro relevante.",
+        "effect_source_text": "{Nome} não identifica atualmente impacto relevante de apostas sobre sua vida familiar e compromete-se a preservar limites financeiros compatíveis com as responsabilidades do casal.",
+        "privacy_class": "COMMON",
+        "output_target": "CONTRACT",
+        "effect_status": "SOURCE_TEXT_FOUND",
+        "contract_template": null,
+        "text_source_ref": {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        "effect_source_ref": {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        "effect_template_candidate": "{Nome} não identifica atualmente impacto relevante de apostas sobre sua vida familiar e compromete-se a preservar limites financeiros compatíveis com as responsabilidades do casal.",
+        "effect_template_status": "CANDIDATE_NOT_AUTHORIZED_FOR_SHARED_OUTPUT",
+        "routing_source_refs": [
+          {
+            "source_id": "MD04",
+            "line_start": 183,
+            "line_end": 260
+          }
+        ],
+        "output_component_id": "OUT-Q154-A"
+      },
+      {
+        "code": "B",
+        "text": "Apostei algumas vezes e já gastei mais tempo ou dinheiro do que inicialmente planejava.",
+        "effect_source_text": "{Nome} reconhece que apostas já ultrapassaram em alguma ocasião aquilo que havia planejado e compromete-se a estabelecer limites objetivos antes de qualquer nova participação.",
+        "privacy_class": "COMMON",
+        "output_target": "CONTRACT",
+        "effect_status": "SOURCE_TEXT_FOUND",
+        "contract_template": null,
+        "text_source_ref": {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        "effect_source_ref": {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        "effect_template_candidate": "{Nome} reconhece que apostas já ultrapassaram em alguma ocasião aquilo que havia planejado e compromete-se a estabelecer limites objetivos antes de qualquer nova participação.",
+        "effect_template_status": "CANDIDATE_NOT_AUTHORIZED_FOR_SHARED_OUTPUT",
+        "routing_source_refs": [
+          {
+            "source_id": "MD04",
+            "line_start": 183,
+            "line_end": 260
+          }
+        ],
+        "output_component_id": "OUT-Q154-B"
+      },
+      {
+        "code": "C",
+        "text": "Houve frequência elevada, perdas relevantes, tentativa de recuperar prejuízos apostando novamente, dinheiro escondido, dívida ou conflito conjugal relacionado às apostas.",
+        "effect_source_text": "DIAGNOSTICO_PRIVADO\n\nALERTA_JOGO_PROBLEMATICO = SIM\n\n{Nome} reconhece sinais de comportamento de aposta capaz de prejudicar finanças, confiança ou responsabilidades familiares e compromete-se a não utilizar novas apostas como estratégia para recuperar perdas anteriores.",
+        "privacy_class": "PRIVATE",
+        "output_target": "PRIVATE_PLAN",
+        "effect_status": "SOURCE_TEXT_FOUND",
+        "contract_template": null,
+        "text_source_ref": {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        "effect_source_ref": {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        "effect_template_candidate": null,
+        "effect_template_status": "CANDIDATE_NOT_AUTHORIZED_FOR_SHARED_OUTPUT",
+        "routing_source_refs": [
+          {
+            "source_id": "MD04",
+            "line_start": 183,
+            "line_end": 260
+          },
+          {
+            "source_id": "PDF01",
+            "page_start": 436,
+            "page_end": 436,
+            "line_start": 18629,
+            "line_end": 18653
+          }
+        ],
+        "output_component_id": "OUT-Q154-C"
+      }
+    ],
+    "source_sections": [
+      {
+        "label": "Pergunta",
+        "text": "Pensando nos últimos 90 dias, qual alternativa melhor representa sua participação em apostas, bets, cassino, jogos de azar, loterias ou atividades semelhantes envolvendo dinheiro?\n\nA) Não participei ou participei raramente com valores pequenos e sem impacto financeiro relevante.\n\nB) Apostei algumas vezes e já gastei mais tempo ou dinheiro do que inicialmente planejava.\n\nC) Houve frequência elevada, perdas relevantes, tentativa de recuperar prejuízos apostando novamente, dinheiro escondido, dívida ou conflito conjugal relacionado às apostas.",
+        "relative_start": 0
+      },
+      {
+        "label": "A",
+        "text": "{Nome} não identifica atualmente impacto relevante de apostas sobre sua vida familiar e compromete-se a preservar limites financeiros compatíveis com as responsabilidades do casal.",
+        "relative_start": 578
+      },
+      {
+        "label": "B",
+        "text": "{Nome} reconhece que apostas já ultrapassaram em alguma ocasião aquilo que havia planejado e compromete-se a estabelecer limites objetivos antes de qualquer nova participação.",
+        "relative_start": 771
+      },
+      {
+        "label": "C",
+        "text": "DIAGNOSTICO_PRIVADO\n\nALERTA_JOGO_PROBLEMATICO = SIM\n\n{Nome} reconhece sinais de comportamento de aposta capaz de prejudicar finanças, confiança ou responsabilidades familiares e compromete-se a não utilizar novas apostas como estratégia para recuperar perdas anteriores.",
+        "relative_start": 959
+      },
+      {
+        "label": "PARÁGRAFO FIXO",
+        "text": "Nunca será permitido financiar aposta por:\n\n-  empréstimo; \n-  cheque especial; \n-  cartão sem capacidade de pagamento; \n-  dinheiro destinado a despesas essenciais; \n-  reserva protegida; \n-  ocultação de dívida.",
+        "relative_start": 1246
+      },
+      {
+        "label": "NÓS DECIDIMOS — somente na ausência de padrão problemático ativo",
+        "text": "A) Não utilizar dinheiro familiar em apostas.\n\nB) Permitir apenas dentro de valor mensal específico de lazer individual.\n\nC) Definir regra mais restritiva específica.",
+        "relative_start": 1482
+      },
+      {
+        "label": "Texto A",
+        "text": "“{Nome 1} e {Nome 2} decidiram não destinar recursos familiares a apostas ou jogos de azar.”",
+        "relative_start": 1731
+      },
+      {
+        "label": "Texto B",
+        "text": "Campo:\n\nLIMITE_MENSAL_APOSTAS\n\n“{Nome 1} e {Nome 2} decidiram que eventual participação em apostas ficará limitada a {valor} por mês, exclusivamente dentro de recursos pessoais de lazer disponíveis e sem possibilidade de crédito, dívida ou utilização de dinheiro destinado às obrigações familiares.”",
+        "relative_start": 1842
+      },
+      {
+        "label": "Texto C",
+        "text": "“{Nome 1} e {Nome 2} estabeleceram a seguinte regra mais restritiva para apostas: {regra definida}.”",
+        "relative_start": 2162
+      },
+      {
+        "label": "Cruzamentos",
+        "text": "154 × 034–043.",
+        "relative_start": 2281
+      },
+      {
+        "label": "Fundamentação bíblica",
+        "text": "1 Timóteo 6:10.\n\nProvérbios 13:11.\n\n1 Coríntios 6:12.\n\n---",
+        "relative_start": 2314
+      }
+    ],
+    "pair_source_candidates": [],
+    "blocking_issues": [
+      "APPLICABILITY_NOT_COMPILED",
+      "PRIVACY_AND_OUTPUTS_REQUIRE_REVIEW",
+      "PAIR_MATRIX_REQUIRES_EXPLICIT_RULES",
+      "PATCHES_REQUIRE_FIELD_LEVEL_CONSOLIDATION",
+      "EDITORIAL_DECISION_GAMBLING"
+    ],
+    "clause_destination_proposal": "C15",
+    "clause_destination_provenance": "TECHNICAL_ORGANIZATION_PROPOSAL",
+    "nos_trigger_predicate_proposal": null,
+    "contribution_scope_note": "Nenhuma contribuição pelo assunto substantivo. Aplicação a processos exige regra central e avaliação das exclusões.",
+    "supplemental_source_refs": [
+      {
+        "source_id": "MD04",
+        "line_start": 183,
+        "line_end": 260
+      }
+    ],
+    "content_version": "1.0_WITH_LATER_CANONICAL_PATCHES",
+    "applied_patch_ids": [
+      "PATCH70-Q154"
+    ],
+    "nos_condition_id": "COND-Q154"
+  },
+  "pairs": [
+    {
+      "pair_rule_id": "PAIR-Q154-AA",
+      "question_id": "Q154",
+      "pair_key": "AA",
+      "version": "1.3.0",
+      "action": null,
+      "additional_actions": [],
+      "source_candidate_text": null,
+      "contract_template": null,
+      "privacy_class": "PRIVATE",
+      "output_target": "INTERNAL",
+      "protocol_ids": [],
+      "joint_module_ids": [],
+      "source_refs": [
+        {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        {
+          "source_id": "PDF01",
+          "package_path": "fontes/transcricao_com_paginas.txt",
+          "exact_anchor": "Cada combinação terá uma ação explícita:",
+          "source_version": "7.0_OR_FINAL_AUDIT"
+        }
+      ],
+      "status": "ACTION_DEFINED_DEPENDENCIES_PENDING",
+      "is_active": false,
+      "private_module_ids": [],
+      "event_rule_ids": [
+        "EV-P10"
+      ],
+      "component_refs": [
+        {
+          "component_id": "OUT-Q154-A",
+          "bind_to": "each_respondent_with_option",
+          "option": "A"
+        }
+      ],
+      "safety_gate": "GLOBAL_SAFETY_BEFORE_SHARED_OUTPUT",
+      "source_profile_id": "Q154",
+      "execution_dependencies": [
+        "EDITORIAL_GAMBLING_POLICY_REQUIRED"
+      ],
+      "conditional_steps": [],
+      "decision_basis": "PENDING_EDITORIAL_GAMBLING_POLICY",
+      "action_definition_status": "UNRESOLVED_EDITORIAL_DECISION",
+      "requires_runtime_inference": false
+    },
+    {
+      "pair_rule_id": "PAIR-Q154-AB",
+      "question_id": "Q154",
+      "pair_key": "AB",
+      "version": "1.3.0",
+      "action": null,
+      "additional_actions": [],
+      "source_candidate_text": null,
+      "contract_template": null,
+      "privacy_class": "PRIVATE",
+      "output_target": "INTERNAL",
+      "protocol_ids": [],
+      "joint_module_ids": [],
+      "source_refs": [
+        {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        {
+          "source_id": "PDF01",
+          "package_path": "fontes/transcricao_com_paginas.txt",
+          "exact_anchor": "Cada combinação terá uma ação explícita:",
+          "source_version": "7.0_OR_FINAL_AUDIT"
+        }
+      ],
+      "status": "ACTION_DEFINED_DEPENDENCIES_PENDING",
+      "is_active": false,
+      "private_module_ids": [],
+      "event_rule_ids": [
+        "EV-P10"
+      ],
+      "component_refs": [
+        {
+          "component_id": "OUT-Q154-A",
+          "bind_to": "each_respondent_with_option",
+          "option": "A"
+        },
+        {
+          "component_id": "OUT-Q154-B",
+          "bind_to": "each_respondent_with_option",
+          "option": "B"
+        }
+      ],
+      "safety_gate": "GLOBAL_SAFETY_BEFORE_SHARED_OUTPUT",
+      "source_profile_id": "Q154",
+      "execution_dependencies": [
+        "EDITORIAL_GAMBLING_POLICY_REQUIRED"
+      ],
+      "conditional_steps": [],
+      "decision_basis": "PENDING_EDITORIAL_GAMBLING_POLICY",
+      "action_definition_status": "UNRESOLVED_EDITORIAL_DECISION",
+      "requires_runtime_inference": false
+    },
+    {
+      "pair_rule_id": "PAIR-Q154-AC",
+      "question_id": "Q154",
+      "pair_key": "AC",
+      "version": "1.3.0",
+      "action": "PRIVATE_DIAGNOSTIC",
+      "additional_actions": [],
+      "source_candidate_text": null,
+      "contract_template": null,
+      "privacy_class": "PRIVATE",
+      "output_target": "INTERNAL",
+      "protocol_ids": [],
+      "joint_module_ids": [],
+      "source_refs": [
+        {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        {
+          "source_id": "PDF01",
+          "package_path": "fontes/transcricao_com_paginas.txt",
+          "exact_anchor": "Cada combinação terá uma ação explícita:",
+          "source_version": "7.0_OR_FINAL_AUDIT"
+        }
+      ],
+      "status": "ACTION_AND_INPUTS_STRUCTURED_NOT_RELEASED",
+      "is_active": false,
+      "private_module_ids": [],
+      "event_rule_ids": [
+        "EV-P10"
+      ],
+      "component_refs": [
+        {
+          "component_id": "OUT-Q154-A",
+          "bind_to": "each_respondent_with_option",
+          "option": "A"
+        },
+        {
+          "component_id": "OUT-Q154-C",
+          "bind_to": "each_respondent_with_option",
+          "option": "C"
+        }
+      ],
+      "safety_gate": "GLOBAL_SAFETY_BEFORE_SHARED_OUTPUT",
+      "source_profile_id": "Q154",
+      "execution_dependencies": [],
+      "conditional_steps": [
+        {
+          "operation": "TRIGGER_PROTOCOL",
+          "protocol_id": "P10",
+          "when": {
+            "op": "literal",
+            "value": true
+          },
+          "scope": "PRIVATE",
+          "reason": "Q154-C registra ALERTA_JOGO_PROBLEMATICO; proteção independe de permitir ou proibir apostas recreativas."
+        }
+      ],
+      "decision_basis": "EXPLICIT_GAMBLING_HARM_PRIVATE_DIAGNOSIS_INDEPENDENT_OF_EDITORIAL_POLICY",
+      "action_definition_status": "EXPLICIT_RECORDED",
+      "requires_runtime_inference": false,
+      "contract_template_candidate": null,
+      "shared_pair_projection": null,
+      "shared_pair_details_forbidden": true
+    },
+    {
+      "pair_rule_id": "PAIR-Q154-BB",
+      "question_id": "Q154",
+      "pair_key": "BB",
+      "version": "1.3.0",
+      "action": null,
+      "additional_actions": [],
+      "source_candidate_text": null,
+      "contract_template": null,
+      "privacy_class": "PRIVATE",
+      "output_target": "INTERNAL",
+      "protocol_ids": [],
+      "joint_module_ids": [],
+      "source_refs": [
+        {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        {
+          "source_id": "PDF01",
+          "package_path": "fontes/transcricao_com_paginas.txt",
+          "exact_anchor": "Cada combinação terá uma ação explícita:",
+          "source_version": "7.0_OR_FINAL_AUDIT"
+        }
+      ],
+      "status": "ACTION_DEFINED_DEPENDENCIES_PENDING",
+      "is_active": false,
+      "private_module_ids": [],
+      "event_rule_ids": [
+        "EV-P10"
+      ],
+      "component_refs": [
+        {
+          "component_id": "OUT-Q154-B",
+          "bind_to": "each_respondent_with_option",
+          "option": "B"
+        }
+      ],
+      "safety_gate": "GLOBAL_SAFETY_BEFORE_SHARED_OUTPUT",
+      "source_profile_id": "Q154",
+      "execution_dependencies": [
+        "EDITORIAL_GAMBLING_POLICY_REQUIRED"
+      ],
+      "conditional_steps": [],
+      "decision_basis": "PENDING_EDITORIAL_GAMBLING_POLICY",
+      "action_definition_status": "UNRESOLVED_EDITORIAL_DECISION",
+      "requires_runtime_inference": false
+    },
+    {
+      "pair_rule_id": "PAIR-Q154-BC",
+      "question_id": "Q154",
+      "pair_key": "BC",
+      "version": "1.3.0",
+      "action": "PRIVATE_DIAGNOSTIC",
+      "additional_actions": [],
+      "source_candidate_text": null,
+      "contract_template": null,
+      "privacy_class": "PRIVATE",
+      "output_target": "INTERNAL",
+      "protocol_ids": [],
+      "joint_module_ids": [],
+      "source_refs": [
+        {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        {
+          "source_id": "PDF01",
+          "package_path": "fontes/transcricao_com_paginas.txt",
+          "exact_anchor": "Cada combinação terá uma ação explícita:",
+          "source_version": "7.0_OR_FINAL_AUDIT"
+        }
+      ],
+      "status": "ACTION_AND_INPUTS_STRUCTURED_NOT_RELEASED",
+      "is_active": false,
+      "private_module_ids": [],
+      "event_rule_ids": [
+        "EV-P10"
+      ],
+      "component_refs": [
+        {
+          "component_id": "OUT-Q154-B",
+          "bind_to": "each_respondent_with_option",
+          "option": "B"
+        },
+        {
+          "component_id": "OUT-Q154-C",
+          "bind_to": "each_respondent_with_option",
+          "option": "C"
+        }
+      ],
+      "safety_gate": "GLOBAL_SAFETY_BEFORE_SHARED_OUTPUT",
+      "source_profile_id": "Q154",
+      "execution_dependencies": [],
+      "conditional_steps": [
+        {
+          "operation": "TRIGGER_PROTOCOL",
+          "protocol_id": "P10",
+          "when": {
+            "op": "literal",
+            "value": true
+          },
+          "scope": "PRIVATE",
+          "reason": "Q154-C registra ALERTA_JOGO_PROBLEMATICO; proteção independe de permitir ou proibir apostas recreativas."
+        }
+      ],
+      "decision_basis": "EXPLICIT_GAMBLING_HARM_PRIVATE_DIAGNOSIS_INDEPENDENT_OF_EDITORIAL_POLICY",
+      "action_definition_status": "EXPLICIT_RECORDED",
+      "requires_runtime_inference": false,
+      "contract_template_candidate": null,
+      "shared_pair_projection": null,
+      "shared_pair_details_forbidden": true
+    },
+    {
+      "pair_rule_id": "PAIR-Q154-CC",
+      "question_id": "Q154",
+      "pair_key": "CC",
+      "version": "1.3.0",
+      "action": "PRIVATE_DIAGNOSTIC",
+      "additional_actions": [],
+      "source_candidate_text": null,
+      "contract_template": null,
+      "privacy_class": "PRIVATE",
+      "output_target": "INTERNAL",
+      "protocol_ids": [],
+      "joint_module_ids": [],
+      "source_refs": [
+        {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        {
+          "source_id": "PDF01",
+          "package_path": "fontes/transcricao_com_paginas.txt",
+          "exact_anchor": "Cada combinação terá uma ação explícita:",
+          "source_version": "7.0_OR_FINAL_AUDIT"
+        }
+      ],
+      "status": "ACTION_AND_INPUTS_STRUCTURED_NOT_RELEASED",
+      "is_active": false,
+      "private_module_ids": [],
+      "event_rule_ids": [
+        "EV-P10"
+      ],
+      "component_refs": [
+        {
+          "component_id": "OUT-Q154-C",
+          "bind_to": "each_respondent_with_option",
+          "option": "C"
+        }
+      ],
+      "safety_gate": "GLOBAL_SAFETY_BEFORE_SHARED_OUTPUT",
+      "source_profile_id": "Q154",
+      "execution_dependencies": [],
+      "conditional_steps": [
+        {
+          "operation": "TRIGGER_PROTOCOL",
+          "protocol_id": "P10",
+          "when": {
+            "op": "literal",
+            "value": true
+          },
+          "scope": "PRIVATE",
+          "reason": "Q154-C registra ALERTA_JOGO_PROBLEMATICO; proteção independe de permitir ou proibir apostas recreativas."
+        }
+      ],
+      "decision_basis": "EXPLICIT_GAMBLING_HARM_PRIVATE_DIAGNOSIS_INDEPENDENT_OF_EDITORIAL_POLICY",
+      "action_definition_status": "EXPLICIT_RECORDED",
+      "requires_runtime_inference": false,
+      "contract_template_candidate": null,
+      "shared_pair_projection": null,
+      "shared_pair_details_forbidden": true
+    }
+  ],
+  "components": [
+    {
+      "component_id": "OUT-Q154-A",
+      "kind": "INDIVIDUAL_EFFECT",
+      "question_id": "Q154",
+      "option_code": "A",
+      "privacy_class": "COMMON",
+      "output_target": "CONTRACT",
+      "template_candidate": "{Nome} não identifica atualmente impacto relevante de apostas sobre sua vida familiar e compromete-se a preservar limites financeiros compatíveis com as responsabilidades do casal.",
+      "contract_template": null,
+      "status": "SOURCE_TEXT_CAPTURED_NOT_RELEASED",
+      "bindings": {
+        "Nome": "respondent_who_chose_this_option",
+        "Nome 1": "stable_member_1",
+        "Nome 2": "stable_member_2",
+        "seu cônjuge": "other_member"
+      },
+      "source_refs": [
+        {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        }
+      ],
+      "share_automatically": true,
+      "is_active": false
+    },
+    {
+      "component_id": "OUT-Q154-B",
+      "kind": "INDIVIDUAL_EFFECT",
+      "question_id": "Q154",
+      "option_code": "B",
+      "privacy_class": "COMMON",
+      "output_target": "CONTRACT",
+      "template_candidate": "{Nome} reconhece que apostas já ultrapassaram em alguma ocasião aquilo que havia planejado e compromete-se a estabelecer limites objetivos antes de qualquer nova participação.",
+      "contract_template": null,
+      "status": "SOURCE_TEXT_CAPTURED_NOT_RELEASED",
+      "bindings": {
+        "Nome": "respondent_who_chose_this_option",
+        "Nome 1": "stable_member_1",
+        "Nome 2": "stable_member_2",
+        "seu cônjuge": "other_member"
+      },
+      "source_refs": [
+        {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        }
+      ],
+      "share_automatically": true,
+      "is_active": false
+    },
+    {
+      "component_id": "OUT-Q154-C",
+      "kind": "INDIVIDUAL_EFFECT",
+      "question_id": "Q154",
+      "option_code": "C",
+      "privacy_class": "PRIVATE",
+      "output_target": "PRIVATE_PLAN",
+      "template_candidate": "{Nome} reconhece sinais de comportamento de aposta capaz de prejudicar finanças, confiança ou responsabilidades familiares e compromete-se a não utilizar novas apostas como estratégia para recuperar perdas anteriores.",
+      "contract_template": null,
+      "status": "SOURCE_TEXT_CAPTURED_NOT_RELEASED",
+      "bindings": {
+        "Nome": "respondent_who_chose_this_option",
+        "Nome 1": "stable_member_1",
+        "Nome 2": "stable_member_2",
+        "seu cônjuge": "other_member"
+      },
+      "source_refs": [
+        {
+          "source_id": "MD04",
+          "line_start": 183,
+          "line_end": 260
+        },
+        {
+          "source_id": "PDF01",
+          "page_start": 436,
+          "page_end": 436,
+          "line_start": 18629,
+          "line_end": 18653
+        }
+      ],
+      "share_automatically": false,
+      "is_active": false
+    }
+  ],
+  "joint_modules": [
+    {
+      "joint_module_id": "ND-Q154-01",
+      "question_id": "Q154",
+      "label": "NÓS DECIDIMOS — somente na ausência de padrão problemático ativo",
+      "nos_trigger_type": "NEVER",
+      "trigger_predicate_proposal": null,
+      "source_text": "NÓS DECIDIMOS — somente na ausência de padrão problemático ativo\nA) Não utilizar dinheiro familiar em apostas.\n\nB) Permitir apenas dentro de valor mensal específico de lazer individual.\n\nC) Definir regra mais restritiva específica.\n\nTexto A\n“{Nome 1} e {Nome 2} decidiram não destinar recursos familiares a apostas ou jogos de azar.”\n\nTexto B\nCampo:\n\nLIMITE_MENSAL_APOSTAS\n\n“{Nome 1} e {Nome 2} decidiram que eventual participação em apostas ficará limitada a {valor} por mês, exclusivamente dentro de recursos pessoais de lazer disponíveis e sem possibilidade de crédito, dívida ou utilização de dinheiro destinado às obrigações familiares.”\n\nTexto C\n“{Nome 1} e {Nome 2} estabeleceram a seguinte regra mais restritiva para apostas: {regra definida}.”",
+      "source_ref": {
+        "source_id": "MD04",
+        "line_start": 183,
+        "line_end": 260
+      },
+      "option_candidates": [
+        {
+          "code": "A",
+          "text_candidate": "Não utilizar dinheiro familiar em apostas.",
+          "contract_template": null,
+          "contract_template_candidate": "“{Nome 1} e {Nome 2} decidiram não destinar recursos familiares a apostas ou jogos de azar.”"
+        },
+        {
+          "code": "B",
+          "text_candidate": "Permitir apenas dentro de valor mensal específico de lazer individual.",
+          "contract_template": null,
+          "contract_template_candidate": "Campo:\n\nLIMITE_MENSAL_APOSTAS\n\n“{Nome 1} e {Nome 2} decidiram que eventual participação em apostas ficará limitada a {valor} por mês, exclusivamente dentro de recursos pessoais de lazer disponíveis e sem possibilidade de crédito, dívida ou utilização de dinheiro destinado às obrigações familiares.”"
+        },
+        {
+          "code": "C",
+          "text_candidate": "Definir regra mais restritiva específica.",
+          "contract_template": null,
+          "contract_template_candidate": "“{Nome 1} e {Nome 2} estabeleceram a seguinte regra mais restritiva para apostas: {regra definida}.”"
+        }
+      ],
+      "status": "DISABLED_PENDING_EDITORIAL_DECISION",
+      "is_active": false
+    }
+  ]
+}

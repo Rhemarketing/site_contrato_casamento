@@ -1,0 +1,2202 @@
+{
+  "Q001": {
+    "status_in_source": "APROVADA",
+    "note": "Reação diante de problemas preservada. Protocolo geral correto.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 386,
+      "page_end": 386,
+      "line_start": 16516,
+      "line_end": 16518
+    }
+  },
+  "Q002": {
+    "status_in_source": "APROVADA",
+    "note": "Correção patrimonial já aplicada: ativos essenciais + 50% RLF para demais         operações relevantes.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 386,
+      "page_end": 387,
+      "line_start": 16518,
+      "line_end": 16521
+    }
+  },
+  "Q003": {
+    "status_in_source": "APROVADA",
+    "note": "Raiva, insulto, ameaça e intimidação corretamente separados.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16521,
+      "line_end": 16523
+    }
+  },
+  "Q004": {
+    "status_in_source": "APROVADA",
+    "note": "Carinho/gratidão não podem permanecer apenas no pensamento. Regra fixa         preservada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16523,
+      "line_end": 16526
+    }
+  },
+  "Q005": {
+    "status_in_source": "APROVADA",
+    "note": "Organização de compromissos clara.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16526,
+      "line_end": 16528
+    }
+  },
+  "Q006": {
+    "status_in_source": "APROVADA",
+    "note": "Escuta antes da defesa correta.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16528,
+      "line_end": 16530
+    }
+  },
+  "Q007": {
+    "status_in_source": "APROVADA",
+    "note": "Perfil social útil; não deve gerar obrigação de extroversão.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16530,
+      "line_end": 16532
+    }
+  },
+  "Q008": {
+    "status_in_source": "APROVADA",
+    "note": "Flexibilidade diante de mudanças adequada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16532,
+      "line_end": 16534
+    }
+  },
+  "Q009": {
+    "status_in_source": "APROVADA",
+    "note": "Forma de perceber amor complementa Q004.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16534,
+      "line_end": 16536
+    }
+  },
+  "Q010": {
+    "status_in_source": "APROVADA",
+    "note": "Reconhecimento semanal é objetivo e executável.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16536,
+      "line_end": 16538
+    }
+  },
+  "Q011": {
+    "status_in_source": "APROVADA",
+    "note": "Momento de Qualidade correto após harmonização com Q048.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16538,
+      "line_end": 16540
+    }
+  },
+  "Q012": {
+    "status_in_source": "APROVADA",
+    "note": "Pedidos de ajuda e prazos funcionam.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16540,
+      "line_end": 16542
+    }
+  },
+  "Q013": {
+    "status_in_source": "APROVADA",
+    "note": "Pedido de desculpas adequado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16542,
+      "line_end": 16544
+    }
+  },
+  "Q014": {
+    "status_in_source": "APROVADA",
+    "note": "Forma preferida de abordagem bem estruturada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16544,
+      "line_end": 16546
+    }
+  },
+  "Q015": {
+    "status_in_source": "APROVADA",
+    "note": "Insistência, escuta e cessão bem diferenciadas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16546,
+      "line_end": 16548
+    }
+  },
+  "Q016": {
+    "status_in_source": "APROVADA",
+    "note": "Repetição 3x/30 dias funciona.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16548,
+      "line_end": 16550
+    }
+  },
+  "Q017": {
+    "status_in_source": "APROVADA",
+    "note": "Pausa legítima ≠ silêncio punitivo.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16550,
+      "line_end": 16552
+    }
+  },
+  "Q018": {
+    "status_in_source": "APROVADA",
+    "note": "Protocolo de Reconstrução da Confiança já formalizado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16552,
+      "line_end": 16554
+    }
+  },
+  "Q019": {
+    "status_in_source": "APROVADA",
+    "note": "Privacidade do casamento e ajuda externa bem diferenciadas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16554,
+      "line_end": 16556
+    }
+  },
+  "Q020": {
+    "status_in_source": "APROVADA",
+    "note": "Consulta verdadeira ≠ apenas comunicar decisão tomada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16556,
+      "line_end": 16558
+    }
+  },
+  "Q021": {
+    "status_in_source": "APROVADA",
+    "note": "Intenção × impacto permanece importante.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16558,
+      "line_end": 16560
+    }
+  },
+  "Q022": {
+    "status_in_source": "APROVADA",
+    "note": "Limites para brincadeiras/apelidos claros.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16560,
+      "line_end": 16562
+    }
+  },
+  "Q023": {
+    "status_in_source": "APROVADA",
+    "note": "Assuntos difíceis definidos; medo remete à segurança.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16562,
+      "line_end": 16564
+    }
+  },
+  "Q024": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Informação sensível poderá ser DIAGNOSTICO_PRIVADO.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 387,
+      "line_start": 16564,
+      "line_end": 16566
+    }
+  },
+  "Q025": {
+    "status_in_source": "APROVADA",
+    "note": "Promessas e repetição bem organizadas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 387,
+      "page_end": 388,
+      "line_start": 16566,
+      "line_end": 16568
+    }
+  },
+  "Q026": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Se revelar fato desconhecido de terceiro, preservar privacidade antes de         compartilhamento.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16568,
+      "line_end": 16571
+    }
+  },
+  "Q027": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "NÓS DECIDIMOS apenas para contato concreto com ex/interesse anterior.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16571,
+      "line_end": 16573
+    }
+  },
+  "Q028": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Ciúme nunca autoriza vigilância, coerção ou controle.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16573,
+      "line_end": 16575
+    }
+  },
+  "Q029": {
+    "status_in_source": "APROVADA",
+    "note": "Privacidade digital correta.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16575,
+      "line_end": 16577
+    }
+  },
+  "Q030": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Conversa secreta poderá gerar saída privada e reconstrução da confiança.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16577,
+      "line_end": 16579
+    }
+  },
+  "Q031": {
+    "status_in_source": "APROVADA",
+    "note": "Exposição digital e retirada de publicação bem estruturadas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16579,
+      "line_end": 16581
+    }
+  },
+  "Q032": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Deve obedecer à Q107: limite legítimo não pode virar isolamento coercitivo.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16581,
+      "line_end": 16583
+    }
+  },
+  "Q033": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Vínculo emocional paralelo pode exigir privacidade antes de eventual         revelação.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16583,
+      "line_end": 16586
+    }
+  },
+  "Q034": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Ocultação financeira grave poderá começar como diagnóstico privado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16586,
+      "line_end": 16588
+    }
+  },
+  "Q035": {
+    "status_in_source": "APROVADA",
+    "note": "Dívidas; percentuais devem ser parâmetros configuráveis.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16588,
+      "line_end": 16590
+    }
+  },
+  "Q036": {
+    "status_in_source": "APROVADA",
+    "note": "Gastos pessoais mensais acumulados corretos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16590,
+      "line_end": 16592
+    }
+  },
+  "Q037": {
+    "status_in_source": "APROVADA",
+    "note": "Reserva depois das obrigações financeiras obrigatórias.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16592,
+      "line_end": 16594
+    }
+  },
+  "Q038": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Administração financeira nunca poderá contrariar Q108 sobre abuso         financeiro.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16594,
+      "line_end": 16597
+    }
+  },
+  "Q039": {
+    "status_in_source": "APROVADA",
+    "note": "Revisão financeira mensal preservada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16597,
+      "line_end": 16599
+    }
+  },
+  "Q040": {
+    "status_in_source": "APROVADA",
+    "note": "Ajuda a terceiros, aval e fiança bem separados.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16599,
+      "line_end": 16601
+    }
+  },
+  "Q041": {
+    "status_in_source": "APROVADA",
+    "note": "Modelo financeiro + revisão quando renda individual variar 20% ou mais.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16601,
+      "line_end": 16603
+    }
+  },
+  "Q042": {
+    "status_in_source": "APROVADA",
+    "note": "Maior renda não concede maior autoridade conjugal.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16603,
+      "line_end": 16605
+    }
+  },
+  "Q043": {
+    "status_in_source": "APROVADA",
+    "note": "Gatilhos objetivos de crise financeira corrigidos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16605,
+      "line_end": 16607
+    }
+  },
+  "Q044": {
+    "status_in_source": "APROVADA",
+    "note": "Divisão doméstica independente de sexo ou renda.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16607,
+      "line_end": 16609
+    }
+  },
+  "Q045": {
+    "status_in_source": "APROVADA",
+    "note": "Carga mental corretamente tratada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16609,
+      "line_end": 16611
+    }
+  },
+  "Q046": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Aplicabilidade parental ocorre antes da pergunta; nunca opção D.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 388,
+      "line_start": 16611,
+      "line_end": 16613
+    }
+  },
+  "Q047": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Mesma regra de aplicabilidade parental.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 388,
+      "page_end": 389,
+      "line_start": 16613,
+      "line_end": 16615
+    }
+  },
+  "Q048": {
+    "status_in_source": "APROVADA",
+    "note": "Corrigida para dois momentos consecutivos cancelados + remarcação em até               7 dias.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16615,
+      "line_end": 16618
+    }
+  },
+  "Q049": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Decisões profissionais não poderão ser usadas para violar autonomia               protegida na Q109.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16618,
+      "line_end": 16621
+    }
+  },
+  "Q050": {
+    "status_in_source": "APROVADA",
+    "note": "Apoio anterior não cria “dívida conjugal”.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16621,
+      "line_end": 16634
+    }
+  },
+  "Q051": {
+    "status_in_source": "APROVADA",
+    "note": "Corrigida para ATUAL / QUERO MAIS / QUERO MENOS. Gatilho por ciclos               aprovado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16634,
+      "line_end": 16637
+    }
+  },
+  "Q052": {
+    "status_in_source": "APROVADA",
+    "note": "Iniciativa sexual bem medida.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16637,
+      "line_end": 16639
+    }
+  },
+  "Q053": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Resposta problemática alimenta segurança/consentimento; nunca R$10.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16639,
+      "line_end": 16641
+    }
+  },
+  "Q054": {
+    "status_in_source": "APROVADA",
+    "note": "Condições que favorecem desejo permanecem válidas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16641,
+      "line_end": 16643
+    }
+  },
+  "Q055": {
+    "status_in_source": "APROVADA",
+    "note": "Nova versão “Momento Programado de Intimidade e Reconexão” é a oficial.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16643,
+      "line_end": 16645
+    }
+  },
+  "Q056": {
+    "status_in_source": "APROVADA",
+    "note": "Carinho físico não sexual corrigido para eixo único.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16645,
+      "line_end": 16647
+    }
+  },
+  "Q057": {
+    "status_in_source": "APROVADA",
+    "note": "Satisfação global distinta da frequência.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16647,
+      "line_end": 16649
+    }
+  },
+  "Q058": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Se dificuldade decorrer de medo, acionar segurança.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16649,
+      "line_end": 16651
+    }
+  },
+  "Q059": {
+    "status_in_source": "APROVADA",
+    "note": "Diferença de desejo não se confunde com frequência desejada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16651,
+      "line_end": 16653
+    }
+  },
+  "Q060": {
+    "status_in_source": "APROVADA",
+    "note": "Pornografia sem NÓS permissivo; regra cristã consolidada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16653,
+      "line_end": 16655
+    }
+  },
+  "Q061": {
+    "status_in_source": "APROVADA",
+    "note": "Reciprocidade de prazer útil e distinta da satisfação global.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 389,
+      "line_start": 16655,
+      "line_end": 16657
+    }
+  },
+  "Q062": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Pedido para parar não respeitado = alerta de segurança sexual.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 389,
+      "page_end": 390,
+      "line_start": 16657,
+      "line_end": 16659
+    }
+  },
+  "Q063": {
+    "status_in_source": "APROVADA",
+    "note": "Privacidade física/ambiente adequada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16659,
+      "line_end": 16661
+    }
+  },
+  "Q064": {
+    "status_in_source": "APROVADA",
+    "note": "Conexão após intimidade pode ser consolidada no contrato.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16661,
+      "line_end": 16663
+    }
+  },
+  "Q065": {
+    "status_in_source": "APROVADA",
+    "note": "Novidades somente consensuais.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16663,
+      "line_end": 16665
+    }
+  },
+  "Q066": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Insegurança corporal não deve virar confissão nominal automática no         contrato.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16665,
+      "line_end": 16668
+    }
+  },
+  "Q067": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Masturbação é dado íntimo; saída preferencial privada/diagnóstica.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16668,
+      "line_end": 16670
+    }
+  },
+  "Q068": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Saúde sexual é dado sensível; proteger detalhes clínicos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16670,
+      "line_end": 16672
+    }
+  },
+  "Q069": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Aplicabilidade prévia + proteção contra coerção reprodutiva.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16672,
+      "line_end": 16674
+    }
+  },
+  "Q070": {
+    "status_in_source": "APROVADA",
+    "note": "Sexo não substitui solução de conflito.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16674,
+      "line_end": 16676
+    }
+  },
+  "Q071": {
+    "status_in_source": "APROVADA",
+    "note": "Espontâneo × planejado complementa Q055.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16676,
+      "line_end": 16678
+    }
+  },
+  "Q072": {
+    "status_in_source": "APROVADA",
+    "note": "Sentir-se desejado é dimensão própria.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16678,
+      "line_end": 16680
+    }
+  },
+  "Q073": {
+    "status_in_source": "APROVADA",
+    "note": "Privacidade sexual adequada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16680,
+      "line_end": 16682
+    }
+  },
+  "Q074": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Não armazenar fantasia específica se não for necessária; medo aciona         segurança.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16682,
+      "line_end": 16685
+    }
+  },
+  "Q075": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Higiene é útil, porém B/C não devem produzir cláusula nominal humilhante.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16685,
+      "line_end": 16687
+    }
+  },
+  "Q076": {
+    "status_in_source": "APROVADA",
+    "note": "Saúde prevalece sobre metas íntimas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16687,
+      "line_end": 16689
+    }
+  },
+  "Q077": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Aplicabilidade de gravidez/pós-parto feita internamente.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16689,
+      "line_end": 16691
+    }
+  },
+  "Q078": {
+    "status_in_source": "APROVADA",
+    "note": "Mudanças por idade, hormônios e saúde bem tratadas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16691,
+      "line_end": 16693
+    }
+  },
+  "Q079": {
+    "status_in_source": "APROVADA",
+    "note": "Versão substituta sobre melhor período para intimidade aprovada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16693,
+      "line_end": 16695
+    }
+  },
+  "Q080": {
+    "status_in_source": "APROVADA",
+    "note": "Não possui mais relógio próprio; utiliza gatilho de Q051.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16695,
+      "line_end": 16697
+    }
+  },
+  "Q081": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Subpergunta obrigatória distingue risco, fato conhecido e fato não tratado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16697,
+      "line_end": 16699
+    }
+  },
+  "Q082": {
+    "status_in_source": "APROVADA",
+    "note": "Romance/conquista acrescenta dimensão não repetitiva.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16699,
+      "line_end": 16701
+    }
+  },
+  "Q083": {
+    "status_in_source": "APROVADA",
+    "note": "Retomada depois da recusa é válida sem criar obrigação.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16701,
+      "line_end": 16703
+    }
+  },
+  "Q084": {
+    "status_in_source": "APROVADA",
+    "note": "Distância/viagens preserva conexão sem obrigar intimidade digital.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 390,
+      "line_start": 16703,
+      "line_end": 16705
+    }
+  },
+  "Q085": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Regra correta, mas o sistema jamais deve receber/uploadar fotos ou                vídeos íntimos. Armazenar apenas acordos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 390,
+      "page_end": 391,
+      "line_start": 16705,
+      "line_end": 16708
+    }
+  },
+  "Q086": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Informação de saúde sexual deverá respeitar privacidade.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16708,
+      "line_end": 16710
+    }
+  },
+  "Q087": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Saída compartilhada deve ser princípio genérico, não confissão de utilização                do sexo como moeda.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16710,
+      "line_end": 16713
+    }
+  },
+  "Q088": {
+    "status_in_source": "APROVADA",
+    "note": "Feedback íntimo bem definido.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16713,
+      "line_end": 16715
+    }
+  },
+  "Q089": {
+    "status_in_source": "APROVADA",
+    "note": "Participação conjunta ≠ culpa igual.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16715,
+      "line_end": 16717
+    }
+  },
+  "Q090": {
+    "status_in_source": "APROVADA",
+    "note": "Revisão de intimidade permanece separada de gatilhos imediatos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16717,
+      "line_end": 16719
+    }
+  },
+  "Q091": {
+    "status_in_source": "APROVADA",
+    "note": "Lealdade família/cônjuge equilibrada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16719,
+      "line_end": 16721
+    }
+  },
+  "Q092": {
+    "status_in_source": "APROVADA",
+    "note": "Frequência definida separadamente para cada família.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16721,
+      "line_end": 16723
+    }
+  },
+  "Q093": {
+    "status_in_source": "APROVADA",
+    "note": "Privacidade da residência correta.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16723,
+      "line_end": 16725
+    }
+  },
+  "Q094": {
+    "status_in_source": "APROVADA",
+    "note": "Datas comemorativas bem estruturadas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16725,
+      "line_end": 16727
+    }
+  },
+  "Q095": {
+    "status_in_source": "APROVADA",
+    "note": "Ajuda financeira familiar utiliza regras da Q040.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16727,
+      "line_end": 16729
+    }
+  },
+  "Q096": {
+    "status_in_source": "APROVADA",
+    "note": "Cuidado de familiares dependentes adequado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16729,
+      "line_end": 16731
+    }
+  },
+  "Q097": {
+    "status_in_source": "APROVADA",
+    "note": "Prazo já objetivado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16731,
+      "line_end": 16733
+    }
+  },
+  "Q098": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Aplicabilidade parental antes da pergunta.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16733,
+      "line_end": 16735
+    }
+  },
+  "Q099": {
+    "status_in_source": "APROVADA",
+    "note": "Equilíbrio não significa igualdade matemática.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 391,
+      "line_start": 16735,
+      "line_end": 16737
+    }
+  },
+  "Q100": {
+    "status_in_source": "APROVADA",
+    "note": "Permanência de familiar exige data concreta de revisão.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 391,
+      "page_end": 392,
+      "line_start": 16737,
+      "line_end": 16757
+    }
+  },
+  "Q101": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Resposta A isolada nunca gera “os dois estão seguros”; usar avaliação               agregada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16757,
+      "line_end": 16760
+    }
+  },
+  "Q102": {
+    "status_in_source": "APROVADA",
+    "note": "Definição de ameaça intimidatória corrigida.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16760,
+      "line_end": 16762
+    }
+  },
+  "Q103": {
+    "status_in_source": "APROVADA",
+    "note": "Estrangulamento/sufocamento é sempre crítico.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16762,
+      "line_end": 16764
+    }
+  },
+  "Q104": {
+    "status_in_source": "APROVADA",
+    "note": "Coerção sexual corretamente tratada como segurança.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16764,
+      "line_end": 16766
+    }
+  },
+  "Q105": {
+    "status_in_source": "APROVADA",
+    "note": "Destruição e bloqueio de saída corretamente diferenciados.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16766,
+      "line_end": 16768
+    }
+  },
+  "Q106": {
+    "status_in_source": "APROVADA",
+    "note": "Consentimento digital revogável.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16768,
+      "line_end": 16770
+    }
+  },
+  "Q107": {
+    "status_in_source": "APROVADA",
+    "note": "Isolamento coercitivo já diferenciado de limite legítimo.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16770,
+      "line_end": 16772
+    }
+  },
+  "Q108": {
+    "status_in_source": "APROVADA",
+    "note": "Controle financeiro abusivo distinto de administração.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16772,
+      "line_end": 16774
+    }
+  },
+  "Q109": {
+    "status_in_source": "APROVADA",
+    "note": "Autonomia corrigida para “compromissos legitimamente assumidos”.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16774,
+      "line_end": 16776
+    }
+  },
+  "Q110": {
+    "status_in_source": "APROVADA",
+    "note": "Proteção legítima de criança ≠ ameaça abusiva.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16776,
+      "line_end": 16778
+    }
+  },
+  "Q111": {
+    "status_in_source": "APROVADA",
+    "note": "Pergunta reescrita para prática real da fé nos últimos 90 dias.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16778,
+      "line_end": 16780
+    }
+  },
+  "Q112": {
+    "status_in_source": "APROVADA",
+    "note": "Frequência de oração permite alternativa personalizada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16780,
+      "line_end": 16782
+    }
+  },
+  "Q113": {
+    "status_in_source": "APROVADA",
+    "note": "Devocional também permite frequência personalizada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16782,
+      "line_end": 16784
+    }
+  },
+  "Q114": {
+    "status_in_source": "APROVADA",
+    "note": "Participação comunitária equilibrada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16784,
+      "line_end": 16786
+    }
+  },
+  "Q115": {
+    "status_in_source": "APROVADA",
+    "note": "Divergência espiritual não prova falta de fé.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16786,
+      "line_end": 16788
+    }
+  },
+  "Q116": {
+    "status_in_source": "APROVADA",
+    "note": "Contribuições religiosas integradas ao orçamento.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16788,
+      "line_end": 16790
+    }
+  },
+  "Q117": {
+    "status_in_source": "APROVADA",
+    "note": "Ministério reutiliza protocolo Q048.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16790,
+      "line_end": 16792
+    }
+  },
+  "Q118": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Aplicabilidade parental interna.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16792,
+      "line_end": 16794
+    }
+  },
+  "Q119": {
+    "status_in_source": "APROVADA",
+    "note": "Subpergunta identifica quem praticou coerção espiritual.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16794,
+      "line_end": 16796
+    }
+  },
+  "Q120": {
+    "status_in_source": "APROVADA",
+    "note": "Revisão espiritual incorporável ao calendário unificado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16796,
+      "line_end": 16798
+    }
+  },
+  "Q121": {
+    "status_in_source": "APROVADA",
+    "note": "Prevenção de saúde usa janela adequada de 2 anos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 392,
+      "line_start": 16798,
+      "line_end": 16800
+    }
+  },
+  "Q122": {
+    "status_in_source": "APROVADA",
+    "note": "Sono e descanso aprovados.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 392,
+      "page_end": 393,
+      "line_start": 16800,
+      "line_end": 16802
+    }
+  },
+  "Q123": {
+    "status_in_source": "APROVADA",
+    "note": "Atividade física sem coerção estética.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16802,
+      "line_end": 16804
+    }
+  },
+  "Q124": {
+    "status_in_source": "APROVADA",
+    "note": "Alimentação alimenta saúde/rotina; não precisa cláusula isolada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16804,
+      "line_end": 16806
+    }
+  },
+  "Q125": {
+    "status_in_source": "APROVADA",
+    "note": "Cuidado durante doença aprovado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16806,
+      "line_end": 16808
+    }
+  },
+  "Q126": {
+    "status_in_source": "APROVADA",
+    "note": "B/C transformadas em diagnóstico privado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16808,
+      "line_end": 16810
+    }
+  },
+  "Q127": {
+    "status_in_source": "APROVADA",
+    "note": "Transparência sobre impacto sem acesso irrestrito a prontuário.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16810,
+      "line_end": 16812
+    }
+  },
+  "Q128": {
+    "status_in_source": "APROVADA",
+    "note": "Urgência de saúde corrigida.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16812,
+      "line_end": 16814
+    }
+  },
+  "Q129": {
+    "status_in_source": "APROVADA",
+    "note": "Limitação prolongada exige data de revisão.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16814,
+      "line_end": 16816
+    }
+  },
+  "Q130": {
+    "status_in_source": "APROVADA",
+    "note": "Minimização e compartilhamento voluntário incorporados.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16816,
+      "line_end": 16818
+    }
+  },
+  "Q131": {
+    "status_in_source": "APROVADA",
+    "note": "NÓS obrigatório retirado; lazer integrado à Q011.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16818,
+      "line_end": 16820
+    }
+  },
+  "Q132": {
+    "status_in_source": "APROVADA",
+    "note": "Autonomia de lazer adequada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16820,
+      "line_end": 16822
+    }
+  },
+  "Q133": {
+    "status_in_source": "APROVADA",
+    "note": "Preferência casa/fora funciona como personalização.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16822,
+      "line_end": 16824
+    }
+  },
+  "Q134": {
+    "status_in_source": "APROVADA",
+    "note": "Planejamento de viagens adequado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16824,
+      "line_end": 16826
+    }
+  },
+  "Q135": {
+    "status_in_source": "APROVADA",
+    "note": "Orçamento de lazer opcional.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16826,
+      "line_end": 16828
+    }
+  },
+  "Q136": {
+    "status_in_source": "APROVADA",
+    "note": "Novidades sem coerção.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16828,
+      "line_end": 16830
+    }
+  },
+  "Q137": {
+    "status_in_source": "APROVADA",
+    "note": "Hobby excessivo reutiliza protocolo Q048.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16830,
+      "line_end": 16832
+    }
+  },
+  "Q138": {
+    "status_in_source": "APROVADA",
+    "note": "Descanso legítimo ≠ abandono de responsabilidades.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16832,
+      "line_end": 16834
+    }
+  },
+  "Q139": {
+    "status_in_source": "APROVADA",
+    "note": "Datas especiais equilibradas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16834,
+      "line_end": 16836
+    }
+  },
+  "Q140": {
+    "status_in_source": "APROVADA",
+    "note": "Experiência especial não vira obrigação impossível.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16836,
+      "line_end": 16838
+    }
+  },
+  "Q141": {
+    "status_in_source": "APROVADA",
+    "note": "Visão de futuro válida.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16838,
+      "line_end": 16840
+    }
+  },
+  "Q142": {
+    "status_in_source": "APROVADA",
+    "note": "Versão reescrita possui eixo único.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16840,
+      "line_end": 16842
+    }
+  },
+  "Q143": {
+    "status_in_source": "APROVADA",
+    "note": "Projeto prioritário ampliado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16842,
+      "line_end": 16844
+    }
+  },
+  "Q144": {
+    "status_in_source": "APROVADA",
+    "note": "Mudança geográfica somente em situação concreta.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16844,
+      "line_end": 16846
+    }
+  },
+  "Q145": {
+    "status_in_source": "APROVADA",
+    "note": "Aumento de padrão de vida bem cruzado com finanças.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 393,
+      "line_start": 16846,
+      "line_end": 16848
+    }
+  },
+  "Q146": {
+    "status_in_source": "APROVADA",
+    "note": "Protocolo de Divergência Reprodutiva criado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 393,
+      "page_end": 394,
+      "line_start": 16848,
+      "line_end": 16850
+    }
+  },
+  "Q147": {
+    "status_in_source": "APROVADA",
+    "note": "Maturidade/aposentadoria adequada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16850,
+      "line_end": 16852
+    }
+  },
+  "Q148": {
+    "status_in_source": "APROVADA",
+    "note": "Reserva financeira protegida.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16852,
+      "line_end": 16854
+    }
+  },
+  "Q149": {
+    "status_in_source": "APROVADA",
+    "note": "Projeto adiado exige condição/data de revisão.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16854,
+      "line_end": 16856
+    }
+  },
+  "Q150": {
+    "status_in_source": "APROVADA",
+    "note": "Revisão do Projeto de Vida pronta para calendário unificado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16856,
+      "line_end": 16872
+    }
+  },
+  "Q151": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Aprovada; NÓS somente sem padrão problemático ativo.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16872,
+      "line_end": 16874
+    }
+  },
+  "Q152": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Aplicabilidade + privacidade corretas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16874,
+      "line_end": 16876
+    }
+  },
+  "Q153": {
+    "status_in_source": "CORRIGIR",
+    "note": "Ajustar linguagem para legislação aplicável à jurisdição.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16876,
+      "line_end": 16878
+    }
+  },
+  "Q154": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Estrutura funciona, mas há decisão doutrinária sobre admitir aposta recreativa.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16878,
+      "line_end": 16880
+    }
+  },
+  "Q155": {
+    "status_in_source": "APROVADA",
+    "note": "Compra impulsiva utiliza Q036, sem limite concorrente.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16880,
+      "line_end": 16882
+    }
+  },
+  "Q156": {
+    "status_in_source": "APROVADA",
+    "note": "Entretenimento digital aprovado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16882,
+      "line_end": 16884
+    }
+  },
+  "Q157": {
+    "status_in_source": "APROVADA",
+    "note": "Uso excessivo de celular distinto de privacidade digital.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16884,
+      "line_end": 16886
+    }
+  },
+  "Q158": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Ocultação permanece privada até tratamento adequado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16886,
+      "line_end": 16888
+    }
+  },
+  "Q159": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Dificuldade de controle não é diagnóstico clínico automático.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 394,
+      "line_start": 16888,
+      "line_end": 16890
+    }
+  },
+  "Q160": {
+    "status_in_source": "CORRIGIR",
+    "note": "Protocolo precisa impedir que “retirar recursos” vire controle abusivo; R$10         deve ser excluído.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 394,
+      "page_end": 395,
+      "line_start": 16890,
+      "line_end": 16893
+    }
+  },
+  "Q161": {
+    "status_in_source": "APROVADA",
+    "note": "Consistência de regras parentais aprovada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16893,
+      "line_end": 16895
+    }
+  },
+  "Q162": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Resposta C é segurança infantil, nunca cláusula de confissão.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16895,
+      "line_end": 16897
+    }
+  },
+  "Q163": {
+    "status_in_source": "APROVADA",
+    "note": "Tela por filho corretamente parametrizada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16897,
+      "line_end": 16899
+    }
+  },
+  "Q164": {
+    "status_in_source": "APROVADA",
+    "note": "Rotina de sono funciona por filho.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16899,
+      "line_end": 16901
+    }
+  },
+  "Q165": {
+    "status_in_source": "APROVADA",
+    "note": "Responsabilidades escolares bem estruturadas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16901,
+      "line_end": 16903
+    }
+  },
+  "Q166": {
+    "status_in_source": "APROVADA",
+    "note": "Tarefas compatíveis com idade.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16903,
+      "line_end": 16905
+    }
+  },
+  "Q167": {
+    "status_in_source": "APROVADA",
+    "note": "Educação financeira adequada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16905,
+      "line_end": 16907
+    }
+  },
+  "Q168": {
+    "status_in_source": "APROVADA",
+    "note": "Atividades extracurriculares + teste com data.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16907,
+      "line_end": 16909
+    }
+  },
+  "Q169": {
+    "status_in_source": "CORRIGIR",
+    "note": "Precisa declarar que decisões clínicas pertencem a profissionais habilitados,         não ao Método.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16909,
+      "line_end": 16912
+    }
+  },
+  "Q170": {
+    "status_in_source": "CORRIGIR",
+    "note": "Precisa minimização especial dos dados dos filhos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16912,
+      "line_end": 16914
+    }
+  },
+  "Q171": {
+    "status_in_source": "APROVADA",
+    "note": "Vida social sem cônjuge adequada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16914,
+      "line_end": 16916
+    }
+  },
+  "Q172": {
+    "status_in_source": "APROVADA",
+    "note": "Amizades compartilhadas úteis.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16916,
+      "line_end": 16918
+    }
+  },
+  "Q173": {
+    "status_in_source": "APROVADA",
+    "note": "Terceiros não substituem decisão conjugal.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16918,
+      "line_end": 16920
+    }
+  },
+  "Q174": {
+    "status_in_source": "CORRIGIR",
+    "note": "Regra da casa não pode virar lista de controle sobre amizades externas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16920,
+      "line_end": 16922
+    }
+  },
+  "Q175": {
+    "status_in_source": "CORRIGIR",
+    "note": "“Transparência” precisa ser expressamente separada de         rastreamento/vigilância.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16922,
+      "line_end": 16925
+    }
+  },
+  "Q176": {
+    "status_in_source": "APROVADA",
+    "note": "Desgaste persistente em 30 dias funciona como gatilho subsidiário.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16925,
+      "line_end": 16927
+    }
+  },
+  "Q177": {
+    "status_in_source": "APROVADA",
+    "note": "Pausa em crise reutiliza Q017.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16927,
+      "line_end": 16929
+    }
+  },
+  "Q178": {
+    "status_in_source": "CORRIGIR",
+    "note": "“Sem melhora suficiente” precisa ser operacionalizado no banco.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16929,
+      "line_end": 16931
+    }
+  },
+  "Q179": {
+    "status_in_source": "CORRIGIR",
+    "note": "Pergunta precisa ser reescrita em primeira pessoa; atualmente pode não         identificar quem ameaça separação.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16931,
+      "line_end": 16934
+    }
+  },
+  "Q180": {
+    "status_in_source": "APROVADA",
+    "note": "Protocolo de Impasse muito bom.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16934,
+      "line_end": 16936
+    }
+  },
+  "Q181": {
+    "status_in_source": "APROVADA",
+    "note": "Reutiliza Q018 corretamente.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 395,
+      "line_start": 16936,
+      "line_end": 16938
+    }
+  },
+  "Q182": {
+    "status_in_source": "APROVADA",
+    "note": "Reconhecimento de melhora aprovado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 395,
+      "page_end": 396,
+      "line_start": 16938,
+      "line_end": 16940
+    }
+  },
+  "Q183": {
+    "status_in_source": "APROVADA",
+    "note": "Não cria nova agenda; utiliza mecanismos existentes.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16940,
+      "line_end": 16942
+    }
+  },
+  "Q184": {
+    "status_in_source": "APROVADA",
+    "note": "Regressão reabre protocolo original.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16942,
+      "line_end": 16944
+    }
+  },
+  "Q185": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Versionamento excelente; acrescentar natureza não jurídica automática do         documento.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16944,
+      "line_end": 16947
+    }
+  },
+  "Q186": {
+    "status_in_source": "APROVADA",
+    "note": "Limites legítimos bem definidos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16947,
+      "line_end": 16949
+    }
+  },
+  "Q187": {
+    "status_in_source": "CORRIGIR",
+    "note": "Redundância real com Q021; deve ser substituída.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16949,
+      "line_end": 16951
+    }
+  },
+  "Q188": {
+    "status_in_source": "APROVADA",
+    "note": "Reparação acrescenta dimensão concreta.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16951,
+      "line_end": 16953
+    }
+  },
+  "Q189": {
+    "status_in_source": "APROVADA",
+    "note": "Perdão × confiança × uso do passado aprovado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16953,
+      "line_end": 16955
+    }
+  },
+  "Q190": {
+    "status_in_source": "APROVADA",
+    "note": "Repetição encaminha ao protocolo apropriado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16955,
+      "line_end": 16957
+    }
+  },
+  "Q191": {
+    "status_in_source": "APROVADA",
+    "note": "Responsabilidade própria sem falsa equivalência.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16957,
+      "line_end": 16959
+    }
+  },
+  "Q192": {
+    "status_in_source": "APROVADA",
+    "note": "Promessa → ação observável é ótima regra.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16959,
+      "line_end": 16961
+    }
+  },
+  "Q193": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Existe proximidade com Q016/Q189, mas mede capacidade de receber         feedback tardio; pode permanecer.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16961,
+      "line_end": 16964
+    }
+  },
+  "Q194": {
+    "status_in_source": "APROVADA",
+    "note": "Hierarquia de problemas é excelente mecanismo sistêmico.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16964,
+      "line_end": 16966
+    }
+  },
+  "Q195": {
+    "status_in_source": "APROVADA",
+    "note": "Essencial × preferência é fundamental para contrato final.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16966,
+      "line_end": 16968
+    }
+  },
+  "Q196": {
+    "status_in_source": "CORRIGIR",
+    "note": "Deve ser diagnóstico de planejamento, não parágrafo contratual.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16968,
+      "line_end": 16970
+    }
+  },
+  "Q197": {
+    "status_in_source": "CORRIGIR",
+    "note": "Percepção de esforço deve ser diagnóstico privado, não cláusula nominal.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16970,
+      "line_end": 16972
+    }
+  },
+  "Q198": {
+    "status_in_source": "CORRIGIR",
+    "note": "Percepção da disposição do outro deve ser diagnóstico privado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16972,
+      "line_end": 16974
+    }
+  },
+  "Q199": {
+    "status_in_source": "APROVADA_COM_REGRA",
+    "note": "Excelente; deve conter também aviso sobre natureza e finalidade do         instrumento.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16974,
+      "line_end": 16977
+    }
+  },
+  "Q200": {
+    "status_in_source": "CORRIGIR",
+    "note": "Deve calibrar plano inicial; não criar obrigação contratual a partir da         “disposição”.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 396,
+      "page_end": 396,
+      "line_start": 16977,
+      "line_end": 16981
+    }
+  }
+}

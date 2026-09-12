@@ -1,0 +1,2825 @@
+[
+  {
+    "fixed_rule_id": "FR-Q001-01",
+    "question_id": "Q001",
+    "label": "Parágrafo fixo",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que um problema considerado relevante por qualquer\num deles não deverá permanecer indefinidamente sem tratamento, aplicando-se o\nProtocolo Geral de Conversa, Escuta e Correção.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 217,
+      "page_end": 219,
+      "line_start": 9296,
+      "line_end": 9352
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q002-01",
+    "question_id": "Q002",
+    "label": "Parágrafo fixo 1",
+    "source_text": "{Nome 1} e {Nome 2} comprometem-se a conversar previamente sobre decisões capazes\nde produzir impacto significativo sobre a vida dos dois ou da família.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 219,
+      "page_end": 221,
+      "line_start": 9352,
+      "line_end": 9438
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q002-02",
+    "question_id": "Q002",
+    "label": "Parágrafo fixo 2",
+    "source_text": "Ganhar mais dinheiro, pagar maior parcela das despesas, possuir personalidade mais\nfirme, experiência ou maior conhecimento sobre determinado assunto não confere a\n{Nome 1} ou {Nome 2} o direito de decidir sozinho aquilo que afeta os dois.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 219,
+      "page_end": 221,
+      "line_start": 9352,
+      "line_end": 9438
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q003-01",
+    "question_id": "Q003",
+    "label": "Parágrafo fixo",
+    "source_text": "{Nome 1} e {Nome 2} comprometem-se a não utilizar xingamentos, humilhações,\nameaças, gritos intimidadores, ironias ofensivas ou palavras destinadas a ferir durante\nconflitos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 221,
+      "page_end": 222,
+      "line_start": 9438,
+      "line_end": 9488
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q004-01",
+    "question_id": "Q004",
+    "label": "PARÁGRAFO FIXO PRESERVADO",
+    "source_text": "{Nome 1} e {Nome 2} comprometem-se a não deixar que carinho, gratidão e\nreconhecimento existam apenas no pensamento, procurando demonstrá-los de maneira\nque o outro possa perceber e receber.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 222,
+      "page_end": 224,
+      "line_start": 9488,
+      "line_end": 9573
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q005-01",
+    "question_id": "Q005",
+    "label": "Parágrafo fixo",
+    "source_text": "{Nome 1} e {Nome 2} comprometem-se a respeitar compromissos previamente\ncombinados. Ao perceber que precisará alterar um horário ou plano conjunto, aquele\nque precisar da mudança deverá informar o outro antes do horário previsto. Se fato\ninesperado impedir a comunicação prévia, deverá informar no mesmo dia ou em até 24\nhoras.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 224,
+      "page_end": 225,
+      "line_start": 9573,
+      "line_end": 9626
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q006-01",
+    "question_id": "Q006",
+    "label": "Parágrafo fixo",
+    "source_text": "Quando {Nome 1} ou {Nome 2} apresentar uma reclamação, o outro deverá ouvi-la antes\nde iniciar sua defesa. Depois de demonstrar aquilo que compreendeu, terá igual direito\nde apresentar sua explicação e percepção.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 225,
+      "page_end": 226,
+      "line_start": 9626,
+      "line_end": 9668
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q008-01",
+    "question_id": "Q008",
+    "label": "Parágrafo fixo",
+    "source_text": "{Nome 1} e {Nome 2} comprometem-se a tratar imprevistos, atrasos, erros e mudanças\ninicialmente com diálogo e busca de solução, evitando que a primeira reação seja acusar\nou atacar.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 227,
+      "page_end": 228,
+      "line_start": 9713,
+      "line_end": 9761
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q009-01",
+    "question_id": "Q009",
+    "label": "Parágrafo fixo",
+    "source_text": "As demonstrações físicas de afeto entre {Nome 1} e {Nome 2} permanecerão voluntárias\ne não poderão ser utilizadas como punição, obrigação ou moeda de troca.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 228,
+      "page_end": 229,
+      "line_start": 9761,
+      "line_end": 9805
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q010-01",
+    "question_id": "Q010",
+    "label": "Parágrafo fixo",
+    "source_text": "Pelo menos uma vez por semana, {Nome 1} e {Nome 2} comprometem-se, cada um, a\nverbalizar uma atitude, esforço ou qualidade concreta do outro pela qual sejam gratos ou\nque reconheçam como importante para o casamento.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 229,
+      "page_end": 230,
+      "line_start": 9805,
+      "line_end": 9852
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q011-01",
+    "question_id": "Q011",
+    "label": "Parágrafo fixo",
+    "source_text": "Durante os momentos formalmente reservados para convivência exclusiva de {Nome 1} e\n{Nome 2}, celulares e outras distrações deverão permanecer fora de uso, salvo\nnecessidade relacionada a trabalho indispensável, filhos, saúde ou urgência.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 230,
+      "page_end": 232,
+      "line_start": 9852,
+      "line_end": 9920
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q013-01",
+    "question_id": "Q013",
+    "label": "Parágrafo fixo",
+    "source_text": "Quando o próprio cônjuge reconhecer claramente o erro, o pedido de desculpas deverá ocorrer\nno mesmo dia ou em até 24 horas.\n\nQuando aplicável, deverá incluir:\n\n    ●   o que reconhece que fez;\n    ●   como entende que afetou o outro;\n    ●   pedido claro de desculpas;\n    ●   o que pretende fazer diferente.\n\nNenhum dos dois será obrigado a confessar culpa que não reconheça. Havendo\ndivergência, aplica-se o Protocolo Geral.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 233,
+      "page_end": 234,
+      "line_start": 9975,
+      "line_end": 10029
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q014-01",
+    "question_id": "Q014",
+    "label": "Parágrafo fixo 1",
+    "source_text": "As reclamações entre {Nome 1} e {Nome 2} deverão abordar principalmente fatos e\ncomportamentos, evitando ataques à personalidade, comparações humilhantes e\ngeneralizações utilizadas apenas para aumentar o conflito.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 234,
+      "page_end": 235,
+      "line_start": 10029,
+      "line_end": 10078
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q014-02",
+    "question_id": "Q014",
+    "label": "Parágrafo fixo 2",
+    "source_text": "Assuntos delicados entre {Nome 1} e {Nome 2} deverão ser tratados em ambiente\nprivado, sem a presença de filhos, familiares, amigos ou terceiros, salvo situação\nurgente que exija intervenção imediata.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 234,
+      "page_end": 235,
+      "line_start": 10029,
+      "line_end": 10078
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q015-01",
+    "question_id": "Q015",
+    "label": "Parágrafo fixo",
+    "source_text": "Silêncio, medo de conflito, cansaço ou desistência de {Nome 1} ou {Nome 2} não serão\nconsiderados automaticamente como concordância.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 235,
+      "page_end": 236,
+      "line_start": 10078,
+      "line_end": 10119
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q016-01",
+    "question_id": "Q016",
+    "label": "Parágrafo fixo",
+    "source_text": "Assunto considerado resolvido por {Nome 1} e {Nome 2} não deverá posteriormente ser\nutilizado apenas para atacar ou humilhar.\n\nMesmo comportamento causando conflito 3 vezes em 30 dias → Conversa de Correção em\naté 72 horas.\n\nDeverá identificar:\n\n    ●   comportamento repetido;\n    ●   por que acordo anterior falhou;\n    ●   mudança concreta;\n    ●   forma de acompanhamento.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 236,
+      "page_end": 238,
+      "line_start": 10119,
+      "line_end": 10164
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q017-01",
+    "question_id": "Q017",
+    "label": "Parágrafo fixo",
+    "source_text": "{Nome 1} e {Nome 2} poderão solicitar pausa, mas deverão comunicá-la claramente e\nretomar a conversa no mesmo dia ou em até 24 horas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 238,
+      "page_end": 239,
+      "line_start": 10164,
+      "line_end": 10205
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q018-01",
+    "question_id": "Q018",
+    "label": "Parágrafo fixo",
+    "source_text": "Erro pontual → reconhecimento + desculpas + correção.\n\nComportamento repetido → plano de mudança.\n\nQuebra grave → protocolo específico de reconstrução.\n\nMedida prática deverá ser definida na própria conversa ou em até 72 horas.\n\nPerdoar não significa fingir que nada aconteceu.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 239,
+      "page_end": 240,
+      "line_start": 10205,
+      "line_end": 10250
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q019-01",
+    "question_id": "Q019",
+    "label": "Parágrafo fixo",
+    "source_text": "Busca legítima de psicólogo, terapeuta, médico, advogado, líder pastoral, conselheiro, familiar\nconfiável, autoridade ou serviço de proteção permanece permitida.\n\nViolência, ameaça, abuso ou coerção nunca estarão protegidos por obrigação de silêncio.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 240,
+      "page_end": 240,
+      "line_start": 10250,
+      "line_end": 10287
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q020-01",
+    "question_id": "Q020",
+    "label": "Parágrafo fixo",
+    "source_text": "Informar a {Nome 1} ou {Nome 2} uma decisão que já foi tomada não será considerado o\nmesmo que consultá-lo antes da decisão.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 240,
+      "page_end": 242,
+      "line_start": 10287,
+      "line_end": 10347
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q021-01",
+    "question_id": "Q021",
+    "label": "Parágrafo fixo",
+    "source_text": "Quando {Nome 1} ou {Nome 2} disser que determinada atitude o machucou, o outro\ndeverá procurar compreender primeiro o fato e seu impacto antes de simplesmente\nafirmar que houve exagero, interpretação errada ou ausência de intenção.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 242,
+      "page_end": 243,
+      "line_start": 10347,
+      "line_end": 10391
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q023-01",
+    "question_id": "Q023",
+    "label": "Parágrafo fixo",
+    "source_text": "Quando {Nome 1} ou {Nome 2} disser claramente “preciso conversar com você sobre um\nassunto importante”, aplica-se o Protocolo Geral.\n\nMedo de violência, ameaça, coerção ou represália → fluxo de segurança.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 244,
+      "page_end": 245,
+      "line_start": 10430,
+      "line_end": 10478
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q027-01",
+    "question_id": "Q027",
+    "label": "Parágrafo fixo",
+    "source_text": "Quando houver filhos em comum, responsabilidade profissional, patrimônio, questão\njurídica ou outra razão legítima que exija contato com antigo parceiro, a comunicação\npermanecerá compatível com essa necessidade e com os limites de fidelidade e respeito.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 249,
+      "page_end": 251,
+      "line_start": 10648,
+      "line_end": 10716
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q028-01",
+    "question_id": "Q028",
+    "label": "Parágrafo fixo",
+    "source_text": "Ciúme não autoriza humilhação, ameaça, perseguição, isolamento, controle de roupas,\ntrabalho, deslocamentos, aparelho ou localização.\n\nConfiança também não autoriza comportamento incompatível com fidelidade.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 251,
+      "page_end": 252,
+      "line_start": 10716,
+      "line_end": 10794
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q029-01",
+    "question_id": "Q029",
+    "label": "Parágrafo fixo",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que privacidade pessoal e segredo conjugal são\nsituações diferentes. Nenhum deles terá direito automático de fiscalizar\npermanentemente aparelhos, exigir senhas, monitorar mensagens ou localização. Da\nmesma forma, privacidade não poderá ser utilizada para ocultar deliberadamente\ncomportamento incompatível com fidelidade, finanças ou transparência.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 252,
+      "page_end": 254,
+      "line_start": 10794,
+      "line_end": 10855
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q030-01",
+    "question_id": "Q030",
+    "label": "Parágrafo fixo",
+    "source_text": "Fidelidade não se limita ao contato físico. Mensagens sexualizadas, imagens íntimas,\ndeclarações afetivas escondidas, flerte persistente, conversas românticas/sexuais secretas ou\nintimidade emocional paralela poderão constituir quebra dos compromissos assumidos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 254,
+      "page_end": 255,
+      "line_start": 10855,
+      "line_end": 10913
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q032-01",
+    "question_id": "Q032",
+    "label": "Parágrafo fixo",
+    "source_text": "Amizade legítima não constitui violação.\n\nMas amizade não justificará flerte, segredo, intimidade sexual, encontro deliberadamente\nescondido ou relação emocional paralela.\n\nDesconforto deve ser ouvido, mas não gera proibição automática.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 257,
+      "page_end": 259,
+      "line_start": 10989,
+      "line_end": 11081
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q033-01",
+    "question_id": "Q033",
+    "label": "Parágrafo fixo",
+    "source_text": "Terapia, orientação pastoral, amizade saudável e apoio familiar não são infidelidade emocional\npor si sós.\n\nSinais de vínculo paralelo aumentam quando coexistem:\n\n    ●   segredo;\n    ●   contato frequente;\n    ●   expectativa constante;\n    ●   prioridade sobre o cônjuge;\n    ●   flerte;\n    ●   atração;\n    ●   conversas sobre intimidade do casamento;\n    ●   desejo de esconder a profundidade da relação.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 259,
+      "page_end": 261,
+      "line_start": 11081,
+      "line_end": 11158
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q034-01",
+    "question_id": "Q034",
+    "label": "Parágrafo fixo",
+    "source_text": "Transparência não significa comunicar cada pequena compra.\n\nDeverão ser conhecidas informações sobre:\n\n   ●   rendas relevantes;\n   ●   empréstimos;\n   ●   financiamentos;\n   ●   dívidas;\n   ●   garantias;\n   ●   investimentos relevantes;\n   ●   obrigações tributárias relevantes;\n   ●   uso significativo de crédito;\n   ●   outros compromissos capazes de afetar capacidade financeira.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 261,
+      "page_end": 263,
+      "line_start": 11158,
+      "line_end": 11228
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q035-01",
+    "question_id": "Q035",
+    "label": "Parágrafo fixo",
+    "source_text": "Antes de obrigação relevante deverão ser conhecidos:\n\n    ●   valor total;\n    ●   parcelas;\n    ●   juros/custo;\n    ●   vencimentos;\n    ●   finalidade;\n    ●   impacto no orçamento.\n\nPara o limite contratual será utilizado o valor total da obrigação, e não apenas a parcela.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 263,
+      "page_end": 264,
+      "line_start": 11228,
+      "line_end": 11307
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q036-01",
+    "question_id": "Q036",
+    "label": "Parágrafo fixo",
+    "source_text": "Possuir renda própria ou contribuir mais não significa liberdade ilimitada para\ncomprometer recursos familiares. Da mesma maneira, {Nome 1} e {Nome 2} não\nprecisarão solicitar autorização para cada pequeno gasto que permaneça dentro dos\nlimites acordados.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 264,
+      "page_end": 266,
+      "line_start": 11307,
+      "line_end": 11385
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q038-01",
+    "question_id": "Q038",
+    "label": "Parágrafo fixo",
+    "source_text": "Dinheiro não será utilizado para punição, ameaça, humilhação, impedimento de necessidades\nbásicas, saúde, deslocamento necessário ou produção deliberada de dependência.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 267,
+      "page_end": 270,
+      "line_start": 11447,
+      "line_end": 11532
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q039-01",
+    "question_id": "Q039",
+    "label": "Parágrafo fixo",
+    "source_text": "Pelo menos uma vez por mês, ambos terão acesso à visão atualizada de:\n\n    ●   renda;\n    ●   despesas fixas;\n    ●   despesas variáveis relevantes;\n    ●   parcelas;\n    ●   dívidas;\n\n    ●   atrasos;\n    ●   reservas;\n    ●   investimentos;\n    ●   compromissos futuros.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 270,
+      "page_end": 271,
+      "line_start": 11532,
+      "line_end": 11601
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q040-01",
+    "question_id": "Q040",
+    "label": "Parágrafo fixo",
+    "source_text": "Ajuda inclui doações, empréstimos, pagamento de contas, uso de cartão, transferência e\ncompra para terceiro.\n\nFiança, aval, empréstimo do nome ou contratação de dívida em benefício de terceiro\nexigem aprovação conjunta independentemente do valor.\n\nObrigações legais ou contratuais já existentes não serão classificadas como ajuda voluntária.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 271,
+      "page_end": 273,
+      "line_start": 11601,
+      "line_end": 11680
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q041-01",
+    "question_id": "Q041",
+    "label": "Parágrafo fixo",
+    "source_text": "Conta individual não autoriza ocultação financeira. Conta conjunta não autoriza controle\nabsoluto sobre todos os gastos pessoais do outro.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 273,
+      "page_end": 275,
+      "line_start": 11680,
+      "line_end": 11777
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q045-01",
+    "question_id": "Q045",
+    "label": "Parágrafo fixo",
+    "source_text": "Assumir responsabilidade inclui perceber, lembrar, planejar, executar e acompanhar sua\nconclusão. Não haverá divisão completa quando uma pessoa executa e a outra continua\nresponsável por lembrar e cobrar.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 280,
+      "page_end": 282,
+      "line_start": 12000,
+      "line_end": 12055
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q047-01",
+    "question_id": "Q047",
+    "label": "Parágrafo fixo",
+    "source_text": "{Nome 1} e {Nome 2} não utilizarão os filhos como espectadores, mensageiros, árbitros\nou aliados contra o outro responsável.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 284,
+      "page_end": 285,
+      "line_start": 12142,
+      "line_end": 12208
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q048-01",
+    "question_id": "Q048",
+    "label": "Parágrafo fixo",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que trabalho, carreira, ministério ou empreendimento\nsão partes importantes da vida, mas não deverão justificar ausência conjugal contínua\nsem diálogo, planejamento ou tentativa concreta de equilíbrio.\n\nIntegração com 011\n\nOs períodos definidos na Pergunta 011 tornam-se períodos protegidos contra compromissos\nprofissionais evitáveis.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 285,
+      "page_end": 287,
+      "line_start": 12208,
+      "line_end": 12283
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q049-01",
+    "question_id": "Q049",
+    "label": "Parágrafo fixo",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem o direito de cada um buscar crescimento profissional,\nmas mudanças capazes de alterar significativamente a vida familiar não serão tratadas\ncomo decisões exclusivamente individuais.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 287,
+      "page_end": 289,
+      "line_start": 12283,
+      "line_end": 12386
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q050-01",
+    "question_id": "Q050",
+    "label": "Parágrafo fixo 1",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que ambos continuam possuindo talentos, sonhos,\ncapacidades e possibilidades de desenvolvimento pessoal e profissional depois do\ncasamento.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 289,
+      "page_end": 292,
+      "line_start": 12386,
+      "line_end": 12506
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q050-02",
+    "question_id": "Q050",
+    "label": "Parágrafo fixo 2",
+    "source_text": "Apoiar não significa concordar automaticamente com todo projeto. Significa ouvir com\nrespeito, avaliar seriamente e buscar equilíbrio entre desenvolvimento individual e\nestabilidade familiar.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 289,
+      "page_end": 292,
+      "line_start": 12386,
+      "line_end": 12506
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q050-03",
+    "question_id": "Q050",
+    "label": "Parágrafo fixo 3",
+    "source_text": "{Nome 1} e {Nome 2} comprometem-se a não utilizar habitualmente palavras de\nridicularização, desprezo ou desqualificação destinadas apenas a destruir os sonhos e\nprojetos legítimos do outro.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 289,
+      "page_end": 292,
+      "line_start": 12386,
+      "line_end": 12506
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q050-04",
+    "question_id": "Q050",
+    "label": "Parágrafo fixo 4",
+    "source_text": "Quando um dos cônjuges tiver recebido apoio significativo do outro para seu próprio\ncrescimento, reconhecerá essa cooperação e buscará reciprocidade quando o outro\napresentar projeto legítimo de desenvolvimento.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 289,
+      "page_end": 292,
+      "line_start": 12386,
+      "line_end": 12506
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q061-01",
+    "question_id": "Q061",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que intimidade sexual não deverá ser tratada como\nexperiência destinada exclusivamente à satisfação de apenas um deles. Ambos\nprocurarão conhecer e considerar o conforto, as necessidades e as preferências do\noutro, sem transformar prazer ou orgasmo em obrigação de desempenho.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 295,
+      "page_end": 298,
+      "line_start": 12645,
+      "line_end": 12734
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q062-01",
+    "question_id": "Q062",
+    "label": "PARÁGRAFO FIXO DE SEGURANÇA",
+    "source_text": "Quando {Nome 1} ou {Nome 2} comunicar dor, desconforto ou desejo de interromper\ndeterminada prática, o contato deverá ser reduzido, modificado ou interrompido\nconforme solicitado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 298,
+      "page_end": 299,
+      "line_start": 12734,
+      "line_end": 12810
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q062-02",
+    "question_id": "Q062",
+    "label": "PARÁGRAFO FIXO ADICIONAL",
+    "source_text": "Dor ou desconforto persistente que prejudique a vida íntima não deverá ser tratado\napenas como falta de vontade ou problema de relacionamento. O casal poderá buscar\navaliação profissional adequada, preservando a autonomia da pessoa diretamente\nafetada.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 298,
+      "page_end": 299,
+      "line_start": 12734,
+      "line_end": 12810
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q063-01",
+    "question_id": "Q063",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} procurarão proteger os momentos de intimidade contra\ninterrupções evitáveis, organizando, conforme sua realidade, horários, aparelhos\neletrônicos, responsabilidades domésticas e cuidados com os filhos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 299,
+      "page_end": 301,
+      "line_start": 12810,
+      "line_end": 12883
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q065-01",
+    "question_id": "Q065",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Qualquer proposta de novidade sexual poderá ser conversada, mas somente será\nrealizada quando houver vontade e consentimento dos dois. Recusar determinada\nprática não autoriza humilhação, ameaça, insistência ou punição.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 302,
+      "page_end": 304,
+      "line_start": 12948,
+      "line_end": 13014
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q066-01",
+    "question_id": "Q066",
+    "label": "PARÁGRAFO FIXO 1",
+    "source_text": "{Nome 1} e {Nome 2} comprometem-se a não utilizar comentários sobre peso, aparência,\nidade, desempenho ou características físicas com finalidade de humilhar, ridicularizar ou\ndiminuir a atratividade do outro.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 304,
+      "page_end": 306,
+      "line_start": 13014,
+      "line_end": 13087
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q066-02",
+    "question_id": "Q066",
+    "label": "PARÁGRAFO FIXO 2",
+    "source_text": "Comparações corporais humilhantes com antigos parceiros, terceiros, pornografia,\nredes sociais ou padrões externos serão incompatíveis com os compromissos de\nrespeito previstos neste contrato.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 304,
+      "page_end": 306,
+      "line_start": 13014,
+      "line_end": 13087
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q067-01",
+    "question_id": "Q067",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "O Método não utilizará a masturbação isoladamente como prova automática de\ninfidelidade ou falta de amor. O sistema avaliará especialmente seus efeitos quando\nhouver segredo deliberado, compulsividade percebida, utilização recorrente em\nsubstituição à intimidade consensualmente desejada pelo casal ou associação a outras\nquebras de acordo.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 306,
+      "page_end": 307,
+      "line_start": 13087,
+      "line_end": 13163
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q068-01",
+    "question_id": "Q068",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que algumas dificuldades íntimas podem exigir\natenção além da conversa conjugal. Quando problema persistente estiver causando\nsofrimento relevante ou prejudicando significativamente a vida sexual, a pessoa\ndiretamente afetada poderá buscar avaliação profissional adequada, com apoio e sem\nridicularização por parte do cônjuge.\n\nParágrafo de privacidade\n\nTransparência conjugal sobre a existência de uma dificuldade não significa renúncia\nautomática ao direito de privacidade sobre todo detalhe de atendimento ou informação\nde saúde.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 307,
+      "page_end": 309,
+      "line_start": 13163,
+      "line_end": 13229
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q069-01",
+    "question_id": "Q069",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Decisões relacionadas à possibilidade de gravidez deverão ser conversadas entre {Nome\n1} e {Nome 2}, sem que qualquer dos dois utilize pressão, ameaça ou engano para impor\nao outro gravidez ou prevenção contra sua vontade.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 309,
+      "page_end": 311,
+      "line_start": 13229,
+      "line_end": 13325
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q070-01",
+    "question_id": "Q070",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que carinho ou intimidade poderão contribuir para\nreconexão depois de conflitos quando ambos desejarem, mas não cancelarão\nautomaticamente questões importantes que ainda precisem ser conversadas, reparadas\nou corrigidas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 311,
+      "page_end": 313,
+      "line_start": 13325,
+      "line_end": 13415
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q121-01",
+    "question_id": "Q121",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "O cuidado com a saúde continuará sendo responsabilidade pessoal, mas {Nome 1} e\n{Nome 2} reconhecem que negligência prolongada capaz de produzir consequências\nprevisíveis para a família poderá ser legitimamente conversada entre o casal.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 314,
+      "page_end": 316,
+      "line_start": 13443,
+      "line_end": 13509
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q122-01",
+    "question_id": "Q122",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} procurarão respeitar a necessidade legítima de descanso um do\noutro e evitarão interpretar cansaço real automaticamente como falta de interesse,\npreguiça ou rejeição.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 316,
+      "page_end": 317,
+      "line_start": 13509,
+      "line_end": 13573
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q123-01",
+    "question_id": "Q123",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Nenhum dos cônjuges poderá utilizar peso, corpo, desempenho físico ou aparência\ncomo instrumento de humilhação ou coerção. Incentivo à saúde deverá preservar\nrespeito, autonomia e eventuais limitações clínicas.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 317,
+      "page_end": 318,
+      "line_start": 13573,
+      "line_end": 13627
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q126-01",
+    "question_id": "Q126",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "O cônjuge poderá oferecer apoio, mas não substituirá automaticamente profissionais\nadequados quando a situação exigir acompanhamento especializado.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 322,
+      "page_end": 323,
+      "line_start": 13769,
+      "line_end": 13828
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q127-01",
+    "question_id": "Q127",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Transparência sobre impacto familiar não significa acesso automático a prontuários,\nexames, consultas ou todos os detalhes clínicos do cônjuge.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 323,
+      "page_end": 324,
+      "line_start": 13828,
+      "line_end": 13886
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q128-01",
+    "question_id": "Q128",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Em situação de urgência real, preservação da saúde e segurança prevalecerá sobre a\nexigência ordinária de consulta financeira prévia. A decisão e o impacto financeiro\ndeverão ser comunicados ao cônjuge no mesmo dia ou em até 24 horas quando a\nurgência impedir conversa anterior.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 324,
+      "page_end": 326,
+      "line_start": 13886,
+      "line_end": 13943
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q140-01",
+    "question_id": "Q140",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "A impossibilidade financeira, condição de saúde, responsabilidade com\nfilhos/dependentes ou outra circunstância legítima não será considerada\ndescumprimento. O objetivo desta cláusula é evitar que experiências do casal sejam\nindefinidamente abandonadas apenas pela força da rotina.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 342,
+      "page_end": 344,
+      "line_start": 14611,
+      "line_end": 14732
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q153-01",
+    "question_id": "Q153",
+    "label": "Regra fixa",
+    "source_text": "O Método não criará uma quantidade “permitida” de substância ilegal nem autorizará\nuso não médico de medicamento controlado como solução para comportamento\nproblemático.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 423,
+      "page_end": 424,
+      "line_start": 18112,
+      "line_end": 18164
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q172-01",
+    "question_id": "Q172",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Amizades compartilhadas não deverão se transformar em espaço de exposição de\nconflitos, formação de alianças contra o cônjuge ou invasão da privacidade do\ncasamento.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 361,
+      "page_end": 362,
+      "line_start": 15437,
+      "line_end": 15494
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q174-01",
+    "question_id": "Q174",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "A residência compartilhada não será utilizada habitualmente para encontros sociais\nrelevantes sem consideração pela disponibilidade, privacidade e rotina de quem também\nvive nela.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 364,
+      "page_end": 366,
+      "line_start": 15549,
+      "line_end": 15632
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q175-01",
+    "question_id": "Q175",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Comunicação prévia não significará necessidade de autorização para toda atividade\nsocial. Da mesma forma, autonomia não significa direito de ignorar deliberadamente\nlimites de fidelidade, segurança ou compromissos anteriormente assumidos.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 366,
+      "page_end": 367,
+      "line_start": 15632,
+      "line_end": 15706
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q177-01",
+    "question_id": "Q177",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Uma pausa de conflito não será utilizada como punição, ameaça de abandono ou\nestratégia para obrigar o outro a ceder.\n\nRegra ordinária\n\nQuando for apenas conflito conjugal comum:\n\n→ informar necessidade de pausa e retomar no mesmo dia ou em até 24 horas, conforme\nprotocolo geral.\n\nExceção",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 369,
+      "page_end": 370,
+      "line_start": 15753,
+      "line_end": 15812
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q179-01",
+    "question_id": "Q179",
+    "label": "Regra fixa",
+    "source_text": "Comunicar de forma séria que a continuidade do casamento está sendo realmente\nquestionada não será classificado automaticamente como ameaça abusiva.\n\nO problema é utilizar separação principalmente para provocar medo ou obediência.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 430,
+      "page_end": 431,
+      "line_start": 18399,
+      "line_end": 18446
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q182-01",
+    "question_id": "Q182",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Reconhecer progresso não significa eliminar responsabilidade pelas consequências\nanteriores nem declarar problema completamente resolvido antes que isso seja\nverdadeiro.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 376,
+      "page_end": 377,
+      "line_start": 16046,
+      "line_end": 16097
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q183-01",
+    "question_id": "Q183",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Não criar nova frequência.\n\nUtilizar:\n\n    ●   Q011 — Tempo de Qualidade;\n    ●   Q055 — Intimidade e Reconexão;\n    ●   Q090 — Revisão da Intimidade;\n    ●   Q120 — espiritualidade;\n    ●   Calendário Unificado de Revisões.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 377,
+      "page_end": 378,
+      "line_start": 16097,
+      "line_end": 16155
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q187-01",
+    "question_id": "Q187",
+    "label": "Parágrafo fixo",
+    "source_text": "“Não haverá prazo contratual para deixar de sentir luto. O compromisso\n         assumido é de cuidado, presença e comunicação, e não de exigir\n         recuperação emocional dentro de determinada data.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 431,
+      "page_end": 433,
+      "line_start": 18446,
+      "line_end": 18513
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q116-SUP-09",
+    "question_id": "Q116",
+    "label": "Regra fixa",
+    "source_text": "Nenhum dos cônjuges poderá utilizar culpa espiritual para obrigar o outro a entregar recurso cuja disposição conjunta é exigida pelas regras financeiras do casamento.",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 533,
+      "line_end": 585
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q117-SUP-04",
+    "question_id": "Q117",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "“{Nome 1} e {Nome 2} reconhecem que servir à comunidade de fé não elimina os compromissos de cuidado, presença, responsabilidade e fidelidade assumidos dentro da própria família.”",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 585,
+      "line_end": 620
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q119-SUP-04",
+    "question_id": "Q119",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "“Nenhum versículo, ensino, cargo religioso ou palavra atribuída a Deus poderá ser utilizado neste contrato para justificar violência, coerção sexual, ameaça, controle abusivo, humilhação ou eliminação da possibilidade de o cônjuge expressar discordância.”",
+    "source_ref": {
+      "source_id": "MSG101120",
+      "line_start": 664,
+      "line_end": 700
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q141-SUP-04",
+    "question_id": "Q141",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que um casamento poderá enfrentar mudanças imprevistas ao longo do tempo, mas isso não elimina a importância de construir direção comum e revisar periodicamente seus objetivos.",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 9,
+      "line_end": 61
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q147-SUP-04",
+    "question_id": "Q147",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "O planejamento da maturidade deverá considerar tanto independência e qualidade de vida quanto a possibilidade de mudanças de saúde, renda, mobilidade e necessidade de cuidado ao longo do tempo.",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 400,
+      "line_end": 450
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q149-SUP-04",
+    "question_id": "Q149",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Quando projeto importante de um dos cônjuges for adiado por decisão do casal, deverá ser definida uma data ou condição objetiva para nova avaliação sempre que for possível. O adiamento não poderá permanecer indefinidamente sem qualquer revisão.",
+    "source_ref": {
+      "source_id": "MD02",
+      "line_start": 524,
+      "line_end": 584
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q151-SUP-04",
+    "question_id": "Q151",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Intoxicação não será utilizada como justificativa para agressão, ameaça, humilhação, infidelidade, negligência com filhos, direção insegura ou outro comportamento prejudicial.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 21,
+      "line_end": 91
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q154-SUP-04",
+    "question_id": "Q154",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Nunca será permitido financiar aposta por:\n\n-  empréstimo; \n-  cheque especial; \n-  cartão sem capacidade de pagamento; \n-  dinheiro destinado a despesas essenciais; \n-  reserva protegida; \n-  ocultação de dívida.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 183,
+      "line_end": 260
+    },
+    "status": "HISTORICAL_SUPERSEDED_BY_TOTAL_PROHIBITION",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q157-SUP-04",
+    "question_id": "Q157",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Nos Momentos de Qualidade e Momentos Programados de Intimidade, permanecem válidas as regras já definidas de redução de distrações digitais.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 342,
+      "line_end": 380
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q161-SUP-04",
+    "question_id": "Q161",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Quando ambos exercem responsabilidade parental, regras relevantes deverão ser construídas pelos responsáveis e explicadas de maneira compatível com a idade da criança ou adolescente.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 534,
+      "line_end": 576
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q162-SUP-04",
+    "question_id": "Q162",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Nenhuma regra de educação autoriza violência, humilhação, ameaça grave ou tratamento degradante da criança ou adolescente.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 576,
+      "line_end": 620
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q169-SUP-04",
+    "question_id": "Q169",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Situação percebida como urgente ou que, conforme orientação profissional disponível, não deva aguardar decisão conjunta poderá exigir ação imediata. O outro responsável deverá ser informado no mesmo dia ou em até 24 horas quando isso for possível e seguro.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 930,
+      "line_end": 976
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q170-SUP-04",
+    "question_id": "Q170",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Não deverão ser publicados deliberadamente:\n\n-  nudez ou conteúdo íntimo; \n-  situações destinadas a humilhar; \n-  dados capazes de facilitar localização desnecessária; \n-  informação médica privada sem motivo legítimo; \n-  conteúdo que viole claramente a dignidade da criança.",
+    "source_ref": {
+      "source_id": "MD04",
+      "line_start": 976,
+      "line_end": 1048
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q186-SUP-04",
+    "question_id": "Q186",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Limite legítimo descreve aquilo que a própria pessoa fará ou deixará de aceitar diante de determinada situação; não deverá ser utilizado como justificativa para controlar arbitrariamente a vida do outro.",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 11,
+      "line_end": 55
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q188-SUP-04",
+    "question_id": "Q188",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Reparação deverá ter relação direta e proporcional com o dano produzido. Não poderá envolver humilhação, punição sexual, submissão pessoal ou exigência abusiva.",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 91,
+      "line_end": 138
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q189-SUP-04",
+    "question_id": "Q189",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Assunto tratado não significa assunto apagado. Entretanto, erro passado não deverá ser introduzido em toda nova discussão quando não possuir relação concreta com o problema atual.",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 138,
+      "line_end": 176
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q191-SUP-04",
+    "question_id": "Q191",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Responsabilidade própria não significa culpa igual. Em determinadas situações, uma pessoa poderá possuir responsabilidade muito maior que a outra.\n\nEspecialmente em violência ou coerção, o Método não utilizará “cada um tem sua parte” para distribuir falsamente a responsabilidade.",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 220,
+      "line_end": 258
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q192-SUP-04",
+    "question_id": "Q192",
+    "label": "REGRA FIXA",
+    "source_text": "Toda correção relevante deverá responder:\n\n“O que exatamente será feito de maneira diferente?”\n\nSempre que possível registrar:\n\nACAO_CORRETIVA\n\nPRAZO\n\nFORMA_DE_VERIFICACAO",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 258,
+      "line_end": 304
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q193-SUP-04",
+    "question_id": "Q193",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Retomar assunto para buscar compreensão ou solução é diferente de reutilizar indefinidamente erro antigo como arma em conflitos sem relação com ele.",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 304,
+      "line_end": 338
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q195-SUP-04",
+    "question_id": "Q195",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "No contrato:\n\n- princípios essenciais recebem maior proteção; \n- preferências deverão admitir maior flexibilidade; \n- métodos operacionais poderão ser modificados mais facilmente quando o objetivo continuar sendo cumprido. \n\nIsso será importante na consolidação das 200 respostas.\n\n---",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 388,
+      "line_end": 424
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q199-SUP-04",
+    "question_id": "Q199",
+    "label": "PARÁGRAFO FIXO FUNDAMENTAL",
+    "source_text": "“Este Contrato de Casamento existe para orientar compromissos, registrar acordos e facilitar conversas. Ele não deverá ser utilizado para justificar violência, coerção, humilhação, vigilância abusiva ou controle. O objetivo do Método é fortalecer responsabilidade e cooperação, não criar uma relação permanente de fiscalização entre os cônjuges.”",
+    "source_ref": {
+      "source_id": "MD05",
+      "line_start": 536,
+      "line_end": 570
+    },
+    "status": "SOURCE_TEXT_REQUIRES_PATCH_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q116-PATCH60",
+    "question_id": "Q116",
+    "label": "Proteção das despesas essenciais",
+    "source_text": "“Contribuição religiosa voluntariamente planejada não deverá justificar inadimplência\ndeliberada de alimentação, moradia, saúde, necessidades dos filhos/dependentes ou\nobrigações financeiras já assumidas.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 349,
+      "page_end": 350,
+      "line_start": 14944,
+      "line_end": 14964
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q102-PATCH60",
+    "question_id": "Q102",
+    "label": "Correção canônica obrigatória",
+    "source_text": "Q102 — definição de ameaça intimidatória\n\nPassa a valer:\n\n“Para fins deste Método, ameaça intimidatória é a comunicação deliberada de uma\nconsequência prejudicial utilizada para provocar medo e obter obediência, silêncio,\nsubmissão ou desistência de um limite legítimo.”\n\nNão será considerada automaticamente ameaça abusiva:\n\n   ●   comunicar possibilidade real de separação;\n   ●   estabelecer limite legítimo;\n   ●   informar possível consequência jurídica;\n   ●   dizer que determinada situação poderá tornar a convivência inviável.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 346,
+      "page_end": 346,
+      "line_start": 14782,
+      "line_end": 14800
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q106-PATCH60",
+    "question_id": "Q106",
+    "label": "Correção canônica obrigatória",
+    "source_text": "Q106 — vigilância digital\n\nAdicionar:\n\n“Consentimento para compartilhamento de senha, dispositivo ou localização poderá ser\nretirado posteriormente. Autorização concedida no passado não constitui consentimento\npermanente para vigilância.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 346,
+      "page_end": 346,
+      "line_start": 14817,
+      "line_end": 14825
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q107-PATCH60",
+    "question_id": "Q107",
+    "label": "Correção canônica obrigatória",
+    "source_text": "Q107 — isolamento\n\nAdicionar:\n\n“Solicitar limite em relação a uma pessoa específica não será considerado\nautomaticamente isolamento quando existir motivo concreto relacionado a segurança,\nfidelidade, assédio, ameaça ou comportamento objetivamente prejudicial.”\n\nIsolamento coercitivo será caracterizado principalmente por tentativa injustificada de:\n\n   ●   destruir rede de apoio;\n   ●   impedir relações legítimas;\n   ●   controlar vínculos;\n   ●   produzir dependência;\n   ●   afastar sistematicamente a pessoa de familiares ou amigos confiáveis.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 347,
+      "page_end": 347,
+      "line_start": 14825,
+      "line_end": 14844
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q110-PATCH60",
+    "question_id": "Q110",
+    "label": "Correção canônica obrigatória",
+    "source_text": "Q110 — proteção de filhos\n\nAdicionar:\n\n“Não será considerada ameaça abusiva a comunicação de medida legítima destinada à\nproteção de criança ou dependente, inclusive procura por autoridade competente ou\ndiscussão responsável sobre guarda, convivência e segurança.”\n\nO alerta será aplicado quando filho/dependente for utilizado deliberadamente para:\n\n   ●   provocar medo;\n   ●   obter submissão;\n   ●   punir;\n   ●   controlar.\n\n2. Fé e espiritualidade — Q111 a Q120",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 347,
+      "page_end": 348,
+      "line_start": 14852,
+      "line_end": 14868
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q148-PATCH60",
+    "question_id": "Q148",
+    "label": "Correção canônica obrigatória",
+    "source_text": "Q148 — proteção das reservas\nAdicionar:\n\n“A aprovação conjunta de projeto de risco não autoriza automaticamente utilizar reserva\nfamiliar em valor capaz de reduzi-la abaixo do piso de segurança definido pelo casal.\nQualquer exceção exigirá decisão financeira específica, consciente dos impactos.”\n\nCruzamentos obrigatórios:\n\nQ148 × Q037 × Q043",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 356,
+      "page_end": 356,
+      "line_start": 15228,
+      "line_end": 15238
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q169-PATCH70",
+    "question_id": "Q169",
+    "label": "Correção canônica obrigatória",
+    "source_text": "3. Q169 — SAÚDE DOS FILHOS\n\nNOVO PARÁGRAFO FIXO\nAdicionar:\n\n        “O Método C.O.N.T.R.A.T.O. organiza comunicação, acompanhamento e\n        divisão de responsabilidades entre os responsáveis parentais, mas não\n        determina diagnóstico, medicamento, procedimento ou tratamento de saúde.\n        Decisões clínicas deverão considerar avaliação e orientação do profissional\n        habilitado adequado à situação.”\n\nO sistema poderá organizar:\n\n   ●    agendamento;\n   ●    documentos;\n   ●    acompanhamento;\n   ●    comunicação;\n   ●    execução das providências acordadas.\n\nMas não deverá produzir recomendação médica própria.",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 426,
+      "page_end": 427,
+      "line_start": 18245,
+      "line_end": 18269
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q170-PATCH70",
+    "question_id": "Q170",
+    "label": "Correção canônica obrigatória",
+    "source_text": "4. Q170 — DADOS DOS FILHOS\nREGRA DE MINIMIZAÇÃO\nPara este módulo, utilizar preferencialmente:\n\nchild_id\n\nnome_de_uso\n\nfaixa_etaria\n\ne somente outros dados estritamente necessários.\n\nNão coletar automaticamente\n\n   ●    CPF;\n   ●    RG;\n   ●    documentos;\n   ●    endereço escolar;\n   ●    localização rotineira;\n\n   ● prontuário;\n   ● informações íntimas;\n   ● outros identificadores sem necessidade objetiva.\n\nParágrafo sistêmico\n\n“Informações de crianças e adolescentes serão limitadas ao necessário para a execução\ndas funcionalidades do Método, evitando coleta de dados que não sejam necessários às\ndecisões e acordos parentais.”",
+    "source_ref": {
+      "source_id": "PDF01",
+      "page_start": 427,
+      "page_end": 428,
+      "line_start": 18269,
+      "line_end": 18302
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q052-12-06",
+    "question_id": "Q052",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Iniciar aproximação sexual representa demonstração de interesse e nunca garante que haverá relação sexual. Tanto quem inicia quanto quem recebe a aproximação continuará livre para expressar vontade, limites e consentimento.",
+    "source_ref": {
+      "source_id": "SUP12-01",
+      "line_start": 155,
+      "line_end": 241
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q052-12-12",
+    "question_id": "Q052",
+    "label": "Contribuição",
+    "source_text": "Não tomar iniciativa sexual não gera R$ 10,00.",
+    "source_ref": {
+      "source_id": "SUP12-01",
+      "line_start": 155,
+      "line_end": 241
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q053-12-06",
+    "question_id": "Q053",
+    "label": "PARÁGRAFO FIXO DE CONSENTIMENTO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que casamento, compromisso afetivo, frequência previamente combinada, iniciativa anterior, carinho, beijo ou relação sexual ocorrida em outro momento não constituem consentimento automático para uma nova relação sexual.",
+    "source_ref": {
+      "source_id": "SUP12-01",
+      "line_start": 241,
+      "line_end": 362
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q053-12-07",
+    "question_id": "Q053",
+    "label": "PARÁGRAFO FIXO — COMPORTAMENTOS INACEITÁVEIS",
+    "source_text": "Depois de uma recusa clara, não serão considerados formas adequadas de negociação:\n\n-  insistência repetitiva; \n-  ameaça; \n-  intimidação; \n-  utilização de medo; \n-  culpa religiosa; \n-  chantagem emocional; \n-  ameaça financeira; \n-  punição; \n-  constrangimento; \n-  força física; \n-  prática sexual sem consentimento.",
+    "source_ref": {
+      "source_id": "SUP12-01",
+      "line_start": 241,
+      "line_end": 362
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q053-12-08",
+    "question_id": "Q053",
+    "label": "REGRA DE RECONEXÃO",
+    "source_text": "A recusa sexual:\n\nnão gera contribuição.\n\nDuas recusas consecutivas → aplica-se a Conversa de Reconexão estrutural.\n\nSe a frequência consensual não for alcançada durante duas semanas consecutivas → aplica-se também a regra da Pergunta 051.",
+    "source_ref": {
+      "source_id": "SUP12-01",
+      "line_start": 241,
+      "line_end": 362
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q053-12-09",
+    "question_id": "Q053",
+    "label": "ALERTA DE CONSENTIMENTO — RESPOSTA C",
+    "source_text": "A resposta C gera internamente:\n\nALERTA_CONSENTIMENTO = SIM\n\nIsso não significa automaticamente acusação de violência, mas determina atenção especial às próximas perguntas.\n\nSe posteriormente forem identificados:\n\n-  medo; \n-  ameaça; \n-  força física; \n-  coerção; \n-  relação sexual sem consentimento; \n-  incapacidade de recusar com segurança; \n\no sistema deverá acionar FLUXO DE SEGURANÇA, e não simplesmente um protocolo conjugal comum.",
+    "source_ref": {
+      "source_id": "SUP12-01",
+      "line_start": 241,
+      "line_end": 362
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q053-12-11",
+    "question_id": "Q053",
+    "label": "Contribuição",
+    "source_text": "A recusa sexual não gera R$ 10,00.\n\nFrustração não gera R$ 10,00.\n\nSomente eventual recusa injustificada em participar de conversa prevista poderá gerar contribuição.",
+    "source_ref": {
+      "source_id": "SUP12-01",
+      "line_start": 241,
+      "line_end": 362
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q054-12-06",
+    "question_id": "Q054",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Criar condições que favoreçam desejo ou intimidade não gera obrigação sexual. Nenhum dos cônjuges poderá afirmar que o outro “deve” ter relação sexual simplesmente porque determinada condição, cuidado, presente, tarefa ou demonstração de carinho foi realizada.",
+    "source_ref": {
+      "source_id": "SUP12-01",
+      "line_start": 362,
+      "line_end": 454
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q057-12-06",
+    "question_id": "Q057",
+    "label": "PARÁGRAFO FIXO 1",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que satisfação sexual não depende exclusivamente da frequência das relações, podendo também envolver conexão emocional, carinho, comunicação, privacidade, desejo, qualidade da aproximação, respeito, conforto e capacidade de falar sobre necessidades e limites.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 100,
+      "line_end": 216
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q057-12-07",
+    "question_id": "Q057",
+    "label": "PARÁGRAFO FIXO 2",
+    "source_text": "Nenhum dos cônjuges deverá utilizar comparações com antigos parceiros, outras pessoas, conteúdos pornográficos ou padrões externos como forma de humilhar ou diminuir o desempenho, o corpo ou a intimidade do outro.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 100,
+      "line_end": 216
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q058-12-06",
+    "question_id": "Q058",
+    "label": "PARÁGRAFO FIXO 1",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que nenhum deles poderá presumir que conhece automaticamente os desejos, limites ou preferências do outro apenas pelo tempo de casamento ou por experiências anteriores.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 216,
+      "line_end": 310
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q058-12-07",
+    "question_id": "Q058",
+    "label": "PARÁGRAFO FIXO 2",
+    "source_text": "Expressar uma preferência sexual não cria obrigação para o outro realizá-la. Da mesma maneira, dizer que não deseja determinada prática deverá ser respeitado sem ridicularização, ameaça, culpa ou pressão.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 216,
+      "line_end": 310
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q058-12-08",
+    "question_id": "Q058",
+    "label": "PARÁGRAFO FIXO 3",
+    "source_text": "Consentir com determinada prática em uma ocasião não significa autorização permanente para futuras ocasiões.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 216,
+      "line_end": 310
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q058-12-13",
+    "question_id": "Q058",
+    "label": "Alerta de segurança",
+    "source_text": "Se a dificuldade de comunicar limites ocorrer porque a pessoa relata medo da reação do cônjuge, o sistema deverá diferenciar vergonha/constrangimento de medo e, havendo ameaça ou coerção, encaminhar para fluxo de segurança.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 216,
+      "line_end": 310
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q059-12-06",
+    "question_id": "Q059",
+    "label": "PARÁGRAFO FIXO 1",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que diferenças de desejo sexual podem ocorrer por fatores físicos, emocionais, relacionais ou circunstanciais e não constituem, isoladamente, prova de falta de amor, infidelidade ou rejeição.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 310,
+      "line_end": 422
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q059-12-07",
+    "question_id": "Q059",
+    "label": "PARÁGRAFO FIXO 2",
+    "source_text": "Quando houver diferença persistente, poderão ser considerados fatores como:\n\n-  sono; \n-  cansaço; \n-  estresse; \n-  trabalho; \n-  sobrecarga doméstica; \n-  conflitos; \n-  ressentimentos; \n-  saúde física; \n-  dor; \n-  alterações hormonais; \n-  medicamentos; \n-  saúde emocional; \n-  privacidade; \n-  qualidade da conexão afetiva.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 310,
+      "line_end": 422
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q059-12-13",
+    "question_id": "Q059",
+    "label": "Contribuição",
+    "source_text": "Diferença de desejo não gera R$ 10,00.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 310,
+      "line_end": 422
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q060-12-06",
+    "question_id": "Q060",
+    "label": "PARÁGRAFO FIXO 1",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que conteúdo sexual explícito pode produzir impactos diferentes em cada pessoa e em cada relacionamento. Por isso, essa área deverá ser tratada com transparência e regra clara, sem humilhação pública ou utilização do assunto apenas como instrumento de ataque.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 422,
+      "line_end": 578
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q060-12-07",
+    "question_id": "Q060",
+    "label": "PARÁGRAFO FIXO 2",
+    "source_text": "O sistema deverá considerar especialmente relevante quando houver consumo acompanhado de segredo deliberado, gastos ocultos, perda de controle, substituição recorrente da intimidade conjugal, redução significativa do desejo pelo cônjuge ou interferência em trabalho, sono e responsabilidades familiares.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 422,
+      "line_end": 578
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q060-12-17",
+    "question_id": "Q060",
+    "label": "ALERTA DIAGNÓSTICO",
+    "source_text": "Se houver relato de:\n\n-  perda de controle; \n-  tentativas repetidas e frustradas de reduzir; \n-  gastos relevantes; \n-  interferência em trabalho ou sono; \n-  substituição recorrente da intimidade conjugal; \n-  sofrimento significativo; \n\no sistema registrará:\n\nALERTA_USO_PROBLEMÁTICO_DE_CONTEÚDO_SEXUAL = SIM\n\ne poderá recomendar avaliação profissional adequada, sem utilizar o contrato como única resposta ao problema.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 422,
+      "line_end": 578
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q060-12-18",
+    "question_id": "Q060",
+    "label": "Contribuição",
+    "source_text": "O consumo em si não gera automaticamente R$ 10,00.\n\nQuebra de acordo deverá ser tratada pelo protocolo correspondente.\n\nRecusa injustificada em participar da conversa de correção poderá gerar contribuição.",
+    "source_ref": {
+      "source_id": "SUP12-02",
+      "line_start": 422,
+      "line_end": 578
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q071-12-06",
+    "question_id": "Q071",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que reservar previamente tempo para intimidade não significa programar obrigatoriamente uma relação sexual. O planejamento protege o espaço do casal; aquilo que acontecerá dentro desse momento continuará dependendo da vontade e do consentimento de ambos.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 9,
+      "line_end": 75
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q072-12-05",
+    "question_id": "Q072",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Demonstração de desejo não cria obrigação sexual. Da mesma forma, elogios sobre aparência, corpo ou sensualidade deverão preservar respeito e nunca serão utilizados para comparar ou diminuir o cônjuge.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 75,
+      "line_end": 131
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q073-12-05",
+    "question_id": "Q073",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} não utilizarão detalhes de sua intimidade sexual como assunto de entretenimento, brincadeira, exposição ou humilhação diante de terceiros.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 131,
+      "line_end": 192
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q074-12-05",
+    "question_id": "Q074",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Conversar sobre fantasia, desejo ou curiosidade não significa compromisso de realizá-la. A decisão sobre qualquer prática dependerá de consentimento livre de ambos.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 192,
+      "line_end": 252
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q074-12-07",
+    "question_id": "Q074",
+    "label": "ALERTA",
+    "source_text": "Se C decorrer de medo de ameaça, punição ou coerção, acionar fluxo de segurança.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 192,
+      "line_end": 252
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q075-12-05",
+    "question_id": "Q075",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que cuidados de higiene e conforto podem influenciar a intimidade e comprometem-se a conversar sobre esses aspectos sem ridicularização, desprezo ou humilhação corporal.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 252,
+      "line_end": 304
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q076-12-05",
+    "question_id": "Q076",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Quando condição de saúde, recuperação, orientação profissional ou limitação física impedir temporariamente a relação sexual, essa situação prevalecerá sobre qualquer frequência anteriormente estabelecida no contrato.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 304,
+      "line_end": 364
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q076-12-06",
+    "question_id": "Q076",
+    "label": "PARÁGRAFO FIXO 2",
+    "source_text": "Durante esses períodos, {Nome 1} e {Nome 2} procurarão preservar, conforme conforto e possibilidade, outras formas voluntárias de conexão emocional e física.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 304,
+      "line_end": 364
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q076-12-08",
+    "question_id": "Q076",
+    "label": "Contribuição",
+    "source_text": "Impossibilidade ou recusa por razão de saúde nunca gera R$ 10,00.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 304,
+      "line_end": 364
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q077-12-01",
+    "question_id": "Q077",
+    "label": "Aplicabilidade",
+    "source_text": "Somente quando gravidez, pós-parto ou possibilidade futura desse período for pertinente à realidade do casal.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 364,
+      "line_end": 422
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q077-12-06",
+    "question_id": "Q077",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Durante gravidez, recuperação do parto ou período pós-parto, segurança, conforto, condições físicas e orientações profissionais aplicáveis prevalecerão sobre metas anteriores de frequência sexual.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 364,
+      "line_end": 422
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q078-12-05",
+    "question_id": "Q078",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que a vida íntima poderá mudar ao longo dos anos e comprometem-se a adaptar suas expectativas às diferentes fases do casamento, sem abandonar o diálogo sobre conexão e sexualidade.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 422,
+      "line_end": 472
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q080-12-06",
+    "question_id": "Q080",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Depois de afastamento prolongado, {Nome 1} e {Nome 2} não serão obrigados a retomar imediatamente a relação sexual. A reconexão poderá ocorrer progressivamente através de conversa, presença, carinho, beijo, abraço, massagem ou outras formas voluntárias de proximidade até que exista segurança, desejo e consentimento para avançar.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 528,
+      "line_end": 626
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q080-12-12",
+    "question_id": "Q080",
+    "label": "Contribuição",
+    "source_text": "Não ter relação sexual por 30 dias não gera R$ 10,00.\n\nA contribuição somente poderá ocorrer diante de recusa injustificada em participar da conversa prevista, respeitadas as exceções de saúde e segurança.",
+    "source_ref": {
+      "source_id": "SUP12-04",
+      "line_start": 528,
+      "line_end": 626
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q081-12-06",
+    "question_id": "Q081",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} assumem reciprocamente compromisso de exclusividade sexual, considerando incompatíveis com esse acordo relações sexuais, beijos de natureza romântica ou sexual e contatos físicos deliberadamente sexualizados com terceiros.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 9,
+      "line_end": 96
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q081-12-08",
+    "question_id": "Q081",
+    "label": "Regra",
+    "source_text": "Quebra efetivamente identificada não deverá ser tratada apenas pelo R$ 10,00.\n\nDeverá utilizar futuro Protocolo de Reconstrução da Confiança, a ser detalhado no bloco específico.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 9,
+      "line_end": 96
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q082-12-05",
+    "question_id": "Q082",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que casamento duradouro não elimina a importância da conquista. Ambos procurarão cultivar atitudes de aproximação e valorização que favoreçam conexão emocional, romantismo e desejo, sem que essas atitudes criem obrigação sexual.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 96,
+      "line_end": 162
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q083-12-06",
+    "question_id": "Q083",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Recusar intimidade em determinado momento continuará sendo direito de qualquer dos cônjuges. Entretanto, quando posteriormente existir vontade de reconexão, ambos são responsáveis por demonstrá-la, evitando que toda iniciativa fique permanentemente concentrada em apenas uma pessoa.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 162,
+      "line_end": 236
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q083-12-11",
+    "question_id": "Q083",
+    "label": "Contribuição",
+    "source_text": "Não retomar sexualmente não gera R$ 10,00.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 162,
+      "line_end": 236
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q084-12-05",
+    "question_id": "Q084",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Quando permanecerem fisicamente separados por período significativo, {Nome 1} e {Nome 2} procurarão preservar contato afetivo e conjugal compatível com sua rotina, sem obrigatoriedade de práticas íntimas digitais ou exposição de imagens.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 236,
+      "line_end": 292
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q085-12-05",
+    "question_id": "Q085",
+    "label": "PARÁGRAFO FIXO 1",
+    "source_text": "Nenhuma fotografia, filmagem ou gravação íntima de {Nome 1} ou {Nome 2} será produzida sem conhecimento e consentimento da pessoa retratada ou gravada.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 292,
+      "line_end": 376
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q085-12-06",
+    "question_id": "Q085",
+    "label": "PARÁGRAFO FIXO 2",
+    "source_text": "Conteúdo íntimo do casal não poderá ser encaminhado, mostrado ou disponibilizado a terceiros sem consentimento expresso da pessoa retratada.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 292,
+      "line_end": 376
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q085-12-07",
+    "question_id": "Q085",
+    "label": "PARÁGRAFO FIXO 3",
+    "source_text": "Consentimento para produzir um conteúdo não representa autorização automática para compartilhá-lo ou produzir novos registros em outras ocasiões.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 292,
+      "line_end": 376
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q085-12-14",
+    "question_id": "Q085",
+    "label": "Segurança",
+    "source_text": "Registro íntimo sem consentimento → ALERTA DE SEGURANÇA E PRIVACIDADE, não simples divergência.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 292,
+      "line_end": 376
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q086-12-05",
+    "question_id": "Q086",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Quando surgir informação de saúde sexual capaz de afetar diretamente o outro, {Nome 1} e {Nome 2} comprometem-se a tratar o assunto com responsabilidade, privacidade e respeito, buscando orientação profissional adequada em vez de utilizar vergonha, acusação ou silêncio como única resposta.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 376,
+      "line_end": 432
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q087-12-05",
+    "question_id": "Q087",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que ausência genuína de desejo deverá sempre ser respeitada. Ao mesmo tempo, comprometem-se a não oferecer ou retirar deliberadamente sexo, carinho ou contato físico como preço para obter dinheiro, presentes, permissões, decisões, desculpas ou qualquer vantagem não relacionada ao consentimento íntimo.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 432,
+      "line_end": 492
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q087-12-09",
+    "question_id": "Q087",
+    "label": "Contribuição",
+    "source_text": "Recusar sexo nunca gera R$ 10,00.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 432,
+      "line_end": 492
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q088-12-05",
+    "question_id": "Q088",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Feedback sobre intimidade deverá tratar de comportamentos, preferências e necessidades, não de ataques à capacidade, masculinidade, feminilidade, corpo ou valor pessoal do cônjuge.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 492,
+      "line_end": 556
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q089-12-05",
+    "question_id": "Q089",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Participação conjunta não significa atribuição igual de culpa. {Nome 1} e {Nome 2} poderão reconhecer que determinada dificuldade possui causa predominantemente física, emocional, comportamental ou circunstancial ligada a um deles e, ainda assim, buscarão identificar como cada um pode contribuir legitimamente para a solução.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 556,
+      "line_end": 620
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q090-12-10",
+    "question_id": "Q090",
+    "label": "ROTEIRO FIXO DA REVISÃO",
+    "source_text": "A conversa deverá conter cinco perguntas simples:\n\n1. O que está funcionando bem entre nós nesta área? \n2. Existe algo de que você sente falta? \n3. Existe algo que está causando desconforto ou afastamento? \n4. Qual atitude minha poderia contribuir para melhorar nossa conexão? \n5. Precisamos modificar algum acordo ou procurar ajuda adequada para alguma dificuldade?",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 620,
+      "line_end": 712
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q090-12-11",
+    "question_id": "Q090",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "A Revisão da Intimidade não será utilizada para cobrar desempenho, exigir relação sexual ou comparar os cônjuges. Sua finalidade será permitir comunicação preventiva e atualização dos acordos de cuidado e conexão.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 620,
+      "line_end": 712
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q090-12-12",
+    "question_id": "Q090",
+    "label": "Contribuição",
+    "source_text": "Não chegar a consenso durante a revisão não gera R$ 10,00.\n\nRecusa injustificada em participar de revisão formalmente prevista poderá gerar a contribuição.",
+    "source_ref": {
+      "source_id": "SUP12-05",
+      "line_start": 620,
+      "line_end": 712
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q091-12-06",
+    "question_id": "Q091",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que o casamento não exige abandono ou desprezo pelas famílias de origem, mas também que pai, mãe, irmãos ou outros familiares não deverão ocupar o lugar de decisão que pertence ao casal nos assuntos que dizem respeito diretamente à vida conjugal.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 9,
+      "line_end": 74
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q092-12-11",
+    "question_id": "Q092",
+    "label": "Regra",
+    "source_text": "A frequência poderá ser diferente para cada família em razão de distância, saúde, disponibilidade ou outras circunstâncias objetivas.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 74,
+      "line_end": 142
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q093-12-05",
+    "question_id": "Q093",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "A residência de {Nome 1} e {Nome 2} será considerada espaço do casal e da família que ali reside. Nenhum familiar terá direito automático de entrar, permanecer ou organizar a rotina doméstica sem consideração pelos limites definidos pelos dois.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 142,
+      "line_end": 208
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q094-12-05",
+    "question_id": "Q094",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que nenhuma das famílias de origem possui direito automático sobre todas as datas comemorativas. O casal poderá dividir, alternar ou criar tradições próprias.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 208,
+      "line_end": 274
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q095-12-05",
+    "question_id": "Q095",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Ajuda habitual ou relevante a pais, sogros ou familiares estará sujeita às regras financeiras do casal e não poderá ser imposta unilateralmente a partir da ideia de que “família não se discute”.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 274,
+      "line_end": 326
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q096-12-05",
+    "question_id": "Q096",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "{Nome 1} e {Nome 2} reconhecem que necessidades relevantes de familiares idosos, doentes ou dependentes poderão exigir solidariedade, mas decisões que alterem significativamente moradia, renda, trabalho, rotina ou responsabilidades dos dois deverão ser conversadas previamente.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 326,
+      "line_end": 394
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q097-12-05",
+    "question_id": "Q097",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Quando houver desrespeito claro por parte de familiar de {Nome 1}, caberá especialmente a {Nome 1} participar do estabelecimento do limite. Quando o comportamento vier da família de {Nome 2}, caberá especialmente a {Nome 2} fazê-lo. Isso não impede que o cônjuge diretamente atingido também se posicione.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 394,
+      "line_end": 444
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q097-12-06",
+    "question_id": "Q097",
+    "label": "Prazo objetivo",
+    "source_text": "Se não for adequado tratar no momento, a conversa com o familiar deverá ocorrer no mesmo dia ou em até 72 horas, conforme gravidade e possibilidade real.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 394,
+      "line_end": 444
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q097-12-08",
+    "question_id": "Q097",
+    "label": "Segurança",
+    "source_text": "Ameaças ou violência física por familiar → fluxo de segurança, não simples conversa.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 394,
+      "line_end": 444
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q098-12-01",
+    "question_id": "Q098",
+    "label": "Aplicabilidade",
+    "source_text": "Somente quando houver filhos ou responsabilidade parental.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 444,
+      "line_end": 504
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q098-12-06",
+    "question_id": "Q098",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Avós e familiares poderão colaborar, orientar e participar da convivência com os filhos, mas não deverão deliberadamente desautorizar regras parentais relevantes definidas por {Nome 1} e {Nome 2}, salvo situação de risco imediato à criança.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 444,
+      "line_end": 504
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q099-12-05",
+    "question_id": "Q099",
+    "label": "PARÁGRAFO FIXO",
+    "source_text": "Equilíbrio entre famílias não significa igualdade matemática de visitas, dinheiro ou tempo. Diferenças poderão existir por razões objetivas. Entretanto, nenhuma família deverá receber prioridade automática apenas porque pertence a um dos cônjuges.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 504,
+      "line_end": 560
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q100-12-06",
+    "question_id": "Q100",
+    "label": "PARÁGRAFO FIXO 1",
+    "source_text": "Nenhum familiar passará a morar na residência de {Nome 1} e {Nome 2} por decisão unilateral de apenas um dos cônjuges, salvo emergência imediata e temporária que impossibilite consulta prévia.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 560,
+      "line_end": 668
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q100-12-07",
+    "question_id": "Q100",
+    "label": "PARÁGRAFO FIXO 2",
+    "source_text": "Quando houver necessidade concreta, deverão ser analisados:\n\n-  motivo; \n-  previsão de duração; \n-  espaço disponível; \n-  despesas adicionais; \n-  tarefas domésticas; \n-  privacidade; \n-  filhos; \n-  saúde; \n-  regras da residência; \n-  participação de outros familiares; \n-  alternativas disponíveis.",
+    "source_ref": {
+      "source_id": "SUP12-06",
+      "line_start": 560,
+      "line_end": 668
+    },
+    "status": "SOURCE_REQUIRES_CANONICAL_REVIEW",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-03-Q002",
+    "question_id": "Q002",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 3. PERGUNTA 002 — DECISÕES RELEVANTES\n\nCorrigir a definição de decisão patrimonial relevante.\n\nSerão sempre consideradas decisões relevantes, independentemente do valor:\n\n-  compra ou venda de imóvel; \n-  compra ou venda de veículo de uso familiar; \n-  participação societária; \n-  oferecimento de patrimônio familiar em garantia; \n-  alienação de ativo essencial da família. \n\nPara outras operações patrimoniais:\n\n> **valor total igual ou superior a 50% da Renda Líquida Familiar mensal — RLF — será considerado relevante e exigirá conversa prévia do casal, salvo limite específico posteriormente acordado.**\n\nA regra anterior de 10% da RLF fica excluída.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 61,
+      "line_end": 81
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-04-Q018",
+    "question_id": "Q018",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 4. PERGUNTA 018 — PROTOCOLO DE RECONSTRUÇÃO DA CONFIANÇA\n\nFica criado definitivamente.\n\n### Gatilhos\n\nAplicável quando houver, entre outras situações:\n\n-  infidelidade; \n-  mentira grave; \n-  ocultação financeira relevante; \n-  vínculo afetivo ou sexual paralelo; \n-  violação grave de acordo; \n-  outra quebra significativa da confiança. \n\n### Etapas obrigatórias\n\n**1. Interrupção:** comportamento ainda existente deverá ser interrompido.\n\n**2. Identificação:** deverá ficar claro qual comportamento produziu a quebra.\n\n**3. Informação necessária:** deverão ser comunicadas as informações necessárias à compreensão da situação e de suas consequências, sem exigir detalhes desnecessários destinados apenas a produzir sofrimento.\n\n**4. Proteção contra repetição:** deverão ser definidas medidas concretas para reduzir risco de nova ocorrência.\n\n**5. Reconstrução:** deverão ser identificados comportamentos capazes de contribuir gradualmente para recuperar segurança e confiança.\n\n**6. Revisão:** realizar revisão em **30 dias**.\n\n**7. Apoio externo:** se continuar existindo sofrimento significativo, repetição ou incapacidade de tratamento pelo próprio casal, considerar acompanhamento profissional, pastoral ou outro apoio adequado.\n\n### Texto estrutural\n\n**“{Nome 1} e {Nome 2} reconhecem que perdão e reconstrução da confiança não são necessariamente acontecimentos simultâneos. Uma pessoa poderá decidir perdoar e ainda necessitar de tempo, consistência e mudança concreta antes de recuperar plenamente sua confiança.”**\n\nEm situação de violência ou risco, este protocolo **não obriga reconciliação ou permanência conjunta**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 81,
+      "line_end": 120
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-05-Q037",
+    "question_id": "Q037",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 5. PERGUNTA 037 — RESERVAS FINANCEIRAS\n\nA expressão passa a ser:\n\n> **“Depois de atendidas as despesas essenciais, obrigações contratuais, parcelas vencíveis e demais compromissos financeiros obrigatórios...”**\n\nSó depois disso se aplica a meta consensual de reserva.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 120,
+      "line_end": 130
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-06-Q041",
+    "question_id": "Q041",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 6. PERGUNTA 041 — MUDANÇA DE RENDA\n\nAdicionar:\n\n**“Quando a renda líquida individual de qualquer dos cônjuges aumentar ou diminuir em 20% ou mais em relação ao valor considerado na última divisão financeira, o modelo de contribuição deverá ser revisto na próxima Revisão Financeira mensal.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 130,
+      "line_end": 138
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-07-Q043",
+    "question_id": "Q043",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 7. PERGUNTA 043 — CRISE FINANCEIRA\n\nAdicionar aos gatilhos objetivos:\n\n-  necessidade de utilizar, em uma única situação, **25% ou mais da reserva financeira disponível**; ou \n-  situação que reduza a reserva disponível para menos do equivalente a **1 mês das despesas essenciais da família**. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 138,
+      "line_end": 147
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-08-Q048",
+    "question_id": "Q048",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 8. PERGUNTA 048 — TRABALHO CANCELANDO TEMPO DO CASAL\n\nExcluir o gatilho de:\n\n> 2 cancelamentos em 14 dias.\n\n### Nova regra\n\n**“Quando trabalho ou compromisso profissional cancelar um Momento de Qualidade previamente combinado, o casal procurará remarcar esse momento em até 7 dias, sempre que possível antes do próximo momento regularmente previsto.”**\n\n### Gatilho de reequilíbrio\n\n**“Se dois Momentos de Qualidade consecutivos previamente acordados forem cancelados por compromissos profissionais evitáveis e não forem adequadamente remarcados, {Nome 1} e {Nome 2} realizarão uma Conversa de Reequilíbrio em até 72 horas após o segundo cancelamento.”**\n\nEssa regra funciona para frequência semanal, quinzenal ou mensal.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 147,
+      "line_end": 165
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-09-Q050",
+    "question_id": "Q050",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 9. PERGUNTA 050 — APOIO A PROJETOS DO CÔNJUGE\n\nSubstituir a ideia de reciprocidade por:\n\n**“O apoio recebido anteriormente não cria dívida pessoal nem obrigação automática de aprovar projetos futuros. Entretanto, {Nome 1} e {Nome 2} comprometem-se a reconhecer os esforços e sacrifícios que um realizou pelo desenvolvimento do outro e a considerar essa história de cooperação ao avaliar novos projetos, procurando preservar reciprocidade e justiça ao longo do casamento.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 165,
+      "line_end": 173
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-10-Q051",
+    "question_id": "Q051",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 10. PERGUNTA 051 — FREQUÊNCIA SEXUAL\n\n## Pergunta corrigida\n\n**Pensando principalmente nos últimos 90 dias, como a frequência atual da intimidade sexual se compara à frequência que você considera adequada para você?**\n\n**A)** A frequência atual está próxima daquela que considero adequada.\n\n**B)** Gostaria que a intimidade sexual acontecesse com maior frequência.\n\n**C)** Gostaria que a intimidade sexual acontecesse com menor frequência.\n\n### A — Efeito\n\n**“{Nome} considera que a frequência sexual atualmente vivida está próxima daquela que lhe parece adequada e compromete-se a continuar comunicando eventuais mudanças de necessidade ao longo do casamento.”**\n\n### B — Efeito\n\n**“{Nome} reconhece que gostaria de viver intimidade sexual com maior frequência e compromete-se a comunicar essa necessidade respeitosamente, sem transformar desejo em cobrança, ameaça, culpa ou obrigação sexual.”**\n\n### C — Efeito\n\n**“{Nome} reconhece que gostaria de viver intimidade sexual com menor frequência e compromete-se a comunicar com clareza os fatores relacionados a essa necessidade, sem simplesmente desaparecer da vida íntima ou esperar que seu cônjuge compreenda a mudança sem diálogo.”**\n\n### A + B\n\n**“{Nome A} percebe a frequência atual como adequada, enquanto {Nome B} gostaria de maior frequência. Ambos reconhecem que a satisfação de uma pessoa não elimina a necessidade manifestada pela outra e comprometem-se a buscar uma frequência possível para os dois, preservando consentimento.”**\n\n### A + C\n\n**“{Nome A} percebe a frequência atual como adequada, enquanto {Nome C} gostaria de menor frequência. Ambos comprometem-se a conversar sobre desejo, rotina, saúde e demais fatores envolvidos, sem transformar a preferência de nenhum deles em obrigação para o outro.”**\n\n### B + C\n\n**“{Nome B} deseja maior frequência sexual, enquanto {Nome C} deseja menor frequência. Essa diferença será considerada divergência relevante de expectativa íntima. Ambos comprometem-se a tratar o assunto sem pressão, investigando as necessidades e fatores envolvidos e buscando uma frequência consensual possível para o casal.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 173,
+      "line_end": 211
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-11-Q051",
+    "question_id": "Q051",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 11. Q051 — NÓS DECIDIMOS\n\nPermanece obrigatório.\n\n**Qual frequência sexual vocês desejam buscar consensualmente neste período do casamento?**\n\n**A)** Em média, pelo menos 1 vez por semana.\n\n**B)** Em média, pelo menos 2 vezes por semana.\n\n**C)** Outra frequência consensualmente definida ou nenhuma meta numérica.\n\nOs textos de consentimento permanecem.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 211,
+      "line_end": 227
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-12-Q051",
+    "question_id": "Q051",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 12. NOVA REGRA DE GATILHO POR CICLOS\n\nSubstitui a regra universal anterior de 2 semanas.\n\n### Se a meta for semanal ou maior\n\nFicar abaixo da frequência consensual durante **2 semanas consecutivas** → Conversa de Reconexão em até 3 dias.\n\n### Se a meta for quinzenal\n\nNão atingir a meta durante **2 ciclos consecutivos de 15 dias** → conversa em até 3 dias.\n\n### Se a meta for mensal\n\nNão atingir a meta durante **2 ciclos mensais consecutivos** → conversa em até 3 dias.\n\n### Outra frequência\n\nUtilizar **2 ciclos completos consecutivos da frequência definida**.\n\n### Sem meta numérica\n\nSe houver **30 dias sem relação sexual e pelo menos um dos cônjuges manifestar insatisfação**, realizar Conversa de Reconexão em até 3 dias.\n\nContinuam proibidos:\n\n-  dívida sexual; \n-  reposição obrigatória; \n-  acúmulo; \n-  compensação; \n-  R$ 10 pela falta de sexo. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 227,
+      "line_end": 261
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-12-Q053",
+    "question_id": "Q053",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 12. NOVA REGRA DE GATILHO POR CICLOS\n\nSubstitui a regra universal anterior de 2 semanas.\n\n### Se a meta for semanal ou maior\n\nFicar abaixo da frequência consensual durante **2 semanas consecutivas** → Conversa de Reconexão em até 3 dias.\n\n### Se a meta for quinzenal\n\nNão atingir a meta durante **2 ciclos consecutivos de 15 dias** → conversa em até 3 dias.\n\n### Se a meta for mensal\n\nNão atingir a meta durante **2 ciclos mensais consecutivos** → conversa em até 3 dias.\n\n### Outra frequência\n\nUtilizar **2 ciclos completos consecutivos da frequência definida**.\n\n### Sem meta numérica\n\nSe houver **30 dias sem relação sexual e pelo menos um dos cônjuges manifestar insatisfação**, realizar Conversa de Reconexão em até 3 dias.\n\nContinuam proibidos:\n\n-  dívida sexual; \n-  reposição obrigatória; \n-  acúmulo; \n-  compensação; \n-  R$ 10 pela falta de sexo. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 227,
+      "line_end": 261
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-12-Q059",
+    "question_id": "Q059",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 12. NOVA REGRA DE GATILHO POR CICLOS\n\nSubstitui a regra universal anterior de 2 semanas.\n\n### Se a meta for semanal ou maior\n\nFicar abaixo da frequência consensual durante **2 semanas consecutivas** → Conversa de Reconexão em até 3 dias.\n\n### Se a meta for quinzenal\n\nNão atingir a meta durante **2 ciclos consecutivos de 15 dias** → conversa em até 3 dias.\n\n### Se a meta for mensal\n\nNão atingir a meta durante **2 ciclos mensais consecutivos** → conversa em até 3 dias.\n\n### Outra frequência\n\nUtilizar **2 ciclos completos consecutivos da frequência definida**.\n\n### Sem meta numérica\n\nSe houver **30 dias sem relação sexual e pelo menos um dos cônjuges manifestar insatisfação**, realizar Conversa de Reconexão em até 3 dias.\n\nContinuam proibidos:\n\n-  dívida sexual; \n-  reposição obrigatória; \n-  acúmulo; \n-  compensação; \n-  R$ 10 pela falta de sexo. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 227,
+      "line_end": 261
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-12-Q080",
+    "question_id": "Q080",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 12. NOVA REGRA DE GATILHO POR CICLOS\n\nSubstitui a regra universal anterior de 2 semanas.\n\n### Se a meta for semanal ou maior\n\nFicar abaixo da frequência consensual durante **2 semanas consecutivas** → Conversa de Reconexão em até 3 dias.\n\n### Se a meta for quinzenal\n\nNão atingir a meta durante **2 ciclos consecutivos de 15 dias** → conversa em até 3 dias.\n\n### Se a meta for mensal\n\nNão atingir a meta durante **2 ciclos mensais consecutivos** → conversa em até 3 dias.\n\n### Outra frequência\n\nUtilizar **2 ciclos completos consecutivos da frequência definida**.\n\n### Sem meta numérica\n\nSe houver **30 dias sem relação sexual e pelo menos um dos cônjuges manifestar insatisfação**, realizar Conversa de Reconexão em até 3 dias.\n\nContinuam proibidos:\n\n-  dívida sexual; \n-  reposição obrigatória; \n-  acúmulo; \n-  compensação; \n-  R$ 10 pela falta de sexo. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 227,
+      "line_end": 261
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-13-Q055",
+    "question_id": "Q055",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 13. PERGUNTA 055 — SUBSTITUÍDA DEFINITIVAMENTE\n\n# MOMENTO PROGRAMADO DE INTIMIDADE E RECONEXÃO\n\n**Mesmo quando rotina, trabalho ou cansaço diminuírem a espontaneidade, qual frequência você considera adequada para o casal reservar intencionalmente um momento privado de aproximação, carinho e reconexão íntima?**\n\n**A)** Pelo menos uma vez por semana.\n\n**B)** Pelo menos uma vez a cada 15 dias.\n\n**C)** Pelo menos uma vez por mês.\n\n### Efeitos\n\n**A:**\n\n**“{Nome} considera importante preservar semanalmente um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n**B:**\n\n**“{Nome} considera importante preservar pelo menos a cada 15 dias um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n**C:**\n\n**“{Nome} considera importante preservar pelo menos mensalmente um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n## NÓS DECIDIMOS — obrigatório\n\nA) semanal;\n\nB) quinzenal;\n\nC) mensal.\n\n### Texto contratual\n\n**“{Nome 1} e {Nome 2} comprometem-se a reservar {frequência escolhida} um momento privado destinado à aproximação, ao carinho e à reconexão íntima, com a finalidade de fortalecer seu vínculo afetivo e favorecer a intimidade sexual do casal.”**\n\n**“Nesse período poderão existir conversa íntima, abraço, beijo, carinho, massagem, toque afetivo ou outras formas voluntárias de aproximação capazes de reduzir o distanciamento e favorecer o desejo. Havendo vontade e consentimento mútuos, o momento poderá naturalmente evoluir para relação sexual.”**\n\n**“A ausência de desejo sexual antes do início do momento não determina seu cancelamento automático quando ambos estiverem confortáveis em preservar alguma forma de proximidade. O desejo poderá surgir progressivamente durante a conexão. Entretanto, qualquer contato físico poderá ser recusado ou interrompido a qualquer momento.”**\n\nEssa passa a ser **a Q055 oficial**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 261,
+      "line_end": 307
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-14-Q056",
+    "question_id": "Q056",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 14. PERGUNTA 056 — CARINHO FÍSICO NÃO SEXUAL\n\nAlternativas substituídas:\n\n**A)** Beijo, abraço e carinho físico não sexual fazem parte regularmente da nossa rotina.\n\n**B)** Essas demonstrações existem, mas acontecem de maneira irregular.\n\n**C)** Atualmente existe pouco carinho físico fora dos momentos de intimidade sexual.\n\n### A\n\n**“{Nome} reconhece que o carinho físico não sexual faz parte regularmente da convivência e compromete-se a preservar essas manifestações sem exigir que evoluam para relação sexual.”**\n\n### B\n\n**“{Nome} reconhece que beijo, abraço e carinho existem, mas de maneira irregular, e compromete-se a participar de maior presença espontânea e voluntária dessas demonstrações no cotidiano.”**\n\n### C\n\n**“{Nome} reconhece que atualmente existe pouco carinho físico fora dos momentos sexuais e compromete-se, respeitando a vontade dos dois, a participar da reconstrução de maior proximidade afetiva na rotina.”**\n\n### A + C\n\n**“{Nome A} percebe carinho físico frequente, enquanto {Nome C} percebe pouco carinho fora dos momentos sexuais. Essa diferença de percepção deverá ser considerada, e ambos buscarão tornar mais visíveis as manifestações cotidianas de afeto.”**\n\n### B + C\n\n**“{Nome B} percebe carinho irregular, enquanto {Nome C} percebe pouca proximidade física. Ambos comprometem-se a cultivar maior presença de manifestações voluntárias de afeto no cotidiano.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 307,
+      "line_end": 339
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-15-Q060",
+    "question_id": "Q060",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 15. PERGUNTA 060 — PORNOGRAFIA\n\nRetira-se definitivamente o antigo **NÓS DECIDIMOS permissivo**.\n\n### Regra fixa do Método\n\n**“{Nome 1} e {Nome 2} comprometem-se a não utilizar intencionalmente pornografia ou conteúdo sexual explícito envolvendo terceiros com finalidade de excitação sexual, reconhecendo essa prática como incompatível com os princípios de exclusividade, fidelidade e proteção da intimidade assumidos neste contrato.”**\n\nNão entra nessa definição conteúdo clínico, médico ou educacional quando não utilizado com finalidade de excitação.\n\n### Para B ou C\n\n`MODO_DE_SAÍDA = DIAGNÓSTICO_PRIVADO` quando houver informação ainda não conhecida pelo cônjuge.\n\n### Plano de correção\n\n**“{Nome} reconhece a necessidade de interromper o consumo intencional desse conteúdo e observar seus efeitos sobre desejo, intimidade, expectativas, tempo, finanças e confiança.”**\n\nSe houver nova ocorrência após o compromisso:\n\n-  identificar o contexto; \n-  aplicar conversa de correção em até 72 horas, quando o assunto já for compartilhado e for seguro fazê-lo; \n-  se houver dificuldade persistente de controle ou tentativas repetidas sem sucesso, recomendar apoio profissional/pastoral apropriado. \n\nO R$ 10 **não é multa por pornografia**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 339,
+      "line_end": 367
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-16-Q062",
+    "question_id": "Q062",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 16. PERGUNTA 062 — DOR E DESCONFORTO\n\nAdicionar regra absoluta:\n\n**“Quando {Nome} comunicar desejo de diminuir, modificar ou interromper determinada prática íntima, esse pedido deverá ser respeitado.”**\n\nSe não for respeitado:\n\n`ALERTA_SEGURANÇA_SEXUAL = SIM`\n\nIsso prevalece independentemente da alternativa marcada.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 367,
+      "line_end": 381
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-17-Q069",
+    "question_id": "Q069",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 17. PERGUNTA 069 — PLANEJAMENTO REPRODUTIVO\n\nAplicabilidade será interna.\n\nAdicionar:\n\n**“Nenhum dos cônjuges poderá retirar, sabotar, alterar ou manipular deliberadamente método contraceptivo previamente acordado sem conhecimento do outro, nem utilizar ameaça, fraude ou pressão para impor gravidez ou prevenção.”**\n\nHavendo indício:\n\n`ALERTA_COERÇÃO_REPRODUTIVA = SIM`\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 381,
+      "line_end": 395
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-18-Q077",
+    "question_id": "Q077",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 18. PERGUNTA 077\n\nGravidez/pós-parto:\n\n`APLICAVEL = SIM/NÃO`\n\nNunca aparecerá quarta alternativa.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 395,
+      "line_end": 405
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-19-Q079",
+    "question_id": "Q079",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 19. PERGUNTA 079 — SUBSTITUÍDA\n\n# MELHOR PERÍODO PARA A INTIMIDADE\n\n**Quando pensa em momentos de aproximação e intimidade, qual período normalmente funciona melhor para você?**\n\n**A)** À noite, principalmente próximo ao horário de dormir.\n\n**B)** Pela manhã, à tarde ou em outro período em que geralmente estou mais descansado(a).\n\n**C)** Não tenho período preferencial; depende do dia e da rotina.\n\n### A\n\n**“{Nome} percebe maior disponibilidade para aproximação e intimidade no período noturno e compromete-se a comunicar quando esse período estiver sendo continuamente ocupado por atividades evitáveis.”**\n\n### B\n\n**“{Nome} percebe maior disponibilidade para intimidade em períodos diferentes do final da noite e compromete-se a comunicar essa preferência, evitando que o casal dependa exclusivamente de momentos em que já esteja excessivamente cansado(a).”**\n\n### C\n\n**“{Nome} não identifica período fixo como especialmente favorável e considera mais importante observar as condições de cada dia e proteger os momentos previamente combinados.”**\n\n### A + B\n\n**“{Nome A} costuma possuir maior disponibilidade à noite, enquanto {Nome B} identifica maior disponibilidade em outro período. Ambos comprometem-se a considerar essa diferença ao organizar os Momentos Programados de Intimidade e Reconexão.”**\n\nSem NÓS DECIDIMOS.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 405,
+      "line_end": 437
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-20-Q080",
+    "question_id": "Q080",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 20. PERGUNTA 080 — RETOMADA\n\nFica eliminado o gatilho próprio de “30 dias”.\n\nA Q080 passa a utilizar exclusivamente:\n\n`GATILHO_RECONEXAO_POR_FREQUENCIA`\n\ndefinido na Q051.\n\nQuando ativado, pode ser executado o Protocolo de Retomada da Q080.\n\nAssim não teremos dois relógios diferentes fiscalizando a mesma situação.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 437,
+      "line_end": 453
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-21-Q081",
+    "question_id": "Q081",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 21. PERGUNTA 081 — SUBPERGUNTA OBRIGATÓRIA PARA RESPOSTA C\n\nQuando houver resposta C:\n\n### Pergunta privada\n\n**A situação indicada corresponde principalmente a qual destas situações?**\n\n**A)** Reconheço um risco ou possibilidade, mas não ocorreu quebra física de fidelidade.\n\n**B)** Houve uma situação física no passado, meu cônjuge já tem conhecimento e o assunto já foi ou está sendo tratado.\n\n**C)** Houve uma situação física relevante que ainda não foi adequadamente tratada entre nós.\n\n### A\n\n`RISCO_FIDELIDADE = SIM`\n\n### B\n\n`QUEBRA_FIDELIDADE_CONHECIDA = SIM`\n\nAplicar Protocolo de Reconstrução da Confiança quando ainda necessário.\n\n### C\n\n`QUEBRA_FIDELIDADE_NAO_TRATADA = SIM`\n\n`MODO_DE_SAÍDA = DIAGNÓSTICO_PRIVADO`\n\nO sistema **não imprimirá automaticamente uma confissão no contrato compartilhado**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 453,
+      "line_end": 487
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-22-Q085",
+    "question_id": "Q085",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 22. PERGUNTA 085 — REGISTROS ÍNTIMOS\n\nAdicionar:\n\n**“O consentimento para produzir ou armazenar determinado registro íntimo poderá ser posteriormente revogado pela pessoa retratada, que poderá solicitar sua exclusão dos meios sob controle do outro cônjuge.”**\n\nE:\n\n**“Fotografia, vídeo, gravação ou outro conteúdo íntimo jamais poderá ser utilizado para ameaça, chantagem, vingança, humilhação ou exposição.”**\n\nSe ocorrer:\n\n`ALERTA_SEGURANÇA_E_PRIVACIDADE = SIM`\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 487,
+      "line_end": 503
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-23-Q090",
+    "question_id": "Q090",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 23. PERGUNTA 090 — REVISÃO DA INTIMIDADE\n\nAdicionar:\n\n**“A Revisão Periódica da Intimidade não substitui conversas ou protocolos acionados por problema atual. {Nome 1} e {Nome 2} não deverão esperar a próxima revisão mensal, trimestral ou semestral quando já existir insatisfação relevante, quebra de confiança ou outro gatilho de reconexão.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 503,
+      "line_end": 511
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-24-Q092",
+    "question_id": "Q092",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 24. PERGUNTA 092 — CONVIVÊNCIA COM AS FAMÍLIAS\n\nO NÓS DECIDIMOS deverá ser executado **separadamente para cada família**.\n\n### Família de `{Nome 1}`\n\nA) semanal.\n\nB) quinzenal.\n\nC) mensal/outra.\n\n### Família de `{Nome 2}`\n\nA) semanal.\n\nB) quinzenal.\n\nC) mensal/outra.\n\nIsso permite, por exemplo, uma família próxima geograficamente e outra distante.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 511,
+      "line_end": 535
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-25-Q091",
+    "question_id": "Q091",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-25-Q092",
+    "question_id": "Q092",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-25-Q093",
+    "question_id": "Q093",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-25-Q094",
+    "question_id": "Q094",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-25-Q095",
+    "question_id": "Q095",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-25-Q096",
+    "question_id": "Q096",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-25-Q097",
+    "question_id": "Q097",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-25-Q098",
+    "question_id": "Q098",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-25-Q099",
+    "question_id": "Q099",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-25-Q100",
+    "question_id": "Q100",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-26-Q097",
+    "question_id": "Q097",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 26. PERGUNTA 097 — DESRESPEITO DE FAMILIAR\n\nSubstituir o prazo aberto.\n\n### Nova regra\n\n**Se for possível e seguro estabelecer limite no momento do ocorrido:** intervenção imediata.\n\n**Se não for adequado ou seguro fazê-lo naquele instante:** o cônjuge conversa com seu parceiro **no mesmo dia** e, quando a solução adequada for diálogo com o familiar, aborda o familiar responsável **em até 72 horas**.\n\nSe houver risco ou violência, prevalece afastamento e fluxo de segurança.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 543,
+      "line_end": 557
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-27-Q098",
+    "question_id": "Q098",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 27. PERGUNTA 098\n\nResponsabilidade parental será verificada internamente:\n\n`Q098_APLICAVEL = SIM/NÃO`\n\nSem quarta resposta.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 557,
+      "line_end": 567
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-PATCH50-28-Q100",
+    "question_id": "Q100",
+    "label": "Correção canônica 5.0; subordinada a 6/7 e auditoria final",
+    "source_text": "# 28. PERGUNTA 100 — MORADIA TEMPORÁRIA DE FAMILIAR\n\nEliminar:\n\n> “período experimental curto”.\n\n### Nova alternativa B\n\n**B) Permitir permanência temporária com data concreta de revisão.**\n\nCampos obrigatórios:\n\n`DATA_INÍCIO`\n\n`DATA_REVISÃO`\n\n### Texto exato\n\n**“{Nome 1} e {Nome 2} decidiram permitir que {familiar} permaneça temporariamente em sua residência a partir de {data inicial}, realizando obrigatoriamente uma revisão da convivência em {data de revisão}. Nessa data avaliarão privacidade, despesas, rotina, tarefas, impacto sobre filhos ou dependentes e eventual continuidade da permanência.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 567,
+      "line_end": 589
+    },
+    "status": "CANONICAL_PATCH_CAPTURED",
+    "contract_template": null
+  },
+  {
+    "fixed_rule_id": "FR-Q154-TOTAL-PROHIBITION",
+    "question_id": "Q154",
+    "label": "Proibição integral aprovada pelo usuário",
+    "source_text": "{Nome 1} e {Nome 2} comprometem-se a não participar de apostas, bets, cassino, jogos de azar, loterias ou atividades semelhantes envolvendo dinheiro, mesmo em pequenas quantias, tanto com recursos pessoais quanto com recursos familiares.",
+    "source_ref": {
+      "source_id": "USER_Q154_TOTAL_PROHIBITION",
+      "decision": "opção 1",
+      "context": "Proibição integral de apostas envolvendo dinheiro, mesmo pequenas quantias; sem R$10 por aposta, recaída ou dificuldade de controle.",
+      "origin": "EXPLICIT_USER_DECISION"
+    },
+    "status": "USER_POLICY_IMPLEMENTATION_NOT_RELEASED",
+    "contract_template": "{Nome 1} e {Nome 2} comprometem-se a não participar de apostas, bets, cassino, jogos de azar, loterias ou atividades semelhantes envolvendo dinheiro, mesmo em pequenas quantias, tanto com recursos pessoais quanto com recursos familiares.",
+    "component_id": "OUT-Q154-FIXED"
+  }
+]

@@ -1,0 +1,386 @@
+[
+  {
+    "rule_id": "CANON50-01",
+    "title": "Regras estruturais novas",
+    "raw_text": "## 1. Regras estruturais novas\n\n### 1.1 Aplicabilidade nunca será alternativa\n\nAs perguntas continuam tendo **exatamente A/B/C**.\n\nQuando determinada pergunta não fizer sentido para aquele casal, o sistema decidirá isso antes de exibi-la:\n\n`APLICAVEL = SIM/NÃO`\n\nAplica-se especialmente a gravidez, pós-parto, responsabilidade parental e situações semelhantes.\n\n**“Não se aplica” nunca será alternativa D.**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 7,
+      "line_end": 23
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-02",
+    "title": "Novo campo obrigatório: MODO_DE_SAÍDA",
+    "raw_text": "# 2. Novo campo obrigatório: MODO\\_DE\\_SAÍDA\n\nCada efeito passará a possuir:\n\n`MODO_DE_SAÍDA`\n\nCom quatro valores:\n\n### A. CLÁUSULA\\_COMPARTILHADA\n\nInformação que pode integrar normalmente o contrato dos dois.\n\n### B. COMPROMISSO\\_INDIVIDUAL\\_COMPARTILHÁVEL\n\nPode gerar compromisso nominal de `{Nome}` visível no contrato.\n\n### C. DIAGNÓSTICO\\_PRIVADO\n\nA resposta produz orientação para quem respondeu, mas **não será automaticamente revelada ao outro cônjuge pelo contrato**.\n\n### D. ALERTA\\_SEGURANÇA\n\nA resposta não entra em negociação comum e não abre automaticamente NÓS DECIDIMOS ou conversa conjugal.\n\nIsso será especialmente importante em respostas envolvendo:\n\n-  infidelidade ainda não revelada; \n-  pornografia ocultada; \n-  coerção; \n-  medo; \n-  doença sexual sensível; \n-  violência; \n-  registros íntimos; \n-  controle; \n-  comportamentos secretos graves. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 23,
+      "line_end": 61
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-03",
+    "title": "PERGUNTA 002 — DECISÕES RELEVANTES",
+    "raw_text": "# 3. PERGUNTA 002 — DECISÕES RELEVANTES\n\nCorrigir a definição de decisão patrimonial relevante.\n\nSerão sempre consideradas decisões relevantes, independentemente do valor:\n\n-  compra ou venda de imóvel; \n-  compra ou venda de veículo de uso familiar; \n-  participação societária; \n-  oferecimento de patrimônio familiar em garantia; \n-  alienação de ativo essencial da família. \n\nPara outras operações patrimoniais:\n\n> **valor total igual ou superior a 50% da Renda Líquida Familiar mensal — RLF — será considerado relevante e exigirá conversa prévia do casal, salvo limite específico posteriormente acordado.**\n\nA regra anterior de 10% da RLF fica excluída.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 61,
+      "line_end": 81
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-04",
+    "title": "PERGUNTA 018 — PROTOCOLO DE RECONSTRUÇÃO DA CONFIANÇA",
+    "raw_text": "# 4. PERGUNTA 018 — PROTOCOLO DE RECONSTRUÇÃO DA CONFIANÇA\n\nFica criado definitivamente.\n\n### Gatilhos\n\nAplicável quando houver, entre outras situações:\n\n-  infidelidade; \n-  mentira grave; \n-  ocultação financeira relevante; \n-  vínculo afetivo ou sexual paralelo; \n-  violação grave de acordo; \n-  outra quebra significativa da confiança. \n\n### Etapas obrigatórias\n\n**1. Interrupção:** comportamento ainda existente deverá ser interrompido.\n\n**2. Identificação:** deverá ficar claro qual comportamento produziu a quebra.\n\n**3. Informação necessária:** deverão ser comunicadas as informações necessárias à compreensão da situação e de suas consequências, sem exigir detalhes desnecessários destinados apenas a produzir sofrimento.\n\n**4. Proteção contra repetição:** deverão ser definidas medidas concretas para reduzir risco de nova ocorrência.\n\n**5. Reconstrução:** deverão ser identificados comportamentos capazes de contribuir gradualmente para recuperar segurança e confiança.\n\n**6. Revisão:** realizar revisão em **30 dias**.\n\n**7. Apoio externo:** se continuar existindo sofrimento significativo, repetição ou incapacidade de tratamento pelo próprio casal, considerar acompanhamento profissional, pastoral ou outro apoio adequado.\n\n### Texto estrutural\n\n**“{Nome 1} e {Nome 2} reconhecem que perdão e reconstrução da confiança não são necessariamente acontecimentos simultâneos. Uma pessoa poderá decidir perdoar e ainda necessitar de tempo, consistência e mudança concreta antes de recuperar plenamente sua confiança.”**\n\nEm situação de violência ou risco, este protocolo **não obriga reconciliação ou permanência conjunta**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 81,
+      "line_end": 120
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-05",
+    "title": "PERGUNTA 037 — RESERVAS FINANCEIRAS",
+    "raw_text": "# 5. PERGUNTA 037 — RESERVAS FINANCEIRAS\n\nA expressão passa a ser:\n\n> **“Depois de atendidas as despesas essenciais, obrigações contratuais, parcelas vencíveis e demais compromissos financeiros obrigatórios...”**\n\nSó depois disso se aplica a meta consensual de reserva.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 120,
+      "line_end": 130
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-06",
+    "title": "PERGUNTA 041 — MUDANÇA DE RENDA",
+    "raw_text": "# 6. PERGUNTA 041 — MUDANÇA DE RENDA\n\nAdicionar:\n\n**“Quando a renda líquida individual de qualquer dos cônjuges aumentar ou diminuir em 20% ou mais em relação ao valor considerado na última divisão financeira, o modelo de contribuição deverá ser revisto na próxima Revisão Financeira mensal.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 130,
+      "line_end": 138
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-07",
+    "title": "PERGUNTA 043 — CRISE FINANCEIRA",
+    "raw_text": "# 7. PERGUNTA 043 — CRISE FINANCEIRA\n\nAdicionar aos gatilhos objetivos:\n\n-  necessidade de utilizar, em uma única situação, **25% ou mais da reserva financeira disponível**; ou \n-  situação que reduza a reserva disponível para menos do equivalente a **1 mês das despesas essenciais da família**. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 138,
+      "line_end": 147
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-08",
+    "title": "PERGUNTA 048 — TRABALHO CANCELANDO TEMPO DO CASAL",
+    "raw_text": "# 8. PERGUNTA 048 — TRABALHO CANCELANDO TEMPO DO CASAL\n\nExcluir o gatilho de:\n\n> 2 cancelamentos em 14 dias.\n\n### Nova regra\n\n**“Quando trabalho ou compromisso profissional cancelar um Momento de Qualidade previamente combinado, o casal procurará remarcar esse momento em até 7 dias, sempre que possível antes do próximo momento regularmente previsto.”**\n\n### Gatilho de reequilíbrio\n\n**“Se dois Momentos de Qualidade consecutivos previamente acordados forem cancelados por compromissos profissionais evitáveis e não forem adequadamente remarcados, {Nome 1} e {Nome 2} realizarão uma Conversa de Reequilíbrio em até 72 horas após o segundo cancelamento.”**\n\nEssa regra funciona para frequência semanal, quinzenal ou mensal.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 147,
+      "line_end": 165
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-09",
+    "title": "PERGUNTA 050 — APOIO A PROJETOS DO CÔNJUGE",
+    "raw_text": "# 9. PERGUNTA 050 — APOIO A PROJETOS DO CÔNJUGE\n\nSubstituir a ideia de reciprocidade por:\n\n**“O apoio recebido anteriormente não cria dívida pessoal nem obrigação automática de aprovar projetos futuros. Entretanto, {Nome 1} e {Nome 2} comprometem-se a reconhecer os esforços e sacrifícios que um realizou pelo desenvolvimento do outro e a considerar essa história de cooperação ao avaliar novos projetos, procurando preservar reciprocidade e justiça ao longo do casamento.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 165,
+      "line_end": 173
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-10",
+    "title": "PERGUNTA 051 — FREQUÊNCIA SEXUAL",
+    "raw_text": "# 10. PERGUNTA 051 — FREQUÊNCIA SEXUAL\n\n## Pergunta corrigida\n\n**Pensando principalmente nos últimos 90 dias, como a frequência atual da intimidade sexual se compara à frequência que você considera adequada para você?**\n\n**A)** A frequência atual está próxima daquela que considero adequada.\n\n**B)** Gostaria que a intimidade sexual acontecesse com maior frequência.\n\n**C)** Gostaria que a intimidade sexual acontecesse com menor frequência.\n\n### A — Efeito\n\n**“{Nome} considera que a frequência sexual atualmente vivida está próxima daquela que lhe parece adequada e compromete-se a continuar comunicando eventuais mudanças de necessidade ao longo do casamento.”**\n\n### B — Efeito\n\n**“{Nome} reconhece que gostaria de viver intimidade sexual com maior frequência e compromete-se a comunicar essa necessidade respeitosamente, sem transformar desejo em cobrança, ameaça, culpa ou obrigação sexual.”**\n\n### C — Efeito\n\n**“{Nome} reconhece que gostaria de viver intimidade sexual com menor frequência e compromete-se a comunicar com clareza os fatores relacionados a essa necessidade, sem simplesmente desaparecer da vida íntima ou esperar que seu cônjuge compreenda a mudança sem diálogo.”**\n\n### A + B\n\n**“{Nome A} percebe a frequência atual como adequada, enquanto {Nome B} gostaria de maior frequência. Ambos reconhecem que a satisfação de uma pessoa não elimina a necessidade manifestada pela outra e comprometem-se a buscar uma frequência possível para os dois, preservando consentimento.”**\n\n### A + C\n\n**“{Nome A} percebe a frequência atual como adequada, enquanto {Nome C} gostaria de menor frequência. Ambos comprometem-se a conversar sobre desejo, rotina, saúde e demais fatores envolvidos, sem transformar a preferência de nenhum deles em obrigação para o outro.”**\n\n### B + C\n\n**“{Nome B} deseja maior frequência sexual, enquanto {Nome C} deseja menor frequência. Essa diferença será considerada divergência relevante de expectativa íntima. Ambos comprometem-se a tratar o assunto sem pressão, investigando as necessidades e fatores envolvidos e buscando uma frequência consensual possível para o casal.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 173,
+      "line_end": 211
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-11",
+    "title": "Q051 — NÓS DECIDIMOS",
+    "raw_text": "# 11. Q051 — NÓS DECIDIMOS\n\nPermanece obrigatório.\n\n**Qual frequência sexual vocês desejam buscar consensualmente neste período do casamento?**\n\n**A)** Em média, pelo menos 1 vez por semana.\n\n**B)** Em média, pelo menos 2 vezes por semana.\n\n**C)** Outra frequência consensualmente definida ou nenhuma meta numérica.\n\nOs textos de consentimento permanecem.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 211,
+      "line_end": 227
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-12",
+    "title": "NOVA REGRA DE GATILHO POR CICLOS",
+    "raw_text": "# 12. NOVA REGRA DE GATILHO POR CICLOS\n\nSubstitui a regra universal anterior de 2 semanas.\n\n### Se a meta for semanal ou maior\n\nFicar abaixo da frequência consensual durante **2 semanas consecutivas** → Conversa de Reconexão em até 3 dias.\n\n### Se a meta for quinzenal\n\nNão atingir a meta durante **2 ciclos consecutivos de 15 dias** → conversa em até 3 dias.\n\n### Se a meta for mensal\n\nNão atingir a meta durante **2 ciclos mensais consecutivos** → conversa em até 3 dias.\n\n### Outra frequência\n\nUtilizar **2 ciclos completos consecutivos da frequência definida**.\n\n### Sem meta numérica\n\nSe houver **30 dias sem relação sexual e pelo menos um dos cônjuges manifestar insatisfação**, realizar Conversa de Reconexão em até 3 dias.\n\nContinuam proibidos:\n\n-  dívida sexual; \n-  reposição obrigatória; \n-  acúmulo; \n-  compensação; \n-  R$ 10 pela falta de sexo. \n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 227,
+      "line_end": 261
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-13",
+    "title": "PERGUNTA 055 — SUBSTITUÍDA DEFINITIVAMENTE",
+    "raw_text": "# 13. PERGUNTA 055 — SUBSTITUÍDA DEFINITIVAMENTE\n\n# MOMENTO PROGRAMADO DE INTIMIDADE E RECONEXÃO\n\n**Mesmo quando rotina, trabalho ou cansaço diminuírem a espontaneidade, qual frequência você considera adequada para o casal reservar intencionalmente um momento privado de aproximação, carinho e reconexão íntima?**\n\n**A)** Pelo menos uma vez por semana.\n\n**B)** Pelo menos uma vez a cada 15 dias.\n\n**C)** Pelo menos uma vez por mês.\n\n### Efeitos\n\n**A:**\n\n**“{Nome} considera importante preservar semanalmente um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n**B:**\n\n**“{Nome} considera importante preservar pelo menos a cada 15 dias um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n**C:**\n\n**“{Nome} considera importante preservar pelo menos mensalmente um momento intencional de aproximação, carinho e reconexão íntima com seu cônjuge.”**\n\n## NÓS DECIDIMOS — obrigatório\n\nA) semanal;\n\nB) quinzenal;\n\nC) mensal.\n\n### Texto contratual\n\n**“{Nome 1} e {Nome 2} comprometem-se a reservar {frequência escolhida} um momento privado destinado à aproximação, ao carinho e à reconexão íntima, com a finalidade de fortalecer seu vínculo afetivo e favorecer a intimidade sexual do casal.”**\n\n**“Nesse período poderão existir conversa íntima, abraço, beijo, carinho, massagem, toque afetivo ou outras formas voluntárias de aproximação capazes de reduzir o distanciamento e favorecer o desejo. Havendo vontade e consentimento mútuos, o momento poderá naturalmente evoluir para relação sexual.”**\n\n**“A ausência de desejo sexual antes do início do momento não determina seu cancelamento automático quando ambos estiverem confortáveis em preservar alguma forma de proximidade. O desejo poderá surgir progressivamente durante a conexão. Entretanto, qualquer contato físico poderá ser recusado ou interrompido a qualquer momento.”**\n\nEssa passa a ser **a Q055 oficial**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 261,
+      "line_end": 307
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-14",
+    "title": "PERGUNTA 056 — CARINHO FÍSICO NÃO SEXUAL",
+    "raw_text": "# 14. PERGUNTA 056 — CARINHO FÍSICO NÃO SEXUAL\n\nAlternativas substituídas:\n\n**A)** Beijo, abraço e carinho físico não sexual fazem parte regularmente da nossa rotina.\n\n**B)** Essas demonstrações existem, mas acontecem de maneira irregular.\n\n**C)** Atualmente existe pouco carinho físico fora dos momentos de intimidade sexual.\n\n### A\n\n**“{Nome} reconhece que o carinho físico não sexual faz parte regularmente da convivência e compromete-se a preservar essas manifestações sem exigir que evoluam para relação sexual.”**\n\n### B\n\n**“{Nome} reconhece que beijo, abraço e carinho existem, mas de maneira irregular, e compromete-se a participar de maior presença espontânea e voluntária dessas demonstrações no cotidiano.”**\n\n### C\n\n**“{Nome} reconhece que atualmente existe pouco carinho físico fora dos momentos sexuais e compromete-se, respeitando a vontade dos dois, a participar da reconstrução de maior proximidade afetiva na rotina.”**\n\n### A + C\n\n**“{Nome A} percebe carinho físico frequente, enquanto {Nome C} percebe pouco carinho fora dos momentos sexuais. Essa diferença de percepção deverá ser considerada, e ambos buscarão tornar mais visíveis as manifestações cotidianas de afeto.”**\n\n### B + C\n\n**“{Nome B} percebe carinho irregular, enquanto {Nome C} percebe pouca proximidade física. Ambos comprometem-se a cultivar maior presença de manifestações voluntárias de afeto no cotidiano.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 307,
+      "line_end": 339
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-15",
+    "title": "PERGUNTA 060 — PORNOGRAFIA",
+    "raw_text": "# 15. PERGUNTA 060 — PORNOGRAFIA\n\nRetira-se definitivamente o antigo **NÓS DECIDIMOS permissivo**.\n\n### Regra fixa do Método\n\n**“{Nome 1} e {Nome 2} comprometem-se a não utilizar intencionalmente pornografia ou conteúdo sexual explícito envolvendo terceiros com finalidade de excitação sexual, reconhecendo essa prática como incompatível com os princípios de exclusividade, fidelidade e proteção da intimidade assumidos neste contrato.”**\n\nNão entra nessa definição conteúdo clínico, médico ou educacional quando não utilizado com finalidade de excitação.\n\n### Para B ou C\n\n`MODO_DE_SAÍDA = DIAGNÓSTICO_PRIVADO` quando houver informação ainda não conhecida pelo cônjuge.\n\n### Plano de correção\n\n**“{Nome} reconhece a necessidade de interromper o consumo intencional desse conteúdo e observar seus efeitos sobre desejo, intimidade, expectativas, tempo, finanças e confiança.”**\n\nSe houver nova ocorrência após o compromisso:\n\n-  identificar o contexto; \n-  aplicar conversa de correção em até 72 horas, quando o assunto já for compartilhado e for seguro fazê-lo; \n-  se houver dificuldade persistente de controle ou tentativas repetidas sem sucesso, recomendar apoio profissional/pastoral apropriado. \n\nO R$ 10 **não é multa por pornografia**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 339,
+      "line_end": 367
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-16",
+    "title": "PERGUNTA 062 — DOR E DESCONFORTO",
+    "raw_text": "# 16. PERGUNTA 062 — DOR E DESCONFORTO\n\nAdicionar regra absoluta:\n\n**“Quando {Nome} comunicar desejo de diminuir, modificar ou interromper determinada prática íntima, esse pedido deverá ser respeitado.”**\n\nSe não for respeitado:\n\n`ALERTA_SEGURANÇA_SEXUAL = SIM`\n\nIsso prevalece independentemente da alternativa marcada.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 367,
+      "line_end": 381
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-17",
+    "title": "PERGUNTA 069 — PLANEJAMENTO REPRODUTIVO",
+    "raw_text": "# 17. PERGUNTA 069 — PLANEJAMENTO REPRODUTIVO\n\nAplicabilidade será interna.\n\nAdicionar:\n\n**“Nenhum dos cônjuges poderá retirar, sabotar, alterar ou manipular deliberadamente método contraceptivo previamente acordado sem conhecimento do outro, nem utilizar ameaça, fraude ou pressão para impor gravidez ou prevenção.”**\n\nHavendo indício:\n\n`ALERTA_COERÇÃO_REPRODUTIVA = SIM`\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 381,
+      "line_end": 395
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-18",
+    "title": "PERGUNTA 077",
+    "raw_text": "# 18. PERGUNTA 077\n\nGravidez/pós-parto:\n\n`APLICAVEL = SIM/NÃO`\n\nNunca aparecerá quarta alternativa.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 395,
+      "line_end": 405
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-19",
+    "title": "PERGUNTA 079 — SUBSTITUÍDA",
+    "raw_text": "# 19. PERGUNTA 079 — SUBSTITUÍDA\n\n# MELHOR PERÍODO PARA A INTIMIDADE\n\n**Quando pensa em momentos de aproximação e intimidade, qual período normalmente funciona melhor para você?**\n\n**A)** À noite, principalmente próximo ao horário de dormir.\n\n**B)** Pela manhã, à tarde ou em outro período em que geralmente estou mais descansado(a).\n\n**C)** Não tenho período preferencial; depende do dia e da rotina.\n\n### A\n\n**“{Nome} percebe maior disponibilidade para aproximação e intimidade no período noturno e compromete-se a comunicar quando esse período estiver sendo continuamente ocupado por atividades evitáveis.”**\n\n### B\n\n**“{Nome} percebe maior disponibilidade para intimidade em períodos diferentes do final da noite e compromete-se a comunicar essa preferência, evitando que o casal dependa exclusivamente de momentos em que já esteja excessivamente cansado(a).”**\n\n### C\n\n**“{Nome} não identifica período fixo como especialmente favorável e considera mais importante observar as condições de cada dia e proteger os momentos previamente combinados.”**\n\n### A + B\n\n**“{Nome A} costuma possuir maior disponibilidade à noite, enquanto {Nome B} identifica maior disponibilidade em outro período. Ambos comprometem-se a considerar essa diferença ao organizar os Momentos Programados de Intimidade e Reconexão.”**\n\nSem NÓS DECIDIMOS.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 405,
+      "line_end": 437
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-20",
+    "title": "PERGUNTA 080 — RETOMADA",
+    "raw_text": "# 20. PERGUNTA 080 — RETOMADA\n\nFica eliminado o gatilho próprio de “30 dias”.\n\nA Q080 passa a utilizar exclusivamente:\n\n`GATILHO_RECONEXAO_POR_FREQUENCIA`\n\ndefinido na Q051.\n\nQuando ativado, pode ser executado o Protocolo de Retomada da Q080.\n\nAssim não teremos dois relógios diferentes fiscalizando a mesma situação.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 437,
+      "line_end": 453
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-21",
+    "title": "PERGUNTA 081 — SUBPERGUNTA OBRIGATÓRIA PARA RESPOSTA C",
+    "raw_text": "# 21. PERGUNTA 081 — SUBPERGUNTA OBRIGATÓRIA PARA RESPOSTA C\n\nQuando houver resposta C:\n\n### Pergunta privada\n\n**A situação indicada corresponde principalmente a qual destas situações?**\n\n**A)** Reconheço um risco ou possibilidade, mas não ocorreu quebra física de fidelidade.\n\n**B)** Houve uma situação física no passado, meu cônjuge já tem conhecimento e o assunto já foi ou está sendo tratado.\n\n**C)** Houve uma situação física relevante que ainda não foi adequadamente tratada entre nós.\n\n### A\n\n`RISCO_FIDELIDADE = SIM`\n\n### B\n\n`QUEBRA_FIDELIDADE_CONHECIDA = SIM`\n\nAplicar Protocolo de Reconstrução da Confiança quando ainda necessário.\n\n### C\n\n`QUEBRA_FIDELIDADE_NAO_TRATADA = SIM`\n\n`MODO_DE_SAÍDA = DIAGNÓSTICO_PRIVADO`\n\nO sistema **não imprimirá automaticamente uma confissão no contrato compartilhado**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 453,
+      "line_end": 487
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-22",
+    "title": "PERGUNTA 085 — REGISTROS ÍNTIMOS",
+    "raw_text": "# 22. PERGUNTA 085 — REGISTROS ÍNTIMOS\n\nAdicionar:\n\n**“O consentimento para produzir ou armazenar determinado registro íntimo poderá ser posteriormente revogado pela pessoa retratada, que poderá solicitar sua exclusão dos meios sob controle do outro cônjuge.”**\n\nE:\n\n**“Fotografia, vídeo, gravação ou outro conteúdo íntimo jamais poderá ser utilizado para ameaça, chantagem, vingança, humilhação ou exposição.”**\n\nSe ocorrer:\n\n`ALERTA_SEGURANÇA_E_PRIVACIDADE = SIM`\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 487,
+      "line_end": 503
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-23",
+    "title": "PERGUNTA 090 — REVISÃO DA INTIMIDADE",
+    "raw_text": "# 23. PERGUNTA 090 — REVISÃO DA INTIMIDADE\n\nAdicionar:\n\n**“A Revisão Periódica da Intimidade não substitui conversas ou protocolos acionados por problema atual. {Nome 1} e {Nome 2} não deverão esperar a próxima revisão mensal, trimestral ou semestral quando já existir insatisfação relevante, quebra de confiança ou outro gatilho de reconexão.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 503,
+      "line_end": 511
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-24",
+    "title": "PERGUNTA 092 — CONVIVÊNCIA COM AS FAMÍLIAS",
+    "raw_text": "# 24. PERGUNTA 092 — CONVIVÊNCIA COM AS FAMÍLIAS\n\nO NÓS DECIDIMOS deverá ser executado **separadamente para cada família**.\n\n### Família de `{Nome 1}`\n\nA) semanal.\n\nB) quinzenal.\n\nC) mensal/outra.\n\n### Família de `{Nome 2}`\n\nA) semanal.\n\nB) quinzenal.\n\nC) mensal/outra.\n\nIsso permite, por exemplo, uma família próxima geograficamente e outra distante.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 511,
+      "line_end": 535
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-25",
+    "title": "REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM",
+    "raw_text": "# 25. REGRA GERAL DE SEGURANÇA — FAMÍLIA DE ORIGEM\n\nAdicionar a todo o bloco 091–100:\n\n**“Nenhuma regra de convivência familiar obrigará {Nome 1} ou {Nome 2} a manter visita, hospedagem, contato ou proximidade com familiar que represente risco de violência, abuso, ameaça, perseguição, assédio ou outra situação grave de segurança. Nesses casos, as regras ordinárias de frequência e convivência poderão ser suspensas.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 535,
+      "line_end": 543
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-26",
+    "title": "PERGUNTA 097 — DESRESPEITO DE FAMILIAR",
+    "raw_text": "# 26. PERGUNTA 097 — DESRESPEITO DE FAMILIAR\n\nSubstituir o prazo aberto.\n\n### Nova regra\n\n**Se for possível e seguro estabelecer limite no momento do ocorrido:** intervenção imediata.\n\n**Se não for adequado ou seguro fazê-lo naquele instante:** o cônjuge conversa com seu parceiro **no mesmo dia** e, quando a solução adequada for diálogo com o familiar, aborda o familiar responsável **em até 72 horas**.\n\nSe houver risco ou violência, prevalece afastamento e fluxo de segurança.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 543,
+      "line_end": 557
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-27",
+    "title": "PERGUNTA 098",
+    "raw_text": "# 27. PERGUNTA 098\n\nResponsabilidade parental será verificada internamente:\n\n`Q098_APLICAVEL = SIM/NÃO`\n\nSem quarta resposta.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 557,
+      "line_end": 567
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-28",
+    "title": "PERGUNTA 100 — MORADIA TEMPORÁRIA DE FAMILIAR",
+    "raw_text": "# 28. PERGUNTA 100 — MORADIA TEMPORÁRIA DE FAMILIAR\n\nEliminar:\n\n> “período experimental curto”.\n\n### Nova alternativa B\n\n**B) Permitir permanência temporária com data concreta de revisão.**\n\nCampos obrigatórios:\n\n`DATA_INÍCIO`\n\n`DATA_REVISÃO`\n\n### Texto exato\n\n**“{Nome 1} e {Nome 2} decidiram permitir que {familiar} permaneça temporariamente em sua residência a partir de {data inicial}, realizando obrigatoriamente uma revisão da convivência em {data de revisão}. Nessa data avaliarão privacidade, despesas, rotina, tarefas, impacto sobre filhos ou dependentes e eventual continuidade da permanência.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 567,
+      "line_end": 589
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-29",
+    "title": "REGRA UNIFICADA DO R$ 10,00",
+    "raw_text": "# 29. REGRA UNIFICADA DO R$ 10,00\n\nFica confirmada para as 100 perguntas:\n\n**R$ 10,00 não será consequência automática de erro, descumprimento comum, diferença de opinião, falta de desejo sexual ou incapacidade material.**\n\nSeu uso fica predominantemente vinculado a:\n\n> **recusa injustificada em participar de processo obrigatório de conversa, correção, reconexão ou revisão.**\n\nNo banco:\n\n`CONTRIBUICAO = NÃO`\n\nou\n\n`CONTRIBUICAO = PROTOCOLO_GERAL`\n\nNenhum programador deverá criar nova multa a partir da interpretação de uma pergunta.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 589,
+      "line_end": 611
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-30",
+    "title": "REGRA UNIFICADA DE CONSENTIMENTO",
+    "raw_text": "# 30. REGRA UNIFICADA DE CONSENTIMENTO\n\nPassa a reger **todo o Método**, não somente o bloco sexual:\n\n**“Beijo, abraço, carinho, massagem, toque físico ou relação sexual dependerão da vontade das pessoas envolvidas em cada ocasião. Consentimento anterior não constitui consentimento permanente. Frequência, programação, casamento, reconciliação, presente, contribuição financeira ou outro compromisso contratual não substituem consentimento.”**\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 611,
+      "line_end": 619
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-31",
+    "title": "NOVO MAPA DOS GATILHOS DE INTIMIDADE",
+    "raw_text": "# 31. NOVO MAPA DOS GATILHOS DE INTIMIDADE\n\nPara impedir confusão no sistema:\n\n### Gatilho A — duas recusas consecutivas\n\nDuas recusas consecutivas de abordagem íntima que normalmente fazia parte do relacionamento:\n\n→ Conversa de Reconexão no mesmo dia ou em até 24 horas.\n\n**Não significa obrigação de sexo.**\n\n### Gatilho B — frequência sexual\n\nUtiliza exclusivamente os **dois ciclos da Q051**.\n\n→ conversa em até 3 dias.\n\n### Gatilho C — Momento de Reconexão\n\nUtiliza a frequência da Q055.\n\nSe o momento programado não puder ocorrer, deve ser reorganizado conforme a realidade do casal.\n\nA ausência do momento **não cria obrigação sexual**.\n\n### Gatilho D — problema relevante de satisfação\n\n057/059/061 etc.\n\n→ não esperar revisão periódica da Q090 quando existir problema atual.\n\n### Gatilho E — saúde\n\nSaúde, dor, recuperação, gravidez/pós-parto ou condição equivalente **suspendem metas incompatíveis enquanto durar o impedimento legítimo**.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 619,
+      "line_end": 657
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  },
+  {
+    "rule_id": "CANON50-32",
+    "title": "CONSOLIDAÇÃO DO CONTRATO",
+    "raw_text": "# 32. CONSOLIDAÇÃO DO CONTRATO\n\nTambém fica definitivamente estabelecido:\n\n**uma pergunta não corresponde automaticamente a uma cláusula.**\n\nAs respostas 001–100 alimentarão cláusulas temáticas maiores.\n\nIsso significa que, por exemplo, 051–090 poderão formar uma única grande:\n\n## CLÁUSULA DA INTIMIDADE, SEXUALIDADE E RECONEXÃO\n\ncom subitens de:\n\n-  frequência; \n-  reconexão; \n-  carinho; \n-  iniciativa; \n-  satisfação; \n-  comunicação; \n-  consentimento; \n-  saúde; \n-  fidelidade; \n-  privacidade; \n-  manutenção e revisão. \n\nIsso impede um contrato artificialmente enorme.\n\n---",
+    "source_ref": {
+      "source_id": "SUP12-08",
+      "line_start": 657,
+      "line_end": 687
+    },
+    "status": "CANONICAL_SOURCE_NOT_EXECUTABLE",
+    "is_active": false
+  }
+]
