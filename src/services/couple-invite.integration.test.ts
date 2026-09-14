@@ -71,6 +71,36 @@ async function createCompletedAttempt(userId: string) {
 }
 
 describe("casal, convites e vínculo seguro", () => {
+  it("convida por WhatsApp sem pré-definir e-mail e vincula somente após aceite autenticado", async () => {
+    const creator = await createUser("whatsapp-owner");
+    const partner = await createUser("whatsapp-partner");
+    const created = await inviteService.createWhatsAppInvite(creator, "(11) 98765-4321");
+    const token = tokenFromUrl(created.inviteUrl);
+    const membership = await prisma.coupleMember.findUniqueOrThrow({ where: { activeMembershipKey: creator.id } });
+    coupleIds.push(membership.coupleId);
+    const stored = await prisma.coupleInvite.findUniqueOrThrow({ where: { tokenHash: hashInviteToken(token) } });
+    expect(stored).toMatchObject({ email: null, whatsappPhone: "5511987654321", status: "PENDING" });
+    const preview = await inviteService.getInvitePreview(token);
+    expect(preview).toMatchObject({ state: "AVAILABLE", channel: "WHATSAPP", recipientEmail: null });
+    expect(JSON.stringify(preview)).not.toContain("98765");
+    await expect(inviteService.acceptInvite(creator, token)).rejects.toThrow("INVITE_FORBIDDEN");
+    await expect(inviteService.acceptInvite(partner, token)).resolves.toEqual({ state: "ACTIVE" });
+    expect(await coupleService.getOverview(creator.id)).toMatchObject({ state: "ACTIVE", partner: { email: partner.email } });
+    await expect(inviteService.acceptInvite(partner, token)).rejects.toThrow("INVITE_ALREADY_USED");
+  });
+
+  it("regenerar convite WhatsApp invalida o link anterior e rejeita número inválido", async () => {
+    const creator = await createUser("whatsapp-reissue");
+    const partner = await createUser("whatsapp-reissue-partner");
+    await expect(inviteService.createWhatsAppInvite(creator, "123")).rejects.toThrow("INVALID_WHATSAPP_PHONE");
+    const first = await inviteService.createWhatsAppInvite(creator, "11987654321");
+    const membership = await prisma.coupleMember.findUniqueOrThrow({ where: { activeMembershipKey: creator.id } });
+    coupleIds.push(membership.coupleId);
+    const second = await inviteService.createWhatsAppInvite(creator, "21987654321");
+    await expect(inviteService.acceptInvite(partner, tokenFromUrl(first.inviteUrl))).rejects.toThrow("INVITE_CANCELLED");
+    expect(await inviteService.getInvitePreview(tokenFromUrl(second.inviteUrl))).toMatchObject({ state: "AVAILABLE", channel: "WHATSAPP" });
+  });
+
   beforeAll(async () => {
     await syncQuestionnaire(prisma, admissionQuestionnaireV8);
     questionnaire = await loadQuestionnaire();

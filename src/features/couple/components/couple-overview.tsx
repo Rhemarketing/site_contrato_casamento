@@ -1,5 +1,6 @@
 import { cancelCoupleInviteAction, cancelPendingCoupleAction } from "@/app/actions/couple.actions";
 import Link from "next/link";
+import { formatWhatsAppPhone } from "@/lib/whatsapp";
 import { Alert } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -37,14 +38,14 @@ export function CoupleOverview({ overview, error }: { overview: CoupleOverviewDt
           <h2 className="mt-4 font-serif text-2xl font-semibold text-brand-strong">Vínculo aguardando seu cônjuge</h2>
           {overview.invite ? (
             <dl className="mt-5 grid gap-3 text-sm sm:grid-cols-2">
-              <div><dt className="font-semibold">E-mail convidado</dt><dd className="break-all text-muted">{overview.invite.email}</dd></div>
+              <div><dt className="font-semibold">{overview.invite.whatsappPhone ? "WhatsApp convidado" : "E-mail convidado"}</dt><dd className="break-all text-muted">{overview.invite.whatsappPhone ? formatWhatsAppPhone(overview.invite.whatsappPhone) : overview.invite.email}</dd></div>
               <div><dt className="font-semibold">Expira em</dt><dd className="text-muted">{formatDate(overview.invite.expiresAt)}</dd></div>
             </dl>
           ) : <p className="mt-3 text-muted">Não existe convite ativo no momento.</p>}
         </Card>
         <Card>
           <h3 className="font-semibold text-brand-strong">{overview.invite ? "Gerar novo link" : "Criar novo convite"}</h3>
-          <div className="mt-4"><CoupleInviteForm defaultEmail={overview.invite?.email} regenerate={Boolean(overview.invite)} /></div>
+          <div className="mt-4"><CoupleInviteForm defaultPhone={overview.invite?.whatsappPhone} regenerate={Boolean(overview.invite)} /></div>
         </Card>
         <Card className="space-y-4">
           <h3 className="font-semibold text-brand-strong">Gerenciar vínculo pendente</h3>

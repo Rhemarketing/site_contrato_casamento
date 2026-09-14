@@ -4,7 +4,8 @@ export type CoupleOverviewDto =
       state: "PENDING";
       role: "CREATOR";
       invite: {
-        email: string;
+        email: string | null;
+        whatsappPhone?: string | null;
         status: "PENDING";
         expiresAt: string;
       } | null;
@@ -20,7 +21,8 @@ export type CoupleInvitePreviewDto =
   | {
       state: "AVAILABLE";
       creatorName: string;
-      recipientEmail: string;
+      recipientEmail: string | null;
+      channel?: "EMAIL" | "WHATSAPP";
       expiresAt: string;
     }
   | { state: "EXPIRED" }

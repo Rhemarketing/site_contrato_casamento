@@ -23,7 +23,7 @@ export class CoupleService {
               where: { status: "PENDING" },
               orderBy: { createdAt: "desc" },
               take: 1,
-              select: { email: true, status: true, expiresAt: true },
+              select: { email: true, whatsappPhone: true, status: true, expiresAt: true },
             },
           },
         },
@@ -41,7 +41,7 @@ export class CoupleService {
         state: "PENDING",
         role: "CREATOR",
         invite: invite
-          ? { email: invite.email, status: "PENDING", expiresAt: invite.expiresAt.toISOString() }
+          ? { email: invite.email, whatsappPhone: invite.whatsappPhone, status: "PENDING", expiresAt: invite.expiresAt.toISOString() }
           : null,
       };
     }

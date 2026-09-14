@@ -8,6 +8,7 @@ import { AcceptInviteForm } from "@/features/couple/components/accept-invite-for
 import { getCurrentUser } from "@/lib/auth/current-user";
 import { db } from "@/lib/db";
 import { CoupleInviteService } from "@/services/couple-invite.service";
+import { RegistrationForm } from "@/components/auth/registration-form";
 
 export const metadata: Metadata = {
   title: "Convite para relacionamento",
@@ -43,11 +44,16 @@ export default async function CoupleInvitePage({ params }: { params: Promise<{ t
           <>
             <div>
               <h2 className="font-serif text-2xl font-semibold text-brand-strong">{preview.creatorName} convidou você</h2>
-              <p className="mt-2 text-muted">Este convite foi destinado a {preview.recipientEmail}.</p>
+              <p className="mt-2 text-muted">{preview.channel === "WHATSAPP" ? "Crie sua conta individual para conectar o relacionamento." : `Este convite foi destinado a ${preview.recipientEmail}.`}</p>
             </div>
-            <Alert>Entre com a conta correspondente ao e-mail mascarado acima e confirme o aceite.</Alert>
+            <Alert>{preview.channel === "WHATSAPP" ? "Use seu nome completo, seu e-mail e uma senha para seus próximos acessos. Depois, confirme o vínculo com quem convidou você." : "Entre com a conta correspondente ao e-mail mascarado acima e confirme o aceite."}</Alert>
             {user ? (
               <AcceptInviteForm token={token} />
+            ) : preview.channel === "WHATSAPP" ? (
+              <div className="space-y-6">
+                <RegistrationForm callbackUrl={callbackUrl} />
+                <p>Já possui conta? <Link className="font-semibold text-brand underline" href={`/login?callbackUrl=${encodeURIComponent(callbackUrl)}`}>Entrar para aceitar</Link></p>
+              </div>
             ) : (
               <div className="grid gap-3 sm:grid-cols-2">
                 <Link href={`/login?callbackUrl=${encodeURIComponent(callbackUrl)}`}><Button fullWidth>Entrar para aceitar</Button></Link>

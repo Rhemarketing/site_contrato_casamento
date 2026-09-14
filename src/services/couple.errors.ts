@@ -1,4 +1,5 @@
 export type CoupleErrorCode =
+  | "INVALID_WHATSAPP_PHONE"
   | "COUPLE_ALREADY_ACTIVE"
   | "COUPLE_NOT_FOUND"
   | "COUPLE_NOT_PENDING"
@@ -14,6 +15,7 @@ export type CoupleErrorCode =
   | "INVITE_OPERATION_CONFLICT";
 
 export const COUPLE_ERROR_MESSAGES: Record<CoupleErrorCode, string> = {
+  INVALID_WHATSAPP_PHONE: "Informe um WhatsApp válido com DDD e nove dígitos.",
   COUPLE_ALREADY_ACTIVE: "Você já possui um relacionamento conectado.",
   COUPLE_NOT_FOUND: "Nenhum vínculo atual foi encontrado.",
   COUPLE_NOT_PENDING: "Este vínculo não pode ser cancelado por este fluxo.",

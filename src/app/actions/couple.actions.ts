@@ -6,24 +6,22 @@ import { requireUser } from "@/lib/auth/current-user";
 import { db } from "@/lib/db";
 import { COUPLE_ERROR_MESSAGES, CoupleDomainError } from "@/services/couple.errors";
 import { CoupleInviteService } from "@/services/couple-invite.service";
-import { CoupleInviteDeliveryService } from "@/services/couple-invite-delivery.service";
-import { createEmailService } from "@/services/email.service";
+import { normalizeWhatsAppPhone, whatsAppInviteUrl } from "@/lib/whatsapp";
 import { COUPLE_COMPARISON_ERROR_MESSAGES, CoupleComparisonDomainError } from "@/services/couple-comparison.errors";
 import { CoupleComparisonService } from "@/services/couple-comparison.service";
 import { CoupleService } from "@/services/couple.service";
 import { PrismaCoupleComparisonRepository } from "@/repositories/prisma/prisma-couple-comparison.repository";
-import { coupleInviteTokenSchema, createCoupleInviteSchema } from "@/validations/couple";
+import { coupleInviteTokenSchema } from "@/validations/couple";
 
 const coupleService = new CoupleService(db);
 const inviteService = new CoupleInviteService(db);
-const inviteDeliveryService = new CoupleInviteDeliveryService(inviteService, createEmailService());
 const comparisonService = new CoupleComparisonService(new PrismaCoupleComparisonRepository(db));
 const genericError = "Não foi possível concluir a operação. Tente novamente.";
 
 export interface CoupleActionState {
   message?: string;
-  fieldErrors?: { email?: string[] };
-  invite?: { inviteUrl: string; expiresAt: string; emailStatus: "SENT" | "FAILED" };
+  fieldErrors?: { phone?: string[] };
+  invite?: { inviteUrl: string; expiresAt: string; whatsappUrl: string };
 }
 
 function actionError(error: unknown) {
@@ -68,15 +66,15 @@ export async function createCoupleInviteAction(
 ): Promise<CoupleActionState> {
   const user = await requireUser("/casal");
   if (!user.email) return { message: genericError };
-  const parsed = createCoupleInviteSchema.safeParse({ email: formData.get("email") });
-  if (!parsed.success) return { fieldErrors: parsed.error.flatten().fieldErrors };
+  const phone = normalizeWhatsAppPhone(String(formData.get("phone") ?? ""));
+  if (!phone) return { fieldErrors: { phone: ["Informe o WhatsApp com DDD e nove dígitos."] } };
   try {
-    const invite = await inviteDeliveryService.createAndSend(
-      { id: user.id, name: user.name ?? "Seu cônjuge", email: user.email },
-      parsed.data.email,
+    const invite = await inviteService.createWhatsAppInvite(
+      { id: user.id, email: user.email },
+      phone,
     );
     revalidatePath("/casal");
-    return { invite };
+    return { invite: { ...invite, whatsappUrl: whatsAppInviteUrl(phone, invite.inviteUrl) } };
   } catch (error) {
     return { message: actionError(error) };
   }

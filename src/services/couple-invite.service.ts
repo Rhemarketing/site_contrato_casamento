@@ -1,6 +1,7 @@
 import type { PrismaClient } from "@/generated/prisma/client";
 import { getAppUrl } from "@/config/env";
 import { normalizeEmail } from "@/lib/email";
+import { normalizeWhatsAppPhone } from "@/lib/whatsapp";
 import {
   generateInviteToken,
   getCoupleInviteExpiration,
@@ -57,6 +58,16 @@ export class CoupleInviteService {
     if (normalizedRecipientEmail === normalizeEmail(user.email)) {
       throw new CoupleDomainError("SELF_INVITE_NOT_ALLOWED");
     }
+    return this.createRecipientInvite(user, { email: normalizedRecipientEmail, whatsappPhone: null });
+  }
+
+  async createWhatsAppInvite(user: AuthenticatedCoupleUser, phone: string): Promise<CreatedCoupleInviteDto> {
+    const whatsappPhone = normalizeWhatsAppPhone(phone);
+    if (!whatsappPhone) throw new CoupleDomainError("INVALID_WHATSAPP_PHONE");
+    return this.createRecipientInvite(user, { email: null, whatsappPhone });
+  }
+
+  private async createRecipientInvite(user: AuthenticatedCoupleUser, recipient: { email: string | null; whatsappPhone: string | null }): Promise<CreatedCoupleInviteDto> {
     const token = this.generateToken();
     const tokenHash = hashInviteToken(token);
     const now = this.now();
@@ -91,7 +102,7 @@ export class CoupleInviteService {
         data: {
           coupleId,
           createdByUserId: user.id,
-          email: normalizedRecipientEmail,
+          ...recipient,
           tokenHash,
           activeInviteKey: coupleId,
           status: "PENDING",
@@ -129,6 +140,7 @@ export class CoupleInviteService {
       select: {
         status: true,
         email: true,
+        whatsappPhone: true,
         expiresAt: true,
         createdBy: { select: { name: true } },
       },
@@ -140,7 +152,8 @@ export class CoupleInviteService {
     return {
       state: "AVAILABLE",
       creatorName: invite.createdBy.name,
-      recipientEmail: maskEmail(invite.email),
+      recipientEmail: invite.email ? maskEmail(invite.email) : null,
+      channel: invite.whatsappPhone ? "WHATSAPP" : "EMAIL",
       expiresAt: invite.expiresAt.toISOString(),
     };
   }
@@ -158,6 +171,7 @@ export class CoupleInviteService {
           coupleId: true,
           createdByUserId: true,
           email: true,
+          whatsappPhone: true,
           status: true,
           expiresAt: true,
           couple: { select: { status: true } },
@@ -168,7 +182,8 @@ export class CoupleInviteService {
       if (invite.status === "ACCEPTED") throw new CoupleDomainError("INVITE_ALREADY_USED");
       if (invite.status === "EXPIRED" || invite.expiresAt <= now) throw new CoupleDomainError("INVITE_EXPIRED");
       if (invite.createdByUserId === user.id) throw new CoupleDomainError("INVITE_FORBIDDEN");
-      if (normalizeEmail(invite.email) !== normalizeEmail(user.email)) {
+      if (!invite.email && !invite.whatsappPhone) throw new CoupleDomainError("INVITE_NOT_FOUND");
+      if (invite.email && normalizeEmail(invite.email) !== normalizeEmail(user.email)) {
         throw new CoupleDomainError("INVITE_EMAIL_MISMATCH");
       }
       if (invite.couple.status !== "PENDING") throw new CoupleDomainError("INVITE_ALREADY_USED");
