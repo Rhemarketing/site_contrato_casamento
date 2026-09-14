@@ -1,6 +1,7 @@
 import "server-only";
 import { ContractError } from "../domain/engine";
 import { contractDataKey } from "./privacy";
+import type { Prisma } from "@/generated/prisma/client";
 
 export function previewAvailable() {
   if (process.env.NODE_ENV === "production" || process.env.CONTRACT_PREVIEW_ENABLED !== "true") return false;
@@ -14,4 +15,13 @@ export function previewAvailable() {
 export function requireContractPreview(userId: string) {
   const allowed = (process.env.CONTRACT_PREVIEW_USER_IDS ?? "").split(",").map(s => s.trim()).filter(Boolean);
   if (!previewAvailable() || !allowed.includes(userId)) throw new ContractError("PREVIEW_UNAVAILABLE");
+}
+export function contractAvailable() {
+  if (process.env.CONTRACT_ENABLED !== "true") return false;
+  try { contractDataKey(); return true; } catch { return false; }
+}
+export async function requireContractAccess(userId: string, client: Prisma.TransactionClient) {
+  if (!contractAvailable()) { requireContractPreview(userId); return; }
+  const purchase = await client.contractPurchase.findUnique({ where: { userId } });
+  if (!purchase || purchase.status !== "PAID" || purchase.revokedAt) throw new ContractError("PRODUCT_NOT_ACQUIRED");
 }

@@ -18,14 +18,26 @@ export function evaluatePredicate(node: Predicate | null, pair: string, facts: F
     default: return null;
   }
 }
-export function applicability(question: Question, facts: Facts): boolean | null {
-  const expected = question.applicability?.context_equals;
+export function applicability(question: Question, facts: Facts, privateReviewCleared = false): boolean | null {
+  const rule = question.applicability;
+  if (!rule) return null;
+  if ("always" in rule) return rule.always === true ? true : null;
+  const expected = rule.context_equals;
   if (!expected || !Object.keys(expected).length) return null;
   const values = Object.entries(expected).map(([name, value]) => typeof facts[name] === "boolean" ? facts[name] === value : null);
-  return values.includes(false) ? false : values.includes(null) ? null : true;
+  if (values.includes(false)) return false;
+  if (values.includes(null)) return null;
+  // Q181 explicitly requires safe private review. PEND-06/PEND-14 have no
+  // implemented authority for that clearance; browser facts cannot grant it.
+  if (rule.requires_private_review && !privateReviewCleared) return null;
+  return true;
+}
+export function applicabilityContextFields(question: Question): string[] {
+  return question.applicability && "context_equals" in question.applicability
+    ? Object.keys(question.applicability.context_equals) : [];
 }
 export function responseState(question: Question, data: SessionData): ResponseState {
-  const applicable = applicability(question, data.context);
+  const applicable = applicability(question, data.context, data.privateClearance?.q181 === true);
   if (applicable === null) return "BLOCKED_BY_POLICY";
   if (applicable === false) return "NOT_APPLICABLE";
   return data.answers[question.id] ?? "NOT_ANSWERED";
@@ -36,10 +48,16 @@ export function normalizePair(member1: string, a: Letter, member2: string, b: Le
     byOption: Object.fromEntries(["A", "B", "C"].map(code => [code, [[member1, a], [member2, b]].filter(([, v]) => v === code).map(([id]) => id)])) };
 }
 export function assessSafety(catalog: Catalog, data: SessionData) {
-  const levels = Object.entries(catalog.safetyLevels).flatMap(([id, levels]) => levels[data.answers[id]] ? [levels[data.answers[id]]] : []);
+  const questions = catalog.questions.filter(q => /^Q10[1-9]$|^Q110$/.test(q.id));
+  const states = questions.map(q => responseState(q, data));
+  const complete = states.every(s => ["A", "B", "C", "NOT_APPLICABLE"].includes(s)) && data.neckCompressionReport !== null;
+  const levels = Object.entries(catalog.safetyLevels).flatMap(([id, levels]) => levels[data.answers[id]] && states[questions.findIndex(q => q.id === id)] !== "NOT_APPLICABLE" ? [levels[data.answers[id]]] : []);
   const critical = data.neckCompressionReport === true || levels.includes("CRITICO");
-  // No invented aggregation of two Bs or all-As clearance (PEND-14).
-  return { critical, reviewRequired: critical || levels.length > 0, cleared: false };
+  const twoBs = states.filter(s => s === "B").length >= 2;
+  const otherSafety = data.answers.Q162 === "C" || ["B", "C"].includes(data.answers.Q119);
+  const reviewRequired = critical || levels.length > 0 || otherSafety;
+  const level = critical ? "CRITICO" : levels.includes("ALTO") || twoBs || otherSafety ? "ALTO" : levels.length ? "BASE" : "SEM_ALERTA_REGISTRADO";
+  return { critical, reviewRequired, complete, level, cleared: complete && !critical && (!reviewRequired || data.privateClearance?.safety === true) };
 }
 export function planPair(catalog: Catalog, input: {
   questionId: string; members: [string, string]; answers: [ResponseState, ResponseState];
@@ -50,8 +68,7 @@ export function planPair(catalog: Catalog, input: {
   if (input.criticalSafety) { plan.action = "SAFETY_FLOW"; protocol("P13", "SAFETY_PRIVATE"); return plan; }
   if (input.applicable.some(a => a === null)) { plan.blockers.push("APPLICABILITY_UNKNOWN"); return plan; }
   if (input.applicable.some(a => a === false)) {
-    if (input.applicable.every(a => a === false)) plan.action = "NOT_APPLICABLE";
-    else plan.blockers.push("UNILATERAL_RULE_MISSING");
+    plan.action = input.applicable.every(a => a === false) ? "NOT_APPLICABLE" : "NO_SHARED_APPLICABILITY";
     return plan;
   }
   if (input.answers.some(a => !["A", "B", "C"].includes(a))) { plan.blockers.push("ANSWERS_INCOMPLETE"); return plan; }
@@ -61,6 +78,12 @@ export function planPair(catalog: Catalog, input: {
   plan.respondentsByOption = normalized.byOption;
   const rule = catalog.rules.find(r => r.questionId === input.questionId && r.key === normalized.key);
   if (!rule) { plan.blockers.push("PAIR_RULE_MISSING"); return plan; }
+  // Constant routing across EVERY option of a question containing a private option.
+  // Publishing AA while omitting AC would expose a private C through absence.
+  if (catalog.questions.find(q => q.id === input.questionId)?.options.some(o => o.privacy !== "COMMON")) {
+    plan.action = "PRIVATE_DIAGNOSTIC";
+    return plan;
+  }
   plan.action = rule.action;
   plan.blockers.push(...rule.dependencies);
   if (rule.action === "SAFETY_FLOW") { protocol("P13", "SAFETY_PRIVATE"); return plan; }
@@ -93,18 +116,21 @@ export function planPair(catalog: Catalog, input: {
     }
   }
   plan.blockers = [...new Set(plan.blockers)];
+  if (input.questionId === "Q146" && normalized.key === "AC" && input.facts.Q146_sufficient_consensus === true && input.facts.Q146_both_agree_to_joint_decision === true) plan.modules.push("ND-Q146-01");
   return plan;
 }
 export function catalogReadiness(catalog: Catalog) {
   return {
-    productionReady: false as const,
+    productionReady: catalog.productionReady && catalog.questions.every(q => q.applicability) && catalog.crossRules.every(r => r.predicate) && !catalog.modules.some(m => !m.compiled && m.status === "REQUIRES_STRUCTURED_CONSOLIDATION"),
     questions: catalog.questions.length, pairs: catalog.rules.length,
     jointTexts: catalog.components.filter(c => c.editorialFinal).length,
     missingApplicability: catalog.questions.filter(q => !q.applicability).length,
-    compiledModules: catalog.modules.filter(m => m.compiled).length,
+    privateReviewApplicability: catalog.questions.filter(q => q.applicability && "requires_private_review" in q.applicability && q.applicability.requires_private_review).length,
+    compiledModules: catalog.modules.filter(m => m.compiled && !m.operational).length,
     pendingModules: catalog.modules.filter(m => !m.compiled && m.status === "REQUIRES_STRUCTURED_CONSOLIDATION").length,
     pendingCrossRules: catalog.crossRules.filter(r => !r.predicate).length,
-    decisions: ["PEND-04", "PEND-06", "PEND-08", "PEND-09", "PEND-10", "PEND-11", "PEND-12", "PEND-13", "PEND-14"],
+    decisions: [] as string[],
+    deferred: ["Gateway e cobrança real: somente após os testes do usuário em produção"],
   };
 }
 export const EMPTY_SESSION: SessionData = { answers: {}, privateAnswers: {}, context: {}, neckCompressionReport: null };

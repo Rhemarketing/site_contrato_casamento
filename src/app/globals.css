@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@media print {
+  @page { size: A4; margin: 18mm; }
+  body:has(.contract-print) > header,
+  body:has(.contract-print) > footer,
+  body:has(.contract-print) nav,
+  body:has(.contract-print) .no-contract-print,
+  body:has(.contract-print) .skip-link { display: none !important; }
+  body:has(.contract-print) { background: white; color: black; font-size: 10pt; }
+  .contract-print article > div { box-shadow: none; border: 0; padding: 0; background: white; }
+  .contract-print p { orphans: 3; widows: 3; }
+  .contract-print h3 { break-after: avoid; }
+}
+
 :root {
   --background: #f8f5ef;
   --foreground: #192d38;

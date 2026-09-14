@@ -25,3 +25,16 @@ it("bloqueia produção, banco remoto e contas fora da lista mesmo com flag habi
   vi.stubEnv("NODE_ENV", "production"); expect(previewAvailable()).toBe(false);
   vi.stubEnv("NODE_ENV", "development"); vi.stubEnv("DATABASE_URL", "mysql://user@remote.example/database"); expect(previewAvailable()).toBe(false);
 });
+it("rotaciona gravações sem perder leitura antiga e vincula cada envelope à chave correta", () => {
+  const previous = randomBytes(32).toString("base64"), current = randomBytes(32).toString("base64");
+  vi.stubEnv("CONTRACT_DATA_KEY", previous);
+  const legacy = seal({ own: "antigo" }, "owner");
+  vi.stubEnv("CONTRACT_DATA_KEYS", JSON.stringify({ current }));
+  vi.stubEnv("CONTRACT_DATA_ACTIVE_KEY_ID", "current");
+  const rotated = seal(unseal(legacy, "owner"), "owner");
+  expect(rotated).toMatch(/^v2.current\./);
+  expect(unseal(rotated, "owner")).toEqual({ own: "antigo" });
+  expect(unseal(legacy, "owner")).toEqual({ own: "antigo" });
+  expect(() => unseal(rotated.replace("v2.current.", "v2.unknown."), "owner")).toThrow();
+  expect(() => unseal(rotated, "partner")).toThrow();
+});

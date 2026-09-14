@@ -1,18 +1,12 @@
 "use client";
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Alert, Badge, Button, Card, ProgressBar } from "@/components/ui";
-import { saveContractAnswerAction, saveContractContextAction, submitContractAction, consentContractAction } from "@/app/actions/contract.actions";
+import { saveContractAnswerAction, saveContractContextAction, submitContractAction, consentContractAction, reopenContractAction } from "@/app/actions/contract.actions";
 import type { Letter, OwnSessionDto } from "../domain/types";
 import { ContractActionButton } from "./action-button";
 
-const contextLabels: Record<string, string> = {
-  PREGNANCY_POSSIBLE: "A possibilidade de gravidez faz parte do seu contexto?",
-  PREGNANCY_POSTPARTUM_RELEVANT: "Gravidez ou pós-parto fazem parte do seu contexto atual?",
-  RESPONSABILIDADE_PARENTAL: "Você tem responsabilidade parental?",
-  HAS_CHILDREN_OR_DEPENDENTS: "Há filhos ou dependentes no seu contexto?",
-  USES_INTOXICATING_SUBSTANCE: "Você utiliza alguma substância intoxicante?",
-};
 export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
   const [index, setIndex] = useState(() => Math.max(0, session.questions.findIndex(q => q.state === "NOT_ANSWERED")));
   const [pending, start] = useTransition();
@@ -20,6 +14,9 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
   const router = useRouter();
   const q = session.questions[index];
   const closed = session.status === "SUBMITTED";
+  const notApplicable = session.questions.filter(question => question.state === "NOT_APPLICABLE").length;
+  const resolved = session.answered + notApplicable;
+  const waitingPrivateReview = q.privateReviewRequired && q.contextFields.every(field => session.context[field.id] === true);
   const save = (answer: Letter, privateAnswer?: Letter, neckCompressionReport?: boolean) => start(async () => {
     setMessage("");
     try {
@@ -29,10 +26,10 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
     } catch { setMessage("A resposta não foi confirmada. Tente novamente."); }
   });
   return <div className="space-y-6">
-    <Alert variant="warning">Prévia de desenvolvimento. Use somente dados fictícios. Perguntas cuja aplicabilidade ainda não foi definida permanecem bloqueadas.</Alert>
+    <Alert>As condições individuais e as exigências de revisão privada são verificadas antes de liberar as perguntas. <Link href="/contrato/privacidade" className="underline">Acessar minha área de privacidade e revisão.</Link></Alert>
     <Card><p className="text-muted">Suas respostas são individuais. O vínculo do casal não permite ao outro cônjuge ler suas respostas.</p>
-      <div className="mt-4"><ProgressBar value={Math.round(session.answered / 200 * 100)} label={`${session.answered} de 200 respostas registradas`} /></div>
-      <p className="mt-2 text-sm text-muted">{session.blocked} perguntas aguardam condições ou regras de aplicabilidade.</p></Card>
+      <div className="mt-4"><ProgressBar value={Math.round(resolved / session.questions.length * 100)} label={`${resolved} de ${session.questions.length} itens resolvidos`} /></div>
+      <p className="mt-2 text-sm text-muted">{session.answered} respostas registradas · {notApplicable} não aplicáveis · {session.blocked} aguardando contexto ou revisão.</p></Card>
     <label className="block text-sm font-semibold">Ir para pergunta
       <select className="mt-2 min-h-12 w-full rounded-xl border border-line bg-surface p-3" value={index} disabled={pending} onChange={e => { setIndex(Number(e.target.value)); setMessage(""); }}>
         {session.questions.map((question, i) => <option key={question.id} value={i}>{question.id} — {question.title}</option>)}
@@ -41,13 +38,15 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
     <Card className="space-y-5">
       <div className="flex justify-between gap-3"><Badge>{q.id}</Badge><span className="text-sm text-muted">{q.period}</span></div>
       <h2 className="text-xl font-semibold text-brand-strong">{q.title}</h2>
-      {q.contextFields.map(field => <label className="block" key={field}>{contextLabels[field] ?? "Contexto individual"}
-        <select className="mt-2 min-h-12 w-full rounded-xl border border-line p-3" disabled={closed || pending} value={session.context[field] === true ? "yes" : session.context[field] === false ? "no" : "unknown"} onChange={e => {
+      {q.relatedQuestions?.length ? <details><summary className="cursor-pointer text-sm text-brand">Consultar assuntos relacionados na minha sessão</summary><p className="mt-2 text-sm text-muted">Referências do Método para sua reflexão individual; não representam conclusão sobre o casal.</p><div className="mt-2 flex flex-wrap gap-3">{q.relatedQuestions.map(related => <button key={related.id} type="button" className="text-sm underline" onClick={() => { setIndex(session.questions.findIndex(item => item.id === related.id)); setMessage(""); }}>{related.id} — {related.title}</button>)}</div></details> : null}
+      {q.contextFields.map(field => <div key={field.id}><label className="block" htmlFor={`context-${field.id}`}>{field.label}</label>
+        <p id={`help-${field.id}`} className="mt-1 text-sm text-muted">{field.help}</p>
+        <select id={`context-${field.id}`} aria-describedby={`help-${field.id}`} className="mt-2 min-h-12 w-full rounded-xl border border-line p-3" disabled={closed || pending} value={session.context[field.id] === true ? "yes" : session.context[field.id] === false ? "no" : "unknown"} onChange={e => {
           const value = e.target.value === "unknown" ? null : e.target.value === "yes";
-          start(async () => { try { const result = await saveContractContextAction({ sessionId: session.id, revision: session.revision, context: { [field]: value } }); setMessage(result.message); if (result.ok) router.refresh(); } catch { setMessage("Não foi possível salvar o contexto."); } });
-        }}><option value="unknown">Ainda não informado</option><option value="yes">Sim</option><option value="no">Não</option></select>
-      </label>)}
-      {q.state === "BLOCKED_BY_POLICY" ? <Alert>Esta pergunta aguarda uma regra de aplicabilidade ou a definição do seu contexto. Nenhuma resposta será presumida.</Alert>
+          start(async () => { try { const result = await saveContractContextAction({ sessionId: session.id, revision: session.revision, context: { [field.id]: value } }); setMessage(result.message); if (result.ok) router.refresh(); } catch { setMessage("Não foi possível salvar o contexto."); } });
+        }}><option value="unknown">Não informado / não sei / prefiro não informar</option><option value="yes">Sim</option><option value="no">Não</option></select>
+      </div>)}
+      {q.state === "BLOCKED_BY_POLICY" ? <Alert>{waitingPrivateReview ? "A abordagem deste assunto aguarda revisão privada de segurança. Informar o contexto não libera essa revisão." : "Esta pergunta aguarda a definição do seu contexto ou uma regra de aplicabilidade. Nenhuma resposta será presumida."}</Alert>
         : q.state === "NOT_APPLICABLE" ? <Alert>Esta pergunta não se aplica ao contexto informado. Esse estado não equivale à alternativa A.</Alert>
         : <><fieldset disabled={closed || pending} className="space-y-3"><legend className="mb-4 text-lg">{q.prompt}</legend>{q.options.map(o => <label key={o.code} className={`flex cursor-pointer gap-3 rounded-xl border p-4 ${q.state === o.code ? "border-brand bg-brand/5" : "border-line"}`}>
           <input type="radio" name={q.id} value={o.code} checked={q.state === o.code} onChange={() => save(o.code)} /><span><strong>{o.code}.</strong> {o.text}</span>
@@ -64,8 +63,9 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
     <Card className="space-y-4"><h2 className="text-xl font-semibold">Conclusão e consentimento</h2>{closed ? <>
       <p>Autorizar permite a avaliação das duas sessões para preparar decisões e textos elegíveis. As respostas brutas e privadas continuam restritas.</p>
       <ContractActionButton action={() => consentContractAction(session.id, session.revision, !session.consented)}>{session.consented ? "Revogar autorização" : "Autorizar avaliação do casal"}</ContractActionButton>
+      <p>Corrigir respostas revoga a autorização e invalida propostas e documentos derivados desta sessão. Novas confirmações serão necessárias.</p><ContractActionButton action={() => reopenContractAction(session.id, session.revision)}>Corrigir minhas respostas</ContractActionButton>
     </> : <><p>Concluir encerra a edição desta versão das respostas. A avaliação do casal exige uma autorização separada de cada pessoa.</p>
-      <ContractActionButton disabled={pending || session.blocked > 0} action={() => submitContractAction(session.id, session.revision)}>Concluir minhas respostas</ContractActionButton>
+      <ContractActionButton disabled={pending || resolved !== session.questions.length} action={() => submitContractAction(session.id, session.revision)}>Concluir minhas respostas</ContractActionButton>
     </>}</Card>
   </div>;
 }

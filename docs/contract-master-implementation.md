@@ -2,96 +2,73 @@
 
 ## Estado da entrega
 
-A admissão, suas 40 perguntas, cálculo e relatório foram preservados. O questionário principal usa um agregado próprio, com tabelas `contract_*`; não reutiliza as tentativas ou pontuações da admissão.
+A integração `1.4.0-release.1` implementa a jornada do contrato e está liberada no catálogo após validação funcional. A ativação exige `CONTRACT_ENABLED=true`, chave de criptografia e migrations aplicadas. Isso não significa que um servidor remoto já foi atualizado. O destino EasyPanel, a configuração operacional e o teste do usuário em produção precisam ser conferidos no ambiente real.
 
-O catálogo de 200 perguntas, 1.200 regras de pares e 487 textos conjuntos foi integrado. As telas e serviços de sessões individuais, decisões versionadas e rascunhos estão implementados. **O fluxo integral da edição real ainda não pode ser concluído nem ativado em produção:** o pacote tem 184 aplicabilidades nulas, cruzamentos sem predicado e pendências de segurança/operação. Uma pergunta sem regra não é liberada por suposição. A prévia local também respeita esse bloqueio.
+A admissão, suas 40 perguntas, cálculo e página de resultado foram preservados. O questionário principal utiliza tabelas `contract_*`, sem reaproveitar tentativas ou pontuações da admissão.
 
-## Rotas
+O produto custa **R$ 0,00**. Comprar registra uma aquisição pessoal autenticada e idempotente, com estado `PAID`, origem `FREE_CHECKOUT`, moeda BRL e valor zero determinado no servidor. Cada participante adquire seu acesso. Gateway e cobrança real ficam para depois dos testes do usuário em produção.
+
+## Conteúdo e rastreabilidade
+
+`npm run contract:compile` verifica os 74 hashes do manifesto original e compila 200 perguntas, 600 alternativas, 1.200 regras de pares e os 487 textos conjuntos exatos. A aplicação preserva os papéis nos nove arranjos ordenados de cada pergunta. O pacote original permanece imutável; seus 409 bloqueios históricos não são apagados nem apresentados como pendências atuais da integração.
+
+A [matriz de aplicabilidade](contract-applicability-decisions.md) resolve as 184 lacunas delegadas: 128 gerais e 56 condicionais, somadas às 16 condições preservadas. Contexto desconhecido bloqueia; contexto falso produz inaplicabilidade, nunca resposta A. A inaplicabilidade unilateral não imprime texto que revele o contexto do outro.
+
+Os 56 módulos conjuntos ativos da fonte foram estruturados com campos tipados, tabelas, datas, horários, pessoas, valores, percentuais e opções. Há também um formulário operacional de revisão Q150 com texto automático registrado. Os 74 módulos desativados pela fonte continuam desativados. A presença no catálogo não dispensa aplicabilidade, segurança e confirmação dos dois.
+
+Os 96 vínculos entre perguntas têm destino explícito: dois cruzamentos com texto registrado, duas reutilizações e 92 referências de contexto na área individual. Referências não são transformadas em diagnósticos inventados. Componentes comuns e 154 parágrafos fixos revisados usam os textos cadastrados. As 487 redações finais são selecionadas somente quando elegíveis.
+
+O anexo bíblico usa Bíblia Livre 2018, licença CC BY 4.0, com atribuição e fonte em `content/bible`. A compilação reproduz 125 referências e 187 ocorrências de versículos. O anexo é fixo para impedir inferência de respostas privadas pela ausência de uma referência.
+
+O catálogo é exclusivo do servidor. Cada edição é uma fotografia imutável com versão e hash. Alterar conteúdo já importado exige nova versão de integração; sessões antigas não são reinterpretadas automaticamente. Não há geração livre de cláusulas por IA.
+
+## Jornada
 
 | Rota | Conteúdo |
 |---|---|
-| `/contrato` | Jornada e entrada da prévia autorizada |
-| `/contrato/questionario` | Somente a própria sessão, contexto e respostas |
-| `/contrato/decisoes` | Propostas conjuntas elegíveis; mensagem neutra enquanto indisponíveis |
-| `/contrato/documento` | Leitura e solicitação de rascunho, com verificação de acesso a cada operação |
-| `/admin/contrato` | Catálogo, seis pares por pergunta, prévia dos textos finais com nomes fictícios e pendências; sem acesso a dados de casais |
+| `/contrato` | Aquisição e etapas |
+| `/contrato/comprar` | Compra gratuita e situação da aquisição |
+| `/contrato/questionario` | Contextos, respostas e orientações do titular |
+| `/contrato/decisoes` | Fatos voluntariamente compartilhados, propostas e confirmação da mesma versão |
+| `/contrato/documento` | Rascunho, texto exato, identificação, aceites e impressão/PDF pelo navegador |
+| `/contrato/historico` | Versões aceitas, motivo e seções alteradas |
+| `/contrato/acompanhamento` | Eventos privados, protocolos, agenda, plano e emergência |
+| `/contrato/cofrinho` | Contribuições voluntárias de processo, confirmação e contestação |
+| `/contrato/privacidade` | Consentimento, revisão privada, exportação e exclusão |
+| `/contrato/exportar` | JSON dos próprios dados |
+| `/contrato/revisoes` | Revisões autorizadas ao revisor nominal |
+| `/admin/contrato` | Revisão editorial sem acesso a respostas de casais |
 
-## Conteúdo e importação
+## Segurança, decisões e documentos
 
-`npm run contract:compile` verifica os hashes SHA-256 do manifesto original e compila `src/data/contract-master-v1.4.0.json`. Confere também a igualdade e o hash de cada uma das 487 redações. O pacote original é preservado. Não são enviados ao navegador o arquivo-mestre completo, transcrições ou planos internos de avaliação.
+Respostas, contextos, avaliações e registros sensíveis usam AES-256-GCM, com escopo autenticado por sessão, titular e vínculo. Operações revalidam autenticação, aquisição, edição e membros ativos. Revisões otimistas e transações serializáveis protegem contra gravações concorrentes. Sessões concluídas ficam imutáveis até reabertura explícita.
 
-O catálogo compilado é um módulo exclusivo do servidor. Ao iniciar uma sessão, sua fotografia é persistida em `ContractEdition`, com hash canônico e versão imutável. Uma nova compilação divergente não pode sobrescrever uma edição que já tenha sido importada: deve receber uma nova versão de integração antes de novas sessões. Respostas existentes continuam ligadas à edição original.
+O consentimento é específico e separado da admissão. Revogação invalida derivados e aceites ativos; consentir novamente não ressuscita confirmações antigas. Perguntas com qualquer alternativa privada têm projeção compartilhada uniforme, evitando inferências por títulos, módulos ou cláusulas.
 
-Os 487 textos ficam registrados como redações editoriais finais. O gerador sabe selecioná-los diretamente; não exige outra redação ou decisão editorial. Componentes e regras permanecem inativos, e candidatos não finalizados não são usados como fallback de impressão.
+A segurança conta duas B distintas em Q101–Q110 por respondente, considera a maior severidade e mantém prevalência de alertas críticos e compressão do pescoço. Q110 inaplicável não vira A. Ausência de resposta não libera o fluxo; ausência de alerta não equivale a certificado de segurança.
 
-## Regras implementadas
+A revisão exige escolha e autorização expressas de revisor nominal pelo titular. Administrador não recebe acesso automaticamente; o parceiro não pode revisar o próprio casal. A fotografia contém somente campos necessários. Revogação ou mudança da base retira a liberação, que nunca supera alerta crítico. Q181 exige contexto e liberação específicos. Q151 exige solicitação independente dos dois e revisão específica de ambos, sem revelar letras privadas ou liberar diante de C ativo.
 
-- Avaliação trivalente de predicados: verdadeiro, falso e desconhecido. A ausência de fato não libera o ramo contrário.
-- As 16 aplicabilidades expressas são avaliadas antes do enunciado e das opções. As demais ficam `BLOCKED_BY_POLICY`. `NOT_APPLICABLE` não vira A; aplicabilidade unilateral exige regra própria.
-- Salvamento individual criptografado com AES-256-GCM, associado por autenticação ao dono, sessão, edição e vínculo ativo. Contextos também são privados. Não há bypass administrativo.
-- Concorrência por revisão da sessão e transações serializáveis; tentativas de gravação com revisão antiga falham. Sessão concluída não aceita alteração de resposta.
-- Subperguntas privadas Q081-C e Q119-B/C, obrigatórias quando acionadas. O complemento não entra em decisões compartilhadas.
-- Consulta às 1.200 ações mantendo identidades estáveis nos 1.800 arranjos ordenados; seleção interna de componentes, módulos e protocolos. Seleção não equivale a publicação.
-- Níveis de segurança explícitos por alternativa; relato de compressão de pescoço prevalece mesmo em um episódio. Não se inventa agregação de duas respostas B ou liberação por todas A. **Enquanto PEND-14 e a revisão privada não estiverem resolvidas, o avaliador real não declara segurança liberada.**
-- Q146-AC encaminha internamente a P09, sem abrir decisão conjunta imediata. Q131 não recria calendário: conserva a reutilização de Q011. Q154 mantém a mesma proibição fixa independentemente das respostas; o diagnóstico C e P10 permanecem privados.
-- Propostas com parâmetros validados, identificador do módulo, versão da definição, revisão e hash da base de avaliação. Cada pessoa confirma a versão exata. O hash inclui a revisão, mesmo quando o texto é repetido. Alterações exigem novos aceites; `NO_CONSENSUS` não gera decisão intermediária.
-- Consentimento específico para a avaliação do questionário principal, separado do vínculo e da comparação da admissão. Revogar invalida propostas ativas e documentos; consentir novamente não reativa aceites antigos. O histórico é mantido.
-- Gerador determinístico com verificação de privacidade, componentes ativos, variáveis resolvidas, decisões confirmadas e dependências. Deduplicação por ID e respondente, sem resumo livre. Fotografia, proveniência e hashes são armazenados. Não há assinatura jurídica, cobrança, PDF final ou anexos de protocolos/bíblia liberados.
+Propostas são validadas no servidor, versionadas e confirmadas individualmente pelos dois. Sem consenso não há texto intermediário. Acordos adicionais por filho ou situação têm identidade própria e podem ser retirados. O gerador rejeita saídas privadas, parâmetros ausentes, texto adulterado e confirmação desatualizada.
 
-## Módulos conjuntos estruturados
+O documento registra proveniência, versão, hash e ciência do texto exato. Após uma versão aceita, mudanças exigem motivo, comparação de seções e novos aceites. O histórico preserva a versão anterior. A impressão permite salvar PDF no navegador. O aceite não é anunciado como assinatura qualificada ou garantia jurídica.
 
-Foram compiladas oito definições cujo conteúdo permite a estruturação abaixo. Isso não elimina seus bloqueios globais de aplicabilidade, segurança, consentimento ou eventos.
+## Acompanhamento e dados
 
-| ID | Definição |
-|---|---|
-| ND-Q011-01 | Frequência do momento exclusivo; vínculo de reutilização por Q048 e Q131 |
-| ND-Q031-01 | Regra de publicações nas redes sociais |
-| ND-Q041-01 | Modelo financeiro |
-| ND-Q041-02 | Contribuição comum, incluindo categorias de cada pessoa na opção C |
-| ND-Q069-01 | Posição sobre possibilidade de gravidez, preservada a regra de não coerção |
-| ND-Q113-01 | Frequência de devocional conforme alternativas corrigidas |
-| ND-Q124-01 | Organização das refeições |
-| ND-Q140-01 | Experiências especiais, com a exclusão expressa por impedimento legítimo |
+Os 14 protocolos possuem guias cadastrados. Eventos são registros privados explícitos, com assunto, instante, fuso, resultado e impedimento. Gatilhos respeitam contagens e bases da fonte, sem inferir ocorrências das letras. P07 reutiliza P03; P12 reabre o protocolo original após novo gatilho completo. A retomada sem solução conta 72 horas da conversa registrada. Calendário depende de âncora e fuso confirmados pelos dois; meses preservam o dia local, ajustado ao último dia quando necessário.
 
-As 48 outras definições marcadas `REQUIRES_STRUCTURED_CONSOLIDATION` permanecem indisponíveis. As 74 desativadas ou bloqueadas pela fonte permanecem assim. Algumas têm textos recuperados, mas ainda dependem de submódulos, campos, calendário, regras de consentimento por ocasião ou consolidação de correções; a ausência dessas operações não foi ignorada.
+O plano individual respeita limites de prioridades. O registro de emergência é opcional e compartilha apenas campos autorizados. O cofrinho registra R$ 10 somente por processo elegível, voluntariamente reconhecido e confirmado pelos dois; contestação suspende a contribuição. Não há débito automático ou penalidade por recusa sexual, risco, doença, fé ou discordância.
 
-## Decisões e desenvolvimento restantes
+A exportação contém dados próprios. A exclusão remove os dados privados do titular e derivados conjuntos, preservando respostas privadas do outro e a admissão. Espaços inativos sem documento aceito são eliminados após 180 dias. Documentos aceitos permanecem até solicitação de exclusão. A limpeza roda após startup e diariamente no servidor Node dedicado; há comando de simulação e aplicação. Rotação de chaves preserva leitura, hashes e datas de atividade. Backups de até 30 dias e chaves separadas dependem da configuração do operador: ver [implantação](easypanel-deploy.md).
 
-| Pendência da fonte | Trabalho necessário |
-|---|---|
-| PEND-04 | Definir as 184 aplicabilidades e os períodos/exceções restantes; consolidar componentes individuais, regras fixas, destinos de cláusulas, campos e submódulos restantes |
-| PEND-06 | Definir revisão privada, destinatários, retomada segura (incluindo Q151), retenção, exclusão e acesso operacional; implementar recuperação/rotação de chaves antes de dados reais |
-| PEND-08 | Preço, provedor, validade de acesso, reembolso, cancelamento e mudança de vínculo; implementar pagamento e direitos de acesso após essas decisões |
-| PEND-09 | Compilar os 96 cruzamentos com papéis/predicados; implementar avaliadores de fatos, instâncias idempotentes dos protocolos e agenda. O motor atual seleciona referências internas, não executa protocolos completos nem deduz fatos de letras |
-| PEND-10 | Tradução e textos bíblicos autorizados, com mapeamento por componente |
-| PEND-11 | Natureza do aceite/assinatura e operação da contribuição simbólica; nenhum débito ou multa automática implementado |
-| PEND-12 | Parâmetros abertos, critério de melhora, fuso/âncora de ciclos, RLF zero |
-| PEND-13 | Registro Familiar de Emergência e compartilhamento voluntário/revogável |
-| PEND-14 | Escopo das duas B, agregados de segurança e inaplicabilidade; implementar liberação e revisão privada verificadas |
+## Verificação e reprodução
 
-Não é suficiente ligar uma variável de ambiente para liberar a produção. A política do servidor rejeita `NODE_ENV=production`, mesmo com a flag da prévia, e a edição distribuída tem `productionReady=false`. A publicação deve ser uma mudança explícita posterior, com critérios de aceite resolvidos e regressões executadas.
+- Compilação: integridade da fonte, 200 aplicabilidades, 1.200 pares, 487 redações e todos os formulários ativos.
+- Cobertura de 3.600 cenários da edição real: 200 perguntas × nove pares ordenados × dois conjuntos de fatos, além de testes de desconhecidos, segurança e invariância das saídas privadas.
+- Integrações reais: duas sessões, conclusão, decisões, documento, dois aceites, revisão, histórico, cofrinho, autorização nominal, Q151/Q181, exportação, exclusão, retenção e rotação de todos os tipos de payload. A suíte usa o avaliador real da edição de liberação.
+- Regressões de admissão, autenticação, convite e comparação. Bancos isolados: MySQL 8.4.3 e MariaDB 11.4.13; contas e dados de QA fictícios.
+- Lint, TypeScript, build Next.js, imagem Docker e auditoria de dependências. Correções transitivas de segurança fixadas no lockfile, sem downgrade de Prisma ou Auth.js.
 
-## Executar a prévia local
+Comandos: `npm run contract:compile`, `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, `npm audit` e `docker build -t contrato-casamento:release .`. Testes de banco exigem `.env.test` local, banco terminado em `_test` e migrations aplicadas. Nunca apontar a suíte para produção. No Windows, executar o pacote Python original com `python -X utf8`.
 
-1. Usar banco local e contas fictícias conectadas como casal. Aplicar a migration aditiva `20260912160000_add_contract_workspace` no banco escolhido com `npm run prisma:migrate:deploy`. Nenhuma migration da admissão foi alterada.
-2. Gerar uma chave aleatória de 32 bytes em base64 e armazenar em `CONTRACT_DATA_KEY`, apenas no ambiente local ignorado. Guardar a chave separadamente; perdê-la impede ler as respostas criptografadas. Não reutilizar `AUTH_SECRET`.
-3. Definir `CONTRACT_PREVIEW_ENABLED=true` e `CONTRACT_PREVIEW_USER_IDS` com os UUIDs das contas fictícias, separados por vírgulas. Reiniciar `npm run dev`.
-4. Abrir `/contrato`, iniciar a sessão e acessar as perguntas. Condições conhecidas podem ser preenchidas; as 184 aplicabilidades não definidas continuam bloqueadas.
-5. Para revisar todas as 200 perguntas e os textos independentemente de uma sessão real, usar a área editorial com uma conta administrativa de teste.
-
-O catálogo é importado ao iniciar a primeira sessão, de forma idempotente. A operação não altera a prova de admissão. O reset antigo de dados de demonstração não apaga `contract_*`; se forem utilizadas contas da demonstração antiga, as novas chaves estrangeiras impedem sua remoção acidental. Preferir contas fictícias próprias para esta prévia.
-
-## Verificação realizada
-
-- Compilação com conferência dos hashes e das 487 redações.
-- Testes do motor para todos os 1.800 arranjos, estados de aplicabilidade, predicados, segurança, exceções e vinculação correta dos nomes.
-- Testes de criptografia, escopo da sessão, adulteração, bloqueio de produção e contas permitidas.
-- Testes de integração de duas contas, acesso indevido, concorrência, conclusão, consentimento, revisão dos acordos, ausência de consenso e revogação.
-- Testes do gerador: texto final exato, proveniência, reprodução, rejeição de candidatos/saídas privadas e invariância da cláusula de apostas.
-- Fluxo completo de decisões e rascunho exercitado **somente com uma edição sintética criada pelo teste e liberação de segurança simulada**. Essa fotografia não é importada pela aplicação. Os testes não provam prontidão editorial da edição real.
-- Suíte existente de admissão, autenticação, convites e comparação, lint, TypeScript e build.
-- Navegador com duas contas fictícias: login, contexto antes do enunciado, salvamento e recarga, administração restrita, catálogo e estado neutro da segunda pessoa.
-
-As migrations e integrações foram executadas em instância isolada **MySQL 8.4.3**, usando o adapter MariaDB já instalado, na porta local 3317. O banco habitual não estava em execução e não foi alterado. Repetir as integrações na versão MariaDB de destino antes de produção.
-
-Comandos reproduzíveis no banco local `_test` configurado em `.env.test`: `npm test`, `npm run lint`, `npm run typecheck`, `npm run build`. Os testes de criptografia geram chaves temporárias e não precisam de chave real. No Windows, executar os scripts Python com `python -X utf8`: o pacote assume UTF-8 e não deve ser regravado como CP1252. Os 37 testes Python passaram. O validador confirmou integridade e 409 bloqueios de produção no pacote original; o modo `--production` retorna código 2, como esperado.
+O fechamento das pendências está em [decisões de liberação](contract-release-decisions.md). Publicação remota e checklist no servidor são etapas distintas dos testes locais.

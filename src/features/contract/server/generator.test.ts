@@ -8,7 +8,8 @@ import type { Catalog, PairPlan } from "../domain/types";
 // Deliberately synthetic release and applicability: never shipped as a product rule.
 function fixture() {
   const catalog: Catalog = structuredClone(contractCatalog);
-  catalog.questions.forEach(q => { q.clauseId = q.proposedClauseId; });
+  catalog.fixedRules = []; catalog.crossRules = [];
+  catalog.questions.forEach(q => { q.clauseId ??= q.proposedClauseId; });
   catalog.rules.forEach(r => { r.active = true; });
   catalog.components.forEach(c => { c.active = true; });
   catalog.components.find(c => c.id === "OUT-Q154-FIXED")!.template = catalog.gamblingTemplate;
@@ -30,14 +31,15 @@ describe("montagem determinística e projeção de privacidade", () => {
       expect(() => generateRegisteredDraft(input)).toThrow("SHARED_UNAVAILABLE");
     }
     const input = fixture(); const component = input.catalog.components.find(c => c.id === "OUT-PAIR-Q001-AA")!;
-    component.editorialFinal = false;
+    component.editorialFinal = false; component.template = null;
     expect(() => generateRegisteredDraft(input)).toThrow("SHARED_UNAVAILABLE");
     component.editorialFinal = true; input.plans[0].action = "PRIVATE_DIAGNOSTIC";
     expect(() => generateRegisteredDraft(input)).toThrow("SHARED_UNAVAILABLE");
   });
   it("nega emissão incompleta, segurança não liberada, consentimento ausente ou componente inativo", () => {
     const input = fixture();
-    expect(() => generateRegisteredDraft({ ...input, catalog: contractCatalog })).toThrow();
+    const inactive = structuredClone(input.catalog); inactive.components.find(c => c.id === "OUT-PAIR-Q001-AA")!.active = false;
+    expect(() => generateRegisteredDraft({ ...input, catalog: inactive })).toThrow();
     expect(() => generateRegisteredDraft({ ...input, unresolvedDependencies: ["UNCOMPILED_CROSS_RULE"] })).toThrow();
     expect(() => generateRegisteredDraft({ ...input, safetyCleared: false })).toThrow();
     expect(() => generateRegisteredDraft({ ...input, criticalSafety: true })).toThrow();

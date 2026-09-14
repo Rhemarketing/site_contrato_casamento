@@ -53,7 +53,8 @@ describe("sessões individuais do contrato no banco", () => {
     await service.start(people.b.id);
     const own = (await service.getOwn(people.a.id))!;
     expect(own.questions).toHaveLength(200);
-    expect(own.questions[0]).toMatchObject({ state: "BLOCKED_BY_POLICY", prompt: null, options: [] });
+    expect(own.questions[0]).toMatchObject({ state: "NOT_ANSWERED" });
+    expect(own.questions[0].options).toHaveLength(3);
     expect(await db.contractSession.count({ where: { userId: people.a.id } })).toBe(1);
     await expect(service.getOwn(outsider)).rejects.toThrow("COUPLE_UNAVAILABLE");
     const changed = structuredClone(catalog); changed.questions[0].prompt = "Alteração da mesma edição";
@@ -88,16 +89,89 @@ describe("sessões individuais do contrato no banco", () => {
     expect(await db.contractDocument.count({ where: { workspace: { coupleId: people.couple.id } } })).toBe(0);
     await expect(service.propose(people.a.id, { moduleId: "ND-Q041-01", revision: 0, choice: "A", parameters: {} })).rejects.toThrow("SHARED_UNAVAILABLE");
   });
+  it("remove respostas condicionais ao mudar contexto e não restaura respostas antigas", async () => {
+    let own = (await service.getOwn(people.a.id))!;
+    const context = async (value: boolean | null) => {
+      await service.saveContext(people.a.id, { sessionId: own.id, revision: own.revision, context: { RESPONSABILIDADE_PARENTAL: value } });
+      own = (await service.getOwn(people.a.id))!;
+    };
+    await context(true);
+    await service.saveAnswer(people.a.id, { sessionId: own.id, revision: own.revision, questionId: "Q046", answer: "B" });
+    own = (await service.getOwn(people.a.id))!;
+    expect(own.questions.find(q => q.id === "Q046")?.state).toBe("B");
+    await context(false);
+    expect(own.questions.find(q => q.id === "Q046")).toMatchObject({ state: "NOT_APPLICABLE", prompt: null, options: [] });
+    await context(true);
+    expect(own.questions.find(q => q.id === "Q046")?.state).toBe("NOT_ANSWERED");
+    await service.saveAnswer(people.a.id, { sessionId: own.id, revision: own.revision, questionId: "Q046", answer: "C" });
+    own = (await service.getOwn(people.a.id))!;
+    await context(null);
+    expect(own.questions.find(q => q.id === "Q046")?.state).toBe("BLOCKED_BY_POLICY");
+    await context(true);
+    expect(own.questions.find(q => q.id === "Q046")?.state).toBe("NOT_ANSWERED");
+    expect((await service.getOwn(people.b.id))!.context.RESPONSABILIDADE_PARENTAL).toBeUndefined();
+  });
+  it("não libera Q181 por autodeclaração nem revela seu contexto ao parceiro", async () => {
+    let own = (await service.getOwn(people.a.id))!;
+    await service.saveContext(people.a.id, { sessionId: own.id, revision: own.revision, context: { KNOWN_TRUST_BREACH: true, REBUILDING_CHOSEN: true } });
+    own = (await service.getOwn(people.a.id))!;
+    expect(own.questions.find(q => q.id === "Q181")).toMatchObject({ state: "BLOCKED_BY_POLICY", prompt: null, options: [], privateReviewRequired: true });
+    await expect(service.saveAnswer(people.a.id, { sessionId: own.id, revision: own.revision, questionId: "Q181", answer: "A" })).rejects.toThrow("QUESTION_UNAVAILABLE");
+    await expect(service.saveContext(people.a.id, { sessionId: own.id, revision: own.revision, context: { Q181_SAFE_APPROACH: true } })).rejects.toThrow("INVALID_CONTEXT");
+    expect((await service.getOwn(people.b.id))!.context.KNOWN_TRUST_BREACH).toBeUndefined();
+    expect(await service.getShared(people.b.id)).toEqual(NEUTRAL_SHARED_STATE);
+  });
+  it("conclui individualmente a edição real com respostas explícitas e contextos inaplicáveis, mantendo produção bloqueada", async () => {
+    const pair = await createCouple();
+    await service.start(pair.a.id);
+    let own = (await service.getOwn(pair.a.id))!;
+    const allNo = Object.fromEntries(Object.keys(catalog.contextDefinitions!).map(id => [id, false]));
+    await service.saveContext(pair.a.id, { sessionId: own.id, revision: own.revision, context: allNo });
+    own = (await service.getOwn(pair.a.id))!;
+    expect(own.blocked).toBe(0);
+    expect(own.questions.filter(q => q.state === "NOT_APPLICABLE")).toHaveLength(72);
+    await expect(service.submit(pair.a.id, own.id, own.revision)).rejects.toThrow("SUBMISSION_INCOMPLETE");
+    let revision = own.revision;
+    for (const q of own.questions.filter(q => q.state === "NOT_ANSWERED")) {
+      await service.saveAnswer(pair.a.id, { sessionId: own.id, revision: revision++, questionId: q.id, answer: "A", ...(q.id === "Q103" ? { neckCompressionReport: false } : {}) });
+    }
+    own = (await service.getOwn(pair.a.id))!;
+    expect(own.answered).toBe(128); expect(own.blocked).toBe(0);
+    await service.submit(pair.a.id, own.id, own.revision);
+    own = (await service.getOwn(pair.a.id))!;
+    expect(own.status).toBe("SUBMITTED");
+    await service.consent(pair.a.id, own.id, own.revision, true);
+    own = (await service.getOwn(pair.a.id))!;
+    await expect(service.saveContext(pair.a.id, { sessionId: own.id, revision: own.revision, context: { PROFESSIONAL_ACTIVITY: true } })).rejects.toThrow("SESSION_CLOSED");
+    expect(await service.getShared(pair.a.id)).toEqual(NEUTRAL_SHARED_STATE);
+    expect((await service.generate(pair.a.id)).state).toBe("UNAVAILABLE");
+  }, 30000);
+  it("inicia nova edição sem migrar ou reinterpretar respostas da edição antiga", async () => {
+    const pair = await createCouple();
+    const previous = structuredClone(catalog); previous.version = `test-previous-${suffix}`;
+    previous.questions[0].applicability = null;
+    const oldService = new ContractService(db, previous, () => {});
+    await oldService.start(pair.a.id);
+    const oldSession = (await oldService.getOwn(pair.a.id))!;
+    const savedBefore = await db.contractSession.findUniqueOrThrow({ where: { id: oldSession.id } });
+    await service.start(pair.a.id);
+    const current = (await service.getOwn(pair.a.id))!;
+    expect(current.id).not.toBe(oldSession.id);
+    expect(current.questions[0].state).toBe("NOT_ANSWERED");
+    expect(current.answered).toBe(0);
+    expect((await oldService.getOwn(pair.a.id))!.questions[0].state).toBe("BLOCKED_BY_POLICY");
+    expect((await db.contractSession.findUniqueOrThrow({ where: { id: oldSession.id } })).payload).toBe(savedBefore.payload);
+  });
 });
 
 describe("transações conjuntas em edição SINTÉTICA de teste", () => {
   it("exige dois aceites exatos, preserva histórico, gera deterministicamente e invalida após revogação", async () => {
     // This fixture is not imported by the application or the package compiler.
     // Product decisions remain blocked; mocking clearance tests the storage protocol only.
-    vi.spyOn(engine, "assessSafety").mockReturnValue({ critical: false, reviewRequired: false, cleared: true });
+    vi.spyOn(engine, "assessSafety").mockReturnValue({ critical: false, reviewRequired: false, cleared: true, complete: true, level: "SEM_ALERTA_REGISTRADO" });
     const fixture: Catalog = structuredClone(contractCatalog);
-    fixture.version = `test-flow-${suffix}`; fixture.productionReady = true; fixture.crossRules = [];
-    fixture.questions.forEach(q => { q.applicability = { context_equals: { TEST_APPLICABLE: true } }; q.clauseId = q.proposedClauseId; });
+    fixture.version = `test-flow-${suffix}`; fixture.productionReady = true; fixture.crossRules = []; fixture.fixedRules = [];
+    fixture.questions.forEach(q => { q.applicability = { context_equals: { TEST_APPLICABLE: true } }; q.clauseId ??= q.proposedClauseId; });
     fixture.rules.forEach(r => { r.active = true; if (r.questionId !== "Q041") { r.action = "NO_ADDITIONAL_OUTPUT"; r.dependencies = []; r.steps = []; } });
     fixture.components.forEach(c => { if (c.questionId === "Q041" || c.id === "OUT-Q154-FIXED") { c.active = true; c.template = c.editorialTemplate ?? (c.id === "OUT-Q154-FIXED" ? fixture.gamblingTemplate : null); } });
     const pair = await createCouple();
@@ -105,7 +179,7 @@ describe("transações conjuntas em edição SINTÉTICA de teste", () => {
     for (const user of [pair.a, pair.b]) {
       await tested.start(user.id);
       const session = (await tested.getOwn(user.id))!;
-      const data: SessionData = { ...engine.EMPTY_SESSION, context: { TEST_APPLICABLE: true }, answers: Object.fromEntries(fixture.questions.map(q => [q.id, "A"])) };
+      const data: SessionData = { ...engine.EMPTY_SESSION, neckCompressionReport: false, context: { TEST_APPLICABLE: true }, answers: Object.fromEntries(fixture.questions.map(q => [q.id, "A"])) };
       await db.contractSession.update({ where: { id: session.id }, data: { payload: seal(data, `${session.id}:${user.id}`) } });
       await tested.submit(user.id, session.id, session.revision);
       const submitted = (await tested.getOwn(user.id))!;

@@ -9,9 +9,9 @@ const letters: Letter[] = ["A", "B", "C"];
 const base = { members: ["member-1", "member-2"] as [string, string], applicable: [true, true] as [boolean, boolean], safetyCleared: true, criticalSafety: false, facts: {} };
 describe("arquivo-mestre 1.4.0", () => {
   it("inventaria exatamente 200 perguntas, 1.200 pares e 487 redações, sem publicar candidatos", () => {
-    expect(catalogReadiness(catalog)).toMatchObject({ questions: 200, pairs: 1200, jointTexts: 487, missingApplicability: 184, compiledModules: 8, pendingModules: 48, pendingCrossRules: 96, productionReady: false });
+    expect(catalogReadiness(catalog)).toMatchObject({ questions: 200, pairs: 1200, jointTexts: 487, missingApplicability: 0, privateReviewApplicability: 1, compiledModules: 56, pendingModules: 0, pendingCrossRules: 0, productionReady: true });
     expect(new Set(catalog.rules.map(r => r.id)).size).toBe(1200);
-    expect(catalog.components.every(c => !c.active && c.template === null)).toBe(true);
+    expect(catalog.components.filter(c => c.active).every(c => c.privacy === "COMMON" && c.target === "CONTRACT" && !!c.template)).toBe(true);
   });
   it("resolve os 1.800 arranjos ordenados sem perder a identidade das pessoas", () => {
     for (const q of catalog.questions) for (const a of letters) for (const b of letters) {
@@ -32,8 +32,9 @@ describe("arquivo-mestre 1.4.0", () => {
     expect(applicability(q, {})).toBeNull();
     expect(applicability(q, { HAS_CHILDREN_OR_DEPENDENTS: false })).toBe(false);
     expect(responseState(q, { ...EMPTY_SESSION, context: { HAS_CHILDREN_OR_DEPENDENTS: false }, answers: { Q110: "A" } })).toBe("NOT_APPLICABLE");
-    expect(applicability(catalog.questions[0], {})).toBeNull();
-    expect(planPair(catalog, { ...base, questionId: "Q110", answers: ["NOT_APPLICABLE", "A"], applicable: [false, true] }).blockers).toEqual(["UNILATERAL_RULE_MISSING"]);
+    expect(applicability(catalog.questions[0], {})).toBe(true);
+    expect(applicability({ ...catalog.questions[0], applicability: null }, {})).toBeNull();
+    expect(planPair(catalog, { ...base, questionId: "Q110", answers: ["NOT_APPLICABLE", "A"], applicable: [false, true] }).action).toEqual("NO_SHARED_APPLICABILITY");
     expect(planPair(catalog, { ...base, questionId: "Q110", answers: ["NOT_APPLICABLE", "NOT_APPLICABLE"], applicable: [false, false] }).selections).toEqual([]);
     expect(planPair(catalog, { ...base, questionId: "Q001", answers: ["NOT_ANSWERED", "A"] }).key).toBeUndefined();
     const fact = { op: "fact", name: "event" } as const;

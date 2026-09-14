@@ -56,6 +56,10 @@ model User {
   comparisonConsents  CoupleComparisonConsent[]
   passwordResetTokens PasswordResetToken[]
   contractSessions    ContractSession[]
+  contractPurchase    ContractPurchase?
+  contractRecords     ContractRecord[]
+  requestedReviews    ContractPrivateReview[] @relation("ReviewOwner")
+  assignedReviews     ContractPrivateReview[] @relation("ReviewAssignee")
 
   @@map("users")
 }
@@ -302,15 +306,72 @@ model ContractWorkspace {
   editionId   String               @db.Char(36)
   revision    Int                  @default(0)
   createdAt   DateTime             @default(now()) @db.DateTime(3)
+  updatedAt   DateTime             @default(now()) @updatedAt @db.DateTime(3)
   couple      Couple               @relation(fields: [coupleId], references: [id], onDelete: Restrict)
   edition     ContractEdition      @relation(fields: [editionId], references: [id], onDelete: Restrict)
   sessions    ContractSession[]
   decisions   ContractDecision[]
   evaluations ContractEvaluation[]
   documents   ContractDocument[]
+  records     ContractRecord[]
+  reviews     ContractPrivateReview[]
 
   @@unique([coupleId, editionId])
   @@map("contract_workspaces")
+}
+
+model ContractPurchase {
+  id          String   @id @default(uuid()) @db.Char(36)
+  userId      String   @unique @db.Char(36)
+  productCode String   @default("CONTRATO_CASAMENTO") @db.VarChar(40)
+  status      String   @default("PAID") @db.VarChar(20)
+  amountCents Int      @default(0)
+  currency    String   @default("BRL") @db.Char(3)
+  source      String   @default("FREE_CHECKOUT") @db.VarChar(30)
+  acquiredAt  DateTime @default(now()) @db.DateTime(3)
+  revokedAt   DateTime? @db.DateTime(3)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Restrict)
+
+  @@map("contract_purchases")
+}
+
+// Payload is encrypted; keys and kind contain no answer, diagnosis or event details.
+model ContractRecord {
+  id          String   @id @default(uuid()) @db.Char(36)
+  workspaceId String   @db.Char(36)
+  userId      String   @db.Char(36)
+  kind        String   @db.VarChar(30)
+  recordKey   String   @db.VarChar(100)
+  revision    Int      @default(0)
+  payload     String   @db.LongText
+  createdAt   DateTime @default(now()) @db.DateTime(3)
+  updatedAt   DateTime @updatedAt @db.DateTime(3)
+  workspace   ContractWorkspace @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Restrict)
+
+  @@unique([workspaceId, userId, kind, recordKey])
+  @@index([updatedAt])
+  @@map("contract_records")
+}
+
+model ContractPrivateReview {
+  id          String   @id @default(uuid()) @db.Char(36)
+  workspaceId String   @db.Char(36)
+  ownerId     String   @db.Char(36)
+  reviewerId  String   @db.Char(36)
+  basisHash   String   @db.Char(64)
+  payload     String   @db.LongText
+  status      String   @default("REQUESTED") @db.VarChar(30)
+  consentedAt DateTime @default(now()) @db.DateTime(3)
+  revokedAt   DateTime? @db.DateTime(3)
+  decidedAt   DateTime? @db.DateTime(3)
+  workspace   ContractWorkspace @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  owner       User @relation("ReviewOwner", fields: [ownerId], references: [id], onDelete: Restrict)
+  reviewer    User @relation("ReviewAssignee", fields: [reviewerId], references: [id], onDelete: Restrict)
+
+  @@index([reviewerId, status])
+  @@index([ownerId, workspaceId])
+  @@map("contract_private_reviews")
 }
 
 model ContractSession {

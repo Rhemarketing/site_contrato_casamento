@@ -10,7 +10,7 @@ export default async function ContractLayout({ children }: { children: React.Rea
   await requireUser("/contrato");
   return <WorkspacePage eyebrow="Vida a dois" title="Construindo nossos acordos" description="Um espaço individual para refletir e um espaço conjunto para decidir.">
     <nav aria-label="Etapas do contrato" className="mb-8 flex flex-wrap gap-4 text-sm font-semibold text-brand">
-      <Link href="/contrato">Visão geral</Link><Link href="/contrato/questionario">Minhas respostas</Link><Link href="/contrato/decisoes">NÓS DECIDIMOS</Link><Link href="/contrato/documento">Nosso contrato</Link>
+      <Link href="/contrato">Visão geral</Link><Link href="/contrato/questionario">Minhas respostas</Link><Link href="/contrato/decisoes">NÓS DECIDIMOS</Link><Link href="/contrato/documento">Nosso contrato</Link><Link href="/contrato/acompanhamento">Acompanhamento</Link><Link href="/contrato/cofrinho">Cofrinho</Link><Link href="/contrato/privacidade">Privacidade</Link>
     </nav>{children}
   </WorkspacePage>;
 }

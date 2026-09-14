@@ -2,7 +2,7 @@
 
 Aplicação web para apoiar conversas conscientes sobre expectativas e decisões na vida a dois.
 
-A integração do arquivo-mestre 1.4.0 está documentada em [docs/contract-master-implementation.md](docs/contract-master-implementation.md). As novas etapas estão em `/contrato`, com revisão editorial em `/admin/contrato`. A produção continua bloqueada pelas pendências do pacote; a admissão foi preservada.
+A integração `1.4.0-release.1` está documentada em [docs/contract-master-implementation.md](docs/contract-master-implementation.md). A jornada de 200 perguntas fica em `/contrato`, com aquisição de R$ 0,00, decisões conjuntas, contrato e acompanhamento. A admissão foi preservada. A ativação depende das variáveis e migrations do [guia de implantação](docs/easypanel-deploy.md). O gateway será desenvolvido após os testes do usuário em produção.
 
 ## Requisitos
 
