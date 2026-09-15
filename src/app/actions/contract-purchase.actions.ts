@@ -9,6 +9,6 @@ export async function acquireFreeContractAction() {
   try {
     await new ContractPurchaseService(db).acquireFree(user.id);
     revalidatePath("/contrato", "layout");
-    return { ok: true, message: "Aquisição confirmada por R$ 0,00. Seu acesso está liberado." };
+    return { ok: true, message: "Aquisição confirmada por R$ 0,00. Seu acesso e o do parceiro conectado estão liberados." };
   } catch { return { ok: false, message: "Não foi possível confirmar a aquisição. Tente novamente." }; }
 }

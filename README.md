@@ -4,6 +4,8 @@ Aplicação web para apoiar conversas conscientes sobre expectativas e decisões
 
 A integração `1.4.0-release.1` está documentada em [docs/contract-master-implementation.md](docs/contract-master-implementation.md). A jornada de 200 perguntas fica em `/contrato`, com aquisição de R$ 0,00, decisões conjuntas, contrato e acompanhamento. A admissão foi preservada. A ativação depende das variáveis e migrations do [guia de implantação](docs/easypanel-deploy.md). O gateway será desenvolvido após os testes do usuário em produção.
 
+Uma única aquisição do produto libera o questionário de 200 perguntas para os dois membros do casal conectado. O acesso do parceiro é reconhecido automaticamente após aceitar o convite ou após a compra, sem uma segunda aquisição. A compra deve estar confirmada e não revogada, e o vínculo do casal deve estar ativo. Cada pessoa mantém suas respostas individuais privadas e a avaliação conjunta continua exigindo consentimento separado.
+
 ## Requisitos
 
 - Node.js compatível com Next.js 16

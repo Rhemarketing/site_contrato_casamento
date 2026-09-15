@@ -1,5 +1,6 @@
 import "server-only";
 import { randomUUID } from "node:crypto";
+import { privateBlockers } from "@/features/contract/domain/private-blockers";
 import { Prisma, type PrismaClient } from "@/generated/prisma/client";
 import { z } from "zod";
 import { applicability, applicabilityContextFields, assessSafety, ContractError, EMPTY_SESSION, planPair, responseState } from "@/features/contract/domain/engine";
@@ -336,6 +337,8 @@ export class ContractService {
       const reviewers = await tx.user.findMany({ where: { id: { in: configuredReviewers(), notIn: members.map(m => m.userId) } }, select: { id: true, name: true } });
       const reviews = await tx.contractPrivateReview.findMany({ where: { workspaceId: workspace.id, ownerId: userId }, select: { id: true, status: true, basisHash: true, revokedAt: true, consentedAt: true } });
       return { safety: { critical: safety.critical, reviewRequired: safety.reviewRequired, complete: safety.complete, cleared: safety.cleared }, reviewers,
+        blockers: privateBlockers(workspace.edition.snapshot as unknown as Catalog, data),
+        submitted: session.status === "SUBMITTED", consented: !!session.consentedAt,
         guidance: safety.cleared ? (this.catalog.privateGuidance ?? []).filter(g => data.answers[g.questionId] === g.answer && applicability(this.catalog.questions.find(q => q.id === g.questionId)!, data.context, data.privateClearance?.q181) === true).map(g => ({ id: g.questionId, title: this.catalog.questions.find(q => q.id === g.questionId)!.title, text: renderRegisteredTemplate(g.template, { Nome: members.find(m => m.userId === userId)!.user.name }) })) : [],
         q181: data.context.KNOWN_TRUST_BREACH === true && data.context.REBUILDING_CHOSEN === true,
         reviews: reviews.map(r => ({ id: r.id, status: r.revokedAt ? "REVOKED" : r.basisHash !== reviewBasis(data) ? "OUTDATED" : r.status, date: r.consentedAt.toISOString() })) };

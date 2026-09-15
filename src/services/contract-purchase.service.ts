@@ -1,14 +1,15 @@
 import "server-only";
 import { Prisma, type PrismaClient } from "@/generated/prisma/client";
 import { ContractError } from "@/features/contract/domain/engine";
+import { getContractPurchaseAccess } from "@/features/contract/server/purchase-access";
 
 export const CONTRACT_PRODUCT = { code: "CONTRATO_CASAMENTO", name: "Contrato de Casamento", amountCents: 0, currency: "BRL", displayPrice: "R$ 0,00" } as const;
 
 export class ContractPurchaseService {
   constructor(private readonly client: PrismaClient) {}
   async get(userId: string) {
-    const purchase = await this.client.contractPurchase.findUnique({ where: { userId } });
-    return purchase ? { status: purchase.revokedAt ? "REVOKED" : purchase.status, acquiredAt: purchase.acquiredAt.toISOString(), amountCents: purchase.amountCents, currency: purchase.currency } : null;
+    const purchase = await getContractPurchaseAccess(userId, this.client);
+    return purchase ? { status: purchase.status, shared: purchase.userId !== userId, acquiredAt: purchase.acquiredAt.toISOString(), amountCents: purchase.amountCents, currency: purchase.currency } : null;
   }
   async acquireFree(userId: string) {
     // No price, user ID, status or gateway acknowledgement comes from the form.
@@ -25,7 +26,6 @@ export class ContractPurchaseService {
     }
   }
   async requireAccess(userId: string) {
-    const purchase = await this.client.contractPurchase.findUnique({ where: { userId } });
-    if (!purchase || purchase.status !== "PAID" || purchase.revokedAt) throw new ContractError("PRODUCT_NOT_ACQUIRED");
+    if (!await getContractPurchaseAccess(userId, this.client)) throw new ContractError("PRODUCT_NOT_ACQUIRED");
   }
 }

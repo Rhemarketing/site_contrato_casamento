@@ -29,6 +29,7 @@ it("explica o contexto individual e envia só a escolha explícita sem atribuir 
 });
 it("conta inaplicabilidade no progresso sem chamá-la de resposta e exige todas as respostas aplicáveis", () => {
   const session = sessionFixture();
+  session.neckCompressionReport = false;
   session.blocked = 0;
   session.questions.forEach(q => { q.state = "NOT_APPLICABLE"; });
   session.questions[0].state = "NOT_ANSWERED";
@@ -40,6 +41,32 @@ it("conta inaplicabilidade no progresso sem chamá-la de resposta e exige todas 
   expect(screen.getByText("200 de 200 itens resolvidos")).toBeInTheDocument();
   expect(screen.getByText(/1 respostas registradas · 199 não aplicáveis/)).toBeInTheDocument();
   expect(screen.getByRole("button", { name: "Concluir minhas respostas" })).toBeEnabled();
+});
+
+it("mostra o complemento pendente da Q103 mesmo com 200 respostas registradas", () => {
+  const session = sessionFixture();
+  session.questions.forEach(q => { q.state = "A"; });
+  session.answered = 200; session.blocked = 0;
+  render(<ContractQuestionnaire session={session} />);
+  expect(screen.getByRole("button", { name: "Concluir minhas respostas" })).toBeDisabled();
+  fireEvent.click(screen.getByRole("button", { name: "Q103 — preencher complemento" }));
+  expect(screen.getByRole("combobox", { name: /Houve estrangulamento/ })).toBeInTheDocument();
+});
+
+it("orienta concluir, autorizar e seguir para decisões conforme o estado da própria sessão", () => {
+  const session = sessionFixture();
+  session.questions.forEach(q => { q.state = "A"; });
+  session.answered = 200; session.blocked = 0; session.neckCompressionReport = false;
+  const { rerender } = render(<ContractQuestionnaire session={session} />);
+  expect(screen.getByRole("link", { name: "Ir para Concluir minhas respostas" })).toHaveAttribute("href", "#conclusao");
+  session.status = "SUBMITTED";
+  rerender(<ContractQuestionnaire session={{ ...session }} />);
+  expect(screen.getByRole("link", { name: "Ir para Autorizar avaliação do casal" })).toBeInTheDocument();
+  expect(screen.queryByRole("link", { name: "Continuar para NÓS DECIDIMOS" })).not.toBeInTheDocument();
+  session.consented = true;
+  rerender(<ContractQuestionnaire session={{ ...session }} />);
+  expect(screen.getByRole("link", { name: "Continuar para NÓS DECIDIMOS" })).toHaveAttribute("href", "/contrato/decisoes");
+  expect(screen.getByRole("link", { name: "Nosso contrato" })).toHaveAttribute("href", "/contrato/documento");
 });
 it("explica revisão privada ainda necessária sem exibir a Q181", () => {
   const session = sessionFixture();

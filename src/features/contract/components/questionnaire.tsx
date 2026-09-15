@@ -16,6 +16,10 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
   const closed = session.status === "SUBMITTED";
   const notApplicable = session.questions.filter(question => question.state === "NOT_APPLICABLE").length;
   const resolved = session.answered + notApplicable;
+  const missingComplements = session.questions.filter(question =>
+    (question.privateModule && !question.privateAnswer)
+    || (question.id === "Q103" && session.neckCompressionReport === null));
+  const ready = resolved === session.questions.length && missingComplements.length === 0;
   const waitingPrivateReview = q.privateReviewRequired && q.contextFields.every(field => session.context[field.id] === true);
   const save = (answer: Letter, privateAnswer?: Letter, neckCompressionReport?: boolean) => start(async () => {
     setMessage("");
@@ -26,6 +30,19 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
     } catch { setMessage("A resposta não foi confirmada. Tente novamente."); }
   });
   return <div className="space-y-6">
+    <Card className="space-y-3">
+      <h2 className="text-xl font-semibold">Próximo passo</h2>
+      {closed ? session.coupleConnected ? session.consented ? <>
+        <p>Suas respostas estão concluídas e sua autorização está registrada. Para avançar, os dois precisam concluir e autorizar na própria conta.</p>
+        <Link className="inline-block font-semibold text-brand underline" href="/contrato/decisoes">Continuar para NÓS DECIDIMOS</Link>
+        <p>Depois das decisões, abra <Link className="text-brand underline" href="/contrato/documento">Nosso contrato</Link> e prepare o rascunho.</p>
+      </> : <><p>Suas respostas estão concluídas. Falta sua autorização para a avaliação do casal.</p><a className="text-brand underline" href="#conclusao">Ir para Autorizar avaliação do casal</a></>
+        : <><p>Conecte as contas para avançar à avaliação do casal.</p><Link className="text-brand underline" href="/casal">Conectar meu parceiro</Link></>
+        : ready ? <><p>Todos os itens estão resolvidos. Agora conclua suas respostas e, em seguida, autorize a avaliação do casal.</p><a className="text-brand underline" href="#conclusao">Ir para Concluir minhas respostas</a></>
+        : <><p>Resolva as perguntas pendentes e os complementos privados antes de concluir.</p>
+          {missingComplements.length ? <div className="space-y-2"><p>Complementos privados pendentes:</p>{missingComplements.map(question => <button key={question.id} type="button" className="mr-3 text-brand underline" onClick={() => { setIndex(session.questions.findIndex(item => item.id === question.id)); setMessage(""); }}>{question.id} — preencher complemento</button>)}</div> : null}
+        </>}
+    </Card>
     {!session.coupleConnected ? <Alert>Você pode responder e concluir o questionário agora. Suas respostas ficam salvas na sua conta. <Link href="/casal" className="underline">Conectar meu parceiro depois</Link>.</Alert> : null}
     <Alert>As condições individuais e as exigências de revisão privada são verificadas antes de liberar as perguntas. <Link href="/contrato/privacidade" className="underline">Acessar minha área de privacidade e revisão.</Link></Alert>
     <Card><p className="text-muted">Suas respostas são individuais. O vínculo do casal não permite ao outro cônjuge ler suas respostas.</p>
@@ -61,12 +78,12 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
       <p role="status" className="text-sm text-muted">{pending ? "Salvando…" : message}</p>
       <div className="flex justify-between"><Button variant="secondary" disabled={pending || index === 0} onClick={() => { setIndex(index - 1); setMessage(""); }}>Anterior</Button><Button variant="secondary" disabled={pending || index === 199} onClick={() => { setIndex(index + 1); setMessage(""); }}>Próxima</Button></div>
     </Card>
-    <Card className="space-y-4"><h2 className="text-xl font-semibold">Conclusão e consentimento</h2>{closed ? <>
+    <Card className="space-y-4"><h2 id="conclusao" className="text-xl font-semibold">Conclusão e consentimento</h2>{closed ? <>
       <p>Autorizar permite a avaliação das duas sessões para preparar decisões e textos elegíveis. As respostas brutas e privadas continuam restritas.</p>
       {session.coupleConnected ? <ContractActionButton action={() => consentContractAction(session.id, session.revision, !session.consented)}>{session.consented ? "Revogar autorização" : "Autorizar avaliação do casal"}</ContractActionButton> : <p>Suas respostas estão concluídas e salvas. Conecte seu parceiro quando quiser continuar para a avaliação e a montagem do contrato. Depois da conexão, cada pessoa deverá autorizar a avaliação.</p>}
       <p>Corrigir respostas revoga a autorização e invalida propostas e documentos derivados desta sessão. Novas confirmações serão necessárias.</p><ContractActionButton action={() => reopenContractAction(session.id, session.revision)}>Corrigir minhas respostas</ContractActionButton>
     </> : <><p>Concluir encerra a edição desta versão das respostas. A avaliação do casal exige uma autorização separada de cada pessoa.</p>
-      <ContractActionButton disabled={pending || resolved !== session.questions.length} action={() => submitContractAction(session.id, session.revision)}>Concluir minhas respostas</ContractActionButton>
+      <ContractActionButton disabled={pending || !ready} action={() => submitContractAction(session.id, session.revision)}>Concluir minhas respostas</ContractActionButton>
     </>}</Card>
   </div>;
 }

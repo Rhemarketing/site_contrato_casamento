@@ -51,6 +51,23 @@ async function complete(userId: string) {
   return (await service.getOwn(userId))!;
 }
 
+it("detalhes dos bloqueios ficam restritos à própria conta e não aparecem na projeção conjunta", async () => {
+  const a = await person(), b = await person();
+  const invite = await invites.createInvite(a, b.email);
+  await invites.acceptInvite(b, invite.inviteUrl.split("/").at(-1)!);
+  await service.start(a.id); await service.start(b.id);
+  const own = (await service.getOwn(a.id))!;
+  await service.saveAnswer(a.id, { sessionId: own.id, revision: own.revision, questionId: "Q103", answer: "C", neckCompressionReport: true });
+  const areaA = await service.privateArea(a.id);
+  const areaB = await service.privateArea(b.id);
+  expect(areaA.blockers.find(item => item.id === "Q103-critical")?.selected).toContain("C.");
+  expect(areaA.blockers.find(item => item.id === "Q103-neck")?.selected).toContain("Resposta: Sim");
+  expect(areaB.blockers.find(item => item.id === "Q103-critical")).toBeUndefined();
+  expect(areaB.blockers.find(item => item.id === "Q103-neck")?.selected).toContain("Não informada");
+  expect(await service.getShared(a.id)).toEqual(NEUTRAL_SHARED_STATE);
+  expect(await service.getShared(b.id)).toEqual(NEUTRAL_SHARED_STATE);
+});
+
 it("cada pessoa conclui antes do vínculo; o aceite preserva ambas e exige consentimentos novos", async () => {
   const a = await person(), b = await person();
   expect(await service.getOwn(a.id)).toBeNull();
