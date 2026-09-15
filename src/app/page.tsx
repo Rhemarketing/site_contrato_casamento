@@ -35,7 +35,7 @@ export default function HomePage() {
               O Contrato de Casamento cria um espaço acolhedor para vocês entenderem valores, expectativas e planos antes de dar o próximo passo.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 font-semibold text-white transition hover:bg-brand-strong" href="/admissao">
+              <Link className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 font-semibold text-white transition hover:bg-brand-strong" href="/login?callbackUrl=%2Fadmissao%2Fquestionario">
                 Fazer minha Prova de Admissão
               </Link>
               <Link className="inline-flex min-h-12 items-center justify-center rounded-full border border-line bg-surface px-6 py-3 font-semibold text-brand transition hover:border-brand" href="/cadastro">

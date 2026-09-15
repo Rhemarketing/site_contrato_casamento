@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [{
+      source: "/admissao",
+      destination: "/login?callbackUrl=%2Fadmissao%2Fquestionario",
+      permanent: true,
+    }];
+  },
   async headers() {
     return [{
       source: "/contrato/:path*",
