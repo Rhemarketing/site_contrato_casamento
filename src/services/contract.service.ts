@@ -112,7 +112,7 @@ export class ContractService {
           options: displayable ? q.options.map(({ code, text }) => ({ code, text })) : [],
           contextFields: applicabilityContextFields(q).map(id => ({ id, ...catalog.contextDefinitions?.[id] ?? { label: "Contexto individual", help: "" } })),
           relatedQuestions: catalog.questions.filter(related => related.id !== q.id && catalog.crossRules.some(rule => rule.relatedQuestionIds?.includes(q.id) && rule.relatedQuestionIds.includes(related.id))).map(related => ({ id: related.id, title: related.title })),
-          privateReviewRequired: !!(q.applicability && "requires_private_review" in q.applicability && q.applicability.requires_private_review), privateModule,
+          privateReviewRequired: false, privateModule,
           privateAnswer: privateModule ? data.privateAnswers[privateModule.id] ?? null : null };
       });
       return { id: session.id, revision: session.revision, status: session.status, version: catalog.version, coupleConnected: member.couple.status === "ACTIVE", consented: !!session.consentedAt, questions, context: data.context,
@@ -196,15 +196,16 @@ export class ContractService {
     });
     const facts = agreedFacts(memberFacts[0], memberFacts[1]);
     facts.PREGNANCY_POSSIBLE = data.every(d => d.context.PREGNANCY_POSSIBLE === true);
-    const basisHash = contentHash({ edition: workspace.edition.contentHash, engine: "1.4.0-engine.2", members: members.map(m => ({ id: m.id, name: m.user.name })), reviews: data.map(d => d.privateClearance?.reviewId ?? null), facts,
+    const basisHash = contentHash({ edition: workspace.edition.contentHash, engine: "1.4.0-engine.3", members: members.map(m => ({ id: m.id, name: m.user.name })), facts,
       sessions: completeSessions.map(s => ({ id: s.id, revision: s.revision })) });
     const plans = catalog.questions.map(q => planPair(catalog, { questionId: q.id, members: [members[0].id, members[1].id],
       answers: [responseState(q, data[0]), responseState(q, data[1])], applicable: [applicability(q, data[0].context, data[0].privateClearance?.q181), applicability(q, data[1].context, data[1].privateClearance?.q181)],
       criticalSafety: safety.some(s => s.critical), safetyCleared: safety.every(s => s.cleared), facts }));
     if (facts.Q151_voluntary_agreement_requested === true) {
       const plan = plans.find(p => p.questionId === "Q151")!;
-      if (data.every(d => d.privateClearance?.q151 && d.answers.Q151 !== "C")) { plan.action = "NO_ADDITIONAL_OUTPUT"; plan.modules = ["ND-Q151-01"]; }
-      else plan.blockers.push("PRIVATE_REVIEW_REQUIRED");
+      // Eligibility follows the explicitly agreed joint context, never a
+      // private answer or a review outcome that the partner could infer.
+      plan.action = "NO_ADDITIONAL_OUTPUT"; plan.modules = ["ND-Q151-01"];
     }
     if (facts.Q150_review_requested === true) plans.find(p => p.questionId === "Q150")!.modules.push("ND-Q150-REVIEW");
     return { catalog, basisHash, plans, safety, facts, memberFacts, records };
@@ -216,7 +217,7 @@ export class ContractService {
     return this.transaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId, true);
       const evaluation = await this.evaluate(tx, workspace, members);
-      if (!evaluation?.safety.every(s => s.cleared) || !evaluation.catalog.productionReady) throw new ContractError("SHARED_UNAVAILABLE");
+      if (!evaluation?.catalog.productionReady) throw new ContractError("SHARED_UNAVAILABLE");
       const existing = evaluation.records.find(r => r.userId === userId);
       if ((existing?.revision ?? 0) !== revision) throw new ContractError("CONFLICT");
       const id = existing?.id ?? randomUUID();
@@ -268,7 +269,7 @@ export class ContractService {
       const data = session ? await withPrivateClearance(tx, session) : EMPTY_SESSION;
       const ownLimit = data.answers.Q200 === "C" ? 1 : data.answers.Q200 === "B" ? 2 : 3;
       const evaluation = await this.evaluate(tx, workspace, members);
-      const canShare = !!evaluation?.catalog.productionReady && evaluation.safety.every(s => s.cleared);
+      const canShare = !!evaluation?.catalog.productionReady;
       const partnerId = members.find(m => m.userId !== userId)?.userId;
       const partnerRecords = canShare && partnerId ? await tx.contractRecord.findMany({ where: { workspaceId: workspace.id, userId: partnerId, kind: { in: ["EMERGENCY", "TIMING"] } } }) : [];
       const partnerData = partnerRecords.map(r => ownRecordSchema.parse(unseal<OwnRecord>(r.payload, `record:${r.id}:${partnerId}`)));
@@ -339,7 +340,7 @@ export class ContractService {
       return { safety: { critical: safety.critical, reviewRequired: safety.reviewRequired, complete: safety.complete, cleared: safety.cleared }, reviewers,
         blockers: privateBlockers(workspace.edition.snapshot as unknown as Catalog, data),
         submitted: session.status === "SUBMITTED", consented: !!session.consentedAt,
-        guidance: safety.cleared ? (this.catalog.privateGuidance ?? []).filter(g => data.answers[g.questionId] === g.answer && applicability(this.catalog.questions.find(q => q.id === g.questionId)!, data.context, data.privateClearance?.q181) === true).map(g => ({ id: g.questionId, title: this.catalog.questions.find(q => q.id === g.questionId)!.title, text: renderRegisteredTemplate(g.template, { Nome: members.find(m => m.userId === userId)!.user.name }) })) : [],
+        guidance: (this.catalog.privateGuidance ?? []).filter(g => data.answers[g.questionId] === g.answer && applicability(this.catalog.questions.find(q => q.id === g.questionId)!, data.context, data.privateClearance?.q181) === true).map(g => ({ id: g.questionId, title: this.catalog.questions.find(q => q.id === g.questionId)!.title, text: renderRegisteredTemplate(g.template, { Nome: members.find(m => m.userId === userId)!.user.name }) })),
         q181: data.context.KNOWN_TRUST_BREACH === true && data.context.REBUILDING_CHOSEN === true,
         reviews: reviews.map(r => ({ id: r.id, status: r.revokedAt ? "REVOKED" : r.basisHash !== reviewBasis(data) ? "OUTDATED" : r.status, date: r.consentedAt.toISOString() })) };
     });
@@ -415,7 +416,7 @@ export class ContractService {
       const workspace = await this.workspace(tx, member.coupleId);
       const evaluation = await this.evaluate(tx, workspace, members);
       // Constant projection for incomplete rules, no consent, private review or partner progress.
-      if (!evaluation || !evaluation.safety.every(s => s.cleared) || !evaluation.catalog.productionReady) return NEUTRAL_SHARED_STATE;
+      if (!evaluation || !evaluation.catalog.productionReady) return NEUTRAL_SHARED_STATE;
       const decisions = await tx.contractDecision.findMany({ where: { workspaceId: workspace.id } });
       const baseIds = [...new Set(evaluation.plans.flatMap(p => p.modules))];
       const ids = [...new Set([...baseIds, ...decisions.filter(d => d.activeKey && baseIds.includes(d.moduleId.split(":")[0])).map(d => d.moduleId)])];
@@ -439,7 +440,7 @@ export class ContractService {
     return this.transaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId, true);
       const evaluation = await this.evaluate(tx, workspace, members);
-      if (!evaluation || !evaluation.safety.every(s => s.cleared) || !evaluation.catalog.productionReady || !evaluation.plans.some(p => !p.blockers.length && p.modules.includes(input.moduleId.split(":")[0]))) throw new ContractError("SHARED_UNAVAILABLE");
+      if (!evaluation || !evaluation.catalog.productionReady || !evaluation.plans.some(p => !p.blockers.length && p.modules.includes(input.moduleId.split(":")[0]))) throw new ContractError("SHARED_UNAVAILABLE");
       const definition = moduleDefinition(evaluation.catalog, input.moduleId);
       const content = { ...validateDecision(definition, input.choice, input.parameters), moduleId: input.moduleId };
       const previous = await tx.contractDecision.findFirst({ where: { workspaceId: workspace.id, moduleId: input.moduleId }, orderBy: { revision: "desc" } });
@@ -455,7 +456,7 @@ export class ContractService {
     return this.transaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId, true);
       const evaluation = await this.evaluate(tx, workspace, members);
-      if (!evaluation || !evaluation.safety.every(s => s.cleared) || !evaluation.catalog.productionReady || !evaluation.plans.some(p => !p.blockers.length && p.modules.includes(moduleId.split(":")[0]))) throw new ContractError("SHARED_UNAVAILABLE");
+      if (!evaluation || !evaluation.catalog.productionReady || !evaluation.plans.some(p => !p.blockers.length && p.modules.includes(moduleId.split(":")[0]))) throw new ContractError("SHARED_UNAVAILABLE");
       moduleDefinition(evaluation.catalog, moduleId);
       const decision = await tx.contractDecision.findUnique({ where: { activeKey: `${workspace.id}:${moduleId}` } });
       if (!decision || decision.contentHash !== hash || decision.basisHash !== evaluation.basisHash || decision.status === "NO_CONSENSUS") throw new ContractError("CONFLICT");
@@ -472,7 +473,7 @@ export class ContractService {
       const workspace = await this.workspace(tx, member.coupleId, true);
       const evaluation = await this.evaluate(tx, workspace, members);
       const definition = moduleDefinition(this.catalog, moduleId);
-      if (!moduleId.includes(":") || !definition.repeatable || !evaluation?.catalog.productionReady || !evaluation.safety.every(s => s.cleared)) throw new ContractError("SHARED_UNAVAILABLE");
+      if (!moduleId.includes(":") || !definition.repeatable || !evaluation?.catalog.productionReady) throw new ContractError("SHARED_UNAVAILABLE");
       const decision = await tx.contractDecision.findUnique({ where: { activeKey: `${workspace.id}:${moduleId}` } });
       if (!decision || decision.contentHash !== hash || decision.basisHash !== evaluation.basisHash) throw new ContractError("CONFLICT");
       await tx.contractDecision.update({ where: { id: decision.id }, data: { activeKey: null, status: "WITHDRAWN" } });
@@ -485,9 +486,9 @@ export class ContractService {
       const workspace = await this.workspace(tx, member.coupleId, true);
       const evaluation = await this.evaluate(tx, workspace, members);
       if (evaluation) await tx.contractEvaluation.upsert({ where: { workspaceId_basisHash: { workspaceId: workspace.id, basisHash: evaluation.basisHash } },
-        create: { workspaceId: workspace.id, basisHash: evaluation.basisHash, engineVersion: "1.4.0-engine.2", payload: seal(evaluation.plans, `${workspace.id}:${evaluation.basisHash}`) }, update: {} });
+        create: { workspaceId: workspace.id, basisHash: evaluation.basisHash, engineVersion: "1.4.0-engine.3", payload: seal(evaluation.plans, `${workspace.id}:${evaluation.basisHash}`) }, update: {} });
       // Deployment flags cannot bypass the compiled edition's readiness gate.
-      if (!evaluation || !evaluation.catalog.productionReady || !evaluation.safety.every(s => s.cleared)) return { state: "UNAVAILABLE" as const, message: NEUTRAL_SHARED_STATE.message };
+      if (!evaluation || !evaluation.catalog.productionReady) return { state: "UNAVAILABLE" as const, message: NEUTRAL_SHARED_STATE.message };
       const decisions = await tx.contractDecision.findMany({ where: { workspaceId: workspace.id, basisHash: evaluation.basisHash, activeKey: { not: null } } });
       const documentBasis = contentHash({ evaluation: evaluation.basisHash, decisions: decisions.map(d => ({ id: d.id, hash: d.contentHash, status: d.status })).sort((a, b) => a.id.localeCompare(b.id)) });
       let draft = generateRegisteredDraft({ catalog: evaluation.catalog, catalogHash: workspace.edition.contentHash, plans: evaluation.plans,
@@ -518,7 +519,7 @@ export class ContractService {
     return this.transaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId);
       const evaluation = await this.evaluate(tx, workspace, members);
-      if (!evaluation?.catalog.productionReady || !evaluation.safety.every(s => s.cleared)) return [];
+      if (!evaluation?.catalog.productionReady) return [];
       const documents = await tx.contractDocument.findMany({ where: { workspaceId: workspace.id, status: { in: ["ACKNOWLEDGED", "ARCHIVED_ACKNOWLEDGED"] } }, orderBy: { createdAt: "desc" } });
       const acknowledgments = await tx.contractRecord.findMany({ where: { workspaceId: workspace.id, kind: { in: ["DOCUMENT_ACK", "ACK_HISTORY"] }, userId: { in: members.map(m => m.userId) } } });
       return documents.map(document => {
@@ -537,7 +538,7 @@ export class ContractService {
     return this.transaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId);
       const evaluation = await this.evaluate(tx, workspace, members);
-      if (!evaluation || !evaluation.catalog.productionReady || !evaluation.safety.every(s => s.cleared)) return null;
+      if (!evaluation || !evaluation.catalog.productionReady) return null;
       const document = await tx.contractDocument.findFirst({ where: { workspaceId: workspace.id, status: { in: ["DRAFT", "ACKNOWLEDGED"] } }, orderBy: { createdAt: "desc" } });
       if (!document) return null;
       const decisions = await tx.contractDecision.findMany({ where: { workspaceId: workspace.id, basisHash: evaluation.basisHash, activeKey: { not: null } } });
@@ -554,7 +555,7 @@ export class ContractService {
     return this.transaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId);
       const evaluation = await this.evaluate(tx, workspace, members);
-      if (!evaluation?.catalog.productionReady || !evaluation.safety.every(s => s.cleared)) return [];
+      if (!evaluation?.catalog.productionReady) return [];
       const records = await tx.contractRecord.findMany({ where: { workspaceId: workspace.id, kind: "DOCUMENT_ACK", recordKey: hash, userId: { in: members.map(m => m.userId) } } });
       return records.map(r => ({ own: r.userId === userId, name: members.find(m => m.userId === r.userId)!.user.name, at: r.createdAt.toISOString() }));
     });
@@ -564,7 +565,7 @@ export class ContractService {
     return this.transaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId, true);
       const evaluation = await this.evaluate(tx, workspace, members);
-      if (!evaluation?.catalog.productionReady || !evaluation.safety.every(s => s.cleared)) throw new ContractError("SHARED_UNAVAILABLE");
+      if (!evaluation?.catalog.productionReady) throw new ContractError("SHARED_UNAVAILABLE");
       const decisions = await tx.contractDecision.findMany({ where: { workspaceId: workspace.id, basisHash: evaluation.basisHash, activeKey: { not: null } } });
       const basisHash = contentHash({ evaluation: evaluation.basisHash, decisions: decisions.map(d => ({ id: d.id, hash: d.contentHash, status: d.status })).sort((a, b) => a.id.localeCompare(b.id)) });
       const document = await tx.contractDocument.findFirst({ where: { workspaceId: workspace.id, contentHash: hash, basisHash, status: { in: ["DRAFT", "ACKNOWLEDGED"] } } });
@@ -583,7 +584,7 @@ export class ContractService {
     return this.transaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId);
       const evaluation = await this.evaluate(tx, workspace, members);
-      if (!evaluation?.catalog.productionReady || !evaluation.safety.every(s => s.cleared)) return { available: false, documentHash: null, entries: [] as { id: string; hash: string; reference: string; status: string; ownConfirmed: boolean }[], totalCents: 0 };
+      if (!evaluation?.catalog.productionReady) return { available: false, documentHash: null, entries: [] as { id: string; hash: string; reference: string; status: string; ownConfirmed: boolean }[], totalCents: 0 };
       const document = await tx.contractDocument.findFirst({ where: { workspaceId: workspace.id, status: "ACKNOWLEDGED" }, orderBy: { createdAt: "desc" } });
       if (!document) return { available: false, documentHash: null, entries: [], totalCents: 0 };
       const records = await tx.contractRecord.findMany({ where: { workspaceId: workspace.id, kind: "FUND" }, orderBy: { createdAt: "asc" } });
@@ -600,7 +601,7 @@ export class ContractService {
     return this.transaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId, true);
       const evaluation = await this.evaluate(tx, workspace, members);
-      if (!evaluation?.catalog.productionReady || !evaluation.safety.every(s => s.cleared)) throw new ContractError("SHARED_UNAVAILABLE");
+      if (!evaluation?.catalog.productionReady) throw new ContractError("SHARED_UNAVAILABLE");
       const document = await tx.contractDocument.findFirst({ where: { workspaceId: workspace.id, contentHash: input.documentHash, status: "ACKNOWLEDGED" } });
       if (!document) throw new ContractError("SHARED_UNAVAILABLE");
       const id = randomUUID();
@@ -618,7 +619,7 @@ export class ContractService {
     return this.transaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId, true);
       const evaluation = await this.evaluate(tx, workspace, members);
-      if (!evaluation?.catalog.productionReady || !evaluation.safety.every(s => s.cleared)) throw new ContractError("SHARED_UNAVAILABLE");
+      if (!evaluation?.catalog.productionReady) throw new ContractError("SHARED_UNAVAILABLE");
       const record = await tx.contractRecord.findFirst({ where: { id: recordId, workspaceId: workspace.id, kind: "FUND", userId: { in: members.map(m => m.userId) } } });
       if (!record) throw new ContractError("SHARED_UNAVAILABLE");
       const scope = `record:${record.id}:${record.userId}`;

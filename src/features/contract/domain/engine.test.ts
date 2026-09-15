@@ -9,7 +9,7 @@ const letters: Letter[] = ["A", "B", "C"];
 const base = { members: ["member-1", "member-2"] as [string, string], applicable: [true, true] as [boolean, boolean], safetyCleared: true, criticalSafety: false, facts: {} };
 describe("arquivo-mestre 1.4.0", () => {
   it("inventaria exatamente 200 perguntas, 1.200 pares e 487 redações, sem publicar candidatos", () => {
-    expect(catalogReadiness(catalog)).toMatchObject({ questions: 200, pairs: 1200, jointTexts: 487, missingApplicability: 0, privateReviewApplicability: 1, compiledModules: 56, pendingModules: 0, pendingCrossRules: 0, productionReady: true });
+    expect(catalogReadiness(catalog)).toMatchObject({ questions: 200, pairs: 1200, jointTexts: 487, missingApplicability: 0, privateReviewApplicability: 0, compiledModules: 56, pendingModules: 0, pendingCrossRules: 0, productionReady: true });
     expect(new Set(catalog.rules.map(r => r.id)).size).toBe(1200);
     expect(catalog.components.filter(c => c.active).every(c => c.privacy === "COMMON" && c.target === "CONTRACT" && !!c.template)).toBe(true);
   });
@@ -42,12 +42,12 @@ describe("arquivo-mestre 1.4.0", () => {
     expect(evaluatePredicate({ op: "all", items: [fact, { op: "literal", value: false }] }, "AA", {})).toBe(false);
     expect(evaluatePredicate({ op: "any", items: [fact, { op: "literal", value: true }] }, "AA", {})).toBe(true);
   });
-  it("segurança precede os pares; episódio de compressão é crítico mesmo em B", () => {
+  it("alertas continuam identificados sem interromper os pares", () => {
     expect(assessSafety(catalog, { ...EMPTY_SESSION, answers: { Q103: "B" }, neckCompressionReport: true }).critical).toBe(true);
     expect(assessSafety(catalog, { ...EMPTY_SESSION, answers: { Q104: "C" } }).critical).toBe(true);
     expect(assessSafety(catalog, { ...EMPTY_SESSION, answers: { Q101: "A" } }).cleared).toBe(false);
     const plan = planPair(catalog, { ...base, questionId: "Q001", answers: ["A", "A"], criticalSafety: true });
-    expect(plan).toMatchObject({ action: "SAFETY_FLOW", selections: [], modules: [], protocols: [{ id: "P13", privacy: "SAFETY_PRIVATE", recipients: [] }] });
+    expect(plan).toEqual(planPair(catalog, { ...base, questionId: "Q001", answers: ["A", "A"], criticalSafety: false }));
   });
   it("preserva as exceções Q146, Q154, Q131 e os módulos privados", () => {
     const reproductive = planPair(catalog, { ...base, questionId: "Q146", answers: ["A", "C"] });

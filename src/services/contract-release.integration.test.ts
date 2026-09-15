@@ -180,13 +180,13 @@ it("retoma Q151 só com pedido bilateral e revisão específica dos dois, sem li
   await service.revokePrivateReview(ids[1], review.id);
 });
 
-it("exige autorização nominal para revisão, libera Q181 pelo servidor e revogação invalida o compartilhamento", async () => {
+it("preserva autorização nominal das revisões antigas sem condicionar Q181 à revisão", async () => {
   let own = (await service.getOwn(ids[0]))!;
   await service.reopen(ids[0], own.id, own.revision);
   own = (await service.getOwn(ids[0]))!;
   await service.saveContext(ids[0], { sessionId: own.id, revision: own.revision, context: { KNOWN_TRUST_BREACH: true, REBUILDING_CHOSEN: true } });
   own = (await service.getOwn(ids[0]))!;
-  expect(own.questions.find(q => q.id === "Q181")?.state).toBe("BLOCKED_BY_POLICY");
+  expect(own.questions.find(q => q.id === "Q181")?.state).toBe("NOT_ANSWERED");
   await expect(service.requestPrivateReview(ids[0], ids[2], false)).rejects.toThrow("REVIEW_CONSENT_REQUIRED");
   await expect(service.requestPrivateReview(ids[0], ids[1], true)).rejects.toThrow("REVIEWER_UNAVAILABLE");
   expect(await service.assignedReviews(ids[2])).toEqual([]);
@@ -201,7 +201,7 @@ it("exige autorização nominal para revisão, libera Q181 pelo servidor e revog
   await service.saveAnswer(ids[0], { sessionId: own.id, revision: own.revision, questionId: "Q181", answer: "A" });
   await service.revokePrivateReview(ids[0], reviews[0].id);
   expect(await service.assignedReviews(ids[2])).toEqual([]);
-  expect((await service.getOwn(ids[0]))?.questions.find(q => q.id === "Q181")?.state).toBe("BLOCKED_BY_POLICY");
+  expect((await service.getOwn(ids[0]))?.questions.find(q => q.id === "Q181")?.state).toBe("A");
   expect(await service.getShared(ids[1])).toEqual(NEUTRAL_SHARED_STATE);
   expect(await service.getDraft(ids[1])).toBeNull();
   expect(await service.documentHistory(ids[1])).toEqual([]);

@@ -1,12 +1,10 @@
 import { z } from "zod";
 
-export const passwordSchema = z.string()
-  .min(12, "A senha deve ter ao menos 12 caracteres.")
-  .max(128, "A senha deve ter no máximo 128 caracteres.");
+export const passwordSchema = z.string().min(1, "Informe sua senha.");
 
 export const loginSchema = z.object({
   email: z.string().trim().email("Informe um e-mail válido."),
-  password: z.string().min(1, "Informe sua senha."),
+  password: passwordSchema,
 }).strict();
 
 export const registrationSchema = z.object({

@@ -36,13 +36,13 @@ describe("montagem determinística e projeção de privacidade", () => {
     component.editorialFinal = true; input.plans[0].action = "PRIVATE_DIAGNOSTIC";
     expect(() => generateRegisteredDraft(input)).toThrow("SHARED_UNAVAILABLE");
   });
-  it("nega emissão incompleta, segurança não liberada, consentimento ausente ou componente inativo", () => {
+  it("nega emissão incompleta, consentimento ausente ou componente inativo", () => {
     const input = fixture();
     const inactive = structuredClone(input.catalog); inactive.components.find(c => c.id === "OUT-PAIR-Q001-AA")!.active = false;
     expect(() => generateRegisteredDraft({ ...input, catalog: inactive })).toThrow();
     expect(() => generateRegisteredDraft({ ...input, unresolvedDependencies: ["UNCOMPILED_CROSS_RULE"] })).toThrow();
-    expect(() => generateRegisteredDraft({ ...input, safetyCleared: false })).toThrow();
-    expect(() => generateRegisteredDraft({ ...input, criticalSafety: true })).toThrow();
+    expect(generateRegisteredDraft({ ...input, safetyCleared: false })).toEqual(generateRegisteredDraft(input));
+    expect(generateRegisteredDraft({ ...input, criticalSafety: true })).toEqual(generateRegisteredDraft(input));
     expect(() => generateRegisteredDraft({ ...input, consentedMemberIds: ["first"] })).toThrow();
     expect(() => generateRegisteredDraft({ ...input, plans: input.plans.slice(1) })).toThrow();
   });

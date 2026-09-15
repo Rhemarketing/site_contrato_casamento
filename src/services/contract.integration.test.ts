@@ -111,12 +111,13 @@ describe("sessões individuais do contrato no banco", () => {
     expect(own.questions.find(q => q.id === "Q046")?.state).toBe("NOT_ANSWERED");
     expect((await service.getOwn(people.b.id))!.context.RESPONSABILIDADE_PARENTAL).toBeUndefined();
   });
-  it("não libera Q181 por autodeclaração nem revela seu contexto ao parceiro", async () => {
+  it("libera Q181 pelo contexto sem revisão e não revela seu contexto ao parceiro", async () => {
     let own = (await service.getOwn(people.a.id))!;
     await service.saveContext(people.a.id, { sessionId: own.id, revision: own.revision, context: { KNOWN_TRUST_BREACH: true, REBUILDING_CHOSEN: true } });
     own = (await service.getOwn(people.a.id))!;
-    expect(own.questions.find(q => q.id === "Q181")).toMatchObject({ state: "BLOCKED_BY_POLICY", prompt: null, options: [], privateReviewRequired: true });
-    await expect(service.saveAnswer(people.a.id, { sessionId: own.id, revision: own.revision, questionId: "Q181", answer: "A" })).rejects.toThrow("QUESTION_UNAVAILABLE");
+    expect(own.questions.find(q => q.id === "Q181")).toMatchObject({ state: "NOT_ANSWERED", privateReviewRequired: false });
+    await expect(service.saveAnswer(people.a.id, { sessionId: own.id, revision: own.revision, questionId: "Q181", answer: "A" })).resolves.toBeUndefined();
+    own = (await service.getOwn(people.a.id))!;
     await expect(service.saveContext(people.a.id, { sessionId: own.id, revision: own.revision, context: { Q181_SAFE_APPROACH: true } })).rejects.toThrow("INVALID_CONTEXT");
     expect((await service.getOwn(people.b.id))!.context.KNOWN_TRUST_BREACH).toBeUndefined();
     expect(await service.getShared(people.b.id)).toEqual(NEUTRAL_SHARED_STATE);

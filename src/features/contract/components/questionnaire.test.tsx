@@ -68,13 +68,13 @@ it("orienta concluir, autorizar e seguir para decisões conforme o estado da pr�
   expect(screen.getByRole("link", { name: "Continuar para NÓS DECIDIMOS" })).toHaveAttribute("href", "/contrato/decisoes");
   expect(screen.getByRole("link", { name: "Nosso contrato" })).toHaveAttribute("href", "/contrato/documento");
 });
-it("explica revisão privada ainda necessária sem exibir a Q181", () => {
+it("explica contexto pendente sem solicitar revisão", () => {
   const session = sessionFixture();
   session.questions[0].privateReviewRequired = true;
   session.questions[0].contextFields = [{ id: "KNOWN_TRUST_BREACH", label: "Há histórico já conhecido?", help: "Contexto privado." }];
   session.context.KNOWN_TRUST_BREACH = true;
   render(<ContractQuestionnaire session={session} />);
-  expect(screen.getByText(/A abordagem deste assunto aguarda revisão privada de segurança/)).toBeInTheDocument();
+  expect(screen.getByText(/Esta pergunta aguarda a definição do seu contexto/)).toBeInTheDocument();
   expect(screen.queryByRole("radio")).not.toBeInTheDocument();
 });
 

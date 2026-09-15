@@ -19,7 +19,7 @@ export function ResetPasswordForm({ token }: { token: string }) {
         name="password"
         type="password"
         label="Nova senha"
-        hint="Use ao menos 12 caracteres."
+        hint="Escolha sua senha de acesso."
         autoComplete="new-password"
         error={state.fieldErrors?.password?.[0]}
         required

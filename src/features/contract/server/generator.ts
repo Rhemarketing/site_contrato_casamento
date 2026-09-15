@@ -20,7 +20,7 @@ export function generateRegisteredDraft(input: {
   unresolvedDependencies: string[];
 }): ContractDraft {
   const { catalog, members } = input;
-  if (!input.safetyCleared || input.criticalSafety || members[0].id === members[1].id || members.some(m => !input.consentedMemberIds.includes(m.id))) throw new ContractError("SHARED_UNAVAILABLE");
+  if (members[0].id === members[1].id || members.some(m => !input.consentedMemberIds.includes(m.id))) throw new ContractError("SHARED_UNAVAILABLE");
   if (input.unresolvedDependencies.length || input.plans.length !== 200 || new Set(input.plans.map(p => p.questionId)).size !== 200 || input.plans.some(p => p.blockers.length)) throw new ContractError("SHARED_UNAVAILABLE");
   const bindings = { "Nome 1": members[0].name, "Nome 2": members[1].name };
   const paragraphs = new Map<string, string[]>();
@@ -103,6 +103,6 @@ export function generateRegisteredDraft(input: {
     ] });
     provenance.push({ componentId: "BIBLE-REFERENCES", version: catalog.bible.edition, source: { url: catalog.bible.sourceUrl, sha256: catalog.bible.sourceArchiveSha256 } });
   }
-  const draft = { version: catalog.version, catalogHash: input.catalogHash, engineVersion: "1.4.0-engine.2", sections, provenance };
+  const draft = { version: catalog.version, catalogHash: input.catalogHash, engineVersion: "1.4.0-engine.3", sections, provenance };
   return { ...draft, contentHash: contentHash(draft) };
 }

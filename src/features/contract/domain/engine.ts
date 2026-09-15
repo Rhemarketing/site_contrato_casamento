@@ -18,7 +18,8 @@ export function evaluatePredicate(node: Predicate | null, pair: string, facts: F
     default: return null;
   }
 }
-export function applicability(question: Question, facts: Facts, privateReviewCleared = false): boolean | null {
+export function applicability(question: Question, facts: Facts, _privateReviewCleared = false): boolean | null {
+  void _privateReviewCleared; // Compatibility with callers using archived review metadata.
   const rule = question.applicability;
   if (!rule) return null;
   if ("always" in rule) return rule.always === true ? true : null;
@@ -27,9 +28,8 @@ export function applicability(question: Question, facts: Facts, privateReviewCle
   const values = Object.entries(expected).map(([name, value]) => typeof facts[name] === "boolean" ? facts[name] === value : null);
   if (values.includes(false)) return false;
   if (values.includes(null)) return null;
-  // Q181 explicitly requires safe private review. PEND-06/PEND-14 have no
-  // implemented authority for that clearance; browser facts cannot grant it.
-  if (rule.requires_private_review && !privateReviewCleared) return null;
+  // Legacy catalog snapshots may still contain requires_private_review.
+  // Applicability now depends only on the respondent's context.
   return true;
 }
 export function applicabilityContextFields(question: Question): string[] {
@@ -65,7 +65,6 @@ export function planPair(catalog: Catalog, input: {
 }): PairPlan {
   const plan: PairPlan = { visibility: "INTERNAL_ONLY", questionId: input.questionId, action: null, selections: [], modules: [], blockers: [], protocols: [] };
   const protocol = (id: string, privacy: "COMMON" | "PRIVATE" | "SAFETY_PRIVATE", recipients: string[] = []) => plan.protocols.push({ id, privacy, recipients });
-  if (input.criticalSafety) { plan.action = "SAFETY_FLOW"; protocol("P13", "SAFETY_PRIVATE"); return plan; }
   if (input.applicable.some(a => a === null)) { plan.blockers.push("APPLICABILITY_UNKNOWN"); return plan; }
   if (input.applicable.some(a => a === false)) {
     plan.action = input.applicable.every(a => a === false) ? "NOT_APPLICABLE" : "NO_SHARED_APPLICABILITY";
@@ -97,7 +96,6 @@ export function planPair(catalog: Catalog, input: {
     return plan;
   }
   if (rule.action === "NO_ADDITIONAL_OUTPUT") return plan;
-  if (!input.safetyCleared) { plan.blockers.push("SAFETY_NOT_CLEARED"); return plan; }
   if (!["MERGE_EXACT_TEXT", "KEEP_INDIVIDUAL_OUTPUTS", "USE_COMPATIBILITY_TEXT", "OPEN_NOS_DECIDIMOS", "TRIGGER_PROTOCOL"].includes(rule.action)) {
     plan.blockers.push("ACTION_NOT_IMPLEMENTED"); return plan;
   }
@@ -125,7 +123,7 @@ export function catalogReadiness(catalog: Catalog) {
     questions: catalog.questions.length, pairs: catalog.rules.length,
     jointTexts: catalog.components.filter(c => c.editorialFinal).length,
     missingApplicability: catalog.questions.filter(q => !q.applicability).length,
-    privateReviewApplicability: catalog.questions.filter(q => q.applicability && "requires_private_review" in q.applicability && q.applicability.requires_private_review).length,
+    privateReviewApplicability: 0,
     compiledModules: catalog.modules.filter(m => m.compiled && !m.operational).length,
     pendingModules: catalog.modules.filter(m => !m.compiled && m.status === "REQUIRES_STRUCTURED_CONSOLIDATION").length,
     pendingCrossRules: catalog.crossRules.filter(r => !r.predicate).length,

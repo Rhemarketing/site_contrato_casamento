@@ -16,7 +16,7 @@ export function RegistrationForm({ callbackUrl }: { callbackUrl: string }) {
       <FormError message={state.formError} />
       <Input id="registration-name" name="name" label="Nome completo" autoComplete="name" defaultValue={state.values?.name} error={state.fieldErrors?.name?.[0]} required />
       <Input id="registration-email" name="email" type="email" label="E-mail" autoComplete="email" defaultValue={state.values?.email} error={state.fieldErrors?.email?.[0]} required />
-      <Input id="registration-password" name="password" type="password" label="Senha" hint="Use ao menos 12 caracteres." autoComplete="new-password" error={state.fieldErrors?.password?.[0]} required />
+      <Input id="registration-password" name="password" type="password" label="Senha" hint="Escolha sua senha de acesso." autoComplete="new-password" error={state.fieldErrors?.password?.[0]} required />
       <Input id="registration-confirmation" name="passwordConfirmation" type="password" label="Confirmar senha" autoComplete="new-password" error={state.fieldErrors?.passwordConfirmation?.[0]} required />
       <SubmitButton idle="Criar conta" pending="Criando conta…" />
     </form>

@@ -20,7 +20,6 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
     (question.privateModule && !question.privateAnswer)
     || (question.id === "Q103" && session.neckCompressionReport === null));
   const ready = resolved === session.questions.length && missingComplements.length === 0;
-  const waitingPrivateReview = q.privateReviewRequired && q.contextFields.every(field => session.context[field.id] === true);
   const save = (answer: Letter, privateAnswer?: Letter, neckCompressionReport?: boolean) => start(async () => {
     setMessage("");
     try {
@@ -44,10 +43,10 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
         </>}
     </Card>
     {!session.coupleConnected ? <Alert>Você pode responder e concluir o questionário agora. Suas respostas ficam salvas na sua conta. <Link href="/casal" className="underline">Conectar meu parceiro depois</Link>.</Alert> : null}
-    <Alert>As condições individuais e as exigências de revisão privada são verificadas antes de liberar as perguntas. <Link href="/contrato/privacidade" className="underline">Acessar minha área de privacidade e revisão.</Link></Alert>
+    <Alert>As perguntas são liberadas conforme seu contexto individual. Alertas privados são informativos e não bloqueiam o contrato. <Link href="/contrato/privacidade" className="underline">Acessar minha área de privacidade.</Link></Alert>
     <Card><p className="text-muted">Suas respostas são individuais. O vínculo do casal não permite ao outro cônjuge ler suas respostas.</p>
       <div className="mt-4"><ProgressBar value={Math.round(resolved / session.questions.length * 100)} label={`${resolved} de ${session.questions.length} itens resolvidos`} /></div>
-      <p className="mt-2 text-sm text-muted">{session.answered} respostas registradas · {notApplicable} não aplicáveis · {session.blocked} aguardando contexto ou revisão.</p></Card>
+      <p className="mt-2 text-sm text-muted">{session.answered} respostas registradas · {notApplicable} não aplicáveis · {session.blocked} aguardando contexto.</p></Card>
     <label className="block text-sm font-semibold">Ir para pergunta
       <select className="mt-2 min-h-12 w-full rounded-xl border border-line bg-surface p-3" value={index} disabled={pending} onChange={e => { setIndex(Number(e.target.value)); setMessage(""); }}>
         {session.questions.map((question, i) => <option key={question.id} value={i}>{question.id} — {question.title}</option>)}
@@ -64,7 +63,7 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
           start(async () => { try { const result = await saveContractContextAction({ sessionId: session.id, revision: session.revision, context: { [field.id]: value } }); setMessage(result.message); if (result.ok) router.refresh(); } catch { setMessage("Não foi possível salvar o contexto."); } });
         }}><option value="unknown">Não informado / não sei / prefiro não informar</option><option value="yes">Sim</option><option value="no">Não</option></select>
       </div>)}
-      {q.state === "BLOCKED_BY_POLICY" ? <Alert>{waitingPrivateReview ? "A abordagem deste assunto aguarda revisão privada de segurança. Informar o contexto não libera essa revisão." : "Esta pergunta aguarda a definição do seu contexto ou uma regra de aplicabilidade. Nenhuma resposta será presumida."}</Alert>
+      {q.state === "BLOCKED_BY_POLICY" ? <Alert>Esta pergunta aguarda a definição do seu contexto ou uma regra de aplicabilidade. Nenhuma resposta será presumida.</Alert>
         : q.state === "NOT_APPLICABLE" ? <Alert>Esta pergunta não se aplica ao contexto informado. Esse estado não equivale à alternativa A.</Alert>
         : <><fieldset disabled={closed || pending} className="space-y-3"><legend className="mb-4 text-lg">{q.prompt}</legend>{q.options.map(o => <label key={o.code} className={`flex cursor-pointer gap-3 rounded-xl border p-4 ${q.state === o.code ? "border-brand bg-brand/5" : "border-line"}`}>
           <input type="radio" name={q.id} value={o.code} checked={q.state === o.code} onChange={() => save(o.code)} /><span><strong>{o.code}.</strong> {o.text}</span>

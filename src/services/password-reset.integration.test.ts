@@ -128,13 +128,13 @@ describe("recuperação segura de senha", () => {
     });
     expect(await fixture.service.reset({
       token: rawToken,
-      password: "nova-senha-muito-segura",
-      passwordConfirmation: "nova-senha-muito-segura",
+      password: "abc",
+      passwordConfirmation: "abc",
     })).toBe("SUCCESS");
     const changed = await prisma.user.findUniqueOrThrow({ where: { id: owner.id } });
     const unchanged = await prisma.user.findUniqueOrThrow({ where: { id: outsider.id } });
     expect(changed.passwordHash).toMatch(/^\$argon2id\$/);
-    expect(await verifyPassword("nova-senha-muito-segura", changed.passwordHash!)).toBe(true);
+    expect(await verifyPassword("abc", changed.passwordHash!)).toBe(true);
     expect(unchanged.passwordHash).toBe(outsiderBefore.passwordHash);
     expect(await fixture.service.preview(rawToken)).toBe("USED");
     expect(await fixture.service.preview(otherOwnerToken)).toBe("USED");

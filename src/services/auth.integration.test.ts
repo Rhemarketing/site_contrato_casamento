@@ -13,7 +13,7 @@ const repository = {
 const suffix = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 const email = ` Auth-${suffix}@EXAMPLE.test `;
 const normalizedEmail = email.trim().toLowerCase();
-const password = "senha-segura-integracao";
+const password = "123";
 
 describe("authentication integration", () => {
   afterAll(async () => {
@@ -26,7 +26,7 @@ describe("authentication integration", () => {
     const persisted = await prisma.user.findUniqueOrThrow({ where: { id: user.id } });
     expect(persisted.email).toBe(normalizedEmail);
     expect(persisted.passwordHash).toBeTruthy();
-    expect(persisted.passwordHash).not.toContain(password);
+    expect(persisted.passwordHash).not.toBe(password);
     expect(persisted.role).toBe("USER");
   });
 

@@ -37,7 +37,7 @@ describe("decisões delegadas de aplicabilidade", () => {
       for (const field of fields) expect(catalog.contextDefinitions?.[field]?.help, `${q.id}/${field}`).toBeTruthy();
       expect(applicability(q, {}), q.id).toBeNull();
       const yes = Object.fromEntries(fields.map(f => [f, true]));
-      expect(applicability(q, yes), q.id).toBe(q.id === "Q181" ? null : true);
+      expect(applicability(q, yes), q.id).toBe(true);
       for (const field of fields) {
         expect(applicability(q, { ...yes, [field]: null }), q.id).toBeNull();
         expect(responseState(q, { ...EMPTY_SESSION, context: { ...yes, [field]: false }, answers: { [q.id]: "A" } }), q.id).toBe("NOT_APPLICABLE");
@@ -55,12 +55,12 @@ describe("decisões delegadas de aplicabilidade", () => {
     for (const id of ["Q051", "Q057", "Q060", "Q067", "Q151", "Q153", "Q154"]) expect(applicability(question(id), no)).toBe(true);
     expect(applicability(question("Q110"), no)).toBe(false);
   });
-  it("preserva não desejo de filhos e não deixa um contexto liberar revisão privada", () => {
+  it("preserva não desejo de filhos e libera Q181 pelo contexto sem revisão", () => {
     const context = { FAMILY_EXPANSION_RELEVANT: true, PREGNANCY_POSSIBLE: false, RESPONSABILIDADE_PARENTAL: false };
     expect(responseState(question("Q146"), { ...EMPTY_SESSION, context, answers: { Q146: "C" } })).toBe("C");
     expect(applicability(question("Q069"), context)).toBe(false);
     const asserted = { KNOWN_TRUST_BREACH: true, REBUILDING_CHOSEN: true, Q181_SAFE_APPROACH: true, safety_cleared: true };
-    expect(responseState(question("Q181"), { ...EMPTY_SESSION, context: asserted, answers: { Q181: "A" } })).toBe("BLOCKED_BY_POLICY");
+    expect(responseState(question("Q181"), { ...EMPTY_SESSION, context: asserted, answers: { Q181: "A" } })).toBe("A");
     expect(applicability(question("Q181"), { ...asserted, KNOWN_TRUST_BREACH: false })).toBe(false);
   });
   it("não cria uma combinação quando os contextos privados divergem", () => {
