@@ -26,6 +26,7 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
     } catch { setMessage("A resposta não foi confirmada. Tente novamente."); }
   });
   return <div className="space-y-6">
+    {!session.coupleConnected ? <Alert>Você pode responder e concluir o questionário agora. Suas respostas ficam salvas na sua conta. <Link href="/casal" className="underline">Conectar meu parceiro depois</Link>.</Alert> : null}
     <Alert>As condições individuais e as exigências de revisão privada são verificadas antes de liberar as perguntas. <Link href="/contrato/privacidade" className="underline">Acessar minha área de privacidade e revisão.</Link></Alert>
     <Card><p className="text-muted">Suas respostas são individuais. O vínculo do casal não permite ao outro cônjuge ler suas respostas.</p>
       <div className="mt-4"><ProgressBar value={Math.round(resolved / session.questions.length * 100)} label={`${resolved} de ${session.questions.length} itens resolvidos`} /></div>
@@ -62,7 +63,7 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
     </Card>
     <Card className="space-y-4"><h2 className="text-xl font-semibold">Conclusão e consentimento</h2>{closed ? <>
       <p>Autorizar permite a avaliação das duas sessões para preparar decisões e textos elegíveis. As respostas brutas e privadas continuam restritas.</p>
-      <ContractActionButton action={() => consentContractAction(session.id, session.revision, !session.consented)}>{session.consented ? "Revogar autorização" : "Autorizar avaliação do casal"}</ContractActionButton>
+      {session.coupleConnected ? <ContractActionButton action={() => consentContractAction(session.id, session.revision, !session.consented)}>{session.consented ? "Revogar autorização" : "Autorizar avaliação do casal"}</ContractActionButton> : <p>Suas respostas estão concluídas e salvas. Conecte seu parceiro quando quiser continuar para a avaliação e a montagem do contrato. Depois da conexão, cada pessoa deverá autorizar a avaliação.</p>}
       <p>Corrigir respostas revoga a autorização e invalida propostas e documentos derivados desta sessão. Novas confirmações serão necessárias.</p><ContractActionButton action={() => reopenContractAction(session.id, session.revision)}>Corrigir minhas respostas</ContractActionButton>
     </> : <><p>Concluir encerra a edição desta versão das respostas. A avaliação do casal exige uma autorização separada de cada pessoa.</p>
       <ContractActionButton disabled={pending || resolved !== session.questions.length} action={() => submitContractAction(session.id, session.revision)}>Concluir minhas respostas</ContractActionButton>

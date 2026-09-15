@@ -99,6 +99,7 @@ export async function cancelPendingCoupleAction() {
   try {
     await coupleService.cancelPendingCouple(user.id);
     revalidatePath("/casal");
+    revalidatePath("/contrato", "layout");
   } catch (error) {
     errorMessage = actionError(error);
   }
@@ -123,5 +124,6 @@ export async function acceptCoupleInviteAction(
   }
   revalidatePath("/casal");
   revalidatePath(callbackUrl);
+  revalidatePath("/contrato", "layout");
   redirect("/casal");
 }

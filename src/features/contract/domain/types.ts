@@ -96,6 +96,6 @@ export type OwnQuestionDto = {
 };
 export type OwnSessionDto = {
   id: string; revision: number; status: string; version: string;
-  consented: boolean; questions: OwnQuestionDto[]; context: Facts;
+  coupleConnected: boolean; consented: boolean; questions: OwnQuestionDto[]; context: Facts;
   neckCompressionReport: boolean | null; answered: number; blocked: number;
 };

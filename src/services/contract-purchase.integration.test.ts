@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { randomUUID } from "node:crypto";
+import { randomBytes, randomUUID } from "node:crypto";
 import { afterAll, expect, it, vi } from "vitest";
 import { createTestPrismaClient } from "@/test/create-test-prisma";
 import { ContractPurchaseService } from "./contract-purchase.service";
@@ -7,7 +7,14 @@ import { ContractService } from "./contract.service";
 
 const db = createTestPrismaClient();
 const ids: string[] = [];
-afterAll(async () => { await db.contractPurchase.deleteMany({ where: { userId: { in: ids } } }); await db.user.deleteMany({ where: { id: { in: ids } } }); await db.$disconnect(); vi.unstubAllEnvs(); });
+afterAll(async () => {
+  const members = await db.coupleMember.findMany({ where: { userId: { in: ids } } });
+  const coupleIds = members.map(m => m.coupleId);
+  await db.contractSession.deleteMany({ where: { userId: { in: ids } } });
+  await db.contractWorkspace.deleteMany({ where: { coupleId: { in: coupleIds } } });
+  await db.coupleMember.deleteMany({ where: { userId: { in: ids } } });
+  await db.couple.deleteMany({ where: { id: { in: coupleIds } } });
+  await db.contractPurchase.deleteMany({ where: { userId: { in: ids } } }); await db.user.deleteMany({ where: { id: { in: ids } } }); await db.$disconnect(); vi.unstubAllEnvs(); });
 it("confirma aquisição pessoal, gratuita e idempotente sem liberar outra conta", async () => {
   const a = await db.user.create({ data: { name: "Compra Um", email: `free-${randomUUID()}@teste.local` } });
   const b = await db.user.create({ data: { name: "Compra Dois", email: `free-${randomUUID()}@teste.local` } });
@@ -24,7 +31,9 @@ it("confirma aquisição pessoal, gratuita e idempotente sem liberar outra conta
   await service.acquireFree(a.id);
   await expect(service.requireAccess(a.id)).resolves.toBeUndefined();
   vi.stubEnv("CONTRACT_ENABLED", "true");
+  vi.stubEnv("CONTRACT_DATA_KEY", randomBytes(32).toString("base64"));
   const contracts = new ContractService(db);
   await expect(contracts.start(b.id)).rejects.toThrow("PRODUCT_NOT_ACQUIRED");
-  await expect(contracts.start(a.id)).rejects.toThrow("COUPLE_UNAVAILABLE");
+  await expect(contracts.start(a.id)).resolves.toBeUndefined();
+  expect(await contracts.getOwn(a.id)).toMatchObject({ coupleConnected: false, status: "IN_PROGRESS" });
 });

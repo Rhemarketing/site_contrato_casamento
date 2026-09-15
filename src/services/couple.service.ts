@@ -1,6 +1,7 @@
 import type { PrismaClient } from "@/generated/prisma/client";
 import type { CoupleOverviewDto } from "@/types/couple";
 import { CoupleDomainError } from "./couple.errors";
+import { moveIndividualContractData } from "./contract-connection";
 
 export class CoupleService {
   constructor(private readonly client: PrismaClient) {}
@@ -37,6 +38,7 @@ export class CoupleService {
         throw new CoupleDomainError("COUPLE_CONFIGURATION_ERROR");
       }
       const invite = membership.couple.invites[0];
+      if (!invite) return { state: "NONE" };
       return {
         state: "PENDING",
         role: "CREATOR",
@@ -86,6 +88,12 @@ export class CoupleService {
         where: { coupleId: membership.couple.id, status: "PENDING" },
         data: { status: "CANCELLED", activeInviteKey: null },
       });
+      // Cancelling a pending invitation must not strand the owner's questionnaire.
+      if (await transaction.contractWorkspace.count({ where: { coupleId: membership.couple.id } })) {
+        await transaction.coupleMember.update({ where: { id: membership.id }, data: { activeMembershipKey: null } });
+        const solo = await transaction.couple.create({ data: { status: "PENDING", members: { create: { userId, role: "CREATOR", activeMembershipKey: userId } } }, include: { members: true } });
+        await moveIndividualContractData(transaction, userId, membership.couple.id, solo.id, solo.members[0].id);
+      }
       const deactivated = await transaction.couple.updateMany({
         where: { id: membership.couple.id, status: "PENDING" },
         data: { status: "INACTIVE" },

@@ -10,6 +10,7 @@ import {
 } from "@/lib/couple-invite-token";
 import type { CoupleInvitePreviewDto, CreatedCoupleInviteDto } from "@/types/couple";
 import { CoupleDomainError } from "./couple.errors";
+import { moveIndividualContractData } from "./contract-connection";
 
 type AuthenticatedCoupleUser = { id: string; email: string };
 type CoupleInviteServiceOptions = {
@@ -190,9 +191,11 @@ export class CoupleInviteService {
 
       const currentMembership = await transaction.coupleMember.findUnique({
         where: { activeMembershipKey: user.id },
-        select: { coupleId: true },
+        include: { couple: { include: { members: true } } },
       });
-      if (currentMembership) throw new CoupleDomainError("USER_ALREADY_COUPLED");
+      if (currentMembership && (currentMembership.couple.status !== "PENDING" || currentMembership.role !== "CREATOR" || currentMembership.couple.members.length !== 1)) {
+        throw new CoupleDomainError("USER_ALREADY_COUPLED");
+      }
 
       const claimed = await transaction.coupleInvite.updateMany({
         where: {
@@ -206,7 +209,11 @@ export class CoupleInviteService {
       });
       if (claimed.count !== 1) throw new CoupleDomainError("INVITE_ALREADY_USED");
 
-      await transaction.coupleMember.create({
+      if (currentMembership) {
+        await transaction.coupleMember.update({ where: { id: currentMembership.id }, data: { activeMembershipKey: null } });
+        await transaction.coupleInvite.updateMany({ where: { coupleId: currentMembership.coupleId, status: "PENDING" }, data: { status: "CANCELLED", activeInviteKey: null } });
+      }
+      const partner = await transaction.coupleMember.create({
         data: {
           coupleId: invite.coupleId,
           userId: user.id,
@@ -215,6 +222,14 @@ export class CoupleInviteService {
           joinedAt: now,
         },
       });
+      if (currentMembership) {
+        await moveIndividualContractData(transaction, user.id, currentMembership.coupleId, invite.coupleId, partner.id);
+        await transaction.couple.update({ where: { id: currentMembership.coupleId }, data: { status: "INACTIVE" } });
+      }
+      // Connecting accounts never implies consent to compare their responses.
+      await transaction.contractSession.updateMany({ where: { workspace: { coupleId: invite.coupleId } }, data: { consentedAt: null, revision: { increment: 1 } } });
+      // A reviewer who becomes a spouse may no longer access or clear private reviews.
+      await transaction.contractPrivateReview.updateMany({ where: { workspace: { coupleId: invite.coupleId }, reviewerId: { in: [user.id, invite.createdByUserId] }, revokedAt: null }, data: { status: "REVOKED", revokedAt: now } });
       const activated = await transaction.couple.updateMany({
         where: { id: invite.coupleId, status: "PENDING" },
         data: { status: "ACTIVE" },

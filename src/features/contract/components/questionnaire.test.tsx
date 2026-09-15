@@ -4,10 +4,10 @@ import { ContractQuestionnaire } from "./questionnaire";
 import type { OwnSessionDto } from "../domain/types";
 import { saveContractContextAction } from "@/app/actions/contract.actions";
 vi.mock("next/navigation", () => ({ useRouter: () => ({ refresh: vi.fn() }) }));
-vi.mock("@/app/actions/contract.actions", () => ({ saveContractAnswerAction: vi.fn(), saveContractContextAction: vi.fn(), submitContractAction: vi.fn(), consentContractAction: vi.fn() }));
+vi.mock("@/app/actions/contract.actions", () => ({ saveContractAnswerAction: vi.fn(), saveContractContextAction: vi.fn(), submitContractAction: vi.fn(), consentContractAction: vi.fn(), reopenContractAction: vi.fn() }));
 afterEach(() => { cleanup(); vi.clearAllMocks(); });
 function sessionFixture(): OwnSessionDto {
-  return { id: "test", revision: 0, status: "IN_PROGRESS", version: "1.4.0-applicability.1", consented: false, context: {}, neckCompressionReport: null, answered: 0, blocked: 200,
+  return { id: "test", revision: 0, status: "IN_PROGRESS", version: "1.4.0-applicability.1", coupleConnected: true, consented: false, context: {}, neckCompressionReport: null, answered: 0, blocked: 200,
     questions: Array.from({ length: 200 }, (_, i) => ({ id: `Q${String(i + 1).padStart(3, "0")}`, order: i + 1, title: `Assunto ${i + 1}`, prompt: null, period: "Últimos 90 dias", state: "BLOCKED_BY_POLICY", options: [], contextFields: [], privateModule: null, privateAnswer: null })) };
 }
 it("não exibe enunciado ou alternativas antes de resolver aplicabilidade", () => {
@@ -49,4 +49,15 @@ it("explica revisão privada ainda necessária sem exibir a Q181", () => {
   render(<ContractQuestionnaire session={session} />);
   expect(screen.getByText(/A abordagem deste assunto aguarda revisão privada de segurança/)).toBeInTheDocument();
   expect(screen.queryByRole("radio")).not.toBeInTheDocument();
+});
+
+it("permite concluir individualmente e orienta conectar depois sem autorizar antes", () => {
+  const session = sessionFixture();
+  session.coupleConnected = false;
+  session.status = "SUBMITTED";
+  render(<ContractQuestionnaire session={session} />);
+  expect(screen.getByRole("link", { name: "Conectar meu parceiro depois" })).toHaveAttribute("href", "/casal");
+  expect(screen.queryByRole("button", { name: "Autorizar avaliação do casal" })).not.toBeInTheDocument();
+  expect(screen.getByText(/Suas respostas estão concluídas e salvas/)).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Corrigir minhas respostas" })).toBeEnabled();
 });

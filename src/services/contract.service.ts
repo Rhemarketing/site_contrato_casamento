@@ -30,21 +30,40 @@ function moduleDefinition(catalog: Catalog, id: string) {
   return definition;
 }
 
+function reviewableMembership(couple: { status: string; members: { role: string }[] }) {
+  return (couple.status === "ACTIVE" && couple.members.length === 2)
+    || (couple.status === "PENDING" && couple.members.length === 1 && couple.members[0].role === "CREATOR");
+}
+
 export class ContractService {
   constructor(private readonly client: PrismaClient, private readonly catalog = contractCatalog,
     private readonly checkAccess: (userId: string, client: Tx) => void | Promise<void> = requireContractAccess) {}
 
-  private async context(tx: Tx, userId: string) {
+  private async context(tx: Tx, userId: string, individual = false) {
     await this.checkAccess(userId, tx);
     const member = await tx.coupleMember.findUnique({ where: { activeMembershipKey: userId }, include: { couple: { include: { members: { include: { user: { select: { name: true } } } } } } } });
-    if (!member || member.userId !== userId || member.couple.status !== "ACTIVE") throw new ContractError("COUPLE_UNAVAILABLE");
+    if (!member || member.userId !== userId) throw new ContractError("COUPLE_UNAVAILABLE");
     const members = member.couple.members.sort((a, b) => (a.role === "CREATOR" ? 0 : 1) - (b.role === "CREATOR" ? 0 : 1));
-    if (members.length !== 2 || members.some(m => m.activeMembershipKey !== m.userId) || new Set(members.map(m => m.userId)).size !== 2) throw new ContractError("COUPLE_UNAVAILABLE");
+    const connected = member.couple.status === "ACTIVE" && members.length === 2 && new Set(members.map(m => m.userId)).size === 2;
+    const solo = individual && member.couple.status === "PENDING" && members.length === 1 && member.role === "CREATOR";
+    if ((!connected && !solo) || members.some(m => m.activeMembershipKey !== m.userId)) throw new ContractError("COUPLE_UNAVAILABLE");
     return { member, members };
   }
-  private async transaction<T>(userId: string, operation: (tx: Tx, context: Awaited<ReturnType<ContractService["context"]>>) => Promise<T>) {
+  private async individualTransaction<T>(userId: string, operation: (tx: Tx, context: Awaited<ReturnType<ContractService["context"]>>) => Promise<T>) {
+    return this.transaction(userId, operation, true);
+  }
+  private async transaction<T>(userId: string, operation: (tx: Tx, context: Awaited<ReturnType<ContractService["context"]>>) => Promise<T>, individual = false, initialize = false) {
     for (let retry = 0; retry < 3; retry++) {
-      try { return await this.client.$transaction(async tx => operation(tx, await this.context(tx, userId)), { isolationLevel: "Serializable", timeout: 20000 }); }
+      try { return await this.client.$transaction(async tx => {
+        if (initialize) {
+          await this.checkAccess(userId, tx);
+          if (!await tx.coupleMember.findUnique({ where: { activeMembershipKey: userId } })) {
+            // A pending space has only its owner; it does not connect another account.
+            await tx.couple.create({ data: { status: "PENDING", members: { create: { userId, role: "CREATOR", activeMembershipKey: userId } } } });
+          }
+        }
+        return operation(tx, await this.context(tx, userId, individual));
+      }, { isolationLevel: "Serializable", timeout: 20000 }); }
       catch (error) { if (!(error instanceof Prisma.PrismaClientKnownRequestError) || !["P2034", "P2002"].includes(error.code) || retry === 2) throw error; }
     }
     throw new ContractError("CONFLICT");
@@ -73,10 +92,12 @@ export class ContractService {
       if (existing) return;
       const id = randomUUID();
       await tx.contractSession.create({ data: { id, workspaceId: workspace.id, userId, memberId: member.id, payload: seal(EMPTY_SESSION, `${id}:${userId}`) } });
-    });
+    }, true, true);
   }
   async getOwn(userId: string): Promise<OwnSessionDto | null> {
-    return this.transaction(userId, async (tx, { member }) => {
+    await this.checkAccess(userId, this.client);
+    if (!await this.client.coupleMember.findUnique({ where: { activeMembershipKey: userId } })) return null;
+    return this.individualTransaction(userId, async (tx, { member }) => {
       const session = await tx.contractSession.findFirst({ where: { userId, memberId: member.id, workspace: { coupleId: member.coupleId, edition: { version: this.catalog.version } } }, include: { workspace: { include: { edition: true } } } });
       if (!session) return null;
       if (contentHash(session.workspace.edition.snapshot) !== session.workspace.edition.contentHash) throw new ContractError("CATALOG_INTEGRITY");
@@ -93,13 +114,13 @@ export class ContractService {
           privateReviewRequired: !!(q.applicability && "requires_private_review" in q.applicability && q.applicability.requires_private_review), privateModule,
           privateAnswer: privateModule ? data.privateAnswers[privateModule.id] ?? null : null };
       });
-      return { id: session.id, revision: session.revision, status: session.status, version: catalog.version, consented: !!session.consentedAt, questions, context: data.context,
+      return { id: session.id, revision: session.revision, status: session.status, version: catalog.version, coupleConnected: member.couple.status === "ACTIVE", consented: !!session.consentedAt, questions, context: data.context,
         neckCompressionReport: data.neckCompressionReport, answered: questions.filter(q => ["A", "B", "C"].includes(q.state)).length, blocked: questions.filter(q => q.state === "BLOCKED_BY_POLICY").length };
     });
   }
   async saveAnswer(userId: string, value: unknown) {
     const input = answerSchema.parse(value);
-    return this.transaction(userId, async (tx, { member }) => {
+    return this.individualTransaction(userId, async (tx, { member }) => {
       const { session, catalog } = await this.own(tx, userId, member.coupleId, input.sessionId, input.revision);
       if (session.status !== "IN_PROGRESS") throw new ContractError("SESSION_CLOSED");
       const data = await withPrivateClearance(tx, session);
@@ -117,7 +138,7 @@ export class ContractService {
   }
   async saveContext(userId: string, value: unknown) {
     const input = contextSchema.parse(value);
-    return this.transaction(userId, async (tx, { member }) => {
+    return this.individualTransaction(userId, async (tx, { member }) => {
       const { session, catalog } = await this.own(tx, userId, member.coupleId, input.sessionId, input.revision);
       if (session.status !== "IN_PROGRESS") throw new ContractError("SESSION_CLOSED");
       const allowed = new Set(catalog.questions.flatMap(applicabilityContextFields));
@@ -136,7 +157,7 @@ export class ContractService {
   }
   async submit(userId: string, sessionId: string, revision: number) {
     z.uuid().parse(sessionId); revisionSchema.parse(revision);
-    return this.transaction(userId, async (tx, { member }) => {
+    return this.individualTransaction(userId, async (tx, { member }) => {
       const { session, catalog } = await this.own(tx, userId, member.coupleId, sessionId, revision);
       if (session.status === "SUBMITTED") return;
       const data = await withPrivateClearance(tx, session);
@@ -159,6 +180,7 @@ export class ContractService {
     });
   }
   private async evaluate(tx: Tx, workspace: Awaited<ReturnType<ContractService["workspace"]>>, members: Awaited<ReturnType<ContractService["context"]>>["members"]) {
+    if (members.length !== 2) return null;
     const catalog = workspace.edition.snapshot as unknown as Catalog;
     const sessions = members.map(m => workspace.sessions.find(s => s.userId === m.userId && s.memberId === m.id));
     if (sessions.some(s => !s || s.status !== "SUBMITTED" || !s.consentedAt)) return null;
@@ -207,7 +229,7 @@ export class ContractService {
     revisionSchema.parse(revision);
     const input = ownRecordSchema.parse(value);
     if (input.kind === "EVENT" && (Date.parse(input.at) > Date.now() + 60000 || Date.parse(input.at) < Date.now() - 5 * 366 * 86400000)) throw new ContractError("INVALID_EVENT_DATE");
-    return this.transaction(userId, async (tx, { member }) => {
+    return this.individualTransaction(userId, async (tx, { member }) => {
       const workspace = await this.workspace(tx, member.coupleId, true);
       const session = workspace.sessions.find(s => s.userId === userId);
       if (!session) throw new ContractError("SESSION_UNAVAILABLE");
@@ -228,7 +250,7 @@ export class ContractService {
   }
   async deleteOwnRecord(userId: string, recordId: string, revision: number) {
     z.uuid().parse(recordId); revisionSchema.parse(revision);
-    return this.transaction(userId, async (tx, { member }) => {
+    return this.individualTransaction(userId, async (tx, { member }) => {
       const workspace = await this.workspace(tx, member.coupleId, true);
       const record = await tx.contractRecord.findFirst({ where: { id: recordId, workspaceId: workspace.id, userId, kind: { in: ["EVENT", "PLAN", "EMERGENCY", "TIMING"] } } });
       if (!record || record.revision !== revision) throw new ContractError("CONFLICT");
@@ -236,7 +258,7 @@ export class ContractService {
     });
   }
   async getOperations(userId: string) {
-    return this.transaction(userId, async (tx, { member, members }) => {
+    return this.individualTransaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId);
       const records = await tx.contractRecord.findMany({ where: { workspaceId: workspace.id, userId, kind: { in: ["EVENT", "PLAN", "EMERGENCY", "TIMING"] } }, orderBy: { createdAt: "desc" } });
       const own = records.map(r => ({ id: r.id, revision: r.revision, data: ownRecordSchema.parse(unseal<OwnRecord>(r.payload, `record:${r.id}:${userId}`)) }));
@@ -246,8 +268,8 @@ export class ContractService {
       const ownLimit = data.answers.Q200 === "C" ? 1 : data.answers.Q200 === "B" ? 2 : 3;
       const evaluation = await this.evaluate(tx, workspace, members);
       const canShare = !!evaluation?.catalog.productionReady && evaluation.safety.every(s => s.cleared);
-      const partnerId = members.find(m => m.userId !== userId)!.userId;
-      const partnerRecords = canShare ? await tx.contractRecord.findMany({ where: { workspaceId: workspace.id, userId: partnerId, kind: { in: ["EMERGENCY", "TIMING"] } } }) : [];
+      const partnerId = members.find(m => m.userId !== userId)?.userId;
+      const partnerRecords = canShare && partnerId ? await tx.contractRecord.findMany({ where: { workspaceId: workspace.id, userId: partnerId, kind: { in: ["EMERGENCY", "TIMING"] } } }) : [];
       const partnerData = partnerRecords.map(r => ownRecordSchema.parse(unseal<OwnRecord>(r.payload, `record:${r.id}:${partnerId}`)));
       const emergency = partnerData.find(r => r.kind === "EMERGENCY");
       const sharedEmergency = emergency?.kind === "EMERGENCY" ? Object.entries(emergency.fields).filter(([, field]) => field.shared).map(([id, field]) => ({ label: EMERGENCY_FIELDS[id as keyof typeof EMERGENCY_FIELDS], value: field.value })) : [];
@@ -297,7 +319,7 @@ export class ContractService {
   }
   async reopen(userId: string, sessionId: string, revision: number) {
     z.uuid().parse(sessionId); revisionSchema.parse(revision);
-    return this.transaction(userId, async (tx, { member }) => {
+    return this.individualTransaction(userId, async (tx, { member }) => {
       const { session, workspace } = await this.own(tx, userId, member.coupleId, sessionId, revision);
       await tx.contractSession.update({ where: { id: session.id }, data: { status: "IN_PROGRESS", submittedAt: null, consentedAt: null, revision: { increment: 1 } } });
       await tx.contractRecord.deleteMany({ where: { workspaceId: workspace.id, kind: "JOINT_FACTS" } });
@@ -305,7 +327,7 @@ export class ContractService {
     });
   }
   async privateArea(userId: string) {
-    return this.transaction(userId, async (tx, { member, members }) => {
+    return this.individualTransaction(userId, async (tx, { member, members }) => {
       const workspace = await this.workspace(tx, member.coupleId);
       const session = workspace.sessions.find(s => s.userId === userId);
       if (!session) throw new ContractError("SESSION_UNAVAILABLE");
@@ -321,7 +343,7 @@ export class ContractService {
   }
   async requestPrivateReview(userId: string, reviewerId: string, consent: boolean, q151Requested = false) {
     z.boolean().parse(q151Requested); z.uuid().parse(reviewerId); if (consent !== true) throw new ContractError("REVIEW_CONSENT_REQUIRED");
-    return this.transaction(userId, async (tx, { member, members }) => {
+    return this.individualTransaction(userId, async (tx, { member, members }) => {
       if (!configuredReviewers().includes(reviewerId) || members.some(m => m.userId === reviewerId)) throw new ContractError("REVIEWER_UNAVAILABLE");
       const workspace = await this.workspace(tx, member.coupleId, true);
       const session = workspace.sessions.find(s => s.userId === userId);
@@ -339,7 +361,7 @@ export class ContractService {
   }
   async revokePrivateReview(userId: string, id: string) {
     z.uuid().parse(id);
-    return this.transaction(userId, async (tx, { member }) => {
+    return this.individualTransaction(userId, async (tx, { member }) => {
       const workspace = await this.workspace(tx, member.coupleId, true);
       const review = await tx.contractPrivateReview.findFirst({ where: { id, ownerId: userId, workspaceId: workspace.id } });
       if (!review) throw new ContractError("REVIEW_UNAVAILABLE");
@@ -350,9 +372,9 @@ export class ContractService {
   }
   async assignedReviews(userId: string) {
     if (!configuredReviewers().includes(userId)) throw new ContractError("REVIEWER_UNAVAILABLE");
-    const reviews = await this.client.contractPrivateReview.findMany({ where: { reviewerId: userId, revokedAt: null, status: "REQUESTED", workspace: { couple: { status: "ACTIVE" } } }, include: { owner: { select: { name: true } }, workspace: { include: { edition: true, sessions: true, couple: { include: { members: true } } } } } });
+    const reviews = await this.client.contractPrivateReview.findMany({ where: { reviewerId: userId, revokedAt: null, status: "REQUESTED", workspace: { couple: { status: { in: ["ACTIVE", "PENDING"] } } } }, include: { owner: { select: { name: true } }, workspace: { include: { edition: true, sessions: true, couple: { include: { members: true } } } } } });
     return reviews.flatMap(r => {
-      if (r.workspace.couple.members.length !== 2 || r.workspace.couple.members.some(m => m.userId === userId || m.activeMembershipKey !== m.userId)) return [];
+      if (!reviewableMembership(r.workspace.couple) || r.workspace.couple.members.some(m => m.userId === userId || m.activeMembershipKey !== m.userId)) return [];
       const session = r.workspace.sessions.find(s => s.userId === r.ownerId);
       if (!session || !r.workspace.couple.members.some(m => m.id === session.memberId && m.userId === r.ownerId) || reviewBasis(unseal<SessionData>(session.payload, `${session.id}:${session.userId}`)) !== r.basisHash) return [];
       const payload = unseal<ReviewSnapshot>(r.payload, `review:${r.id}:${r.ownerId}:${userId}`);
@@ -367,7 +389,7 @@ export class ContractService {
     if (!configuredReviewers().includes(userId)) throw new ContractError("REVIEWER_UNAVAILABLE");
     return this.client.$transaction(async tx => {
       const review = await tx.contractPrivateReview.findFirst({ where: { id, reviewerId: userId, revokedAt: null, status: "REQUESTED" }, include: { workspace: { include: { edition: true, sessions: true, couple: { include: { members: true } } } } } });
-      if (!review || review.workspace.couple.status !== "ACTIVE" || review.workspace.couple.members.length !== 2 || review.workspace.couple.members.some(m => m.userId === userId || m.activeMembershipKey !== m.userId)) throw new ContractError("REVIEW_UNAVAILABLE");
+      if (!review || !reviewableMembership(review.workspace.couple) || review.workspace.couple.members.some(m => m.userId === userId || m.activeMembershipKey !== m.userId)) throw new ContractError("REVIEW_UNAVAILABLE");
       await tx.contractWorkspace.update({ where: { id: review.workspaceId }, data: { revision: { increment: 1 } } });
       const session = review.workspace.sessions.find(s => s.userId === review.ownerId);
       if (!session || !review.workspace.couple.members.some(m => m.id === session.memberId && m.userId === review.ownerId)) throw new ContractError("REVIEW_UNAVAILABLE");

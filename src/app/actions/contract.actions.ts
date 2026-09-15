@@ -22,7 +22,7 @@ async function run(operation: (userId: string) => Promise<unknown>): Promise<Con
       SESSION_CLOSED: "Esta sessão já foi concluída.",
       QUESTION_UNAVAILABLE: "Esta pergunta ainda não está disponível para resposta.",
       PREVIEW_UNAVAILABLE: "A prévia está disponível somente para as contas de teste configuradas.",
-      COUPLE_UNAVAILABLE: "Conecte as duas contas do casal para iniciar.",
+      COUPLE_UNAVAILABLE: "Conecte as duas contas do casal para acessar esta etapa conjunta.",
       PRODUCT_NOT_ACQUIRED: "Adquira seu acesso gratuito na página Comprar para continuar.",
       INVALID_DECISION: "Preencha os campos do acordo. Confira datas, valores e responsáveis antes de registrar.",
     };

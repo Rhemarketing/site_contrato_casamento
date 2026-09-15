@@ -21,7 +21,7 @@ export function CoupleOverview({ overview, error }: { overview: CoupleOverviewDt
           <Badge>Convite individual</Badge>
           <h2 className="mt-4 font-serif text-2xl font-semibold text-brand-strong">Conecte seu cônjuge</h2>
           <p className="mt-2 text-muted">
-            Convide seu cônjuge para criar a conta dele(a). Cada pessoa responderá individualmente, e nenhuma resposta privada será compartilhada automaticamente.
+            Convide seu cônjuge para criar a conta dele(a) ou entrar com uma conta existente. Vocês podem responder ao questionário antes de se conectar. As respostas já salvas serão preservadas e nenhuma resposta privada será compartilhada automaticamente.
           </p>
         </div>
         <CoupleInviteForm />
@@ -70,6 +70,7 @@ export function CoupleOverview({ overview, error }: { overview: CoupleOverviewDt
         <div><dt className="text-sm font-semibold">Conectado em</dt><dd className="text-muted">{formatDate(overview.joinedAt)}</dd></div>
       </dl>
       <Alert className="mt-6">O vínculo conecta somente as contas. Nenhuma resposta, nota ou informação privada é compartilhada nesta etapa.</Alert>
+      <Link href="/contrato/questionario" className="mt-6 block font-semibold text-brand underline">Iniciar ou continuar minhas 200 perguntas</Link>
       <Link
         href="/casal/comparacao"
         className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-strong"

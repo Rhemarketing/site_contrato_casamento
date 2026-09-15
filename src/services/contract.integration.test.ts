@@ -56,7 +56,7 @@ describe("sessões individuais do contrato no banco", () => {
     expect(own.questions[0]).toMatchObject({ state: "NOT_ANSWERED" });
     expect(own.questions[0].options).toHaveLength(3);
     expect(await db.contractSession.count({ where: { userId: people.a.id } })).toBe(1);
-    await expect(service.getOwn(outsider)).rejects.toThrow("COUPLE_UNAVAILABLE");
+    await expect(service.getOwn(outsider)).resolves.toBeNull();
     const changed = structuredClone(catalog); changed.questions[0].prompt = "Alteração da mesma edição";
     await expect(new ContractService(db, changed, () => {}).start(people.a.id)).rejects.toThrow("CATALOG_VERSION_IMMUTABLE");
   });

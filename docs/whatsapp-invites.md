@@ -1,5 +1,15 @@
 # Convites pelo WhatsApp
 
+## Questionário antes da conexão
+
+Após adquirir o produto, cada pessoa pode iniciar, salvar, retomar, corrigir e concluir as 200 perguntas aplicáveis sem convite ou parceiro conectado. As regras de contexto, segurança e revisão privada continuam obrigatórias. A autorização da avaliação conjunta fica disponível somente após o aceite do convite.
+
+Internamente, o início cria um espaço PENDING com somente o titular, reaproveitando o modelo existente, sem migração de banco. Esse espaço aparece como não conectado em `/casal`. Criar um convite reutiliza o espaço; aceitar o convite de outra pessoa reúne os espaços por edição em uma transação serializável. IDs das sessões e os conteúdos criptografados são preservados, incluindo contexto, respostas privadas, conclusão, registros individuais e revisões. O histórico de membros e convites permanece registrado. Um vínculo ACTIVE existente não pode ser substituído por um convite.
+
+A conexão invalida revisões de um revisor que se tornou cônjuge e exige consentimentos novos para comparação. Cancelar um vínculo pendente mantém o questionário em um novo espaço individual. Edições diferentes permanecem separadas: respostas não são convertidas nem inventadas entre versões. As etapas NÓS DECIDIMOS e contrato continuam exigindo duas contas conectadas, sessões concluídas, consentimento de ambos e os controles de segurança existentes.
+
+## Envio e aceite
+
 Em `/casal`, o criador informa um celular brasileiro com máscara `(xx) xxxxx-xxxx` e clica em **Convidar parceiro**, com ícone do WhatsApp. O servidor valida o telefone, cria o convite de uso único e devolve a URL oficial `wa.me` com destinatário e mensagem. O navegador abre o WhatsApp, onde o criador confirma o envio. Não há disparo automático, API de mensagens ou envio de e-mail nesse fluxo. Há link de recuperação caso o redirecionamento não abra o aplicativo.
 
 O parceiro abre `/convite/[token]` e encontra o formulário de nome completo, e-mail, senha e confirmação da senha. E-mail é obrigatório por decisão do usuário em 14/09/2026. O cadastro autentica a nova conta e retorna ao convite para aceite explícito. Uma pessoa com conta existente pode entrar com e-mail e senha. Receber um convite não permite acessar uma conta existente sem autenticação.
