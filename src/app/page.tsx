@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { PageContainer } from "@/components/ui/page-container";
 
@@ -27,19 +26,15 @@ export default function HomePage() {
       <section className="overflow-hidden border-b border-line bg-surface">
         <PageContainer className="grid gap-12 py-16 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-28">
           <div>
-            <Badge>Conversas que aproximam</Badge>
-            <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-tight text-brand-strong sm:text-6xl sm:leading-[1.08]">
-              Um compromisso sólido começa com conversas honestas.
+            <h1 className="mx-auto max-w-3xl text-center font-serif text-4xl leading-tight text-brand-strong sm:mx-0 sm:text-left sm:text-6xl sm:leading-[1.08]">
+              Casamento Feliz Começa com Acordo
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-muted sm:text-xl">
-              O Contrato de Casamento cria um espaço acolhedor para vocês entenderem valores, expectativas e planos antes de dar o próximo passo.
+            <p className="mx-auto mt-6 max-w-2xl text-center text-lg text-muted sm:mx-0 sm:text-left sm:text-xl">
+              Identifique os atritos do relacionamento e crie um contrato com regras de convivência que funcionam para os dois.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 font-semibold text-white transition hover:bg-brand-strong" href="/login?callbackUrl=%2Fadmissao%2Fquestionario">
-                Fazer minha Prova de Admissão
-              </Link>
-              <Link className="inline-flex min-h-12 items-center justify-center rounded-full border border-line bg-surface px-6 py-3 font-semibold text-brand transition hover:border-brand" href="/cadastro">
-                Criar uma conta
+              <Link className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-6 py-3 font-semibold text-white transition hover:bg-brand-strong" href="/cadastro?callbackUrl=%2Fadmissao%2Fquestionario">
+                Examinar saúde do casamento
               </Link>
             </div>
           </div>
