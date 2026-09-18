@@ -2,7 +2,7 @@ import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/re
 import { afterEach, expect, it, vi } from "vitest";
 import { ContractQuestionnaire } from "./questionnaire";
 import type { OwnSessionDto } from "../domain/types";
-import { saveContractContextAction } from "@/app/actions/contract.actions";
+import { saveContractAnswerAction, saveContractContextAction } from "@/app/actions/contract.actions";
 vi.mock("next/navigation", () => ({ useRouter: () => ({ refresh: vi.fn() }) }));
 vi.mock("@/app/actions/contract.actions", () => ({ saveContractAnswerAction: vi.fn(), saveContractContextAction: vi.fn(), submitContractAction: vi.fn(), consentContractAction: vi.fn(), reopenContractAction: vi.fn() }));
 afterEach(() => { cleanup(); vi.clearAllMocks(); });
@@ -24,7 +24,7 @@ it("explica o contexto individual e envia só a escolha explícita sem atribuir 
   render(<ContractQuestionnaire session={session} />);
   expect(screen.getByText("Não informe nomes de filhos.")).toBeInTheDocument();
   fireEvent.change(screen.getByRole("combobox", { name: "Você exerce responsabilidade parental?" }), { target: { value: "no" } });
-  await waitFor(() => expect(saveContractContextAction).toHaveBeenCalledWith({ sessionId: "test", revision: 0, context: { RESPONSABILIDADE_PARENTAL: false } }));
+  await waitFor(() => expect(saveContractContextAction).toHaveBeenCalledWith({ sessionId: "test", revision: 0, questionId: "Q001", context: { RESPONSABILIDADE_PARENTAL: false } }));
   expect(screen.queryByRole("radio")).not.toBeInTheDocument();
 });
 it("conta inaplicabilidade no progresso sem chamá-la de resposta e exige todas as respostas aplicáveis", () => {
@@ -41,6 +41,37 @@ it("conta inaplicabilidade no progresso sem chamá-la de resposta e exige todas 
   expect(screen.getByText("200 de 200 itens resolvidos")).toBeInTheDocument();
   expect(screen.getByText(/1 respostas registradas · 199 não aplicáveis/)).toBeInTheDocument();
   expect(screen.getByRole("button", { name: "Concluir minhas respostas" })).toBeEnabled();
+});
+it("avança ao salvar resposta nova e mostra Avançar somente ao voltar para revisar", async () => {
+  const session = sessionFixture();
+  session.questions[0] = { ...session.questions[0], state: "NOT_ANSWERED", prompt: "Escolha", options: [{ code: "A", text: "Resposta A" }] };
+  session.questions[1] = { ...session.questions[1], state: "NOT_ANSWERED", prompt: "Escolha seguinte", options: [{ code: "A", text: "Resposta seguinte" }] };
+  vi.mocked(saveContractAnswerAction).mockResolvedValue({ ok: true, message: "Resposta salva.", data: { questionComplete: true } });
+  const { rerender } = render(<ContractQuestionnaire session={session} />);
+
+  expect(screen.queryByRole("button", { name: /Próxima|Avançar/ })).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole("radio", { name: /Resposta A/ }));
+  await waitFor(() => expect(screen.getByRole("heading", { name: "Assunto 2" })).toBeInTheDocument());
+  expect(screen.queryByRole("button", { name: /Próxima|Avançar/ })).not.toBeInTheDocument();
+
+  session.questions[0].state = "A";
+  session.revision += 1;
+  rerender(<ContractQuestionnaire session={{ ...session }} />);
+  fireEvent.click(screen.getByRole("button", { name: "Anterior" }));
+  expect(screen.getByRole("button", { name: "Avançar" })).toBeEnabled();
+  expect(screen.queryByRole("button", { name: "Próxima" })).not.toBeInTheDocument();
+});
+
+it("permanece na pergunta enquanto um complemento obrigatório ainda está pendente", async () => {
+  const session = sessionFixture();
+  session.questions[0] = { ...session.questions[0], state: "NOT_ANSWERED", prompt: "Escolha", options: [{ code: "A", text: "Resposta com complemento" }] };
+  vi.mocked(saveContractAnswerAction).mockResolvedValue({ ok: true, message: "Resposta salva.", data: { questionComplete: false } });
+  render(<ContractQuestionnaire session={session} />);
+
+  fireEvent.click(screen.getByRole("radio", { name: /Resposta com complemento/ }));
+  await waitFor(() => expect(saveContractAnswerAction).toHaveBeenCalledOnce());
+  expect(screen.getByRole("heading", { name: "Assunto 1" })).toBeInTheDocument();
+  expect(screen.queryByRole("button", { name: /Próxima|Avançar/ })).not.toBeInTheDocument();
 });
 
 it("mostra o complemento pendente da Q103 mesmo com 200 respostas registradas", () => {

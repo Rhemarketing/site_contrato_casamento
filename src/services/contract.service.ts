@@ -18,7 +18,7 @@ import { configuredReviewers, reviewBasis, sessionPayload, withPrivateClearance,
 const letter = z.enum(["A", "B", "C"]);
 const revisionSchema = z.number().int().nonnegative();
 const answerSchema = z.object({ sessionId: z.uuid(), revision: revisionSchema, questionId: z.string().regex(/^Q\d{3}$/), answer: letter, privateAnswer: letter.optional(), neckCompressionReport: z.boolean().optional() }).strict();
-const contextSchema = z.object({ sessionId: z.uuid(), revision: revisionSchema, context: z.record(z.string(), z.boolean().nullable()) }).strict();
+const contextSchema = z.object({ sessionId: z.uuid(), revision: revisionSchema, questionId: z.string().regex(/^Q\d{3}$/).optional(), context: z.record(z.string(), z.boolean().nullable()) }).strict();
 const decisionSchema = z.object({ moduleId: z.string().max(50), revision: revisionSchema, choice: letter, parameters: z.record(z.string().max(100), z.array(z.string().max(8000)).max(20)) }).strict();
 type Tx = Prisma.TransactionClient;
 type Confirmation = { memberId: string; hash: string; at: string };
@@ -34,6 +34,17 @@ function moduleDefinition(catalog: Catalog, id: string) {
 function reviewableMembership(couple: { status: string; members: { role: string }[] }) {
   return (couple.status === "ACTIVE" && couple.members.length === 2)
     || (couple.status === "PENDING" && couple.members.length === 1 && couple.members[0].role === "CREATOR");
+}
+
+function questionComplete(catalog: Catalog, questionId: string, data: SessionData) {
+  const question = catalog.questions.find(item => item.id === questionId);
+  if (!question) return false;
+  const state = responseState(question, data);
+  if (state === "NOT_APPLICABLE") return true;
+  if (!["A", "B", "C"].includes(state)) return false;
+  const privateModule = catalog.privateModules.find(module => module.questionId === questionId && module.trigger.includes(data.answers[questionId]));
+  if (privateModule && !data.privateAnswers[privateModule.id]) return false;
+  return questionId !== "Q103" || data.neckCompressionReport !== null;
 }
 
 export class ContractService {
@@ -135,6 +146,7 @@ export class ContractService {
       if (privateModule && input.privateAnswer) data.privateAnswers[privateModule.id] = input.privateAnswer;
       if (question.id === "Q103") data.neckCompressionReport = input.neckCompressionReport ?? null;
       await tx.contractSession.update({ where: { id: session.id }, data: { payload: seal(sessionPayload(data), `${session.id}:${userId}`), revision: { increment: 1 } } });
+      return { questionComplete: questionComplete(catalog, question.id, data) };
     });
   }
   async saveContext(userId: string, value: unknown) {
@@ -154,6 +166,7 @@ export class ContractService {
         if (q.id === "Q103") data.neckCompressionReport = null;
       }
       await tx.contractSession.update({ where: { id: session.id }, data: { payload: seal(sessionPayload(data), `${session.id}:${userId}`), revision: { increment: 1 } } });
+      return { questionComplete: input.questionId ? questionComplete(catalog, input.questionId, data) : false };
     });
   }
   async submit(userId: string, sessionId: string, revision: number) {

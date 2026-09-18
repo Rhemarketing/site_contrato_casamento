@@ -8,11 +8,14 @@ import type { Letter, OwnSessionDto } from "../domain/types";
 import { ContractActionButton } from "./action-button";
 
 export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
-  const [index, setIndex] = useState(() => Math.max(0, session.questions.findIndex(q => q.state === "NOT_ANSWERED")));
+  const initialIndex = Math.max(0, session.questions.findIndex(q => q.state === "NOT_ANSWERED"));
+  const [index, setIndex] = useState(initialIndex);
+  const [furthestIndex, setFurthestIndex] = useState(initialIndex);
   const [pending, start] = useTransition();
   const [message, setMessage] = useState("");
   const router = useRouter();
   const q = session.questions[index];
+  const reviewingPreviousQuestion = index < furthestIndex;
   const closed = session.status === "SUBMITTED";
   const notApplicable = session.questions.filter(question => question.state === "NOT_APPLICABLE").length;
   const resolved = session.answered + notApplicable;
@@ -20,12 +23,27 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
     (question.privateModule && !question.privateAnswer)
     || (question.id === "Q103" && session.neckCompressionReport === null));
   const ready = resolved === session.questions.length && missingComplements.length === 0;
+  const questionComplete = (question: OwnSessionDto["questions"][number]) => {
+    if (question.state === "NOT_APPLICABLE") return true;
+    if (!["A", "B", "C"].includes(question.state)) return false;
+    if (question.privateModule && !question.privateAnswer) return false;
+    return question.id !== "Q103" || session.neckCompressionReport !== null;
+  };
+  const goTo = (next: number) => {
+    const bounded = Math.min(Math.max(next, 0), session.questions.length - 1);
+    setIndex(bounded);
+    setFurthestIndex(current => Math.max(current, bounded));
+    setMessage("");
+  };
   const save = (answer: Letter, privateAnswer?: Letter, neckCompressionReport?: boolean) => start(async () => {
     setMessage("");
     try {
       const result = await saveContractAnswerAction({ sessionId: session.id, revision: session.revision, questionId: q.id, answer, privateAnswer, neckCompressionReport });
       setMessage(result.ok ? "Resposta salva." : result.message);
-      if (result.ok) router.refresh();
+      if (result.ok) {
+        if (result.data?.questionComplete && !reviewingPreviousQuestion && index < session.questions.length - 1) goTo(index + 1);
+        router.refresh();
+      }
     } catch { setMessage("A resposta não foi confirmada. Tente novamente."); }
   });
   return <div className="space-y-6">
@@ -39,7 +57,7 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
         : <><p>Conecte as contas para avançar à avaliação do casal.</p><Link className="text-brand underline" href="/casal">Conectar meu parceiro</Link></>
         : ready ? <><p>Todos os itens estão resolvidos. Agora conclua suas respostas e, em seguida, autorize a avaliação do casal.</p><a className="text-brand underline" href="#conclusao">Ir para Concluir minhas respostas</a></>
         : <><p>Resolva as perguntas pendentes e os complementos privados antes de concluir.</p>
-          {missingComplements.length ? <div className="space-y-2"><p>Complementos privados pendentes:</p>{missingComplements.map(question => <button key={question.id} type="button" className="mr-3 text-brand underline" onClick={() => { setIndex(session.questions.findIndex(item => item.id === question.id)); setMessage(""); }}>{question.id} — preencher complemento</button>)}</div> : null}
+          {missingComplements.length ? <div className="space-y-2"><p>Complementos privados pendentes:</p>{missingComplements.map(question => <button key={question.id} type="button" className="mr-3 text-brand underline" onClick={() => goTo(session.questions.findIndex(item => item.id === question.id))}>{question.id} — preencher complemento</button>)}</div> : null}
         </>}
     </Card>
     {!session.coupleConnected ? <Alert>Você pode responder e concluir o questionário agora. Suas respostas ficam salvas na sua conta. <Link href="/casal" className="underline">Conectar meu parceiro depois</Link>.</Alert> : null}
@@ -48,19 +66,19 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
       <div className="mt-4"><ProgressBar value={Math.round(resolved / session.questions.length * 100)} label={`${resolved} de ${session.questions.length} itens resolvidos`} /></div>
       <p className="mt-2 text-sm text-muted">{session.answered} respostas registradas · {notApplicable} não aplicáveis · {session.blocked} aguardando contexto.</p></Card>
     <label className="block text-sm font-semibold">Ir para pergunta
-      <select className="mt-2 min-h-12 w-full rounded-xl border border-line bg-surface p-3" value={index} disabled={pending} onChange={e => { setIndex(Number(e.target.value)); setMessage(""); }}>
+      <select className="mt-2 min-h-12 w-full rounded-xl border border-line bg-surface p-3" value={index} disabled={pending} onChange={e => goTo(Number(e.target.value))}>
         {session.questions.map((question, i) => <option key={question.id} value={i}>{question.id} — {question.title}</option>)}
       </select>
     </label>
     <Card className="space-y-5">
       <div className="flex justify-between gap-3"><Badge>{q.id}</Badge><span className="text-sm text-muted">{q.period}</span></div>
       <h2 className="text-xl font-semibold text-brand-strong">{q.title}</h2>
-      {q.relatedQuestions?.length ? <details><summary className="cursor-pointer text-sm text-brand">Consultar assuntos relacionados na minha sessão</summary><p className="mt-2 text-sm text-muted">Referências do Método para sua reflexão individual; não representam conclusão sobre o casal.</p><div className="mt-2 flex flex-wrap gap-3">{q.relatedQuestions.map(related => <button key={related.id} type="button" className="text-sm underline" onClick={() => { setIndex(session.questions.findIndex(item => item.id === related.id)); setMessage(""); }}>{related.id} — {related.title}</button>)}</div></details> : null}
+      {q.relatedQuestions?.length ? <details><summary className="cursor-pointer text-sm text-brand">Consultar assuntos relacionados na minha sessão</summary><p className="mt-2 text-sm text-muted">Referências do Método para sua reflexão individual; não representam conclusão sobre o casal.</p><div className="mt-2 flex flex-wrap gap-3">{q.relatedQuestions.map(related => <button key={related.id} type="button" className="text-sm underline" onClick={() => goTo(session.questions.findIndex(item => item.id === related.id))}>{related.id} — {related.title}</button>)}</div></details> : null}
       {q.contextFields.map(field => <div key={field.id}><label className="block" htmlFor={`context-${field.id}`}>{field.label}</label>
         <p id={`help-${field.id}`} className="mt-1 text-sm text-muted">{field.help}</p>
         <select id={`context-${field.id}`} aria-describedby={`help-${field.id}`} className="mt-2 min-h-12 w-full rounded-xl border border-line p-3" disabled={closed || pending} value={session.context[field.id] === true ? "yes" : session.context[field.id] === false ? "no" : "unknown"} onChange={e => {
           const value = e.target.value === "unknown" ? null : e.target.value === "yes";
-          start(async () => { try { const result = await saveContractContextAction({ sessionId: session.id, revision: session.revision, context: { [field.id]: value } }); setMessage(result.message); if (result.ok) router.refresh(); } catch { setMessage("Não foi possível salvar o contexto."); } });
+          start(async () => { try { const result = await saveContractContextAction({ sessionId: session.id, revision: session.revision, questionId: q.id, context: { [field.id]: value } }); setMessage(result.message); if (result.ok) { if (result.data?.questionComplete && !reviewingPreviousQuestion && index < session.questions.length - 1) goTo(index + 1); router.refresh(); } } catch { setMessage("Não foi possível salvar o contexto."); } });
         }}><option value="unknown">Não informado / não sei / prefiro não informar</option><option value="yes">Sim</option><option value="no">Não</option></select>
       </div>)}
       {q.state === "BLOCKED_BY_POLICY" ? <Alert>Esta pergunta aguarda a definição do seu contexto ou uma regra de aplicabilidade. Nenhuma resposta será presumida.</Alert>
@@ -75,7 +93,7 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
           {q.privateModule ? <fieldset disabled={closed || pending} className="space-y-3 rounded-xl bg-brand/5 p-4"><legend className="font-semibold">Complemento privado</legend><p>{q.privateModule.prompt}</p>{q.privateModule.options.map(o => <label key={o.code} className="flex gap-3 rounded-xl border border-line bg-surface p-3"><input type="radio" name={q.privateModule!.id} checked={q.privateAnswer === o.code} onChange={() => save(q.state as Letter, o.code)} />{o.text}</label>)}</fieldset> : null}
         </>}
       <p role="status" className="text-sm text-muted">{pending ? "Salvando…" : message}</p>
-      <div className="flex justify-between"><Button variant="secondary" disabled={pending || index === 0} onClick={() => { setIndex(index - 1); setMessage(""); }}>Anterior</Button><Button variant="secondary" disabled={pending || index === 199} onClick={() => { setIndex(index + 1); setMessage(""); }}>Próxima</Button></div>
+      <div className="flex justify-between"><Button variant="secondary" disabled={pending || index === 0} onClick={() => goTo(index - 1)}>Anterior</Button>{reviewingPreviousQuestion && index < session.questions.length - 1 && questionComplete(q) ? <Button variant="secondary" disabled={pending} onClick={() => goTo(index + 1)}>Avançar</Button> : <span />}</div>
     </Card>
     <Card className="space-y-4"><h2 id="conclusao" className="text-xl font-semibold">Conclusão e consentimento</h2>{closed ? <>
       <p>Autorizar permite a avaliação das duas sessões para preparar decisões e textos elegíveis. As respostas brutas e privadas continuam restritas.</p>

@@ -17,6 +17,7 @@ type SaveState = "idle" | "saving" | "saved" | "error";
 
 export function QuestionnaireRunner({ attemptId, questions, initialAnswers, initialQuestionIndex }: QuestionnaireRunnerProps) {
   const [questionIndex, setQuestionIndex] = useState(initialQuestionIndex);
+  const [furthestQuestionIndex, setFurthestQuestionIndex] = useState(initialQuestionIndex);
   const [answers, setAnswers] = useState(() => new Map(initialAnswers.map((answer) => [answer.questionId, answer.optionId])));
   const [selectedOptionId, setSelectedOptionId] = useState(() => answers.get(questions[initialQuestionIndex]?.id) ?? "");
   const [saveState, setSaveState] = useState<SaveState>("idle");
@@ -28,9 +29,11 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
   if (!question) return <Alert variant="error">O questionário não possui perguntas disponíveis.</Alert>;
 
   const persisted = canContinueQuestion(question.id, answers.keys(), saveState === "saving");
+  const reviewingPreviousQuestion = questionIndex < furthestQuestionIndex;
   const goTo = (index: number) => {
     const next = Math.min(Math.max(index, 0), questions.length - 1);
     setQuestionIndex(next);
+    setFurthestQuestionIndex((current) => Math.max(current, next));
     setSelectedOptionId(answers.get(questions[next].id) ?? "");
     setSaveState("idle");
     setMessage("");
@@ -51,8 +54,12 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
       return;
     }
     setAnswers((current) => new Map(current).set(question.id, optionId));
-    setSaveState("saved");
-    setMessage("Resposta salva");
+    if (!reviewingPreviousQuestion && questionIndex < questions.length - 1) {
+      goTo(questionIndex + 1);
+    } else {
+      setSaveState("saved");
+      setMessage("Resposta salva");
+    }
   };
 
   const complete = () => {
@@ -111,9 +118,7 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
         {questionIndex > 0 ? <Button variant="secondary" onClick={() => goTo(questionIndex - 1)} disabled={saveState === "saving" || isCompleting}>Voltar</Button> : <span />}
         {questionIndex === questions.length - 1 ? (
           <Button onClick={complete} disabled={!persisted || isCompleting}>{isCompleting ? "Concluindo..." : "Concluir respostas"}</Button>
-        ) : (
-          <Button onClick={() => goTo(questionIndex + 1)} disabled={!persisted}>Continuar</Button>
-        )}
+        ) : reviewingPreviousQuestion ? <Button onClick={() => goTo(questionIndex + 1)} disabled={!persisted}>Avançar</Button> : <span />}
       </div>
     </div>
   );

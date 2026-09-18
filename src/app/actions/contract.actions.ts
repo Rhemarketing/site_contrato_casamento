@@ -7,13 +7,13 @@ import { ContractService } from "@/services/contract.service";
 import { ContractError } from "@/features/contract/domain/engine";
 
 const service = new ContractService(db);
-export type ContractActionResult = { ok: boolean; message: string };
-async function run(operation: (userId: string) => Promise<unknown>): Promise<ContractActionResult> {
+export type ContractActionResult<T = unknown> = { ok: boolean; message: string; data?: T };
+async function run<T>(operation: (userId: string) => Promise<T>): Promise<ContractActionResult<T>> {
   const user = await requireUser("/contrato");
   try {
-    await operation(user.id);
+    const data = await operation(user.id);
     revalidatePath("/contrato", "layout");
-    return { ok: true, message: "Alteração registrada." };
+    return { ok: true, message: "Alteração registrada.", data };
   } catch (error) {
     const code = error instanceof ContractError ? error.code : "";
     const messages: Record<string, string> = {

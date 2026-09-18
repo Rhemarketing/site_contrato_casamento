@@ -61,7 +61,7 @@ describe("estado da Prova de Admissão", () => {
     ]);
   });
 
-  it("habilita Continuar apenas após persistência e fora do autosave", () => {
+  it("identifica quando uma resposta já foi persistida e o salvamento terminou", () => {
     expect(canContinueQuestion("P01", ["P01"], false)).toBe(true);
     expect(canContinueQuestion("P01", [], false)).toBe(false);
     expect(canContinueQuestion("P01", ["P01"], true)).toBe(false);
