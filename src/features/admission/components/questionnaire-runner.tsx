@@ -13,7 +13,9 @@ interface QuestionnaireRunnerProps {
   initialQuestionIndex: number;
 }
 
-type SaveState = "idle" | "saving" | "saved" | "error";
+type SaveState = "idle" | "saving" | "advancing" | "saved" | "error";
+
+const AUTO_ADVANCE_DELAY_MS = 1_000;
 
 export function QuestionnaireRunner({ attemptId, questions, initialAnswers, initialQuestionIndex }: QuestionnaireRunnerProps) {
   const [questionIndex, setQuestionIndex] = useState(initialQuestionIndex);
@@ -55,10 +57,14 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
     }
     setAnswers((current) => new Map(current).set(question.id, optionId));
     if (!reviewingPreviousQuestion && questionIndex < questions.length - 1) {
+      setSaveState("advancing");
+      setMessage("Salvo");
+      await new Promise(resolve => setTimeout(resolve, AUTO_ADVANCE_DELAY_MS));
+      if (sequence !== saveSequence.current) return;
       goTo(questionIndex + 1);
     } else {
       setSaveState("saved");
-      setMessage("Resposta salva");
+      setMessage("Salvo");
     }
   };
 
@@ -99,9 +105,34 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
           {question.options.map((option) => {
             const selected = selectedOptionId === option.id;
             return (
-              <label key={option.id} className={`flex min-h-14 cursor-pointer items-start gap-3 rounded-xl border px-4 py-3 transition focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2 ${selected ? "border-brand bg-brand/5" : "border-line bg-white hover:border-brand/50"}`}>
-                <input type="radio" name={`answer-${question.id}`} value={option.id} checked={selected} onChange={() => void selectOption(option.id)} disabled={saveState === "saving" || isCompleting} className="mt-1 h-5 w-5 shrink-0 accent-[var(--color-brand)]" />
-                <span className="flex gap-2 text-brand-strong"><strong aria-hidden="true">{option.letter}.</strong><span>{option.text}</span></span>
+              <label
+                key={option.id}
+                className={`group flex min-h-14 cursor-pointer items-center gap-3.5 rounded-xl border p-4 transition-all focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2 ${
+                  selected
+                    ? "border-[#1e3a5f] bg-[#1e3a5f] text-white shadow-sm"
+                    : "border-line bg-white text-brand-strong hover:border-[#1e3a5f]/40 hover:bg-[#1e3a5f]/[0.02]"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name={`answer-${question.id}`}
+                  value={option.id}
+                  checked={selected}
+                  onChange={() => void selectOption(option.id)}
+                  disabled={["saving", "advancing"].includes(saveState) || isCompleting}
+                  className="sr-only"
+                />
+                <span
+                  aria-hidden="true"
+                  className={`flex size-9 shrink-0 items-center justify-center rounded-lg border font-bold text-sm transition-colors ${
+                    selected
+                      ? "border-white bg-white text-[#1e3a5f]"
+                      : "border-line bg-background text-brand-strong group-hover:border-[#1e3a5f]/40"
+                  }`}
+                >
+                  {option.letter}
+                </span>
+                <span className="text-base leading-snug">{option.text}</span>
                 {selected ? <span className="sr-only">Alternativa selecionada</span> : null}
               </label>
             );
@@ -109,13 +140,13 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
         </fieldset>
         <div className="mt-4 min-h-6 text-sm" aria-live="polite" aria-atomic="true">
           {saveState === "saving" ? <span className="text-muted">Salvando...</span> : null}
-          {saveState === "saved" ? <span className="text-emerald-700">{message}</span> : null}
+          {["saved", "advancing"].includes(saveState) ? <span className="text-emerald-700">{message}</span> : null}
           {saveState === "error" ? <span role="alert" className="text-red-700">{message || "Não foi possível salvar sua resposta. Tente novamente."}</span> : null}
         </div>
       </Card>
 
       <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
-        {questionIndex > 0 ? <Button variant="secondary" onClick={() => goTo(questionIndex - 1)} disabled={saveState === "saving" || isCompleting}>Voltar</Button> : <span />}
+        {questionIndex > 0 ? <Button variant="secondary" onClick={() => goTo(questionIndex - 1)} disabled={["saving", "advancing"].includes(saveState) || isCompleting}>Voltar</Button> : <span />}
         {questionIndex === questions.length - 1 ? (
           <Button onClick={complete} disabled={!persisted || isCompleting}>{isCompleting ? "Concluindo..." : "Concluir respostas"}</Button>
         ) : reviewingPreviousQuestion ? <Button onClick={() => goTo(questionIndex + 1)} disabled={!persisted}>Avançar</Button> : <span />}

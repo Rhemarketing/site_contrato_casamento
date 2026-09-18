@@ -7,12 +7,15 @@ import { saveContractAnswerAction, saveContractContextAction, submitContractActi
 import type { Letter, OwnSessionDto } from "../domain/types";
 import { ContractActionButton } from "./action-button";
 
+const AUTO_ADVANCE_DELAY_MS = 1_000;
+
 export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
   const initialIndex = Math.max(0, session.questions.findIndex(q => q.state === "NOT_ANSWERED"));
   const [index, setIndex] = useState(initialIndex);
   const [furthestIndex, setFurthestIndex] = useState(initialIndex);
   const [pending, start] = useTransition();
   const [message, setMessage] = useState("");
+  const [waitingToAdvance, setWaitingToAdvance] = useState(false);
   const router = useRouter();
   const q = session.questions[index];
   const reviewingPreviousQuestion = index < furthestIndex;
@@ -39,10 +42,15 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
     setMessage("");
     try {
       const result = await saveContractAnswerAction({ sessionId: session.id, revision: session.revision, questionId: q.id, answer, privateAnswer, neckCompressionReport });
-      setMessage(result.ok ? "Resposta salva." : result.message);
+      setMessage(result.ok ? "Salvo" : result.message);
       if (result.ok) {
-        if (result.data?.questionComplete && !reviewingPreviousQuestion && index < session.questions.length - 1) goTo(index + 1);
         router.refresh();
+        if (result.data?.questionComplete && !reviewingPreviousQuestion && index < session.questions.length - 1) {
+          setWaitingToAdvance(true);
+          await new Promise(resolve => setTimeout(resolve, AUTO_ADVANCE_DELAY_MS));
+          goTo(index + 1);
+          setWaitingToAdvance(false);
+        }
       }
     } catch { setMessage("A resposta não foi confirmada. Tente novamente."); }
   });
@@ -78,21 +86,82 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
         <p id={`help-${field.id}`} className="mt-1 text-sm text-muted">{field.help}</p>
         <select id={`context-${field.id}`} aria-describedby={`help-${field.id}`} className="mt-2 min-h-12 w-full rounded-xl border border-line p-3" disabled={closed || pending} value={session.context[field.id] === true ? "yes" : session.context[field.id] === false ? "no" : "unknown"} onChange={e => {
           const value = e.target.value === "unknown" ? null : e.target.value === "yes";
-          start(async () => { try { const result = await saveContractContextAction({ sessionId: session.id, revision: session.revision, questionId: q.id, context: { [field.id]: value } }); setMessage(result.message); if (result.ok) { if (result.data?.questionComplete && !reviewingPreviousQuestion && index < session.questions.length - 1) goTo(index + 1); router.refresh(); } } catch { setMessage("Não foi possível salvar o contexto."); } });
+          start(async () => { try { const result = await saveContractContextAction({ sessionId: session.id, revision: session.revision, questionId: q.id, context: { [field.id]: value } }); setMessage(result.message); if (result.ok) { router.refresh(); if (result.data?.questionComplete && !reviewingPreviousQuestion && index < session.questions.length - 1) { setWaitingToAdvance(true); await new Promise(resolve => setTimeout(resolve, AUTO_ADVANCE_DELAY_MS)); goTo(index + 1); setWaitingToAdvance(false); } } } catch { setMessage("Não foi possível salvar o contexto."); } });
         }}><option value="unknown">Não informado / não sei / prefiro não informar</option><option value="yes">Sim</option><option value="no">Não</option></select>
       </div>)}
       {q.state === "BLOCKED_BY_POLICY" ? <Alert>Esta pergunta aguarda a definição do seu contexto ou uma regra de aplicabilidade. Nenhuma resposta será presumida.</Alert>
         : q.state === "NOT_APPLICABLE" ? <Alert>Esta pergunta não se aplica ao contexto informado. Esse estado não equivale à alternativa A.</Alert>
-        : <><fieldset disabled={closed || pending} className="space-y-3"><legend className="mb-4 text-lg">{q.prompt}</legend>{q.options.map(o => <label key={o.code} className={`flex cursor-pointer gap-3 rounded-xl border p-4 ${q.state === o.code ? "border-brand bg-brand/5" : "border-line"}`}>
-          <input type="radio" name={q.id} value={o.code} checked={q.state === o.code} onChange={() => save(o.code)} /><span><strong>{o.code}.</strong> {o.text}</span>
-        </label>)}</fieldset>
+        : <><fieldset disabled={closed || pending} className="space-y-3"><legend className="mb-4 text-lg">{q.prompt}</legend>{q.options.map(o => {
+          const selected = q.state === o.code;
+          return (
+            <label
+              key={o.code}
+              className={`group flex min-h-14 cursor-pointer items-center gap-3.5 rounded-xl border p-4 transition-all focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2 ${
+                selected
+                  ? "border-[#1e3a5f] bg-[#1e3a5f] text-white shadow-sm"
+                  : "border-line bg-white text-brand-strong hover:border-[#1e3a5f]/40 hover:bg-[#1e3a5f]/[0.02]"
+              }`}
+            >
+              <input
+                type="radio"
+                name={q.id}
+                value={o.code}
+                checked={selected}
+                onChange={() => save(o.code)}
+                className="sr-only"
+              />
+              <span
+                aria-hidden="true"
+                className={`flex size-9 shrink-0 items-center justify-center rounded-lg border font-bold text-sm transition-colors ${
+                  selected
+                    ? "border-white bg-white text-[#1e3a5f]"
+                    : "border-line bg-background text-brand-strong group-hover:border-[#1e3a5f]/40"
+                }`}
+              >
+                {o.code}
+              </span>
+              <span className="text-base leading-snug">{o.text}</span>
+            </label>
+          );
+        })}</fieldset>
           {q.id === "Q103" && ["A", "B", "C"].includes(q.state) ? <label className="block">Houve estrangulamento, sufocamento intencional ou compressão deliberada do pescoço, mesmo uma vez?
             <select className="mt-2 min-h-12 w-full rounded-xl border border-line p-3" disabled={closed || pending} value={session.neckCompressionReport === null ? "unknown" : session.neckCompressionReport ? "yes" : "no"} onChange={e => save(q.state as Letter, undefined, e.target.value === "yes")}>
               <option value="unknown" disabled>Selecione</option><option value="yes">Sim</option><option value="no">Não</option>
             </select></label> : null}
-          {q.privateModule ? <fieldset disabled={closed || pending} className="space-y-3 rounded-xl bg-brand/5 p-4"><legend className="font-semibold">Complemento privado</legend><p>{q.privateModule.prompt}</p>{q.privateModule.options.map(o => <label key={o.code} className="flex gap-3 rounded-xl border border-line bg-surface p-3"><input type="radio" name={q.privateModule!.id} checked={q.privateAnswer === o.code} onChange={() => save(q.state as Letter, o.code)} />{o.text}</label>)}</fieldset> : null}
+          {q.privateModule ? <fieldset disabled={closed || pending} className="space-y-3 rounded-xl bg-brand/5 p-4"><legend className="font-semibold">Complemento privado</legend><p>{q.privateModule.prompt}</p>{q.privateModule.options.map(o => {
+            const selected = q.privateAnswer === o.code;
+            return (
+              <label
+                key={o.code}
+                className={`group flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border p-3 transition-all ${
+                  selected
+                    ? "border-[#1e3a5f] bg-[#1e3a5f] text-white shadow-sm"
+                    : "border-line bg-surface text-brand-strong hover:border-[#1e3a5f]/40"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name={q.privateModule!.id}
+                  checked={selected}
+                  onChange={() => save(q.state as Letter, o.code)}
+                  className="sr-only"
+                />
+                <span
+                  aria-hidden="true"
+                  className={`flex size-8 shrink-0 items-center justify-center rounded-lg border font-bold text-xs transition-colors ${
+                    selected
+                      ? "border-white bg-white text-[#1e3a5f]"
+                      : "border-line bg-background text-brand-strong"
+                  }`}
+                >
+                  {o.code}
+                </span>
+                <span className="text-sm">{o.text}</span>
+              </label>
+            );
+          })}</fieldset> : null}
         </>}
-      <p role="status" className="text-sm text-muted">{pending ? "Salvando…" : message}</p>
+      <p role="status" className="text-sm text-muted">{waitingToAdvance ? "Salvo" : pending ? "Salvando…" : message}</p>
       <div className="flex justify-between"><Button variant="secondary" disabled={pending || index === 0} onClick={() => goTo(index - 1)}>Anterior</Button>{reviewingPreviousQuestion && index < session.questions.length - 1 && questionComplete(q) ? <Button variant="secondary" disabled={pending} onClick={() => goTo(index + 1)}>Avançar</Button> : <span />}</div>
     </Card>
     <Card className="space-y-4"><h2 id="conclusao" className="text-xl font-semibold">Conclusão e consentimento</h2>{closed ? <>

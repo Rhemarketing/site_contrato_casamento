@@ -28,7 +28,9 @@ it("avança após salvar uma resposta nova e mostra Avançar somente ao voltar p
 
   expect(screen.queryByRole("button", { name: /Continuar|Avançar/ })).not.toBeInTheDocument();
   fireEvent.click(screen.getByRole("radio", { name: /Resposta 1/ }));
-  await waitFor(() => expect(screen.getByRole("heading", { name: "Pergunta 2" })).toBeInTheDocument());
+  await waitFor(() => expect(screen.getByText("Salvo")).toBeInTheDocument());
+  expect(screen.getByRole("heading", { name: "Pergunta 1" })).toBeInTheDocument();
+  await waitFor(() => expect(screen.getByRole("heading", { name: "Pergunta 2" })).toBeInTheDocument(), { timeout: 2_000 });
   expect(saveAdmissionAnswerAction).toHaveBeenCalledWith({ attemptId: "attempt-1", questionId: "question-1", optionId: "option-1" });
   expect(screen.queryByRole("button", { name: /Continuar|Avançar/ })).not.toBeInTheDocument();
 
