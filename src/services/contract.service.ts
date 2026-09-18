@@ -47,6 +47,10 @@ function questionComplete(catalog: Catalog, questionId: string, data: SessionDat
   return questionId !== "Q103" || data.neckCompressionReport !== null;
 }
 
+function questionnaireComplete(catalog: Catalog, data: SessionData) {
+  return catalog.questions.every(question => questionComplete(catalog, question.id, data));
+}
+
 export class ContractService {
   constructor(private readonly client: PrismaClient, private readonly catalog = contractCatalog,
     private readonly checkAccess: (userId: string, client: Tx) => void | Promise<void> = requireContractAccess) {}
@@ -146,7 +150,7 @@ export class ContractService {
       if (privateModule && input.privateAnswer) data.privateAnswers[privateModule.id] = input.privateAnswer;
       if (question.id === "Q103") data.neckCompressionReport = input.neckCompressionReport ?? null;
       await tx.contractSession.update({ where: { id: session.id }, data: { payload: seal(sessionPayload(data), `${session.id}:${userId}`), revision: { increment: 1 } } });
-      return { questionComplete: questionComplete(catalog, question.id, data) };
+      return { questionComplete: questionComplete(catalog, question.id, data), questionnaireComplete: questionnaireComplete(catalog, data), revision: session.revision + 1 };
     });
   }
   async saveContext(userId: string, value: unknown) {
@@ -166,7 +170,7 @@ export class ContractService {
         if (q.id === "Q103") data.neckCompressionReport = null;
       }
       await tx.contractSession.update({ where: { id: session.id }, data: { payload: seal(sessionPayload(data), `${session.id}:${userId}`), revision: { increment: 1 } } });
-      return { questionComplete: input.questionId ? questionComplete(catalog, input.questionId, data) : false };
+      return { questionComplete: input.questionId ? questionComplete(catalog, input.questionId, data) : false, questionnaireComplete: questionnaireComplete(catalog, data), revision: session.revision + 1 };
     });
   }
   async submit(userId: string, sessionId: string, revision: number) {

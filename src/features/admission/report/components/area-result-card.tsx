@@ -1,44 +1,43 @@
-import { Card } from "@/components/ui";
 import { formatScoreRating } from "@/features/admission/domain/score-presentation";
 import { cn } from "@/lib/cn";
 import type { AdmissionReportAreaDto } from "@/types/admission-report";
-import { ScoreStatusBadge, scoreLevelStyles } from "./score-status-badge";
+import styles from "./admission-result.module.css";
+import { AreaIcon } from "./area-icon";
 
-export function AreaResultCard({ area, position = 0 }: { area: AdmissionReportAreaDto; position?: number }) {
+export function AreaResultCard({ area }: { area: AdmissionReportAreaDto; position?: number }) {
   const formattedRating = formatScoreRating(area.rating);
-  const barWidth = Math.min(100, Math.max(0, area.rating / area.ratingMax * 100));
-  const styles = scoreLevelStyles[area.level];
+  const areaClass = { danger: styles.areaDanger, warning: styles.areaWarning, success: styles.areaSuccess }[area.level];
+  const scoreClass = { danger: styles.scoreDanger, warning: styles.scoreWarning, success: styles.scoreSuccess }[area.level];
+
   return (
-    <Card
-      className={cn(
-        "report-motion report-reveal group relative isolate flex h-full flex-col overflow-hidden p-5 shadow-[0_18px_50px_-28px] transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_24px_60px_-28px] sm:p-6",
-        styles.panel,
-      )}
-      style={{ animationDelay: `${Math.min(position, 8) * 75}ms` }}
-    >
-      <span className={cn("absolute -right-10 -top-12 -z-10 size-32 rounded-full blur-2xl transition duration-500 group-hover:scale-125", styles.glow)} aria-hidden="true" />
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <h3 className={cn("max-w-[19rem] text-xl font-semibold leading-snug", styles.text)}>{area.name}</h3>
-        <ScoreStatusBadge level={area.level} title={area.statusTitle} />
-      </div>
-      <p className={cn("mt-3 text-sm leading-relaxed", styles.mutedText)}>{area.description}</p>
-      <div className={cn("mt-5 rounded-2xl border p-4 backdrop-blur-sm", styles.soft)}>
-        <div className="flex items-end justify-between gap-3">
-          <span className={cn("font-serif text-4xl font-semibold leading-none", styles.text)}>{formattedRating} <span className={cn("text-lg", styles.mutedText)}>/ {area.ratingMax}</span></span>
-          <span className={cn("text-xs font-semibold uppercase tracking-wider", styles.mutedText)}>Nota da área</span>
-        </div>
+    <details className={cn(styles.areaCard, areaClass)}>
+      <summary className={styles.areaSummary}>
+        <span className={styles.areaIdentity}>
+          <span className={styles.areaIcon}><AreaIcon areaKey={area.key} /></span>
+          <span className={styles.areaName}>{area.name}</span>
+        </span>
+        <span className={styles.areaScoreGroup}>
+          <span className={cn(styles.areaScore, scoreClass)}>{formattedRating}/{area.ratingMax}</span>
+          <span className={styles.chevron} aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+          </span>
+        </span>
+      </summary>
+      <div className={styles.areaDetail}>
+        <p className={cn(styles.areaStatus, scoreClass)}>{area.statusTitle}</p>
+        <p>{area.description}</p>
+        <p className={styles.areaStatusDescription}>{area.statusDescription}</p>
         <div
-          className="mt-4 h-2.5 overflow-hidden rounded-full bg-white/75 shadow-inner"
+          className="sr-only"
           role="progressbar"
           aria-label={`${area.name}: nota ${formattedRating} de ${area.ratingMax}, classificada como ${area.statusTitle.toLowerCase()}.`}
           aria-valuemin={0}
           aria-valuemax={area.ratingMax}
           aria-valuenow={area.rating}
         >
-          <div className={cn("report-progress h-full rounded-full shadow-sm", styles.bar)} style={{ width: `${barWidth}%` }} />
+          <div className="report-progress" />
         </div>
       </div>
-      <p className={cn("mt-4 text-sm leading-relaxed", styles.mutedText)}>{area.statusDescription}</p>
-    </Card>
+    </details>
   );
 }

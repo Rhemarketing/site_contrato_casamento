@@ -2,7 +2,7 @@
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Alert, Badge, Button, Card, ProgressBar } from "@/components/ui";
+import { Alert, Badge, Button, Card, Modal, ProgressBar } from "@/components/ui";
 import { saveContractAnswerAction, saveContractContextAction, submitContractAction, consentContractAction, reopenContractAction } from "@/app/actions/contract.actions";
 import type { Letter, OwnSessionDto } from "../domain/types";
 import { ContractActionButton } from "./action-button";
@@ -16,6 +16,9 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
   const [pending, start] = useTransition();
   const [message, setMessage] = useState("");
   const [waitingToAdvance, setWaitingToAdvance] = useState(false);
+  const [showCompletionPrompt, setShowCompletionPrompt] = useState(false);
+  const [reviewingBeforeCompletion, setReviewingBeforeCompletion] = useState(false);
+  const [completionRevision, setCompletionRevision] = useState(session.revision);
   const router = useRouter();
   const q = session.questions[index];
   const reviewingPreviousQuestion = index < furthestIndex;
@@ -45,7 +48,10 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
       setMessage(result.ok ? "Salvo" : result.message);
       if (result.ok) {
         router.refresh();
-        if (result.data?.questionComplete && !reviewingPreviousQuestion && index < session.questions.length - 1) {
+        if (result.data?.questionnaireComplete && index === session.questions.length - 1) {
+          setCompletionRevision(result.data.revision);
+          setShowCompletionPrompt(true);
+        } else if (result.data?.questionComplete && !reviewingPreviousQuestion && index < session.questions.length - 1) {
           setWaitingToAdvance(true);
           await new Promise(resolve => setTimeout(resolve, AUTO_ADVANCE_DELAY_MS));
           goTo(index + 1);
@@ -86,7 +92,7 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
         <p id={`help-${field.id}`} className="mt-1 text-sm text-muted">{field.help}</p>
         <select id={`context-${field.id}`} aria-describedby={`help-${field.id}`} className="mt-2 min-h-12 w-full rounded-xl border border-line p-3" disabled={closed || pending} value={session.context[field.id] === true ? "yes" : session.context[field.id] === false ? "no" : "unknown"} onChange={e => {
           const value = e.target.value === "unknown" ? null : e.target.value === "yes";
-          start(async () => { try { const result = await saveContractContextAction({ sessionId: session.id, revision: session.revision, questionId: q.id, context: { [field.id]: value } }); setMessage(result.message); if (result.ok) { router.refresh(); if (result.data?.questionComplete && !reviewingPreviousQuestion && index < session.questions.length - 1) { setWaitingToAdvance(true); await new Promise(resolve => setTimeout(resolve, AUTO_ADVANCE_DELAY_MS)); goTo(index + 1); setWaitingToAdvance(false); } } } catch { setMessage("Não foi possível salvar o contexto."); } });
+          start(async () => { try { const result = await saveContractContextAction({ sessionId: session.id, revision: session.revision, questionId: q.id, context: { [field.id]: value } }); setMessage(result.message); if (result.ok) { router.refresh(); if (result.data?.questionnaireComplete && index === session.questions.length - 1) { setCompletionRevision(result.data.revision); setShowCompletionPrompt(true); } else if (result.data?.questionComplete && !reviewingPreviousQuestion && index < session.questions.length - 1) { setWaitingToAdvance(true); await new Promise(resolve => setTimeout(resolve, AUTO_ADVANCE_DELAY_MS)); goTo(index + 1); setWaitingToAdvance(false); } } } catch { setMessage("Não foi possível salvar o contexto."); } });
         }}><option value="unknown">Não informado / não sei / prefiro não informar</option><option value="yes">Sim</option><option value="no">Não</option></select>
       </div>)}
       {q.state === "BLOCKED_BY_POLICY" ? <Alert>Esta pergunta aguarda a definição do seu contexto ou uma regra de aplicabilidade. Nenhuma resposta será presumida.</Alert>
@@ -169,7 +175,16 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
       {session.coupleConnected ? <ContractActionButton action={() => consentContractAction(session.id, session.revision, !session.consented)}>{session.consented ? "Revogar autorização" : "Autorizar avaliação do casal"}</ContractActionButton> : <p>Suas respostas estão concluídas e salvas. Conecte seu parceiro quando quiser continuar para a avaliação e a montagem do contrato. Depois da conexão, cada pessoa deverá autorizar a avaliação.</p>}
       <p>Corrigir respostas revoga a autorização e invalida propostas e documentos derivados desta sessão. Novas confirmações serão necessárias.</p><ContractActionButton action={() => reopenContractAction(session.id, session.revision)}>Corrigir minhas respostas</ContractActionButton>
     </> : <><p>Concluir encerra a edição desta versão das respostas. A avaliação do casal exige uma autorização separada de cada pessoa.</p>
-      <ContractActionButton disabled={pending || !ready} action={() => submitContractAction(session.id, session.revision)}>Concluir minhas respostas</ContractActionButton>
+      {reviewingBeforeCompletion
+        ? <ContractActionButton disabled={pending || !ready} action={() => submitContractAction(session.id, session.revision)}>Concluir a prova</ContractActionButton>
+        : <Button disabled={pending || !ready} onClick={() => { setCompletionRevision(session.revision); setShowCompletionPrompt(true); }}>Concluir minhas respostas</Button>}
     </>}</Card>
+    <Modal isOpen={showCompletionPrompt} title="Deseja concluir a prova?" onClose={() => { setShowCompletionPrompt(false); setReviewingBeforeCompletion(true); }}>
+      <p className="text-muted">Ao concluir, suas respostas serão encerradas para esta versão. Depois disso, você poderá autorizar a avaliação do casal.</p>
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
+        <Button variant="secondary" onClick={() => { setShowCompletionPrompt(false); setReviewingBeforeCompletion(true); }}>Revisar respostas</Button>
+        <ContractActionButton action={async () => { const result = await submitContractAction(session.id, completionRevision); if (result.ok) setShowCompletionPrompt(false); return result; }}>Concluir a prova</ContractActionButton>
+      </div>
+    </Modal>
   </div>;
 }

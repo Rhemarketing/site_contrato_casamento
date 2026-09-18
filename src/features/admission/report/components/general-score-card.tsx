@@ -1,32 +1,67 @@
-import { Card } from "@/components/ui";
 import { formatScoreRating } from "@/features/admission/domain/score-presentation";
 import { cn } from "@/lib/cn";
 import type { AdmissionIndividualReportDto } from "@/types/admission-report";
-import { ScoreStatusBadge, scoreLevelStyles } from "./score-status-badge";
+import styles from "./admission-result.module.css";
 
 export function GeneralScoreCard({ general }: { general: AdmissionIndividualReportDto["general"] }) {
-  const styles = scoreLevelStyles[general.level];
+  const circumference = 2 * Math.PI * 88;
+  const progress = Math.min(1, Math.max(0, general.rating / general.ratingMax));
+  const statusClass = {
+    danger: styles.statusDanger,
+    warning: styles.statusWarning,
+    success: styles.statusSuccess,
+  }[general.level];
+
   return (
-    <section aria-labelledby="general-result-heading" className="mt-10">
-      <Card className={cn("report-reveal relative isolate overflow-hidden p-0 shadow-[0_24px_70px_-28px]", styles.panel)}>
-        <span className={cn("report-float absolute -right-16 -top-20 -z-10 size-56 rounded-full blur-3xl", styles.glow)} aria-hidden="true" />
-        <span className={cn("absolute -bottom-24 left-1/4 -z-10 size-48 rounded-full blur-3xl", styles.glow)} aria-hidden="true" />
-        <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
-          <div className="flex flex-col justify-center border-b border-white/65 px-6 py-8 sm:px-10 sm:py-10 lg:border-b-0 lg:border-r">
-            <p className={cn("text-xs font-bold uppercase tracking-[0.18em]", styles.mutedText)}>Pontuação geral</p>
-            <p className={cn("mt-3 font-serif text-5xl sm:text-7xl", styles.text)}>
-              <strong>{formatScoreRating(general.rating)}</strong>
-              <span className={cn("ml-2 text-2xl sm:text-3xl", styles.mutedText)}>/ {general.ratingMax}</span>
-            </p>
-            <p className={cn("mt-3 max-w-xs text-sm", styles.mutedText)}>Quanto maior a nota, melhor a percepção registrada.</p>
-          </div>
-          <div className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-10">
-            <h2 id="general-result-heading" className="sr-only">Resultado geral do relacionamento</h2>
-            <ScoreStatusBadge className="w-fit" level={general.level} title={general.statusTitle} />
-            <p className={cn("mt-5 max-w-2xl text-base leading-relaxed sm:text-lg", styles.mutedText)}>{general.statusDescription}</p>
+    <section aria-labelledby="general-result-heading" className={styles.gaugeSection}>
+      <h2 id="general-result-heading" className="sr-only">Resultado geral do relacionamento</h2>
+      <div
+        className={styles.gauge}
+        role="img"
+        aria-label={`Pontuação geral: ${formatScoreRating(general.rating)} de ${general.ratingMax}. ${general.statusTitle}.`}
+      >
+        <svg className={styles.ring} viewBox="0 0 200 200" aria-hidden="true">
+          <defs>
+            <linearGradient id="admission-ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#8e99f7" />
+              <stop offset="50%" stopColor="#b8a1f8" />
+              <stop offset="100%" stopColor="#f8a3b0" />
+            </linearGradient>
+            <linearGradient id="admission-heart-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#9ea7fb" />
+              <stop offset="45%" stopColor="#baa4f9" />
+              <stop offset="100%" stopColor="#fba8b4" />
+            </linearGradient>
+            <filter id="admission-heart-shadow" x="-25%" y="-25%" width="150%" height="160%">
+              <feDropShadow dx="0" dy="8" stdDeviation="10" floodColor="#a89ef6" floodOpacity=".32" />
+            </filter>
+          </defs>
+          <circle cx="100" cy="100" r="88" fill="none" stroke="#edf1f6" strokeWidth="10" />
+          <circle
+            className={styles.ringProgress}
+            cx="100"
+            cy="100"
+            r="88"
+            fill="none"
+            stroke="url(#admission-ring-gradient)"
+            strokeWidth="10"
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            strokeDashoffset={circumference * (1 - progress)}
+          />
+        </svg>
+        <div className={styles.heartBox} aria-hidden="true">
+          <svg className={styles.heart} viewBox="0 0 130 115">
+            <path d="M65 106S14 72 14 38C14 18 29 6 46 6c10 0 16 6 19 12 3-6 9-12 19-12 17 0 32 12 32 32 0 34-51 68-51 68Z" fill="url(#admission-heart-gradient)" filter="url(#admission-heart-shadow)" />
+          </svg>
+          <div className={styles.score}>
+            <span>{formatScoreRating(general.rating)}</span>
+            <span className={styles.scoreMax}>/{general.ratingMax}</span>
           </div>
         </div>
-      </Card>
+      </div>
+      <span className={cn(styles.statusPill, statusClass)}>{general.statusTitle}</span>
+      <p className="sr-only">Quanto maior a nota, melhor a percepção registrada.</p>
     </section>
   );
 }

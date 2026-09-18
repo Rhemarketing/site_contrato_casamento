@@ -46,7 +46,7 @@ it("avança ao salvar resposta nova e mostra Avançar somente ao voltar para rev
   const session = sessionFixture();
   session.questions[0] = { ...session.questions[0], state: "NOT_ANSWERED", prompt: "Escolha", options: [{ code: "A", text: "Resposta A" }] };
   session.questions[1] = { ...session.questions[1], state: "NOT_ANSWERED", prompt: "Escolha seguinte", options: [{ code: "A", text: "Resposta seguinte" }] };
-  vi.mocked(saveContractAnswerAction).mockResolvedValue({ ok: true, message: "Resposta salva.", data: { questionComplete: true } });
+  vi.mocked(saveContractAnswerAction).mockResolvedValue({ ok: true, message: "Resposta salva.", data: { questionComplete: true, questionnaireComplete: false, revision: 1 } });
   const { rerender } = render(<ContractQuestionnaire session={session} />);
 
   expect(screen.queryByRole("button", { name: /Próxima|Avançar/ })).not.toBeInTheDocument();
@@ -67,13 +67,35 @@ it("avança ao salvar resposta nova e mostra Avançar somente ao voltar para rev
 it("permanece na pergunta enquanto um complemento obrigatório ainda está pendente", async () => {
   const session = sessionFixture();
   session.questions[0] = { ...session.questions[0], state: "NOT_ANSWERED", prompt: "Escolha", options: [{ code: "A", text: "Resposta com complemento" }] };
-  vi.mocked(saveContractAnswerAction).mockResolvedValue({ ok: true, message: "Resposta salva.", data: { questionComplete: false } });
+  vi.mocked(saveContractAnswerAction).mockResolvedValue({ ok: true, message: "Resposta salva.", data: { questionComplete: false, questionnaireComplete: false, revision: 1 } });
   render(<ContractQuestionnaire session={session} />);
 
   fireEvent.click(screen.getByRole("radio", { name: /Resposta com complemento/ }));
   await waitFor(() => expect(saveContractAnswerAction).toHaveBeenCalledOnce());
   expect(screen.getByRole("heading", { name: "Assunto 1" })).toBeInTheDocument();
   expect(screen.queryByRole("button", { name: /Próxima|Avançar/ })).not.toBeInTheDocument();
+});
+
+it("abre a confirmação após salvar a última resposta e troca o botão ao escolher revisão", async () => {
+  const session = sessionFixture();
+  session.neckCompressionReport = false;
+  session.blocked = 1;
+  session.questions.forEach(question => { question.state = "NOT_APPLICABLE"; });
+  session.questions[199] = { ...session.questions[199], state: "NOT_ANSWERED", prompt: "Última escolha", options: [{ code: "A", text: "Última resposta" }] };
+  vi.mocked(saveContractAnswerAction).mockResolvedValue({ ok: true, message: "Resposta salva.", data: { questionComplete: true, questionnaireComplete: true, revision: 1 } });
+  const { rerender } = render(<ContractQuestionnaire session={session} />);
+
+  fireEvent.click(screen.getByRole("radio", { name: /Última resposta/ }));
+  expect(await screen.findByRole("heading", { name: "Deseja concluir a prova?" })).toBeInTheDocument();
+  session.questions[199].state = "A";
+  session.answered = 1;
+  session.blocked = 0;
+  session.revision = 1;
+  rerender(<ContractQuestionnaire session={{ ...session }} />);
+  fireEvent.click(screen.getByRole("button", { name: "Revisar respostas" }));
+  await waitFor(() => expect(screen.queryByRole("heading", { name: "Deseja concluir a prova?" })).not.toBeInTheDocument());
+  expect(screen.getByRole("button", { name: "Concluir a prova" })).toBeEnabled();
+  expect(screen.queryByRole("button", { name: "Concluir minhas respostas" })).not.toBeInTheDocument();
 });
 
 it("mostra o complemento pendente da Q103 mesmo com 200 respostas registradas", () => {

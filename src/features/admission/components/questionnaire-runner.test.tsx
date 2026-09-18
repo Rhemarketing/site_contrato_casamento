@@ -39,3 +39,21 @@ it("avança após salvar uma resposta nova e mostra Avançar somente ao voltar p
   expect(screen.getByRole("button", { name: "Avançar" })).toBeEnabled();
   expect(screen.queryByRole("button", { name: "Continuar" })).not.toBeInTheDocument();
 });
+
+it("abre a confirmação após salvar a última resposta e troca o botão ao escolher revisão", async () => {
+  vi.mocked(saveAdmissionAnswerAction).mockResolvedValue({ ok: true });
+  render(<QuestionnaireRunner
+    attemptId="attempt-1"
+    questions={questions}
+    initialAnswers={[{ questionId: "question-1", optionId: "option-1" }, { questionId: "question-2", optionId: "option-2" }]}
+    initialQuestionIndex={2}
+  />);
+
+  fireEvent.click(screen.getByRole("radio", { name: /Resposta 3/ }));
+  expect(await screen.findByRole("heading", { name: "Deseja concluir a prova?" })).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Concluir a prova" })).toBeEnabled();
+  fireEvent.click(screen.getByRole("button", { name: "Revisar respostas" }));
+  await waitFor(() => expect(screen.queryByRole("heading", { name: "Deseja concluir a prova?" })).not.toBeInTheDocument());
+  expect(screen.getByRole("button", { name: "Concluir a prova" })).toBeEnabled();
+  expect(screen.queryByRole("button", { name: "Concluir respostas" })).not.toBeInTheDocument();
+});

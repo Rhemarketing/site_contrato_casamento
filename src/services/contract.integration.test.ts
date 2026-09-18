@@ -116,7 +116,7 @@ describe("sessões individuais do contrato no banco", () => {
     await service.saveContext(people.a.id, { sessionId: own.id, revision: own.revision, context: { KNOWN_TRUST_BREACH: true, REBUILDING_CHOSEN: true } });
     own = (await service.getOwn(people.a.id))!;
     expect(own.questions.find(q => q.id === "Q181")).toMatchObject({ state: "NOT_ANSWERED", privateReviewRequired: false });
-    await expect(service.saveAnswer(people.a.id, { sessionId: own.id, revision: own.revision, questionId: "Q181", answer: "A" })).resolves.toEqual({ questionComplete: true });
+    await expect(service.saveAnswer(people.a.id, { sessionId: own.id, revision: own.revision, questionId: "Q181", answer: "A" })).resolves.toMatchObject({ questionComplete: true, questionnaireComplete: false, revision: own.revision + 1 });
     own = (await service.getOwn(people.a.id))!;
     await expect(service.saveContext(people.a.id, { sessionId: own.id, revision: own.revision, context: { Q181_SAFE_APPROACH: true } })).rejects.toThrow("INVALID_CONTEXT");
     expect((await service.getOwn(people.b.id))!.context.KNOWN_TRUST_BREACH).toBeUndefined();
@@ -133,8 +133,8 @@ describe("sessões individuais do contrato no banco", () => {
     expect(own.questions.filter(q => q.state === "NOT_APPLICABLE")).toHaveLength(72);
     await expect(service.submit(pair.a.id, own.id, own.revision)).rejects.toThrow("SUBMISSION_INCOMPLETE");
     let revision = own.revision;
-    await expect(service.saveAnswer(pair.a.id, { sessionId: own.id, revision: revision++, questionId: "Q103", answer: "A" })).resolves.toEqual({ questionComplete: false });
-    await expect(service.saveAnswer(pair.a.id, { sessionId: own.id, revision: revision++, questionId: "Q103", answer: "A", neckCompressionReport: false })).resolves.toEqual({ questionComplete: true });
+    await expect(service.saveAnswer(pair.a.id, { sessionId: own.id, revision: revision++, questionId: "Q103", answer: "A" })).resolves.toMatchObject({ questionComplete: false, questionnaireComplete: false });
+    await expect(service.saveAnswer(pair.a.id, { sessionId: own.id, revision: revision++, questionId: "Q103", answer: "A", neckCompressionReport: false })).resolves.toMatchObject({ questionComplete: true, questionnaireComplete: false });
     for (const q of own.questions.filter(q => q.state === "NOT_ANSWERED" && q.id !== "Q103")) {
       await service.saveAnswer(pair.a.id, { sessionId: own.id, revision: revision++, questionId: q.id, answer: "A" });
     }

@@ -2,7 +2,7 @@
 
 import { useRef, useState, useTransition } from "react";
 import { completeAdmissionAttemptAction, saveAdmissionAnswerAction } from "@/app/actions/admission.actions";
-import { Alert, Badge, Button, Card, ProgressBar } from "@/components/ui";
+import { Alert, Badge, Button, Card, Modal, ProgressBar } from "@/components/ui";
 import { calculateQuestionProgress, canContinueQuestion, getAdmissionStageTitle } from "@/features/admission/domain/admission-state";
 import type { AdmissionAnswerDto, AdmissionQuestionDto } from "@/types/admission";
 
@@ -24,6 +24,8 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
   const [selectedOptionId, setSelectedOptionId] = useState(() => answers.get(questions[initialQuestionIndex]?.id) ?? "");
   const [saveState, setSaveState] = useState<SaveState>("idle");
   const [message, setMessage] = useState("");
+  const [showCompletionPrompt, setShowCompletionPrompt] = useState(false);
+  const [reviewingBeforeCompletion, setReviewingBeforeCompletion] = useState(false);
   const [isCompleting, startCompleting] = useTransition();
   const saveSequence = useRef(0);
   const question = questions[questionIndex];
@@ -56,7 +58,11 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
       return;
     }
     setAnswers((current) => new Map(current).set(question.id, optionId));
-    if (!reviewingPreviousQuestion && questionIndex < questions.length - 1) {
+    if (questionIndex === questions.length - 1) {
+      setSaveState("saved");
+      setMessage("Resposta salva");
+      setShowCompletionPrompt(true);
+    } else if (!reviewingPreviousQuestion) {
       setSaveState("advancing");
       setMessage("Salvo");
       await new Promise(resolve => setTimeout(resolve, AUTO_ADVANCE_DELAY_MS));
@@ -77,6 +83,10 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
         setMessage(result.message);
       }
     });
+  };
+  const reviewAnswers = () => {
+    setShowCompletionPrompt(false);
+    setReviewingBeforeCompletion(true);
   };
 
   return (
@@ -148,9 +158,16 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
       <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
         {questionIndex > 0 ? <Button variant="secondary" onClick={() => goTo(questionIndex - 1)} disabled={["saving", "advancing"].includes(saveState) || isCompleting}>Voltar</Button> : <span />}
         {questionIndex === questions.length - 1 ? (
-          <Button onClick={complete} disabled={!persisted || isCompleting}>{isCompleting ? "Concluindo..." : "Concluir respostas"}</Button>
+          <Button onClick={reviewingBeforeCompletion ? complete : () => setShowCompletionPrompt(true)} disabled={!persisted || isCompleting}>{isCompleting ? "Concluindo..." : reviewingBeforeCompletion ? "Concluir a prova" : "Concluir respostas"}</Button>
         ) : reviewingPreviousQuestion ? <Button onClick={() => goTo(questionIndex + 1)} disabled={!persisted}>Avançar</Button> : <span />}
       </div>
+      <Modal isOpen={showCompletionPrompt} title="Deseja concluir a prova?" onClose={reviewAnswers}>
+        <p className="text-muted">Ao concluir, suas respostas serão processadas para gerar o resultado da Prova de Admissão.</p>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
+          <Button variant="secondary" onClick={reviewAnswers} disabled={isCompleting}>Revisar respostas</Button>
+          <Button onClick={complete} disabled={isCompleting}>{isCompleting ? "Concluindo..." : "Concluir a prova"}</Button>
+        </div>
+      </Modal>
     </div>
   );
 }
