@@ -96,14 +96,14 @@ describe("serviço agregador do relatório individual", () => {
     expect(await prisma.resultFlag.count({ where: { attemptId: attempt.id } })).toBe(0);
   });
 
-  it("monta relatório completo com nota amigável, nove áreas, counts, flags, Safety, data e versão", async () => {
+  it("monta relatório completo com nota amigável, dez áreas, counts, flags, Safety, data e versão", async () => {
     const owner = await createCompletedAttempt("ready", "C", "C");
     const state = await reportService.getForUser(owner.user.id, owner.attempt.id);
     expect(state.kind).toBe("READY");
     if (state.kind !== "READY") return;
     const areas = [...state.report.areaGroups.urgent, ...state.report.areaGroups.improvement, ...state.report.areaGroups.good];
     expect(state.report.general).toMatchObject({ rating: 0, ratingMax: 10, status: "PRECISA_MUDAR_COM_URGENCIA" });
-    expect(areas).toHaveLength(9);
+    expect(areas).toHaveLength(10);
     expect(state.report.answerCounts).toEqual({ satisfactory: 0, intermediate: 0, relevantDifficulties: 25, total: 25 });
     expect(state.report.flags).toHaveLength(4);
     expect(state.report.safety?.overallLevel).toBe("HIGH_ALERT");

@@ -174,7 +174,7 @@ describe("fluxo funcional da Prova de Admissão", () => {
     expect(persisted.completedAt).not.toBeNull();
     expect(persisted.openAttemptKey).toBeNull();
     expect(Number(persisted.totalScore)).toBe(0);
-    expect(await prisma.areaResult.count({ where: { attemptId: attempt.id } })).toBe(9);
+    expect(await prisma.areaResult.count({ where: { attemptId: attempt.id } })).toBe(10);
     expect(await prisma.resultFlag.count({ where: { attemptId: attempt.id } })).toBe(0);
     await expect(service.saveAnswer(user.id, attempt.id, questionnaire.questions[0].id, questionnaire.questions[0].options[0].id)).rejects.toMatchObject({ code: "ATTEMPT_ALREADY_COMPLETED" });
     expect((await service.startOrResume(user.id)).id).toBe(attempt.id);

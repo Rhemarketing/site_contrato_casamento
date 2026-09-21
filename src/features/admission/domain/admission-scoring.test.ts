@@ -61,7 +61,7 @@ describe("motor puro de resultado da admissão", () => {
   it("mantém os máximos oficiais e soma 50", () => {
     expect(ADMISSION_SCORE_AREAS.map(({ key, maxScore }) => [key, maxScore])).toEqual([
       ["comunicacao", 6], ["conflitos_reconciliacao", 6], ["afeto_valorizacao", 6], ["intimidade", 8],
-      ["confianca_fidelidade_limites", 6], ["dinheiro_responsabilidades", 6], ["tempo_conexao_futuro", 6],
+      ["confianca_fidelidade_limites", 6], ["dinheiro_casal", 2], ["casa_filhos_responsabilidades", 4], ["tempo_conexao_futuro", 6],
       ["autopercepcao_disposicao", 4], ["habitos_compulsoes", 2],
     ]);
     expect(ADMISSION_SCORE_AREAS.reduce((sum, area) => sum + area.maxScore, 0)).toBe(50);
@@ -70,7 +70,7 @@ describe("motor puro de resultado da admissão", () => {
   it("calcula todas A sem flags", () => {
     const result = calculateAdmissionResult(buildQuestions("A"));
     expect(result).toMatchObject({ totalScore: 0, classification: "BOA_BASE_CONJUGAL", answerCounts: { A: 25, B: 0, C: 0 }, flags: [] });
-    expect(result.areas).toHaveLength(9);
+    expect(result.areas).toHaveLength(10);
     expect(result.areas.every(({ classification }) => classification === "PONTO_FORTE")).toBe(true);
   });
 

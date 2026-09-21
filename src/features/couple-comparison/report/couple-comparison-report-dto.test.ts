@@ -28,10 +28,10 @@ function collectKeys(value: unknown): string[] {
 }
 
 describe("DTO de apresentação do relatório do casal", () => {
-  it("apresenta 25 perguntas públicas distribuídas nas nove áreas", () => {
+  it("apresenta 25 perguntas públicas distribuídas nas dez áreas", () => {
     const report = mixedReport();
     expect(report.totalQuestions).toBe(25);
-    expect(report.areas).toHaveLength(9);
+    expect(report.areas).toHaveLength(10);
     expect(report.areas.flatMap(({ questions }) => questions)).toHaveLength(25);
     expect(report.areas.flatMap(({ questions }) => questions).map(({ questionCode }) => questionCode).sort()).toEqual(
       Array.from({ length: 25 }, (_, index) => `P${String(index + 6).padStart(2, "0")}`),

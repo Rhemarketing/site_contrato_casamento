@@ -22,11 +22,11 @@ describe("motor puro de comparação do casal", () => {
     expect(classifyDivergence(divergence)).toBe(expected);
   });
 
-  it("compara exatamente as 25 perguntas P06-P30 e as nove áreas", () => {
+  it("compara exatamente as 25 perguntas P06-P30 e as dez áreas", () => {
     const result = calculateCoupleComparison(answers(0), answers(2), "8.0");
     expect(COUPLE_COMPARISON_QUESTION_CODES).toHaveLength(25);
     expect(result.questions).toHaveLength(25);
-    expect(result.areas).toHaveLength(9);
+    expect(result.areas).toHaveLength(10);
     expect(result.questions[0]).toEqual({
       questionCode: "P06",
       area: "comunicacao",

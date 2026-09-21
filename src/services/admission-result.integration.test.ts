@@ -80,7 +80,7 @@ describe("persistência transacional do resultado de admissão", () => {
     expect(persisted.attempt).toMatchObject({ status: "COMPLETED", openAttemptKey: null });
     expect(Number(persisted.attempt.totalScore)).toBe(0);
     expect(persisted.attempt.completedAt).not.toBeNull();
-    expect(persisted.areas).toHaveLength(9);
+    expect(persisted.areas).toHaveLength(10);
     expect(persisted.flags).toHaveLength(0);
   });
 
@@ -93,14 +93,14 @@ describe("persistência transacional do resultado de admissão", () => {
     expect(persisted.flags).toHaveLength(0);
   });
 
-  it("persiste todas C com total 50, nove áreas e quatro flags únicas", async () => {
+  it("persiste todas C com total 50, dez áreas e quatro flags únicas", async () => {
     const { user, attempt } = await createAnsweredAttempt("all-c", "C");
     await resultService.completeForUser(user.id, attempt.id);
     const persisted = await persistedSnapshot(attempt.id);
     expect(Number(persisted.attempt.totalScore)).toBe(50);
     expect(persisted.areas.map(({ area }) => area).sort()).toEqual([
-      "afeto_valorizacao", "autopercepcao_disposicao", "comunicacao", "confianca_fidelidade_limites",
-      "conflitos_reconciliacao", "dinheiro_responsabilidades", "habitos_compulsoes", "intimidade", "tempo_conexao_futuro",
+      "afeto_valorizacao", "autopercepcao_disposicao", "casa_filhos_responsabilidades", "comunicacao", "confianca_fidelidade_limites",
+      "conflitos_reconciliacao", "dinheiro_casal", "habitos_compulsoes", "intimidade", "tempo_conexao_futuro",
     ]);
     expect(persisted.areas.every(({ classification }) => classification === "AREA_PRIORITARIA")).toBe(true);
     expect(persisted.flags.map(({ code }) => code).sort()).toEqual(Object.values(ADMISSION_PRIORITY_FLAGS).sort());
@@ -172,7 +172,7 @@ describe("persistência transacional do resultado de admissão", () => {
     const second = await resultService.getAdmissionResultForUser(user.id, attempt.id);
     expect(reprocessed).toEqual(first);
     expect(second).toEqual(first);
-    expect(await prisma.areaResult.count({ where: { attemptId: attempt.id } })).toBe(9);
+    expect(await prisma.areaResult.count({ where: { attemptId: attempt.id } })).toBe(10);
     expect(await prisma.resultFlag.count({ where: { attemptId: attempt.id } })).toBe(4);
   });
 

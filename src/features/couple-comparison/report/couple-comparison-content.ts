@@ -30,9 +30,13 @@ export const COUPLE_COMPARISON_AREA_CONTENT = {
     name: "Confiança, Fidelidade e Limites",
     description: "Como vocês percebem confiança, segurança relacional e acordos envolvendo terceiros e ambiente digital.",
   },
-  dinheiro_responsabilidades: {
-    name: "Dinheiro e Responsabilidades",
-    description: "Como vocês conversam sobre dinheiro e dividem responsabilidades da casa, dos filhos e da família.",
+  dinheiro_casal: {
+    name: "Dinheiro do Casal",
+    description: "Como vocês conversam sobre finanças, investimentos, transparência e tomam decisões econômicas juntos.",
+  },
+  casa_filhos_responsabilidades: {
+    name: "Casa, Filhos e Responsabilidades",
+    description: "Como vocês percebem a divisão das rotinas da casa, cuidado com os filhos e encargos da família.",
   },
   tempo_conexao_futuro: {
     name: "Tempo, Conexão e Futuro",

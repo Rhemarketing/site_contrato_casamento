@@ -22,8 +22,11 @@ export function AreaIcon({ areaKey }: { areaKey: string }) {
       return <svg {...commonProps}><circle cx="8" cy="15" r="4" /><circle cx="12.5" cy="11" r="4" /><circle cx="16" cy="15" r="4" /></svg>;
     case "confianca_fidelidade_limites":
       return <svg {...commonProps}><path d="M12 3.5c2.5 0 4.5.8 4.5.8V8c0 3-2 5.5-4.5 6.5C9.5 13.5 7.5 11 7.5 8V4.3s2-.8 4.5-.8Z" /><path d="m10.5 8 1.2 1.3L14 7" /><path d="M3 18c2.5-1 5.5-.5 7.5 1.2l3 2.3c1 .8 2.5.5 3-.5l1-1.8a2 2 0 0 0-.5-2.6l-2.5-1.8H9" /></svg>;
+    case "dinheiro_casal":
     case "dinheiro_responsabilidades":
       return <svg {...commonProps}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="6.5" /><path d="M12 7.5v9M14 9.5A1.8 1.8 0 0 0 12.2 8h-.4A1.8 1.8 0 0 0 10 9.8c0 1.2 1 1.7 2 2.1s2 1 2 2.1a1.8 1.8 0 0 1-1.8 1.8h-.4a1.8 1.8 0 0 1-1.8-1.5" /></svg>;
+    case "casa_filhos_responsabilidades":
+      return <svg {...commonProps}><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" /><path d="M9 22V12h6v10" /></svg>;
     case "tempo_conexao_futuro":
       return <svg {...commonProps}><rect x="3" y="4" width="18" height="15" rx="2.5" /><path d="M8 2v3M16 2v3M3 8.5h18" /><circle cx="16" cy="15" r="4" fill="white" /><path d="m14.5 15 1.2 1.2 2-2" /></svg>;
     case "autopercepcao_disposicao":

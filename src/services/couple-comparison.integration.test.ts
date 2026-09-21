@@ -165,7 +165,7 @@ describe("consentimento e comparação segura do casal", () => {
     expect(state.state).toBe("AVAILABLE");
     if (state.state !== "AVAILABLE") throw new Error("comparison should be available");
     expect(state.comparison.questions).toHaveLength(25);
-    expect(state.comparison.areas).toHaveLength(9);
+    expect(state.comparison.areas).toHaveLength(10);
     expect(state.comparison.questions.map(({ questionCode }) => questionCode)).toEqual(
       Array.from({ length: 25 }, (_, index) => `P${String(index + 6).padStart(2, "0")}`),
     );

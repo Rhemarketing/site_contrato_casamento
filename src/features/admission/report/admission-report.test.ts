@@ -55,8 +55,8 @@ describe("conteúdo e DTO do relatório individual", () => {
     expect(getGeneralReportContent(classification).title).toBe(title);
   });
 
-  it("mantém conteúdo para as nove áreas na ordem oficial", () => {
-    expect(AREA_REPORT_ORDER).toHaveLength(9);
+  it("mantém conteúdo para as dez áreas na ordem oficial", () => {
+    expect(AREA_REPORT_ORDER).toHaveLength(10);
     expect(AREA_REPORT_ORDER).toEqual(ADMISSION_SCORE_AREAS.map(({ key }) => key));
     for (const key of AREA_REPORT_ORDER) {
       expect(getAreaReportContent(key).name).toBeTruthy();
@@ -65,23 +65,37 @@ describe("conteúdo e DTO do relatório individual", () => {
     expect(() => getAreaReportContent("area_desconhecida")).toThrow("REPORT_CONFIGURATION_ERROR");
   });
 
-  it("agrupa as nove áreas pelas três faixas da nota amigável sem duplicação", () => {
-    const ratings = [9.8, 9.7, 9.6, 8, 6, 0, 2.5, 0, 4];
+  it("agrupa as dez áreas pelas três faixas da nota amigável sem duplicação", () => {
+    const ratings = [9.8, 9.7, 9.6, 8, 7.5, 7.2, 0, 2.5, 0, 4];
     const areas = AREA_REPORT_ORDER.map((key, index): AdmissionReportAreaDto => ({
       key, name: key, description: key, rating: ratings[index], ratingMax: 10,
-      status: ratings[index] < 5 ? "PRECISA_MUDAR_COM_URGENCIA" : ratings[index] < 8.5 ? "PRECISA_MELHORAR" : "ESTA_BOM",
+      status: ratings[index] < 7 ? "PRECISA_MUDAR_COM_URGENCIA" : ratings[index] < 8.5 ? "PRECISA_MELHORAR" : "ESTA_BOM",
       statusTitle: key, statusDescription: key,
-      level: ratings[index] < 5 ? "danger" : ratings[index] < 8.5 ? "warning" : "success",
+      level: ratings[index] < 7 ? "danger" : ratings[index] < 8.5 ? "warning" : "success",
     }));
     const groups = groupAdmissionReportAreas(areas);
     expect(groups.good).toHaveLength(3);
-    expect(groups.improvement).toHaveLength(2);
+    expect(groups.improvement).toHaveLength(3);
     expect(groups.urgent).toHaveLength(4);
-    expect(new Set([...groups.good, ...groups.improvement, ...groups.urgent].map(({ key }) => key)).size).toBe(9);
-    expect(groups.improvement.map(({ rating }) => rating)).toEqual([6, 8]);
+    expect(new Set([...groups.good, ...groups.improvement, ...groups.urgent].map(({ key }) => key)).size).toBe(10);
+    expect(groups.improvement.map(({ rating }) => rating)).toEqual([7.2, 7.5, 8]);
     expect(groups.urgent.map(({ key }) => key)).toEqual([
-      "dinheiro_responsabilidades", "autopercepcao_disposicao", "tempo_conexao_futuro", "habitos_compulsoes",
+      "casa_filhos_responsabilidades", "autopercepcao_disposicao", "tempo_conexao_futuro", "habitos_compulsoes",
     ]);
+  });
+
+  it("atribui nota 7.0 para dinheiro_casal com score 1 (opção B)", () => {
+    const report = build(calculatedResult(25));
+    const moneyArea = [...report.areaGroups.urgent, ...report.areaGroups.improvement, ...report.areaGroups.good].find(
+      ({ key }) => key === "dinheiro_casal",
+    );
+    expect(moneyArea).toBeDefined();
+    expect(moneyArea).toMatchObject({
+      rating: 7,
+      ratingMax: 10,
+      status: "PRECISA_MELHORAR",
+      level: "warning",
+    });
   });
 
   it("mapeia as quatro flags e recusa código desconhecido", () => {

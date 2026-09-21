@@ -178,7 +178,7 @@ export class AdmissionResultService {
     });
     if (!attempt || attempt.totalScore === null) throw new AdmissionAttemptError("RESULT_NOT_FOUND");
     const totalScore = Number(attempt.totalScore);
-    if (!Number.isInteger(totalScore) || totalScore < 0 || totalScore > ADMISSION_MAX_SCORE || attempt.areaResults.length !== 9) {
+    if (!Number.isInteger(totalScore) || totalScore < 0 || totalScore > ADMISSION_MAX_SCORE || attempt.areaResults.length !== ADMISSION_SCORE_AREAS.length) {
       throw new AdmissionAttemptError("RESULT_CONFIGURATION_ERROR");
     }
 
@@ -195,7 +195,7 @@ export class AdmissionResultService {
       }
       return { area: area.area, score, maxScore, averageScore, classification: area.classification as typeof ADMISSION_AREA_CLASSIFICATIONS[keyof typeof ADMISSION_AREA_CLASSIFICATIONS] };
     }).sort((left, right) => ADMISSION_SCORE_AREAS.findIndex(({ key }) => key === left.area) - ADMISSION_SCORE_AREAS.findIndex(({ key }) => key === right.area));
-    if (new Set(areas.map(({ area }) => area)).size !== 9 || areas.reduce((sum, area) => sum + area.score, 0) !== totalScore) {
+    if (new Set(areas.map(({ area }) => area)).size !== ADMISSION_SCORE_AREAS.length || areas.reduce((sum, area) => sum + area.score, 0) !== totalScore) {
       throw new AdmissionAttemptError("RESULT_CONFIGURATION_ERROR");
     }
 

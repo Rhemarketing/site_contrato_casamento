@@ -544,7 +544,7 @@
       "id": 22,
       "codigo": "P22",
       "etapa": "diagnostico",
-      "area": "dinheiro_responsabilidades",
+      "area": "dinheiro_casal",
       "pontua": true,
       "pergunta": "Vocês conseguem conversar sobre dinheiro com transparência e tomar decisões financeiras importantes juntos?",
       "alternativas": [
@@ -569,7 +569,7 @@
       "id": 23,
       "codigo": "P23",
       "etapa": "diagnostico",
-      "area": "dinheiro_responsabilidades",
+      "area": "casa_filhos_responsabilidades",
       "pontua": true,
       "pergunta": "Você considera justa a divisão das responsabilidades da casa, dos filhos e da família?",
       "alternativas": [
@@ -594,7 +594,7 @@
       "id": 24,
       "codigo": "P24",
       "etapa": "diagnostico",
-      "area": "dinheiro_responsabilidades",
+      "area": "casa_filhos_responsabilidades",
       "pontua": true,
       "pergunta": "Você sente que precisa cobrar, lembrar ou pedir repetidamente para que seu cônjuge cumpra determinadas responsabilidades?",
       "alternativas": [

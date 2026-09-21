@@ -49,7 +49,7 @@ export function getScorePresentation(rating: number): ScorePresentation {
   const safeRating = Number.isFinite(rating)
     ? Math.min(SCORE_PRESENTATION_MAX, Math.max(0, rating))
     : 0;
-  if (safeRating < 5) return SCORE_PRESENTATION.URGENT;
+  if (safeRating < 7) return SCORE_PRESENTATION.URGENT;
   if (safeRating < 8.5) return SCORE_PRESENTATION.IMPROVEMENT;
   return SCORE_PRESENTATION.GOOD;
 }

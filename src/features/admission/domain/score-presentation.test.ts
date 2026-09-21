@@ -29,7 +29,8 @@ describe("apresentação da pontuação na escala de 0 a 10", () => {
   it.each([
     [0, "PRECISA_MUDAR_COM_URGENCIA"],
     [4.9, "PRECISA_MUDAR_COM_URGENCIA"],
-    [5, "PRECISA_MELHORAR"],
+    [6.9, "PRECISA_MUDAR_COM_URGENCIA"],
+    [7, "PRECISA_MELHORAR"],
     [8.4, "PRECISA_MELHORAR"],
     [8.5, "ESTA_BOM"],
     [10, "ESTA_BOM"],

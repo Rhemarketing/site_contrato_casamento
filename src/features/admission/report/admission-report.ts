@@ -30,7 +30,7 @@ function areaOrder(key: string) {
 }
 
 export function groupAdmissionReportAreas(areas: AdmissionReportAreaDto[]) {
-  if (areas.length !== 9 || new Set(areas.map(({ key }) => key)).size !== 9) throw new AdmissionReportConfigurationError();
+  if (areas.length !== AREA_REPORT_ORDER.length || new Set(areas.map(({ key }) => key)).size !== AREA_REPORT_ORDER.length) throw new AdmissionReportConfigurationError();
   if (areas.some(({ key }) => !AREA_REPORT_ORDER.includes(key as typeof AREA_REPORT_ORDER[number]))) throw new AdmissionReportConfigurationError();
   const byOfficialOrder = (left: AdmissionReportAreaDto, right: AdmissionReportAreaDto) => areaOrder(left.key) - areaOrder(right.key);
   const byRatingAscending = (left: AdmissionReportAreaDto, right: AdmissionReportAreaDto) =>
@@ -42,8 +42,11 @@ export function groupAdmissionReportAreas(areas: AdmissionReportAreaDto[]) {
   };
 }
 
-function scorePresentation(score: number, maxScore: number, scope: "area" | "general" = "area") {
-  const rating = convertProblemScoreToRating(score, maxScore);
+function scorePresentation(score: number, maxScore: number, scope: "area" | "general" = "area", areaKey?: string) {
+  let rating = convertProblemScoreToRating(score, maxScore);
+  if (scope === "area" && areaKey === "dinheiro_casal" && score === 1) {
+    rating = 7;
+  }
   const presentation = getScorePresentation(rating);
   return {
     rating,
@@ -68,7 +71,7 @@ export function buildAdmissionIndividualReportDto(input: BuildReportInput): Admi
       key: area.area,
       name: content.name,
       description: content.description,
-      ...scorePresentation(area.score, area.maxScore),
+      ...scorePresentation(area.score, area.maxScore, "area", area.area),
     };
   });
   const totalAnswers = result.answerCounts.A + result.answerCounts.B + result.answerCounts.C;
