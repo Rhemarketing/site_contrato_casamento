@@ -12,6 +12,12 @@ export function GeneralScoreCard({ general }: { general: AdmissionIndividualRepo
     success: styles.statusSuccess,
   }[general.level];
 
+  const levelCardClass = {
+    danger: styles.areaDanger,
+    warning: styles.areaWarning,
+    success: styles.areaSuccess,
+  }[general.level];
+
   return (
     <section aria-labelledby="general-result-heading" className={styles.gaugeSection}>
       <h2 id="general-result-heading" className="sr-only">Resultado geral do relacionamento</h2>
@@ -60,7 +66,27 @@ export function GeneralScoreCard({ general }: { general: AdmissionIndividualRepo
           </div>
         </div>
       </div>
-      <span className={cn(styles.statusPill, statusClass)}>{general.statusTitle}</span>
+
+      <details className={cn(styles.generalAnalysisCard, levelCardClass)}>
+        <summary className={styles.generalAnalysisSummary}>
+          <div className={styles.generalAnalysisHeader}>
+            <span className={cn(styles.generalAnalysisBadge, statusClass)}>{general.statusTitle}</span>
+            <span className={styles.generalAnalysisTitle}>Análise preliminar do casal</span>
+          </div>
+          <span className={styles.chevron} aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+          </span>
+        </summary>
+        <div className={styles.generalAnalysisDetail}>
+          <p className={styles.analysisHeading}>ANÁLISE PRELIMINAR</p>
+          {general.preliminaryAnalysis?.map((paragraph, index) => (
+            <p key={index} className={styles.analysisParagraph}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </details>
+
       <p className="sr-only">Quanto maior a nota, melhor a percepção registrada.</p>
     </section>
   );

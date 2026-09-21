@@ -140,6 +140,98 @@
 .statusWarning { background: #fed7aa; color: #9a3412; }
 .statusSuccess { background: #bbf7d0; color: #166534; }
 
+.generalAnalysisCard {
+  border-radius: 18px;
+  margin-top: 18px;
+  overflow: hidden;
+  transition: box-shadow .18s ease, transform .18s ease;
+  width: 100%;
+}
+
+.generalAnalysisCard:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .05);
+  transform: translateY(-1px);
+}
+
+.generalAnalysisCard[open] .chevron {
+  transform: rotate(180deg);
+}
+
+.generalAnalysisSummary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  min-height: 56px;
+  padding: 12px 18px;
+}
+
+.generalAnalysisSummary::-webkit-details-marker {
+  display: none;
+}
+
+.generalAnalysisHeader {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-width: 0;
+}
+
+.generalAnalysisBadge {
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .02em;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+
+.generalAnalysisTitle {
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+
+.generalAnalysisDetail {
+  border-top: 1px solid rgba(0, 0, 0, .07);
+  color: #3f3f46;
+  font-size: 13.5px;
+  line-height: 1.6;
+  padding: 16px 18px 20px;
+  text-align: left;
+}
+
+.analysisHeading {
+  color: #1e293b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  margin-bottom: 8px;
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+
+.analysisParagraph {
+  color: #374151;
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+.areaDescription {
+  color: #4b5563;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.areaPreliminaryAnalysis {
+  margin-top: 8px;
+}
+
 .gaugeCaption {
   color: var(--report-muted);
   font-size: 13px;
@@ -411,5 +503,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   .heartBox { animation: none; }
-  .ringProgress, .chevron, .areaCard, .dashboardLink { transition: none; }
+  .ringProgress, .chevron, .areaCard, .generalAnalysisCard, .dashboardLink { transition: none; }
 }

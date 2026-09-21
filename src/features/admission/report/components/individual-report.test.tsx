@@ -17,6 +17,7 @@ const area: AdmissionReportAreaDto = {
   status: "PRECISA_MELHORAR",
   statusTitle: "PRECISA MELHORAR",
   statusDescription: "Existem pontos positivos, mas também dificuldades que merecem atenção, conversa e ajustes.",
+  preliminaryAnalysis: ["Esse resultado mostra que vocês conseguem conversar, mas a comunicação ainda não funciona tão bem em todos os momentos."],
   level: "warning",
 };
 
@@ -28,6 +29,7 @@ const report: AdmissionIndividualReportDto = {
     status: "PRECISA_MUDAR_COM_URGENCIA",
     statusTitle: "PRECISA MUDAR COM URGÊNCIA",
     statusDescription: "Há sinais importantes de dificuldade no relacionamento.",
+    preliminaryAnalysis: ["Esse resultado mostra que existem áreas do relacionamento que precisam melhorar."],
     level: "danger",
   },
   answerCounts: { satisfactory: 9, intermediate: 10, relevantDifficulties: 6, total: 25 },
@@ -54,6 +56,8 @@ describe("componentes do relatório individual", () => {
     expect(screen.getByText("/10")).toBeInTheDocument();
     expect(screen.getByText(/quanto maior a nota, melhor/i)).toBeInTheDocument();
     expect(screen.getByText("PRECISA MUDAR COM URGÊNCIA")).toBeInTheDocument();
+    expect(screen.getByText("Análise preliminar do casal")).toBeInTheDocument();
+    expect(screen.getByText(/Esse resultado mostra que existem áreas do relacionamento que precisam melhorar\./i)).toBeInTheDocument();
     expect(document.body.textContent).not.toMatch(/27 de 50|pontuações mais altas indicam maior/i);
   });
 
@@ -65,6 +69,7 @@ describe("componentes do relatório individual", () => {
     expect(container.firstElementChild).toHaveClass(styles.areaCard, styles.areaWarning);
     expect(screen.getByText("6,7/10")).toBeInTheDocument();
     expect(screen.getByText("PRECISA MELHORAR")).toBeInTheDocument();
+    expect(screen.getByText(/Esse resultado mostra que vocês conseguem conversar/i)).toBeInTheDocument();
     expect(document.body.textContent).not.toMatch(/2 de 6|média .* de 2/i);
   });
 

@@ -10,6 +10,7 @@ export interface AdmissionScorePresentationDto {
   status: ScorePresentationStatus;
   statusTitle: string;
   statusDescription: string;
+  preliminaryAnalysis: string[];
   level: ScorePresentationLevel;
 }
 

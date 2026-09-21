@@ -15,6 +15,10 @@ import {
   getGeneralReportContent,
   getPriorityFlagContent,
 } from "./admission-report-content";
+import {
+  getAreaPreliminaryAnalysis,
+  getGeneralPreliminaryAnalysis,
+} from "./admission-preliminary-analysis";
 
 interface BuildReportInput {
   completedAt: Date;
@@ -48,12 +52,19 @@ function scorePresentation(score: number, maxScore: number, scope: "area" | "gen
     rating = 7;
   }
   const presentation = getScorePresentation(rating);
+  const preliminaryAnalysis =
+    scope === "general"
+      ? getGeneralPreliminaryAnalysis(presentation.status)
+      : areaKey
+        ? getAreaPreliminaryAnalysis(areaKey, presentation.status)
+        : [];
   return {
     rating,
     ratingMax: SCORE_PRESENTATION_MAX,
     status: presentation.status,
     statusTitle: presentation.title,
     statusDescription: scope === "general" ? presentation.generalDescription : presentation.description,
+    preliminaryAnalysis,
     level: presentation.level,
   } as const;
 }

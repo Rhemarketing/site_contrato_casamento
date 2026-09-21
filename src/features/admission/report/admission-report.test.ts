@@ -71,6 +71,7 @@ describe("conteúdo e DTO do relatório individual", () => {
       key, name: key, description: key, rating: ratings[index], ratingMax: 10,
       status: ratings[index] < 7 ? "PRECISA_MUDAR_COM_URGENCIA" : ratings[index] < 8.5 ? "PRECISA_MELHORAR" : "ESTA_BOM",
       statusTitle: key, statusDescription: key,
+      preliminaryAnalysis: ["Análise de teste"],
       level: ratings[index] < 7 ? "danger" : ratings[index] < 8.5 ? "warning" : "success",
     }));
     const groups = groupAdmissionReportAreas(areas);
@@ -154,5 +155,20 @@ describe("conteúdo e DTO do relatório individual", () => {
   it("possui conteúdo editorial para todas as classificações", () => {
     expect(Object.values(GENERAL_REPORT_CONTENT)).toHaveLength(5);
     expect(Object.values(GENERAL_REPORT_CONTENT).every(({ title, summary, recommendation }) => title && summary && recommendation)).toBe(true);
+  });
+
+  it("preenche análise preliminar completa para o resultado geral e todas as dez áreas", () => {
+    for (const score of [0, 25, 50]) {
+      const report = build(calculatedResult(score));
+      expect(report.general.preliminaryAnalysis).toBeInstanceOf(Array);
+      expect(report.general.preliminaryAnalysis.length).toBeGreaterThan(0);
+      
+      const allAreas = [...report.areaGroups.urgent, ...report.areaGroups.improvement, ...report.areaGroups.good];
+      expect(allAreas).toHaveLength(10);
+      for (const area of allAreas) {
+        expect(area.preliminaryAnalysis).toBeInstanceOf(Array);
+        expect(area.preliminaryAnalysis.length).toBeGreaterThan(0);
+      }
+    }
   });
 });

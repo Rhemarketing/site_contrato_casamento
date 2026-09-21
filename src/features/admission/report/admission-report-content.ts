@@ -38,16 +38,16 @@ export const GENERAL_REPORT_CONTENT: Record<AdmissionGeneralClassification, { ti
 };
 
 export const AREA_REPORT_CONTENT = {
-  comunicacao: { name: "Comunicação", description: "Como vocês conversam, expressam necessidades e procuram compreender um ao outro." },
-  conflitos_reconciliacao: { name: "Conflitos e Reconciliação", description: "Como vocês lidam com divergências, problemas recorrentes, pedidos de desculpas e reconciliação." },
-  afeto_valorizacao: { name: "Carinho, Afeto e Valorização", description: "Como carinho, proximidade, reconhecimento e demonstrações de amor são percebidos na relação." },
-  intimidade: { name: "Vida Sexual e Intimidade", description: "Como você percebe satisfação, desejo, frequência, conexão e liberdade para conversar sobre intimidade." },
-  confianca_fidelidade_limites: { name: "Confiança, Fidelidade e Limites", description: "Como você percebe confiança, segurança relacional e acordos envolvendo terceiros e ambiente digital." },
-  dinheiro_casal: { name: "Dinheiro do Casal", description: "Como vocês conversam sobre dinheiro com transparência e tomam decisões financeiras importantes juntos." },
-  casa_filhos_responsabilidades: { name: "Casa, Filhos e Responsabilidades", description: "Como vocês dividem as responsabilidades da casa, dos filhos e das rotinas da família." },
-  tempo_conexao_futuro: { name: "Tempo, Conexão e Futuro", description: "Como você percebe prioridade, vida de casal e perspectiva de continuidade da relação." },
-  autopercepcao_disposicao: { name: "Autopercepção e Disposição", description: "Como você percebe sua própria participação nas mudanças e as possíveis diferenças de visão entre vocês." },
-  habitos_compulsoes: { name: "Hábitos e Compulsões", description: "Se existem comportamentos repetitivos que possam estar trazendo desgaste para o relacionamento ou para a família." },
+  comunicacao: { name: "Comunicação", description: "Sua nota mostra o quanto vocês conseguem conversar, expressar sentimentos e necessidades, ouvir um ao outro e se compreender nos assuntos importantes da relação." },
+  conflitos_reconciliacao: { name: "Conflitos e Reconciliação", description: "Sua nota mostra o quanto vocês conseguem enfrentar diferenças e problemas, lidar com os conflitos, reconhecer erros, pedir desculpas e voltar a se aproximar." },
+  afeto_valorizacao: { name: "Carinho, Afeto e Valorização", description: "Sua nota mostra o quanto você sente que recebe carinho, atenção, elogios, reconhecimento, proximidade e valorização dentro do relacionamento." },
+  intimidade: { name: "Vida Sexual e Intimidade", description: "Sua nota mostra como você percebe o desejo, a satisfação, a frequência, a conexão e a liberdade para conversar sobre vontades e necessidades na vida íntima do casal." },
+  confianca_fidelidade_limites: { name: "Confiança, Fidelidade e Limites", description: "Sua nota mostra o nível de confiança e segurança que você sente na relação e o quanto percebe respeito à fidelidade, aos acordos e aos limites estabelecidos entre vocês." },
+  dinheiro_casal: { name: "Dinheiro do Casal", description: "Sua nota mostra o quanto existe entendimento e equilíbrio entre vocês para conversar, decidir e lidar com dinheiro, gastos, dívidas, prioridades e planejamento financeiro." },
+  casa_filhos_responsabilidades: { name: "Casa, Filhos e Responsabilidades", description: "Sua nota mostra o quanto a divisão das tarefas da casa, dos cuidados com os filhos e das responsabilidades do dia a dia parece justa e equilibrada para você." },
+  tempo_conexao_futuro: { name: "Tempo, Conexão e Futuro", description: "Sua nota mostra o quanto você sente que existe tempo para o casal, prioridade na relação, conexão entre vocês e vontade de continuar construindo um futuro juntos." },
+  autopercepcao_disposicao: { name: "Autopercepção e Disposição", description: "Sua nota mostra o quanto você consegue reconhecer sua participação na relação, perceber onde pode melhorar, assumir responsabilidades e demonstrar disposição para mudanças." },
+  habitos_compulsoes: { name: "Hábitos que Afetam a Relação", description: "Sua nota mostra o quanto os hábitos e comportamentos do dia a dia permanecem equilibrados, sem prejudicar a atenção ao casal, a convivência, as responsabilidades e o bem-estar da relação." },
 } as const;
 
 export const AREA_REPORT_ORDER = Object.keys(AREA_REPORT_CONTENT) as Array<keyof typeof AREA_REPORT_CONTENT>;

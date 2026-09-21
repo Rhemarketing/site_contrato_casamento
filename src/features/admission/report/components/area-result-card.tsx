@@ -25,8 +25,19 @@ export function AreaResultCard({ area }: { area: AdmissionReportAreaDto; positio
       </summary>
       <div className={styles.areaDetail}>
         <p className={cn(styles.areaStatus, scoreClass)}>{area.statusTitle}</p>
-        <p>{area.description}</p>
-        <p className={styles.areaStatusDescription}>{area.statusDescription}</p>
+        <p className={styles.areaDescription}>{area.description}</p>
+        {area.preliminaryAnalysis && area.preliminaryAnalysis.length > 0 ? (
+          <div className={styles.areaPreliminaryAnalysis}>
+            <p className={styles.analysisHeading}>ANÁLISE PRELIMINAR</p>
+            {area.preliminaryAnalysis.map((paragraph, index) => (
+              <p key={index} className={styles.analysisParagraph}>
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        ) : area.statusDescription ? (
+          <p className={styles.areaStatusDescription}>{area.statusDescription}</p>
+        ) : null}
         <div
           className="sr-only"
           role="progressbar"
