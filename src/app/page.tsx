@@ -228,7 +228,7 @@ export default function HomePage() {
         </PageContainer>
       </section>
 
-      <section className="dark-roadmap-section py-20 sm:py-28">
+      <section id="passo-a-passo" className="dark-roadmap-section py-20 sm:py-28">
         <div className="dark-roadmap-texture" />
 
         {/* Ambient Top Glow */}
@@ -405,7 +405,7 @@ export default function HomePage() {
         </PageContainer>
       </section>
 
-      <section className="border-t border-line bg-surface py-16 sm:py-24">
+      <section id="duvidas" className="border-t border-line bg-surface py-16 sm:py-24">
         <PageContainer>
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent sm:text-sm">
