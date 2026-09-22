@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { PageContainer } from "@/components/ui/page-container";
@@ -39,17 +40,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md" aria-hidden="true">
-            <div className="absolute -inset-6 rotate-3 rounded-[2.5rem] bg-accent-soft" />
-            <div className="relative rounded-[2rem] border border-line bg-background p-7 shadow-[0_24px_70px_rgba(25,45,56,0.12)] sm:p-9">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Para refletir</p>
-              <p className="mt-6 font-serif text-3xl leading-snug text-brand-strong">“Como queremos cuidar da nossa vida em comum?”</p>
-              <div className="mt-10 h-px bg-line" />
-              <div className="mt-6 flex items-center gap-4">
-                <span className="grid size-12 place-items-center rounded-full bg-brand text-lg text-white">CC</span>
-                <p className="text-sm text-muted">Sem pressa. Sem respostas certas. Com respeito.</p>
-              </div>
-            </div>
+          <div className="relative mx-auto flex w-full max-w-sm justify-center sm:max-w-md lg:max-w-none">
+            <Image
+              src="/images/contrato-hero.png"
+              alt="Exemplo do Contrato de Casamento"
+              width={1046}
+              height={1205}
+              priority
+              className="-mb-[50px] -mt-[25px] h-auto w-full max-w-[360px] drop-shadow-[0_16px_36px_rgba(25,45,56,0.12)] sm:mb-0 sm:mt-0 sm:max-w-[420px] lg:-mb-[70px] lg:-mt-[75px] lg:max-w-full"
+              sizes="(max-width: 640px) 360px, (max-width: 1024px) 420px, 500px"
+            />
           </div>
         </PageContainer>
       </section>
