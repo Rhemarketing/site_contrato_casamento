@@ -129,3 +129,124 @@ body {
     transform: none !important;
   }
 }
+
+/* Gold Luxury Video Section */
+.gold-luxury-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #8c6621;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% -12%, rgba(255, 252, 230, 0.75) 0%, rgba(255, 228, 130, 0.35) 35%, transparent 70%),
+    radial-gradient(circle at 10% 90%, rgba(255, 235, 160, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(255, 240, 180, 0.35) 0%, transparent 50%),
+    linear-gradient(135deg, 
+      #69470c 0%, 
+      #8c651e 14%, 
+      #b58933 26%, 
+      #e0b85a 38%, 
+      #fff4c4 50%, 
+      #d4a746 62%, 
+      #9e7525 75%, 
+      #714e13 88%, 
+      #523606 100%
+    );
+  border-top: 1px solid rgba(255, 248, 215, 0.65);
+  border-bottom: 1px solid rgba(60, 40, 5, 0.6);
+  box-shadow: 
+    inset 0 3px 6px rgba(255, 255, 255, 0.5),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.35),
+    0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.gold-luxury-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.09'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(125deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 4px),
+    repeating-linear-gradient(-55deg, rgba(0, 0, 0, 0.04) 0px, rgba(0, 0, 0, 0.04) 1px, transparent 1px, transparent 4px);
+  mix-blend-mode: overlay;
+}
+
+.gold-glow-beam {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 850px;
+  height: 320px;
+  background: radial-gradient(ellipse at center top, rgba(255, 255, 240, 0.7) 0%, rgba(255, 235, 150, 0.35) 45%, transparent 75%);
+  filter: blur(32px);
+  pointer-events: none;
+}
+
+.gold-frame {
+  background: linear-gradient(135deg, #fff8d6 0%, #d8ae52 28%, #855c14 52%, #fde89c 75%, #cca349 100%);
+  padding: 4px;
+  border-radius: 1.25rem;
+  box-shadow: 
+    0 25px 65px -12px rgba(35, 22, 5, 0.65),
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* Dark Roadmap / Passo a Passo Section */
+.dark-roadmap-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #0a1820;
+  background-image:
+    radial-gradient(ellipse 85% 55% at 50% -10%, rgba(42, 92, 110, 0.5) 0%, transparent 70%),
+    radial-gradient(circle at 10% 85%, rgba(216, 176, 86, 0.09) 0%, transparent 45%),
+    radial-gradient(circle at 90% 20%, rgba(216, 176, 86, 0.09) 0%, transparent 45%),
+    linear-gradient(180deg, #071318 0%, #0d222b 45%, #08151c 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dark-roadmap-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.55;
+}
+
+.dark-step-card {
+  position: relative;
+  background: rgba(16, 38, 48, 0.78);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(62, 107, 126, 0.45);
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.4rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+.dark-step-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(216, 176, 86, 0.6);
+  box-shadow: 0 20px 42px -10px rgba(0, 0, 0, 0.75), 0 0 28px rgba(216, 176, 86, 0.16), inset 0 1px 2px rgba(255, 255, 255, 0.18);
+}
+
+.dark-step-card-gold {
+  position: relative;
+  background: linear-gradient(175deg, rgba(28, 58, 72, 0.92) 0%, rgba(17, 37, 47, 0.96) 100%);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(228, 188, 92, 0.75);
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.4rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 16px 42px -10px rgba(0, 0, 0, 0.65), 0 0 35px rgba(216, 176, 86, 0.22), inset 0 1px 3px rgba(255, 240, 180, 0.35);
+}
+
+.dark-step-card-gold:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 222, 135, 0.95);
+  box-shadow: 0 22px 50px -10px rgba(0, 0, 0, 0.8), 0 0 45px rgba(216, 176, 86, 0.35), inset 0 1px 4px rgba(255, 248, 215, 0.5);
+}
+
