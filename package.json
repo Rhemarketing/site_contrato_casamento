@@ -22,6 +22,7 @@
     "demo:seed": "tsx scripts/seed-demo.ts",
     "demo:reset": "tsx scripts/reset-demo.ts",
     "db:seed": "prisma db seed",
+    "admin:promote": "tsx scripts/promote-admin.ts",
     "contract:compile": "tsx scripts/compile-contract-master.ts",
     "contract:maintenance": "node --conditions=react-server --import tsx scripts/contract-maintenance.ts",
     "prisma:generate": "prisma generate",
