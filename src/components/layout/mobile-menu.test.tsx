@@ -13,7 +13,7 @@ vi.mock("next/navigation", () => ({
 
 const mockItems = [
   { label: "Dashboard", href: "/dashboard" },
-  { label: "Minha prova", href: "/admissao/questionario" },
+  { label: "Meu exame", href: "/admissao/questionario" },
   { label: "Casal", href: "/casal" },
   { label: "Meu contrato", href: "/contrato" },
 ];
@@ -37,7 +37,7 @@ describe("MobileMenu", () => {
 
     expect(screen.getByRole("button", { name: "Fechar menu de navegação" })).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: "Navegação móvel" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Minha prova" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Meu exame" })).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Fechar menu de navegação" }));
     expect(screen.queryByRole("navigation", { name: "Navegação móvel" })).not.toBeInTheDocument();

@@ -11,5 +11,5 @@ export const ADMISSION_STAGE_TITLES = {
 } as const;
 
 export function getAdmissionStageTitle(stage: string) {
-  return ADMISSION_STAGE_TITLES[stage as keyof typeof ADMISSION_STAGE_TITLES] ?? "Prova de Admissão";
+  return ADMISSION_STAGE_TITLES[stage as keyof typeof ADMISSION_STAGE_TITLES] ?? "Exame de Admissão";
 }

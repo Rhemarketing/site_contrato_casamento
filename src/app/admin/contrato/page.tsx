@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Alert, Badge, Card } from "@/components/ui";
 import { WorkspacePage } from "@/components/layout/workspace-page";
 import { requireAdmin } from "@/lib/auth/current-user";
+import { AdminNav } from "../_components/admin-nav";
 import { contractCatalog } from "@/features/contract/server/catalog";
 import { applicabilityContextFields, catalogReadiness } from "@/features/contract/domain/engine";
 import { renderRegisteredTemplate } from "@/features/contract/domain/decisions";
@@ -16,6 +17,40 @@ export default async function ContractEditorialPage({ searchParams }: { searchPa
   const texts = catalog.components.filter(c => c.questionId === q.id && c.editorialFinal && c.editorialTemplate && c.privacy === "COMMON" && c.target === "CONTRACT");
   const rules = catalog.rules.filter(r => r.questionId === q.id);
   return <WorkspacePage eyebrow="Revisão editorial" title="Arquivo-mestre 1.4.0" description="Catálogo sem respostas de usuários. As prévias usam identidades fictícias e não são contratos emitidos.">
+    <AdminNav />
+
+    {/* Banner de Acesso ao Whiteboard */}
+    <div className="mb-6 rounded-2xl border border-brand/20 bg-gradient-to-r from-brand/5 via-brand/10 to-transparent p-5">
+      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+        <div>
+          <span className="text-xs font-bold uppercase tracking-wider text-brand">
+            Modo Visual & Mapa Mental
+          </span>
+          <h2 className="mt-1 font-serif text-2xl font-bold text-brand-strong">
+            Whiteboard Interativo das 200 Questões
+          </h2>
+          <p className="mt-1 text-sm text-muted">
+            Visualize o grafo completo de decisões, combinações de respostas do casal e configure os módulos do Nós Decidimos diretamente pelo mapa mental.
+          </p>
+        </div>
+        <Link
+          href="/admin/contrato/whiteboard"
+          className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-brand px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-strong"
+        >
+          <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <rect x="3" y="3" width="7" height="7" rx="1.5" />
+            <rect x="14" y="3" width="7" height="7" rx="1.5" />
+            <rect x="14" y="14" width="7" height="7" rx="1.5" />
+            <rect x="3" y="14" width="7" height="7" rx="1.5" />
+            <path d="M10 6.5h4" />
+            <path d="M6.5 10v4" />
+            <path d="M17.5 10v4" />
+            <path d="M10 17.5h4" />
+          </svg>
+          Abrir Whiteboard Interativo
+        </Link>
+      </div>
+    </div>
     <Alert variant="warning">{report.productionReady ? "Edição compilada para liberação." : "Edição indisponível."} {report.missingApplicability} perguntas sem regra de aplicabilidade; {report.privateReviewApplicability} exige revisão privada antes da exibição. Restam {report.pendingModules} módulos conjuntos por estruturar e {report.pendingCrossRules} cruzamentos sem predicado.</Alert>
     <p className="mt-4 text-sm text-muted">Edição de integração: {catalog.version}. As 184 aplicabilidades foram decididas por delegação; as 16 regras da fonte foram preservadas.</p>
     <div className="my-6 grid gap-4 sm:grid-cols-4">{[["Perguntas", report.questions], ["Combinações", report.pairs], ["Textos conjuntos finais", report.jointTexts], ["Módulos compilados", report.compiledModules]].map(([label, value]) => <Card key={label}><p className="text-sm text-muted">{label}</p><p className="mt-2 text-3xl font-semibold text-brand">{value}</p></Card>)}</div>

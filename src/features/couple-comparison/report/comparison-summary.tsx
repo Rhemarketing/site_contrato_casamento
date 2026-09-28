@@ -25,7 +25,7 @@ export function ComparisonSummary({ report }: { report: CoupleComparisonReportDt
                 Os números abaixo resumem somente as diferenças encontradas entre P06 e P30.
               </p>
             </div>
-            <p className="text-sm font-semibold text-muted">Prova de Admissão — versão {report.questionnaireVersion}</p>
+            <p className="text-sm font-semibold text-muted">Exame de Admissão — versão {report.questionnaireVersion}</p>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-px bg-line sm:grid-cols-4">

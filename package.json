@@ -30,8 +30,11 @@
     "prisma:migrate:deploy": "prisma migrate deploy"
   },
   "dependencies": {
+    "@dagrejs/dagre": "^3.1.1",
     "@prisma/adapter-mariadb": "^7.10.0",
     "@prisma/client": "^7.10.0",
+    "@types/dagre": "^0.7.54",
+    "@xyflow/react": "^12.12.0",
     "argon2": "^0.45.1",
     "dotenv": "^17.4.2",
     "emailjs": "^5.0.3",

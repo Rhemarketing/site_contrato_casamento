@@ -18,8 +18,8 @@ export default async function DashboardPage() {
     new CoupleService(db).getOverview(user.id),
   ]);
   const content = {
-    NOT_STARTED: { badge: "Não iniciada", title: "Minha Prova de Admissão", description: "Reserve um momento tranquilo para responder às 40 perguntas individualmente.", action: "Iniciar Prova de Admissão", href: "/admissao/questionario" },
-    OPEN: { badge: "Em andamento", title: "Minha Prova de Admissão", description: `${summary.answerCount} de ${summary.questionCount} respostas registradas.`, action: "Continuar Prova de Admissão", href: "/admissao/questionario" },
+    NOT_STARTED: { badge: "Não iniciada", title: "Meu Exame de Admissão", description: "Reserve um momento tranquilo para responder às 40 perguntas individualmente.", action: "Iniciar Exame de Admissão", href: "/admissao/questionario" },
+    OPEN: { badge: "Em andamento", title: "Meu Exame de Admissão", description: `${summary.answerCount} de ${summary.questionCount} respostas registradas.`, action: "Continuar Exame de Admissão", href: "/admissao/questionario" },
     COMPLETED: { badge: "Avaliação concluída", title: "Meu resultado", description: "Seu relatório individual está disponível com áreas, prioridades e orientações privadas.", action: "Ver meu resultado", href: "/admissao/resultado" },
   }[summary.state];
   const coupleContent = {
@@ -29,7 +29,7 @@ export default async function DashboardPage() {
   }[couple.state];
 
   return (
-    <WorkspacePage eyebrow="Área pessoal" title={`Olá, ${user.name}`} description="Acompanhe sua prova e seu vínculo de relacionamento em um só lugar.">
+    <WorkspacePage eyebrow="Área pessoal" title={`Olá, ${user.name}`} description="Acompanhe seu exame e seu vínculo de relacionamento em um só lugar.">
       <Card className="mb-6"><p className="text-sm text-muted">Sua conta</p><p className="mt-1 break-all font-semibold text-brand-strong">{user.email}</p></Card>
       <div className="grid gap-6 lg:grid-cols-2">
         <Card className="flex h-full flex-col">

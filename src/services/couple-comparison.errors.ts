@@ -5,7 +5,7 @@ export type CoupleComparisonErrorCode =
 
 export const COUPLE_COMPARISON_ERROR_MESSAGES: Record<CoupleComparisonErrorCode, string> = {
   COMPARISON_COUPLE_NOT_ACTIVE: "A autorização exige um relacionamento conectado e ativo.",
-  COMPARISON_ADMISSION_NOT_COMPLETED: "Conclua a Prova de Admissão antes de autorizar a comparação.",
+  COMPARISON_ADMISSION_NOT_COMPLETED: "Conclua o Exame de Admissão antes de autorizar a comparação.",
   COMPARISON_CONFIGURATION_ERROR: "Não foi possível carregar a comparação com segurança.",
 };
 

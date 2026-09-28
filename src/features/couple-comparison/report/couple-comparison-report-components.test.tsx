@@ -38,7 +38,7 @@ describe("componentes do relatório visual do casal", () => {
   it("mostra resumo geral, versão e aviso sem certo ou errado", () => {
     render(<ComparisonSummary report={report} />);
     expect(screen.getByRole("heading", { name: "Visão geral das percepções" })).toBeInTheDocument();
-    expect(screen.getByText("Prova de Admissão — versão 8.0")).toBeInTheDocument();
+    expect(screen.getByText("Exame de Admissão — versão 8.0")).toBeInTheDocument();
     expect(screen.getByText("25")).toBeInTheDocument();
     expect(screen.getByText(/não é determinar quem está certo ou errado/i)).toBeInTheDocument();
   });

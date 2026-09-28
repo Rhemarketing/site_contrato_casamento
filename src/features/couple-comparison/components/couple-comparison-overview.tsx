@@ -37,9 +37,9 @@ export function CoupleComparisonOverview({
     return (
       <Card className="mx-auto max-w-2xl space-y-4">
         {error ? <Alert variant="error">{error}</Alert> : null}
-        <Badge>Provas individuais</Badge>
+        <Badge>Exames individuais</Badge>
         <h2 className="font-serif text-2xl font-semibold text-brand-strong">Aguardando conclusão</h2>
-        <p className="text-muted">A comparação ficará disponível quando ambos concluírem a Prova de Admissão.</p>
+        <p className="text-muted">A comparação ficará disponível quando ambos concluírem o Exame de Admissão.</p>
       </Card>
     );
   }

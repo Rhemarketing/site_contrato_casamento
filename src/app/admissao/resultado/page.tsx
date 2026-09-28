@@ -43,10 +43,10 @@ export default async function AdmissionResultPage() {
   }
 
   if (state.kind === "NOT_STARTED") {
-    return <ResultStateCard title="Você ainda não realizou sua Prova de Admissão." description="Inicie a avaliação para registrar suas percepções sobre o relacionamento." href="/admissao/questionario" action="Iniciar Prova de Admissão" />;
+    return <ResultStateCard title="Você ainda não realizou seu Exame de Admissão." description="Inicie a avaliação para registrar suas percepções sobre o relacionamento." href="/admissao/questionario" action="Iniciar Exame de Admissão" />;
   }
   if (state.kind === "IN_PROGRESS") {
-    return <ResultStateCard title="Sua Prova de Admissão ainda não foi concluída." description={`${state.answerCount} de 40 respostas estão registradas. Continue de onde parou para gerar seu relatório.`} href="/admissao/questionario" action="Continuar minha prova" />;
+    return <ResultStateCard title="Seu Exame de Admissão ainda não foi concluído." description={`${state.answerCount} de 40 respostas estão registradas. Continue de onde parou para gerar seu relatório.`} href="/admissao/questionario" action="Continuar meu exame" />;
   }
   if (state.kind === "RESULT_PENDING") {
     return (

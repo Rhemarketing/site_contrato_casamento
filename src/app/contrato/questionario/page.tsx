@@ -17,7 +17,7 @@ export default async function ContractQuestionnairePage() {
     if (!(error instanceof ContractError)) throw error;
     unavailable = true;
   }
-  if (unavailable) return <Alert>O questionário principal ainda não está disponível para esta conta. Sua prova de admissão continua disponível na área pessoal.</Alert>;
+  if (unavailable) return <Alert>O questionário principal ainda não está disponível para esta conta. Seu exame de admissão continua disponível na área pessoal.</Alert>;
   if (!session) return <ContractActionButton action={startContractAction}>Iniciar minhas respostas</ContractActionButton>;
   return <ContractQuestionnaire session={session} />;
 }

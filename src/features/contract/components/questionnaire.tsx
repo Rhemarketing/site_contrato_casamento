@@ -176,14 +176,14 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
       <p>Corrigir respostas revoga a autorização e invalida propostas e documentos derivados desta sessão. Novas confirmações serão necessárias.</p><ContractActionButton action={() => reopenContractAction(session.id, session.revision)}>Corrigir minhas respostas</ContractActionButton>
     </> : <><p>Concluir encerra a edição desta versão das respostas. A avaliação do casal exige uma autorização separada de cada pessoa.</p>
       {reviewingBeforeCompletion
-        ? <ContractActionButton disabled={pending || !ready} action={() => submitContractAction(session.id, session.revision)}>Concluir a prova</ContractActionButton>
+        ? <ContractActionButton disabled={pending || !ready} action={() => submitContractAction(session.id, session.revision)}>Concluir o exame</ContractActionButton>
         : <Button disabled={pending || !ready} onClick={() => { setCompletionRevision(session.revision); setShowCompletionPrompt(true); }}>Concluir minhas respostas</Button>}
     </>}</Card>
-    <Modal isOpen={showCompletionPrompt} title="Deseja concluir a prova?" onClose={() => { setShowCompletionPrompt(false); setReviewingBeforeCompletion(true); }}>
+    <Modal isOpen={showCompletionPrompt} title="Deseja concluir o exame?" onClose={() => { setShowCompletionPrompt(false); setReviewingBeforeCompletion(true); }}>
       <p className="text-muted">Ao concluir, suas respostas serão encerradas para esta versão. Depois disso, você poderá autorizar a avaliação do casal.</p>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
         <Button variant="secondary" onClick={() => { setShowCompletionPrompt(false); setReviewingBeforeCompletion(true); }}>Revisar respostas</Button>
-        <ContractActionButton action={async () => { const result = await submitContractAction(session.id, completionRevision); if (result.ok) setShowCompletionPrompt(false); return result; }}>Concluir a prova</ContractActionButton>
+        <ContractActionButton action={async () => { const result = await submitContractAction(session.id, completionRevision); if (result.ok) setShowCompletionPrompt(false); return result; }}>Concluir o exame</ContractActionButton>
       </div>
     </Modal>
   </div>;

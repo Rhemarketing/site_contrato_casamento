@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { WorkspacePage } from "@/components/layout/workspace-page";
 import { Card } from "@/components/ui/card";
 import { AdminNav } from "./_components/admin-nav";
@@ -24,6 +25,41 @@ export default async function AdminPage() {
       description="Acompanhamento detalhado de contas cadastradas, vínculos de casais, questionários e acordos."
     >
       <AdminNav />
+
+      {/* Banner de Destaque para o Whiteboard */}
+      <div className="mb-8 flex flex-col justify-between gap-4 rounded-2xl border border-brand/20 bg-gradient-to-r from-brand/5 via-brand/10 to-transparent p-5 sm:flex-row sm:items-center">
+        <div className="flex items-center gap-4">
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+            <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="3" width="7" height="7" rx="1.5" />
+              <rect x="14" y="3" width="7" height="7" rx="1.5" />
+              <rect x="14" y="14" width="7" height="7" rx="1.5" />
+              <rect x="3" y="14" width="7" height="7" rx="1.5" />
+              <path d="M10 6.5h4" />
+              <path d="M6.5 10v4" />
+              <path d="M17.5 10v4" />
+              <path d="M10 17.5h4" />
+            </svg>
+          </span>
+          <div>
+            <h2 className="font-serif text-lg font-bold text-brand-strong">
+              Whiteboard & Mapa Mental das 200 Questões
+            </h2>
+            <p className="text-xs text-muted sm:text-sm">
+              Visualize a árvore completa de opções, 6 regras de combinações de respostas por questão e edite os módulos do &quot;Nós Decidimos&quot;.
+            </p>
+          </div>
+        </div>
+        <Link
+          href="/admin/contrato/whiteboard"
+          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-brand px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-brand-strong sm:text-sm"
+        >
+          Acessar Whiteboard
+          <svg className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </Link>
+      </div>
 
       {/* Grid de Métricas Principais */}
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -50,10 +50,10 @@ it("abre a confirmação após salvar a última resposta e troca o botão ao esc
   />);
 
   fireEvent.click(screen.getByRole("radio", { name: /Resposta 3/ }));
-  expect(await screen.findByRole("heading", { name: "Deseja concluir a prova?" })).toBeInTheDocument();
-  expect(screen.getByRole("button", { name: "Concluir a prova" })).toBeEnabled();
+  expect(await screen.findByRole("heading", { name: "Deseja concluir o exame?" })).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Concluir o exame" })).toBeEnabled();
   fireEvent.click(screen.getByRole("button", { name: "Revisar respostas" }));
-  await waitFor(() => expect(screen.queryByRole("heading", { name: "Deseja concluir a prova?" })).not.toBeInTheDocument());
-  expect(screen.getByRole("button", { name: "Concluir a prova" })).toBeEnabled();
+  await waitFor(() => expect(screen.queryByRole("heading", { name: "Deseja concluir o exame?" })).not.toBeInTheDocument());
+  expect(screen.getByRole("button", { name: "Concluir o exame" })).toBeEnabled();
   expect(screen.queryByRole("button", { name: "Concluir respostas" })).not.toBeInTheDocument();
 });

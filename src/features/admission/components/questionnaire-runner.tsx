@@ -95,7 +95,7 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
         <Badge>{getAdmissionStageTitle(question.stage)}</Badge>
         <span className="text-sm text-muted">Pergunta {questionIndex + 1} de {questions.length}</span>
       </div>
-      <h1 className="mt-5 font-serif text-3xl text-brand-strong sm:text-4xl">Prova de Admissão</h1>
+      <h1 className="mt-5 font-serif text-3xl text-brand-strong sm:text-4xl">Exame de Admissão</h1>
       <div className="mt-7">
         <ProgressBar value={calculateQuestionProgress(questionIndex, questions.length)} label={`Pergunta ${questionIndex + 1} de ${questions.length}`} />
       </div>
@@ -158,14 +158,14 @@ export function QuestionnaireRunner({ attemptId, questions, initialAnswers, init
       <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
         {questionIndex > 0 ? <Button variant="secondary" onClick={() => goTo(questionIndex - 1)} disabled={["saving", "advancing"].includes(saveState) || isCompleting}>Voltar</Button> : <span />}
         {questionIndex === questions.length - 1 ? (
-          <Button onClick={reviewingBeforeCompletion ? complete : () => setShowCompletionPrompt(true)} disabled={!persisted || isCompleting}>{isCompleting ? "Concluindo..." : reviewingBeforeCompletion ? "Concluir a prova" : "Concluir respostas"}</Button>
+          <Button onClick={reviewingBeforeCompletion ? complete : () => setShowCompletionPrompt(true)} disabled={!persisted || isCompleting}>{isCompleting ? "Concluindo..." : reviewingBeforeCompletion ? "Concluir o exame" : "Concluir respostas"}</Button>
         ) : reviewingPreviousQuestion ? <Button onClick={() => goTo(questionIndex + 1)} disabled={!persisted}>Avançar</Button> : <span />}
       </div>
-      <Modal isOpen={showCompletionPrompt} title="Deseja concluir a prova?" onClose={reviewAnswers}>
-        <p className="text-muted">Ao concluir, suas respostas serão processadas para gerar o resultado da Prova de Admissão.</p>
+      <Modal isOpen={showCompletionPrompt} title="Deseja concluir o exame?" onClose={reviewAnswers}>
+        <p className="text-muted">Ao concluir, suas respostas serão processadas para gerar o resultado do Exame de Admissão.</p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
           <Button variant="secondary" onClick={reviewAnswers} disabled={isCompleting}>Revisar respostas</Button>
-          <Button onClick={complete} disabled={isCompleting}>{isCompleting ? "Concluindo..." : "Concluir a prova"}</Button>
+          <Button onClick={complete} disabled={isCompleting}>{isCompleting ? "Concluindo..." : "Concluir o exame"}</Button>
         </div>
       </Modal>
     </div>

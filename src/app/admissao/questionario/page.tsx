@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { startAdmissionAttemptAction } from "@/app/actions/admission.actions";
-import { Alert, Badge, Button, Card, PageContainer } from "@/components/ui";
+import { Alert, Button, Card, PageContainer } from "@/components/ui";
 import { QuestionnaireRunner } from "@/features/admission/components/questionnaire-runner";
 import { requireUser } from "@/lib/auth/current-user";
 import { db } from "@/lib/db";
@@ -28,9 +28,8 @@ export default async function QuestionnairePage({ searchParams }: { searchParams
     <PageContainer className="py-12 sm:py-16">
       <div className="mx-auto max-w-2xl">
         {error ? <Alert variant="error" className="mb-6">{error}</Alert> : null}
-        <Badge>Prova de Admissão</Badge>
-        <h1 className="mt-5 font-serif text-4xl text-brand-strong sm:text-5xl">
-          {state.kind === "COMPLETED" ? "Você já concluiu esta Prova de Admissão." : "Pronto para começar?"}
+        <h1 className="text-center font-serif text-4xl text-brand-strong sm:text-5xl">
+          {state.kind === "COMPLETED" ? "Você já concluiu este Exame de Admissão." : "Pronto para começar?"}
         </h1>
         <Card className="mt-8">
           {state.kind === "COMPLETED" ? (
@@ -40,8 +39,8 @@ export default async function QuestionnairePage({ searchParams }: { searchParams
             </>
           ) : (
             <>
-              <p className="text-muted">A prova possui 40 perguntas, apresentadas uma por vez. Suas respostas são salvas no banco e você poderá continuar mais tarde.</p>
-              <form action={startAdmissionAttemptAction} className="mt-6"><Button type="submit">Iniciar Prova de Admissão</Button></form>
+              <p className="text-muted">O exame possui 40 perguntas, apresentadas uma por vez. Suas respostas são salvas no banco e você poderá continuar mais tarde.</p>
+              <form action={startAdmissionAttemptAction} className="mt-6"><Button type="submit">Iniciar Exame de Admissão</Button></form>
             </>
           )}
         </Card>
