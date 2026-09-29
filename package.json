@@ -27,7 +27,8 @@
     "contract:maintenance": "node --conditions=react-server --import tsx scripts/contract-maintenance.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev",
-    "prisma:migrate:deploy": "prisma migrate deploy"
+    "prisma:migrate:deploy": "prisma migrate deploy",
+    "deploy:prod": "curl -s -X POST http://72.61.36.87:3000/api/deploy/bb0b180f2a07652e98971ae5d75f9b842439d24f8381edbd"
   },
   "dependencies": {
     "@dagrejs/dagre": "^3.1.1",
