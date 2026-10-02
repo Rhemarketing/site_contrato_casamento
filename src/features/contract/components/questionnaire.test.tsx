@@ -108,7 +108,7 @@ it("mostra o complemento pendente da Q103 mesmo com 200 respostas registradas", 
   expect(screen.getByRole("combobox", { name: /Houve estrangulamento/ })).toBeInTheDocument();
 });
 
-it("orienta concluir, autorizar e seguir para decisões conforme o estado da própria sessão", () => {
+it("orienta concluir e seguir diretamente para o contrato conforme o estado da própria sessão", () => {
   const session = sessionFixture();
   session.questions.forEach(q => { q.state = "A"; });
   session.answered = 200; session.blocked = 0; session.neckCompressionReport = false;
@@ -116,12 +116,8 @@ it("orienta concluir, autorizar e seguir para decisões conforme o estado da pr�
   expect(screen.getByRole("link", { name: "Ir para Concluir minhas respostas" })).toHaveAttribute("href", "#conclusao");
   session.status = "SUBMITTED";
   rerender(<ContractQuestionnaire session={{ ...session }} />);
-  expect(screen.getByRole("link", { name: "Ir para Autorizar avaliação do casal" })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: "Ver e baixar nosso contrato" })).toHaveAttribute("href", "/contrato/documento");
   expect(screen.queryByRole("link", { name: "Continuar para NÓS DECIDIMOS" })).not.toBeInTheDocument();
-  session.consented = true;
-  rerender(<ContractQuestionnaire session={{ ...session }} />);
-  expect(screen.getByRole("link", { name: "Continuar para NÓS DECIDIMOS" })).toHaveAttribute("href", "/contrato/decisoes");
-  expect(screen.getByRole("link", { name: "Nosso contrato" })).toHaveAttribute("href", "/contrato/documento");
 });
 it("explica contexto pendente sem solicitar revisão", () => {
   const session = sessionFixture();

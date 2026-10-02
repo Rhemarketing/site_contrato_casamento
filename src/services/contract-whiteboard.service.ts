@@ -99,7 +99,7 @@ export class ContractWhiteboardService {
       (m) => m.questionId === q.id || rules.some((r) => r.moduleIds?.includes(m.id)),
     );
     const texts = catalog.components.filter(
-      (c) => c.questionId === q.id && c.editorialTemplate && c.target === "CONTRACT",
+      (c) => c.questionId === q.id && (c.editorialTemplate || c.template) && c.target === "CONTRACT",
     );
 
     // Estruturação dos Nós para o React Flow
@@ -163,15 +163,21 @@ export class ContractWhiteboardService {
       // Encontrar template correspondente se houver
       const comp = texts.find((c) => c.id === rule?.componentId || c.id === `OUT-PAIR-${q.id}-${key}`);
       let previewText = "";
-      if (comp?.editorialTemplate) {
+      const rawTemplate = comp?.editorialTemplate ?? comp?.template;
+      if (rawTemplate) {
         try {
-          previewText = renderRegisteredTemplate(comp.editorialTemplate, {
+          previewText = renderRegisteredTemplate(rawTemplate, {
             "Nome 1": "Alice",
             "Nome 2": "Bruno",
+            "Nome A": "Alice",
+            "Nome B": "Bruno",
           });
         } catch {
-          previewText = comp.editorialTemplate;
+          previewText = rawTemplate;
         }
+      } else if (action === "KEEP_INDIVIDUAL_OUTPUTS") {
+        const [o1, o2] = key.split("");
+        previewText = `Mantém duas cláusulas individuais: Alice (Opção ${o1}) e Bruno (Opção ${o2}).`;
       }
 
       nodes.push({

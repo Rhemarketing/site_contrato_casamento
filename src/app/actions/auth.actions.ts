@@ -51,10 +51,14 @@ export async function registerAction(_state: AuthActionState, formData: FormData
     if (error instanceof EmailAlreadyRegisteredError) return { fieldErrors: { email: [error.message] }, values: { name: input.name, email: input.email } };
     throw error;
   }
+  const rawCallbackUrl = String(formData.get("callbackUrl") ?? "");
+  const targetUrl = !rawCallbackUrl || rawCallbackUrl === "/dashboard"
+    ? "/admissao/questionario"
+    : rawCallbackUrl;
   await signIn("credentials", {
     email: parsed.data.email,
     password: parsed.data.password,
-    redirectTo: getSafeCallbackUrl(String(formData.get("callbackUrl") ?? "")),
+    redirectTo: getSafeCallbackUrl(targetUrl, "/admissao/questionario"),
   });
   return {};
 }

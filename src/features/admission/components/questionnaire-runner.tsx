@@ -19,8 +19,17 @@ const AUTO_ADVANCE_DELAY_MS = 1_000;
 
 export function QuestionnaireRunner({ attemptId, questions, initialAnswers, initialQuestionIndex }: QuestionnaireRunnerProps) {
   const [questionIndex, setQuestionIndex] = useState(initialQuestionIndex);
-  const [furthestQuestionIndex, setFurthestQuestionIndex] = useState(initialQuestionIndex);
   const [answers, setAnswers] = useState(() => new Map(initialAnswers.map((answer) => [answer.questionId, answer.optionId])));
+  const [furthestQuestionIndex, setFurthestQuestionIndex] = useState(() => {
+    const answeredIds = new Set(initialAnswers.map((a) => a.questionId));
+    let furthest = initialQuestionIndex;
+    for (let i = 0; i < questions.length; i++) {
+      if (answeredIds.has(questions[i].id)) {
+        furthest = Math.max(furthest, i);
+      }
+    }
+    return furthest;
+  });
   const [selectedOptionId, setSelectedOptionId] = useState(() => answers.get(questions[initialQuestionIndex]?.id) ?? "");
   const [saveState, setSaveState] = useState<SaveState>("idle");
   const [message, setMessage] = useState("");

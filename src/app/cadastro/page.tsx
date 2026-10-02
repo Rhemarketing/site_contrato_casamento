@@ -9,7 +9,7 @@ import { getCurrentUser } from "@/lib/auth/current-user";
 export const metadata: Metadata = { title: "Cadastro" };
 
 export default async function RegistrationPage({ searchParams }: { searchParams: Promise<{ callbackUrl?: string }> }) {
-  const callbackUrl = getSafeCallbackUrl((await searchParams).callbackUrl);
+  const callbackUrl = getSafeCallbackUrl((await searchParams).callbackUrl, "/admissao/questionario");
   if (await getCurrentUser()) redirect(callbackUrl);
   return <AuthShell title="Crie seu espaço" description="Seu cadastro será individual, mesmo quando fizer parte de um casal." footer={<>Já possui uma conta? <Link className="font-semibold text-brand hover:underline" href={`/login?callbackUrl=${encodeURIComponent(callbackUrl)}`}>Entrar</Link></>}><RegistrationForm callbackUrl={callbackUrl} /></AuthShell>;
 }

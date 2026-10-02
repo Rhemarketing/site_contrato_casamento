@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth/current-user";
 import { db } from "@/lib/db";
 import { ContractService } from "@/services/contract.service";
@@ -29,14 +30,34 @@ async function run<T>(operation: (userId: string) => Promise<T>): Promise<Contra
     return { ok: false, message: messages[code] ?? "Não foi possível realizar esta operação. Tente novamente pela sua área individual." };
   }
 }
-export async function startContractAction() { return run(id => service.start(id)); }
+export async function startContractAction() {
+  const result = await run(id => service.start(id));
+  if (result.ok) {
+    redirect("/contrato/questionario");
+  }
+  return result;
+}
 export async function reopenContractAction(sessionId: string, revision: number) { return run(id => service.reopen(id, sessionId, revision)); }
 export async function requestContractReviewAction(reviewerId: string, consent: boolean, q151Requested = false) { return run(id => service.requestPrivateReview(id, reviewerId, consent, q151Requested)); }
 export async function revokeContractReviewAction(reviewId: string) { return run(id => service.revokePrivateReview(id, reviewId)); }
 export async function decideContractReviewAction(reviewId: string, outcome: "CONTINUE" | "PAUSE" | "CLOSE") { return run(id => service.decidePrivateReview(id, reviewId, outcome)); }
 export async function saveContractAnswerAction(input: unknown) { return run(id => service.saveAnswer(id, input)); }
 export async function saveContractContextAction(input: unknown) { return run(id => service.saveContext(id, input)); }
-export async function submitContractAction(sessionId: string, revision: number) { return run(id => service.submit(id, sessionId, revision)); }
+export async function submitContractAction(sessionId: string, revision: number) {
+  const result = await run(id => service.submit(id, sessionId, revision));
+  if (result.ok) {
+    revalidatePath("/contrato/documento");
+    const bothSubmitted = (result.data as { bothSubmitted?: boolean } | undefined)?.bothSubmitted;
+    return {
+      ...result,
+      data: {
+        ...(result.data as object),
+        redirectUrl: bothSubmitted ? "/contrato/documento" : undefined,
+      },
+    };
+  }
+  return result;
+}
 export async function consentContractAction(sessionId: string, revision: number, enabled: boolean) { return run(id => service.consent(id, sessionId, revision, enabled)); }
 export async function proposeContractDecisionAction(input: unknown) { return run(id => service.propose(id, input)); }
 export async function withdrawExtraContractDecisionAction(moduleId: string, hash: string) { return run(id => service.withdrawExtraDecision(id, moduleId, hash)); }

@@ -103,18 +103,11 @@ export function planPair(catalog: Catalog, input: {
   if (rule.componentId) plan.selections.push({ componentId: rule.componentId });
   else input.members.forEach((respondentId, index) => plan.selections.push({ componentId: `OUT-${input.questionId}-${answers[index]}`, respondentId }));
   for (const step of rule.steps) {
+    if (step.operation === "OPEN_NOS_DECIDIMOS") continue;
     const verdict = evaluatePredicate(step.when, normalized.key, input.facts);
     if (verdict === null) plan.blockers.push(`CONTEXT_REQUIRED:${step.condition_id ?? step.operation}`);
-    else if (verdict === true && step.operation === "OPEN_NOS_DECIDIMOS" && !rule.jointBlocked) {
-      for (const id of step.module_ids ?? []) {
-        const definition = catalog.modules.find(m => m.id === id);
-        if (!definition?.compiled) plan.blockers.push(`MODULE_INCOMPLETE:${id}`);
-        else plan.modules.push(id);
-      }
-    }
   }
   plan.blockers = [...new Set(plan.blockers)];
-  if (input.questionId === "Q146" && normalized.key === "AC" && input.facts.Q146_sufficient_consensus === true && input.facts.Q146_both_agree_to_joint_decision === true) plan.modules.push("ND-Q146-01");
   return plan;
 }
 export function catalogReadiness(catalog: Catalog) {

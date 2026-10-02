@@ -3,7 +3,7 @@ import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Alert, Badge, Button, Card, Modal, ProgressBar } from "@/components/ui";
-import { saveContractAnswerAction, saveContractContextAction, submitContractAction, consentContractAction, reopenContractAction } from "@/app/actions/contract.actions";
+import { saveContractAnswerAction, saveContractContextAction, submitContractAction, reopenContractAction } from "@/app/actions/contract.actions";
 import type { Letter, OwnSessionDto } from "../domain/types";
 import { ContractActionButton } from "./action-button";
 
@@ -63,13 +63,12 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
   return <div className="space-y-6">
     <Card className="space-y-3">
       <h2 className="text-xl font-semibold">Próximo passo</h2>
-      {closed ? session.coupleConnected ? session.consented ? <>
-        <p>Suas respostas estão concluídas e sua autorização está registrada. Para avançar, os dois precisam concluir e autorizar na própria conta.</p>
-        <Link className="inline-block font-semibold text-brand underline" href="/contrato/decisoes">Continuar para NÓS DECIDIMOS</Link>
-        <p>Depois das decisões, abra <Link className="text-brand underline" href="/contrato/documento">Nosso contrato</Link> e prepare o rascunho.</p>
-      </> : <><p>Suas respostas estão concluídas. Falta sua autorização para a avaliação do casal.</p><a className="text-brand underline" href="#conclusao">Ir para Autorizar avaliação do casal</a></>
-        : <><p>Conecte as contas para avançar à avaliação do casal.</p><Link className="text-brand underline" href="/casal">Conectar meu parceiro</Link></>
-        : ready ? <><p>Todos os itens estão resolvidos. Agora conclua suas respostas e, em seguida, autorize a avaliação do casal.</p><a className="text-brand underline" href="#conclusao">Ir para Concluir minhas respostas</a></>
+      {closed ? session.coupleConnected ? <>
+        <p>Suas respostas estão concluídas. O contrato é gerado automaticamente assim que os dois terminarem o questionário.</p>
+        <Link className="inline-block font-semibold text-brand underline" href="/contrato/documento">Ver e baixar nosso contrato</Link>
+      </>
+        : <><p>Suas respostas estão concluídas e salvas. Conecte as contas para que o contrato do casal seja gerado.</p><Link className="text-brand underline" href="/casal">Conectar meu parceiro</Link></>
+        : ready ? <><p>Todos os itens estão resolvidos. Clique em Concluir minhas respostas abaixo para finalizar e gerar o contrato.</p><a className="text-brand underline" href="#conclusao">Ir para Concluir minhas respostas</a></>
         : <><p>Resolva as perguntas pendentes e os complementos privados antes de concluir.</p>
           {missingComplements.length ? <div className="space-y-2"><p>Complementos privados pendentes:</p>{missingComplements.map(question => <button key={question.id} type="button" className="mr-3 text-brand underline" onClick={() => goTo(session.questions.findIndex(item => item.id === question.id))}>{question.id} — preencher complemento</button>)}</div> : null}
         </>}
@@ -170,20 +169,38 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
       <p role="status" className="text-sm text-muted">{waitingToAdvance ? "Salvo" : pending ? "Salvando…" : message}</p>
       <div className="flex justify-between"><Button variant="secondary" disabled={pending || index === 0} onClick={() => goTo(index - 1)}>Anterior</Button>{reviewingPreviousQuestion && index < session.questions.length - 1 && questionComplete(q) ? <Button variant="secondary" disabled={pending} onClick={() => goTo(index + 1)}>Avançar</Button> : <span />}</div>
     </Card>
-    <Card className="space-y-4"><h2 id="conclusao" className="text-xl font-semibold">Conclusão e consentimento</h2>{closed ? <>
-      <p>Autorizar permite a avaliação das duas sessões para preparar decisões e textos elegíveis. As respostas brutas e privadas continuam restritas.</p>
-      {session.coupleConnected ? <ContractActionButton action={() => consentContractAction(session.id, session.revision, !session.consented)}>{session.consented ? "Revogar autorização" : "Autorizar avaliação do casal"}</ContractActionButton> : <p>Suas respostas estão concluídas e salvas. Conecte seu parceiro quando quiser continuar para a avaliação e a montagem do contrato. Depois da conexão, cada pessoa deverá autorizar a avaliação.</p>}
-      <p>Corrigir respostas revoga a autorização e invalida propostas e documentos derivados desta sessão. Novas confirmações serão necessárias.</p><ContractActionButton action={() => reopenContractAction(session.id, session.revision)}>Corrigir minhas respostas</ContractActionButton>
-    </> : <><p>Concluir encerra a edição desta versão das respostas. A avaliação do casal exige uma autorização separada de cada pessoa.</p>
+    <Card className="space-y-4"><h2 id="conclusao" className="text-xl font-semibold">Conclusão</h2>{closed ? <>
+      <p>Suas respostas foram concluídas com sucesso. Assim que os dois concluírem o questionário, o contrato estará disponível para download e impressão.</p>
+      <Link className="inline-block font-semibold text-brand underline" href="/contrato/documento">Ir para Nosso Contrato</Link>
+      <div className="pt-2">
+        <p className="text-sm text-muted">Caso deseje corrigir suas respostas:</p>
+        <ContractActionButton action={() => reopenContractAction(session.id, session.revision)}>Corrigir minhas respostas</ContractActionButton>
+      </div>
+    </> : <><p>Ao concluir, você encerra a edição desta versão das suas respostas e o contrato poderá ser gerado.</p>
       {reviewingBeforeCompletion
-        ? <ContractActionButton disabled={pending || !ready} action={() => submitContractAction(session.id, session.revision)}>Concluir o exame</ContractActionButton>
+        ? <ContractActionButton disabled={pending || !ready} action={async () => {
+            const result = await submitContractAction(session.id, session.revision);
+            if (result.ok && result.data && "redirectUrl" in (result.data as object) && (result.data as { redirectUrl?: string }).redirectUrl) {
+              router.push((result.data as { redirectUrl: string }).redirectUrl);
+            }
+            return result;
+          }}>Concluir o exame</ContractActionButton>
         : <Button disabled={pending || !ready} onClick={() => { setCompletionRevision(session.revision); setShowCompletionPrompt(true); }}>Concluir minhas respostas</Button>}
     </>}</Card>
     <Modal isOpen={showCompletionPrompt} title="Deseja concluir o exame?" onClose={() => { setShowCompletionPrompt(false); setReviewingBeforeCompletion(true); }}>
-      <p className="text-muted">Ao concluir, suas respostas serão encerradas para esta versão. Depois disso, você poderá autorizar a avaliação do casal.</p>
+      <p className="text-muted">Ao concluir, suas respostas serão encerradas para esta versão e o contrato do casal será gerado assim que ambos concluírem.</p>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
         <Button variant="secondary" onClick={() => { setShowCompletionPrompt(false); setReviewingBeforeCompletion(true); }}>Revisar respostas</Button>
-        <ContractActionButton action={async () => { const result = await submitContractAction(session.id, completionRevision); if (result.ok) setShowCompletionPrompt(false); return result; }}>Concluir o exame</ContractActionButton>
+        <ContractActionButton action={async () => {
+          const result = await submitContractAction(session.id, completionRevision);
+          if (result.ok) {
+            setShowCompletionPrompt(false);
+            if (result.data && "redirectUrl" in (result.data as object) && (result.data as { redirectUrl?: string }).redirectUrl) {
+              router.push((result.data as { redirectUrl: string }).redirectUrl);
+            }
+          }
+          return result;
+        }}>Concluir o exame</ContractActionButton>
       </div>
     </Modal>
   </div>;

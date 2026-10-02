@@ -16,7 +16,7 @@ export function generateRegisteredDraft(input: {
   catalog: Catalog; catalogHash: string; plans: PairPlan[];
   members: [{ id: string; name: string }, { id: string; name: string }];
   consentedMemberIds: string[]; safetyCleared: boolean; criticalSafety: boolean;
-  decisions: { content: DecisionContent; hash: string; revision: number; basisHash: string; confirmations: { memberId: string; hash: string }[] }[];
+  decisions?: { content: DecisionContent; hash: string; revision: number; basisHash: string; confirmations: { memberId: string; hash: string }[] }[];
   unresolvedDependencies: string[];
 }): ContractDraft {
   const { catalog, members } = input;
@@ -74,16 +74,14 @@ export function generateRegisteredDraft(input: {
     paragraphs.set(clauseId, [...paragraphs.get(clauseId) ?? [], cross.text]);
     provenance.push({ componentId: cross.id, version: catalog.version, source: cross.source });
   }
-  const baseModules = [...new Set(input.plans.flatMap(p => p.modules))];
-  const modules = [...new Set([...baseModules, ...input.decisions.map(d => d.content.moduleId)])];
-  for (const id of modules) {
+  for (const decision of input.decisions ?? []) {
+    const id = decision.content.moduleId;
     const [base, instance] = id.split(":");
     const definition = catalog.modules.find(m => m.id === base);
-    if (!baseModules.includes(base) || (instance && !definition?.repeatable)) throw new ContractError("SHARED_UNAVAILABLE");
-    const decision = input.decisions.find(d => d.content.moduleId === id);
-    if (!definition?.compiled || !decision || proposalHash(decision.content, decision.revision, decision.basisHash) !== decision.hash || !bothConfirmed(members.map(m => m.id), decision.hash, decision.confirmations)) throw new ContractError("SHARED_UNAVAILABLE");
+    if (!definition?.compiled || (instance && !definition.repeatable)) continue;
+    if (proposalHash(decision.content, decision.revision, decision.basisHash) !== decision.hash || !bothConfirmed(members.map(m => m.id), decision.hash, decision.confirmations)) continue;
     const option = definition.options.find(o => o.code === decision.content.choice);
-    if (!option || definition.version !== decision.content.moduleVersion) throw new ContractError("SHARED_UNAVAILABLE");
+    if (!option || definition.version !== decision.content.moduleVersion) continue;
     paragraphs.set("JOINT", [...paragraphs.get("JOINT") ?? [], ...renderDecision(definition, decision.content, bindings)]);
     provenance.push({ componentId: id, version: definition.version, source: definition.source });
   }

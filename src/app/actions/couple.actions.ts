@@ -74,6 +74,7 @@ export async function createCoupleInviteAction(
       phone,
     );
     revalidatePath("/casal");
+    revalidatePath("/dashboard");
     return { invite: { ...invite, whatsappUrl: whatsAppInviteUrl(phone, invite.inviteUrl) } };
   } catch (error) {
     return { message: actionError(error) };
@@ -86,6 +87,7 @@ export async function cancelCoupleInviteAction() {
   try {
     await inviteService.cancelInvite(user.id);
     revalidatePath("/casal");
+    revalidatePath("/dashboard");
   } catch (error) {
     errorMessage = actionError(error);
   }
@@ -99,6 +101,7 @@ export async function cancelPendingCoupleAction() {
   try {
     await coupleService.cancelPendingCouple(user.id);
     revalidatePath("/casal");
+    revalidatePath("/dashboard");
     revalidatePath("/contrato", "layout");
   } catch (error) {
     errorMessage = actionError(error);

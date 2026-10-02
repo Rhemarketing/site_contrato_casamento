@@ -1,25 +1,68 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { startAdmissionAttemptAction } from "@/app/actions/admission.actions";
-import { Alert, Button, Card, PageContainer } from "@/components/ui";
+import { redirect } from "next/navigation";
+import { Alert, FloatingErrorToast, PageContainer } from "@/components/ui";
 import { QuestionnaireRunner } from "@/features/admission/components/questionnaire-runner";
 import { requireUser } from "@/lib/auth/current-user";
 import { db } from "@/lib/db";
 import { AdmissionAttemptService } from "@/services/admission-attempt.service";
+import { AdmissionAttemptError, ADMISSION_ERROR_MESSAGES } from "@/services/admission-attempt.errors";
 
 export const metadata: Metadata = { title: "Questionário de admissão" };
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
-export default async function QuestionnairePage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
+export default async function QuestionnairePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string; errorCode?: string; review?: string }>;
+}) {
   const user = await requireUser("/admissao/questionario");
-  const state = await new AdmissionAttemptService(db).getState(user.id);
-  const { error } = await searchParams;
+  const service = new AdmissionAttemptService(db);
+  const { error, errorCode, review } = await searchParams;
+  const isReviewMode = Boolean(review || errorCode);
+
+  if (isReviewMode) {
+    await service.reopenForReview(user.id);
+  }
+
+  let state = await service.getState(user.id);
+
+  if (!isReviewMode && state.kind === "COMPLETED") {
+    redirect("/admissao/resultado");
+  }
+
+  if (state.kind === "NOT_STARTED") {
+    try {
+      await service.startOrResume(user.id);
+      state = await service.getState(user.id);
+    } catch (err: unknown) {
+      const message = err instanceof AdmissionAttemptError
+        ? ADMISSION_ERROR_MESSAGES[err.code]
+        : "Não foi possível iniciar o exame de admissão. Tente novamente.";
+      return (
+        <PageContainer className="py-12 sm:py-16">
+          <div className="mx-auto max-w-2xl">
+            <Alert variant="error">{message}</Alert>
+          </div>
+          {errorCode ? <FloatingErrorToast errorCode={errorCode} /> : null}
+        </PageContainer>
+      );
+    }
+  }
 
   if (state.kind === "OPEN") {
     return (
       <PageContainer className="py-8 sm:py-14">
         <div className="mx-auto max-w-3xl">
-          <QuestionnaireRunner attemptId={state.attemptId} questions={state.questions} initialAnswers={state.answers} initialQuestionIndex={state.currentQuestionIndex} />
+          {error ? <Alert variant="error" className="mb-6">{error}</Alert> : null}
+          <QuestionnaireRunner
+            attemptId={state.attemptId}
+            questions={state.questions}
+            initialAnswers={state.answers}
+            initialQuestionIndex={isReviewMode ? 0 : state.currentQuestionIndex}
+          />
         </div>
+        {errorCode ? <FloatingErrorToast errorCode={errorCode} /> : null}
       </PageContainer>
     );
   }
@@ -27,24 +70,10 @@ export default async function QuestionnairePage({ searchParams }: { searchParams
   return (
     <PageContainer className="py-12 sm:py-16">
       <div className="mx-auto max-w-2xl">
-        {error ? <Alert variant="error" className="mb-6">{error}</Alert> : null}
-        <h1 className="text-center font-serif text-4xl text-brand-strong sm:text-5xl">
-          {state.kind === "COMPLETED" ? "Você já concluiu este Exame de Admissão." : "Pronto para começar?"}
-        </h1>
-        <Card className="mt-8">
-          {state.kind === "COMPLETED" ? (
-            <>
-              <p className="text-muted">Suas 40 respostas foram registradas. Uma futura política definirá quando uma nova tentativa poderá ser realizada.</p>
-              <Link href="/admissao/resultado" className="mt-6 inline-flex min-h-11 items-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-strong">Ver resultado</Link>
-            </>
-          ) : (
-            <>
-              <p className="text-muted">O exame possui 40 perguntas, apresentadas uma por vez. Suas respostas são salvas no banco e você poderá continuar mais tarde.</p>
-              <form action={startAdmissionAttemptAction} className="mt-6"><Button type="submit">Iniciar Exame de Admissão</Button></form>
-            </>
-          )}
-        </Card>
+        <Alert variant="error">Não foi possível carregar as perguntas do exame de admissão.</Alert>
       </div>
+      {errorCode ? <FloatingErrorToast errorCode={errorCode} /> : null}
     </PageContainer>
   );
 }
+

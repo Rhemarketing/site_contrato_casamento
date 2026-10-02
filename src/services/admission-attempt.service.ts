@@ -179,4 +179,24 @@ export class AdmissionAttemptService {
   async complete(userId: string, attemptId: string) {
     return new AdmissionResultService(this.client).completeForUser(userId, attemptId);
   }
+
+  async reopenForReview(userId: string) {
+    const questionnaire = await this.findExpectedQuestionnaire();
+    if (!questionnaire) return null;
+    const attempt = await this.client.questionnaireAttempt.findFirst({
+      where: { userId, questionnaireId: questionnaire.id },
+      orderBy: { createdAt: "desc" },
+    });
+    if (!attempt) return null;
+    const key = openAttemptKey(userId, questionnaire.id);
+    return this.client.questionnaireAttempt.update({
+      where: { id: attempt.id },
+      data: {
+        status: "IN_PROGRESS",
+        totalScore: null,
+        completedAt: null,
+        openAttemptKey: key,
+      },
+    });
+  }
 }

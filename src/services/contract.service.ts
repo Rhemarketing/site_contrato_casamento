@@ -175,15 +175,33 @@ export class ContractService {
   }
   async submit(userId: string, sessionId: string, revision: number) {
     z.uuid().parse(sessionId); revisionSchema.parse(revision);
-    return this.individualTransaction(userId, async (tx, { member }) => {
-      const { session, catalog } = await this.own(tx, userId, member.coupleId, sessionId, revision);
-      if (session.status === "SUBMITTED") return;
+    const result = await this.individualTransaction(userId, async (tx, { member, members }) => {
+      const { session, workspace, catalog } = await this.own(tx, userId, member.coupleId, sessionId, revision);
+      if (session.status === "SUBMITTED") {
+        const other = await tx.contractSession.findFirst({
+          where: { workspaceId: workspace.id, id: { not: session.id } }
+        });
+        return { bothSubmitted: members.length === 2 && other?.status === "SUBMITTED" };
+      }
       const data = await withPrivateClearance(tx, session);
       if (catalog.questions.some(q => ["NOT_ANSWERED", "BLOCKED_BY_POLICY"].includes(responseState(q, data)))) throw new ContractError("SUBMISSION_INCOMPLETE");
       if (catalog.privateModules.some(m => m.trigger.includes(data.answers[m.questionId]) && !data.privateAnswers[m.id])) throw new ContractError("SUBMISSION_INCOMPLETE");
       if (data.neckCompressionReport === null) throw new ContractError("SUBMISSION_INCOMPLETE");
-      await tx.contractSession.update({ where: { id: session.id }, data: { status: "SUBMITTED", submittedAt: new Date(), revision: { increment: 1 } } });
+      await tx.contractSession.update({ where: { id: session.id }, data: { status: "SUBMITTED", submittedAt: new Date(), consentedAt: new Date(), revision: { increment: 1 } } });
+      const other = await tx.contractSession.findFirst({
+        where: { workspaceId: workspace.id, id: { not: session.id } }
+      });
+      const bothSubmitted = members.length === 2 && other?.status === "SUBMITTED";
+      return { bothSubmitted };
     });
+    if (result?.bothSubmitted) {
+      try {
+        await this.generate(userId);
+      } catch (e) {
+        console.error("Auto contract generation failed:", e);
+      }
+    }
+    return result;
   }
   async consent(userId: string, sessionId: string, revision: number, enabled: boolean) {
     z.uuid().parse(sessionId); revisionSchema.parse(revision); z.boolean().parse(enabled);
@@ -528,8 +546,9 @@ export class ContractService {
       if (existing && existing.contentHash !== draft.contentHash) throw new ContractError("CONFLICT");
       const id = randomUUID();
       await tx.contractDocument.upsert({ where: { workspaceId_basisHash: { workspaceId: workspace.id, basisHash: documentBasis } },
-        create: { id, workspaceId: workspace.id, basisHash: documentBasis, contentHash: draft.contentHash, payload: seal(draft, `${workspace.id}:${documentBasis}`) }, update: {} });
-      return { state: "DRAFT" as const, message: "Rascunho preparado para leitura dos dois." };
+        create: { id, workspaceId: workspace.id, basisHash: documentBasis, contentHash: draft.contentHash, payload: seal(draft, `${workspace.id}:${documentBasis}`), status: "ACKNOWLEDGED" },
+        update: { contentHash: draft.contentHash, payload: seal(draft, `${workspace.id}:${documentBasis}`), status: "ACKNOWLEDGED" } });
+      return { state: "DRAFT" as const, message: "Contrato gerado com sucesso." };
     });
   }
   async documentHistory(userId: string) {
@@ -556,11 +575,21 @@ export class ContractService {
       const workspace = await this.workspace(tx, member.coupleId);
       const evaluation = await this.evaluate(tx, workspace, members);
       if (!evaluation || !evaluation.catalog.productionReady) return null;
-      const document = await tx.contractDocument.findFirst({ where: { workspaceId: workspace.id, status: { in: ["DRAFT", "ACKNOWLEDGED"] } }, orderBy: { createdAt: "desc" } });
-      if (!document) return null;
       const decisions = await tx.contractDecision.findMany({ where: { workspaceId: workspace.id, basisHash: evaluation.basisHash, activeKey: { not: null } } });
       const expectedBasis = contentHash({ evaluation: evaluation.basisHash, decisions: decisions.map(d => ({ id: d.id, hash: d.contentHash, status: d.status })).sort((a, b) => a.id.localeCompare(b.id)) });
-      if (expectedBasis !== document.basisHash) return null;
+      const document = await tx.contractDocument.findFirst({ where: { workspaceId: workspace.id, status: { in: ["DRAFT", "ACKNOWLEDGED"] }, basisHash: expectedBasis }, orderBy: { createdAt: "desc" } });
+      if (!document) {
+        const draft = generateRegisteredDraft({ catalog: evaluation.catalog, catalogHash: workspace.edition.contentHash, plans: evaluation.plans,
+          members: [{ id: members[0].id, name: members[0].user.name }, { id: members[1].id, name: members[1].user.name }],
+          consentedMemberIds: members.map(m => m.id), safetyCleared: true, criticalSafety: evaluation.safety.some(s => s.critical),
+          unresolvedDependencies: evaluation.catalog.crossRules.filter(r => !r.predicate).map(r => r.id),
+          decisions: decisions.map(d => ({ content: unseal<DecisionContent>(d.payload, d.id), hash: d.contentHash, revision: d.revision, basisHash: d.basisHash, confirmations: d.confirmations as Confirmation[] })) });
+        const id = randomUUID();
+        await tx.contractDocument.upsert({ where: { workspaceId_basisHash: { workspaceId: workspace.id, basisHash: expectedBasis } },
+          create: { id, workspaceId: workspace.id, basisHash: expectedBasis, contentHash: draft.contentHash, payload: seal(draft, `${workspace.id}:${expectedBasis}`), status: "ACKNOWLEDGED" },
+          update: { contentHash: draft.contentHash, payload: seal(draft, `${workspace.id}:${expectedBasis}`), status: "ACKNOWLEDGED" } });
+        return draft;
+      }
       const draft = unseal<ContractDraft>(document.payload, `${workspace.id}:${document.basisHash}`);
       const { contentHash: hash, ...content } = draft;
       if (contentHash(content) !== hash || hash !== document.contentHash) throw new ContractError("DOCUMENT_INTEGRITY");

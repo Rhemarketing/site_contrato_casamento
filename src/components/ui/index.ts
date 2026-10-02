@@ -8,3 +8,4 @@ export { Loading } from "./loading";
 export { Modal } from "./modal";
 export { PageContainer } from "./page-container";
 export { ProgressBar } from "./progress-bar";
+export { FloatingErrorToast } from "./floating-error-toast";

@@ -62,12 +62,11 @@ describe("arquivo-mestre 1.4.0", () => {
     expect(catalog.privateModules.find(m => m.questionId === "Q119")?.trigger).toEqual(["B", "C"]);
     for (const id of ["Q196", "Q197", "Q198", "Q200"]) expect(planPair(catalog, { ...base, questionId: id, answers: ["C", "C"] }).selections).toEqual([]);
   });
-  it("decisão depende do gatilho e não nasce da ausência de um fato", () => {
+  it("não bloqueia pares elegíveis com módulos manuais de decisão", () => {
     const input = { ...base, questionId: "Q011", answers: ["B", "B"] as [Letter, Letter] };
-    expect(planPair(catalog, input).blockers).toContain("CONTEXT_REQUIRED:COND-Q011");
-    expect(planPair(catalog, { ...input, facts: { Q011_no_frequency_defined: true } }).modules).toContain("ND-Q011-01");
-    expect(planPair(catalog, { ...input, facts: { Q011_no_frequency_defined: false } }).modules).toEqual([]);
-    expect(planPair(catalog, { ...base, questionId: "Q041", answers: ["A", "A"] }).modules).toEqual(["ND-Q041-01", "ND-Q041-02"]);
+    expect(planPair(catalog, input).blockers).toEqual([]);
+    expect(planPair(catalog, input).modules).toEqual([]);
+    expect(planPair(catalog, { ...base, questionId: "Q041", answers: ["A", "A"] }).modules).toEqual([]);
   });
   it("renderiza todas as 487 redações exatas e rejeita variáveis ausentes/injetadas", () => {
     for (const c of catalog.components.filter(c => c.editorialFinal)) {

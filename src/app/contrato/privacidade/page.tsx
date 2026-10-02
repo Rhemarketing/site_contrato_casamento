@@ -21,7 +21,7 @@ export default async function PrivacyPage() {
         <p>Os detalhes abaixo usam somente suas próprias respostas. Não mostram respostas ou pendências privadas do seu parceiro.</p>
         {area.blockers.map(item => <div key={item.id} className="space-y-2 rounded-xl border border-line p-4"><h4 className="font-semibold">{item.questionId} — {item.title}</h4><p>{item.blocking ? "Preenchimento pendente" : "Aviso privado — não bloqueia o contrato"}</p><p className="whitespace-pre-wrap"><strong>Você registrou: </strong>{item.selected}</p><p><strong>Motivo: </strong>{item.reason}</p><p><strong>Próximo passo: </strong>{item.nextStep}</p></div>)}
         {!area.submitted ? <p>Falta concluir suas respostas após resolver as pendências acima.</p> : !area.consented ? <p>Suas respostas estão concluídas. Falta autorizar a avaliação do casal após conectar as contas.</p> : null}
-        {!area.blockers.some(item => item.blocking) && area.submitted && area.consented ? <p>Não há pendências nas suas respostas ou na sua autorização. <Link href="/contrato/decisoes" className="text-brand underline">Continuar para NÓS DECIDIMOS</Link>.</p> : null}
+        {!area.blockers.some(item => item.blocking) && area.submitted && area.consented ? <p>Não há pendências nas suas respostas. <Link href="/contrato/documento" className="text-brand underline">Ir para Nosso contrato</Link>.</p> : null}
         <Link href="/contrato/questionario" className="inline-block text-brand underline">Abrir Minhas respostas</Link>
         <p className="text-sm text-muted">Para editar uma sessão concluída, clique em Corrigir minhas respostas. Depois, conclua novamente e autorize a avaliação. A correção invalida propostas e documentos derivados.</p>
       </section>

@@ -57,3 +57,25 @@ it("abre a confirmação após salvar a última resposta e troca o botão ao esc
   expect(screen.getByRole("button", { name: "Concluir o exame" })).toBeEnabled();
   expect(screen.queryByRole("button", { name: "Concluir respostas" })).not.toBeInTheDocument();
 });
+
+it("permite avançar imediatamente quando iniciado na pergunta 1 com respostas existentes (modo revisão)", () => {
+  render(
+    <QuestionnaireRunner
+      attemptId="attempt-1"
+      questions={questions}
+      initialAnswers={[
+        { questionId: "question-1", optionId: "option-1" },
+        { questionId: "question-2", optionId: "option-2" },
+      ]}
+      initialQuestionIndex={0}
+    />
+  );
+
+  expect(screen.getByRole("heading", { name: "Pergunta 1" })).toBeInTheDocument();
+  const nextButton = screen.getByRole("button", { name: "Avançar" });
+  expect(nextButton).toBeInTheDocument();
+  expect(nextButton).toBeEnabled();
+
+  fireEvent.click(nextButton);
+  expect(screen.getByRole("heading", { name: "Pergunta 2" })).toBeInTheDocument();
+});

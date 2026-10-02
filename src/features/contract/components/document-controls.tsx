@@ -1,11 +1,20 @@
 "use client";
 import { useState } from "react";
 import { Button } from "@/components/ui";
-import { acceptContractDocumentAction, deleteContractDataAction, generateContractAction } from "@/app/actions/contract.actions";
+import { deleteContractDataAction, generateContractAction } from "@/app/actions/contract.actions";
 import { ContractActionButton } from "./action-button";
 export function DocumentControls({ hash, ownAccepted }: { hash: string; ownAccepted: boolean }) {
-  const [read, setRead] = useState(false);
-  return <div className="no-contract-print space-y-4"><p>O aceite registra ciência dos compromissos de convivência no texto desta versão. Não é assinatura qualificada nem garantia de efeitos jurídicos. Alterações exigem novos aceites. Consentimento físico e sexual continua necessário em cada ocasião.</p><label className="flex gap-3"><input type="checkbox" checked={read} onChange={e => setRead(e.target.checked)} />Li integralmente esta versão e confirmo os compromissos e acordos nela registrados.</label><ContractActionButton disabled={!read || ownAccepted} action={() => acceptContractDocumentAction(hash)}>{ownAccepted ? "Meu aceite está registrado" : "Registrar meu aceite desta versão"}</ContractActionButton><Button variant="secondary" onClick={() => window.print()}>Imprimir ou salvar PDF</Button></div>;
+  void hash;
+  void ownAccepted;
+  return (
+    <div className="no-contract-print space-y-4">
+      <div className="flex flex-wrap items-center gap-4 pt-2">
+        <Button onClick={() => window.print()} className="font-semibold">
+          Baixar ou Imprimir Contrato em PDF
+        </Button>
+      </div>
+    </div>
+  );
 }
 export function PrepareDocument() {
   const [reason, setReason] = useState("");
