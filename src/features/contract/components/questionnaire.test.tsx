@@ -133,3 +133,32 @@ it("permite concluir individualmente e orienta conectar depois sem autorizar ant
   expect(screen.getByText(/Suas respostas foram concluídas com sucesso/)).toBeInTheDocument();
   expect(screen.getByRole("button", { name: "Corrigir minhas respostas" })).toBeEnabled();
 });
+
+it("exibe os 20 blocos clicáveis e navega para a pergunta correspondente", () => {
+  const session = sessionFixture();
+  render(<ContractQuestionnaire session={session} />);
+
+  // Verifica que os 20 blocos de 0 a 19 estão presentes
+  for (let b = 0; b < 20; b++) {
+    expect(screen.getByText(`Bloco ${b}`)).toBeInTheDocument();
+  }
+
+  // Bloco 4 -> Pergunta 40 (Q040)
+  const bloco4Btn = screen.getByRole("button", { name: /^Bloco 4,/i });
+  fireEvent.click(bloco4Btn);
+  expect(screen.getByText("Pergunta 40 de 200")).toBeInTheDocument();
+  expect(screen.getByText("Q040")).toBeInTheDocument();
+
+  // Bloco 1 -> Pergunta 10 (Q010)
+  const bloco1Btn = screen.getByRole("button", { name: /^Bloco 1,/i });
+  fireEvent.click(bloco1Btn);
+  expect(screen.getByText("Pergunta 10 de 200")).toBeInTheDocument();
+  expect(screen.getByText("Q010")).toBeInTheDocument();
+
+  // Bloco 0 -> Pergunta 1 (Q001)
+  const bloco0Btn = screen.getByRole("button", { name: /^Bloco 0,/i });
+  fireEvent.click(bloco0Btn);
+  expect(screen.getByText("Pergunta 1 de 200")).toBeInTheDocument();
+  expect(screen.getByText("Q001")).toBeInTheDocument();
+});
+

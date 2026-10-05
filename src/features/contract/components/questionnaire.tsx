@@ -1,5 +1,5 @@
 "use client";
-import { useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Alert, Badge, Button, Card, Modal, ProgressBar } from "@/components/ui";
@@ -13,6 +13,8 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
   const initialIndex = Math.max(0, session.questions.findIndex(q => q.state === "NOT_ANSWERED"));
   const [index, setIndex] = useState(initialIndex);
   const [furthestIndex, setFurthestIndex] = useState(initialIndex);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const activeBlockRef = useRef<HTMLButtonElement | null>(null);
   const [pending, start] = useTransition();
   const [message, setMessage] = useState("");
   const [waitingToAdvance, setWaitingToAdvance] = useState(false);
@@ -60,6 +62,27 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
       }
     } catch { setMessage("A resposta não foi confirmada. Tente novamente."); }
   });
+
+  const currentBlock = index < 9 ? 0 : Math.min(19, Math.floor((index + 1) / 10));
+
+  useEffect(() => {
+    if (activeBlockRef.current && scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const button = activeBlockRef.current;
+      const scrollLeft = button.offsetLeft - container.offsetWidth / 2 + button.offsetWidth / 2;
+      if (typeof container.scrollTo === "function") {
+        container.scrollTo({ left: Math.max(0, scrollLeft), behavior: "smooth" });
+      }
+    }
+  }, [currentBlock]);
+
+  const scrollBlocks = (direction: "left" | "right") => {
+    if (scrollContainerRef.current && typeof scrollContainerRef.current.scrollBy === "function") {
+      const scrollAmount = direction === "left" ? -260 : 260;
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
   return <div className="space-y-6">
     {closed ? (
       <Card className="space-y-3">
@@ -82,6 +105,99 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
         value={Math.round((resolved / session.questions.length) * 100)}
         label={`${resolved} de ${session.questions.length} perguntas respondidas`}
       />
+    </Card>
+    <Card className="space-y-3 p-4 sm:p-5">
+      <div className="flex items-center justify-between gap-3 border-b border-line/60 pb-3">
+        <div>
+          <h3 className="text-sm font-semibold text-brand-strong">Navegação em Blocos</h3>
+          <p className="text-xs text-muted">20 blocos de 10 perguntas • Clique para ir ao bloco</p>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            onClick={() => scrollBlocks("left")}
+            className="flex size-7 items-center justify-center rounded-lg border border-line bg-surface text-brand hover:bg-slate-100 transition-colors"
+            aria-label="Rolar blocos para a esquerda"
+          >
+            <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollBlocks("right")}
+            className="flex size-7 items-center justify-center rounded-lg border border-line bg-surface text-brand hover:bg-slate-100 transition-colors"
+            aria-label="Rolar blocos para a direita"
+          >
+            <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        ref={scrollContainerRef}
+        className="flex items-center gap-3 sm:gap-4 overflow-x-auto py-2 px-1 scroll-smooth"
+        style={{ scrollbarWidth: "thin" }}
+      >
+        {Array.from({ length: 20 }, (_, b) => {
+          const isActive = b === currentBlock;
+          const targetIndex = b === 0 ? 0 : Math.min(session.questions.length - 1, b * 10 - 1);
+          const targetQuestionNum = b === 0 ? 1 : b * 10;
+          const startIndex = b === 0 ? 0 : b * 10 - 1;
+          const endIndex = b === 19 ? session.questions.length - 1 : (b === 0 ? 8 : b * 10 + 8);
+          const blockSlice = session.questions.slice(startIndex, Math.min(session.questions.length, endIndex + 1));
+          const answeredInBlock = blockSlice.filter(question => question.state !== "NOT_ANSWERED" && question.state !== "BLOCKED_BY_POLICY").length;
+          const isComplete = blockSlice.length > 0 && answeredInBlock === blockSlice.length;
+
+          return (
+            <button
+              key={b}
+              ref={isActive ? activeBlockRef : null}
+              type="button"
+              onClick={() => goTo(targetIndex)}
+              className="group flex flex-col items-center gap-1.5 shrink-0 transition-transform active:scale-95 focus:outline-none"
+              title={`Bloco ${b}: Pergunta ${targetQuestionNum} (Clique para ir)`}
+              aria-label={`Bloco ${b}, Pergunta ${targetQuestionNum}`}
+              aria-current={isActive ? "step" : undefined}
+            >
+              <div
+                className={`relative flex size-11 sm:size-12 items-center justify-center rounded-full font-bold text-sm transition-all ${
+                  isActive
+                    ? "border-2 border-[#1e3a5f] bg-[#1e3a5f] text-white shadow-md ring-4 ring-[#1e3a5f]/20 scale-105"
+                    : isComplete
+                    ? "border-2 border-emerald-500 bg-emerald-50 text-emerald-700 hover:border-emerald-600 hover:bg-emerald-100"
+                    : answeredInBlock > 0
+                    ? "border-2 border-sky-300 bg-sky-50 text-sky-800 hover:border-sky-400"
+                    : "border border-line bg-surface text-muted hover:border-brand/40 hover:text-brand-strong hover:bg-white"
+                }`}
+              >
+                {isComplete && !isActive ? (
+                  <svg className="size-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                ) : (
+                  <span>{b}</span>
+                )}
+                {isActive ? (
+                  <span className="absolute -top-0.5 -right-0.5 flex size-3 items-center justify-center rounded-full bg-accent ring-2 ring-white">
+                    <span className="size-1 rounded-full bg-white" />
+                  </span>
+                ) : null}
+              </div>
+              <span
+                className={`text-xs whitespace-nowrap transition-colors ${
+                  isActive
+                    ? "font-bold text-[#1e3a5f]"
+                    : "font-medium text-muted group-hover:text-brand-strong"
+                }`}
+              >
+                Bloco {b}
+              </span>
+            </button>
+          );
+        })}
+      </div>
     </Card>
     <Card className="space-y-5">
       <div className="flex justify-between items-center gap-3">
