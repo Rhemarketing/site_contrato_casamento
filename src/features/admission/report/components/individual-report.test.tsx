@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it } from "vitest";
 import type { AdmissionIndividualReportDto, AdmissionReportAreaDto } from "@/types/admission-report";
 import { AnswerDistribution } from "./answer-distribution";
 import { AreaResultCard } from "./area-result-card";
@@ -7,6 +7,8 @@ import { GeneralScoreCard } from "./general-score-card";
 import { IndividualAdmissionReport } from "./individual-report";
 import { formatAdmissionCompletionDate } from "./report-header";
 import styles from "./admission-result.module.css";
+
+afterEach(cleanup);
 
 const area: AdmissionReportAreaDto = {
   key: "comunicacao",
@@ -58,6 +60,7 @@ describe("componentes do relatório individual", () => {
     expect(screen.getByText("PRECISA MUDAR COM URGÊNCIA")).toBeInTheDocument();
     expect(screen.getByText("Análise preliminar do casal")).toBeInTheDocument();
     expect(screen.getByText(/Esse resultado mostra que existem áreas do relacionamento que precisam melhorar\./i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Adquirir Contrato de Casamento/i })).toHaveAttribute("href", "/contrato/comprar");
     expect(document.body.textContent).not.toMatch(/27 de 50|pontuações mais altas indicam maior/i);
   });
 
@@ -70,6 +73,7 @@ describe("componentes do relatório individual", () => {
     expect(screen.getByText("6,7/10")).toBeInTheDocument();
     expect(screen.getByText("PRECISA MELHORAR")).toBeInTheDocument();
     expect(screen.getByText(/Esse resultado mostra que vocês conseguem conversar/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Adquirir Contrato de Casamento/i })).toHaveAttribute("href", "/contrato/comprar");
     expect(document.body.textContent).not.toMatch(/2 de 6|média .* de 2/i);
   });
 
@@ -99,5 +103,9 @@ describe("componentes do relatório individual", () => {
     expect(screen.getByRole("heading", { name: "Uma orientação privada para você" })).toBeInTheDocument();
     expect(screen.getByText(/não serão compartilhadas automaticamente/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Voltar ao dashboard" })).toHaveAttribute("href", "/dashboard");
+
+    const buyLinks = screen.getAllByRole("link", { name: /Adquirir Contrato de Casamento/i });
+    expect(buyLinks.length).toBe(2); // 1 in general score card + 1 in improvement area card
+    buyLinks.forEach((link) => expect(link).toHaveAttribute("href", "/contrato/comprar"));
   });
 });

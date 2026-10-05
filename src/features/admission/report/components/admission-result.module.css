@@ -448,6 +448,93 @@
 .disclaimer h2 { color: #1e293b; font-size: 17px; font-weight: 750; }
 .disclaimer p { color: var(--report-muted); font-size: 13px; line-height: 1.55; margin-top: 8px; }
 
+.cardCtaContainer {
+  margin-top: 18px;
+  padding-top: 4px;
+  width: 100%;
+}
+
+.premiumCtaButton {
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.28), 0 0 0 1px rgba(15, 23, 42, 0.1);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  font-size: 14.5px;
+  font-weight: 700;
+  gap: 8px;
+  justify-content: center;
+  letter-spacing: -0.01em;
+  min-height: 48px;
+  overflow: hidden;
+  padding: 12px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: transform .2s cubic-bezier(.16, 1, .3, 1), box-shadow .2s cubic-bezier(.16, 1, .3, 1), filter .2s ease;
+  width: 100%;
+}
+
+.premiumCtaButton:hover {
+  box-shadow: 0 8px 24px -2px rgba(15, 23, 42, 0.38), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  color: #ffffff;
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+}
+
+.premiumCtaButton:active {
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25);
+  transform: translateY(0);
+}
+
+.premiumCtaIcon {
+  color: #fbbf24;
+  display: inline-block;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  flex-shrink: 0;
+}
+
+.premiumCtaButton::after {
+  animation: premiumShine 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  background: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 20%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.05) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  content: "";
+  height: 220%;
+  left: -80%;
+  pointer-events: none;
+  position: absolute;
+  top: -60%;
+  transform: rotate(25deg);
+  width: 50%;
+}
+
+@keyframes premiumShine {
+  0% {
+    left: -80%;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  42% {
+    left: 130%;
+    opacity: 1;
+  }
+  43%, 100% {
+    left: 130%;
+    opacity: 0;
+  }
+}
+
 .dashboardLink {
   align-items: center;
   background: #0f172a;
@@ -503,5 +590,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .heartBox { animation: none; }
-  .ringProgress, .chevron, .areaCard, .generalAnalysisCard, .dashboardLink { transition: none; }
+  .ringProgress, .chevron, .areaCard, .generalAnalysisCard, .dashboardLink, .premiumCtaButton { transition: none; }
+  .premiumCtaButton::after { animation: none; display: none; }
 }

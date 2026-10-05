@@ -2,6 +2,7 @@ import { formatScoreRating } from "@/features/admission/domain/score-presentatio
 import { cn } from "@/lib/cn";
 import type { AdmissionIndividualReportDto } from "@/types/admission-report";
 import styles from "./admission-result.module.css";
+import { ContractCtaButton } from "./contract-cta-button";
 
 export function GeneralScoreCard({ general }: { general: AdmissionIndividualReportDto["general"] }) {
   const circumference = 2 * Math.PI * 88;
@@ -84,6 +85,7 @@ export function GeneralScoreCard({ general }: { general: AdmissionIndividualRepo
               {paragraph}
             </p>
           ))}
+          <ContractCtaButton />
         </div>
       </details>
 

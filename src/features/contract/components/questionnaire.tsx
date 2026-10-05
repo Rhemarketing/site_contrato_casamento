@@ -61,30 +61,36 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
     } catch { setMessage("A resposta não foi confirmada. Tente novamente."); }
   });
   return <div className="space-y-6">
-    <Card className="space-y-3">
-      <h2 className="text-xl font-semibold">Próximo passo</h2>
-      {closed ? session.coupleConnected ? <>
-        <p>Suas respostas estão concluídas. O contrato é gerado automaticamente assim que os dois terminarem o questionário.</p>
-        <Link className="inline-block font-semibold text-brand underline" href="/contrato/documento">Ver e baixar nosso contrato</Link>
-      </>
-        : <><p>Suas respostas estão concluídas e salvas. Conecte as contas para que o contrato do casal seja gerado.</p><Link className="text-brand underline" href="/casal">Conectar meu parceiro</Link></>
-        : ready ? <><p>Todos os itens estão resolvidos. Clique em Concluir minhas respostas abaixo para finalizar e gerar o contrato.</p><a className="text-brand underline" href="#conclusao">Ir para Concluir minhas respostas</a></>
-        : <><p>Resolva as perguntas pendentes e os complementos privados antes de concluir.</p>
-          {missingComplements.length ? <div className="space-y-2"><p>Complementos privados pendentes:</p>{missingComplements.map(question => <button key={question.id} type="button" className="mr-3 text-brand underline" onClick={() => goTo(session.questions.findIndex(item => item.id === question.id))}>{question.id} — preencher complemento</button>)}</div> : null}
-        </>}
+    {closed ? (
+      <Card className="space-y-3">
+        <h2 className="text-xl font-semibold">Questionário concluído</h2>
+        <p>Suas respostas foram concluídas com sucesso. Assim que os dois concluírem o questionário, o contrato estará disponível para download e impressão.</p>
+        <div className="flex flex-wrap items-center gap-4">
+          <Link className="inline-block font-semibold text-brand underline" href="/contrato/documento">Ver e baixar nosso contrato</Link>
+          {!session.coupleConnected ? (
+            <Link className="text-brand underline" href="/casal">Conectar meu parceiro depois</Link>
+          ) : null}
+        </div>
+        <div className="pt-2">
+          <p className="text-sm text-muted">Caso deseje corrigir suas respostas:</p>
+          <ContractActionButton action={() => reopenContractAction(session.id, session.revision)}>Corrigir minhas respostas</ContractActionButton>
+        </div>
+      </Card>
+    ) : null}
+    <Card>
+      <ProgressBar
+        value={Math.round((resolved / session.questions.length) * 100)}
+        label={`${resolved} de ${session.questions.length} perguntas respondidas`}
+      />
     </Card>
-    {!session.coupleConnected ? <Alert>Você pode responder e concluir o questionário agora. Suas respostas ficam salvas na sua conta. <Link href="/casal" className="underline">Conectar meu parceiro depois</Link>.</Alert> : null}
-    <Alert>As perguntas são liberadas conforme seu contexto individual. Alertas privados são informativos e não bloqueiam o contrato. <Link href="/contrato/privacidade" className="underline">Acessar minha área de privacidade.</Link></Alert>
-    <Card><p className="text-muted">Suas respostas são individuais. O vínculo do casal não permite ao outro cônjuge ler suas respostas.</p>
-      <div className="mt-4"><ProgressBar value={Math.round(resolved / session.questions.length * 100)} label={`${resolved} de ${session.questions.length} itens resolvidos`} /></div>
-      <p className="mt-2 text-sm text-muted">{session.answered} respostas registradas · {notApplicable} não aplicáveis · {session.blocked} aguardando contexto.</p></Card>
-    <label className="block text-sm font-semibold">Ir para pergunta
-      <select className="mt-2 min-h-12 w-full rounded-xl border border-line bg-surface p-3" value={index} disabled={pending} onChange={e => goTo(Number(e.target.value))}>
-        {session.questions.map((question, i) => <option key={question.id} value={i}>{question.id} — {question.title}</option>)}
-      </select>
-    </label>
     <Card className="space-y-5">
-      <div className="flex justify-between gap-3"><Badge>{q.id}</Badge><span className="text-sm text-muted">{q.period}</span></div>
+      <div className="flex justify-between items-center gap-3">
+        <div className="flex items-center gap-2">
+          <Badge>{q.id}</Badge>
+          <span className="text-sm text-muted">Pergunta {index + 1} de {session.questions.length}</span>
+        </div>
+        <span className="text-sm text-muted">{q.period}</span>
+      </div>
       <h2 className="text-xl font-semibold text-brand-strong">{q.title}</h2>
       {q.relatedQuestions?.length ? <details><summary className="cursor-pointer text-sm text-brand">Consultar assuntos relacionados na minha sessão</summary><p className="mt-2 text-sm text-muted">Referências do Método para sua reflexão individual; não representam conclusão sobre o casal.</p><div className="mt-2 flex flex-wrap gap-3">{q.relatedQuestions.map(related => <button key={related.id} type="button" className="text-sm underline" onClick={() => goTo(session.questions.findIndex(item => item.id === related.id))}>{related.id} — {related.title}</button>)}</div></details> : null}
       {q.contextFields.map(field => <div key={field.id}><label className="block" htmlFor={`context-${field.id}`}>{field.label}</label>
@@ -167,26 +173,42 @@ export function ContractQuestionnaire({ session }: { session: OwnSessionDto }) {
           })}</fieldset> : null}
         </>}
       <p role="status" className="text-sm text-muted">{waitingToAdvance ? "Salvo" : pending ? "Salvando…" : message}</p>
-      <div className="flex justify-between"><Button variant="secondary" disabled={pending || index === 0} onClick={() => goTo(index - 1)}>Anterior</Button>{reviewingPreviousQuestion && index < session.questions.length - 1 && questionComplete(q) ? <Button variant="secondary" disabled={pending} onClick={() => goTo(index + 1)}>Avançar</Button> : <span />}</div>
-    </Card>
-    <Card className="space-y-4"><h2 id="conclusao" className="text-xl font-semibold">Conclusão</h2>{closed ? <>
-      <p>Suas respostas foram concluídas com sucesso. Assim que os dois concluírem o questionário, o contrato estará disponível para download e impressão.</p>
-      <Link className="inline-block font-semibold text-brand underline" href="/contrato/documento">Ir para Nosso Contrato</Link>
-      <div className="pt-2">
-        <p className="text-sm text-muted">Caso deseje corrigir suas respostas:</p>
-        <ContractActionButton action={() => reopenContractAction(session.id, session.revision)}>Corrigir minhas respostas</ContractActionButton>
+      <div className="flex justify-between items-center gap-3">
+        <Button variant="secondary" disabled={pending || index === 0} onClick={() => goTo(index - 1)}>
+          Anterior
+        </Button>
+        {reviewingBeforeCompletion ? (
+          <ContractActionButton
+            disabled={pending || !ready}
+            action={async () => {
+              const result = await submitContractAction(session.id, session.revision);
+              if (result.ok && result.data && "redirectUrl" in (result.data as object) && (result.data as { redirectUrl?: string }).redirectUrl) {
+                router.push((result.data as { redirectUrl: string }).redirectUrl);
+              }
+              return result;
+            }}
+          >
+            Concluir o exame
+          </ContractActionButton>
+        ) : index === session.questions.length - 1 || ready || session.answered === session.questions.length ? (
+          <Button
+            disabled={pending || !ready}
+            onClick={() => {
+              setCompletionRevision(session.revision);
+              setShowCompletionPrompt(true);
+            }}
+          >
+            Concluir minhas respostas
+          </Button>
+        ) : reviewingPreviousQuestion && questionComplete(q) ? (
+          <Button variant="secondary" disabled={pending} onClick={() => goTo(index + 1)}>
+            Avançar
+          </Button>
+        ) : (
+          <span />
+        )}
       </div>
-    </> : <><p>Ao concluir, você encerra a edição desta versão das suas respostas e o contrato poderá ser gerado.</p>
-      {reviewingBeforeCompletion
-        ? <ContractActionButton disabled={pending || !ready} action={async () => {
-            const result = await submitContractAction(session.id, session.revision);
-            if (result.ok && result.data && "redirectUrl" in (result.data as object) && (result.data as { redirectUrl?: string }).redirectUrl) {
-              router.push((result.data as { redirectUrl: string }).redirectUrl);
-            }
-            return result;
-          }}>Concluir o exame</ContractActionButton>
-        : <Button disabled={pending || !ready} onClick={() => { setCompletionRevision(session.revision); setShowCompletionPrompt(true); }}>Concluir minhas respostas</Button>}
-    </>}</Card>
+    </Card>
     <Modal isOpen={showCompletionPrompt} title="Deseja concluir o exame?" onClose={() => { setShowCompletionPrompt(false); setReviewingBeforeCompletion(true); }}>
       <p className="text-muted">Ao concluir, suas respostas serão encerradas para esta versão e o contrato do casal será gerado assim que ambos concluírem.</p>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">

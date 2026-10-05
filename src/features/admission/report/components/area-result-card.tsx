@@ -3,6 +3,7 @@ import { cn } from "@/lib/cn";
 import type { AdmissionReportAreaDto } from "@/types/admission-report";
 import styles from "./admission-result.module.css";
 import { AreaIcon } from "./area-icon";
+import { ContractCtaButton } from "./contract-cta-button";
 
 export function AreaResultCard({ area }: { area: AdmissionReportAreaDto; position?: number }) {
   const formattedRating = formatScoreRating(area.rating);
@@ -48,6 +49,7 @@ export function AreaResultCard({ area }: { area: AdmissionReportAreaDto; positio
         >
           <div className="report-progress" />
         </div>
+        <ContractCtaButton />
       </div>
     </details>
   );
